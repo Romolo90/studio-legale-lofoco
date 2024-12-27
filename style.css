@@ -8,14 +8,14 @@
 /* STILE GENERALE */
 body {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
   color: #333;
-  background: #f7f7f7;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-/* HEADER E NAVIGAZIONE */
+/* HEADER */
 header {
-  background-color: #1a1a1a; 
+  background-color: #0c1c2d; 
   padding: 1rem;
   color: #fff;
   display: flex;
@@ -29,52 +29,53 @@ header .logo h1 {
   font-weight: 600;
 }
 
-nav ul {
+.main-nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
 
-nav ul li a {
+.main-nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #00b4aa;
+.main-nav ul li a:hover {
+  color: #73abb8;
 }
 
-/* SEZIONE HERO */
+/* HERO */
 .hero {
-  background: url('https://images.unsplash.com/photo-1601112263201-3085f583b3b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-  height: 70vh;
+  position: relative;
+  height: 65vh;
+  background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
-.hero::after {
-  content: "";
+.hero-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.4);
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(12,28,45,0.5);
 }
 
 .hero-content {
-  position: relative; /* Per mantenere il testo sopra il layer scuro */
+  position: relative;
   color: #fff;
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 700px;
+  padding: 0 1rem;
   z-index: 1;
 }
 
 .hero-content h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -84,11 +85,11 @@ nav ul li a:hover {
   margin-bottom: 1.5rem;
 }
 
-/* BOTTONE CTA */
 .btn-cta {
-  background-color: #00b4aa;
+  background-color: #19435b;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.2rem;
+  border: none;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
@@ -96,12 +97,13 @@ nav ul li a:hover {
 }
 
 .btn-cta:hover {
-  background-color: #009188;
+  background-color: #112d3e;
+  cursor: pointer;
 }
 
 /* SEZIONI GENERICHE */
 .section-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -109,14 +111,19 @@ nav ul li a:hover {
 .section-container h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333;
   font-weight: 600;
+  color: #0c1c2d;
 }
 
-/* LISTE COMPETENZE */
+/* CHI SONO */
+#chi-sono p {
+  margin-bottom: 1rem;
+}
+
+/* COMPETENZE */
 #competenze ul {
   list-style: disc;
-  padding-left: 1.5rem;
+  margin-left: 1.5rem;
   margin-top: 1rem;
 }
 
@@ -125,9 +132,50 @@ nav ul li a:hover {
 }
 
 /* CONTATTI */
-.contact-info p {
-  margin-bottom: 0.5rem;
+.intro-contact {
+  margin-bottom: 1rem;
   font-size: 1rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+/* FORM DI CONTATTO */
+.contact-form {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 2rem;
+}
+
+.contact-form .form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #0c1c2d;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #19435b;
+  outline: none;
 }
 
 /* MAPPA */
@@ -143,19 +191,28 @@ nav ul li a:hover {
 
 /* FOOTER */
 footer {
-  background-color: #1a1a1a;
+  background-color: #0c1c2d;
   color: #ccc;
   text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-  font-size: 0.9rem;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
 }
 
 footer p {
-  margin: 0.4rem;
+  margin: 0.5rem;
 }
 
 .footer-note {
-  font-size: 0.8rem;
-  opacity: 0.8;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.footer-note a {
+  color: #aaa;
+  text-decoration: underline;
+}
+
+.footer-note a:hover {
+  color: #fff;
 }
