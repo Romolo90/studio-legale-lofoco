@@ -1,126 +1,98 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Legale Lo Foco - Avv. Andrea Lo Foco</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Legale Lo Foco - Avv. Andrea Lo Foco</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header with Navbar -->
-  <header class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">STUDIO LEGALE LO FOCO</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="#chi-sono">Chi Sono</a></li>
-            <li class="nav-item"><a class="nav-link" href="#servizi">Servizi</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
-          </ul>
+    <header>
+        <div class="logo">
+            <h1>STUDIO LEGALE LO FOCO</h1>
         </div>
-      </div>
-    </nav>
-  </header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#chi-sono">Chi Sono</a></li>
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="hero text-center py-5" style="background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;">
-    <div class="hero-overlay bg-dark" style="opacity: 0.5;"></div>
-    <div class="container position-relative">
-      <h2 class="text-white mb-3">Avv. Andrea Lo Foco</h2>
-      <p class="text-white mb-4">Consulenza legale specializzata in diritto d’autore, diritto amministrativo e progetti culturali.</p>
-      <a href="#contatti" class="btn btn-primary btn-lg">Contattaci ora</a>
-    </div>
-  </section>
-
-  <!-- Chi Sono Section -->
-  <section id="chi-sono" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Chi Sono</h2>
-      <p>Sono l’Avv. Andrea Lo Foco, con esperienza pluriennale in diritto d’autore e diritto amministrativo, in particolare nel settore cinematografico e creativo. Il mio obiettivo è fornire soluzioni personalizzate e supporto completo alle aziende e ai professionisti del mondo culturale.</p>
-    </div>
-  </section>
-
-  <!-- Servizi Section -->
-  <section id="servizi" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4">Servizi</h2>
-      <ul class="list-unstyled">
-        <li>Assistenza in Diritto d’Autore e Contratti Audiovisivi</li>
-        <li>Consulenza su Diritto Amministrativo e Tax Credit Cinema</li>
-        <li>Supporto Legale per Progetti Culturali e Spettacolo</li>
-        <li>Soluzioni innovative: Blockchain e Criptoarte</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contatti Section -->
-  <section id="contatti" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Contatti</h2>
-      <p class="intro-contact mb-4">Per qualsiasi richiesta o per fissare un appuntamento, compila il form qui sotto o contattaci direttamente via telefono o email.</p>
-
-      <div class="contact-info mb-4">
-        <p><strong>Indirizzo:</strong> Via Boezio, 2/A - 00193, Roma</p>
-        <p><strong>Email:</strong> <a href="mailto:studiolegalelofoco@icloud.com">studiolegalelofoco@icloud.com</a></p>
-        <p><strong>Telefono:</strong> +39 06 3201820</p>
-      </div>
-
-      <form class="contact-form">
-        <div class="form-group">
-          <label for="nome">Nome e Cognome</label>
-          <input type="text" class="form-control" id="nome" name="nome" placeholder="Inserisci il tuo nome" required />
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Avv. Andrea Lo Foco</h2>
+            <p>Consulenza legale specializzata in diritto d’autore, diritto amministrativo e progetti culturali.</p>
+            <a href="#contatti" class="btn-cta">Contattaci ora</a>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Inserisci la tua email" required />
-        </div>
-        <div class="form-group">
-          <label for="messaggio">Messaggio</label>
-          <textarea class="form-control" id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="privacy" name="privacy" required />
-          <label class="form-check-label" for="privacy">
-            Dichiaro di aver letto e accettato la <a href="privacy.html" target="_blank">Privacy Policy</a> e i <a href="terms.html" target="_blank">Termini di Servizio</a>.
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Invia Richiesta</button>
-      </form>
+    </section>
 
-      <!-- Google Maps -->
-      <div class="map-container mt-4">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5938.688754514278!2d12.464792375583666!3d41.906955063607775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605928b4960d%3A0xe68ff98c0fbfcb3d!2sVia%20Boezio%2C%202a%2C%2000193%20Roma%20RM!5e0!3m2!1sen!2sit!4v1735326075333!5m2!1sen!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
+    <section id="chi-sono" class="section-container">
+        <h2>Chi Sono</h2>
+        <p>Sono l’Avv. Andrea Lo Foco, con esperienza pluriennale in diritto d’autore e diritto amministrativo, in particolare nel settore cinematografico e creativo. Il mio obiettivo è fornire soluzioni personalizzate e supporto completo alle aziende e ai professionisti del mondo culturale.</p>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>© 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
-    <p class="footer-note">Le informazioni contenute su questo sito hanno carattere generale e non costituiscono parere legale. Per questioni specifiche, rivolgersi a un professionista.</p>
-    <p class="footer-note">
-      <a href="privacy.html">Privacy Policy</a> | 
-      <a href="terms.html">Termini di Servizio</a>
-    </p>
-  </footer>
+    <section id="servizi" class="section-container">
+        <h2>Servizi</h2>
+        <ul>
+            <li>Assistenza in Diritto d’Autore e Contratti Audiovisivi</li>
+            <li>Consulenza su Diritto Amministrativo e Tax Credit Cinema</li>
+            <li>Supporto Legale per Progetti Culturali e Spettacolo</li>
+            <li>Soluzioni innovative: Blockchain e Criptoarte</li>
+        </ul>
+    </section>
 
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <section id="contatti" class="section-container">
+        <h2>Contatti</h2>
+        <p class="intro-contact">Per qualsiasi richiesta o per fissare un appuntamento, compila il form qui sotto o contattaci direttamente via telefono o email.</p>
+
+        <div class="contact-info">
+            <p><strong>Indirizzo:</strong> Via Boezio, 2/A - 00193, Roma</p>
+            <p><strong>Email:</strong> <a href="mailto:studiolegalelofoco@icloud.com">studiolegalelofoco@icloud.com</a></p>
+            <p><strong>Telefono:</strong> +39 06 3201820</p>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/mgvvkobk" method="POST">
+            <div class="form-row">
+                <label for="nome">Nome e Cognome</label>
+                <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required />
+            </div>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required />
+            </div>
+            <div class="form-row">
+                <label for="messaggio">Messaggio</label>
+                <textarea id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
+            </div>
+            <div class="form-row check-row">
+                <input type="checkbox" id="privacy" name="privacy" required />
+                <label for="privacy">
+                    Dichiaro di aver letto e accettato la <a href="privacy.html" target="_blank">Privacy Policy</a> e i <a href="terms.html" target="_blank">Termini di Servizio</a>.
+                </label>
+            </div>
+            <button type="submit" class="btn-cta">Invia Richiesta</button>
+        </form>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5938.688754514278!2d12.464792375583666!3d41.906955063607775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605928b4960d%3A0xe68ff98c0fbfcb3d!2sVia%20Boezio%2C%202a%2C%2000193%20Roma%20RM!5e0!3m2!1sen!2sit!4v1735326075333!5m2!1sen!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+        <p class="footer-note">Le informazioni contenute su questo sito hanno carattere generale e non costituiscono parere legale. Per questioni specifiche, rivolgersi a un professionista.</p>
+        <p class="footer-note"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a></p>
+    </footer>
+
 </body>
 </html>
