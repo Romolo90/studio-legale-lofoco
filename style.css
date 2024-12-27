@@ -1,30 +1,60 @@
+/* Generali */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   color: #333;
-  background-color: #f8f8f8;
+  background-color: #f8f9fa;
 }
 
+h1, h2 {
+  font-family: 'Lora', serif;
+  color: #003366;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #003366;
+}
+
+a:hover {
+  color: #d4af37; /* Oro */
+}
+
+/* Header */
 .header {
-  background: #007BFF;
+  background: linear-gradient(90deg, #003366, #00509e);
   color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3rem;
+}
+
+.header p {
+  margin: 10px 0;
+  font-size: 1.2rem;
 }
 
 .nav-menu {
   list-style: none;
   padding: 0;
+  margin: 20px 0 0;
   display: flex;
   justify-content: center;
-  margin: 20px 0 0;
 }
 
 .nav-menu li {
@@ -32,13 +62,22 @@ body {
 }
 
 .nav-menu a {
-  text-decoration: none;
-  color: white;
   font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
+.nav-menu a:hover {
+  background: #d4af37; /* Oro */
+  color: white;
+}
+
+/* Sezioni */
 .section {
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 .bg-light {
@@ -57,13 +96,19 @@ ul {
 }
 
 ul li {
-  margin: 10px 0;
+  margin: 15px 0;
+  font-size: 1.1rem;
 }
 
-footer {
+/* Footer */
+.footer {
   text-align: center;
-  padding: 10px 0;
-  background: #333;
+  padding: 20px 0;
+  background: #003366;
   color: white;
   font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 0;
 }
