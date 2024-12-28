@@ -16,7 +16,7 @@ body {
 /* HEADER */
 header {
   background-color: #003366;
-  padding: 2rem 1.5rem; /* Aggiunto padding extra per evitare che sia schiacciato */
+  padding: 2rem 1.5rem;
   color: #BFECFF;
   display: flex;
   align-items: center;
@@ -34,6 +34,10 @@ header .logo h1 {
   font-weight: 600;
 }
 
+.main-nav {
+  position: relative;
+}
+
 .main-nav ul {
   list-style: none;
   display: flex;
@@ -49,6 +53,59 @@ header .logo h1 {
 
 .main-nav ul li a:hover {
   color: #80D9FF;
+}
+
+/* MENU A FINESTRA */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  background-color: #BFECFF;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #003366;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.nav-links a {
+  color: #BFECFF;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #004766;
+}
+
+.nav-active {
+  display: flex;
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+  .main-nav ul {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
 }
 
 /* HERO */
@@ -204,21 +261,10 @@ footer {
   }
 
   .main-nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+    display: none;
   }
 
-  .main-nav ul li {
-    width: 100%;
-  }
-
-  .main-nav ul li a {
-    display: block;
-    padding: 0.5rem;
-  }
-
-  .logo img {
-    max-height: 40px;
+  .hamburger-menu {
+    display: flex;
   }
 }
