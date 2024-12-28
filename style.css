@@ -8,26 +8,23 @@
 /* STILE GENERALE */
 body {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  background-color: #f7f7f7;
+  background-color: #f9f9f9;
   color: #333;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* HEADER */
 header {
-  background-color: #0c1c2d; 
-  padding: 1rem;
-  color: #fff;
+  background-color: #0c1c2d;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #fff;
 }
 
-header .logo h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+header .logo img {
+  max-height: 50px;
 }
 
 .main-nav ul {
@@ -50,7 +47,7 @@ header .logo h1 {
 /* HERO */
 .hero {
   position: relative;
-  height: 65vh;
+  height: 75vh;
   background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -59,11 +56,11 @@ header .logo h1 {
 
 .hero-overlay {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
-  background-color: rgba(12,28,45,0.5);
+  background-color: rgba(12, 28, 45, 0.6);
 }
 
 .hero-content {
@@ -71,14 +68,12 @@ header .logo h1 {
   color: #fff;
   text-align: center;
   max-width: 700px;
-  padding: 0 1rem;
   z-index: 1;
 }
 
-.hero-content h2 {
+.hero-content h1 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  font-weight: 600;
 }
 
 .hero-content p {
@@ -89,9 +84,9 @@ header .logo h1 {
 .btn-cta {
   background-color: #19435b;
   color: #fff;
-  padding: 0.75rem 1.2rem;
+  padding: 0.8rem 1.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
@@ -112,43 +107,44 @@ header .logo h1 {
 .section-container h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-weight: 600;
   color: #0c1c2d;
 }
 
 .section-container p {
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
-/* LISTE SERVIZI */
-#servizi ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-  margin-top: 1rem;
+/* SERVIZI */
+.servizi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
-#servizi ul li {
+.servizio {
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.servizio h3 {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+.servizio p {
+  font-size: 1rem;
 }
 
 /* CONTATTI */
-.intro-contact {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-}
-
-.contact-info p {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-/* FORM DI CONTATTO */
 .contact-form {
   background-color: #fff;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 5px;
   margin-top: 2rem;
 }
 
@@ -161,16 +157,14 @@ header .logo h1 {
 .contact-form label {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #0c1c2d;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.6rem;
+  padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font: inherit;
-  resize: none;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .contact-form input:focus,
@@ -179,26 +173,17 @@ header .logo h1 {
   outline: none;
 }
 
-.check-row {
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.check-row input[type="checkbox"] {
-  width: auto;
-  margin: 0;
-}
-
 /* MAPPA */
 .map-container {
   margin-top: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .map-container iframe {
   width: 100%;
-  border: 2px solid #ddd;
-  border-radius: 4px;
+  border: none;
+  border-radius: 5px;
 }
 
 /* FOOTER */
@@ -208,16 +193,10 @@ footer {
   text-align: center;
   padding: 1.5rem;
   margin-top: 3rem;
-  font-size: 0.95rem;
 }
 
 footer p {
   margin: 0.5rem 0;
-}
-
-.footer-note {
-  font-size: 0.85rem;
-  color: #aaa;
 }
 
 .footer-note a {
