@@ -10,24 +10,27 @@ body {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   background-color: #f7f7f7;
   color: #333;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* HEADER */
 header {
-  background-color: #0c1c2d; 
-  padding: 1rem;
+  background-color: #0c1c2d;
+  padding: 1.5rem;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+header .logo img {
+  max-height: 50px;
+}
+
 header .logo h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
 .main-nav ul {
@@ -50,7 +53,7 @@ header .logo h1 {
 /* HERO */
 .hero {
   position: relative;
-  height: 65vh;
+  height: 75vh;
   background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -59,39 +62,38 @@ header .logo h1 {
 
 .hero-overlay {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
-  background-color: rgba(12,28,45,0.5);
+  background-color: rgba(12,28,45,0.6);
 }
 
 .hero-content {
   position: relative;
   color: #fff;
   text-align: center;
-  max-width: 700px;
-  padding: 0 1rem;
+  max-width: 800px;
   z-index: 1;
 }
 
 .hero-content h2 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .btn-cta {
   background-color: #19435b;
   color: #fff;
-  padding: 0.75rem 1.2rem;
+  padding: 0.85rem 1.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
@@ -105,20 +107,20 @@ header .logo h1 {
 /* SEZIONI GENERICHE */
 .section-container {
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 3rem auto;
   padding: 0 1rem;
 }
 
 .section-container h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
   color: #0c1c2d;
 }
 
 .section-container p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
 /* LISTE SERVIZI */
@@ -129,33 +131,34 @@ header .logo h1 {
 }
 
 #servizi ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 /* CONTATTI */
 .intro-contact {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .contact-info p {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
 }
 
 /* FORM DI CONTATTO */
 .contact-form {
   background-color: #fff;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-top: 2rem;
+  border-radius: 5px;
+  margin-top: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form .form-row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .contact-form label {
@@ -166,9 +169,9 @@ header .logo h1 {
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.6rem;
+  padding: 0.75rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
   font: inherit;
   resize: none;
 }
@@ -192,13 +195,13 @@ header .logo h1 {
 
 /* MAPPA */
 .map-container {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .map-container iframe {
   width: 100%;
   border: 2px solid #ddd;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 /* FOOTER */
@@ -206,27 +209,23 @@ footer {
   background-color: #0c1c2d;
   color: #ccc;
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   margin-top: 3rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 footer p {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 .footer-note {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #aaa;
 }
 
 .footer-note a {
   color: #aaa;
   text-decoration: underline;
-}
-
-.footer-note a:hover {
-  color: #fff;
 }
 
 .footer-note a:hover {
