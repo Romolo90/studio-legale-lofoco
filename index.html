@@ -5,6 +5,9 @@
   <title>Studio Legale Lo Foco - Studio Legale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,7 +160,7 @@
     </div>
   </section>
 
-    <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
     <p class="footer-note">
@@ -169,11 +172,31 @@
       <a href="terms.html">Termini di Servizio</a>
     </p>
     <p>
-      <a href="https://twitter.com" target="_blank">
-        <img src="twitter-icon.png" alt="Twitter" style="width:24px; height:24px;">
+      <a href="https://x.com/andrealofoco?s=21" target="_blank">
+        <img src="x-logo.png" alt="Twitter Logo" style="width:24px; height:24px;">
       </a>
     </p>
   </footer>
+
+  <!-- Pulsante Torna su -->
+  <button id="scrollToTop" onclick="scrollToTop()">&#8593;</button>
+
+  <script>
+    // Funzione per il pulsante "Torna su"
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = 'block';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
