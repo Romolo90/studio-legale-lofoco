@@ -20,7 +20,8 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="logo.png" alt="Studio Legale Lo Foco Logo" />
+      <!-- Inserisci qui un eventuale logo in <img> -->
+      <h1>STUDIO LEGALE LO FOCO</h1>
     </div>
     <nav class="main-nav">
       <ul>
@@ -35,9 +36,9 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Consulenza Legale d'Eccellenza</h1>
-      <p>Esperti in diritto d’autore, diritto amministrativo e progetti culturali.</p>
-      <a href="#contatti" class="btn-cta">Prenota una consulenza</a>
+      <h2>Avv. Andrea Lo Foco</h2>
+      <p>Consulenza legale specializzata in diritto d’autore, diritto amministrativo e progetti culturali.</p>
+      <a href="#contatti" class="btn-cta">Contattaci ora</a>
     </div>
   </section>
 
@@ -45,35 +46,30 @@
   <section id="chi-sono" class="section-container">
     <h2>Chi Sono</h2>
     <p>
-      L’Avv. Andrea Lo Foco offre soluzioni legali su misura grazie a un’esperienza pluriennale 
-      nel settore del diritto d’autore e amministrativo, con particolare focus su progetti culturali e creativi.
+      Sono l’Avv. Andrea Lo Foco, con esperienza pluriennale in diritto d’autore 
+      e diritto amministrativo, in particolare nel settore cinematografico e creativo. 
+      Il mio obiettivo è fornire soluzioni personalizzate e supporto completo alle aziende 
+      e ai professionisti del mondo culturale.
     </p>
   </section>
 
   <!-- SERVIZI (o Aree di Competenza) -->
   <section id="servizi" class="section-container">
-    <h2>I Nostri Servizi</h2>
-    <div class="servizi-grid">
-      <div class="servizio">
-        <h3>Diritto d’Autore</h3>
-        <p>Proteggiamo e valorizziamo le tue opere creative con contratti personalizzati e assistenza specializzata.</p>
-      </div>
-      <div class="servizio">
-        <h3>Diritto Amministrativo</h3>
-        <p>Consulenza esperta in materia di appalti, regolamentazioni e agevolazioni fiscali.</p>
-      </div>
-      <div class="servizio">
-        <h3>Tax Credit Cinema</h3>
-        <p>Supportiamo produttori e investitori nell’ottenimento delle agevolazioni previste dalla normativa italiana.</p>
-      </div>
-    </div>
+    <h2>Servizi</h2>
+    <ul>
+      <li>Assistenza in Diritto d’Autore e Contratti Audiovisivi</li>
+      <li>Consulenza su Diritto Amministrativo e Tax Credit Cinema</li>
+      <li>Supporto Legale per Progetti Culturali e Spettacolo</li>
+      <li>Soluzioni innovative: Blockchain e Criptoarte</li>
+    </ul>
   </section>
 
   <!-- CONTATTI con modulo di contatto -->
   <section id="contatti" class="section-container">
-    <h2>Contattaci</h2>
+    <h2>Contatti</h2>
     <p class="intro-contact">
-      Compila il modulo qui sotto per richiedere informazioni o prenotare una consulenza.
+      Per qualsiasi richiesta o per fissare un appuntamento, compila il form qui sotto 
+      o contattaci direttamente via telefono o email.
     </p>
 
     <div class="contact-info">
@@ -95,6 +91,16 @@
       <div class="form-row">
         <label for="messaggio">Messaggio</label>
         <textarea id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
+      </div>
+
+      <!-- Checkbox consenso Privacy e Termini -->
+      <div class="form-row check-row">
+        <input type="checkbox" id="privacy" name="privacy" required />
+        <label for="privacy">
+          Dichiaro di aver letto e accettato la 
+          <a href="privacy.html" target="_blank">Privacy Policy</a> e i 
+          <a href="terms.html" target="_blank">Termini di Servizio</a>.
+        </label>
       </div>
 
       <button type="submit" class="btn-cta">Invia Richiesta</button>
