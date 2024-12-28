@@ -16,7 +16,7 @@ body {
 /* HEADER */
 header {
   background-color: #003366;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem; /* Aggiunto padding extra per evitare che sia schiacciato */
   color: #BFECFF;
   display: flex;
   align-items: center;
