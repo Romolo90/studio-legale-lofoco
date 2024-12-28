@@ -1,180 +1,230 @@
-/* Reset di base */
+/* RESET DI BASE */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* STILE GENERALE */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fdfdfd;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.5;
 }
 
-/* Header */
+/* HEADER */
 header {
-    background-color: #0c1c2d;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background-color: #0c1c2d; 
+  padding: 1rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-header .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
+header .logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .main-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    color: #cba135;
+  color: #73abb8;
 }
 
-/* Hero Section */
+/* HERO */
 .hero {
-    height: 75vh;
-    background: url('https://source.unsplash.com/1600x900/?law,office') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    text-align: center;
+  position: relative;
+  height: 65vh;
+  background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+.hero-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(12,28,45,0.5);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 1rem;
+  z-index: 1;
 }
 
-.hero-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    font-family: 'Playfair Display', serif;
+.hero-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn-cta {
-    background-color: #cba135;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+  background-color: #19435b;
+  color: #fff;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .btn-cta:hover {
-    background-color: #a58327;
+  background-color: #112d3e;
+  cursor: pointer;
 }
 
-/* Sezioni intermedie */
+/* SEZIONI GENERICHE */
 .section-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 .section-container h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #0c1c2d;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #0c1c2d;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+.section-container p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-.card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
+/* LISTE SERVIZI */
+#servizi ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+#servizi ul li {
+  margin-bottom: 0.5rem;
 }
 
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+/* CONTATTI */
+.intro-contact {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
 }
 
-.card-content {
-    padding: 1rem;
+.contact-info p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
-.card-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #0c1c2d;
+/* FORM DI CONTATTO */
+.contact-form {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 2rem;
 }
 
-.card-content p {
-    font-size: 0.95rem;
-    color: #555;
+.contact-form .form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
-/* Footer */
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #0c1c2d;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #19435b;
+  outline: none;
+}
+
+.check-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-row input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+/* MAPPA */
+.map-container {
+  margin-top: 2rem;
+}
+
+.map-container iframe {
+  width: 100%;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+/* FOOTER */
 footer {
-    background-color: #0c1c2d;
-    color: #ccc;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-    font-size: 0.95rem;
+  background-color: #0c1c2d;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
 }
 
 footer p {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #aaa;
 }
 
 .footer-note a {
-    color: #cba135;
-    text-decoration: none;
+  color: #aaa;
+  text-decoration: underline;
 }
 
 .footer-note a:hover {
-    text-decoration: underline;
+  color: #fff;
 }
