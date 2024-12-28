@@ -26,7 +26,14 @@
       <img src="logo.png" alt="Studio Legale Lo Foco Logo">
     </div>
     <nav class="main-nav">
-      <ul>
+      <!-- Icona hamburger -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Menu di navigazione -->
+      <ul class="nav-links" id="navLinks">
         <li><a href="#chi-siamo">Chi Siamo</a></li>
         <li><a href="#servizi">Servizi</a></li>
         <li><a href="notizie.html">Ultime Notizie</a></li>
@@ -196,6 +203,14 @@
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Funzione per il menu hamburger
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-active');
+    });
   </script>
 
 </body>
