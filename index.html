@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio Legale Lo Foco - Avv. Andrea Lo Foco</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Studio Legale Lo Foco - Design Moderno</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Collegamento al file CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
     <header>
-        <div class="logo">
-            <h1>STUDIO LEGALE LO FOCO</h1>
-        </div>
+        <div class="logo">Studio Legale Lo Foco</div>
         <nav class="main-nav">
             <ul>
                 <li><a href="#chi-sono">Chi Sono</a></li>
@@ -28,71 +24,43 @@
     </header>
 
     <section class="hero">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h2>Avv. Andrea Lo Foco</h2>
-            <p>Consulenza legale specializzata in diritto d’autore, diritto amministrativo e progetti culturali.</p>
-            <a href="#contatti" class="btn-cta">Contattaci ora</a>
+            <h1>Benvenuti al Studio Legale Lo Foco</h1>
+            <p>Specializzati in diritto d’autore, amministrativo e progetti culturali innovativi.</p>
+            <a href="#contatti" class="btn-cta">Contattaci Ora</a>
         </div>
-    </section>
-
-    <section id="chi-sono" class="section-container">
-        <h2>Chi Sono</h2>
-        <p>Sono l’Avv. Andrea Lo Foco, con esperienza pluriennale in diritto d’autore e diritto amministrativo, in particolare nel settore cinematografico e creativo. Il mio obiettivo è fornire soluzioni personalizzate e supporto completo alle aziende e ai professionisti del mondo culturale.</p>
     </section>
 
     <section id="servizi" class="section-container">
         <h2>Servizi</h2>
-        <ul>
-            <li>Assistenza in Diritto d’Autore e Contratti Audiovisivi</li>
-            <li>Consulenza su Diritto Amministrativo e Tax Credit Cinema</li>
-            <li>Supporto Legale per Progetti Culturali e Spettacolo</li>
-            <li>Soluzioni innovative: Blockchain e Criptoarte</li>
-        </ul>
-    </section>
-
-    <section id="contatti" class="section-container">
-        <h2>Contatti</h2>
-        <p class="intro-contact">Per qualsiasi richiesta o per fissare un appuntamento, compila il form qui sotto o contattaci direttamente via telefono o email.</p>
-
-        <div class="contact-info">
-            <p><strong>Indirizzo:</strong> Via Boezio, 2/A - 00193, Roma</p>
-            <p><strong>Email:</strong> <a href="mailto:studiolegalelofoco@icloud.com">studiolegalelofoco@icloud.com</a></p>
-            <p><strong>Telefono:</strong> +39 06 3201820</p>
-        </div>
-
-        <form class="contact-form" action="https://formspree.io/f/mgvvkobk" method="POST">
-            <div class="form-row">
-                <label for="nome">Nome e Cognome</label>
-                <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required />
+        <div class="cards">
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?law" alt="Diritto d’Autore">
+                <div class="card-content">
+                    <h3>Diritto d’Autore</h3>
+                    <p>Consulenza su proprietà intellettuale e contratti audiovisivi.</p>
+                </div>
             </div>
-            <div class="form-row">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required />
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?contract" alt="Consulenza Legale">
+                <div class="card-content">
+                    <h3>Consulenza Legale</h3>
+                    <p>Assistenza in diritto amministrativo e tax credit cinema.</p>
+                </div>
             </div>
-            <div class="form-row">
-                <label for="messaggio">Messaggio</label>
-                <textarea id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
+            <div class="card">
+                <img src="https://source.unsplash.com/400x300/?innovation" alt="Progetti Culturali">
+                <div class="card-content">
+                    <h3>Progetti Culturali</h3>
+                    <p>Supporto per blockchain, criptoarte e innovazione legale.</p>
+                </div>
             </div>
-            <div class="form-row check-row">
-                <input type="checkbox" id="privacy" name="privacy" required />
-                <label for="privacy">
-                    Dichiaro di aver letto e accettato la <a href="privacy.html" target="_blank">Privacy Policy</a> e i <a href="terms.html" target="_blank">Termini di Servizio</a>.
-                </label>
-            </div>
-            <button type="submit" class="btn-cta">Invia Richiesta</button>
-        </form>
-
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5938.688754514278!2d12.464792375583666!3d41.906955063607775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605928b4960d%3A0xe68ff98c0fbfcb3d!2sVia%20Boezio%2C%202a%2C%2000193%20Roma%20RM!5e0!3m2!1sen!2sit!4v1735326075333!5m2!1sen!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
     <footer>
         <p>© 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
-        <p class="footer-note">Le informazioni contenute su questo sito hanno carattere generale e non costituiscono parere legale. Per questioni specifiche, rivolgersi a un professionista.</p>
-        <p class="footer-note"><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a></p>
+        <p class="footer-note">Le informazioni su questo sito sono a scopo informativo. <a href="#">Privacy Policy</a> | <a href="#">Termini di Servizio</a></p>
     </footer>
-
 </body>
 </html>
