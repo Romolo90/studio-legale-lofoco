@@ -150,6 +150,9 @@ header .logo h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  white-space: nowrap; /* Impedisce che il testo vada a capo */
+  overflow: hidden; /* Assicura che il testo non superi il contenitore */
+  text-align: center; /* Centra il testo */
 }
 
 .hero-content p {
