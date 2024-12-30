@@ -144,6 +144,7 @@ header .logo h1 {
   text-align: center;
   max-width: 800px;
   z-index: 1;
+  padding: 0 1rem; /* Aggiunto padding per dispositivi mobili */
 }
 
 .hero-content h2 {
@@ -160,6 +161,21 @@ header .logo h1 {
   margin-bottom: 2rem;
 }
 
+/* RESPONSIVE HERO */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2rem; /* Riduce la dimensione del titolo per dispositivi mobili */
+    white-space: normal; /* Consente il capo su righe multiple */
+    word-break: break-word; /* Divide le parole lunghe */
+  }
+
+  .hero-content {
+    max-width: 95%; /* Usa quasi tutta la larghezza disponibile */
+    padding: 0 1rem; /* Evita che il testo tocchi i bordi */
+  }
+}
+
+/* BOTTONI */
 .btn-cta {
   background-color: #004766;
   color: #BFECFF;
