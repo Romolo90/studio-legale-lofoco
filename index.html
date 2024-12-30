@@ -95,29 +95,7 @@
     </div>
   </section>
 
-  <!-- ULTIME NOTIZIE -->
-  <section id="notizie" class="section-container">
-    <h2>Ultime Notizie</h2>
-    <div class="news-grid">
-      <div class="news-item">
-        <h3>Decreto sulle agevolazioni fiscali per il cinema</h3>
-        <p>Le novità sulle agevolazioni fiscali dedicate ai produttori.</p>
-        <a href="notizie.html">Leggi di più</a>
-      </div>
-      <div class="news-item">
-        <h3>Nuove norme sul diritto d’autore</h3>
-        <p>Scopri come le nuove normative impattano il tuo lavoro creativo.</p>
-        <a href="notizie.html">Leggi di più</a>
-      </div>
-      <div class="news-item">
-        <h3>Progetti culturali nazionali</h3>
-        <p>Iniziative di rilievo per il settore culturale e artistico.</p>
-        <a href="notizie.html">Leggi di più</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATTI con modulo di contatto -->
+  <!-- CONTATTI -->
   <section id="contatti" class="section-container">
     <h2>Contatti</h2>
     <p class="intro-contact">
@@ -157,16 +135,15 @@
       <button type="submit" class="btn-cta">Invia Richiesta</button>
     </form>
   </section>
-  
+
   <!-- MAPPA -->
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5938.688754514278!2d12.464792375583666!3d41.906955063607775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605928b4960d%3A0xe68ff98c0fbfcb3d!2sVia%20Boezio%2C%202a%2C%2000193%20Roma%20RM!5e0!3m2!1sen!2sit!4v1735326075333!5m2!1sen!2sit"
-        width="600" height="450" style="border:0;" allowfullscreen=""
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5938.688754514278!2d12.464792375583666!3d41.906955063607775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605928b4960d%3A0xe68ff98c0fbfcb3d!2sVia%20Boezio%2C%202a%2C%2000193%20Roma%20RM!5e0!3m2!1sen!2sit!4v1735326075333!5m2!1sen!2sit"
+      width="600" height="450" style="border:0;" allowfullscreen=""
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -180,28 +157,7 @@
   <!-- Pulsante Torna su -->
   <button id="scrollToTop" onclick="scrollToTop()">&#8593;</button>
 
-  <!-- Script -->
-  <script>
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    const hamburgerMenu = document.getElementById('hamburgerMenu');
-    const navLinks = document.getElementById('navLinks');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollToTopBtn.style.display = 'block';
-      } else {
-        scrollToTopBtn.style.display = 'none';
-      }
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    hamburgerMenu.addEventListener('click', () => {
-      navLinks.classList.toggle('nav-active');
-    });
-  </script>
-
+  <!-- Collegamento al file JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
