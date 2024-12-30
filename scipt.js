@@ -1,12 +1,10 @@
 // Riferimenti agli elementi
-const hamburgerMenu = document.getElementById
-const
-navLinks = document.getElementById( 'navl
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const navLinks = document.getElementById('navLinks');
+
 // Evento per mostrare/nascondere il menu
-hamburgerMenu.addEventListener( 'click', () =>
-navLinks.classList.toggle( 'nav-active');
-console. 1og ( 'Menu hamburger cliccato'); // [ console. 1og ( 'Classe nav-active presente:',
+hamburgerMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('nav-active');
+  console.log('Menu hamburger cliccato');
+  console.log('Classe nav-active presente:', navLinks.classList.contains('nav-active'));
 });
-Expected branch to point to
-"035b8149d299a268f6fabab2f51853b20
-44f3225" but it did not. Pull and try again.
