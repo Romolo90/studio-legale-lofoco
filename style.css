@@ -72,20 +72,7 @@ header .logo a:hover {
   color: #80D9FF;
 }
 
-/* MENU A FINESTRA */
-.hamburger-menu {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger-menu span {
-  background-color: #BFECFF;
-  height: 3px;
-  width: 25px;
-  margin: 4px 0;
-}
-
+/* MENU A TENDINA */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -104,13 +91,33 @@ header .logo a:hover {
   text-decoration: none;
   padding: 0.5rem 0;
   text-align: center;
+  transition: color 0.3s ease;
 }
 
-.nav-links.nav-active {
+.nav-links a:hover {
+  color: #80D9FF;
+  background-color: #002244;
+  border-radius: 5px;
+}
+
+.main-nav:hover .nav-links {
   display: flex;
 }
 
-/* Regole per dispositivi mobili */
+/* MENU PER DISPOSITIVI MOBILI */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  background-color: #BFECFF;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+}
+
 @media (max-width: 768px) {
   .hamburger-menu {
     display: flex;
@@ -128,6 +135,22 @@ header .logo a:hover {
 
   header .logo h1 {
     font-size: 1.8rem;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    background-color: #003366;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem;
+  }
+
+  .hamburger-menu:hover + .nav-links {
+    display: flex;
   }
 }
 
@@ -290,6 +313,7 @@ header .logo a:hover {
   border-radius: 5px;
 }
 
+/* FOOTER */
 footer {
   background-color: #003366;
   color: #BFECFF;
