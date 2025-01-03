@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <title>Studio Legale Lo Foco - Studio Legale</title>
   <meta name="description" content="Studio Legale Lo Foco: consulenza legale specializzata in diritto d’autore, diritto amministrativo e progetti culturali a Roma." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <!-- Blocco dello zoom (ATTENZIONE all’accessibilità) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
@@ -32,13 +33,14 @@
       </h1>
     </div>
 
-    <!-- Hamburger menu -->
+    <!-- Hamburger menu (mobile) -->
     <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
+    <!-- Navigazione principale -->
     <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
       <ul>
         <li><a href="#chi-siamo">Chi Siamo</a></li>
@@ -72,11 +74,10 @@
     </p>
   </section>
 
-  <!-- SERVIZI (con effetto "accordion") -->
+  <!-- SERVIZI (con esempio di accordion opzionale) -->
   <section id="servizi" class="section-container" aria-labelledby="servizi-title">
     <h2 id="servizi-title">Servizi</h2>
 
-    <!-- Box accordion singolo -->
     <div class="accordion-item">
       <button class="accordion-header" aria-expanded="false">
         Proprietà intellettuale e diritto d’autore
@@ -139,7 +140,7 @@
           id="nome" 
           name="nome" 
           placeholder="Inserisci il tuo nome" 
-          required 
+          required
         />
       </div>
 
@@ -150,7 +151,7 @@
           id="email" 
           name="email" 
           placeholder="Inserisci la tua email" 
-          required 
+          required
         />
       </div>
 
@@ -165,12 +166,11 @@
         ></textarea>
       </div>
 
-      <!-- Sezione Privacy e Termini -->
       <div class="form-row check-row">
         <input 
           type="checkbox" 
           id="privacy" 
-          name="privacy" 
+          name="privacy"
         />
         <label for="privacy">
           Dichiaro di aver letto e accettato la
