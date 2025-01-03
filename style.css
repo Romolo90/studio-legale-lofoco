@@ -140,6 +140,58 @@ p {
   font-size: 1.3rem;
   margin-bottom: 2rem;
 }
+/* Pulsante "Contattaci ora" con gradiente e animazione */
+.btn-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #0066CC, #004766);
+  color: #BFECFF;
+  padding: 0.9rem 1.6rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-cta span {
+  margin-right: 0.5rem;
+}
+
+.btn-cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.btn-cta:hover:before {
+  opacity: 1;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(90deg, #004766, #002244);
+  transform: translateY(-2px);
+}
+
+.btn-cta svg {
+  fill: #BFECFF;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.btn-cta:hover svg {
+  transform: scale(1.1);
+}
 
 /* ========================================
    SEZIONI GENERICHE
