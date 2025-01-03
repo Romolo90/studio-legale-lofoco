@@ -22,6 +22,17 @@ body {
   font-size: 1.2rem;
 }
 
+/* -------------------------------
+   Link di base
+--------------------------------- */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------------------
+   LISTE E PARAGRAFI
+--------------------------------- */
 ul {
   list-style: disc;
   margin-left: 2rem;
@@ -37,73 +48,58 @@ p {
 }
 
 /* ========================================
-   HEADER
+   HEADER + NAV
 ======================================== */
-header {
+.header {
   background-color: #003366;
-  padding: 2rem 1.5rem;
-  color: #BFECFF;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  /* Permette al contenuto di andare a capo su mobile */
-  flex-wrap: wrap;
+  position: relative;
 }
 
-header .logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  /* Se il testo è troppo lungo, si va a capo */
-  flex-wrap: wrap;
+.logo h1 {
+  font-size: 1.8rem;
+  color: #BFECFF;
+  white-space: nowrap;
 }
 
-header .logo h1 {
-  font-size: 2.2rem; 
-  font-weight: 600;
-  color: inherit;
-  white-space: normal; /* Permette il testo di andare a capo */
+.hamburger {
+  display: none; /* Default nascosto su desktop */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #BFECFF;
 }
 
-header .logo a {
-  color: inherit;
-  text-decoration: none;
-}
-
-header .logo a:hover {
-  color: #80D9FF;
-}
-
-/* --- Menu principale --- */
+/* Menu Desktop */
 .main-nav ul {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
-  /* Impedisce che i link sforino su mobile. Diventano colonna sotto i 768px */
-  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .main-nav ul li a {
   color: #BFECFF;
-  text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
-
 .main-nav ul li a:hover {
   color: #80D9FF;
 }
 
 /* ========================================
-   SEZIONE HERO
+   HERO
 ======================================== */
 .hero {
   position: relative;
-  height: 75vh;
-  background: 
-    url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') 
+  height: 70vh;
+  background:
+    url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
     center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -123,63 +119,23 @@ header .logo a:hover {
   position: relative;
   color: #BFECFF;
   text-align: center;
-  max-width: 800px;
   z-index: 1;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+  max-width: 800px;
 }
 
 .hero-content h2 {
-  font-size: 3.2rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
-
 .hero-content p {
   font-size: 1.3rem;
   margin-bottom: 2rem;
 }
 
 /* ========================================
-   MEDIA QUERIES
-======================================== */
-@media (max-width: 768px) {
-  body {
-    font-size: 1.1rem;
-  }
-  .hero {
-    height: auto; /* Se su mobile lo schermo è troppo piccolo */
-    padding: 2rem 0;
-  }
-  .hero-content h2 {
-    font-size: 2.3rem;
-  }
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-}
-
-/* ========================================
-   BOTTONI
-======================================== */
-.btn-cta {
-  background-color: #004766;
-  color: #BFECFF;
-  padding: 0.9rem 1.6rem;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
-}
-
-.btn-cta:hover {
-  background-color: #003247;
-  cursor: pointer;
-}
-
-/* ========================================
-   SEZIONI GENERICHE
+   SEZIONI
 ======================================== */
 .section-container {
   max-width: 1200px;
@@ -194,13 +150,53 @@ header .logo a:hover {
   color: #003366;
 }
 
-.section-container p {
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
+/* ========================================
+   ACCORDION
+======================================== */
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid #80D9FF;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.accordion-header {
+  background-color: #004766;
+  color: #BFECFF;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.accordion-header:hover {
+  background-color: #003247;
+}
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background-color: #BFECFF;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  padding: 0 1rem;
+}
+.accordion-content p {
+  padding: 1rem 0;
+  margin: 0;
+}
+
+/* Lo stato "aperto" */
+.accordion-header[aria-expanded="true"] + .accordion-content {
+  visibility: visible;
+  opacity: 1;
+  max-height: 200px; /* o un valore “adeguato” che sia sufficiente */
 }
 
 /* ========================================
-   FORM DI CONTATTO
+   FORM
 ======================================== */
 .contact-form {
   background-color: #BFECFF;
@@ -213,11 +209,6 @@ header .logo a:hover {
   gap: 1.5rem;
 }
 
-.contact-form .form-row {
-  display: flex;
-  flex-direction: column;
-}
-
 .contact-form label {
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -226,11 +217,11 @@ header .logo a:hover {
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.9rem;
+  width: 100%;
+  padding: 0.8rem;
   border: 1px solid #80D9FF;
   border-radius: 5px;
   font: inherit;
-  width: 100%;
 }
 
 .contact-form input:focus,
@@ -241,6 +232,18 @@ header .logo a:hover {
 
 .contact-form button {
   width: 100%;
+  background-color: #004766;
+  color: #BFECFF;
+  border: none;
+  border-radius: 5px;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.contact-form button:hover {
+  background-color: #003247;
+  cursor: pointer;
 }
 
 /* ========================================
@@ -249,7 +252,6 @@ header .logo a:hover {
 .map-container {
   margin-top: 2.5rem;
 }
-
 .map-container iframe {
   width: 100%;
   border: 2px solid #80D9FF;
@@ -268,19 +270,92 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
-
 .footer-note {
   margin-top: 1rem;
   font-size: 1rem;
 }
-
 .footer-note a {
   color: #80D9FF;
   text-decoration: none;
   font-weight: 600;
 }
-
 .footer-note a:hover {
   color: #BFECFF;
   text-decoration: underline;
+}
+
+/* ========================================
+   TASTO SCROLL TOP
+======================================== */
+#scrollToTop {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background-color: #004766;
+  color: #BFECFF;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#scrollToTop:hover {
+  background-color: #003247;
+}
+
+/* ========================================
+   MEDIA QUERIES
+======================================== */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hamburger {
+    display: flex; /* Mostra hamburger su mobile */
+  }
+
+  /* Nascondi nav di default su mobile */
+  .main-nav {
+    position: absolute;
+    top: 70px; /* appena sotto l’header */
+    right: 0;
+    width: 200px;
+    background-color: #003366;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  .main-nav.active {
+    transform: translateX(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+  .hero-content h2 {
+    font-size: 2.3rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
 }
