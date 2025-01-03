@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Studio Legale Lo Foco - Studio Legale</title>
+  <meta name="description" content="Studio Legale Lo Foco: consulenza legale specializzata in diritto d’autore, diritto amministrativo e progetti culturali a Roma." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts (consiglio di aggiungere "display=swap" per migliorare la performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link 
-  href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" 
-  rel="stylesheet"
-/>
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" 
+    rel="stylesheet"
+  />
 
   <!-- Foglio di stile -->
   <link rel="stylesheet" href="style.css" />
@@ -22,29 +23,47 @@
 <body>
 
   <!-- HEADER -->
- <header>
-  <div class="logo">
-    <h1 class="home-link"><a href="index.html" class="logo-link">Studio Legale Lo Foco</a></h1>
-  </div>
-  <nav class="main-nav">
-    <div class="hamburger-menu" id="hamburgerMenu" aria-label="Menu di navigazione">
-      <span></span>
-      <span></span>
-      <span></span>
+  <header>
+    <div class="logo">
+      <!-- 
+        L’elemento <h1> con un link verso la homepage è ottimo per l’accessibilità. 
+        Ho aggiunto un aria-label per maggiore chiarezza, se lo desideri. 
+      -->
+      <h1 class="home-link">
+        <a href="index.html" class="logo-link" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      </h1>
     </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#chi-siamo">Chi Siamo</a></li>
-      <li><a href="#servizi">Servizi</a></li>
-      <li><a href="notizie.html">Ultime Notizie</a></li>
-      <li><a href="#contatti">Contatti</a></li>
-      <li><a href="area-clienti.html">Area Clienti</a></li>
-    </ul>
-  </nav>
-</header>
+
+    <nav class="main-nav" aria-label="Menu Principale">
+      <!-- 
+        Ho aggiunto aria-controls e aria-expanded per una migliore accessibilità 
+        dello screen reader, indicando il controllo e lo stato di apertura/chiusura del menu 
+      -->
+      <button 
+        class="hamburger-menu" 
+        id="hamburgerMenu" 
+        aria-label="Menu di navigazione" 
+        aria-controls="navLinks" 
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#chi-siamo">Chi Siamo</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="notizie.html">Ultime Notizie</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="area-clienti.html">Area Clienti</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- HERO con CTA -->
   <section class="hero">
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <h2>Studio Legale Lo Foco</h2>
       <p>Consulenza legale specializzata in diritto d’autore, diritto amministrativo e progetti culturali.</p>
@@ -53,19 +72,20 @@
   </section>
 
   <!-- CHI SIAMO -->
- <section id="chi-siamo" class="section-container">
-    <h2>Chi Siamo</h2>
+  <section id="chi-siamo" class="section-container" aria-labelledby="chi-siamo-title">
+    <h2 id="chi-siamo-title">Chi Siamo</h2>
     <p>
       Lo Studio Legale Lo Foco si distingue per l’approccio multidisciplinare e l’elevata professionalità.
-      Fondato su solide competenze in diritto d’autore, amministrativo e commerciale, offre soluzioni innovative e personalizzate
-      per affrontare le sfide di un mercato in continua evoluzione. Con sede a Roma e un focus sul settore cinematografico e audiovisivo,
-      lo Studio è un partner di riferimento per imprese e professionisti operanti nei settori creativi e culturali.
+      Fondato su solide competenze in diritto d’autore, amministrativo e commerciale, offre soluzioni innovative
+      e personalizzate per affrontare le sfide di un mercato in continua evoluzione. Con sede a Roma e un focus
+      sul settore cinematografico e audiovisivo, lo Studio è un partner di riferimento per imprese e professionisti
+      operanti nei settori creativi e culturali.
     </p>
   </section>
 
   <!-- SERVIZI -->
-  <section id="servizi" class="section-container">
-    <h2>Servizi</h2>
+  <section id="servizi" class="section-container" aria-labelledby="servizi-title">
+    <h2 id="servizi-title">Servizi</h2>
     <ul>
       <li>
         <strong>Proprietà intellettuale e diritto d’autore:</strong>
@@ -85,41 +105,87 @@
   </section>
 
   <!-- CONTATTI -->
-  <section id="contatti" class="section-container">
-    <h2>Contatti</h2>
+  <section id="contatti" class="section-container" aria-labelledby="contatti-title">
+    <h2 id="contatti-title">Contatti</h2>
     <p class="intro-contact">
-      Per qualsiasi richiesta o per fissare un appuntamento, contattaci direttamente tramite telefono o email, oppure compila il modulo sottostante.
+      Per qualsiasi richiesta o per fissare un appuntamento, contattaci direttamente tramite telefono o email,
+      oppure compila il modulo sottostante.
     </p>
 
     <div class="contact-info">
       <p><strong>Indirizzo:</strong> Via Boezio, 2/A - 00193, Roma</p>
-      <p><strong>Email:</strong> <a href="mailto:studiolegalelofoco@icloud.com">studiolegalelofoco@icloud.com</a></p>
+      <p>
+        <strong>Email:</strong> 
+        <a href="mailto:studiolegalelofoco@icloud.com">studiolegalelofoco@icloud.com</a>
+      </p>
       <p><strong>Telefono:</strong> +39 06 3201820</p>
     </div>
 
     <!-- Modulo di contatto -->
-    <form class="contact-form" action="https://formspree.io/f/mgvvkobk" method="POST">
+    <form 
+      class="contact-form" 
+      action="https://formspree.io/f/mgvvkobk" 
+      method="POST"
+      aria-describedby="privacy-info"
+    >
       <div class="form-row">
         <label for="nome">Nome e Cognome</label>
-        <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required title="Inserisci il tuo nome completo">
-      </div>
-      <div class="form-row">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required title="Inserisci un'email valida">
-      </div>
-      <div class="form-row">
-        <label for="messaggio">Messaggio</label>
-        <textarea id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
+        <input 
+          type="text" 
+          id="nome" 
+          name="nome" 
+          placeholder="Inserisci il tuo nome" 
+          required 
+          title="Inserisci il tuo nome completo"
+        />
       </div>
 
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Inserisci la tua email" 
+          required 
+          title="Inserisci un'email valida"
+        />
+      </div>
+
+      <div class="form-row">
+        <label for="messaggio">Messaggio</label>
+        <textarea 
+          id="messaggio" 
+          name="messaggio" 
+          rows="5" 
+          placeholder="Descrivi la tua richiesta" 
+          required
+        ></textarea>
+      </div>
+
+      <!-- Sezione Privacy e Termini -->
       <div class="form-row check-row">
-        <input type="checkbox" id="privacy" name="privacy" disabled />
+        <input 
+          type="checkbox" 
+          id="privacy" 
+          name="privacy" 
+          disabled 
+          aria-describedby="privacy-info"
+        />
         <label for="privacy">
           Dichiaro di aver letto e accettato la 
-          <a href="privacy.html" target="_blank" onclick="enableCheckbox()">Privacy Policy</a> e i 
+          <a href="privacy.html" target="_blank" onclick="enableCheckbox()">Privacy Policy</a>
+          e i 
           <a href="terms.html" target="_blank" onclick="enableCheckbox()">Termini di Servizio</a>.
         </label>
       </div>
+      <!-- 
+        Spesso si usa un testo nascosto o un tooltip per spiegare perché la checkbox è disabilitata finché 
+        non si visitano i link. Si potrebbe implementare in JavaScript o mostrare un messaggio.
+      -->
+      <p id="privacy-info" style="display:none;">
+        Per abilitare la casella, apri e leggi la Privacy Policy e i Termini di Servizio.
+      </p>
 
       <button type="submit" class="btn-cta">Invia Richiesta</button>
     </form>
@@ -129,8 +195,14 @@
   <div class="map-container">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5938.688754514278!2d12.464792375583666!3d41.906955063607775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605928b4960d%3A0xe68ff98c0fbfcb3d!2sVia%20Boezio%2C%202a%2C%2000193%20Roma%20RM!5e0!3m2!1sen!2sit!4v1735326075333!5m2!1sen!2sit"
-      width="600" height="450" style="border:0;" allowfullscreen=""
-      loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      width="600" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"
+      aria-label="Mappa della sede dello Studio Legale Lo Foco"
+    >
     </iframe>
   </div>
 
@@ -144,7 +216,17 @@
   </footer>
 
   <!-- Pulsante Torna su -->
-  <button id="scrollToTop" onclick="scrollToTop()">&#8593;</button>
+  <!-- 
+    Assicurati di avere un CSS che lo posizioni in basso a destra o in un punto comodo.
+    Aggiungi attributi di accessibilità come aria-label.
+  -->
+  <button 
+    id="scrollToTop" 
+    onclick="scrollToTop()" 
+    aria-label="Torna all'inizio della pagina"
+  >
+    &#8593;
+  </button>
 
   <!-- Collegamento al file JavaScript -->
   <script src="script.js"></script>
