@@ -6,32 +6,41 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html, body {
   width: 100%;
   height: 100%;
 }
 
-/* Evita lo scroll orizzontale */
+/* ========================================
+   STILE GENERALE
+======================================== */
 body {
-  overflow-x: hidden;
   font-family: 'EB Garamond', serif;
   background-color: #BFECFF;
   color: #003247;
   line-height: 1.8;
   font-size: 1.2rem;
+  overflow-x: hidden; /* Evita scroll orizzontale */
 }
 
-/* Link e testi di base */
+/* -----------------------------------------
+   ELEMENTI DI BASE
+------------------------------------------ */
 a {
   text-decoration: none;
   color: inherit;
 }
+
 ul {
   list-style: disc;
   margin-left: 2rem;
   margin-bottom: 1.5rem;
 }
+
+li {
+  margin-bottom: 0.75rem;
+}
+
 p {
   margin-bottom: 1.5rem;
 }
@@ -51,17 +60,16 @@ p {
 .logo h1 {
   font-size: 1.8rem;
   color: #BFECFF;
-  white-space: nowrap; /* NON manda a capo: "Studio Legale Lo Foco" */
+  white-space: nowrap;
 }
 
 .hamburger {
-  display: none; /* Mostrato solo in mobile */
+  display: none; /* Default: nascosto su desktop */
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
   z-index: 9999;
 }
-
 .hamburger span {
   width: 25px;
   height: 3px;
@@ -73,7 +81,6 @@ p {
   display: flex;
   align-items: center;
 }
-
 .main-nav ul {
   display: flex;
   gap: 2rem;
@@ -88,7 +95,7 @@ p {
 }
 
 /* ========================================
-   SEZIONE HERO (solo su index.html)
+   HERO
 ======================================== */
 .hero {
   position: relative;
@@ -118,6 +125,7 @@ p {
   padding: 0 1rem;
   max-width: 800px;
 }
+
 .hero-content h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -144,45 +152,85 @@ p {
   color: #003366;
 }
 
-/* ================================
-   FORM GENERICO
-================================= */
-.login-form {
+/* ========================================
+   ACCORDION (SERVIZI)
+======================================== */
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid #80D9FF;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #004766;
+  color: #BFECFF;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.accordion-header:hover {
+  background-color: #003247;
+}
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background-color: #BFECFF;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  padding: 0 1rem;
+}
+.accordion-content p {
+  padding: 1rem 0;
+  margin: 0;
+}
+/* Stato "aperto" */
+.accordion-header[aria-expanded="true"] + .accordion-content {
+  visibility: visible;
+  opacity: 1;
+  max-height: 200px; 
+}
+
+/* ========================================
+   FORM DI CONTATTO
+======================================== */
+.contact-form {
   background-color: #BFECFF;
   padding: 2rem;
   border: 1px solid #80D9FF;
   border-radius: 5px;
+  margin-top: 2.5rem;
   box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
-  max-width: 500px;
-  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
 }
 
-.login-form .form-row {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-.login-form label {
+.contact-form label {
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #003247;
 }
-.login-form input {
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
   padding: 0.8rem;
   border: 1px solid #80D9FF;
   border-radius: 5px;
   font: inherit;
 }
-
-.login-form input:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   border-color: #004766;
   outline: none;
 }
-
-/* ========================================
-   BOTTONI
-======================================== */
-.btn-cta {
+.contact-form button {
+  width: 100%;
   background-color: #004766;
   color: #BFECFF;
   border: none;
@@ -191,10 +239,22 @@ p {
   font-size: 1.1rem;
   font-weight: 600;
   transition: background-color 0.3s ease;
+}
+.contact-form button:hover {
+  background-color: #003247;
   cursor: pointer;
 }
-.btn-cta:hover {
-  background-color: #003247;
+
+/* ========================================
+   MAPPA
+======================================== */
+.map-container {
+  margin-top: 2.5rem;
+}
+.map-container iframe {
+  width: 100%;
+  border: 2px solid #80D9FF;
+  border-radius: 5px;
 }
 
 /* ========================================
@@ -224,13 +284,50 @@ footer {
 }
 
 /* ========================================
-   MENU MOBILE (off-canvas)
+   TASTO SCROLL TOP
+======================================== */
+#scrollToTop {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background-color: #004766;
+  color: #BFECFF;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#scrollToTop:hover {
+  background-color: #003247;
+}
+
+/* ========================================
+   MEDIA QUERIES
 ======================================== */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+  body {
+    font-size: 1.1rem;
   }
 
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .logo h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    white-space: normal; /* Consenti di andare a capo */
+  }
+
+  .hamburger {
+    display: flex; /* Mostra hamburger su mobile */
+  }
+
+  /* Menu mobile off-canvas */
   .main-nav {
     position: fixed;
     top: 0;
@@ -256,23 +353,7 @@ footer {
     gap: 1rem;
     width: 100%;
   }
-}
 
-/* ========================================
-   RESPONSIVE TWEAKS
-======================================== */
-@media (max-width: 768px) {
-  body {
-    font-size: 1.1rem;
-  }
-
-  .header {
-    flex-wrap: wrap;
-  }
-
-  /* Il testo "Studio Legale Lo Foco" rimane su un'unica riga
-     grazie a white-space: nowrap; in .logo h1 */
-  
   .hero {
     height: auto;
     padding: 3rem 1rem;
