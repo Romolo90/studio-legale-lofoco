@@ -62,6 +62,17 @@ header .logo h1 {
   color: #80D9FF;
 }
 
+.home-link {
+  color: inherit; /* Mantiene il colore del testo */
+  text-decoration: none; /* Rimuove la sottolineatura */
+  font-weight: inherit; /* Mantiene il peso del font */
+}
+
+.home-link:hover {
+  text-decoration: underline; /* Sottolinea al passaggio del mouse */
+  color: #80D9FF; /* Cambia colore al passaggio */
+}
+
 /* MENU A FINESTRA */
 .hamburger-menu {
   display: none;
