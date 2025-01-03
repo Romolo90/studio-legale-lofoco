@@ -81,3 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', handleFormSubmit);
   }
 });
+// Selettori per l’hamburger menu
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const mainNav = document.getElementById('mainNav');
+
+// Mostra/Nasconde il menu su mobile
+if (hamburgerMenu && mainNav) {
+  hamburgerMenu.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+  });
+
+  // Chiudi menu al click su un link
+  const navLinks = mainNav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('active');
+    });
+  });
+}
