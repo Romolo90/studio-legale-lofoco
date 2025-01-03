@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- Google Fonts (consiglio di aggiungere "display=swap" per migliorare la performance) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link 
@@ -25,33 +25,12 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <!-- 
-        L’elemento <h1> con un link verso la homepage è ottimo per l’accessibilità. 
-        Ho aggiunto un aria-label per maggiore chiarezza, se lo desideri. 
-      -->
       <h1 class="home-link">
         <a href="index.html" class="logo-link" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
       </h1>
     </div>
-
     <nav class="main-nav" aria-label="Menu Principale">
-      <!-- 
-        Ho aggiunto aria-controls e aria-expanded per una migliore accessibilità 
-        dello screen reader, indicando il controllo e lo stato di apertura/chiusura del menu 
-      -->
-      <button 
-        class="hamburger-menu" 
-        id="hamburgerMenu" 
-        aria-label="Menu di navigazione" 
-        aria-controls="navLinks" 
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav-links" id="navLinks">
+      <ul>
         <li><a href="#chi-siamo">Chi Siamo</a></li>
         <li><a href="#servizi">Servizi</a></li>
         <li><a href="notizie.html">Ultime Notizie</a></li>
@@ -107,7 +86,7 @@
   <!-- CONTATTI -->
   <section id="contatti" class="section-container" aria-labelledby="contatti-title">
     <h2 id="contatti-title">Contatti</h2>
-    <p class="intro-contact">
+    <p>
       Per qualsiasi richiesta o per fissare un appuntamento, contattaci direttamente tramite telefono o email,
       oppure compila il modulo sottostante.
     </p>
@@ -122,12 +101,7 @@
     </div>
 
     <!-- Modulo di contatto -->
-    <form 
-      class="contact-form" 
-      action="https://formspree.io/f/mgvvkobk" 
-      method="POST"
-      aria-describedby="privacy-info"
-    >
+    <form class="contact-form" action="https://formspree.io/f/mgvvkobk" method="POST">
       <div class="form-row">
         <label for="nome">Nome e Cognome</label>
         <input 
@@ -170,24 +144,15 @@
           id="privacy" 
           name="privacy" 
           disabled 
-          aria-describedby="privacy-info"
         />
         <label for="privacy">
           Dichiaro di aver letto e accettato la 
-          <a href="privacy.html" target="_blank" onclick="enableCheckbox()">Privacy Policy</a>
-          e i 
-          <a href="terms.html" target="_blank" onclick="enableCheckbox()">Termini di Servizio</a>.
+          <a href="privacy.html" target="_blank" onclick="handlePrivacyClick()">Privacy Policy</a> e i 
+          <a href="terms.html" target="_blank" onclick="handleTermsClick()">Termini di Servizio</a>.
         </label>
       </div>
-      <!-- 
-        Spesso si usa un testo nascosto o un tooltip per spiegare perché la checkbox è disabilitata finché 
-        non si visitano i link. Si potrebbe implementare in JavaScript o mostrare un messaggio.
-      -->
-      <p id="privacy-info" style="display:none;">
-        Per abilitare la casella, apri e leggi la Privacy Policy e i Termini di Servizio.
-      </p>
 
-      <button type="submit" class="btn-cta">Invia Richiesta</button>
+      <button type="submit" class="btn-cta" id="submitButton" disabled>Invia Richiesta</button>
     </form>
   </section>
 
@@ -200,7 +165,6 @@
       style="border:0;" 
       allowfullscreen="" 
       loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade"
       aria-label="Mappa della sede dello Studio Legale Lo Foco"
     >
     </iframe>
@@ -214,19 +178,6 @@
       <a href="terms.html">Termini di Servizio</a>
     </p>
   </footer>
-
-  <!-- Pulsante Torna su -->
-  <!-- 
-    Assicurati di avere un CSS che lo posizioni in basso a destra o in un punto comodo.
-    Aggiungi attributi di accessibilità come aria-label.
-  -->
-  <button 
-    id="scrollToTop" 
-    onclick="scrollToTop()" 
-    aria-label="Torna all'inizio della pagina"
-  >
-    &#8593;
-  </button>
 
   <!-- Collegamento al file JavaScript -->
   <script src="script.js"></script>
