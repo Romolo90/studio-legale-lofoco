@@ -1,23 +1,19 @@
 // ======== Riferimenti agli elementi ========
-
-// Hamburger menu per mobile
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const mainNav = document.getElementById('mainNav');
 
-// Pulsante torna su
 const scrollToTopBtn = document.getElementById('scrollToTop');
-
-// Checkbox privacy e pulsante submit
-const privacyCheckbox = document.getElementById('privacy');
-const submitButton = document.getElementById('submitButton');
 
 // Accordion (sezione servizi)
 const accordionHeaders = document.querySelectorAll('.accordion-header');
 
+// Checkbox privacy e pulsante invio
+const privacyCheckbox = document.getElementById('privacy');
+const submitButton = document.getElementById('submitButton');
 
 // ======== Funzioni ========
 
-// Mostra/nasconde menu mobile
+// Toggle menu mobile
 function toggleMenu() {
   mainNav.classList.toggle('active');
 }
@@ -32,20 +28,7 @@ function handleScroll() {
   scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
 }
 
-// Funzione accordion
-function toggleAccordion() {
-  const isExpanded = this.getAttribute('aria-expanded') === 'true';
-  // Chiudi tutti gli accordion prima
-  accordionHeaders.forEach(header => {
-    header.setAttribute('aria-expanded', 'false');
-  });
-  // Se era chiuso, apri l’accordion cliccato
-  if (!isExpanded) {
-    this.setAttribute('aria-expanded', 'true');
-  }
-}
-
-// Disabilita invio del form se la checkbox non è spuntata
+// Controllo form: se la checkbox non è selezionata, blocca l’invio
 function handleFormSubmit(e) {
   if (!privacyCheckbox.checked) {
     e.preventDefault();
@@ -53,33 +36,46 @@ function handleFormSubmit(e) {
   }
 }
 
-
-// ======== Event Listener ========
-
-// Apertura/chiusura menu
-if (hamburgerMenu) {
-  hamburgerMenu.addEventListener('click', toggleMenu);
+// Accordion
+function toggleAccordion() {
+  const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  
+  // Chiudi tutti gli accordion prima
+  accordionHeaders.forEach(header => {
+    header.setAttribute('aria-expanded', 'false');
+  });
+  
+  // Se era chiuso, apri l’accordion cliccato
+  if (!isExpanded) {
+    this.setAttribute('aria-expanded', 'true');
+  }
 }
 
-// Link nav: chiudi menu al click su mobile
-const navLinks = mainNav.querySelectorAll('a');
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    mainNav.classList.remove('active');
-  });
-});
-
-// Scroll
-window.addEventListener('scroll', handleScroll);
-scrollToTopBtn.addEventListener('click', scrollToTop);
-
-// Accordion
-accordionHeaders.forEach(header => {
-  header.addEventListener('click', toggleAccordion);
-});
-
-// Controllo form
+// ======== Event Listener ========
 document.addEventListener('DOMContentLoaded', () => {
+  // Evento click sul pulsante hamburger
+  if (hamburgerMenu && mainNav) {
+    hamburgerMenu.addEventListener('click', toggleMenu);
+
+    // Chiude il menu quando si clicca su un link
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+      });
+    });
+  }
+
+  // Pulsante "Torna su"
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+
+  // Accordion
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', toggleAccordion);
+  });
+
+  // Controllo form
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', handleFormSubmit);
