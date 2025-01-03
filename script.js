@@ -1,13 +1,12 @@
 // ======== Riferimenti agli elementi ========
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const mainNav = document.getElementById('mainNav');
-
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
 // Accordion (sezione servizi)
 const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-// Checkbox privacy e pulsante invio
+// Checkbox privacy e pulsante invio (se presenti nella pagina)
 const privacyCheckbox = document.getElementById('privacy');
 const submitButton = document.getElementById('submitButton');
 
@@ -25,12 +24,13 @@ function scrollToTop() {
 
 // Mostra o nasconde il pulsante "Torna su"
 function handleScroll() {
+  if (!scrollToTopBtn) return;
   scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
 }
 
 // Controllo form: se la checkbox non è selezionata, blocca l’invio
 function handleFormSubmit(e) {
-  if (!privacyCheckbox.checked) {
+  if (privacyCheckbox && !privacyCheckbox.checked) {
     e.preventDefault();
     alert('Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.');
   }
@@ -53,7 +53,8 @@ function toggleAccordion() {
 
 // ======== Event Listener ========
 document.addEventListener('DOMContentLoaded', () => {
-  // Evento click sul pulsante hamburger
+  
+  // Evento click sul pulsante hamburger (mobile)
   if (hamburgerMenu && mainNav) {
     hamburgerMenu.addEventListener('click', toggleMenu);
 
@@ -67,35 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Pulsante "Torna su"
-  window.addEventListener('scroll', handleScroll);
-  scrollToTopBtn.addEventListener('click', scrollToTop);
+  // (se esiste in questa pagina)
+  if (scrollToTopBtn) {
+    window.addEventListener('scroll', handleScroll);
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+  }
 
-  // Accordion
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', toggleAccordion);
-  });
+  // Accordion (se presente)
+  if (accordionHeaders.length > 0) {
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', toggleAccordion);
+    });
+  }
 
-  // Controllo form
+  // Controllo form (se presente)
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', handleFormSubmit);
   }
 });
-// Selettori per l’hamburger menu
-const hamburgerMenu = document.getElementById('hamburgerMenu');
-const mainNav = document.getElementById('mainNav');
-
-// Mostra/Nasconde il menu su mobile
-if (hamburgerMenu && mainNav) {
-  hamburgerMenu.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-  });
-
-  // Chiudi menu al click su un link
-  const navLinks = mainNav.querySelectorAll('a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('active');
-    });
-  });
-}
