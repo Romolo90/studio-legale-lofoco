@@ -20,19 +20,17 @@ body {
   color: #003247;
   line-height: 1.8;
   font-size: 1.2rem;
+  overflow-x: hidden; /* Evita scroll orizzontale */
 }
 
-/* -------------------------------
-   Link di base
---------------------------------- */
+/* -----------------------------------------
+   ELEMENTI DI BASE
+------------------------------------------ */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* -------------------------------
-   LISTE E PARAGRAFI
---------------------------------- */
 ul {
   list-style: disc;
   margin-left: 2rem;
@@ -48,7 +46,7 @@ p {
 }
 
 /* ========================================
-   HEADER + NAV
+   HEADER
 ======================================== */
 .header {
   background-color: #003366;
@@ -66,10 +64,11 @@ p {
 }
 
 .hamburger {
-  display: none; /* Default nascosto su desktop */
+  display: none; /* Default: nascosto su desktop */
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 9999;
 }
 .hamburger span {
   width: 25px;
@@ -78,11 +77,14 @@ p {
 }
 
 /* Menu Desktop */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
 .main-nav ul {
   display: flex;
   gap: 2rem;
 }
-
 .main-nav ul li a {
   color: #BFECFF;
   font-weight: 600;
@@ -135,7 +137,7 @@ p {
 }
 
 /* ========================================
-   SEZIONI
+   SEZIONI GENERICHE
 ======================================== */
 .section-container {
   max-width: 1200px;
@@ -151,7 +153,7 @@ p {
 }
 
 /* ========================================
-   ACCORDION
+   ACCORDION (SERVIZI)
 ======================================== */
 .accordion-item {
   margin-bottom: 1rem;
@@ -159,6 +161,7 @@ p {
   border-radius: 5px;
   overflow: hidden;
 }
+
 .accordion-header {
   background-color: #004766;
   color: #BFECFF;
@@ -187,16 +190,15 @@ p {
   padding: 1rem 0;
   margin: 0;
 }
-
-/* Lo stato "aperto" */
+/* Stato "aperto" */
 .accordion-header[aria-expanded="true"] + .accordion-content {
   visibility: visible;
   opacity: 1;
-  max-height: 200px; /* o un valore “adeguato” che sia sufficiente */
+  max-height: 200px; 
 }
 
 /* ========================================
-   FORM
+   FORM DI CONTATTO
 ======================================== */
 .contact-form {
   background-color: #BFECFF;
@@ -214,7 +216,6 @@ p {
   margin-bottom: 0.5rem;
   color: #003247;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -223,13 +224,11 @@ p {
   border-radius: 5px;
   font: inherit;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #004766;
   outline: none;
 }
-
 .contact-form button {
   width: 100%;
   background-color: #004766;
@@ -318,34 +317,41 @@ footer {
     flex-wrap: wrap;
     padding: 1rem;
   }
-  
   .logo h1 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    white-space: normal; /* Consenti di andare a capo */
   }
 
   .hamburger {
     display: flex; /* Mostra hamburger su mobile */
   }
 
-  /* Nascondi nav di default su mobile */
+  /* Menu mobile off-canvas */
   .main-nav {
-    position: absolute;
-    top: 70px; /* appena sotto l’header */
+    position: fixed;
+    top: 0;
     right: 0;
-    width: 200px;
+    width: 70vw;
+    height: 100vh;
     background-color: #003366;
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    z-index: 9998;
   }
   .main-nav.active {
     transform: translateX(0);
   }
-
   .main-nav ul {
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    width: 100%;
   }
 
   .hero {
