@@ -26,9 +26,12 @@
   <header>
     <div class="logo">
       <h1 class="home-link">
-        <a href="index.html" class="logo-link" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+        <a href="index.html" class="logo-link" aria-label="Homepage Studio Legale Lo Foco">
+          Studio Legale Lo Foco
+        </a>
       </h1>
     </div>
+
     <nav class="main-nav" aria-label="Menu Principale">
       <ul>
         <li><a href="#chi-siamo">Chi Siamo</a></li>
@@ -147,12 +150,19 @@
         />
         <label for="privacy">
           Dichiaro di aver letto e accettato la 
-          <a href="privacy.html" target="_blank" onclick="handlePrivacyClick()">Privacy Policy</a> e i 
-          <a href="terms.html" target="_blank" onclick="handleTermsClick()">Termini di Servizio</a>.
+          <a href="privacy.html" target="_blank" onclick="enableCheckbox(event)">Privacy Policy</a> e i 
+          <a href="terms.html" target="_blank" onclick="enableCheckbox(event)">Termini di Servizio</a>.
         </label>
       </div>
 
-      <button type="submit" class="btn-cta" id="submitButton" disabled>Invia Richiesta</button>
+      <!-- Avviso: spiega perché la checkbox è disabilitata -->
+      <p id="privacyNotice" style="font-size: 0.9rem; color: #cc0000; margin-top: 0.5rem;">
+        La casella si abilita automaticamente dopo aver cliccato uno dei link sopra.
+      </p>
+
+      <button type="submit" class="btn-cta" id="submitButton" disabled>
+        Invia Richiesta
+      </button>
     </form>
   </section>
 
@@ -178,6 +188,16 @@
       <a href="terms.html">Termini di Servizio</a>
     </p>
   </footer>
+
+  <!-- Pulsante "Torna su" (opzionale) -->
+  <button 
+    id="scrollToTop" 
+    style="display: none;"
+    aria-label="Torna all'inizio della pagina"
+    onclick="scrollToTop()"
+  >
+    &#8593;
+  </button>
 
   <!-- Collegamento al file JavaScript -->
   <script src="script.js"></script>
