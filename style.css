@@ -235,6 +235,24 @@ p {
   color: #333333;
   line-height: 1.6;
 }
+.btn-details {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #004766;
+  color: #BFECFF;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-details:hover {
+  background-color: #003247;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
 
 /* ========================================
    SEZIONI GENERICHE
