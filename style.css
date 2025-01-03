@@ -264,6 +264,21 @@ header .logo h1 {
   width: 100%; /* Rende il bottone della stessa larghezza degli input */
 }
 
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-row input[type="checkbox"] {
+  margin: 0;
+}
+
+.check-row label {
+  font-size: 0.9rem;
+  color: #003247;
+}
+
 /* MAPPA */
 .map-container {
   margin-top: 2.5rem;
