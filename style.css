@@ -230,6 +230,13 @@ header .logo h1 {
   border-radius: 5px;
   margin-top: 2.5rem;
   box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
+  display: grid;
+  gap: 1rem; /* Spaziatura uniforme tra le righe */
+}
+
+.contact-form .form-row {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form label {
@@ -244,12 +251,17 @@ header .logo h1 {
   border: 1px solid #80D9FF;
   border-radius: 5px;
   font: inherit;
+  width: 100%; /* Assicura la larghezza uniforme */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #004766;
   outline: none;
+}
+
+.contact-form button {
+  width: 100%; /* Rende il bottone della stessa larghezza degli input */
 }
 
 /* MAPPA */
