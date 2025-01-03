@@ -58,9 +58,11 @@ p {
 }
 
 .logo h1 {
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Adeguata alla dimensione del layout mobile */
   color: #BFECFF;
-  white-space: nowrap;
+  white-space: nowrap; /* Mantiene il testo su una singola riga */
+  overflow: hidden; 
+  text-overflow: ellipsis; /* Evita problemi di layout */
 }
 
 .hamburger {
@@ -127,9 +129,12 @@ p {
 }
 
 .hero-content h2 {
-  font-size: 3rem;
+  font-size: 2.3rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  white-space: nowrap; /* Evita che il testo vada a capo */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Opzionale, aggiunge un effetto "..." se necessario */
 }
 .hero-content p {
   font-size: 1.3rem;
