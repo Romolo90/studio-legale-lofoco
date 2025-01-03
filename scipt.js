@@ -21,3 +21,17 @@ function scrollToTop() {
 hamburgerMenu.addEventListener('click', () => {
   navLinks.classList.toggle('nav-active');
 });
+let privacyClicked = false;
+let termsClicked = false;
+
+function enableCheckbox() {
+  if (event.target.href.includes("privacy.html")) {
+    privacyClicked = true;
+  } else if (event.target.href.includes("terms.html")) {
+    termsClicked = true;
+  }
+
+  if (privacyClicked && termsClicked) {
+    document.getElementById('privacy').disabled = false;
+  }
+}
