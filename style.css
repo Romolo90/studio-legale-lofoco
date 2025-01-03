@@ -18,13 +18,13 @@ body {
   font-family: 'EB Garamond', serif;
   background-color: #BFECFF;
   color: #003247;
-  line-height: 1.8; /* Aumentata per migliore leggibilità */
+  line-height: 1.8;
   font-size: 1.2rem;
 }
 
 ul {
   list-style: disc;
-  margin-left: 2rem; /* Allineamento corretto */
+  margin-left: 2rem;
   margin-bottom: 1.5rem;
 }
 
@@ -47,18 +47,23 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  /* Permette al contenuto di andare a capo su mobile */
+  flex-wrap: wrap;
 }
 
 header .logo {
   display: flex;
   align-items: center;
   gap: 1rem;
+  /* Se il testo è troppo lungo, si va a capo */
+  flex-wrap: wrap;
 }
 
 header .logo h1 {
   font-size: 2.2rem; 
   font-weight: 600;
   color: inherit;
+  white-space: normal; /* Permette il testo di andare a capo */
 }
 
 header .logo a {
@@ -75,6 +80,8 @@ header .logo a:hover {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  /* Impedisce che i link sforino su mobile. Diventano colonna sotto i 768px */
+  flex-wrap: wrap;
 }
 
 .main-nav ul li a {
@@ -95,8 +102,9 @@ header .logo a:hover {
 .hero {
   position: relative;
   height: 75vh;
-  background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') 
-              center/cover no-repeat;
+  background: 
+    url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') 
+    center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,12 +139,22 @@ header .logo a:hover {
   margin-bottom: 2rem;
 }
 
+/* ========================================
+   MEDIA QUERIES
+======================================== */
 @media (max-width: 768px) {
+  body {
+    font-size: 1.1rem;
+  }
+  .hero {
+    height: auto; /* Se su mobile lo schermo è troppo piccolo */
+    padding: 2rem 0;
+  }
   .hero-content h2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
   .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -170,7 +188,7 @@ header .logo a:hover {
 }
 
 .section-container h2 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
   color: #003366;
@@ -265,20 +283,4 @@ footer {
 .footer-note a:hover {
   color: #BFECFF;
   text-decoration: underline;
-}
-
-/* ========================================
-   MEDIA QUERIES
-======================================== */
-@media (max-width: 768px) {
-  body {
-    font-size: 1.1rem;
-  }
-  .main-nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .section-container {
-    padding: 0 1rem;
-  }
 }
