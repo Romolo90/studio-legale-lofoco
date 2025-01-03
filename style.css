@@ -192,6 +192,49 @@ p {
 .btn-cta:hover svg {
   transform: scale(1.1);
 }
+/* ========================================
+   SEZIONE PROFESSIONISTI
+======================================== */
+#professionisti {
+  background-color: #f5faff;
+  padding: 3rem 1.5rem;
+  border-top: 2px solid #80d9ff;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.team-member {
+  background-color: #ffffff;
+  border: 1px solid #80d9ff;
+  border-radius: 5px;
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.team-member h3 {
+  color: #003366;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.6;
+}
 
 /* ========================================
    SEZIONI GENERICHE
