@@ -111,13 +111,13 @@
   </div>
 
   <div class="form-row check-row">
-    <input type="checkbox" id="privacy" name="privacy" required />
-    <label for="privacy">
-      Dichiaro di aver letto e accettato la 
-      <a href="privacy.html" target="_blank">Privacy Policy</a> e i 
-      <a href="terms.html" target="_blank">Termini di Servizio</a>.
-    </label>
-  </div>
+  <input type="checkbox" id="privacy" name="privacy" disabled />
+  <label for="privacy">
+    Dichiaro di aver letto e accettato la 
+    <a href="privacy.html" target="_blank" onclick="enableCheckbox()">Privacy Policy</a> e i 
+    <a href="terms.html" target="_blank" onclick="enableCheckbox()">Termini di Servizio</a>.
+  </label>
+</div>
 
   <button type="submit" class="btn-cta">Invia Richiesta</button>
 </form>
