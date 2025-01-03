@@ -8,8 +8,7 @@
 }
 html, body {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100%;
 }
 
 /* ========================================
@@ -20,17 +19,17 @@ body {
   background-color: #BFECFF;
   color: #003247;
   line-height: 1.8; /* Aumentata per migliore leggibilità */
-  font-size: 1.2rem; /* Dimensione di base del testo */
+  font-size: 1.2rem;
 }
 
 ul {
   list-style: disc;
-  margin-left: 2rem; /* Corretto il margine per allineare l'elenco puntato */
+  margin-left: 2rem; /* Allineamento corretto */
   margin-bottom: 1.5rem;
 }
 
 li {
-  margin-bottom: 0.75rem; /* Spaziatura tra gli elementi dell'elenco */
+  margin-bottom: 0.75rem;
 }
 
 p {
@@ -57,10 +56,8 @@ header .logo {
 }
 
 header .logo h1 {
-  margin: 0;
-  font-size: 2.2rem; /* Dimensione leggermente aumentata */
+  font-size: 2.2rem; 
   font-weight: 600;
-  white-space: nowrap;
   color: inherit;
 }
 
@@ -70,7 +67,6 @@ header .logo a {
 }
 
 header .logo a:hover {
-  text-decoration: none;
   color: #80D9FF;
 }
 
@@ -85,18 +81,12 @@ header .logo a:hover {
   color: #BFECFF;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem; /* Uniformità di dimensione */
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
 .main-nav ul li a:hover {
   color: #80D9FF;
-}
-
-/* --- Semplificazione versione mobile: nascondere menu a tendina --- */
-.nav-links,
-.hamburger-menu {
-  display: none;
 }
 
 /* ========================================
@@ -131,13 +121,13 @@ header .logo a:hover {
 }
 
 .hero-content h2 {
-  font-size: 3.2rem; /* Aumentata la dimensione */
+  font-size: 3.2rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .hero-content p {
-  font-size: 1.3rem; /* Testo più leggibile */
+  font-size: 1.3rem;
   margin-bottom: 2rem;
 }
 
@@ -161,7 +151,7 @@ header .logo a:hover {
   border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem; /* Aumentata la dimensione */
+  font-size: 1.1rem;
   transition: background-color 0.3s ease;
 }
 
@@ -176,11 +166,11 @@ header .logo a:hover {
 .section-container {
   max-width: 1200px;
   margin: 3rem auto;
-  padding: 0 1.5rem; /* Aumentato padding per una migliore visualizzazione */
+  padding: 0 1.5rem;
 }
 
 .section-container h2 {
-  font-size: 2.8rem; /* Titoli più grandi */
+  font-size: 2.8rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
   color: #003366;
@@ -202,7 +192,7 @@ header .logo a:hover {
   margin-top: 2.5rem;
   box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
   display: grid;
-  gap: 1.5rem; /* Aumentato gap per più spazio tra gli elementi */
+  gap: 1.5rem;
 }
 
 .contact-form .form-row {
@@ -218,7 +208,7 @@ header .logo a:hover {
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.9rem; /* Aumentata spaziatura interna */
+  padding: 0.9rem;
   border: 1px solid #80D9FF;
   border-radius: 5px;
   font: inherit;
@@ -275,4 +265,20 @@ footer {
 .footer-note a:hover {
   color: #BFECFF;
   text-decoration: underline;
+}
+
+/* ========================================
+   MEDIA QUERIES
+======================================== */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.1rem;
+  }
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .section-container {
+    padding: 0 1rem;
+  }
 }
