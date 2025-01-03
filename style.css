@@ -311,21 +311,29 @@ header .logo h1 {
   border-radius: 5px;
 }
 
-/* FOOTER */
 footer {
-  background-color: #003366;
-  color: #BFECFF;
+  background-color: #003366; /* Colore di sfondo */
+  color: #BFECFF; /* Colore del testo */
   text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-  font-size: 1rem;
+  padding: 2rem 0; /* Spaziatura interna */
+  margin: 0; /* Rimuove margini */
+  width: 100%; /* Si estende completamente */
+  box-sizing: border-box; /* Include il padding nella larghezza */
+}
+
+.footer-note {
+  margin-top: 1rem; /* Spazio tra i paragrafi */
+  font-size: 1rem; /* Dimensione del testo */
 }
 
 .footer-note a {
-  color: #80D9FF;
-  text-decoration: underline;
+  color: #80D9FF; /* Colore dei link */
+  text-decoration: none; /* Rimuove sottolineatura */
+  font-weight: 600; /* Rende il link più visibile */
 }
 
 .footer-note a:hover {
-  color: #003247;
+  color: #BFECFF; /* Cambia colore al passaggio */
+  text-decoration: underline; /* Sottolinea al passaggio */
 }
+
