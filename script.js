@@ -2,6 +2,11 @@
 const scrollToTopBtn = document.getElementById('scrollToTop');
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const navLinks = document.getElementById('navLinks');
+const checkbox = document.getElementById('privacy');
+
+// Variabili per il controllo del consenso
+let privacyClicked = false;
+let termsClicked = false;
 
 // Mostra/nasconde il pulsante "Torna su"
 window.addEventListener('scroll', () => {
@@ -21,10 +26,16 @@ function scrollToTop() {
 hamburgerMenu.addEventListener('click', () => {
   navLinks.classList.toggle('nav-active');
 });
-let privacyClicked = false;
-let termsClicked = false;
 
-function enableCheckbox() {
+// Chiude il menu quando si clicca su un link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('nav-active');
+  });
+});
+
+// Abilita il checkbox solo dopo aver cliccato sui link
+function enableCheckbox(event) {
   if (event.target.href.includes("privacy.html")) {
     privacyClicked = true;
   } else if (event.target.href.includes("terms.html")) {
@@ -32,12 +43,13 @@ function enableCheckbox() {
   }
 
   if (privacyClicked && termsClicked) {
-    document.getElementById('privacy').disabled = false;
+    checkbox.disabled = false;
   }
 }
+
+// Controlla il checkbox prima di inviare il modulo
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.contact-form');
-  const checkbox = document.getElementById('privacy');
   const errorElement = document.createElement('p');
   
   errorElement.style.color = 'red';
@@ -56,21 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       errorElement.style.display = 'none'; // Nascondi l'errore se il checkbox è selezionato
     }
-  });
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburgerMenu = document.getElementById('hamburgerMenu');
-  const navLinks = document.getElementById('navLinks');
-
-  // Aggiunge l'evento per mostrare/nascondere il menu
-  hamburgerMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-active');
-  });
-
-  // Chiude il menu quando si clicca su un link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('nav-active');
-    });
   });
 });
