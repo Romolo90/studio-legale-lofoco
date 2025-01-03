@@ -70,6 +70,7 @@ header .logo h1 {
   margin: 4px 0;
 }
 
+/* Nasconde il menu per impostazione predefinita */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -80,6 +81,7 @@ header .logo h1 {
   width: 200px;
   border-radius: 5px;
   padding: 1rem;
+  z-index: 10;
 }
 
 .nav-links a {
@@ -87,15 +89,34 @@ header .logo h1 {
   text-decoration: none;
   padding: 0.5rem 0;
   text-align: center;
-  transition: background-color 0.3s ease;
 }
 
-.nav-links a:hover {
-  background-color: #004766;
+.nav-links.nav-active {
+  display: flex; /* Mostra il menu quando la classe nav-active è presente */
 }
 
-.nav-active {
-  display: flex;
+.hamburger-menu {
+  display: none; /* Nasconde l'icona hamburger sui dispositivi più grandi */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  background-color: #BFECFF;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+}
+
+/* Regole per dispositivi mobili */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; /* Mostra l'icona hamburger sui dispositivi mobili */
+  }
+
+  .main-nav ul {
+    display: none; /* Nasconde il menu principale */
+  }
 }
 
 /* RESPONSIVE MENU */
