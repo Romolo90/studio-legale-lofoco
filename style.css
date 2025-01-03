@@ -63,14 +63,16 @@ header .logo h1 {
 }
 
 .home-link {
-  color: inherit; /* Mantiene il colore del testo */
+  color: inherit; /* Usa lo stesso colore del testo circostante */
   text-decoration: none; /* Rimuove la sottolineatura */
-  font-weight: inherit; /* Mantiene il peso del font */
+  font-weight: inherit; /* Mantiene lo stesso peso del font */
+  cursor: pointer; /* Cambia il cursore a mano */
 }
 
-.home-link:hover {
-  text-decoration: underline; /* Sottolinea al passaggio del mouse */
-  color: #80D9FF; /* Cambia colore al passaggio */
+.home-link:hover,
+.home-link:focus {
+  text-decoration: none; /* Assicura che non compaia sottolineatura anche al passaggio del mouse */
+  color: inherit; /* Mantiene il colore invariato */
 }
 
 /* MENU A FINESTRA */
