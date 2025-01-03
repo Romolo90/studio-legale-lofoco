@@ -35,3 +35,26 @@ function enableCheckbox() {
     document.getElementById('privacy').disabled = false;
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.contact-form');
+  const checkbox = document.getElementById('privacy');
+  const errorElement = document.createElement('p');
+  
+  errorElement.style.color = 'red';
+  errorElement.style.fontSize = '0.9rem';
+  errorElement.style.marginTop = '0.5rem';
+  errorElement.textContent = 'Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.';
+  errorElement.style.display = 'none'; // Nascondi l'errore inizialmente
+
+  form.addEventListener('submit', (event) => {
+    if (!checkbox.checked) {
+      event.preventDefault(); // Blocca l'invio del modulo
+      if (!form.contains(errorElement)) {
+        checkbox.parentElement.appendChild(errorElement);
+      }
+      errorElement.style.display = 'block';
+    } else {
+      errorElement.style.display = 'none'; // Nascondi l'errore se il checkbox è selezionato
+    }
+  });
+});
