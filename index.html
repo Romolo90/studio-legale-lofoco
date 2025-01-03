@@ -23,16 +23,23 @@
 <body>
 
   <!-- HEADER -->
-  <header>
+  <header class="header">
     <div class="logo">
       <h1 class="home-link">
-        <a href="index.html" class="logo-link" aria-label="Homepage Studio Legale Lo Foco">
+        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">
           Studio Legale Lo Foco
         </a>
       </h1>
     </div>
 
-    <nav class="main-nav" aria-label="Menu Principale">
+    <!-- Hamburger menu -->
+    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
       <ul>
         <li><a href="#chi-siamo">Chi Siamo</a></li>
         <li><a href="#servizi">Servizi</a></li>
@@ -65,25 +72,45 @@
     </p>
   </section>
 
-  <!-- SERVIZI -->
+  <!-- SERVIZI (con effetto "accordion") -->
   <section id="servizi" class="section-container" aria-labelledby="servizi-title">
     <h2 id="servizi-title">Servizi</h2>
-    <ul>
-      <li>
-        <strong>Proprietà intellettuale e diritto d’autore:</strong>
-        Proteggiamo e valorizziamo opere creative e digitali, sfruttando anche tecnologie innovative come la blockchain.
-      </li>
-      <li>
-        <strong>Diritto amministrativo e agevolazioni fiscali:</strong>
-        Supportiamo aziende e professionisti nelle relazioni con la Pubblica Amministrazione,
-        inclusa la gestione di regolamentazioni, autorizzazioni e incentivi fiscali.
-      </li>
-      <li>
-        <strong>Diritto commerciale e societario:</strong>
-        Offriamo consulenza su fusioni, acquisizioni, strutturazioni aziendali e contratti commerciali,
-        garantendo un supporto completo per la crescita e la gestione dell’impresa.
-      </li>
-    </ul>
+
+    <!-- Box accordion singolo -->
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        Proprietà intellettuale e diritto d’autore
+      </button>
+      <div class="accordion-content">
+        <p>
+          Proteggiamo e valorizziamo opere creative e digitali, sfruttando anche tecnologie innovative come la blockchain.
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        Diritto amministrativo e agevolazioni fiscali
+      </button>
+      <div class="accordion-content">
+        <p>
+          Supportiamo aziende e professionisti nelle relazioni con la Pubblica Amministrazione,
+          inclusa la gestione di regolamentazioni, autorizzazioni e incentivi fiscali.
+        </p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false">
+        Diritto commerciale e societario
+      </button>
+      <div class="accordion-content">
+        <p>
+          Offriamo consulenza su fusioni, acquisizioni, strutturazioni aziendali e contratti commerciali,
+          garantendo un supporto completo per la crescita e la gestione dell’impresa.
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- CONTATTI -->
@@ -113,7 +140,6 @@
           name="nome" 
           placeholder="Inserisci il tuo nome" 
           required 
-          title="Inserisci il tuo nome completo"
         />
       </div>
 
@@ -125,7 +151,6 @@
           name="email" 
           placeholder="Inserisci la tua email" 
           required 
-          title="Inserisci un'email valida"
         />
       </div>
 
@@ -146,21 +171,15 @@
           type="checkbox" 
           id="privacy" 
           name="privacy" 
-          disabled 
         />
         <label for="privacy">
-          Dichiaro di aver letto e accettato la 
-          <a href="privacy.html" target="_blank" onclick="enableCheckbox(event)">Privacy Policy</a> e i 
-          <a href="terms.html" target="_blank" onclick="enableCheckbox(event)">Termini di Servizio</a>.
+          Dichiaro di aver letto e accettato la
+          <a href="privacy.html" target="_blank">Privacy Policy</a> e i
+          <a href="terms.html" target="_blank">Termini di Servizio</a>.
         </label>
       </div>
 
-      <!-- Avviso: spiega perché la checkbox è disabilitata -->
-      <p id="privacyNotice" style="font-size: 0.9rem; color: #cc0000; margin-top: 0.5rem;">
-        La casella si abilita automaticamente dopo aver cliccato uno dei link sopra.
-      </p>
-
-      <button type="submit" class="btn-cta" id="submitButton" disabled>
+      <button type="submit" class="btn-cta" id="submitButton">
         Invia Richiesta
       </button>
     </form>
@@ -189,12 +208,11 @@
     </p>
   </footer>
 
-  <!-- Pulsante "Torna su" (opzionale) -->
+  <!-- Pulsante "Torna su" -->
   <button 
     id="scrollToTop" 
     style="display: none;"
     aria-label="Torna all'inizio della pagina"
-    onclick="scrollToTop()"
   >
     &#8593;
   </button>
