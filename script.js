@@ -1,12 +1,13 @@
 // ======== Riferimenti agli elementi ========
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const mainNav = document.getElementById('mainNav');
+
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
 // Accordion (sezione servizi)
 const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-// Checkbox privacy e pulsante invio (se presenti nella pagina)
+// Checkbox privacy e pulsante invio
 const privacyCheckbox = document.getElementById('privacy');
 const submitButton = document.getElementById('submitButton');
 
@@ -24,13 +25,12 @@ function scrollToTop() {
 
 // Mostra o nasconde il pulsante "Torna su"
 function handleScroll() {
-  if (!scrollToTopBtn) return;
   scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
 }
 
 // Controllo form: se la checkbox non è selezionata, blocca l’invio
 function handleFormSubmit(e) {
-  if (privacyCheckbox && !privacyCheckbox.checked) {
+  if (!privacyCheckbox.checked) {
     e.preventDefault();
     alert('Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.');
   }
@@ -53,8 +53,7 @@ function toggleAccordion() {
 
 // ======== Event Listener ========
 document.addEventListener('DOMContentLoaded', () => {
-  
-  // Evento click sul pulsante hamburger (mobile)
+  // Evento click sul pulsante hamburger
   if (hamburgerMenu && mainNav) {
     hamburgerMenu.addEventListener('click', toggleMenu);
 
@@ -68,20 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Pulsante "Torna su"
-  // (se esiste in questa pagina)
-  if (scrollToTopBtn) {
-    window.addEventListener('scroll', handleScroll);
-    scrollToTopBtn.addEventListener('click', scrollToTop);
-  }
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
 
-  // Accordion (se presente)
-  if (accordionHeaders.length > 0) {
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', toggleAccordion);
-    });
-  }
+  // Accordion
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', toggleAccordion);
+  });
 
-  // Controllo form (se presente)
+  // Controllo form
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', handleFormSubmit);
