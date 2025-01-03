@@ -12,6 +12,12 @@ body {
   color: #003247;
   line-height: 1.6;
 }
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Assicura che il body sia al 100% della larghezza */
+  box-sizing: border-box; /* Evita overflow non necessari */
+}
 
 /* HEADER */
 header {
