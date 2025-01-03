@@ -96,45 +96,31 @@
   </section>
 
   <!-- CONTATTI -->
-  <section id="contatti" class="section-container">
-    <h2>Contatti</h2>
-    <p class="intro-contact">
-      Per qualsiasi richiesta o per fissare un appuntamento, compila il form qui sotto 
-      o contattaci direttamente via telefono o email.
-    </p>
+<form class="contact-form" action="https://formspree.io/f/mgvvkobk" method="POST">
+  <div class="form-row">
+    <label for="nome">Nome e Cognome</label>
+    <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required />
+  </div>
+  <div class="form-row">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required />
+  </div>
+  <div class="form-row">
+    <label for="messaggio">Messaggio</label>
+    <textarea id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
+  </div>
 
-    <div class="contact-info">
-      <p><strong>Indirizzo:</strong> Via Boezio, 2/A - 00193, Roma</p>
-      <p><strong>Email:</strong> <a href="mailto:studiolegalelofoco@icloud.com">studiolegalelofoco@icloud.com</a></p>
-      <p><strong>Telefono:</strong> +39 06 3201820</p>
-    </div>
+  <div class="form-row check-row">
+    <input type="checkbox" id="privacy" name="privacy" required />
+    <label for="privacy">
+      Dichiaro di aver letto e accettato la 
+      <a href="privacy.html" target="_blank">Privacy Policy</a> e i 
+      <a href="terms.html" target="_blank">Termini di Servizio</a>.
+    </label>
+  </div>
 
-    <form class="contact-form" action="https://formspree.io/f/mgvvkobk" method="POST">
-      <div class="form-row">
-        <label for="nome">Nome e Cognome</label>
-        <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required />
-      </div>
-      <div class="form-row">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required />
-      </div>
-      <div class="form-row">
-        <label for="messaggio">Messaggio</label>
-        <textarea id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
-      </div>
-
-      <div class="form-row check-row">
-        <input type="checkbox" id="privacy" name="privacy" required />
-        <label for="privacy">
-          Dichiaro di aver letto e accettato la 
-          <a href="privacy.html" target="_blank">Privacy Policy</a> e i 
-          <a href="terms.html" target="_blank">Termini di Servizio</a>.
-        </label>
-      </div>
-
-      <button type="submit" class="btn-cta">Invia Richiesta</button>
-    </form>
-  </section>
+  <button type="submit" class="btn-cta">Invia Richiesta</button>
+</form>
 
   <!-- MAPPA -->
   <div class="map-container">
