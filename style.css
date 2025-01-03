@@ -15,8 +15,8 @@ body {
 body, html {
   margin: 0;
   padding: 0;
-  width: 100%; /* Assicura che il body sia al 100% della larghezza */
-  box-sizing: border-box; /* Evita overflow non necessari */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* HEADER */
@@ -41,6 +41,16 @@ header .logo h1 {
   white-space: nowrap;
 }
 
+header .logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header .logo a:hover {
+  text-decoration: none;
+  color: #80D9FF;
+}
+
 .main-nav {
   position: relative;
 }
@@ -62,19 +72,6 @@ header .logo h1 {
   color: #80D9FF;
 }
 
-.home-link {
-  color: inherit; /* Usa lo stesso colore del testo circostante */
-  text-decoration: none; /* Rimuove la sottolineatura */
-  font-weight: inherit; /* Mantiene lo stesso peso del font */
-  cursor: pointer; /* Cambia il cursore a mano */
-}
-
-.home-link:hover,
-.home-link:focus {
-  text-decoration: none; /* Assicura che non compaia sottolineatura anche al passaggio del mouse */
-  color: inherit; /* Mantiene il colore invariato */
-}
-
 /* MENU A FINESTRA */
 .hamburger-menu {
   display: none;
@@ -89,7 +86,6 @@ header .logo h1 {
   margin: 4px 0;
 }
 
-/* Nasconde il menu per impostazione predefinita */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -111,35 +107,19 @@ header .logo h1 {
 }
 
 .nav-links.nav-active {
-  display: flex; /* Mostra il menu quando la classe nav-active è presente */
-}
-
-.hamburger-menu {
-  display: none; /* Nasconde l'icona hamburger sui dispositivi più grandi */
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger-menu span {
-  background-color: #BFECFF;
-  height: 3px;
-  width: 25px;
-  margin: 4px 0;
+  display: flex;
 }
 
 /* Regole per dispositivi mobili */
 @media (max-width: 768px) {
   .hamburger-menu {
-    display: flex; /* Mostra l'icona hamburger sui dispositivi mobili */
+    display: flex;
   }
 
   .main-nav ul {
-    display: none; /* Nasconde il menu principale */
+    display: none;
   }
-}
 
-/* RESPONSIVE MENU */
-@media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: center;
@@ -147,15 +127,7 @@ header .logo h1 {
   }
 
   header .logo h1 {
-    font-size: 1.8rem; /* Ridotta dimensione per dispositivi mobili */
-  }
-
-  .main-nav ul {
-    display: none;
-  }
-
-  .hamburger-menu {
-    display: flex;
+    font-size: 1.8rem;
   }
 }
 
@@ -184,16 +156,16 @@ header .logo h1 {
   text-align: center;
   max-width: 800px;
   z-index: 1;
-  padding: 0 1rem; /* Aggiunto padding per dispositivi mobili */
+  padding: 0 1rem;
 }
 
 .hero-content h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  white-space: nowrap; /* Impedisce che il testo vada a capo */
-  overflow: hidden; /* Assicura che il testo non superi il contenitore */
-  text-align: center; /* Centra il testo */
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
 }
 
 .hero-content p {
@@ -201,17 +173,16 @@ header .logo h1 {
   margin-bottom: 2rem;
 }
 
-/* RESPONSIVE HERO */
 @media (max-width: 768px) {
   .hero-content h2 {
-    font-size: 2rem; /* Riduce la dimensione del titolo per dispositivi mobili */
-    white-space: normal; /* Consente il capo su righe multiple */
-    word-break: break-word; /* Divide le parole lunghe */
+    font-size: 2rem;
+    white-space: normal;
+    word-break: break-word;
   }
 
   .hero-content {
-    max-width: 95%; /* Usa quasi tutta la larghezza disponibile */
-    padding: 0 1rem; /* Evita che il testo tocchi i bordi */
+    max-width: 95%;
+    padding: 0 1rem;
   }
 }
 
@@ -251,17 +222,6 @@ header .logo h1 {
   font-size: 1.1rem;
 }
 
-/* LISTE SERVIZI */
-#servizi ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-  margin-top: 1rem;
-}
-
-#servizi ul li {
-  margin-bottom: 0.75rem;
-}
-
 /* FORM DI CONTATTO */
 .contact-form {
   background-color: #BFECFF;
@@ -271,7 +231,7 @@ header .logo h1 {
   margin-top: 2.5rem;
   box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
   display: grid;
-  gap: 1rem; /* Spaziatura uniforme tra le righe */
+  gap: 1rem;
 }
 
 .contact-form .form-row {
@@ -291,7 +251,7 @@ header .logo h1 {
   border: 1px solid #80D9FF;
   border-radius: 5px;
   font: inherit;
-  width: 100%; /* Assicura la larghezza uniforme */
+  width: 100%;
 }
 
 .contact-form input:focus,
@@ -301,7 +261,7 @@ header .logo h1 {
 }
 
 .contact-form button {
-  width: 100%; /* Rende il bottone della stessa larghezza degli input */
+  width: 100%;
 }
 
 .check-row {
@@ -331,28 +291,27 @@ header .logo h1 {
 }
 
 footer {
-  background-color: #003366; /* Colore di sfondo */
-  color: #BFECFF; /* Colore del testo */
+  background-color: #003366;
+  color: #BFECFF;
   text-align: center;
-  padding: 2rem 0; /* Spaziatura interna */
-  margin: 0; /* Rimuove margini */
-  width: 100%; /* Si estende completamente */
-  box-sizing: border-box; /* Include il padding nella larghezza */
+  padding: 2rem 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-note {
-  margin-top: 1rem; /* Spazio tra i paragrafi */
-  font-size: 1rem; /* Dimensione del testo */
+  margin-top: 1rem;
+  font-size: 1rem;
 }
 
 .footer-note a {
-  color: #80D9FF; /* Colore dei link */
-  text-decoration: none; /* Rimuove sottolineatura */
-  font-weight: 600; /* Rende il link più visibile */
+  color: #80D9FF;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .footer-note a:hover {
-  color: #BFECFF; /* Cambia colore al passaggio */
-  text-decoration: underline; /* Sottolinea al passaggio */
+  color: #BFECFF;
+  text-decoration: underline;
 }
-
