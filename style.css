@@ -32,20 +32,20 @@ header {
 
 header .logo {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  align-items: center; /* Allinea verticalmente logo e testo */
+  gap: 1rem; /* Spaziatura tra logo e testo */
 }
 
 header .logo img {
-  max-height: 80px;
-  display: block;
+  max-height: 60px; /* Regola l'altezza del logo */
 }
 
 header .logo h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2rem; /* Dimensione del testo */
   font-weight: 600;
-  white-space: nowrap;
+  white-space: nowrap; /* Evita il ritorno a capo */
+  color: inherit;
 }
 
 header .logo a {
