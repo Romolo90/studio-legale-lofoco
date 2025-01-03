@@ -31,7 +31,8 @@ header {
 }
 
 header .logo img {
-  max-height: 50px;
+  max-height: 80px;
+  display: block;
 }
 
 header .logo h1 {
