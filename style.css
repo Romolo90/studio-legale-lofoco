@@ -486,4 +486,9 @@ footer {
 .name {
   white-space: nowrap;
 }
+@media (max-width: 768px) {
+  .name {
+    font-size: 1.2rem; /* Adatta la dimensione per schermi più piccoli */
+  }
+}
 
