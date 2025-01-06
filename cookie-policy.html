@@ -8,15 +8,51 @@
   <meta name="author" content="Studio Legale Lo Foco" />
   <title>Cookie Policy - Studio Legale Lo Foco</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <!-- Puoi riutilizzare il tuo file style.css per mantenere lo stile coerente -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Personalizzazione della pagina Cookie Policy */
+    main {
+      padding: 20px;
+      font-family: 'EB Garamond', serif;
+      line-height: 1.8;
+    }
+    h1, h2 {
+      color: #003366;
+    }
+    a {
+      color: #2980B9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .highlight {
+      background-color: #f4f8fc;
+      padding: 15px;
+      border-left: 4px solid #003366;
+      margin: 20px 0;
+    }
+    footer {
+      background-color: #003366;
+      color: #BFECFF;
+      text-align: center;
+      padding: 15px 0;
+    }
+    footer .footer-note a {
+      color: #80D9FF;
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="header">
     <div class="logo">
       <h1>
-        <a href="index.html" class="home-link">Studio Legale Lo Foco</a>
+        <a href="index.html" class="home-link" aria-label="Torna alla homepage">Studio Legale Lo Foco</a>
       </h1>
     </div>
 
@@ -47,31 +83,37 @@
       per personalizzare la tua esperienza di navigazione.
     </p>
 
-    <h2>Tipi di cookie</h2>
+    <div class="highlight">
+      <p><strong>Nota:</strong> Continuando a navigare su questo sito, acconsenti all'utilizzo dei cookie come descritto di seguito.</p>
+    </div>
+
+    <h2 id="tipi-di-cookie">Tipi di cookie</h2>
     <ul>
       <li><strong>Cookie tecnici:</strong> Essenziali per il funzionamento del sito e per consentire l'accesso a determinate funzionalità.</li>
       <li><strong>Cookie analitici:</strong> Raccolgono dati aggregati sull'uso del sito per aiutarci a migliorare l'esperienza utente.</li>
       <li><strong>Cookie di marketing:</strong> Utilizzati per personalizzare la pubblicità in base ai tuoi interessi.</li>
     </ul>
 
-    <h2>Gestione dei cookie</h2>
+    <h2 id="gestione-dei-cookie">Gestione dei cookie</h2>
     <p>
       Puoi gestire o disabilitare i cookie direttamente dalle impostazioni del tuo browser. Per
-      ulteriori informazioni, consulta la guida del tuo browser o visita il seguente link:
-      <a href="https://www.allaboutcookies.org/manage-cookies/" target="_blank" rel="noopener noreferrer">Gestione cookie</a>.
+      ulteriori informazioni, consulta la guida del tuo browser o visita:
+      <a href="https://www.allaboutcookies.org/manage-cookies/" target="_blank" rel="noopener noreferrer" aria-label="Scopri come gestire i cookie">Gestione cookie</a>.
     </p>
 
-    <h2>Contatti</h2>
+    <h2 id="contatti">Contatti</h2>
     <p>
       Per ulteriori informazioni sulla nostra politica sui cookie o per eventuali domande, puoi
       contattarci tramite:
-      <br><strong>Email:</strong> 
+    </p>
+    <p>
+      <strong>Email:</strong> 
       <a href="mailto:studiolegalelofoco@icloud.com">studiolegalelofoco@icloud.com</a>
     </p>
   </main>
 
   <!-- FOOTER -->
- <footer>
+  <footer>
     <p>
     <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
@@ -87,7 +129,7 @@
     </p>
   </footer>
 
-  <!-- Script (stesso file che usi in index.html) -->
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
