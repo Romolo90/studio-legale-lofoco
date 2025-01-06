@@ -1,43 +1,46 @@
-// ======== COOKIE BANNER E GESTIONE PREFERENZE ========
-document.addEventListener('DOMContentLoaded', () => {
-  // Elementi banner e preferenze
-  const cookieBanner = document.getElementById("cookie-banner");
-  const cookiePreferences = document.getElementById("cookie-preferences");
-  const acceptCookiesBtn = document.getElementById("accept-cookies");
-  const manageCookiesBtn = document.getElementById("manage-cookies");
-  const savePreferencesBtn = document.getElementById("save-preferences");
+const CookieManager = {
+  init() {
+    const cookieBanner = document.getElementById("cookie-banner");
+    const cookiePreferences = document.getElementById("cookie-preferences");
+    const acceptCookiesBtn = document.getElementById("accept-cookies");
+    const manageCookiesBtn = document.getElementById("manage-cookies");
+    const savePreferencesBtn = document.getElementById("save-preferences");
 
-  // Funzione per nascondere il banner
-  function hideCookieBanner() {
-    cookieBanner.style.display = "none";
-  }
+    acceptCookiesBtn?.addEventListener("click", this.acceptCookies.bind(null, cookieBanner));
+    manageCookiesBtn?.addEventListener("click", () => {
+      cookiePreferences.style.display = "block";
+    });
+    savePreferencesBtn?.addEventListener("click", () => {
+      this.savePreferences(cookiePreferences);
+    });
 
-  // Salva consenso cookie
-  acceptCookiesBtn?.addEventListener("click", () => {
+    if (this.hasAcceptedCookies()) {
+      this.hideBanner(cookieBanner);
+    }
+  },
+  acceptCookies(banner) {
     document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365;
-    hideCookieBanner();
-  });
-
-  // Mostra gestione preferenze
-  manageCookiesBtn?.addEventListener("click", () => {
-    cookiePreferences.style.display = "block";
-  });
-
-  // Salva preferenze cookie
-  savePreferencesBtn?.addEventListener("click", () => {
+    this.hideBanner(banner);
+  },
+  savePreferences(preferencesDiv) {
     const checkboxes = document.querySelectorAll("#cookie-preferences input[name='cookieType']");
     const preferences = Array.from(checkboxes).reduce((prefs, checkbox) => {
       prefs[checkbox.value] = checkbox.checked;
       return prefs;
     }, {});
     document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}`;
-    cookiePreferences.style.display = "none";
-  });
+    preferencesDiv.style.display = "none";
+  },
+  hasAcceptedCookies() {
+    return document.cookie.includes("cookiesAccepted=true");
+  },
+  hideBanner(banner) {
+    banner.style.display = "none";
+  },
+};
 
-  // Nascondi banner se i cookie sono già accettati
-  if (document.cookie.includes("cookiesAccepted=true")) {
-    hideCookieBanner();
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  CookieManager.init();
 });
 
 // ======== MENU MOBILE ========
