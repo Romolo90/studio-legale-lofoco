@@ -16,26 +16,29 @@ const App = {
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const mainNav = document.getElementById('mainNav');
 
-    if (hamburgerMenu && mainNav) {
+    if (hamburgerMenu) {
       hamburgerMenu.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-      });
-
-      mainNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mainNav.classList.remove('active');
-        });
+        mainNav?.classList.toggle('active');
       });
     }
+
+    // Chiude il menu mobile quando si clicca su un link
+    mainNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+      });
+    });
   },
 
   initScrollToTop() {
     const scrollToTopBtn = document.getElementById('scrollToTop');
     if (scrollToTopBtn) {
+      // Mostra o nasconde il pulsante in base allo scroll
       window.addEventListener('scroll', () => {
         scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
       });
 
+      // Scorrimento verso l'alto
       scrollToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
@@ -44,10 +47,13 @@ const App = {
 
   initAccordion() {
     const accordionHeaders = document.querySelectorAll('.accordion-header');
+
     accordionHeaders.forEach(header => {
       header.addEventListener('click', () => {
         const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        // Chiudi tutti
         accordionHeaders.forEach(h => h.setAttribute('aria-expanded', 'false'));
+        // Apri solo quello cliccato
         if (!isExpanded) {
           header.setAttribute('aria-expanded', 'true');
         }
@@ -78,33 +84,40 @@ const CookieManager = {
     this.manageCookiesBtn = document.getElementById('manage-cookies');
     this.savePreferencesBtn = document.getElementById('save-preferences');
 
+    // Event listeners
     if (this.acceptCookiesBtn) {
-      this.acceptCookiesBtn.addEventListener('click', this.acceptAllCookies.bind(this));
+      this.acceptCookiesBtn.addEventListener('click', () => {
+        this.acceptAllCookies();
+      });
     }
 
     if (this.manageCookiesBtn) {
-      this.manageCookiesBtn.addEventListener('click', this.openPreferences.bind(this));
+      this.manageCookiesBtn.addEventListener('click', () => {
+        this.openPreferences();
+      });
     }
 
     if (this.savePreferencesBtn) {
-      this.savePreferencesBtn.addEventListener('click', this.savePreferences.bind(this));
+      this.savePreferencesBtn.addEventListener('click', () => {
+        this.savePreferences();
+      });
     }
 
+    // Verifica se l'utente ha già accettato i cookie
     if (this.hasAcceptedCookies()) {
       this.hideBanner();
     }
   },
 
   acceptAllCookies() {
+    // Impostiamo un cookie che dura 1 anno
     document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365;
     this.hideBanner();
   },
 
   openPreferences() {
-    if (this.cookiePreferences) {
-      this.cookiePreferences.style.display = 'block';
-      this.cookieBanner.style.display = 'none';
-    }
+    this.cookiePreferences.style.display = 'block';
+    this.cookieBanner.style.display = 'none';
   },
 
   savePreferences() {
@@ -113,8 +126,9 @@ const CookieManager = {
       prefs[checkbox.value] = checkbox.checked;
       return prefs;
     }, {});
+
     document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}`;
-    this.hideBanner();
+    this.cookiePreferences.style.display = 'none';
   },
 
   hasAcceptedCookies() {
