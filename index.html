@@ -69,25 +69,36 @@
 </head>
 <body>
 
-  <!-- COOKIE PREFERENCES -->
- <div id="cookie-preferences">
-    <h2>Gestione Preferenze Cookie</h2>
-    <form>
-      <label>
-        <input type="checkbox" name="cookieType" value="technical" disabled checked />
-        Cookie Tecnici (Obbligatori)
-      </label><br />
-      <label>
-        <input type="checkbox" name="cookieType" value="analytics" />
-        Cookie Analitici
-      </label><br />
-      <label>
-        <input type="checkbox" name="cookieType" value="marketing" />
-        Cookie di Marketing
-      </label><br />
-      <button type="button" id="save-preferences">Salva Preferenze</button>
-    </form>
+  <div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      Questo sito utilizza cookie per migliorare l'esperienza utente. Puoi accettare tutti i cookie o gestire le preferenze.
+      <a href="cookie-policy.html">Leggi la Cookie Policy</a>.
+    </p>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci preferenze</button>
+    </div>
   </div>
+</div>
+<div id="cookie-preferences" class="cookie-preferences">
+  <h2>Gestione Preferenze Cookie</h2>
+  <form>
+    <label>
+      <input type="checkbox" name="cookieType" value="technical" disabled checked />
+      Cookie Tecnici (Obbligatori)
+    </label><br />
+    <label>
+      <input type="checkbox" name="cookieType" value="analytics" />
+      Cookie Analitici
+    </label><br />
+    <label>
+      <input type="checkbox" name="cookieType" value="marketing" />
+      Cookie di Marketing
+    </label><br />
+    <button type="button" id="save-preferences" class="btn-cookie">Salva Preferenze</button>
+  </form>
+</div>
 
   <!-- HEADER -->
   <header class="header">
