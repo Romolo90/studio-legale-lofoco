@@ -1,18 +1,31 @@
-const CookieManager = {
+const App = {
   init() {
+    this.initCookieManager();
+    this.initMenu();
+    this.initScrollToTop();
+    this.initAccordion();
+    this.initFormValidation();
+  },
+
+  // ======== COOKIE MANAGER ========
+  initCookieManager() {
     const cookieBanner = document.getElementById("cookie-banner");
     const cookiePreferences = document.getElementById("cookie-preferences");
     const acceptCookiesBtn = document.getElementById("accept-cookies");
     const manageCookiesBtn = document.getElementById("manage-cookies");
     const savePreferencesBtn = document.getElementById("save-preferences");
 
-    acceptCookiesBtn?.addEventListener("click", this.acceptCookies.bind(null, cookieBanner));
-    manageCookiesBtn?.addEventListener("click", () => {
-      cookiePreferences.style.display = "block";
-    });
-    savePreferencesBtn?.addEventListener("click", () => {
-      this.savePreferences(cookiePreferences);
-    });
+    if (acceptCookiesBtn) {
+      acceptCookiesBtn.addEventListener("click", () => this.acceptCookies(cookieBanner));
+    }
+    if (manageCookiesBtn) {
+      manageCookiesBtn.addEventListener("click", () => {
+        cookiePreferences.style.display = "block";
+      });
+    }
+    if (savePreferencesBtn) {
+      savePreferencesBtn.addEventListener("click", () => this.savePreferences(cookiePreferences));
+    }
 
     if (this.hasAcceptedCookies()) {
       this.hideBanner(cookieBanner);
@@ -35,71 +48,78 @@ const CookieManager = {
     return document.cookie.includes("cookiesAccepted=true");
   },
   hideBanner(banner) {
-    banner.style.display = "none";
+    if (banner) {
+      banner.style.display = "none";
+    }
+  },
+
+  // ======== MENU MOBILE ========
+  initMenu() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const mainNav = document.getElementById('mainNav');
+
+    if (hamburgerMenu) {
+      hamburgerMenu.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+      });
+    }
+    mainNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+      });
+    });
+  },
+
+  // ======== SCROLL TO TOP ========
+  initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    if (scrollToTopBtn) {
+      window.addEventListener('scroll', () => {
+        scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+      });
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  },
+
+  // ======== ACCORDION ========
+  initAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+        // Chiudi tutti gli accordion
+        accordionHeaders.forEach(h => h.setAttribute('aria-expanded', 'false'));
+
+        // Apri solo quello cliccato
+        if (!isExpanded) {
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  },
+
+  // ======== FORM VALIDATION ========
+  initFormValidation() {
+    const privacyCheckbox = document.getElementById('privacy');
+    const form = document.querySelector('.contact-form');
+
+    if (form && privacyCheckbox) {
+      form.addEventListener('submit', e => {
+        if (!privacyCheckbox.checked) {
+          e.preventDefault();
+          alert('Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.');
+        }
+      });
+    }
   },
 };
 
+// Inizializza l'app dopo il caricamento della pagina
 document.addEventListener('DOMContentLoaded', () => {
-  CookieManager.init();
-});
-
-// ======== MENU MOBILE ========
-const hamburgerMenu = document.getElementById('hamburgerMenu');
-const mainNav = document.getElementById('mainNav');
-
-function toggleMenu() {
-  mainNav.classList.toggle('active');
-}
-
-hamburgerMenu?.addEventListener('click', toggleMenu);
-
-// Chiude il menu quando si clicca su un link
-mainNav?.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mainNav.classList.remove('active');
-  });
-});
-
-// ======== PULSANTE "TORNA SU" ========
-const scrollToTopBtn = document.getElementById('scrollToTop');
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function handleScroll() {
-  scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-}
-
-window.addEventListener('scroll', handleScroll);
-scrollToTopBtn?.addEventListener('click', scrollToTop);
-
-// ======== ACCORDION (SEZIONE SERVIZI) ========
-const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-function toggleAccordion() {
-  const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-  // Chiudi tutti gli accordion
-  accordionHeaders.forEach(header => header.setAttribute('aria-expanded', 'false'));
-
-  // Apri l'accordion cliccato, se era chiuso
-  if (!isExpanded) {
-    this.setAttribute('aria-expanded', 'true');
-  }
-}
-
-accordionHeaders.forEach(header => {
-  header.addEventListener('click', toggleAccordion);
-});
-
-// ======== FORM CONTATTI ========
-const privacyCheckbox = document.getElementById('privacy');
-const form = document.querySelector('.contact-form');
-
-form?.addEventListener('submit', e => {
-  if (!privacyCheckbox?.checked) {
-    e.preventDefault();
-    alert('Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.');
-  }
+  App.init();
 });
