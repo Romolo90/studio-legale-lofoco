@@ -1,3 +1,19 @@
+<script>
+  document.getElementById("accept-cookies").addEventListener("click", function() {
+    document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // Cookie valido per 1 anno
+    document.getElementById("cookie-banner").style.display = "none";
+  });
+
+  document.getElementById("manage-cookies").addEventListener("click", function() {
+    alert("Funzione di gestione preferenze in sviluppo. Nel frattempo puoi leggere la Cookie Policy.");
+  });
+
+  // Nascondi il banner se i cookie sono già stati accettati
+  if (document.cookie.includes("cookiesAccepted=true")) {
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+</script>
+
 // ======== Riferimenti agli elementi ========
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const mainNav = document.getElementById('mainNav');
