@@ -3,20 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Studio Legale Lo Foco - Notizie</title>
+  <meta name="description" content="Critiche e dibattiti sul decreto Tax Credit. Scopri le posizioni e le proposte di revisione su Studio Legale Lo Foco." />
+  <meta name="keywords" content="Critiche Tax Credit, Proposte revisione, Studio Legale Lo Foco, Notizie legali, Aggiornamenti legislativi" />
+  <title>Studio Legale Lo Foco - Critiche e Proposte di Revisione</title>
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- Foglio di stile -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'EB Garamond', serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-container {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #2980B9;
+      font-weight: bold;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+      color: #0056b3;
+    }
+
+    footer {
+      background-color: #003366;
+      color: #BFECFF;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    footer .footer-note a {
+      color: #80D9FF;
+      text-decoration: none;
+    }
+
+    footer .footer-note a:hover {
+      text-decoration: underline;
+      color: #BFECFF;
+    }
+  </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="header">
     <div class="logo">
-      <h1><a href="index.html" class="home-link">Studio Legale Lo Foco</a></h1>
+      <h1><a href="index.html" class="home-link" aria-label="Torna alla homepage">Studio Legale Lo Foco</a></h1>
     </div>
 
     <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
@@ -37,25 +101,23 @@
   </header>
 
   <!-- SEZIONE NOTIZIE -->
-  <section class="section-container">
-    <h2>Ultime Notizie</h2>
-    <h1>Critiche e Proposte di Revisione</h1>
-    <p>Critiche e dibattiti sul decreto Tax Credit.</p>
+  <section class="section-container" aria-labelledby="news-title">
+    <h2 id="news-title">Critiche e Proposte di Revisione</h2>
+    <p>Critiche e dibattiti sul decreto Tax Credit. Scopri le opinioni e le proposte per migliorare il sistema.</p>
     <ul>
-      <li><a href="file-Wx4n46GK3wx5pErgj5BScj.pdf" target="_blank">Posizione e critiche politiche</a></li>
+      <li><a href="file-Wx4n46GK3wx5pErgj5BScj.pdf" target="_blank" aria-label="Leggi il documento PDF sulla posizione politica">Posizione e critiche politiche</a></li>
     </ul>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <p>
-    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
             src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
             alt="Valid CSS!" />
-    </a>
-</p>
-</p>
+      </a>
+    </p>
     <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
     <p class="footer-note">
       <a href="privacy.html">Privacy Policy</a> |
