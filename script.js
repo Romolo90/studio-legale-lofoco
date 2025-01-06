@@ -7,7 +7,71 @@ const App = {
     this.initFormValidation();
   },
 
-  const CookieManager = {
+  initCookieManager() {
+    CookieManager.init();
+  },
+
+  initMenu() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const mainNav = document.getElementById('mainNav');
+
+    if (hamburgerMenu) {
+      hamburgerMenu.addEventListener('click', () => {
+        mainNav?.classList.toggle('active');
+      });
+    }
+
+    mainNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav?.classList.remove('active');
+      });
+    });
+  },
+
+  initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    if (scrollToTopBtn) {
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', () => {
+        scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+      });
+    }
+  },
+
+  initAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        accordionHeaders.forEach(h => h.setAttribute('aria-expanded', 'false'));
+        if (!isExpanded) {
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  },
+
+  initFormValidation() {
+    const privacyCheckbox = document.getElementById('privacy');
+    const form = document.querySelector('.contact-form');
+
+    if (form) {
+      form.addEventListener('submit', e => {
+        if (privacyCheckbox && !privacyCheckbox.checked) {
+          e.preventDefault();
+          alert('Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.');
+        }
+      });
+    }
+  },
+};
+
+const CookieManager = {
   init() {
     const cookieBanner = document.getElementById("cookie-banner");
     const cookiePreferences = document.getElementById("cookie-preferences");
@@ -15,26 +79,34 @@ const App = {
     const manageCookiesBtn = document.getElementById("manage-cookies");
     const savePreferencesBtn = document.getElementById("save-preferences");
 
-    acceptCookiesBtn?.addEventListener("click", () => {
-      this.acceptCookies(cookieBanner);
-    });
+    if (acceptCookiesBtn) {
+      acceptCookiesBtn.addEventListener("click", () => {
+        this.acceptCookies(cookieBanner);
+      });
+    }
 
-    manageCookiesBtn?.addEventListener("click", () => {
-      cookiePreferences.style.display = "block";
-    });
+    if (manageCookiesBtn) {
+      manageCookiesBtn.addEventListener("click", () => {
+        cookiePreferences.style.display = "block";
+      });
+    }
 
-    savePreferencesBtn?.addEventListener("click", () => {
-      this.savePreferences(cookiePreferences);
-    });
+    if (savePreferencesBtn) {
+      savePreferencesBtn.addEventListener("click", () => {
+        this.savePreferences(cookiePreferences);
+      });
+    }
 
     if (this.hasAcceptedCookies()) {
       this.hideBanner(cookieBanner);
     }
   },
+
   acceptCookies(banner) {
     document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365;
     this.hideBanner(banner);
   },
+
   savePreferences(preferencesDiv) {
     const checkboxes = document.querySelectorAll("#cookie-preferences input[name='cookieType']");
     const preferences = Array.from(checkboxes).reduce((prefs, checkbox) => {
@@ -44,16 +116,21 @@ const App = {
     document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}`;
     preferencesDiv.style.display = "none";
   },
+
   hasAcceptedCookies() {
     return document.cookie.includes("cookiesAccepted=true");
   },
+
   hideBanner(banner) {
-    banner.style.display = "none";
+    if (banner) {
+      banner.style.display = "none";
+    }
   },
 };
 
+// Avvio del codice
 document.addEventListener('DOMContentLoaded', () => {
-  CookieManager.init();
+  App.init();
 });
 
   // ======== MENU MOBILE ========
