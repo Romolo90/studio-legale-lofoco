@@ -22,6 +22,74 @@ html, body {
   border: 1px solid #ccc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.cookie-banner {
+  background-color: #003366;
+  color: #BFECFF;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cookie-content a {
+  color: #80D9FF;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-cookie {
+  background-color: #004766;
+  color: #BFECFF;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cookie:hover {
+  background-color: #003247;
+}
+
+.btn-secondary {
+  background-color: #80D9FF;
+  color: #003366;
+}
+
+.btn-secondary:hover {
+  background-color: #004766;
+  color: #BFECFF;
+}
+
+.cookie-preferences {
+  display: none;
+  background-color: #fff;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+}
 
 /* ========================================
    STILE GENERALE
