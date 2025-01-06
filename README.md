@@ -10,10 +10,8 @@ Il progetto è organizzato come segue:
 - `terms.html`: Termini di Servizio.
 - `cookie-policy.html`: Cookie Policy.
 - `area-clienti.html`: Area riservata per i clienti.
-- Cartella `assets/`:
-  - `css/style.css`: Foglio di stile principale.
-  - `js/script.js`: File JavaScript.
-  - `images/favicon.ico`: Icona del sito.
+- `css/style.css`: Foglio di stile principale.
+- `js/script.js`: File JavaScript.
 
 ## Come avviare il progetto
 1. Clona il repository:
