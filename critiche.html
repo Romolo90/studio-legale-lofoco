@@ -2,43 +2,14 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Ultime Notizie - Studio Legale Lo Foco</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <title>Studio Legale Lo Foco - Notizie</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Foglio di stile -->
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Stile globale */
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .section-container {
-      flex: 1;
-      padding: 20px;
-    }
-
-    .footer {
-      background-color: #003366;
-      color: #BFECFF;
-      text-align: center;
-      padding: 1.5rem 0;
-      margin-top: auto;
-    }
-
-    .footer-note a {
-      color: #80D9FF;
-      text-decoration: none;
-    }
-
-    .footer-note a:hover {
-      color: #BFECFF;
-      text-decoration: underline;
-    }
-  </style>
 </head>
 <body>
 
@@ -48,7 +19,6 @@
       <h1><a href="index.html" class="home-link">Studio Legale Lo Foco</a></h1>
     </div>
 
-    <!-- Hamburger menu (mobile) -->
     <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
@@ -60,7 +30,7 @@
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
         <li><a href="index.html#servizi">Servizi</a></li>
         <li><a href="index.html#contatti">Contatti</a></li>
-        <li><a href="notizie.html">Ultime Notizie</a></li>
+        <li><a href="notizie.html">Notizie</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
       </ul>
     </nav>
@@ -77,17 +47,15 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
-      <p class="footer-note">
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Termini di Servizio</a>
-      </p>
-    </div>
+  <footer>
+    <p>&copy; 2024 Studio Legale Lo Foco</p>
+    <p class="footer-note">
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Termini di Servizio</a>
+    </p>
   </footer>
 
-  <!-- script globale -->
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
