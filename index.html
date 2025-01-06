@@ -1,5 +1,4 @@
-<!DOCTYPE html>  
-</div>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
@@ -52,74 +51,51 @@
     ]
   }
   </script>
-</head>
-<body>
-  <!-- Contenuto del sito -->
-</body>
-</html>
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet" />
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
   <!-- Foglio di stile -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  const CookieManager = {
-  init() {
-    this.cookieBanner = document.getElementById("cookie-banner");
-    this.cookiePreferences = document.getElementById("cookie-preferences");
-    this.acceptCookiesBtn = document.getElementById("accept-cookies");
-    this.manageCookiesBtn = document.getElementById("manage-cookies");
-    this.savePreferencesBtn = document.getElementById("save-preferences");
+  <!-- BANNER COOKIE -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione. 
+        Per saperne di più, consulta la nostra 
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
 
-    // Event listeners
-    this.acceptCookiesBtn?.addEventListener("click", () => this.acceptAllCookies());
-    this.manageCookiesBtn?.addEventListener("click", () => this.openPreferences());
-    this.savePreferencesBtn?.addEventListener("click", () => this.savePreferences());
-
-    // Check cookie status
-    if (this.hasAcceptedCookies()) {
-      this.hideBanner();
-    }
-  },
-
-  acceptAllCookies() {
-    document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // 1 anno
-    this.hideBanner();
-  },
-
-  openPreferences() {
-    this.cookiePreferences.style.display = "block";
-    this.cookieBanner.style.display = "none";
-  },
-
-  savePreferences() {
-    const checkboxes = document.querySelectorAll("#cookie-preferences input[name='cookieType']");
-    const preferences = Array.from(checkboxes).reduce((prefs, checkbox) => {
-      prefs[checkbox.value] = checkbox.checked;
-      return prefs;
-    }, {});
-    document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}`;
-    this.cookiePreferences.style.display = "none";
-    this.hideBanner();
-  },
-
-  hasAcceptedCookies() {
-    return document.cookie.includes("cookiesAccepted=true");
-  },
-
-  hideBanner() {
-    this.cookieBanner.style.display = "none";
-    this.cookiePreferences.style.display = "none";
-  },
-};
-
-document.addEventListener("DOMContentLoaded", () => CookieManager.init());
+  <!-- FINESTRINA PREFERENZE COOKIE -->
+  <div id="cookie-preferences">
+    <h2>Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" checked />
+        Cookie analitici
+      </label>
+      <label>
+        <input type="checkbox" name="cookieType" value="marketing" checked />
+        Cookie di marketing
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+    </form>
+  </div>
 
   <!-- HEADER -->
   <header class="header">
@@ -150,136 +126,168 @@ document.addEventListener("DOMContentLoaded", () => CookieManager.init());
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
-  <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="hero-content">
-    <h2>Studio Legale Lo Foco</h2>
-    <p>
-      Soluzioni Legali su Misura per i Settori Creativi e Culturali. 
-      Consulenza e tutela in ambito di proprietà intellettuale, 
-      diritto d’immagine e dello spettacolo e diritti connessi.
-    </p>
-    <a href="#contatti" class="btn-cta">
-      <span>Contattaci ora</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-.5A.5.5 0 0 0 1.5 4v.217l6.354 3.969L14.5 4.217V4a.5.5 0 0 0-.5-.5H2zm13 1.383-5.803 3.63L15 11.383V4.883zM1 11.383l5.803-3.63L1 4.883v6.5z"/>
-      </svg>
-    </a>
-  </div>
-</section>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h2>Studio Legale Lo Foco</h2>
+      <p>
+        Soluzioni Legali su Misura per i Settori Creativi e Culturali. 
+        Consulenza e tutela in ambito di proprietà intellettuale, 
+        diritto d’immagine e dello spettacolo e diritti connessi.
+      </p>
+      <a href="#contatti" class="btn-cta">
+        <span>Contattaci ora</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2
+             2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-.5A.5.5
+             0 0 0 1.5 4v.217l6.354 3.969L14.5 
+             4.217V4a.5.5 0 0 0-.5-.5H2zm13
+             1.383-5.803 3.63L15 11.383V4.883zM1 
+             11.383l5.803-3.63L1 4.883v6.5z"
+          />
+        </svg>
+      </a>
+    </div>
+  </section>
 
   <!-- CHI SIAMO -->
   <section id="chi-siamo" class="section-container" aria-labelledby="chi-siamo-title">
     <h2 id="chi-siamo-title">Chi Siamo</h2>
     <p>
-      Lo Studio Legale Lo Foco si distingue per l’approccio multidisciplinare, l’elevata professionalità 
-   e la capacità di offrire soluzioni innovative in un mercato in costante evoluzione. Fondato su solide 
-   competenze in diritto d’autore, diritto amministrativo e diritto commerciale, lo Studio si offre come 
-   punto di riferimento per imprese e professionisti operanti nei settori creativi e culturali, con un focus 
-   particolare sull’industria cinematografica e audiovisiva. Grazie a un’esperienza consolidata e a una 
-   profonda conoscenza delle normative italiane ed europee, lo Studio supporta autori, artisti, case di 
-   produzione, editori e altre realtà creative nel proteggere e valorizzare il proprio lavoro. Il nostro 
-   obiettivo è garantire una consulenza legale su misura, che tuteli le idee dei clienti e ne rafforzi il 
-   valore nel contesto competitivo odierno.
+      Lo Studio Legale Lo Foco si distingue per l’approccio multidisciplinare, 
+      l’elevata professionalità e la capacità di offrire soluzioni innovative 
+      in un mercato in costante evoluzione. Fondato su solide competenze in 
+      diritto d’autore, diritto amministrativo e diritto commerciale, lo Studio 
+      si offre come punto di riferimento per imprese e professionisti operanti 
+      nei settori creativi e culturali, con un focus particolare sull’industria 
+      cinematografica e audiovisiva. Grazie a un’esperienza consolidata e a una 
+      profonda conoscenza delle normative italiane ed europee, lo Studio supporta 
+      autori, artisti, case di produzione, editori e altre realtà creative nel 
+      proteggere e valorizzare il proprio lavoro. Il nostro obiettivo è garantire 
+      una consulenza legale su misura, che tuteli le idee dei clienti e ne 
+      rafforzi il valore nel contesto competitivo odierno.
     </p>
   </section>
+
+  <!-- PROFESSIONISTI -->
   <section id="professionisti" class="section-container" aria-labelledby="professionisti-title">
-  <h2 id="professionisti-title">Tradizione e Innovazione</h2>
-  <div class="team">
-    <!-- Card per Michele Lo Foco -->
-    <div class="team-member">
-      <h3>Avv. Michele Lo Foco</h3>
-      <p>Specializzato in diritto d’autore, con oltre 20 anni di esperienza nella consulenza legale per il settore creativo e culturale.</p>
-      <a href="michele-lo-foco.html" class="btn-details">Scopri di più</a>
-    </div>
+    <h2 id="professionisti-title">Tradizione e Innovazione</h2>
+    <div class="team">
+      <!-- Card per Michele Lo Foco -->
+      <div class="team-member">
+        <h3>Avv. Michele Lo Foco</h3>
+        <p>
+          Specializzato in diritto d’autore, con oltre 20 anni di esperienza
+          nella consulenza legale per il settore creativo e culturale.
+        </p>
+        <a href="michele-lo-foco.html" class="btn-details">Scopri di più</a>
+      </div>
 
-    <!-- Card per Andrea Lo Foco -->
-    <div class="team-member">
-      <h3>Avv. Andrea Lo Foco</h3>
-      <p>Avvocato con esperienza in diritto d’autore e amministrativo, attivo nei settori cinematografico, culturale e dello spettacolo.</p>
-      <a href="andrea-lo-foco.html" class="btn-details">Scopri di più</a>
+      <!-- Card per Andrea Lo Foco -->
+      <div class="team-member">
+        <h3>Avv. Andrea Lo Foco</h3>
+        <p>
+          Avvocato con esperienza in diritto d’autore e amministrativo,
+          attivo nei settori cinematografico, culturale e dello spettacolo.
+        </p>
+        <a href="andrea-lo-foco.html" class="btn-details">Scopri di più</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- SERVIZI (con esempio di accordion opzionale) -->
- <section id="servizi" class="section-container" aria-labelledby="servizi-title">
+  <!-- SERVIZI -->
+  <section id="servizi" class="section-container" aria-labelledby="servizi-title">
     <h2 id="servizi-title">Servizi</h2>
     <p>Offriamo servizi legali altamente qualificati nei seguenti ambiti:</p>
     
     <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">
-            Diritto d’autore
-        </button>
-        <div class="accordion-content">
-            <p>
-                Protezione, valorizzazione e gestione dei diritti sulle opere dell’ingegno.
-            </p>
-        </div>
+      <button class="accordion-header" aria-expanded="false">
+        Diritto d’autore
+      </button>
+      <div class="accordion-content">
+        <p>
+          Protezione, valorizzazione e gestione dei diritti sulle opere dell’ingegno.
+        </p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">
-            Diritto amministrativo
-        </button>
-        <div class="accordion-content">
-            <p>
-                Supporto per l’interazione con enti pubblici e privati nella realizzazione e gestione di progetti complessi.
-            </p>
-        </div>
+      <button class="accordion-header" aria-expanded="false">
+        Diritto amministrativo
+      </button>
+      <div class="accordion-content">
+        <p>
+          Supporto per l’interazione con enti pubblici e privati nella realizzazione 
+          e gestione di progetti complessi.
+        </p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">
-            Progetti culturali
-        </button>
-        <div class="accordion-content">
-            <p>
-                Assistenza nella pianificazione, sviluppo e tutela di iniziative creative e culturali.
-            </p>
-        </div>
+      <button class="accordion-header" aria-expanded="false">
+        Progetti culturali
+      </button>
+      <div class="accordion-content">
+        <p>
+          Assistenza nella pianificazione, sviluppo e tutela di iniziative 
+          creative e culturali.
+        </p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">
-            Proprietà intellettuale
-        </button>
-        <div class="accordion-content">
-            <p>
-                Consulenza completa per garantire la salvaguardia dei diritti di proprietà intellettuale.
-            </p>
-        </div>
+      <button class="accordion-header" aria-expanded="false">
+        Proprietà intellettuale
+      </button>
+      <div class="accordion-content">
+        <p>
+          Consulenza completa per garantire la salvaguardia dei diritti 
+          di proprietà intellettuale.
+        </p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">
-            Diritto d’immagine e dello spettacolo
-        </button>
-        <div class="accordion-content">
-            <p>
-                Soluzioni personalizzate per la tutela dell’identità e dell’immagine, con un focus sul settore dello spettacolo.
-            </p>
-        </div>
+      <button class="accordion-header" aria-expanded="false">
+        Diritto d’immagine e dello spettacolo
+      </button>
+      <div class="accordion-content">
+        <p>
+          Soluzioni personalizzate per la tutela dell’identità e dell’immagine, 
+          con un focus sul settore dello spettacolo.
+        </p>
+      </div>
     </div>
 
     <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">
-            Diritti connessi
-        </button>
-        <div class="accordion-content">
-            <p>
-                Gestione e difesa dei diritti correlati alle opere creative e alla loro diffusione.
-            </p>
-        </div>
+      <button class="accordion-header" aria-expanded="false">
+        Diritti connessi
+      </button>
+      <div class="accordion-content">
+        <p>
+          Gestione e difesa dei diritti correlati alle opere creative 
+          e alla loro diffusione.
+        </p>
+      </div>
     </div>
-</section>
+  </section>
 
   <!-- CONTATTI -->
   <section id="contatti" class="section-container" aria-labelledby="contatti-title">
     <h2 id="contatti-title">Contatti</h2>
     <p>
-      Per qualsiasi informazione o per concordare un appuntamento, non esitate a contattarci telefonicamente o via email.
-      In alternativa, potrete compilare il modulo sottostante per inviarci la vostra richiesta.</p>
+      Per qualsiasi informazione o per concordare un appuntamento, non esitate a
+      contattarci telefonicamente o via email. In alternativa, potrete compilare
+      il modulo sottostante per inviarci la vostra richiesta.
+    </p>
 
     <div class="contact-info">
       <p><strong>Indirizzo:</strong> Via Boezio, 2/A - 00193, Roma</p>
@@ -289,49 +297,49 @@ document.addEventListener("DOMContentLoaded", () => CookieManager.init());
       </p>
       <p><strong>Telefono:</strong> +39 06 3201820</p>
       <p>
-      Scopri di più su <a href="https://linktr.ee/studiolegalelofoco" target="_blank">linktr.ee</a>.
-    </p>
+        Scopri di più su <a href="https://linktr.ee/studiolegalelofoco" target="_blank">linktr.ee</a>.
+      </p>
     </div>
 
     <!-- Modulo di contatto -->
     <form class="contact-form" action="https://formspree.io/f/mgvvkobk" method="POST">
       <div class="form-row">
         <label for="nome">Nome e Cognome</label>
-        <input 
-          type="text" 
-          id="nome" 
-          name="nome" 
-          placeholder="Inserisci il tuo nome" 
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Inserisci il tuo nome"
           required
         />
       </div>
 
       <div class="form-row">
         <label for="email">Email</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="Inserisci la tua email" 
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Inserisci la tua email"
           required
         />
       </div>
 
       <div class="form-row">
         <label for="messaggio">Messaggio</label>
-        <textarea 
-          id="messaggio" 
-          name="messaggio" 
-          rows="5" 
-          placeholder="Descrivi la tua richiesta" 
+        <textarea
+          id="messaggio"
+          name="messaggio"
+          rows="5"
+          placeholder="Descrivi la tua richiesta"
           required
         ></textarea>
       </div>
 
       <div class="form-row check-row">
-        <input 
-          type="checkbox" 
-          id="privacy" 
+        <input
+          type="checkbox"
+          id="privacy"
           name="privacy"
         />
         <label for="privacy">
@@ -351,11 +359,11 @@ document.addEventListener("DOMContentLoaded", () => CookieManager.init());
   <div class="map-container">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5938.688754514278!2d12.464792375583666!3d41.906955063607775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605928b4960d%3A0xe68ff98c0fbfcb3d!2sVia%20Boezio%2C%202a%2C%2000193%20Roma%20RM!5e0!3m2!1sen!2sit!4v1735326075333!5m2!1sen!2sit"
-      width="600" 
-      height="450" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
       aria-label="Mappa della sede dello Studio Legale Lo Foco"
     >
     </iframe>
@@ -365,14 +373,14 @@ document.addEventListener("DOMContentLoaded", () => CookieManager.init());
   <footer>
     <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
     <p class="footer-note">
-      <a href="privacy.html">Privacy Policy</a> | 
+      <a href="privacy.html">Privacy Policy</a> |
       <a href="terms.html">Termini di Servizio</a>
     </p>
   </footer>
 
   <!-- Pulsante "Torna su" -->
   <button 
-    id="scrollToTop" 
+    id="scrollToTop"
     style="display: none;"
     aria-label="Torna all'inizio della pagina"
   >
