@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://romolo90.github.io/studio-legale-lofoco/sitemap.xml
