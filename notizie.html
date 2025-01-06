@@ -4,15 +4,58 @@
   <meta charset="UTF-8" />
   <title>Ultime Notizie - Studio Legale Lo Foco</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Leggi le ultime notizie dal mondo del diritto e delle normative legali. Scopri gli aggiornamenti sul Tax Credit e altre iniziative legislative." />
+  <meta name="keywords" content="Ultime Notizie, Tax Credit, diritto, normativa legale, Studio Legale Lo Foco" />
+  <meta name="author" content="Studio Legale Lo Foco" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Stile personalizzato per questa pagina */
+    .news-item {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-left: 4px solid #003366;
+    }
+    .news-item h3 {
+      margin-top: 0;
+      color: #003366;
+    }
+    .news-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .news-item a {
+      color: #2980B9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .news-item a:hover {
+      text-decoration: underline;
+      color: #0056b3;
+    }
+    footer {
+      background-color: #003366;
+      color: #BFECFF;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+    footer .footer-note a {
+      color: #80D9FF;
+      text-decoration: none;
+    }
+    footer .footer-note a:hover {
+      text-decoration: underline;
+      color: #BFECFF;
+    }
+  </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="header">
     <div class="logo">
-      <h1><a href="index.html" class="home-link">Studio Legale Lo Foco</a></h1>
+      <h1><a href="index.html" class="home-link" aria-label="Torna alla homepage">Studio Legale Lo Foco</a></h1>
     </div>
 
     <!-- Hamburger menu (mobile) -->
@@ -34,57 +77,52 @@
   </header>
 
   <!-- SEZIONE NOTIZIE -->
- <section class="section-container">
-  <h2>Ultime Notizie</h2>
+  <section class="section-container" aria-labelledby="news-title">
+    <h2 id="news-title">Ultime Notizie</h2>
 
-  <!-- Sezione 1: Il TAR del Lazio e il Tax Credit -->
-  <article class="news-item">
-    <h3>Il TAR del Lazio e il Tax Credit: accolti parzialmente i ricorsi</h3>
-    <p>
-      Il TAR del Lazio ha accolto parzialmente i ricorsi contro il decreto sul tax credit, evidenziando la necessità 
-      di un approfondimento giuridico delle questioni sollevate. Pur non sospendendo l'efficacia del decreto, 
-      la decisione rappresenta un importante passo nel processo di valutazione della normativa, 
-      con l’obiettivo di garantire un equilibrio tra le diverse esigenze del settore.
-    </p>
-    <a href="notiziauno.html">Leggi di più</a>
-  </article>
+    <!-- Sezione 1 -->
+    <article class="news-item" aria-labelledby="news-item-1-title">
+      <h3 id="news-item-1-title">Il TAR del Lazio e il Tax Credit: accolti parzialmente i ricorsi</h3>
+      <p>
+        Il TAR del Lazio ha accolto parzialmente i ricorsi contro il decreto sul tax credit, evidenziando la necessità 
+        di un approfondimento giuridico delle questioni sollevate. Pur non sospendendo l'efficacia del decreto, 
+        la decisione rappresenta un importante passo nel processo di valutazione della normativa.
+      </p>
+      <a href="notiziauno.html" aria-label="Leggi di più sulla decisione del TAR del Lazio">Leggi di più</a>
+    </article>
 
-  <!-- Sezione 2: Critiche e Posizioni Politiche -->
-  <article class="news-item">
-    <h3>Tax Credit Cinematografico: Critiche e Proposte di Revisione</h3>
-    <p>
-      Il decreto sul tax credit cinematografico ha suscitato diverse reazioni tra gli esponenti politici. 
-      Alcune posizioni hanno evidenziato possibili effetti negativi per i piccoli produttori, 
-      mentre altre hanno posto l'accento sulla necessità di interventi per garantire un sistema più bilanciato. 
-      Questi dibattiti riflettono la complessità del settore e l’esigenza di un dialogo costruttivo per 
-      individuare soluzioni condivise.
-    </p>
-    <a href="notiziadue.html">Leggi di più</a>
-  </article>
+    <!-- Sezione 2 -->
+    <article class="news-item" aria-labelledby="news-item-2-title">
+      <h3 id="news-item-2-title">Tax Credit Cinematografico: Critiche e Proposte di Revisione</h3>
+      <p>
+        Il decreto sul tax credit cinematografico ha suscitato diverse reazioni tra gli esponenti politici. 
+        Alcune posizioni hanno evidenziato possibili effetti negativi per i piccoli produttori, 
+        mentre altre hanno posto l'accento sulla necessità di interventi per garantire un sistema più bilanciato.
+      </p>
+      <a href="notiziadue.html" aria-label="Leggi di più sulle critiche al Tax Credit Cinematografico">Leggi di più</a>
+    </article>
 
-  <!-- Sezione 3: Interventi di Riforma e Correttivi -->
-  <article class="news-item">
-    <h3>Tax Credit: il Ministero avvia interventi correttivi</h3>
-    <p>
-      Il Ministero della Cultura, in collaborazione con il MEF, ha annunciato l’avvio di misure per migliorare 
-      l’attuale sistema del tax credit. Tra le proposte, una maggiore flessibilità per i produttori indipendenti 
-      e l’adeguamento delle procedure per favorire una distribuzione più equa delle risorse. 
-      Questi interventi sono finalizzati a rispondere alle esigenze del settore.
-    </p>
-    <a href="notiziatre.html">Leggi di più</a>
-  </article>
-</section>
+    <!-- Sezione 3 -->
+    <article class="news-item" aria-labelledby="news-item-3-title">
+      <h3 id="news-item-3-title">Tax Credit: il Ministero avvia interventi correttivi</h3>
+      <p>
+        Il Ministero della Cultura, in collaborazione con il MEF, ha annunciato l’avvio di misure per migliorare 
+        l’attuale sistema del tax credit. Tra le proposte, una maggiore flessibilità per i produttori indipendenti 
+        e l’adeguamento delle procedure per favorire una distribuzione più equa delle risorse.
+      </p>
+      <a href="notiziatre.html" aria-label="Leggi di più sugli interventi correttivi del Ministero">Leggi di più</a>
+    </article>
+  </section>
 
   <!-- FOOTER -->
   <footer>
     <p>
-    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
-            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-            alt="Valid CSS!" />
-    </a>
-</p>
-</p>
+          src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+          alt="Valid CSS!" />
+      </a>
+    </p>
     <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
     <p class="footer-note">
       <a href="privacy.html">Privacy Policy</a> |
@@ -92,7 +130,7 @@
     </p>
   </footer>
 
-  <!-- script globale -->
+  <!-- Script globale -->
   <script src="script.js"></script>
 </body>
 </html>
