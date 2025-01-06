@@ -7,25 +7,25 @@ const App = {
     this.initFormValidation();
   },
 
-  // ======== COOKIE MANAGER ========
-  initCookieManager() {
+  const CookieManager = {
+  init() {
     const cookieBanner = document.getElementById("cookie-banner");
     const cookiePreferences = document.getElementById("cookie-preferences");
     const acceptCookiesBtn = document.getElementById("accept-cookies");
     const manageCookiesBtn = document.getElementById("manage-cookies");
     const savePreferencesBtn = document.getElementById("save-preferences");
 
-    if (acceptCookiesBtn) {
-      acceptCookiesBtn.addEventListener("click", () => this.acceptCookies(cookieBanner));
-    }
-    if (manageCookiesBtn) {
-      manageCookiesBtn.addEventListener("click", () => {
-        cookiePreferences.style.display = "block";
-      });
-    }
-    if (savePreferencesBtn) {
-      savePreferencesBtn.addEventListener("click", () => this.savePreferences(cookiePreferences));
-    }
+    acceptCookiesBtn?.addEventListener("click", () => {
+      this.acceptCookies(cookieBanner);
+    });
+
+    manageCookiesBtn?.addEventListener("click", () => {
+      cookiePreferences.style.display = "block";
+    });
+
+    savePreferencesBtn?.addEventListener("click", () => {
+      this.savePreferences(cookiePreferences);
+    });
 
     if (this.hasAcceptedCookies()) {
       this.hideBanner(cookieBanner);
@@ -48,10 +48,13 @@ const App = {
     return document.cookie.includes("cookiesAccepted=true");
   },
   hideBanner(banner) {
-    if (banner) {
-      banner.style.display = "none";
-    }
+    banner.style.display = "none";
   },
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  CookieManager.init();
+});
 
   // ======== MENU MOBILE ========
   initMenu() {
