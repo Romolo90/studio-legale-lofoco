@@ -12,6 +12,21 @@
   if (document.cookie.includes("cookiesAccepted=true")) {
     document.getElementById("cookie-banner").style.display = "none";
   }
+    document.getElementById("manage-cookies").addEventListener("click", function () {
+  document.getElementById("cookie-preferences").style.display = "block";
+});
+
+document.getElementById("save-preferences").addEventListener("click", function () {
+  // Salva le preferenze in un cookie
+  const checkboxes = document.querySelectorAll("#cookie-preferences input[name='cookieType']");
+  const preferences = Array.from(checkboxes).reduce((prefs, checkbox) => {
+    prefs[checkbox.value] = checkbox.checked;
+    return prefs;
+  }, {});
+  document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}`;
+  document.getElementById("cookie-preferences").style.display = "none";
+});
+
 </script>
 
 // ======== Riferimenti agli elementi ========
