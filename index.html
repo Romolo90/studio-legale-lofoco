@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<div id="cookie-preferences" style="display: none; background-color: #fff; padding: 20px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000; border: 1px solid #ccc; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-  <h2>Gestione Preferenze Cookie</h2>
-  <form>
-    <label>
-      <input type="checkbox" name="cookieType" value="technical" disabled checked />
-      Cookie Tecnici (Obbligatori)
-    </label><br />
-    <label>
-      <input type="checkbox" name="cookieType" value="analytics" />
-      Cookie Analitici
-    </label><br />
-    <label>
-      <input type="checkbox" name="cookieType" value="marketing" />
-      Cookie di Marketing
-    </label><br />
-    <button type="button" id="save-preferences">Salva Preferenze</button>
-  </form>
-</div>
-  
+<!DOCTYPE html>  
 </div>
 <html lang="it">
 <head>
@@ -87,6 +68,26 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- COOKIE PREFERENCES -->
+  <div id="cookie-preferences" style="display: none; background-color: #fff; padding: 20px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000; border: 1px solid #ccc; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <h2>Gestione Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="technical" disabled checked />
+        Cookie Tecnici (Obbligatori)
+      </label><br />
+      <label>
+        <input type="checkbox" name="cookieType" value="analytics" />
+        Cookie Analitici
+      </label><br />
+      <label>
+        <input type="checkbox" name="cookieType" value="marketing" />
+        Cookie di Marketing
+      </label><br />
+      <button type="button" id="save-preferences">Salva Preferenze</button>
+    </form>
+  </div>
 
   <!-- HEADER -->
   <header class="header">
