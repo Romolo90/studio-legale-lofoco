@@ -6,6 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Stile globale */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .section-container {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .footer {
+      background-color: #003366;
+      color: #BFECFF;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: auto;
+    }
+
+    .footer-note a {
+      color: #80D9FF;
+      text-decoration: none;
+    }
+
+    .footer-note a:hover {
+      color: #BFECFF;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
@@ -34,15 +67,14 @@
   </header>
 
   <!-- SEZIONE NOTIZIE -->
- <section class="section-container">
-  <h2>Ultime Notizie</h2>
+  <section class="section-container">
+    <h2>Ultime Notizie</h2>
     <h1>Critiche e Proposte di Revisione</h1>
-  </header>
-  <main>
     <p>Critiche e dibattiti sul decreto Tax Credit.</p>
     <ul>
       <li><a href="file-Wx4n46GK3wx5pErgj5BScj.pdf" target="_blank">Posizione e critiche politiche</a></li>
     </ul>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -59,36 +91,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-<style>
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  .section-container {
-    flex: 1;
-    padding: 20px;
-  }
-
-  .footer {
-    background-color: #003366;
-    color: #BFECFF;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: auto;
-  }
-
-  .footer-note a {
-    color: #80D9FF;
-    text-decoration: none;
-  }
-
-  .footer-note a:hover {
-    color: #BFECFF;
-    text-decoration: underline;
-  }
-</style>
