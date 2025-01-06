@@ -265,29 +265,6 @@ p {
   margin: 4px 0;
 }
 
-/* Media query per dispositivi mobili */
-@media (max-width: 768px) {
-  .main-nav {
-    display: none; /* Nasconde la navigazione su mobile */
-    flex-direction: column;
-    background-color: #003366;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    padding: 1rem 0;
-    gap: 1rem;
-  }
-
-  .main-nav.active {
-    display: flex; /* Mostra il menu quando attivato */
-  }
-
-  .hamburger {
-    display: flex; /* Mostra il menu hamburger su mobile */
-  }
-}
-
 /* ========================================
    HERO
 ======================================== */
