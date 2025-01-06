@@ -10,6 +10,24 @@ html, body {
   width: 100%;
   height: 100%;
 }
+
+/* ========================================
+   STILE GENERALE
+======================================== */
+body {
+  font-family: 'EB Garamond', serif;
+  background-color: #BFECFF;
+  color: #003247;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  overflow-x: hidden; /* Evita scroll orizzontale */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ========================================
    BANNER COOKIE
 ======================================== */
@@ -155,26 +173,9 @@ html, body {
   background-color: #003247;
 }
 
-/* ========================================
-   STILE GENERALE
-======================================== */
-body {
-  font-family: 'EB Garamond', serif;
-  background-color: #BFECFF;
-  color: #003247;
-  line-height: 1.8;
-  font-size: 1.2rem;
-  overflow-x: hidden; /* Evita scroll orizzontale */
-}
-
 /* -----------------------------------------
    ELEMENTI DI BASE
 ------------------------------------------ */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 ul {
   list-style: disc;
   margin-left: 2rem;
@@ -202,11 +203,11 @@ p {
 }
 
 .logo h1 {
-  font-size: 1.8rem; /* Adeguata alla dimensione del layout mobile */
+  font-size: 1.8rem;
   color: #BFECFF;
-  white-space: nowrap; /* Mantiene il testo su una singola riga */
-  overflow: hidden; 
-  text-overflow: ellipsis; /* Evita problemi di layout */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hamburger {
@@ -246,8 +247,7 @@ p {
 .hero {
   position: relative;
   height: 70vh;
-  background:
-    url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
+  background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
     center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -276,14 +276,16 @@ p {
   font-size: 2.3rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  white-space: nowrap; /* Evita che il testo vada a capo */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Opzionale, aggiunge un effetto "..." se necessario */
+  text-overflow: ellipsis;
 }
+
 .hero-content p {
   font-size: 1.3rem;
   margin-bottom: 2rem;
 }
+
 /* Pulsante "Contattaci ora" con gradiente e animazione */
 .btn-cta {
   position: relative;
@@ -336,6 +338,7 @@ p {
 .btn-cta:hover svg {
   transform: scale(1.1);
 }
+
 /* ========================================
    SEZIONE PROFESSIONISTI
 ======================================== */
@@ -379,6 +382,7 @@ p {
   color: #333333;
   line-height: 1.6;
 }
+
 .btn-details {
   display: inline-block;
   margin-top: 1rem;
@@ -436,9 +440,11 @@ p {
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
+
 .accordion-header:hover {
   background-color: #003247;
 }
+
 .accordion-content {
   max-height: 0;
   opacity: 0;
@@ -448,15 +454,17 @@ p {
   transition: max-height 0.3s ease, opacity 0.3s ease;
   padding: 0 1rem;
 }
+
 .accordion-content p {
   padding: 1rem 0;
   margin: 0;
 }
+
 /* Stato "aperto" */
 .accordion-header[aria-expanded="true"] + .accordion-content {
   visibility: visible;
   opacity: 1;
-  max-height: 200px; 
+  max-height: 200px;
 }
 
 /* ========================================
@@ -478,6 +486,7 @@ p {
   margin-bottom: 0.5rem;
   color: #003247;
 }
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -486,11 +495,13 @@ p {
   border-radius: 5px;
   font: inherit;
 }
+
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #004766;
   outline: none;
 }
+
 .contact-form button {
   width: 100%;
   background-color: #004766;
@@ -502,6 +513,7 @@ p {
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
+
 .contact-form button:hover {
   background-color: #003247;
   cursor: pointer;
@@ -513,6 +525,7 @@ p {
 .map-container {
   margin-top: 2.5rem;
 }
+
 .map-container iframe {
   width: 100%;
   border: 2px solid #80D9FF;
@@ -531,15 +544,18 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
+
 .footer-note {
   margin-top: 1rem;
   font-size: 1rem;
 }
+
 .footer-note a {
   color: #80D9FF;
   text-decoration: none;
   font-weight: 600;
 }
+
 .footer-note a:hover {
   color: #BFECFF;
   text-decoration: underline;
@@ -563,6 +579,7 @@ footer {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 #scrollToTop:hover {
   background-color: #003247;
 }
@@ -579,10 +596,11 @@ footer {
     flex-wrap: wrap;
     padding: 1rem;
   }
+
   .logo h1 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    white-space: normal; /* Consenti di andare a capo */
+    white-space: normal;
   }
 
   .hamburger {
@@ -607,9 +625,11 @@ footer {
     overflow-y: auto;
     z-index: 9998;
   }
+
   .main-nav.active {
     transform: translateX(0);
   }
+
   .main-nav ul {
     flex-direction: column;
     gap: 1rem;
@@ -620,19 +640,12 @@ footer {
     height: auto;
     padding: 3rem 1rem;
   }
+
   .hero-content h2 {
     font-size: 2.3rem;
   }
+
   .hero-content p {
     font-size: 1.1rem;
   }
 }
-.name {
-  white-space: nowrap;
-}
-@media (max-width: 768px) {
-  .name {
-    font-size: 1.2rem; /* Adatta la dimensione per schermi più piccoli */
-  }
-}
-
