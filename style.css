@@ -702,6 +702,9 @@ Modifica il codice in questo modo:
   </div>
 </section>
 
+/* ========================================
+   STILE SEZIONE BIOGRAFIA
+======================================== */
 .bio-container {
   display: flex;
   align-items: center;
@@ -709,11 +712,24 @@ Modifica il codice in questo modo:
 }
 
 .bio-image {
-  width: 150px; /* Modifica la dimensione dell'immagine a piacere */
+  width: 180px; /* Modifica la dimensione dell'immagine */
   height: auto;
   border-radius: 8px; /* Opzionale: arrotondare i bordi */
+  object-fit: cover;
 }
 
 .bio-text {
   flex: 1;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column; /* Disposizione verticale su schermi piccoli */
+    text-align: center;
+  }
+
+  .bio-image {
+    width: 120px; /* Riduci la dimensione su mobile */
+  }
 }
