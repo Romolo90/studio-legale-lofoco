@@ -756,3 +756,84 @@ Modifica il codice in questo modo:
     font-size: 1.5rem;
   }
 }
+/* SEZIONE BIOGRAFIA MIGLIORATA */
+.bio-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f5faff; /* Sfondo leggero per evidenziare la sezione */
+}
+
+/* Box biografico */
+.bio-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Effetto elegante */
+  padding: 30px;
+  max-width: 950px;
+  width: 100%;
+}
+
+/* Contenitore immagine + testo */
+.bio-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Stile immagine */
+.bio-image-wrapper {
+  flex-shrink: 0; /* Evita il ridimensionamento della foto */
+}
+
+.bio-image {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid #003366; /* Bordo sottile per evidenziare l'immagine */
+}
+
+/* Testo della biografia */
+.bio-text {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+/* Nome */
+.bio-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+/* Sottotitolo */
+.bio-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bio-image {
+    width: 140px;
+    margin-bottom: 15px;
+  }
+
+  .bio-title {
+    font-size: 1.7rem;
+  }
+
+  .bio-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
