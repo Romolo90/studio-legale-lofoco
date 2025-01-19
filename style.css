@@ -865,13 +865,25 @@ Modifica il codice in questo modo:
   gap: 30px;
 }
 
+/* Contenitore immagine */
+.profile-image-wrapper {
+  max-width: 180px;  /* Imposta un limite massimo per la dimensione dell'immagine */
+  width: 100%;  /* Mantiene flessibilità per adattarsi al layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita eventuali fuoriuscite dell'immagine */
+}
+
 /* Stile immagine */
 .profile-image {
-  width: 180px;
-  height: auto;
+  width: 100%;  /* Adatta l'immagine al contenitore */
+  max-width: 180px;  /* Impedisce ingrandimenti eccessivi */
+  height: auto;  /* Mantiene le proporzioni */
   border-radius: 10px;
   object-fit: cover;
   border: 3px solid #003366;
+  display: block;  /* Previene spazi extra sotto l'immagine */
 }
 
 /* Testo */
@@ -901,14 +913,22 @@ Modifica il codice in questo modo:
   margin-bottom: 5px;
 }
 
-/* Responsive */
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
 @media (max-width: 768px) {
   .profile-container {
     flex-direction: column;
     text-align: center;
   }
 
+  .profile-image-wrapper {
+    max-width: 140px; /* Riduce la dimensione su mobile */
+  }
+
   .profile-image {
-    width: 140px;
+    max-width: 140px; /* Riduce la dimensione dell'immagine */
   }
 }
+
+
