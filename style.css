@@ -938,6 +938,24 @@ Modifica il codice in questo modo:
     background-color: #f5f5f5; /* Sfondo leggero per separarlo dal contenuto */
     border-radius: 8px; /* Bordi arrotondati */
 }
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.main-nav ul li a:hover {
+    background: #003366;
+    color: #ffffff;
+}
 
 
 
