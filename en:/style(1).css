@@ -1,0 +1,943 @@
+/* ========================================
+   RESET DI BASE
+======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* ========================================
+   STILE GENERALE
+======================================== */
+body {
+  font-family: 'EB Garamond', serif;
+  background-color: #BFECFF;
+  color: #003247;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  overflow-x: hidden; /* Evita scroll orizzontale */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================================
+   BANNER COOKIE
+======================================== */
+.cookie-banner {
+  background-color: #003366;
+  color: #BFECFF;
+  padding: 15px 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.cookie-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.cookie-content a {
+  color: #80D9FF;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn-cookie {
+  background-color: #004766;
+  color: #BFECFF;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cookie:hover {
+  background-color: #003247;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #80D9FF;
+  color: #003366;
+}
+
+.btn-secondary:hover {
+  background-color: #004766;
+  color: #BFECFF;
+}
+
+/* ========================================
+   PREFERENZE COOKIE
+======================================== */
+#cookie-preferences {
+  display: none;
+  background-color: #fff;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#cookie-preferences h2 {
+  margin-top: 0;
+  color: #003366;
+  font-size: 18px;
+}
+
+#cookie-preferences form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#cookie-preferences label {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#cookie-preferences input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+#cookie-preferences button {
+  background-color: #004766;
+  color: #BFECFF;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#cookie-preferences button:hover {
+  background-color: #003247;
+}
+
+/* -----------------------------------------
+   ELEMENTI DI BASE
+------------------------------------------ */
+ul {
+  list-style: disc;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+.header {
+  background-color: #003366;
+  color: #BFECFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Stile per il logo */
+.logo h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #BFECFF;
+  font-weight: bold;
+}
+
+/* Stile per la navigazione */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li {
+  margin: 0;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #BFECFF;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  color: #80D9FF;
+}
+
+/* Stile per il menu hamburger (mobile) */
+.hamburger {
+  display: none; /* Default: nascosto su desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 9999;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #BFECFF;
+  margin: 4px 0;
+}
+
+/* ========================================
+   HERO
+======================================== */
+.hero {
+  position: relative;
+  height: 70vh;
+  background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 51, 102, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  color: #BFECFF;
+  text-align: center;
+  z-index: 1;
+  padding: 0 1rem;
+  max-width: 800px;
+}
+
+.hero-content h2 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+/* Pulsante "Contattaci ora" con gradiente e animazione */
+.btn-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #0066CC, #004766);
+  color: #BFECFF;
+  padding: 0.9rem 1.6rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-cta span {
+  margin-right: 0.5rem;
+}
+
+.btn-cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.btn-cta:hover:before {
+  opacity: 1;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(90deg, #004766, #002244);
+  transform: translateY(-2px);
+}
+
+.btn-cta svg {
+  fill: #BFECFF;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.btn-cta:hover svg {
+  transform: scale(1.1);
+}
+
+/* ========================================
+   SEZIONE PROFESSIONISTI
+======================================== */
+#professionisti {
+  background-color: #f5faff;
+  padding: 3rem 1.5rem;
+  border-top: 2px solid #80d9ff;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.team-member {
+  background-color: #ffffff;
+  border: 1px solid #80d9ff;
+  border-radius: 5px;
+  padding: 1.5rem;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.team-member h3 {
+  color: #003366;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.6;
+}
+
+.btn-details {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #004766;
+  color: #BFECFF;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-details:hover {
+  background-color: #003247;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* ========================================
+   SEZIONI GENERICHE
+======================================== */
+.section-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #003366;
+}
+
+/* ========================================
+   ACCORDION (SERVIZI)
+======================================== */
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid #80D9FF;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #004766;
+  color: #BFECFF;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #003247;
+}
+
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background-color: #BFECFF;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  padding: 0 1rem;
+}
+
+.accordion-content p {
+  padding: 1rem 0;
+  margin: 0;
+}
+
+/* Stato "aperto" */
+.accordion-header[aria-expanded="true"] + .accordion-content {
+  visibility: visible;
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* ========================================
+   FORM DI CONTATTO
+======================================== */
+.contact-form {
+  background-color: #BFECFF;
+  padding: 2rem;
+  border: 1px solid #80D9FF;
+  border-radius: 5px;
+  margin-top: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #003247;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #80D9FF;
+  border-radius: 5px;
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #004766;
+  outline: none;
+}
+
+.contact-form button {
+  width: 100%;
+  background-color: #004766;
+  color: #BFECFF;
+  border: none;
+  border-radius: 5px;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #003247;
+  cursor: pointer;
+}
+
+/* ========================================
+   MAPPA
+======================================== */
+.map-container {
+  margin-top: 2.5rem;
+}
+
+.map-container iframe {
+  width: 100%;
+  border: 2px solid #80D9FF;
+  border-radius: 5px;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+footer {
+  background-color: #003366;
+  color: #BFECFF;
+  text-align: center;
+  padding: 2rem 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-note {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.footer-note a {
+  color: #80D9FF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-note a:hover {
+  color: #BFECFF;
+  text-decoration: underline;
+}
+
+/* ========================================
+   TASTO SCROLL TOP
+======================================== */
+#scrollToTop {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background-color: #004766;
+  color: #BFECFF;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#scrollToTop:hover {
+  background-color: #003247;
+}
+
+/* ========================================
+   MEDIA QUERIES
+======================================== */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    white-space: normal;
+  }
+
+  .hamburger {
+    display: flex; /* Mostra hamburger su mobile */
+  }
+
+  /* Menu mobile off-canvas */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    height: 100vh;
+    background-color: #003366;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    z-index: 9998;
+  }
+
+  .main-nav.active {
+    transform: translateX(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2.3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+Puoi aggiungere un'immagine/foto del professionista all'interno della sezione BIOGRAFIA utilizzando il tag <img>. Ti consiglio di inserirla prima del nome "Avv. Andrea Lo Foco" o accanto alla descrizione per una disposizione più armoniosa.
+Modifica il codice in questo modo:
+
+<!-- BIOGRAFIA -->
+<section class="section-container">
+  <h2>Avv. Andrea Lo&nbsp;Foco</h2>
+  
+  <!-- Aggiunta dell'immagine -->
+  <div class="bio-container">
+    <img src="images/andrea-lo-foco.jpg" alt="Foto di Andrea Lo Foco" class="bio-image">
+    
+    <div class="bio-text">
+      <p>
+        Avvocato con esperienza in diritto d’autore e diritto amministrativo, 
+        attivo nei settori cinematografico, dello spettacolo e culturale. 
+        Si occupa dell’analisi editoriale e commerciale dei diritti di sfruttamento 
+        delle opere audiovisive, con attenzione al tax credit cinema e alle normative 
+        di protezione delle opere creative in ambito italiano ed europeo. 
+        Membro della Commissione Cultura e Spettacolo dell’Ordine degli Avvocati di Roma, 
+        offre consulenza legale nella tutela dei diritti di autori, artisti, case di produzione, 
+        editori e altre realtà del settore culturale e creativo.
+      </p>
+      <p>
+        Scopri di più su <a href="https://linktr.ee/andrealofoco" target="_blank">linktr.ee</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+/* BIOGRAFIA */
+.bio-section {
+  display: flex;
+  justify-content: center; /* Centra il contenuto nella pagina */
+  padding: 50px 15px; /* Distanza dai margini laterali */
+  background-color: #f5faff; /* Sfondo leggero per evidenziare la sezione */
+}
+
+.bio-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 900px; /* Mantiene il layout compatto */
+  width: 100%;
+}
+
+.bio-image {
+  width: 180px; /* Aumentata per una migliore proporzione */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Bordi arrotondati */
+  object-fit: cover;
+  margin-left: 20px; /* Spazio tra immagine e bordo sinistro */
+}
+
+.bio-text {
+  flex: 1;
+  font-size: 1rem;
+}
+
+/* Stile per il nome */
+.bio-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 10px; /* Spazio sotto il nome */
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column; /* Disposizione verticale su schermi piccoli */
+    text-align: center;
+  }
+
+  .bio-image {
+    width: 140px; /* Riduce la dimensione su mobile */
+    margin: 0 auto; /* Centra l'immagine su dispositivi mobili */
+  }
+
+  .bio-title {
+    font-size: 1.5rem;
+  }
+}
+/* SEZIONE BIOGRAFIA MIGLIORATA */
+.bio-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f5faff; /* Sfondo leggero per evidenziare la sezione */
+}
+
+/* Box biografico */
+.bio-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Effetto elegante */
+  padding: 30px;
+  max-width: 950px;
+  width: 100%;
+}
+
+/* Contenitore immagine + testo */
+.bio-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Stile immagine */
+.bio-image-wrapper {
+  flex-shrink: 0; /* Evita il ridimensionamento della foto */
+}
+
+.bio-image {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid #003366; /* Bordo sottile per evidenziare l'immagine */
+}
+
+/* Testo della biografia */
+.bio-text {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+/* Nome */
+.bio-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+/* Sottotitolo */
+.bio-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bio-image {
+    width: 140px;
+    margin-bottom: 15px;
+  }
+
+  .bio-title {
+    font-size: 1.7rem;
+  }
+
+  .bio-subtitle {
+    font-size: 1.1rem;
+  }
+}
+/* ============================
+   SEZIONE BIOGRAFIA E CURRICULUM
+============================ */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f5faff; /* Sfondo chiaro */
+}
+
+/* Box contenitore */
+.profile-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Contenitore immagine + testo */
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Contenitore immagine */
+.profile-image-wrapper {
+  max-width: 180px;  /* Imposta un limite massimo per la dimensione dell'immagine */
+  width: 100%;  /* Mantiene flessibilità per adattarsi al layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita eventuali fuoriuscite dell'immagine */
+}
+
+/* Stile immagine */
+.profile-image {
+  width: 100%;  /* Adatta l'immagine al contenitore */
+  max-width: 180px;  /* Impedisce ingrandimenti eccessivi */
+  height: auto;  /* Mantiene le proporzioni */
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid #003366;
+  display: block;  /* Previene spazi extra sotto l'immagine */
+}
+
+/* Testo */
+.profile-text {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+/* Titoli */
+.profile-title {
+  font-size: 2rem;
+  color: #003366;
+}
+
+.profile-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Stile per le liste */
+.profile-box ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.profile-box li {
+  margin-bottom: 5px;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image-wrapper {
+    max-width: 140px; /* Riduce la dimensione su mobile */
+  }
+
+  .profile-image {
+    max-width: 140px; /* Riduce la dimensione dell'immagine */
+  }
+}
+.ad-footer {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 728px; /* Limita la dimensione */
+    text-align: center;
+    background-color: #f5f5f5; /* Sfondo leggero per separarlo dal contenuto */
+    border-radius: 8px; /* Bordi arrotondati */
+}
+
+
+
