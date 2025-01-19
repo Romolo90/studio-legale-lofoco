@@ -837,17 +837,17 @@ Modifica il codice in questo modo:
   }
 }
 /* ========================================
-   SEZIONE CURRICULUM VITAE MIGLIORATA
+   SEZIONE GENERALE: BIOGRAFIA E CURRICULUM
 ======================================== */
-.cv-section {
+.section-container {
   display: flex;
   justify-content: center;
   padding: 60px 20px;
-  background-color: #f5faff; /* Sfondo chiaro per distinguere la sezione */
+  background-color: #f5faff;
 }
 
-/* Box curriculum */
-.cv-box {
+/* Box contenitore per Biografia e Curriculum */
+.bio-box, .cv-box {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -857,76 +857,77 @@ Modifica il codice in questo modo:
 }
 
 /* Contenitore immagine + testo */
-.cv-container {
+.bio-container, .cv-container {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-/* Stile immagine */
-.cv-image-wrapper {
+/* Stile immagine (valido per Bio e CV) */
+.bio-image-wrapper, .cv-image-wrapper {
   flex-shrink: 0;
 }
 
-.cv-image {
+.bio-image, .cv-image {
   width: 180px;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
-  border: 3px solid #003366; /* Bordo per eleganza */
+  border: 3px solid #003366;
 }
 
-/* Testo del CV */
-.cv-text {
+/* Testo per Bio e CV */
+.bio-text, .cv-text {
   flex: 1;
   font-size: 1.1rem;
 }
 
-/* Nome */
-.cv-title {
+/* Titoli principali */
+.bio-title, .cv-title {
   font-size: 2rem;
   font-weight: bold;
   color: #003366;
   margin-bottom: 5px;
 }
 
-/* Sottotitolo */
-.cv-subtitle {
+/* Sottotitoli */
+.bio-subtitle, .cv-subtitle {
   font-size: 1.2rem;
   color: #666;
   margin-bottom: 15px;
   font-style: italic;
 }
 
-/* Stile liste */
-.cv-text ul {
+/* Liste migliorate */
+.bio-text ul, .cv-text ul {
   list-style-type: disc;
   margin-left: 20px;
   margin-bottom: 15px;
 }
 
-.cv-text li {
+.bio-text li, .cv-text li {
   margin-bottom: 5px;
 }
 
-/* Mobile responsive */
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
 @media (max-width: 768px) {
-  .cv-container {
+  .bio-container, .cv-container {
     flex-direction: column;
     text-align: center;
   }
 
-  .cv-image {
+  .bio-image, .cv-image {
     width: 140px;
     margin-bottom: 15px;
   }
 
-  .cv-title {
+  .bio-title, .cv-title {
     font-size: 1.7rem;
   }
 
-  .cv-subtitle {
+  .bio-subtitle, .cv-subtitle {
     font-size: 1.1rem;
   }
 }
-
