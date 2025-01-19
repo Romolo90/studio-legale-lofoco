@@ -702,28 +702,42 @@ Modifica il codice in questo modo:
   </div>
 </section>
 
-/* ========================================
-   STILE SEZIONE BIOGRAFIA
-======================================== */
+/* BIOGRAFIA */
+.bio-section {
+  display: flex;
+  justify-content: center; /* Centra il contenuto nella pagina */
+  padding: 50px 15px; /* Distanza dai margini laterali */
+  background-color: #f5faff; /* Sfondo leggero per evidenziare la sezione */
+}
+
 .bio-container {
   display: flex;
   align-items: center;
-  gap: 20px;
-  max-width: 900px; /* Impedisce l'espansione eccessiva */
-  margin: auto; /* Centra il contenuto */
+  gap: 30px;
+  max-width: 900px; /* Mantiene il layout compatto */
+  width: 100%;
 }
 
 .bio-image {
-  width: 150px; /* Regola la dimensione dell'immagine */
-  max-width: 100%; /* Impedisce l'espansione oltre la dimensione */
+  width: 180px; /* Aumentata per una migliore proporzione */
+  max-width: 100%;
   height: auto;
-  border-radius: 8px; /* Bordo arrotondato per un aspetto elegante */
+  border-radius: 10px; /* Bordi arrotondati */
   object-fit: cover;
+  margin-left: 20px; /* Spazio tra immagine e bordo sinistro */
 }
 
 .bio-text {
   flex: 1;
-  font-size: 1rem; /* Assicura leggibilità */
+  font-size: 1rem;
+}
+
+/* Stile per il nome */
+.bio-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 10px; /* Spazio sotto il nome */
 }
 
 /* Mobile responsive */
@@ -734,6 +748,11 @@ Modifica il codice in questo modo:
   }
 
   .bio-image {
-    width: 120px; /* Riduce la dimensione su mobile */
+    width: 140px; /* Riduce la dimensione su mobile */
+    margin: 0 auto; /* Centra l'immagine su dispositivi mobili */
+  }
+
+  .bio-title {
+    font-size: 1.5rem;
   }
 }
