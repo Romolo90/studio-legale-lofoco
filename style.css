@@ -673,3 +673,47 @@ footer {
     font-size: 1.1rem;
   }
 }
+Puoi aggiungere un'immagine/foto del professionista all'interno della sezione BIOGRAFIA utilizzando il tag <img>. Ti consiglio di inserirla prima del nome "Avv. Andrea Lo Foco" o accanto alla descrizione per una disposizione più armoniosa.
+Modifica il codice in questo modo:
+
+<!-- BIOGRAFIA -->
+<section class="section-container">
+  <h2>Avv. Andrea Lo&nbsp;Foco</h2>
+  
+  <!-- Aggiunta dell'immagine -->
+  <div class="bio-container">
+    <img src="images/andrea-lo-foco.jpg" alt="Foto di Andrea Lo Foco" class="bio-image">
+    
+    <div class="bio-text">
+      <p>
+        Avvocato con esperienza in diritto d’autore e diritto amministrativo, 
+        attivo nei settori cinematografico, dello spettacolo e culturale. 
+        Si occupa dell’analisi editoriale e commerciale dei diritti di sfruttamento 
+        delle opere audiovisive, con attenzione al tax credit cinema e alle normative 
+        di protezione delle opere creative in ambito italiano ed europeo. 
+        Membro della Commissione Cultura e Spettacolo dell’Ordine degli Avvocati di Roma, 
+        offre consulenza legale nella tutela dei diritti di autori, artisti, case di produzione, 
+        editori e altre realtà del settore culturale e creativo.
+      </p>
+      <p>
+        Scopri di più su <a href="https://linktr.ee/andrealofoco" target="_blank">linktr.ee</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+.bio-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bio-image {
+  width: 150px; /* Modifica la dimensione dell'immagine a piacere */
+  height: auto;
+  border-radius: 8px; /* Opzionale: arrotondare i bordi */
+}
+
+.bio-text {
+  flex: 1;
+}
