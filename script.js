@@ -1,57 +1,121 @@
-// Funzioni di utilità per il logging
-const Logger = {
-  log(message) {
-    console.log(message);
-  },
-  error(message) {
-    console.error(message);
-  }
-};
-
 // Oggetto principale dell'applicazione
 const App = {
   init() {
-    this.initModules();
+    this.initCookieManager();
+    this.initMenu();
+    this.initScrollToTop();
+    this.initAccordion();
+    this.initFormValidation();
   },
 
-  initModules() {
-    Logger.log("Inizializzazione dei moduli...");
-    const modules = [CookieManager, MenuManager, ScrollManager, AccordionManager, FormValidator];
-    modules.forEach(module => module.init ? module.init() : Logger.error("Init method missing in module"));
-  }
+  initCookieManager() {
+    CookieManager.init();
+  },
+
+  initMenu() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const mainNav = document.getElementById('mainNav');
+
+    if (hamburgerMenu) {
+      hamburgerMenu.addEventListener('click', () => {
+        mainNav?.classList.toggle('active');
+      });
+    }
+
+    // Chiude il menu mobile quando si clicca su un link
+    mainNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+      });
+    });
+  },
+
+  initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (scrollToTopBtn) {
+      // Mostra o nasconde il pulsante in base allo scroll
+      window.addEventListener('scroll', () => {
+        scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+      });
+
+      // Scorrimento verso l'alto
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  },
+
+  initAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        // Chiudi tutti
+        accordionHeaders.forEach(h => h.setAttribute('aria-expanded', 'false'));
+        // Apri solo quello cliccato
+        if (!isExpanded) {
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  },
+
+  initFormValidation() {
+    const privacyCheckbox = document.getElementById('privacy');
+    const form = document.querySelector('.contact-form');
+    if (form && privacyCheckbox) {
+      form.addEventListener('submit', e => {
+        if (!privacyCheckbox.checked) {
+          e.preventDefault();
+          alert('Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.');
+        }
+      });
+    }
+  },
 };
 
 // Gestione dei cookie
 const CookieManager = {
   init() {
-    this.setupCookieConsentElements();
-    this.handleCookieConsent();
-  },
-
-  setupCookieConsentElements() {
     this.cookieBanner = document.getElementById('cookie-banner');
     this.cookiePreferences = document.getElementById('cookie-preferences');
     this.acceptCookiesBtn = document.getElementById('accept-cookies');
     this.manageCookiesBtn = document.getElementById('manage-cookies');
     this.savePreferencesBtn = document.getElementById('save-preferences');
-  },
 
-  handleCookieConsent() {
-    this.acceptCookiesBtn?.addEventListener('click', () => this.acceptAllCookies());
-    this.manageCookiesBtn?.addEventListener('click', () => this.showPreferences());
-    this.savePreferencesBtn?.addEventListener('click', () => this.savePreferences());
+    // Event listeners
+    if (this.acceptCookiesBtn) {
+      this.acceptCookiesBtn.addEventListener('click', () => {
+        this.acceptAllCookies();
+      });
+    }
 
+    if (this.manageCookiesBtn) {
+      this.manageCookiesBtn.addEventListener('click', () => {
+        this.openPreferences();
+      });
+    }
+
+    if (this.savePreferencesBtn) {
+      this.savePreferencesBtn.addEventListener('click', () => {
+        this.savePreferences();
+      });
+    }
+
+    // Verifica se l'utente ha già accettato i cookie
     if (this.hasAcceptedCookies()) {
       this.hideBanner();
     }
   },
 
   acceptAllCookies() {
+    // Impostiamo un cookie che dura 1 anno
     document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365;
     this.hideBanner();
   },
 
-  showPreferences() {
+  openPreferences() {
     this.cookiePreferences.style.display = 'block';
     this.cookieBanner.style.display = 'none';
   },
@@ -72,68 +136,13 @@ const CookieManager = {
   },
 
   hideBanner() {
-    this.cookieBanner.style.display = 'none';
-    this.cookiePreferences.style.display = 'none';
-  }
-};
-
-const MenuManager = {
-  init() {
-    const hamburgerMenu = document.getElementById('hamburgerMenu');
-    const mainNav = document.getElementById('mainNav');
-
-    hamburgerMenu?.addEventListener('click', () => {
-      mainNav?.classList.toggle('active');
-    });
-
-    mainNav?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
-      });
-    });
-  }
-};
-
-const ScrollManager = {
-  init() {
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    window.addEventListener('scroll', () => {
-      scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-
-    scrollToTopBtn?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-};
-
-const AccordionManager = {
-  init() {
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const isExpanded = header.getAttribute('aria-expanded') === 'true';
-        document.querySelectorAll('.accordion-header').forEach(h => h.setAttribute('aria-expanded', 'false'));
-        if (!isExpanded) {
-          header.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  }
-};
-
-const FormValidator = {
-  init() {
-    const form = document.querySelector('.contact-form');
-    form?.addEventListener('submit', this.validateForm);
-  },
-
-  validateForm(e) {
-    const privacyCheckbox = document.getElementById('privacy');
-    if (!privacyCheckbox.checked) {
-      e.preventDefault();
-      alert('Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.');
+    if (this.cookieBanner) {
+      this.cookieBanner.style.display = 'none';
     }
-  }
+    if (this.cookiePreferences) {
+      this.cookiePreferences.style.display = 'none';
+    }
+  },
 };
 
 // Inizializzazione dell'app al caricamento del DOM
