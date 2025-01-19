@@ -836,4 +836,97 @@ Modifica il codice in questo modo:
     font-size: 1.1rem;
   }
 }
+/* ========================================
+   SEZIONE CURRICULUM VITAE MIGLIORATA
+======================================== */
+.cv-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f5faff; /* Sfondo chiaro per distinguere la sezione */
+}
+
+/* Box curriculum */
+.cv-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Contenitore immagine + testo */
+.cv-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Stile immagine */
+.cv-image-wrapper {
+  flex-shrink: 0;
+}
+
+.cv-image {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid #003366; /* Bordo per eleganza */
+}
+
+/* Testo del CV */
+.cv-text {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+/* Nome */
+.cv-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+/* Sottotitolo */
+.cv-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* Stile liste */
+.cv-text ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.cv-text li {
+  margin-bottom: 5px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .cv-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cv-image {
+    width: 140px;
+    margin-bottom: 15px;
+  }
+
+  .cv-title {
+    font-size: 1.7rem;
+  }
+
+  .cv-subtitle {
+    font-size: 1.1rem;
+  }
+}
 
