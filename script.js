@@ -149,3 +149,14 @@ const CookieManager = {
 document.addEventListener('DOMContentLoaded', () => {
   App.init();
 });
+const mainNav = document.getElementById('mainNav');
+
+// Verifica se mainNav esiste prima di eseguire il codice
+if (mainNav) {
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('active');
+    });
+  });
+}
+
