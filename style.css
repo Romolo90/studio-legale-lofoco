@@ -930,5 +930,14 @@ Modifica il codice in questo modo:
     max-width: 140px; /* Riduce la dimensione dell'immagine */
   }
 }
+.ad-footer {
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 728px; /* Limita la dimensione */
+    text-align: center;
+    background-color: #f5f5f5; /* Sfondo leggero per separarlo dal contenuto */
+    border-radius: 8px; /* Bordi arrotondati */
+}
+
 
 
