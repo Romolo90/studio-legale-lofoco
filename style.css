@@ -709,17 +709,21 @@ Modifica il codice in questo modo:
   display: flex;
   align-items: center;
   gap: 20px;
+  max-width: 900px; /* Impedisce l'espansione eccessiva */
+  margin: auto; /* Centra il contenuto */
 }
 
 .bio-image {
-  width: 180px; /* Modifica la dimensione dell'immagine */
+  width: 150px; /* Regola la dimensione dell'immagine */
+  max-width: 100%; /* Impedisce l'espansione oltre la dimensione */
   height: auto;
-  border-radius: 8px; /* Opzionale: arrotondare i bordi */
+  border-radius: 8px; /* Bordo arrotondato per un aspetto elegante */
   object-fit: cover;
 }
 
 .bio-text {
   flex: 1;
+  font-size: 1rem; /* Assicura leggibilità */
 }
 
 /* Mobile responsive */
@@ -730,6 +734,6 @@ Modifica il codice in questo modo:
   }
 
   .bio-image {
-    width: 120px; /* Riduci la dimensione su mobile */
+    width: 120px; /* Riduce la dimensione su mobile */
   }
 }
