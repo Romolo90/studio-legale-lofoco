@@ -16,29 +16,26 @@ const App = {
     const hamburgerMenu = document.getElementById('hamburgerMenu');
     const mainNav = document.getElementById('mainNav');
 
-    if (hamburgerMenu) {
+    if (hamburgerMenu && mainNav) {
       hamburgerMenu.addEventListener('click', () => {
-        mainNav?.classList.toggle('active');
+        mainNav.classList.toggle('active');
+      });
+
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('active');
+        });
       });
     }
-
-    // Chiude il menu mobile quando si clicca su un link
-    mainNav?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mainNav.classList.remove('active');
-      });
-    });
   },
 
   initScrollToTop() {
     const scrollToTopBtn = document.getElementById('scrollToTop');
     if (scrollToTopBtn) {
-      // Mostra o nasconde il pulsante in base allo scroll
       window.addEventListener('scroll', () => {
         scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
       });
 
-      // Scorrimento verso l'alto
       scrollToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
@@ -47,13 +44,10 @@ const App = {
 
   initAccordion() {
     const accordionHeaders = document.querySelectorAll('.accordion-header');
-
     accordionHeaders.forEach(header => {
       header.addEventListener('click', () => {
         const isExpanded = header.getAttribute('aria-expanded') === 'true';
-        // Chiudi tutti
         accordionHeaders.forEach(h => h.setAttribute('aria-expanded', 'false'));
-        // Apri solo quello cliccato
         if (!isExpanded) {
           header.setAttribute('aria-expanded', 'true');
         }
@@ -72,7 +66,7 @@ const App = {
         }
       });
     }
-  },
+  }
 };
 
 // Gestione dei cookie
@@ -84,7 +78,6 @@ const CookieManager = {
     this.manageCookiesBtn = document.getElementById('manage-cookies');
     this.savePreferencesBtn = document.getElementById('save-preferences');
 
-    // Event listeners
     if (this.acceptCookiesBtn) {
       this.acceptCookiesBtn.addEventListener('click', () => {
         this.acceptAllCookies();
@@ -103,14 +96,12 @@ const CookieManager = {
       });
     }
 
-    // Verifica se l'utente ha già accettato i cookie
     if (this.hasAcceptedCookies()) {
       this.hideBanner();
     }
   },
 
   acceptAllCookies() {
-    // Impostiamo un cookie che dura 1 anno
     document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365;
     this.hideBanner();
   },
@@ -126,7 +117,7 @@ const CookieManager = {
       prefs[checkbox.value] = checkbox.checked;
       return prefs;
     }, {});
-
+    
     document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}`;
     this.cookiePreferences.style.display = 'none';
   },
@@ -142,7 +133,7 @@ const CookieManager = {
     if (this.cookiePreferences) {
       this.cookiePreferences.style.display = 'none';
     }
-  },
+  }
 };
 
 // Inizializzazione dell'app al caricamento del DOM
