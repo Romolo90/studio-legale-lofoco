@@ -930,3 +930,29 @@ Modifica il codice in questo modo:
     max-width: 140px; /* Riduce la dimensione dell'immagine */
   }
 }
+/* Posizionamento del banner Dogecoin a destra nel footer */
+footer {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dogecoin-footer {
+  position: absolute;
+  right: 20px; /* Distanza dal lato destro */
+  bottom: 10px;
+}
+
+.dogecoin-footer img {
+  max-width: 200px;
+  height: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dogecoin-footer img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
