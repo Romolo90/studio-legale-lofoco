@@ -930,23 +930,24 @@ Modifica il codice in questo modo:
     max-width: 140px; /* Riduce la dimensione dell'immagine */
   }
 }
-/* Posizionamento del banner Dogecoin a destra nel footer */
+/* FOOTER */
 footer {
   position: relative;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Permette adattamenti per il mobile */
 }
 
+/* BANNER DOGECOIN (Desktop) */
 .dogecoin-footer {
-  position: absolute;
-  right: 20px; /* Distanza dal lato destro */
-  bottom: 10px;
+  position: relative; /* Cambiato da absolute per migliore responsività */
+  margin-left: auto; /* Sposta a destra senza usare absolute */
 }
 
 .dogecoin-footer img {
-  max-width: 200px;
+  max-width: 200px; /* Dimensione normale per desktop */
   height: auto;
   opacity: 0.9;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -955,4 +956,18 @@ footer {
 .dogecoin-footer img:hover {
   opacity: 1;
   transform: scale(1.05);
+}
+
+/* 📱 VERSIONE MOBILE: CENTRATO E PIÙ PICCOLO */
+@media (max-width: 768px) {
+  .dogecoin-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .dogecoin-footer img {
+    max-width: 150px; /* Ridimensionato per mobile */
+    margin: 0 auto; /* Centra l'immagine */
+  }
 }
