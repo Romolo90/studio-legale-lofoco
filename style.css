@@ -902,30 +902,43 @@ Modifica il codice in questo modo:
   }
 }
 /* ========================================
-   FOOTER (Versione corretta)
+   FOOTER (Versione definitiva)
 ======================================== */
 footer {
   background-color: #003366;
   color: #BFECFF;
-  padding: 2rem 0;
+  padding: 2rem 40px; /* Margini laterali per un migliore allineamento */
   margin: 0;
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; /* Disposizione verticale per centrare il testo */
-  align-items: center; /* Centra il contenuto orizzontalmente */
+  justify-content: space-between; /* Distribuzione uniforme */
+  align-items: center;
+  flex-wrap: wrap; /* Permette adattamenti per il mobile */
+}
+
+/* Contenitore Valid CSS! sulla sinistra */
+.footer-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* Allineato a sinistra ma con margine */
+}
+
+/* Contenitore testo centrale */
+.footer-center {
+  flex: 2;
   text-align: center; /* Centra il testo */
 }
 
-/* Contenitore per il testo del footer */
-.footer-content {
-  width: 100%;
-  text-align: center; /* Centra il testo */
+/* Contenitore per il banner Dogecoin sulla destra */
+.footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Allineato a destra ma con margine */
 }
 
-/* Stile per i link del footer */
+/* Stile per il testo del footer */
 .footer-note {
-  margin-top: 1rem;
   font-size: 1rem;
 }
 
@@ -940,14 +953,15 @@ footer {
   text-decoration: underline;
 }
 
-/* Contenitore per il banner Dogecoin */
-.dogecoin-footer {
-  margin-top: 10px; /* Distanza dal testo */
+/* Stile per l'immagine Valid CSS */
+.footer-left img {
+  max-width: 88px; /* Dimensione standard del logo valid CSS */
+  height: auto;
 }
 
-/* Stile per l'immagine Dogecoin */
+/* Stile per il banner Dogecoin */
 .dogecoin-footer img {
-  max-width: 200px;
+  max-width: 180px;
   height: auto;
   opacity: 0.9;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -958,9 +972,28 @@ footer {
   transform: scale(1.05);
 }
 
-/* 📱 VERSIONE MOBILE: Rimane tutto centrato */
+/* 📱 VERSIONE MOBILE: Tutto centrato */
 @media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-left img {
+    max-width: 80px; /* Ridimensionato per mobile */
+  }
+
   .dogecoin-footer img {
-    max-width: 150px;
+    max-width: 150px; /* Ridimensionato per mobile */
   }
 }
