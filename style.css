@@ -557,35 +557,6 @@ p {
 }
 
 /* ========================================
-   FOOTER
-======================================== */
-footer {
-  background-color: #003366;
-  color: #BFECFF;
-  text-align: center;
-  padding: 2rem 0;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.footer-note {
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-
-.footer-note a {
-  color: #80D9FF;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer-note a:hover {
-  color: #BFECFF;
-  text-decoration: underline;
-}
-
-/* ========================================
    TASTO SCROLL TOP
 ======================================== */
 #scrollToTop {
@@ -930,28 +901,48 @@ Modifica il codice in questo modo:
     max-width: 140px; /* Riduce la dimensione dell'immagine */
   }
 }
-/* FOOTER */
+/* ========================================
+   FOOTER (Versione corretta)
+======================================== */
 footer {
-  position: relative;
-  padding: 20px;
+  background-color: #003366;
+  color: #BFECFF;
+  padding: 2rem 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
-  justify-content: center; /* Centra il contenuto */
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
-  gap: 20px;
+  flex-direction: column; /* Disposizione verticale per centrare il testo */
+  align-items: center; /* Centra il contenuto orizzontalmente */
+  text-align: center; /* Centra il testo */
 }
 
 /* Contenitore per il testo del footer */
 .footer-content {
-  flex: 1;
+  width: 100%;
   text-align: center; /* Centra il testo */
+}
+
+/* Stile per i link del footer */
+.footer-note {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.footer-note a {
+  color: #80D9FF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-note a:hover {
+  color: #BFECFF;
+  text-decoration: underline;
 }
 
 /* Contenitore per il banner Dogecoin */
 .dogecoin-footer {
-  flex-shrink: 0; /* Evita ridimensionamenti */
-  margin-left: auto; /* Mantiene il logo Dogecoin a destra */
+  margin-top: 10px; /* Distanza dal testo */
 }
 
 /* Stile per l'immagine Dogecoin */
@@ -967,22 +958,8 @@ footer {
   transform: scale(1.05);
 }
 
-/* 📱 VERSIONE MOBILE: TUTTO CENTRATO */
+/* 📱 VERSIONE MOBILE: Rimane tutto centrato */
 @media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-
-  .footer-content {
-    text-align: center;
-  }
-
-  .dogecoin-footer {
-    margin: 0 auto;
-  }
-
   .dogecoin-footer img {
     max-width: 150px;
   }
