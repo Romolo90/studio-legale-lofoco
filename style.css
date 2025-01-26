@@ -935,28 +935,28 @@ footer {
   position: relative;
   padding: 20px;
   display: flex;
-  justify-content: space-between; /* Allinea gli elementi */
+  justify-content: center; /* Centra il contenuto */
   align-items: center;
-  flex-wrap: wrap; /* Permette la disposizione flessibile su mobile */
-  text-align: center; /* Mantiene leggibilità */
+  flex-wrap: wrap;
+  text-align: center;
   gap: 20px;
 }
 
 /* Contenitore per il testo del footer */
 .footer-content {
-  flex: 1; /* Occupa lo spazio disponibile */
-  text-align: left; /* Allinea a sinistra su desktop */
+  flex: 1;
+  text-align: center; /* Centra il testo */
 }
 
 /* Contenitore per il banner Dogecoin */
 .dogecoin-footer {
-  flex-shrink: 0; /* Evita il ridimensionamento forzato */
-  margin-left: auto; /* Sposta il banner Dogecoin a destra su desktop */
+  flex-shrink: 0; /* Evita ridimensionamenti */
+  margin-left: auto; /* Mantiene il logo Dogecoin a destra */
 }
 
 /* Stile per l'immagine Dogecoin */
 .dogecoin-footer img {
-  max-width: 200px; /* Dimensione su desktop */
+  max-width: 200px;
   height: auto;
   opacity: 0.9;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -967,23 +967,23 @@ footer {
   transform: scale(1.05);
 }
 
-/* 📱 VERSIONE MOBILE: CENTRATO E IN COLONNA */
+/* 📱 VERSIONE MOBILE: TUTTO CENTRATO */
 @media (max-width: 768px) {
   footer {
-    flex-direction: column; /* Gli elementi si dispongono in colonna */
+    flex-direction: column;
     text-align: center;
     align-items: center;
   }
 
   .footer-content {
-    text-align: center; /* Centra il testo su mobile */
+    text-align: center;
   }
 
   .dogecoin-footer {
-    margin: 0 auto; /* Centra il logo */
+    margin: 0 auto;
   }
 
   .dogecoin-footer img {
-    max-width: 150px; /* Riduce la dimensione per mobile */
+    max-width: 150px;
   }
 }
