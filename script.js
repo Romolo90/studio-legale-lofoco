@@ -111,6 +111,8 @@ const CookieManager = {
   acceptAllCookies() {
     document.cookie = `cookiesAccepted=true; path=/; max-age=${ONE_YEAR}`;
     this.hideBanner();
+    // Carica il Google Tag (gtag.js) al momento del consenso
+    loadGoogleTag();
   },
 
   openPreferences() {
@@ -149,6 +151,20 @@ const CookieManager = {
     }
   }
 };
+
+// Funzione per caricare Google Tag (gtag.js) dinamicamente
+function loadGoogleTag() {
+  var gtagScript = document.createElement('script');
+  gtagScript.async = true;
+  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+  document.head.appendChild(gtagScript);
+  gtagScript.onload = function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY');
+  };
+}
 
 // Inizializzazione dell'app al caricamento del DOM
 document.addEventListener('DOMContentLoaded', () => {
