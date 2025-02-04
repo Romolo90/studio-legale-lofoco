@@ -37,6 +37,7 @@ const App = {
     const scrollToTopBtn = document.getElementById('scrollToTop');
     if (scrollToTopBtn) {
       window.addEventListener('scroll', () => {
+        // Se la pagina non è abbastanza lunga, questo potrebbe non attivarsi; assicurati di avere abbastanza contenuto.
         scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
       });
 
