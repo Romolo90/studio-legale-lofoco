@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Studio Legale Lo Foco - Esperti in Diritto d’Autore e Cinema a Roma</title>
   
   <!-- Google Ads Script -->
@@ -67,16 +67,16 @@
       }
     ]
   }
-  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  </script>
 
-  gtag('config', 'G-E7P6F0SVRY');
-</script>
+  <!-- Google Tag (gtag.js) per il tracciamento -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY');
+  </script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet" />
@@ -281,14 +281,17 @@
           <label for="nome">Nome e Cognome</label>
           <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required />
         </div>
+
         <div class="form-row">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required />
         </div>
+
         <div class="form-row">
           <label for="messaggio">Messaggio</label>
           <textarea id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
         </div>
+
         <div class="form-row check-row">
           <input type="checkbox" id="privacy" name="privacy" required />
           <label for="privacy">
@@ -297,6 +300,7 @@
             <a href="terms.html" target="_blank" rel="noopener">Termini di Servizio</a>.
           </label>
         </div>
+
         <button type="submit" class="btn-cta" id="submitButton">Invia Richiesta</button>
       </form>
     </section>
