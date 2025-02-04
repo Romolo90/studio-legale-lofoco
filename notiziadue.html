@@ -12,6 +12,7 @@
   <!-- Foglio di stile -->
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Stile personalizzato per questa pagina */
     .news-item {
       margin-bottom: 2rem;
       padding: 1rem;
@@ -57,14 +58,19 @@
   <!-- HEADER -->
   <header class="header">
     <div class="logo">
-      <h1><a href="index.html" class="home-link" aria-label="Torna alla homepage">Studio Legale Lo Foco</a></h1>
+      <h1>
+        <a href="index.html" class="home-link" aria-label="Torna alla homepage">
+          Studio Legale Lo Foco
+        </a>
+      </h1>
     </div>
 
-    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+    <!-- Menu hamburger per dispositivi mobili -->
+    <button class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
 
     <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
       <ul>
@@ -77,26 +83,30 @@
     </nav>
   </header>
 
-  <!-- SEZIONE NOTIZIE -->
-  <section class="section-container" aria-labelledby="news-title">
-    <h2 id="news-title">Ultime Notizie</h2>
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- SEZIONE NOTIZIE -->
+    <section class="section-container" aria-labelledby="news-title">
+      <h2 id="news-title">Ultime Notizie</h2>
 
-    <article class="news-item" aria-labelledby="news-item-1-title">
-      <h3 id="news-item-1-title"> Critiche e Proposte di Revisione </h3>
-      <p>
-        Critiche e dibattiti sul decreto Tax Credit. Scopri le opinioni e le proposte per migliorare il sistema.
-      </p>
-      <a href="notiziadue.html" aria-label="Leggi di più sulla decisione del TAR del Lazio">Leggi di più</a>
-    </article>
-  </section>
+      <article class="news-item" aria-labelledby="news-item-1-title">
+        <h3 id="news-item-1-title">Il TAR del Lazio e il Tax Credit</h3>
+        <p>
+          Il TAR del Lazio ha accolto parzialmente i ricorsi contro il decreto sul tax credit,
+          evidenziando la necessità di ulteriori approfondimenti.
+        </p>
+        <a href="notiziauno.html" aria-label="Leggi di più sulla decisione del TAR del Lazio">Leggi di più</a>
+      </article>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
     <p>
       <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
-            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-            alt="Valid CSS!" />
+             src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+             alt="Valid CSS!" />
       </a>
     </p>
     <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
