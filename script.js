@@ -1,6 +1,6 @@
 'use strict';
 
-const ONE_YEAR = 60 * 60 * 24 * 365;
+const ONE_YEAR = 60 * 60 * 24 * 365; // Durata in secondi
 
 // Oggetto principale dell'applicazione
 const App = {
@@ -102,6 +102,7 @@ const CookieManager = {
       });
     }
 
+    // Se l'utente ha già acconsentito, nascondi il banner
     if (this.hasAcceptedCookies()) {
       this.hideBanner();
     }
@@ -133,7 +134,7 @@ const CookieManager = {
   },
 
   hasAcceptedCookies() {
-    // Metodo più robusto per verificare se il cookie esiste
+    // Controlla se esiste il cookie "cookiesAccepted" impostato su "true"
     return document.cookie
       .split(';')
       .some(cookie => cookie.trim().startsWith('cookiesAccepted=true'));
