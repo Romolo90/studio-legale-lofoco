@@ -447,7 +447,7 @@ p {
 ======================================== */
 .accordion-item {
   margin-bottom: 1rem;
-  border: 1px solid #80D9FF;
+  border: 1px solid #80d9ff;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -497,7 +497,7 @@ p {
 .contact-form {
   background-color: #BFECFF;
   padding: 2rem;
-  border: 1px solid #80D9FF;
+  border: 1px solid #80d9ff;
   border-radius: 5px;
   margin-top: 2.5rem;
   box-shadow: 0 4px 6px rgba(0, 51, 102, 0.1);
@@ -515,7 +515,7 @@ p {
 .contact-form textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #80D9FF;
+  border: 1px solid #80d9ff;
   border-radius: 5px;
   font: inherit;
 }
@@ -552,7 +552,7 @@ p {
 
 .map-container iframe {
   width: 100%;
-  border: 2px solid #80D9FF;
+  border: 2px solid #80d9ff;
   border-radius: 5px;
 }
 
@@ -580,154 +580,8 @@ p {
 }
 
 /* ========================================
-   MEDIA QUERIES
+   SEZIONE BIOGRAFIA (AGGIORNATA)
 ======================================== */
-@media (max-width: 768px) {
-  body {
-    font-size: 1.1rem;
-  }
-
-  .header {
-    flex-wrap: wrap;
-    padding: 1rem;
-  }
-
-  .logo h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    white-space: normal;
-  }
-
-  .hamburger {
-    display: flex; /* Mostra hamburger su mobile */
-  }
-
-  /* Menu mobile off-canvas */
-  .main-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 70vw;
-    height: 100vh;
-    background-color: #003366;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2rem 1rem;
-    overflow-y: auto;
-    z-index: 9998;
-  }
-
-  .main-nav.active {
-    transform: translateX(0);
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .hero {
-    height: auto;
-    padding: 3rem 1rem;
-  }
-
-  .hero-content h2 {
-    font-size: 2.3rem;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-}
-Puoi aggiungere un'immagine/foto del professionista all'interno della sezione BIOGRAFIA utilizzando il tag <img>. Ti consiglio di inserirla prima del nome "Avv. Andrea Lo Foco" o accanto alla descrizione per una disposizione più armoniosa.
-Modifica il codice in questo modo:
-
-<!-- BIOGRAFIA -->
-<section class="section-container">
-  <h2>Avv. Andrea Lo&nbsp;Foco</h2>
-  
-  <!-- Aggiunta dell'immagine -->
-  <div class="bio-container">
-    <img src="images/andrea-lo-foco.jpg" alt="Foto di Andrea Lo Foco" class="bio-image">
-    
-    <div class="bio-text">
-      <p>
-        Avvocato con esperienza in diritto d’autore e diritto amministrativo, 
-        attivo nei settori cinematografico, dello spettacolo e culturale. 
-        Si occupa dell’analisi editoriale e commerciale dei diritti di sfruttamento 
-        delle opere audiovisive, con attenzione al tax credit cinema e alle normative 
-        di protezione delle opere creative in ambito italiano ed europeo. 
-        Membro della Commissione Cultura e Spettacolo dell’Ordine degli Avvocati di Roma, 
-        offre consulenza legale nella tutela dei diritti di autori, artisti, case di produzione, 
-        editori e altre realtà del settore culturale e creativo.
-      </p>
-      <p>
-        Scopri di più su <a href="https://linktr.ee/andrealofoco" target="_blank">linktr.ee</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-/* BIOGRAFIA */
-.bio-section {
-  display: flex;
-  justify-content: center; /* Centra il contenuto nella pagina */
-  padding: 50px 15px; /* Distanza dai margini laterali */
-  background-color: #f5faff; /* Sfondo leggero per evidenziare la sezione */
-}
-
-.bio-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  max-width: 900px; /* Mantiene il layout compatto */
-  width: 100%;
-}
-
-.bio-image {
-  width: 180px; /* Aumentata per una migliore proporzione */
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px; /* Bordi arrotondati */
-  object-fit: cover;
-  margin-left: 20px; /* Spazio tra immagine e bordo sinistro */
-}
-
-.bio-text {
-  flex: 1;
-  font-size: 1rem;
-}
-
-/* Stile per il nome */
-.bio-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #003366;
-  margin-bottom: 10px; /* Spazio sotto il nome */
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .bio-container {
-    flex-direction: column; /* Disposizione verticale su schermi piccoli */
-    text-align: center;
-  }
-
-  .bio-image {
-    width: 140px; /* Riduce la dimensione su mobile */
-    margin: 0 auto; /* Centra l'immagine su dispositivi mobili */
-  }
-
-  .bio-title {
-    font-size: 1.5rem;
-  }
-}
-/* SEZIONE BIOGRAFIA MIGLIORATA */
 .bio-section {
   display: flex;
   justify-content: center;
@@ -739,7 +593,7 @@ Modifica il codice in questo modo:
 .bio-box {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Effetto elegante */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
   max-width: 950px;
   width: 100%;
@@ -754,7 +608,7 @@ Modifica il codice in questo modo:
 
 /* Stile immagine */
 .bio-image-wrapper {
-  flex-shrink: 0; /* Evita il ridimensionamento della foto */
+  flex-shrink: 0;
 }
 
 .bio-image {
@@ -762,7 +616,7 @@ Modifica il codice in questo modo:
   height: auto;
   border-radius: 10px;
   object-fit: cover;
-  border: 3px solid #003366; /* Bordo sottile per evidenziare l'immagine */
+  border: 3px solid #003366;
 }
 
 /* Testo della biografia */
@@ -807,6 +661,7 @@ Modifica il codice in questo modo:
     font-size: 1.1rem;
   }
 }
+
 /* ============================
    SEZIONE BIOGRAFIA E CURRICULUM
 ============================ */
@@ -815,7 +670,7 @@ Modifica il codice in questo modo:
   flex-direction: column;
   align-items: center;
   padding: 60px 20px;
-  background-color: #f5faff; /* Sfondo chiaro */
+  background-color: #f5faff;
 }
 
 /* Box contenitore */
@@ -838,23 +693,23 @@ Modifica il codice in questo modo:
 
 /* Contenitore immagine */
 .profile-image-wrapper {
-  max-width: 180px;  /* Imposta un limite massimo per la dimensione dell'immagine */
-  width: 100%;  /* Mantiene flessibilità per adattarsi al layout */
+  max-width: 180px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Evita eventuali fuoriuscite dell'immagine */
+  overflow: hidden;
 }
 
 /* Stile immagine */
 .profile-image {
-  width: 100%;  /* Adatta l'immagine al contenitore */
-  max-width: 180px;  /* Impedisce ingrandimenti eccessivi */
-  height: auto;  /* Mantiene le proporzioni */
+  width: 100%;
+  max-width: 180px;
+  height: auto;
   border-radius: 10px;
   object-fit: cover;
   border: 3px solid #003366;
-  display: block;  /* Previene spazi extra sotto l'immagine */
+  display: block;
 }
 
 /* Testo */
@@ -874,7 +729,7 @@ Modifica il codice in questo modo:
   color: #666;
 }
 
-/* Stile per le liste */
+/* Liste */
 .profile-box ul {
   list-style-type: disc;
   margin-left: 20px;
@@ -885,59 +740,38 @@ Modifica il codice in questo modo:
 }
 
 /* ============================
-   RESPONSIVE DESIGN
-============================ */
-@media (max-width: 768px) {
-  .profile-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .profile-image-wrapper {
-    max-width: 140px; /* Riduce la dimensione su mobile */
-  }
-
-  .profile-image {
-    max-width: 140px; /* Riduce la dimensione dell'immagine */
-  }
-}
-/* ========================================
-   FOOTER (Versione definitiva)
+   FOOTER
 ======================================== */
 footer {
   background-color: #003366;
   color: #BFECFF;
-  padding: 2rem 40px; /* Margini laterali per un migliore allineamento */
+  padding: 2rem 40px;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between; /* Distribuzione uniforme */
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Permette adattamenti per il mobile */
+  flex-wrap: wrap;
 }
 
-/* Contenitore Valid CSS! sulla sinistra */
 .footer-left {
   flex: 1;
   display: flex;
-  justify-content: flex-start; /* Allineato a sinistra ma con margine */
+  justify-content: flex-start;
 }
 
-/* Contenitore testo centrale */
 .footer-center {
   flex: 2;
-  text-align: center; /* Centra il testo */
+  text-align: center;
 }
 
-/* Contenitore per il banner Dogecoin sulla destra */
 .footer-right {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /* Allineato a destra ma con margine */
+  justify-content: flex-end;
 }
 
-/* Stile per il testo del footer */
 .footer-note {
   font-size: 1rem;
 }
@@ -953,13 +787,11 @@ footer {
   text-decoration: underline;
 }
 
-/* Stile per l'immagine Valid CSS */
 .footer-left img {
-  max-width: 88px; /* Dimensione standard del logo valid CSS */
+  max-width: 88px;
   height: auto;
 }
 
-/* Stile per il banner Dogecoin */
 .dogecoin-footer img {
   max-width: 180px;
   height: auto;
@@ -972,8 +804,68 @@ footer {
   transform: scale(1.05);
 }
 
-/* 📱 VERSIONE MOBILE: Tutto centrato */
+/* 📱 VERSIONE MOBILE */
 @media (max-width: 768px) {
+  body {
+    font-size: 1.1rem;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    white-space: normal;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    height: 100vh;
+    background-color: #003366;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    z-index: 9998;
+  }
+
+  .main-nav.active {
+    transform: translateX(0);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2.3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
   footer {
     flex-direction: column;
     text-align: center;
@@ -990,10 +882,23 @@ footer {
   }
 
   .footer-left img {
-    max-width: 80px; /* Ridimensionato per mobile */
+    max-width: 80px;
   }
 
   .dogecoin-footer img {
-    max-width: 150px; /* Ridimensionato per mobile */
+    max-width: 150px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image-wrapper {
+    max-width: 140px;
+  }
+
+  .profile-image {
+    max-width: 140px;
   }
 }
