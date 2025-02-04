@@ -70,6 +70,8 @@
   </script>
 
   <!-- Google Tag (gtag.js) per il tracciamento -->
+  <!-- Se usi la modalità condizionale (vedi in fondo) non è necessario inserirlo direttamente -->
+  <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -77,12 +79,52 @@
     gtag('js', new Date());
     gtag('config', 'G-E7P6F0SVRY');
   </script>
+  -->
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Script per il tracciamento condizionale in base al consenso ai cookie -->
+  <script>
+    'use strict';
+    const ONE_YEAR = 60 * 60 * 24 * 365; // Durata in secondi
+
+    // Funzione per leggere un cookie
+    function getCookie(name) {
+      const cookieArr = document.cookie.split(';');
+      for (let i = 0; i < cookieArr.length; i++) {
+        const cookiePair = cookieArr[i].trim().split('=');
+        if (cookiePair[0] === name) {
+          return cookiePair[1];
+        }
+      }
+      return null;
+    }
+
+    // Funzione per caricare Google Tag Manager (gtag.js)
+    function loadGoogleTag() {
+      var gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(gtagScript);
+      gtagScript.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E7P6F0SVRY');
+      };
+    }
+
+    // Carica il tag se l'utente ha già acconsentito ai cookie
+    document.addEventListener('DOMContentLoaded', function() {
+      if (getCookie('cookiesAccepted') === 'true') {
+        loadGoogleTag();
+      }
+    });
+  </script>
 </head>
 <body>
   <!-- BANNER COOKIE -->
@@ -98,6 +140,22 @@
       <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
       <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
     </div>
+  </div>
+
+  <!-- FINESTRINA PREFERENZE COOKIE -->
+  <div id="cookie-preferences" class="cookie-preferences" role="dialog" aria-modal="true" aria-label="Preferenze Cookie">
+    <h2>Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" checked />
+        Cookie analitici
+      </label>
+      <label>
+        <input type="checkbox" name="cookieType" value="marketing" checked />
+        Cookie di marketing
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+    </form>
   </div>
 
   <!-- HEADER -->
