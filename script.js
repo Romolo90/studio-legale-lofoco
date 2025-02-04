@@ -1,7 +1,3 @@
-'use strict';
-
-const ONE_YEAR = 60 * 60 * 24 * 365; // Durata in secondi
-
 // Oggetto principale dell'applicazione
 const App = {
   init() {
@@ -37,7 +33,6 @@ const App = {
     const scrollToTopBtn = document.getElementById('scrollToTop');
     if (scrollToTopBtn) {
       window.addEventListener('scroll', () => {
-        // Se la pagina non è abbastanza lunga, questo potrebbe non attivarsi; assicurati di avere abbastanza contenuto.
         scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
       });
 
@@ -52,9 +47,7 @@ const App = {
     accordionHeaders.forEach(header => {
       header.addEventListener('click', () => {
         const isExpanded = header.getAttribute('aria-expanded') === 'true';
-        // Collassa tutti gli accordion
         accordionHeaders.forEach(h => h.setAttribute('aria-expanded', 'false'));
-        // Se l'elemento cliccato non era già aperto, espandilo
         if (!isExpanded) {
           header.setAttribute('aria-expanded', 'true');
         }
@@ -103,24 +96,19 @@ const CookieManager = {
       });
     }
 
-    // Se l'utente ha già acconsentito, nascondi il banner
     if (this.hasAcceptedCookies()) {
       this.hideBanner();
     }
   },
 
   acceptAllCookies() {
-    document.cookie = `cookiesAccepted=true; path=/; max-age=${ONE_YEAR}`;
+    document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365;
     this.hideBanner();
-    // Carica il Google Tag (gtag.js) al momento del consenso
-    loadGoogleTag();
   },
 
   openPreferences() {
-    if (this.cookiePreferences && this.cookieBanner) {
-      this.cookiePreferences.style.display = 'block';
-      this.cookieBanner.style.display = 'none';
-    }
+    this.cookiePreferences.style.display = 'block';
+    this.cookieBanner.style.display = 'none';
   },
 
   savePreferences() {
@@ -130,17 +118,12 @@ const CookieManager = {
       return prefs;
     }, {});
     
-    document.cookie = `cookiePreferences=${encodeURIComponent(JSON.stringify(preferences))}; path=/; max-age=${ONE_YEAR}`;
-    if (this.cookiePreferences) {
-      this.cookiePreferences.style.display = 'none';
-    }
+    document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}`;
+    this.cookiePreferences.style.display = 'none';
   },
 
   hasAcceptedCookies() {
-    // Controlla se esiste il cookie "cookiesAccepted" impostato su "true"
-    return document.cookie
-      .split(';')
-      .some(cookie => cookie.trim().startsWith('cookiesAccepted=true'));
+    return document.cookie.includes('cookiesAccepted=true');
   },
 
   hideBanner() {
@@ -152,20 +135,6 @@ const CookieManager = {
     }
   }
 };
-
-// Funzione per caricare Google Tag (gtag.js) dinamicamente
-function loadGoogleTag() {
-  var gtagScript = document.createElement('script');
-  gtagScript.async = true;
-  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
-  document.head.appendChild(gtagScript);
-  gtagScript.onload = function() {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-E7P6F0SVRY');
-  };
-}
 
 // Inizializzazione dell'app al caricamento del DOM
 document.addEventListener('DOMContentLoaded', () => {
