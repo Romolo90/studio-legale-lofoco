@@ -56,14 +56,8 @@
     "url": "https://studiolegalelofoco.com",
     "areaServed": "Roma, Italia",
     "founders": [
-      {
-        "@type": "Person",
-        "name": "Andrea Lo Foco"
-      },
-      {
-        "@type": "Person",
-        "name": "Michele Lo Foco"
-      }
+      { "@type": "Person", "name": "Andrea Lo Foco" },
+      { "@type": "Person", "name": "Michele Lo Foco" }
     ]
   }
   </script>
@@ -73,7 +67,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
-
+  
   <!-- Script per il tracciamento condizionale (Google Tag) -->
   <script>
     'use strict';
@@ -93,7 +87,7 @@
 
     // Funzione per caricare Google Tag (gtag.js) dinamicamente
     function loadGoogleTag() {
-      const gtagScript = document.createElement('script');
+      var gtagScript = document.createElement('script');
       gtagScript.async = true;
       gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
       document.head.appendChild(gtagScript);
