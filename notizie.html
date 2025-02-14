@@ -16,7 +16,7 @@
   <!-- Foglio di stile principale -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Stili specifici per il visualizzatore PDF -->
+  <!-- Stili specifici per il visualizzatore PDF e per il toggle -->
   <style>
     /* STILI PDF - Visualizzatore Articoli */
     .pdf-viewer {
@@ -45,17 +45,39 @@
       padding: 1.5rem;
       margin-bottom: 2rem;
     }
-    .pdf-article h3 {
-      color: #005699;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
-    /* Titolo della sezione: Modificato per allinearlo a sinistra */
+    /* Titolo della sezione: allineato a sinistra */
     .section-container h2 {
       text-align: left;
       margin-bottom: 2rem;
       font-size: 2.4rem;
       color: #003366;
+    }
+    /* Stili per il toggle degli articoli */
+    .pdf-toggle {
+      background: none;
+      border: none;
+      text-align: left;
+      width: 100%;
+      font-size: 1.6rem;
+      color: #005699;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+    .pdf-toggle:focus {
+      outline: none;
+    }
+    .pdf-toggle:hover {
+      text-decoration: underline;
+    }
+    /* Il contenuto (PDF) è nascosto di default */
+    .pdf-content {
+      display: none;
+      overflow: hidden;
+    }
+    .pdf-content.expanded {
+      display: block;
     }
   </style>
 </head>
@@ -106,42 +128,62 @@
       <h2 id="news-title">Ultime Notizie</h2>
       
       <!-- Articolo 1 -->
-      <article class="pdf-article" aria-labelledby="pdf-article-1-title">
-        <h3 id="pdf-article-1-title">TAX CREDIT CONDANNA A MORTE</h3>
-        <div class="pdf-viewer">
-          <iframe src="pdf/articolo1.pdf#toolbar=0" title="Anteprima Articolo 1"></iframe>
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-1" id="pdf-article-1-title">
+          TAX CREDIT CONDANNA A MORTE
+        </button>
+        <div class="pdf-content" id="pdf-content-1">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo1.pdf#toolbar=0" title="Anteprima Articolo 1"></iframe>
+          </div>
         </div>
       </article>
       
       <!-- Articolo 2 -->
-      <article class="pdf-article" aria-labelledby="pdf-article-2-title">
-        <h3 id="pdf-article-2-title">CINEMA E AUDIOVISIVO, IN ARRIVO I CORRETTIVI ALLA RIFORMA DEL TAX CREDIT</h3>
-        <div class="pdf-viewer">
-          <iframe src="pdf/articolo2.pdf#toolbar=0" title="Anteprima Articolo 2"></iframe>
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-2" id="pdf-article-2-title">
+          CINEMA E AUDIOVISIVO, IN ARRIVO I CORRETTIVI ALLA RIFORMA DEL TAX CREDIT
+        </button>
+        <div class="pdf-content" id="pdf-content-2">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo2.pdf#toolbar=0" title="Anteprima Articolo 2"></iframe>
+          </div>
         </div>
       </article>
       
       <!-- Articolo 3 -->
-      <article class="pdf-article" aria-labelledby="pdf-article-3-title">
-        <h3 id="pdf-article-3-title">TAX CREDIT RISCRITTO. MA ORA C'È 1 MILIARDO DI "BUCO"</h3>
-        <div class="pdf-viewer">
-          <iframe src="pdf/articolo3.pdf#toolbar=0" title="Anteprima Articolo 3"></iframe>
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-3" id="pdf-article-3-title">
+          TAX CREDIT RISCRITTO. MA ORA C'È 1 MILIARDO DI "BUCO"
+        </button>
+        <div class="pdf-content" id="pdf-content-3">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo3.pdf#toolbar=0" title="Anteprima Articolo 3"></iframe>
+          </div>
         </div>
       </article>
       
       <!-- Articolo 4 -->
-      <article class="pdf-article" aria-labelledby="pdf-article-4-title">
-        <h3 id="pdf-article-4-title">AUDIOVISIVI, SUL TAX CREDIT IL MURO DI MEDIASET E RAI AL DECRETO CORRETTIVO</h3>
-        <div class="pdf-viewer">
-          <iframe src="pdf/articolo4.pdf#toolbar=0" title="Anteprima Articolo 4"></iframe>
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-4" id="pdf-article-4-title">
+          AUDIOVISIVI, SUL TAX CREDIT IL MURO DI MEDIASET E RAI AL DECRETO CORRETTIVO
+        </button>
+        <div class="pdf-content" id="pdf-content-4">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo4.pdf#toolbar=0" title="Anteprima Articolo 4"></iframe>
+          </div>
         </div>
       </article>
       
       <!-- Articolo 5 -->
-      <article class="pdf-article" aria-labelledby="pdf-article-4-title">
-        <h3 id="pdf-article-4-title">CINEMA E AUDIOVISIVO, NUOVO DECRETO CORRETTIVO</h3>
-        <div class="pdf-viewer">
-          <iframe src="pdf/articolo5.pdf#toolbar=0" title="Anteprima Articolo 5"></iframe>
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-5" id="pdf-article-5-title">
+          CINEMA E AUDIOVISIVO, NUOVO DECRETO CORRETTIVO
+        </button>
+        <div class="pdf-content" id="pdf-content-5">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo5.pdf#toolbar=0" title="Anteprima Articolo 5"></iframe>
+          </div>
         </div>
       </article>
     </section>
@@ -165,7 +207,20 @@
     </div>
   </footer>
 
-  <!-- Script -->
+  <!-- Script per il toggle dei PDF -->
+  <script>
+    const toggles = document.querySelectorAll('.pdf-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const contentId = this.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        content.classList.toggle('expanded', !isExpanded);
+      });
+    });
+  </script>
+  <!-- Script principale -->
   <script src="script.js"></script>
 </body>
 </html>
