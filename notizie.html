@@ -2,50 +2,32 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ultime Notizie - Studio Legale Lo Foco</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="Leggi le ultime notizie dal mondo del diritto in anteprima in formato PDF." />
-  <meta name="keywords" content="Ultime Notizie, PDF, diritto, normativa legale, Studio Legale Lo Foco" />
-  <meta name="author" content="Studio Legale Lo Foco" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Collegamento al file CSS principale -->
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Stili personalizzati per la visualizzazione dei PDF */
-    .pdf-article {
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background-color: #f9f9f9;
-      border-left: 4px solid #003366;
-    }
-    .pdf-article h3 {
-      margin-top: 0;
-      color: #003366;
-    }
+    /* ========================================
+       STILI PDF - Visualizzatore Articoli
+    ======================================== */
     .pdf-viewer {
       width: 100%;
-      height: 800px; /* Altezza approssimativa per visualizzare una pagina A4 */
-      overflow: hidden;
+      height: 800px; /* Altezza di default per desktop */
+      overflow: auto; /* Abilita lo scrolling verticale */
       position: relative;
     }
     .pdf-viewer iframe {
       width: 100%;
       height: 100%;
       border: none;
-      pointer-events: none; /* Disabilita l'interazione per limitare le opzioni di download */
+      pointer-events: auto; /* Consente interazioni (scrolling, selezione, ecc.) */
     }
-    footer {
-      background-color: #003366;
-      color: #BFECFF;
-      padding: 1.5rem 0;
-      text-align: center;
-    }
-    footer .footer-note a {
-      color: #80D9FF;
-      text-decoration: none;
-    }
-    footer .footer-note a:hover {
-      text-decoration: underline;
-      color: #BFECFF;
+    /* Media Query per dispositivi mobili */
+    @media (max-width: 768px) {
+      .pdf-viewer {
+        height: 500px; /* Altezza ridotta per dispositivi mobili */
+      }
     }
   </style>
 </head>
@@ -58,11 +40,14 @@
         <a href="index.html" class="home-link" aria-label="Torna alla homepage">Studio Legale Lo Foco</a>
       </h1>
     </div>
+
+    <!-- Hamburger menu per dispositivi mobili -->
     <button class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
+
     <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
       <ul>
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
@@ -77,7 +62,7 @@
   <!-- MAIN CONTENT -->
   <main>
     <section class="section-container" aria-labelledby="news-title">
-      <h2 id="news-title">Ultime Notizie</h2>
+      <h2 id="news-title">Anteprime Articoli in PDF</h2>
 
       <!-- Articolo 1 -->
       <article class="pdf-article" aria-labelledby="pdf-article-1-title">
@@ -110,7 +95,6 @@
           <iframe src="pdf/articolo4.pdf#toolbar=0" title="Anteprima Articolo 4"></iframe>
         </div>
       </article>
-
     </section>
   </main>
 
@@ -118,7 +102,7 @@
   <footer>
     <p>
       <a href="https://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
       </a>
     </p>
     <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
