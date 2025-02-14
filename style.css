@@ -942,3 +942,6 @@ footer {
     height: 500px; /* Altezza ridotta per dispositivi mobili */
   }
 }
+.section-container h2 {
+  text-align: left !important;
+}
