@@ -5,9 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ultime Notizie - Studio Legale Lo Foco</title>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <!-- Collegamento al file CSS principale -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
   <style>
+    /* ========================================
+       RESET & FONT
+    ======================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       HEADER
+    ======================================== */
+    header {
+      background: linear-gradient(90deg, #003366, #005699);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo a {
+      text-decoration: none;
+      font-size: 1.8rem;
+      color: #fff;
+      font-weight: 700;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #80D9FF;
+    }
+
+    /* ========================================
+       SEZIONE PRINCIPALE
+    ======================================== */
+    .section-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section-container h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.4rem;
+      color: #003366;
+    }
+    .pdf-article {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .pdf-article:hover {
+      transform: translateY(-5px);
+    }
+    .pdf-article h3 {
+      margin-bottom: 1rem;
+      color: #005699;
+      font-size: 1.6rem;
+    }
+
     /* ========================================
        STILI PDF - Visualizzatore Articoli
     ======================================== */
@@ -15,40 +93,56 @@
       width: 100%;
       height: 800px; /* Altezza di default per desktop */
       overflow: auto; /* Abilita lo scrolling verticale */
-      position: relative;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     .pdf-viewer iframe {
       width: 100%;
       height: 100%;
       border: none;
-      pointer-events: auto; /* Consente interazioni (scrolling, selezione, ecc.) */
     }
-    /* Media Query per dispositivi mobili */
     @media (max-width: 768px) {
       .pdf-viewer {
-        height: 500px; /* Altezza ridotta per dispositivi mobili */
+        height: 500px;
       }
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    footer {
+      background: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #80D9FF;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
-  <header class="header">
+  <header>
     <div class="logo">
-      <h1>
-        <a href="index.html" class="home-link" aria-label="Torna alla homepage">Studio Legale Lo Foco</a>
-      </h1>
+      <a href="index.html">Studio Legale Lo Foco</a>
     </div>
-
-    <!-- Hamburger menu per dispositivi mobili -->
-    <button class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
+    <nav>
       <ul>
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
         <li><a href="index.html#servizi">Servizi</a></li>
@@ -63,7 +157,6 @@
   <main>
     <section class="section-container" aria-labelledby="news-title">
       <h2 id="news-title">Anteprime Articoli in PDF</h2>
-
       <!-- Articolo 1 -->
       <article class="pdf-article" aria-labelledby="pdf-article-1-title">
         <h3 id="pdf-article-1-title">TAX CREDI CONDANNA A MORTE</h3>
@@ -71,7 +164,6 @@
           <iframe src="pdf/articolo1.pdf#toolbar=0" title="Anteprima Articolo 1"></iframe>
         </div>
       </article>
-
       <!-- Articolo 2 -->
       <article class="pdf-article" aria-labelledby="pdf-article-2-title">
         <h3 id="pdf-article-2-title">CINEMA E AUDIOVISIVO, IN ARRIVO I CORRETTIVI ALLA RIFORMA DEL TAX CREDIT</h3>
@@ -79,7 +171,6 @@
           <iframe src="pdf/articolo2.pdf#toolbar=0" title="Anteprima Articolo 2"></iframe>
         </div>
       </article>
-
       <!-- Articolo 3 -->
       <article class="pdf-article" aria-labelledby="pdf-article-3-title">
         <h3 id="pdf-article-3-title">TAX CREDIT RISCRITTO. MA ORA C'È 1 MILIARDO DI "BUCO"</h3>
@@ -87,7 +178,6 @@
           <iframe src="pdf/articolo3.pdf#toolbar=0" title="Anteprima Articolo 3"></iframe>
         </div>
       </article>
-
       <!-- Articolo 4 -->
       <article class="pdf-article" aria-labelledby="pdf-article-4-title">
         <h3 id="pdf-article-4-title">ADIOVISIVI, SUL TAX CREDIT IL MURO DI MEDIASET E RAI AL DECRETO CORRETTIVO</h3>
@@ -102,16 +192,13 @@
   <footer>
     <p>
       <a href="https://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
       </a>
     </p>
     <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
     <p class="footer-note">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Termini di Servizio</a>
+      <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a>
     </p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
