@@ -917,3 +917,27 @@ footer {
   height: 100%;
   border: none;
   pointer-events: auto; /* Abilita l'interazione (scrolling, selezione, ecc.) */
+   
+/* ========================================
+   STILI PDF - Visualizzatore Articoli
+======================================== */
+.pdf-viewer {
+  width: 100%;
+  height: 800px; /* Altezza di default per desktop */
+  overflow: auto; /* Abilita lo scrolling verticale */
+  position: relative;
+}
+
+.pdf-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: auto; /* Permette l'interazione (scorrimento, selezione, ecc.) */
+}
+
+/* Media Query per dispositivi mobili */
+@media (max-width: 768px) {
+  .pdf-viewer {
+    height: 500px; /* Altezza ridotta per dispositivi mobili */
+  }
+}
