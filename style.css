@@ -440,7 +440,6 @@ p {
   margin-bottom: 1.5rem;
   font-weight: 700;
   color: #003366;
-  text-align: left;
 }
 
 /* ========================================
@@ -942,6 +941,4 @@ footer {
     height: 500px; /* Altezza ridotta per dispositivi mobili */
   }
 }
-.section-container h2 {
-  text-align: left !important;
-}
+   
