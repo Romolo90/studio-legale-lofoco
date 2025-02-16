@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta and SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Studio Legale Lo Foco - Latest News</title>
+  <link rel="canonical" href="https://studiolegalelofoco.com/">
+  <meta name="description" content="Latest news and updates in PDF format on law and regulations for the audiovisual and film sector.">
+  <meta name="keywords" content="Studio Legale Lo Foco, Latest News, PDF, law, cinema, audiovisual, Tax Credit">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Specific styles for the PDF viewer and toggle -->
+  <style>
+    /* PDF Viewer Styles */
+    .pdf-viewer {
+      width: 100%;
+      height: 800px; /* Default height for desktop */
+      overflow: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    .pdf-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    @media (max-width: 768px) {
+      .pdf-viewer {
+        height: 500px;
+      }
+    }
+    /* Article card styles */
+    .pdf-article {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    /* Section title: aligned left */
+    .section-container h2 {
+      text-align: left;
+      margin-bottom: 2rem;
+      font-size: 2.4rem;
+      color: #003366;
+    }
+    /* Toggle button styles */
+    .pdf-toggle {
+      background: none;
+      border: none;
+      text-align: left;
+      width: 100%;
+      font-size: 1.6rem;
+      color: #005699;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+    .pdf-toggle:focus {
+      outline: none;
+    }
+    .pdf-toggle:hover {
+      text-decoration: underline;
+    }
+    /* Hidden content by default */
+    .pdf-content {
+      display: none;
+      overflow: hidden;
+    }
+    .pdf-content.expanded {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        We use cookies to enhance your experience. Please review our 
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accept All</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Manage Cookies</button>
+    </div>
+  </div>
+  <!-- END COOKIE BANNER -->
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <h1 class="home-link">
+        <a href="index-en.html" aria-label="Return to homepage">Studio Legale Lo Foco</a>
+      </h1>
+    </div>
+    <!-- Mobile Hamburger Menu -->
+    <div class="hamburger" id="hamburgerMenu" aria-label="Open/Close Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav" aria-label="Main Menu">
+      <ul>
+        <li><a href="index-en.html#about-us">About Us</a></li>
+        <li><a href="index-en.html#services">Services</a></li>
+        <li><a href="index-en.html#contact">Contact</a></li>
+        <li><a href="notizie-en.html">News</a></li>
+        <li><a href="client-area-en.html">Client Area</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="section-container" aria-labelledby="news-title">
+      <h2 id="news-title">Latest News</h2>
+      
+      <!-- Article 1 -->
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-1" id="pdf-article-1-title">
+          TAX CREDIT SENTENCE TO DEATH 12-DEC-2024
+        </button>
+        <div class="pdf-content" id="pdf-content-1">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo1.pdf#toolbar=0" title="Preview Article 1"></iframe>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Article 2 -->
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-2" id="pdf-article-2-title">
+          CINEMA & AUDIOVISUAL: NEW CORRECTIVE MEASURES FOR TAX CREDIT REFORM 28-DEC-2024
+        </button>
+        <div class="pdf-content" id="pdf-content-2">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo2.pdf#toolbar=0" title="Preview Article 2"></iframe>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Article 3 -->
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-3" id="pdf-article-3-title">
+          TAX CREDIT REWRITTEN. NOW THERE'S A BILLION GAP 04-JAN-2025
+        </button>
+        <div class="pdf-content" id="pdf-content-3">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo3.pdf#toolbar=0" title="Preview Article 3"></iframe>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Article 4 -->
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-4" id="pdf-article-4-title">
+          AUDIOVISUAL: MEDIASSET & RAI BUILD A WALL ON THE CORRECTIVE DECREE 11-JAN-2025
+        </button>
+        <div class="pdf-content" id="pdf-content-4">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo4.pdf#toolbar=0" title="Preview Article 4"></iframe>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Article 5 -->
+      <article class="pdf-article">
+        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-5" id="pdf-article-5-title">
+          CINEMA & AUDIOVISUAL: NEW CORRECTIVE DECREE 14-FEB-2025
+        </button>
+        <div class="pdf-content" id="pdf-content-5">
+          <div class="pdf-viewer">
+            <iframe src="pdf/articolo5.pdf#toolbar=0" title="Preview Article 5"></iframe>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2024 Studio Legale Lo Foco - All Rights Reserved</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+      </p>
+    </div>
+    <div class="footer-right">
+      <!-- Additional logos or banners can be placed here -->
+    </div>
+  </footer>
+
+  <!-- Script for toggling PDF content -->
+  <script>
+    const toggles = document.querySelectorAll('.pdf-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const contentId = this.getAttribute('aria-controls');
+        const content = document.getElementById(contentId);
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        content.classList.toggle('expanded', !isExpanded);
+      });
+    });
+  </script>
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
