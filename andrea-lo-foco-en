@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attorney Andrea Lo Foco - Studio Legale Lo Foco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include your main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <h1>
+        <a href="index-en.html" class="home-link" aria-label="Return to homepage">
+          Studio Legale Lo Foco
+        </a>
+      </h1>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <button class="hamburger" id="hamburgerMenu" aria-label="Open/close menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main Menu">
+      <ul>
+        <li><a href="index-en.html#about-us">About Us</a></li>
+        <li><a href="index-en.html#services">Services</a></li>
+        <li><a href="index-en.html#contact">Contact</a></li>
+        <li><a href="notizie-en.html">News</a></li>
+        <li><a href="client-area-en.html">Client Area</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- PROFILE SECTION -->
+    <section class="profile-section">
+      <!-- Profile Box -->
+      <div class="profile-box">
+        <div class="profile-container">
+          <div class="profile-image-wrapper">
+            <img src="image/andrealofoco.JPG" alt="Photo of Andrea Lo Foco" class="profile-image">
+          </div>
+          <div class="profile-text">
+            <h2 class="profile-title">Attorney Andrea Lo Foco</h2>
+            <p class="profile-subtitle">Expert in Copyright and Administrative Law</p>
+            <p>
+              An attorney specializing in copyright and administrative law, with particular expertise in the film, audiovisual, and entertainment sectors. He is involved in the editorial and commercial management of rights for the exploitation of audiovisual works, with a focus on cinema tax credit and regulations protecting creative works in Italy and Europe.
+            </p>
+            <p>
+              A member of the Culture and Entertainment Commission of the Rome Bar Association, he provides legal consultancy for authors, artists, production companies, and publishers, ensuring both contractual and strategic protection in the cultural and creative fields.
+            </p>
+            <p>
+              Learn more at <a href="https://linktr.ee/andrealofoco" target="_blank">linktr.ee</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education and Early Career -->
+      <div class="profile-box">
+        <h3>🎓 Education and Early Career</h3>
+        <ul>
+          <li>Graduated in Law from the University of Rome "Luiss Guido Carli".</li>
+          <li>Licensed to practice law.</li>
+          <li>Specialized in administrative law.</li>
+        </ul>
+      </div>
+
+      <!-- Professional Experience -->
+      <div class="profile-box">
+        <h3>📜 Professional Experience</h3>
+        <ul>
+          <li>Legal consultant for film productions, production companies, and artists.</li>
+          <li>Expert in contractual matters for the audiovisual, entertainment, and publishing sectors.</li>
+          <li>Consultant for obtaining financing and fiscal incentives (Cinema and Audiovisual Tax Credit).</li>
+          <li>Experience in litigation and arbitration in the film and entertainment sectors.</li>
+        </ul>
+      </div>
+
+      <!-- Institutional Roles and Activities -->
+      <div class="profile-box">
+        <h3>🏛️ Institutional Roles and Activities</h3>
+        <ul>
+          <li>Member of the Culture and Entertainment Commission of the Rome Bar Association.</li>
+        </ul>
+      </div>
+
+      <!-- Publications and Collaborations -->
+      <div class="profile-box">
+        <h3>🏅 Publications and Collaborations</h3>
+        <ul>
+          <li>Author of articles and in-depth analyses on copyright law and audiovisual regulations.</li>
+          <li>Consultant for industry associations and public bodies in the film sector.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2024 Studio Legale Lo Foco - All Rights Reserved</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+      </p>
+    </div>
+    <!-- Additional banners or logos can be added here -->
+    <div class="footer-right"></div>
+  </footer>
+
+</body>
+</html>
