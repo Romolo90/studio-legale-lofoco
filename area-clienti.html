@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Area Clienti - Studio Legale Lo Foco</title>
-  <!-- Blocco dello zoom su mobile (opzionale, attenzione all’accessibilità) -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- Considera di rimuovere user-scalable=no per migliorare l'accessibilità -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,7 +14,9 @@
   <header class="header">
     <div class="logo">
       <!-- white-space: nowrap; gestito via CSS in .logo h1 -->
-      <h1><a href="index.html" class="home-link">Studio Legale Lo Foco</a></h1>
+      <h1>
+        <a href="index.html" class="home-link" aria-label="Torna alla homepage">Studio Legale Lo Foco</a>
+      </h1>
     </div>
 
     <!-- Hamburger menu (mobile) -->
@@ -29,7 +31,7 @@
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
         <li><a href="index.html#servizi">Servizi</a></li>
         <li><a href="index.html#contatti">Contatti</a></li>
-        <li><a href="notizie.html">Ultime Notizie</a></li>
+        <li><a href="notizie.html">Notizie</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
       </ul>
     </nav>
@@ -38,7 +40,7 @@
   <!-- SEZIONE AREA CLIENTI -->
   <section class="section-container">
     <h2>Area Riservata Clienti</h2>
-    <form class="login-form">
+    <form class="login-form" action="login-handler.php" method="post">
       <div class="form-row">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required />
@@ -52,20 +54,19 @@
       <button type="submit" class="btn-cta">Accedi</button>
     </form>
     <p class="note">
-      Hai dimenticato la password? <a href="index.html">Reimposta qui</a>.
+      Hai dimenticato la password? <a href="reset-password.html">Reimposta qui</a>.
     </p>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <p>
-    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
         <img style="border:0;width:88px;height:31px"
-            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-            alt="Valid CSS!" />
-    </a>
-</p>
-</p>
+             src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+             alt="Valid CSS!" />
+      </a>
+    </p>
     <p>&copy; 2024 Studio Legale Lo Foco - Tutti i diritti riservati</p>
     <p class="footer-note">
       <a href="privacy.html">Privacy Policy</a> |
@@ -73,7 +74,7 @@
     </p>
   </footer>
 
-  <!-- script globale -->
+  <!-- Script globale -->
   <script src="script.js"></script>
 </body>
 </html>
