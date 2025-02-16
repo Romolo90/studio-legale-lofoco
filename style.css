@@ -941,4 +941,19 @@ footer {
     height: 500px; /* Altezza ridotta per dispositivi mobili */
   }
 }
-   
+.language-selector {
+  font-size: 0.9rem;
+  color: #BFECFF;
+  margin-right: 1rem;
+}
+
+.language-selector a {
+  color: #BFECFF;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.language-selector a:hover {
+  text-decoration: underline;
+}
+
