@@ -5,65 +5,104 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<url>
-  <loc>https://studiolegalelofoco.com/</loc>
-  <lastmod>2025-01-09T09:44:18+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/cookie-policy.html</loc>
-  <lastmod>2025-01-09T09:44:19+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/index.html</loc>
-  <lastmod>2025-01-09T09:44:19+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/notizie.html</loc>
-  <lastmod>2025-01-09T09:44:19+00:00</lastmod>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/area-clienti.html</loc>
-  <lastmod>2025-01-09T09:44:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/michele-lo-foco.html</loc>
-  <lastmod>2025-01-09T09:44:19+00:00</lastmod>
-  <priority>0.85</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/andrea-lo-foco.html</loc>
-  <lastmod>2025-01-09T09:44:19+00:00</lastmod>
-  <priority>0.85</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/privacy.html</loc>
-  <lastmod>2025-01-09T09:44:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/terms.html</loc>
-  <lastmod>2025-01-09T09:44:19+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/notiziauno.html</loc>
-  <lastmod>2025-01-09T09:44:18+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/notiziadue.html</loc>
-  <lastmod>2025-01-09T09:44:19+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://studiolegalelofoco.com/notiziatre.html</loc>
-  <lastmod>2025-01-09T09:44:19+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
+  <!-- Home Page (Primary) -->
+  <url>
+    <loc>https://studiolegalelofoco.com/</loc>
+    <lastmod>2025-01-09T09:44:18+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
 
+  <!-- Italian Pages -->
+  <url>
+    <loc>https://studiolegalelofoco.com/index.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/cookie-policy.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/notizie.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/area-clienti.html</loc>
+    <lastmod>2025-01-09T09:44:18+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/michele-lo-foco.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/andrea-lo-foco.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/privacy.html</loc>
+    <lastmod>2025-01-09T09:44:18+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/terms.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/notiziauno.html</loc>
+    <lastmod>2025-01-09T09:44:18+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/notiziadue.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/notiziatre.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- English Pages -->
+  <url>
+    <loc>https://studiolegalelofoco.com/index-en.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/notizie-en.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/client-area-en.html</loc>
+    <lastmod>2025-01-09T09:44:18+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/michele-lo-foco-en.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/andrea-lo-foco-en.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/privacy-en.html</loc>
+    <lastmod>2025-01-09T09:44:18+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/terms-en.html</loc>
+    <lastmod>2025-01-09T09:44:19+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>
