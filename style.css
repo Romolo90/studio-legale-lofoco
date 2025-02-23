@@ -6,7 +6,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
 }
@@ -233,10 +234,6 @@ p {
   padding: 0;
 }
 
-.main-nav ul li {
-  margin: 0;
-}
-
 .main-nav ul li a {
   text-decoration: none;
   color: #BFECFF;
@@ -249,9 +246,9 @@ p {
   color: #80D9FF;
 }
 
-/* Stile per il menu hamburger (mobile) */
+/* Menu hamburger (mobile) */
 .hamburger {
-  display: none; /* Default: nascosto su desktop */
+  display: none; /* Hidden on desktop */
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -586,10 +583,9 @@ p {
   display: flex;
   justify-content: center;
   padding: 60px 20px;
-  background-color: #f5faff; /* Sfondo leggero per evidenziare la sezione */
+  background-color: #f5faff;
 }
 
-/* Box biografico */
 .bio-box {
   background-color: #fff;
   border-radius: 10px;
@@ -599,14 +595,12 @@ p {
   width: 100%;
 }
 
-/* Contenitore immagine + testo */
 .bio-container {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-/* Stile immagine */
 .bio-image-wrapper {
   flex-shrink: 0;
 }
@@ -619,13 +613,11 @@ p {
   border: 3px solid #003366;
 }
 
-/* Testo della biografia */
 .bio-text {
   flex: 1;
   font-size: 1.1rem;
 }
 
-/* Nome */
 .bio-title {
   font-size: 2rem;
   font-weight: bold;
@@ -633,7 +625,6 @@ p {
   margin-bottom: 5px;
 }
 
-/* Sottotitolo */
 .bio-subtitle {
   font-size: 1.2rem;
   color: #666;
@@ -641,22 +632,18 @@ p {
   font-style: italic;
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
   .bio-container {
     flex-direction: column;
     text-align: center;
   }
-
   .bio-image {
     width: 140px;
     margin-bottom: 15px;
   }
-
   .bio-title {
     font-size: 1.7rem;
   }
-
   .bio-subtitle {
     font-size: 1.1rem;
   }
@@ -673,7 +660,6 @@ p {
   background-color: #f5faff;
 }
 
-/* Box contenitore */
 .profile-box {
   background-color: #fff;
   border-radius: 10px;
@@ -684,14 +670,12 @@ p {
   margin-bottom: 20px;
 }
 
-/* Contenitore immagine + testo */
 .profile-container {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-/* Contenitore immagine */
 .profile-image-wrapper {
   max-width: 180px;
   width: 100%;
@@ -701,7 +685,6 @@ p {
   overflow: hidden;
 }
 
-/* Stile immagine */
 .profile-image {
   width: 100%;
   max-width: 180px;
@@ -712,13 +695,11 @@ p {
   display: block;
 }
 
-/* Testo */
 .profile-text {
   flex: 1;
   font-size: 1.1rem;
 }
 
-/* Titoli */
 .profile-title {
   font-size: 2rem;
   color: #003366;
@@ -729,7 +710,6 @@ p {
   color: #666;
 }
 
-/* Liste */
 .profile-box ul {
   list-style-type: disc;
   margin-left: 20px;
@@ -804,27 +784,25 @@ footer {
   transform: scale(1.05);
 }
 
-/* 📱 VERSIONE MOBILE */
+/* ========================================
+   VERSIONE MOBILE
+======================================== */
 @media (max-width: 768px) {
   body {
     font-size: 1.1rem;
   }
-
   .header {
     flex-wrap: wrap;
     padding: 1rem;
   }
-
   .logo h1 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     white-space: normal;
   }
-
   .hamburger {
     display: flex;
   }
-
   .main-nav {
     position: fixed;
     top: 0;
@@ -842,37 +820,30 @@ footer {
     overflow-y: auto;
     z-index: 9998;
   }
-
   .main-nav.active {
     transform: translateX(0);
   }
-
   .main-nav ul {
     flex-direction: column;
     gap: 1rem;
     width: 100%;
   }
-
   .hero {
     height: auto;
     padding: 3rem 1rem;
   }
-
   .hero-content h2 {
     font-size: 2.3rem;
   }
-
   .hero-content p {
     font-size: 1.1rem;
   }
-
   footer {
     flex-direction: column;
     text-align: center;
     align-items: center;
     padding: 20px;
   }
-
   .footer-left,
   .footer-center,
   .footer-right {
@@ -880,51 +851,31 @@ footer {
     justify-content: center;
     margin-bottom: 10px;
   }
-
   .footer-left img {
     max-width: 80px;
   }
-
   .dogecoin-footer img {
     max-width: 150px;
   }
-
   .profile-container {
     flex-direction: column;
     text-align: center;
   }
-
   .profile-image-wrapper {
     max-width: 140px;
   }
-
   .profile-image {
     max-width: 140px;
   }
 }
-/* ========================================
-   STILI PDF - Visualizzatore Articoli
-======================================== */
-.pdf-viewer {
-  width: 100%;
-  height: 800px; /* Altezza per visualizzare una pagina A4; modificala se necessario */
-  overflow: auto; /* Abilita lo scrolling per leggere articoli lunghi */
-  position: relative;
-}
 
-.pdf-viewer iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  pointer-events: auto; /* Abilita l'interazione (scrolling, selezione, ecc.) */
-   
 /* ========================================
-   STILI PDF - Visualizzatore Articoli
+   STILI PDF - VISUALIZZATORE ARTICOLI
 ======================================== */
 .pdf-viewer {
   width: 100%;
   height: 800px; /* Altezza di default per desktop */
-  overflow: auto; /* Abilita lo scrolling verticale */
+  overflow: auto;
   position: relative;
 }
 
@@ -932,15 +883,16 @@ footer {
   width: 100%;
   height: 100%;
   border: none;
-  pointer-events: auto; /* Permette l'interazione (scorrimento, selezione, ecc.) */
+  pointer-events: auto;
 }
 
 /* Media Query per dispositivi mobili */
 @media (max-width: 768px) {
   .pdf-viewer {
-    height: 500px; /* Altezza ridotta per dispositivi mobili */
+    height: 500px;
   }
 }
+
 .language-selector {
   font-size: 0.9rem;
   color: #BFECFF;
@@ -956,4 +908,3 @@ footer {
 .language-selector a:hover {
   text-decoration: underline;
 }
-
