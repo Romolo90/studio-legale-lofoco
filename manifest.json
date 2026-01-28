@@ -1,0 +1,26 @@
+{
+  "name": "Studio Legale Lo Foco",
+  "short_name": "SL Lo Foco",
+  "description": "Consulenza legale in diritto d'autore, cinema, e amministrativo. Avvocati Andrea e Michele Lo Foco.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#BFECFF",
+  "theme_color": "#003366",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "image/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "it",
+  "dir": "ltr"
+}

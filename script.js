@@ -1,12 +1,29 @@
 (function() {
+  // Utility: Debounce function
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
   // Main App object
   const App = {
     init() {
-      this.initCookieManager();
-      this.initMenu();
-      this.initScrollToTop();
-      this.initAccordion();
-      this.initFormValidation();
+      try {
+        this.initCookieManager();
+        this.initMenu();
+        this.initScrollToTop();
+        this.initAccordion();
+        this.initFormValidation();
+      } catch (error) {
+        console.error('Error initializing app:', error);
+      }
     },
 
     initCookieManager() {
@@ -16,34 +33,38 @@
     initMenu() {
       const hamburgerMenu = document.getElementById('hamburgerMenu');
       const mainNav = document.getElementById('mainNav');
-      if (hamburgerMenu && mainNav) {
-        hamburgerMenu.addEventListener('click', () => {
-          mainNav.classList.toggle('active');
-        });
+      if (!hamburgerMenu || !mainNav) return;
 
-        mainNav.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mainNav.classList.remove('active');
-          });
+      hamburgerMenu.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+      });
+
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('active');
         });
-      }
+      });
     },
 
     initScrollToTop() {
       const scrollToTopBtn = document.getElementById('scrollToTop');
-      if (scrollToTopBtn) {
-        window.addEventListener('scroll', () => {
-          scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
+      if (!scrollToTopBtn) return;
 
-        scrollToTopBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
+      const handleScroll = debounce(() => {
+        scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+      }, 100);
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     },
 
     initAccordion() {
       const accordionHeaders = document.querySelectorAll('.accordion-header');
+      if (accordionHeaders.length === 0) return;
+
       accordionHeaders.forEach(header => {
         header.addEventListener('click', () => {
           const isExpanded = header.getAttribute('aria-expanded') === 'true';
@@ -59,14 +80,25 @@
     initFormValidation() {
       const privacyCheckbox = document.getElementById('privacy');
       const form = document.querySelector('.contact-form');
-      if (form && privacyCheckbox) {
-        form.addEventListener('submit', e => {
-          if (!privacyCheckbox.checked) {
-            e.preventDefault();
-            alert('Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.');
-          }
-        });
-      }
+      const errorMsg = document.getElementById('privacy-error');
+
+      if (!form || !privacyCheckbox || !errorMsg) return;
+
+      // Hide error when checkbox is checked
+      privacyCheckbox.addEventListener('change', () => {
+        if (privacyCheckbox.checked) {
+          errorMsg.style.display = 'none';
+        }
+      });
+
+      // Validate on submit
+      form.addEventListener('submit', e => {
+        if (!privacyCheckbox.checked) {
+          e.preventDefault();
+          errorMsg.style.display = 'block';
+          privacyCheckbox.focus();
+        }
+      });
     }
   };
 
@@ -103,7 +135,7 @@
     },
 
     acceptAllCookies() {
-      document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365;
+      document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365 + "; SameSite=Strict; Secure";
       this.hideBanner();
     },
 
@@ -119,7 +151,7 @@
         return prefs;
       }, {});
       
-      document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}`;
+      document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; Secure`;
       this.cookiePreferences.style.display = 'none';
     },
 
