@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Verifica Incentivi | Studio Legale Lo Foco - Tax Credit e Contributi Audiovisivo</title>
+  <link rel="canonical" href="https://studiolegalelofoco.com/verifica-incentivi.html">
+  <meta name="description" content="Simulatore interattivo per verificare l'idoneità del tuo progetto cinematografico o audiovisivo a Tax Credit, contributi selettivi e altri incentivi. Basato su regole ufficiali 2026 della DG Cinema.">
+  <meta name="keywords" content="Verifica Incentivi, Tax Credit, contributi selettivi, cinema, audiovisivo, incentivi fiscali, Studio Legale Lo Foco">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/verifica-incentivi.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/verifica-incentivi-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/verifica-incentivi.html">
+
+  <!-- OG / Twitter -->
+  <meta property="og:title" content="Verifica Incentivi | Studio Legale Lo Foco">
+  <meta property="og:description" content="Scopri in pochi clic a quali incentivi può accedere il tuo progetto: Tax Credit, contributi selettivi e fondi europei.">
+  <meta property="og:url" content="https://studiolegalelofoco.com/verifica-incentivi.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Verifica Incentivi - Tax Credit e Contributi per il Cinema">
+  <meta name="twitter:description" content="Strumento pratico per produttori e filmmaker: valuta l'idoneità del tuo progetto agli incentivi italiani ed europei.">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="image/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#003366">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Page-specific styles for the incentives checker */
+    .tool-hero {
+      background: linear-gradient(135deg, #003366 0%, #002244 100%);
+      color: #BFECFF;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .tool-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .tool-hero p {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    .tool-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .disclaimer-banner {
+      background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      color: #664d03;
+      padding: 0.9rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .questions-form {
+      background: #fff;
+      border: 1px solid #80D9FF;
+      border-radius: 10px;
+      padding: 1.75rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
+    }
+
+    .question {
+      margin-bottom: 1.5rem;
+    }
+    .question:last-child {
+      margin-bottom: 0;
+    }
+    .question label {
+      display: block;
+      font-weight: 600;
+      color: #003366;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+    .question select,
+    .question input[type="number"] {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid #80D9FF;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #f8fbff;
+    }
+    .question select:focus,
+    .question input:focus {
+      outline: none;
+      border-color: #005699;
+      box-shadow: 0 0 0 3px rgba(0, 86, 153, 0.15);
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+    }
+    .checkbox-group label {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      font-size: 0.98rem;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .form-actions button {
+      flex: 1;
+      min-width: 160px;
+      background: #004766;
+      color: #BFECFF;
+      border: none;
+      padding: 0.85rem 1.4rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .form-actions button:hover {
+      background: #003247;
+    }
+    .form-actions button.secondary {
+      background: transparent;
+      color: #003366;
+      border: 1px solid #80D9FF;
+    }
+
+    .results-section {
+      display: none;
+      margin-top: 1rem;
+    }
+    .results-section.visible {
+      display: block;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .result-card {
+      background: #fff;
+      border: 1px solid #80D9FF;
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+    }
+    .result-card h3 {
+      font-size: 1.05rem;
+      color: #003366;
+      margin: 0 0 0.4rem;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+    .badge.high { background: #d1fae5; color: #065f46; }
+    .badge.medium { background: #fef3c7; color: #92400e; }
+    .badge.low { background: #e0e7ff; color: #3730a3; }
+    .badge.none { background: #fee2e2; color: #991b1b; }
+
+    .result-card p {
+      font-size: 0.92rem;
+      color: #444;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    .final-disclaimer {
+      font-size: 0.82rem;
+      color: #555;
+      font-style: italic;
+      background: #f8fbff;
+      padding: 1rem 1.2rem;
+      border-radius: 6px;
+      border-left: 4px solid #80D9FF;
+    }
+
+    .cta-contact {
+      display: block;
+      text-align: center;
+      margin: 1.5rem auto 0;
+      background: #004766;
+      color: #BFECFF;
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+    }
+    .cta-contact:hover {
+      background: #003247;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie per migliorare la tua esperienza. Consulta la nostra 
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <h1 class="home-link">
+        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      </h1>
+    </div>
+    <div class="language-selector">
+      <strong>IT</strong> | <a href="verifica-incentivi-en.html">EN</a>
+    </div>
+    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
+      <ul>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="notizie.html">Approfondimenti</a></li>
+        <li><a href="verifica-incentivi.html" aria-current="page">Verifica Incentivi</a></li>
+        <li><a href="area-clienti.html">Area Clienti</a></li>
+        <li class="mobile-language">
+          <strong>IT</strong> | <a href="verifica-incentivi-en.html">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <div class="tool-hero">
+      <h1>Verifica la tua idoneità agli incentivi</h1>
+      <p>Strumento pratico e riservato per produttori, registi e operatori del settore audiovisivo. In pochi clic valuta a quali misure di sostegno — Tax Credit, contributi selettivi e fondi europei — il tuo progetto può accedere sulla base delle regole ufficiali 2026 della Direzione Generale Cinema e Audiovisivo.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="disclaimer-banner">
+        <strong>Avvertenza importante:</strong> Questo è un simulatore indicativo basato su regole pubbliche della Direzione Generale Cinema e Audiovisivo (2025-2026). Non sostituisce una valutazione professionale, il test di nazionalità/culturale né la presentazione della domanda. I risultati sono puramente orientativi.
+      </div>
+
+      <form id="incentives-form" class="questions-form" novalidate>
+        <div class="question">
+          <label for="project-type">1. Tipologia di opera</label>
+          <select id="project-type" required>
+            <option value="">Seleziona...</option>
+            <option value="feature">Lungometraggio cinematografico</option>
+            <option value="series">Serie TV o web</option>
+            <option value="doc">Documentario</option>
+            <option value="short">Cortometraggio</option>
+            <option value="animation">Opera di animazione</option>
+            <option value="other">Altro (videogame, VR, etc.)</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="stage">2. Fase attuale del progetto</label>
+          <select id="stage" required>
+            <option value="">Seleziona...</option>
+            <option value="development">Sviluppo / Scrittura</option>
+            <option value="preproduction">Pre-produzione</option>
+            <option value="production">Produzione / Riprese</option>
+            <option value="post">Post-produzione</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label for="italian-spend">3. Spesa stimata in Italia (milioni di €)</label>
+          <input type="number" id="italian-spend" min="0" step="0.1" placeholder="Es. 1.8" required>
+          <small style="color:#666; font-size:0.8rem;">Indica solo la parte di budget che prevedi di spendere sul territorio italiano.</small>
+        </div>
+
+        <div class="question">
+          <label>4. Nazionalità e struttura produttiva</label>
+          <select id="nationality" required>
+            <option value="">Seleziona...</option>
+            <option value="italian">100% italiana o coproduzione maggioritaria italiana</option>
+            <option value="co-eu">Coproduzione con Paese UE</option>
+            <option value="co-international">Coproduzione con Paese extra-UE</option>
+            <option value="foreign">Produzione estera che gira in Italia / usa servizi italiani</option>
+          </select>
+        </div>
+
+        <div class="question">
+          <label>5. Requisiti artistici / culturali particolari</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" id="young-author"> Opera di giovane autore / prima o seconda opera</label>
+            <label><input type="checkbox" id="cultural-identity"> Documentario o film su identità culturale italiana</label>
+            <label><input type="checkbox" id="artistic-quality"> Opera di particolare qualità artistica (prevista dal bando)</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <label for="foreign-production">6. Si tratta di una produzione straniera?</label>
+          <select id="foreign-production" required>
+            <option value="no">No</option>
+            <option value="yes-executive">Sì, con produttore esecutivo italiano</option>
+            <option value="yes-services">Sì, solo servizi in Italia (executive production)</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="calculate-btn">Calcola idoneità</button>
+          <button type="button" id="reset-btn" class="secondary">Reimposta</button>
+        </div>
+      </form>
+
+      <!-- RESULTS -->
+      <div id="results" class="results-section">
+        <h2 style="color:#003366; margin-bottom:1rem; font-size:1.5rem;">Risultati indicativi</h2>
+        <div class="results-grid" id="results-grid"></div>
+
+        <div class="final-disclaimer">
+          <strong>Nota importante:</strong> Questo è un simulatore indicativo basato su regole pubbliche (D.D. 2025-2026). L’effettiva concessione di qualsiasi incentivo dipende dal superamento del test di nazionalità/culturale, dal rispetto dei massimali di spesa, dalla completezza della documentazione e dall’approvazione finale della Direzione Generale Cinema e Audiovisivo. Per una valutazione precisa e personalizzata contatta lo studio.
+        </div>
+
+        <div style="margin: 1.25rem 0; padding: 1rem; background: #f8fbff; border-radius: 6px; border-left: 4px solid #80D9FF;">
+          <strong>Prossimi passi consigliati:</strong>
+          <ul style="margin: 0.5rem 0 0 1.2rem; font-size: 0.92rem;">
+            <li>Consulta gli aggiornamenti ufficiali e le scadenze 2026 negli <a href="notizie.html">Approfondimenti</a></li>
+            <li>Verifica i bandi e le graduatorie sul sito della <a href="https://cinema.cultura.gov.it/" target="_blank" rel="noopener">DG Cinema</a></li>
+            <li>Contatta lo studio per una analisi dedicata del tuo progetto</li>
+          </ul>
+        </div>
+
+        <a href="index.html#contatti" class="cta-contact">Richiedi una consulenza personalizzata</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Simple but realistic client-side eligibility engine
+    const form = document.getElementById('incentives-form');
+    const resultsEl = document.getElementById('results');
+    const grid = document.getElementById('results-grid');
+    const resetBtn = document.getElementById('reset-btn');
+
+    function calculateEligibility(data) {
+      const results = [];
+
+      const spend = parseFloat(data.italianSpend) || 0;
+      const isItalian = data.nationality === 'italian' || data.nationality === 'co-eu';
+      const isForeignService = data.foreignProduction === 'yes-services' || data.foreignProduction === 'yes-executive';
+      const hasArtistic = data.youngAuthor || data.culturalIdentity || data.artisticQuality;
+      const isProductionPhase = data.stage === 'production' || data.stage === 'post';
+
+      // Tax Credit Produzione (main one)
+      if (isItalian && spend >= 0.5 && isProductionPhase) {
+        let rate = 0.40;
+        let label = 'Tax Credit Produzione (fino al 40%)';
+        let status = 'high';
+        let note = 'Alta probabilità se superi il test di nazionalità e i requisiti culturali.';
+
+        if (data.projectType === 'doc' || data.projectType === 'short') rate = 0.30;
+        if (data.nationality === 'co-eu') rate = 0.35;
+
+        if (hasArtistic) note += ' Quote e maggiorazioni possibili per opere di qualità artistica o giovani autori.';
+
+        results.push({
+          title: label,
+          status,
+          note: `${note} Spesa italiana stimata: ${spend} M€.`
+        });
+      } else if (isItalian && spend < 0.5) {
+        results.push({
+          title: 'Tax Credit Produzione',
+          status: 'low',
+          note: 'Spesa italiana probabilmente troppo bassa per accedere alle aliquote piene. Verifica i massimali minimi.'
+        });
+      }
+
+      // Tax Credit Attrazione Investimenti (foreign productions)
+      if (isForeignService && spend >= 1.0) {
+        results.push({
+          title: 'Tax Credit Attrazione Investimenti',
+          status: 'high',
+          note: 'Buona idoneità per produzioni estere con executive production o servizi in Italia. Aliquote interessanti per film e serie.'
+        });
+      } else if (isForeignService) {
+        results.push({
+          title: 'Tax Credit Attrazione Investimenti',
+          status: 'medium',
+          note: 'Possibile se raggiungi la soglia minima di spesa in Italia. Controlla gli avvisi annuali per le sessioni.'
+        });
+      }
+
+      // Contributi Selettivi
+      if ((data.projectType === 'feature' || data.projectType === 'series' || data.projectType === 'doc' || data.projectType === 'animation') && hasArtistic) {
+        let status = 'medium';
+        let note = 'Il progetto presenta caratteristiche che possono allinearsi ai bandi selettivi 2026 (scrittura, sviluppo o produzione).';
+
+        if (data.stage === 'development' || data.stage === 'preproduction') {
+          status = 'high';
+          note = 'Fase ideale per contributi selettivi su scrittura e sviluppo (bandi 2026 aperti).';
+        }
+
+        results.push({
+          title: 'Contributi Selettivi (art. 26 L.220/2016)',
+          status,
+          note
+        });
+      }
+
+      // UE / MEDIA + co-productions
+      if (data.nationality === 'co-eu' || data.nationality === 'co-international') {
+        results.push({
+          title: 'Programmi UE (Creative Europe MEDIA) e accordi bilaterali',
+          status: 'medium',
+          note: 'Le coproduzioni con Paesi UE (es. Francia 2026) possono accedere a fondi incrociati e punti extra nei bandi nazionali.'
+        });
+      }
+
+      // Regional note (always useful)
+      results.push({
+        title: 'Incentivi regionali e Film Commission',
+        status: 'low',
+        note: 'Molte regioni offrono contributi integrativi o servizi gratuiti. Contattaci per una mappatura mirata sul tuo territorio.'
+      });
+
+      if (results.length === 0) {
+        results.push({
+          title: 'Nessun incentivo principale identificato',
+          status: 'none',
+          note: 'In base ai dati inseriti il progetto non sembra rientrare nei principali schemi attuali. Ti consigliamo una consulenza per esplorare soluzioni alternative.'
+        });
+      }
+
+      return results;
+    }
+
+    function renderResults(results) {
+      grid.innerHTML = '';
+      results.forEach(r => {
+        const card = document.createElement('div');
+        card.className = 'result-card';
+        card.innerHTML = `
+          <span class="badge ${r.status}">${r.status === 'high' ? 'Alta idoneità' : r.status === 'medium' ? 'Media idoneità' : r.status === 'low' ? 'Bassa / da verificare' : 'Non prioritario'}</span>
+          <h3>${r.title}</h3>
+          <p>${r.note}</p>
+        `;
+        grid.appendChild(card);
+      });
+      resultsEl.classList.add('visible');
+      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = {
+        projectType: document.getElementById('project-type').value,
+        stage: document.getElementById('stage').value,
+        italianSpend: document.getElementById('italian-spend').value,
+        nationality: document.getElementById('nationality').value,
+        youngAuthor: document.getElementById('young-author').checked,
+        culturalIdentity: document.getElementById('cultural-identity').checked,
+        artisticQuality: document.getElementById('artistic-quality').checked,
+        foreignProduction: document.getElementById('foreign-production').value
+      };
+
+      // Basic validation
+      if (!data.projectType || !data.stage || !data.italianSpend || !data.nationality) {
+        alert('Compila tutti i campi obbligatori per ottenere una valutazione.');
+        return;
+      }
+
+      const results = calculateEligibility(data);
+      renderResults(results);
+    });
+
+    resetBtn.addEventListener('click', function() {
+      form.reset();
+      resultsEl.classList.remove('visible');
+      grid.innerHTML = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Keyboard accessibility for form
+    console.log('%c[Studio Legale Lo Foco] Verifica Incentivi (IT) tool initialized', 'color:#80D9FF');
+  </script>
+</body>
+</html>

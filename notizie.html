@@ -4,82 +4,34 @@
   <!-- Meta e SEO -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Studio Legale Lo Foco - Ultime Notizie</title>
-  <link rel="canonical" href="https://studiolegalelofoco.com/">
-  <meta name="description" content="Ultime notizie e aggiornamenti in formato PDF sul diritto e normative per il settore audiovisivo e cinematografico.">
-  <meta name="keywords" content="Studio Legale Lo Foco, Ultime Notizie, PDF, diritto, cinema, audiovisivo, Tax Credit">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Studio Legale Lo Foco | Approfondimenti - Tax Credit, Contributi e Normativa Audiovisivo</title>
+  <link rel="canonical" href="https://studiolegalelofoco.com/notizie.html">
+  <meta name="description" content="Ultime novità ufficiali, bandi e risorse su Tax Credit, contributi selettivi, fondi europei e normative per cinema e audiovisivo. Fonti: Direzione Generale Cinema e Audiovisivo - Ministero della Cultura.">
+  <meta name="keywords" content="Studio Legale Lo Foco, Approfondimenti, Tax Credit, contributi selettivi, cinema, audiovisivo, incentivi fiscali, DG Cinema">
+  <!-- Hreflang for bilingual SEO -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/notizie.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/notizie-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/notizie.html">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Studio Legale Lo Foco | Approfondimenti - Incentivi e Normativa">
+  <meta property="og:description" content="Aggiornamenti ufficiali e analisi su Tax Credit, contributi selettivi e finanziamenti per il settore cinematografico e audiovisivo.">
+  <meta property="og:url" content="https://studiolegalelofoco.com/notizie.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Studio Legale Lo Foco | Approfondimenti">
+  <meta name="twitter:description" content="Ultime novità ufficiali DG Cinema, Tax Credit e risorse per produttori e filmmaker.">
+  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <!-- Favicons (fixed path) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="image/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/favicon.png">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
   
   <!-- Foglio di stile principale -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Stili specifici per il visualizzatore PDF e per il toggle -->
-  <style>
-    /* STILI PDF - Visualizzatore Articoli */
-    .pdf-viewer {
-      width: 100%;
-      height: 800px; /* Altezza di default per desktop */
-      overflow: auto;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-bottom: 1rem;
-    }
-    .pdf-viewer iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    @media (max-width: 768px) {
-      .pdf-viewer {
-        height: 500px;
-      }
-    }
-    /* Stile articoli PDF in "card" per coerenza con le altre pagine */
-    .pdf-article {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    /* Titolo della sezione: allineato a sinistra */
-    .section-container h2 {
-      text-align: left;
-      margin-bottom: 2rem;
-      font-size: 2.4rem;
-      color: #003366;
-    }
-    /* Stili per il toggle degli articoli */
-    .pdf-toggle {
-      background: none;
-      border: none;
-      text-align: left;
-      width: 100%;
-      font-size: 1.6rem;
-      color: #005699;
-      font-weight: 600;
-      cursor: pointer;
-      padding: 0;
-      margin-bottom: 1rem;
-    }
-    .pdf-toggle:focus {
-      outline: none;
-    }
-    .pdf-toggle:hover {
-      text-decoration: underline;
-    }
-    /* Il contenuto (PDF) è nascosto di default */
-    .pdf-content {
-      display: none;
-      overflow: hidden;
-    }
-    .pdf-content.expanded {
-      display: block;
-    }
-  </style>
 </head>
 <body>
   <!-- Skip Navigation Link for Accessibility -->
@@ -107,6 +59,10 @@
         <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
       </h1>
     </div>
+    <!-- Language Selector (IT primary) -->
+    <div class="language-selector">
+      <strong>IT</strong> | <a href="notizie-en.html">EN</a>
+    </div>
     <!-- Hamburger menu (mobile) -->
     <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
@@ -119,78 +75,72 @@
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
         <li><a href="index.html#servizi">Servizi</a></li>
         <li><a href="index.html#contatti">Contatti</a></li>
-        <li><a href="notizie.html">Ultime Notizie</a></li>
+        <li><a href="notizie.html">Approfondimenti</a></li>
+        <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
+        <li class="mobile-language">
+          <strong>IT</strong> | <a href="notizie-en.html">EN</a>
+        </li>
       </ul>
     </nav>
   </header>
 
   <!-- MAIN CONTENT -->
   <main id="main">
-    <section class="section-container" aria-labelledby="news-title">
-      <h2 id="news-title">Ultime Notizie</h2>
-      
-      <!-- Articolo 1 -->
-      <article class="pdf-article">
-        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-1" id="pdf-article-1-title">
-          TAX CREDIT CONDANNA A MORTE 12-DIC-2024
-        </button>
-        <div class="pdf-content" id="pdf-content-1">
-          <div class="pdf-viewer">
-            <iframe src="pdf/articolo1.pdf#toolbar=0" title="Anteprima Articolo 1"></iframe>
-          </div>
-        </div>
-      </article>
-      
-      <!-- Articolo 2 -->
-      <article class="pdf-article">
-        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-2" id="pdf-article-2-title">
-          CINEMA E AUDIOVISIVO, IN ARRIVO I CORRETTIVI ALLA RIFORMA DEL TAX CREDIT 28-DIC-2024
-        </button>
-        <div class="pdf-content" id="pdf-content-2">
-          <div class="pdf-viewer">
-            <iframe src="pdf/articolo2.pdf#toolbar=0" title="Anteprima Articolo 2"></iframe>
-          </div>
-        </div>
-      </article>
-      
-      <!-- Articolo 3 -->
-      <article class="pdf-article">
-        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-3" id="pdf-article-3-title">
-          TAX CREDIT RISCRITTO. MA ORA C'È 1 MILIARDO DI "BUCO" 04-GEN-2025
-        </button>
-        <div class="pdf-content" id="pdf-content-3">
-          <div class="pdf-viewer">
-            <iframe src="pdf/articolo3.pdf#toolbar=0" title="Anteprima Articolo 3"></iframe>
-          </div>
-        </div>
-      </article>
-      
-      <!-- Articolo 4 -->
-      <article class="pdf-article">
-        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-4" id="pdf-article-4-title">
-          AUDIOVISIVI, SUL TAX CREDIT IL MURO DI MEDIASET E RAI AL DECRETO CORRETTIVO 11-GEN-2025
-        </button>
-        <div class="pdf-content" id="pdf-content-4">
-          <div class="pdf-viewer">
-            <iframe src="pdf/articolo4.pdf#toolbar=0" title="Anteprima Articolo 4"></iframe>
-          </div>
-        </div>
-      </article>
-      
-      <!-- Articolo 5 -->
-      <article class="pdf-article">
-        <button class="pdf-toggle" aria-expanded="false" aria-controls="pdf-content-5" id="pdf-article-5-title">
-          CINEMA E AUDIOVISIVO, NUOVO DECRETO CORRETTIVO 14-FEB-2025
-        </button>
-        <div class="pdf-content" id="pdf-content-5">
-          <div class="pdf-viewer">
-            <iframe src="pdf/articolo5.pdf#toolbar=0" title="Anteprima Articolo 5"></iframe>
-          </div>
-        </div>
-      </article>
+    <!-- HERO -->
+    <div class="insights-hero">
+      <h1>Approfondimenti</h1>
+      <p>Risorse ufficiali e analisi aggiornate per produttori, filmmaker e operatori del settore. Tutte le informazioni provengono da fonti istituzionali (Direzione Generale Cinema e Audiovisivo, Ministero della Cultura) e sono pensate per orientarti tra incentivi fiscali, bandi e normative.</p>
+    </div>
+
+    <!-- ULTIME NOVITÀ UFFICIALI -->
+    <section class="insights-section" aria-labelledby="novita-title">
+      <h2 id="novita-title">Ultime Novità Ufficiali</h2>
+      <div class="news-list" id="news-list" aria-live="polite"></div>
+      <p class="disclaimer">Le notizie sono tratte da comunicazioni e avvisi ufficiali pubblicati sul sito della Direzione Generale Cinema e Audiovisivo. Per i testi completi e le scadenze esatte, consulta sempre le fonti originali.</p>
     </section>
+
+    <!-- RISORSE E ANALISI -->
+    <section class="insights-section" aria-labelledby="risorse-title">
+      <h2 id="risorse-title">Risorse e Analisi</h2>
+      <div class="filters" role="search">
+        <input type="search" id="search-input" placeholder="Cerca per titolo o parola chiave..." aria-label="Cerca risorse">
+        <button class="filter-btn active" data-filter="all">Tutte</button>
+        <button class="filter-btn" data-filter="tax-credit">Tax Credit</button>
+        <button class="filter-btn" data-filter="contributi-selettivi">Contributi Selettivi</button>
+        <button class="filter-btn" data-filter="ue-media">UE / MEDIA</button>
+        <button class="filter-btn" data-filter="normativa">Normativa</button>
+      </div>
+      <div class="resources-grid" id="resources-grid" aria-live="polite"></div>
+      <p class="disclaimer">Queste schede sintetizzano informazioni pubbliche ufficiali. Non costituiscono parere legale. Per valutazioni operative, contatta lo studio o fai riferimento ai provvedimenti integrali.</p>
+    </section>
+
+    <!-- Cross-promo to tool -->
+    <div style="max-width:780px; margin: 0 auto 2.5rem; text-align:center; background:#f8fbff; padding:1.1rem 1.3rem; border-radius:8px; border:1px solid #80D9FF;">
+      <p style="margin:0 0 0.6rem; font-size:0.95rem;"><strong>Prova il nuovo strumento interattivo:</strong> Verifica in pochi clic l'idoneità del tuo progetto a Tax Credit, contributi selettivi e altri incentivi.</p>
+      <a href="verifica-incentivi.html" class="filter-btn" style="text-decoration:none; display:inline-block; padding:0.55rem 1.2rem; font-size:0.95rem;">Vai a Verifica Incentivi →</a>
+    </div>
+
+    <!-- Cross-promo / CTA -->
+    <div style="text-align:center; margin: 2rem 0 3rem;">
+      <a href="index.html#contatti" class="filter-btn" style="text-decoration:none; display:inline-block; padding:0.6rem 1.4rem;">Richiedi una consulenza mirata sugli incentivi</a>
+    </div>
   </main>
+
+  <!-- MODAL for resource details -->
+  <div id="resource-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-title"></h2>
+        <button class="modal-close" aria-label="Chiudi">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-footer">
+        Fonte ufficiale: <span id="modal-source"></span> — Verifica sempre i documenti originali sul sito della DG Cinema.
+      </div>
+    </div>
+  </div>
+
 
   <!-- FOOTER -->
   <footer>
@@ -210,20 +160,255 @@
     </div>
   </footer>
 
-  <!-- Script per il toggle dei PDF -->
+  <!-- Script Approfondimenti: dati ufficiali + rendering + filtri + modal -->
   <script>
-    const toggles = document.querySelectorAll('.pdf-toggle');
-    toggles.forEach(toggle => {
-      toggle.addEventListener('click', function() {
-        const contentId = this.getAttribute('aria-controls');
-        const content = document.getElementById(contentId);
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !isExpanded);
-        content.classList.toggle('expanded', !isExpanded);
+    // =============================================
+    // EASY UPDATE GUIDE - APPROFONDIMENTI (IT)
+    // Per mantenere la pagina aggiornata e affidabile:
+    //
+    // 1. Aggiungi oggetti NUOVI IN CIMA all'array newsItems (ordine cronologico decrescente)
+    // 2. Usa formato data ISO YYYY-MM-DD
+    // 3. Link DIRETTO alla pagina ufficiale su cinema.cultura.gov.it (evita PDF diretti se possibile)
+    // 4. Per nuove risorse: aggiungi entry all'array articles con category valida (tax-credit, contributi-selettivi, ue-media, normativa)
+    // 5. Mantieni i summary brevi e fattuali. Key points come elenco puntato.
+    //
+    // FUTURO: integrazione leggera con Decap CMS (o Netlify/Decap) per permettere
+    // aggiornamenti no-code da parte dello studio senza toccare il codice.
+    // =============================================
+
+    const newsItems = [
+      {
+        date: "2026-05-20",
+        title: "Contributi selettivi 2025 – Pubblicata la graduatoria completa Sviluppo I sessione",
+        context: "D.D. 20 maggio 2026 rep. 1267. Graduatorie complete per i progetti di sviluppo presentati nella prima sessione 2025.",
+        source: "DG Cinema e Audiovisivo",
+        link: "https://cinema.cultura.gov.it/avvisi/contributi-selettivi-2025-pubblicata-la-graduatoria-completa-sviluppo-i-sessione/"
+      },
+      {
+        date: "2026-05-15",
+        title: "Bando per la concessione di contributi selettivi – Anno 2026",
+        context: "D.D. 15 maggio 2026 rep. 1238. Stanziati 1 M€ per scrittura, 2 M€ per sviluppo, 32,7 M€ per produzione (quote per giovani autori, documentari, animazione e identità culturale).",
+        source: "DG Cinema e Audiovisivo",
+        link: "https://cinema.cultura.gov.it/avvisi/bando-per-la-concessione-di-contributi-selettivi-anno-2026/"
+      },
+      {
+        date: "2026-05-19",
+        title: "Tax Credit attrazione investimenti – Apertura sessione 2026",
+        context: "D.D. 19 maggio 2026 rep. 1244. Termini e modalità per richieste preventive e definitive per l'anno 2026 relative al credito d'imposta per l'attrazione in Italia di investimenti cinematografici e audiovisivi.",
+        source: "DG Cinema e Audiovisivo",
+        link: "https://cinema.cultura.gov.it/avvisi/tax-credit-per-lattrazione-in-italia-di-investimenti-cinematografici-e-audiovisivi-apertura-sessione-per-la-presentazione-delle-richieste-preventive-e-definitive-per-lanno/"
+      },
+      {
+        date: "2026-04-24",
+        title: "Tax Credit – Decreti di riconoscimento crediti d'imposta ed eleggibilità culturale (aprile 2026)",
+        context: "Esiti istruttorie su richieste preventive per produzione cinematografica, tv/web, documentari, cortometraggi e produzioni esecutive straniere.",
+        source: "DG Cinema e Audiovisivo",
+        link: "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-24-aprile-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/"
+      },
+      {
+        date: "2026-04-01",
+        title: "Bando Italia-Francia 2026 per co-sviluppo e co-produzione",
+        context: "Finanziamenti a progetti franco-italiani di sviluppo e coproduzione cinematografica e serie audiovisive. Dotazione 1 M€ (500k per sessione).",
+        source: "DG Cinema e Audiovisivo",
+        link: "https://cinema.cultura.gov.it/avvisi/pubblicato-il-bando-italia-francia-2026-finanziamenti-a-progetti-di-co-sviluppo-e-co-produzione/"
+      }
+    ];
+
+    const articles = [
+      {
+        id: "tc-produzione",
+        title: "Tax Credit per la produzione cinematografica e audiovisiva",
+        category: "tax-credit",
+        summary: "Credito d'imposta del 40% (o aliquote differenziate) sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Requisiti culturali, limiti massimi e procedure via DGCOL.",
+        keyPoints: [
+          "Aliquota base fino al 40% per lungometraggi e serie",
+          "Requisito di eleggibilità culturale obbligatorio",
+          "Spese ammissibili: personale, servizi, post-produzione in Italia",
+          "Domande preventive e definitive tramite piattaforma DGCOL"
+        ],
+        link: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/",
+        secondaryLink: {
+          label: "Vedi gli incentivi già assegnati",
+          url: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
+        }
+      },
+      {
+        id: "tc-internazionale",
+        title: "Tax Credit per l'attrazione di investimenti esteri",
+        category: "tax-credit",
+        summary: "Incentivo specifico per produzioni straniere che girano in Italia o usano servizi italiani. Aliquote interessanti per executive production e attrazione di capitali.",
+        keyPoints: [
+          "Credito per produzioni estere con requisiti minimi di spesa in Italia",
+          "Procedure semplificate per executive producer italiane",
+          "Sessioni annuali con termini pubblicati in avvisi dedicati"
+        ],
+        link: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/",
+        secondaryLink: {
+          label: "Vedi gli incentivi già assegnati",
+          url: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
+        }
+      },
+      {
+        id: "contributi-selettivi",
+        title: "Contributi selettivi per scrittura, sviluppo e produzione",
+        category: "contributi-selettivi",
+        summary: "Bandi annuali ex art. 26 L. 220/2016. Finanziamenti a fondo perduto per progetti di qualità artistica e culturale. Sessioni distinte per scrittura, sviluppo, produzione.",
+        keyPoints: [
+          "2026: 1M€ scrittura, 2M€ sviluppo, oltre 32M€ produzione",
+          "Quote riservate a giovani autori, documentari, animazione, identità culturale",
+          "Valutazione su qualità artistica, fattibilità, piano di distribuzione"
+        ],
+        link: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/"
+      },
+      {
+        id: "co-produzioni",
+        title: "Co-produzioni internazionali e accordi bilaterali",
+        category: "ue-media",
+        summary: "Accordi con Francia, Germania e altri Paesi per co-sviluppo e co-produzione. Accesso a fondi incrociati e riconoscimento di nazionalità multipla.",
+        keyPoints: [
+          "Bando Italia-Francia 2026 attivo con sessioni dedicate",
+          "Punti per coproduzioni minoritarie e maggioritarie",
+          "Integrazione con programmi Creative Europe MEDIA"
+        ],
+        link: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/fondi-bilaterali/"
+      },
+      {
+        id: "normativa",
+        title: "Riforma e correttivi Tax Credit (2025-2026)",
+        category: "normativa",
+        summary: "Decreti correttivi e attuativi che hanno ridefinito aliquote, requisiti e procedure dopo la riforma organica. Monitoraggio costante delle sessioni e delle istruzioni operative.",
+        keyPoints: [
+          "Aggiornamenti frequenti su termini e modalità (es. D.D. 2026)",
+          "Piattaforma DGCOL per tutte le istanze",
+          "Importanza della tempestività nelle domande preventive"
+        ],
+        link: "https://cinema.cultura.gov.it/comunicazione/avvisi/"
+      }
+    ];
+
+    function formatDate(iso) {
+      const d = new Date(iso);
+      return d.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function renderNews() {
+      const container = document.getElementById('news-list');
+      if (!container) return;
+      container.innerHTML = newsItems.map(item => `
+        <article class="news-item">
+          <span class="date">${formatDate(item.date)}</span>
+          <div class="title">${item.title}</div>
+          <p class="context">${item.context}</p>
+          <div class="meta">
+            <span class="source">${item.source}</span>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer">Leggi l'avviso ufficiale →</a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderResources(filter = 'all', searchTerm = '') {
+      const container = document.getElementById('resources-grid');
+      if (!container) return;
+      const term = (searchTerm || '').toLowerCase().trim();
+      const filtered = articles.filter(a => {
+        const matchesFilter = filter === 'all' || a.category === filter;
+        const matchesSearch = !term || 
+          a.title.toLowerCase().includes(term) || 
+          a.summary.toLowerCase().includes(term) ||
+          (a.keyPoints && a.keyPoints.join(' ').toLowerCase().includes(term));
+        return matchesFilter && matchesSearch;
       });
-    });
+      container.innerHTML = filtered.map(a => `
+        <div class="resource-card" data-id="${a.id}" tabindex="0" role="button" aria-label="Apri dettaglio: ${a.title}">
+          <div class="card-header">
+            <span class="category-tag">${a.category.replace('-', ' ')}</span>
+          </div>
+          <h3>${a.title}</h3>
+          <p class="summary">${a.summary}</p>
+          <div class="card-footer">Approfondisci</div>
+        </div>
+      `).join('');
+
+      container.querySelectorAll('.resource-card').forEach(card => {
+        const id = card.dataset.id;
+        const open = () => openModal(id);
+        card.addEventListener('click', open);
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+    }
+
+    let currentFilter = 'all';
+
+    function initFilters() {
+      const input = document.getElementById('search-input');
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          renderResources(currentFilter, input ? input.value : '');
+        });
+      });
+      if (input) {
+        input.addEventListener('input', () => {
+          renderResources(currentFilter, input.value);
+        });
+      }
+    }
+
+    function openModal(id) {
+      const article = articles.find(a => a.id === id);
+      if (!article) return;
+      document.getElementById('modal-title').textContent = article.title;
+      const body = document.getElementById('modal-body');
+      body.innerHTML = `
+        <div class="meta">Categoria: <strong>${article.category.replace('-', ' ')}</strong></div>
+        <p>${article.summary}</p>
+        ${article.keyPoints && article.keyPoints.length ? `
+          <h4 style="margin:0.8rem 0 0.3rem; color:#003366; font-size:1rem;">Punti chiave</h4>
+          <ul>${article.keyPoints.map(p => `<li>${p}</li>`).join('')}</ul>
+        ` : ''}
+        <p><a href="${article.link}" target="_blank" rel="noopener noreferrer">Consulta la pagina ufficiale della DG Cinema →</a></p>
+        ${article.secondaryLink ? `
+          <p style="margin-top: 0.4rem;"><a href="${article.secondaryLink.url}" target="_blank" rel="noopener noreferrer">${article.secondaryLink.label} →</a></p>
+        ` : ''}
+      `;
+      document.getElementById('modal-source').textContent = 'Direzione Generale Cinema e Audiovisivo';
+      const modal = document.getElementById('resource-modal');
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+
+      const closeBtn = modal.querySelector('.modal-close');
+      const close = () => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+      };
+      closeBtn.onclick = close;
+      modal.onclick = e => { if (e.target === modal) close(); };
+      document.addEventListener('keydown', function esc(e){
+        if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); }
+      }, {once: true});
+    }
+
+    function init() {
+      renderNews();
+      renderResources();
+      initFilters();
+      console.log('%c[Studio Legale Lo Foco] Approfondimenti (IT) initialized with official sources only', 'color:#80D9FF');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
   </script>
-  <!-- Script principale -->
+
+  <!-- Script principale (cookie, hamburger, etc.) -->
   <script src="script.js"></script>
 </body>
 </html>

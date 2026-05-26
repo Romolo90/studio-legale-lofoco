@@ -2,35 +2,84 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Privacy Policy - Studio Legale Lo Foco</title>
+  <meta name="description" content="Privacy Policy dello Studio Legale Lo Foco.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/privacy-en.html">
+
+  <!-- Fonts and main styles -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      padding: 20px;
+    /* Minimal overrides for legal pages */
+    main.legal-content {
+      max-width: 780px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      font-size: 1.05rem;
     }
-    h1 {
-      color: #2C3E50;
-    }
-    h2 {
-      color: #34495E;
-    }
-    a {
-      color: #2980B9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      padding-left: 20px;
-    }
+    main.legal-content h1 { font-size: 2rem; color: #003366; margin-bottom: 0.5rem; }
+    main.legal-content h2 { font-size: 1.35rem; color: #003247; margin-top: 1.8rem; }
+    main.legal-content ul { margin-left: 1.2rem; }
+    .last-update { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie per migliorare la tua esperienza. Consulta la nostra 
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <!-- HEADER (consistent with main site) -->
+  <header class="header">
+    <div class="logo">
+      <h1 class="home-link">
+        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      </h1>
+    </div>
+    <div class="language-selector">
+      <strong>IT</strong> | <a href="privacy-en.html">EN</a>
+    </div>
+    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
+      <ul>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="notizie.html">Approfondimenti</a></li>
+        <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
+        <li><a href="area-clienti.html">Area Clienti</a></li>
+        <li class="mobile-language">
+          <strong>IT</strong> | <a href="privacy-en.html">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="legal-content">
+    <h1>Privacy Policy</h1>
+    <p class="last-update"><strong>Ultimo aggiornamento:</strong> 27 maggio 2026</p>
   <p><strong>Ultimo aggiornamento:</strong> 01/01/2025</p>
   <p>
     Lo Studio Legale Lo Foco si impegna a proteggere la tua privacy. Questa Privacy Policy descrive come raccogliamo, utilizziamo e proteggiamo i tuoi dati personali quando visiti il nostro sito web (<a href="https://studiolegalelofoco.com/" target="_blank">https://studiolegalelofoco.com/</a>).
@@ -107,7 +156,24 @@
   <p>
     Puoi gestire i cookie tramite il banner dei cookie o le impostazioni del browser. Per ulteriori dettagli, consulta la nostra <a href="cookie-policy.html">Cookie Policy</a>.
   </p>
+  </main>
 
-  <p><a href="index.html">Torna alla Home</a></p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
