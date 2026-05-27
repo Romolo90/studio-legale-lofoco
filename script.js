@@ -135,7 +135,8 @@
     },
 
     acceptAllCookies() {
-      document.cookie = "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365 + "; SameSite=Strict; Secure";
+      const secureFlag = location.protocol === 'https:' ? 'Secure; ' : '';
+      document.cookie = `cookiesAccepted=true; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; ${secureFlag}`;
       this.hideBanner();
     },
 
