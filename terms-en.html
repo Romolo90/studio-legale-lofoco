@@ -2,26 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Terms of Service - Studio Legale Lo Foco</title>
-
-  <!-- Meta Tags -->
   <meta name="description" content="Terms of Service for Studio Legale Lo Foco website.">
-  <meta name="keywords" content="Terms of Service, legal terms, Studio Legale Lo Foco">
-  <meta name="author" content="Studio Legale Lo Foco">
+  <meta name="robots" content="noindex, follow">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Terms of Service - Studio Legale Lo Foco">
-  <meta property="og:description" content="Terms of Service for Studio Legale Lo Foco website.">
-  <meta property="og:url" content="https://studiolegalelofoco.com/terms-en.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/terms.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/terms-en.html">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Terms of Service - Studio Legale Lo Foco">
-  <meta name="twitter:description" content="Terms of Service for Studio Legale Lo Foco website.">
-  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <!-- Fonts and main styles -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -33,103 +25,145 @@
   <meta name="theme-color" content="#003366">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      padding: 20px;
+    /* Minimal overrides for legal pages */
+    main.legal-content {
+      max-width: 780px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      font-size: 1.05rem;
     }
-    h1 {
-      color: #2C3E50;
-    }
-    h2 {
-      color: #34495E;
-    }
-    a {
-      color: #2980B9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      padding-left: 20px;
-    }
+    main.legal-content h1 { font-size: 2rem; color: #003366; margin-bottom: 0.5rem; }
+    main.legal-content h2 { font-size: 1.35rem; color: #003247; margin-top: 1.8rem; }
+    main.legal-content ul { margin-left: 1.2rem; }
+    .last-update { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header" style="background-color: #003366; padding: 1rem; margin-bottom: 2rem;">
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        We use cookies to improve your experience. See our 
+        <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accept all</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Manage cookies</button>
+    </div>
+  </div>
+
+  <!-- HEADER (consistent with main site) -->
+  <header class="header">
     <div class="logo">
-      <h1 style="margin: 0;">
-        <a href="index-en.html" style="color: #BFECFF; text-decoration: none;" aria-label="Return to homepage">Studio Legale Lo Foco</a>
+      <h1 class="home-link">
+        <a href="index-en.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
       </h1>
     </div>
-    <!-- Language Selector -->
-    <div style="position: absolute; top: 1rem; right: 1rem;">
-      <a href="terms.html" style="color: #BFECFF; text-decoration: none;">IT</a> | <a href="terms-en.html" style="color: #BFECFF; text-decoration: none;">EN</a>
+    <div class="language-selector">
+      <a href="terms.html">IT</a> | <strong>EN</strong>
     </div>
+    <div class="hamburger" id="hamburgerMenu" aria-label="Open/Close menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="Main Menu">
+      <ul>
+        <li><a href="index-en.html#about-us">About Us</a></li>
+        <li><a href="index-en.html#services">Services</a></li>
+        <li><a href="index-en.html#contact">Contact</a></li>
+        <li><a href="notizie-en.html">Insights</a></li>
+        <li><a href="verifica-incentivi-en.html">Incentives Checker</a></li>
+        <li><a href="area-clienti.html">Client Area</a></li>
+        <li class="mobile-language">
+          <a href="terms.html">IT</a> | <strong>EN</strong>
+        </li>
+      </ul>
+    </nav>
   </header>
 
-  <h1>Terms of Service</h1>
-  <p><strong>Last updated:</strong> 01/01/2025</p>
-  <p>
-    Welcome to the website of Studio Legale Lo Foco. By using this website 
-    (<a href="https://studiolegalelofoco.com/" target="_blank">https://studiolegalelofoco.com/</a>), 
-    you agree to the terms and conditions outlined below. Please read these Terms of Service carefully.
-  </p>
+  <main id="main" class="legal-content">
+    <h1>Terms of Service</h1>
+    <p class="last-update"><strong>Last updated:</strong> May 27, 2026</p>
 
-  <h2>1. General Information</h2>
-  <p>
-    The website is managed by:<br />
-    <strong>Studio Legale Lo Foco</strong><br />
-    Address: Via Boezio 2/A, 00193 Rome, Italy<br />
-    Email: <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
-    Phone: 063201820
-  </p>
+    <p>
+      Welcome to the website of Studio Legale Lo Foco. By using this website 
+      (<a href="https://studiolegalelofoco.com/" target="_blank">https://studiolegalelofoco.com/</a>), 
+      you agree to the terms and conditions outlined below. Please read these Terms of Service carefully.
+    </p>
 
-  <h2>2. Use of the Website</h2>
-  <ul>
-    <li>This website is intended to provide information about the legal services offered by Studio Legale Lo Foco.</li>
-    <li>You are not permitted to use the website in any unlawful manner or in violation of applicable regulations.</li>
-    <li>Submitting inquiries through the contact form does not establish any professional or contractual relationship with the firm.</li>
-  </ul>
+    <h2>1. General Information</h2>
+    <p>
+      The website is managed by:<br />
+      <strong>Studio Legale Lo Foco</strong><br />
+      Address: Via Boezio 2/A, 00193 Rome, Italy<br />
+      Email: <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
+      Phone: +39 06 3201820
+    </p>
 
-  <h2>3. Limitation of Liability</h2>
-  <p>
-    Although we strive to provide accurate and up-to-date information, we do not guarantee that the content on this website is error-free or always current. Studio Legale Lo Foco is not responsible for any damages resulting from the use of this website.
-  </p>
+    <h2>2. Use of the Website</h2>
+    <ul>
+      <li>This website is intended to provide information about the legal services offered by Studio Legale Lo Foco.</li>
+      <li>You are not permitted to use the website in any unlawful manner or in violation of applicable regulations.</li>
+      <li>Submitting inquiries through the contact form does not establish any professional or contractual relationship with the firm.</li>
+    </ul>
 
-  <h2>4. Intellectual Property</h2>
-  <p>
-    All content on this website (including texts, images, logos, and graphics) is the exclusive property of Studio Legale Lo Foco, unless otherwise stated. Reproduction, distribution, or modification of the content without prior written authorization is prohibited.
-  </p>
+    <h2>3. Limitation of Liability</h2>
+    <p>
+      Although we strive to provide accurate and up-to-date information, we do not guarantee that the content on this website is error-free or always current. Studio Legale Lo Foco is not responsible for any damages resulting from the use of this website.
+    </p>
 
-  <h2>5. Changes to the Terms of Service</h2>
-  <p>
-    Studio Legale Lo Foco reserves the right to modify these Terms of Service at any time. Changes will be posted on this page along with the updated date. We encourage you to review the terms periodically.
-  </p>
+    <h2>4. Intellectual Property</h2>
+    <p>
+      All content on this website (including texts, images, logos, and graphics) is the exclusive property of Studio Legale Lo Foco, unless otherwise stated. Reproduction, distribution, or modification of the content without prior written authorization is prohibited.
+    </p>
 
-  <h2>6. Governing Law and Jurisdiction</h2>
-  <p>
-    These Terms of Service are governed by Italian law. Any disputes arising from the use of this website shall be subject exclusively to the jurisdiction of the courts of Rome.
-  </p>
+    <h2>5. Changes to the Terms of Service</h2>
+    <p>
+      Studio Legale Lo Foco reserves the right to modify these Terms of Service at any time. Changes will be posted on this page along with the updated date. We encourage you to review the terms periodically.
+    </p>
 
-  <h2>7. User Responsibilities</h2>
-  <p>
-    Users are responsible for the accuracy of the information provided through the website and for the proper use of its features. The following actions are prohibited:
-  </p>
-  <ul>
-    <li>Submitting false or misleading information.</li>
-    <li>Engaging in activities that could compromise the security of the website.</li>
-    <li>Distributing content that violates the law or the rights of third parties.</li>
-  </ul>
+    <h2>6. Governing Law and Jurisdiction</h2>
+    <p>
+      These Terms of Service are governed by Italian law. Any disputes arising from the use of this website shall be subject exclusively to the jurisdiction of the courts of Rome.
+    </p>
 
-  <h2>8. Data Security</h2>
-  <p>
-    Studio Legale Lo Foco is committed to protecting users' personal data by implementing appropriate technical and organizational measures to prevent unauthorized access, loss, or destruction of data.
-  </p>
+    <h2>7. User Responsibilities</h2>
+    <p>
+      Users are responsible for the accuracy of the information provided through the website and for the proper use of its features. The following actions are prohibited:
+    </p>
+    <ul>
+      <li>Submitting false or misleading information.</li>
+      <li>Engaging in activities that could compromise the security of the website.</li>
+      <li>Distributing content that violates the law or the rights of third parties.</li>
+    </ul>
 
-  <p><a href="index-en.html">Return to Home</a></p>
+    <h2>8. Data Security</h2>
+    <p>
+      Studio Legale Lo Foco is committed to protecting users' personal data by implementing appropriate technical and organizational measures to prevent unauthorized access, loss, or destruction of data.
+    </p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - All Rights Reserved</p>
+      <p class="footer-note">
+        <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

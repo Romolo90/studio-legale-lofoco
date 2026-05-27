@@ -2,24 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Privacy Policy - Studio Legale Lo Foco</title>
-  <meta name="description" content="Learn how our website uses cookies and how you can manage them to ensure a better browsing experience." />
-  <meta name="keywords" content="Privacy Policy, cookie management, privacy, technical cookies, analytical cookies, marketing cookies" />
-  <meta name="author" content="Studio Legale Lo Foco" />
+  <meta name="description" content="Privacy Policy for Studio Legale Lo Foco website.">
+  <meta name="robots" content="noindex, follow">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Privacy Policy - Studio Legale Lo Foco">
-  <meta property="og:description" content="Learn how our website uses cookies and how you can manage them to ensure a better browsing experience.">
-  <meta property="og:url" content="https://studiolegalelofoco.com/privacy-en.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/privacy-en.html">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Privacy Policy - Studio Legale Lo Foco">
-  <meta name="twitter:description" content="Learn how our website uses cookies and how you can manage them to ensure a better browsing experience.">
-  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <!-- Fonts and main styles -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -29,123 +23,166 @@
   <!-- Manifest and Theme -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#003366">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      padding: 20px;
+    /* Minimal overrides for legal pages */
+    main.legal-content {
+      max-width: 780px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      font-size: 1.05rem;
     }
-    h1 {
-      color: #2C3E50;
-    }
-    h2 {
-      color: #34495E;
-    }
-    a {
-      color: #2980B9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      padding-left: 20px;
-    }
+    main.legal-content h1 { font-size: 2rem; color: #003366; margin-bottom: 0.5rem; }
+    main.legal-content h2 { font-size: 1.35rem; color: #003247; margin-top: 1.8rem; }
+    main.legal-content ul { margin-left: 1.2rem; }
+    .last-update { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="header" style="background-color: #003366; padding: 1rem; margin-bottom: 2rem;">
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        We use cookies to improve your experience. See our 
+        <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accept all</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Manage cookies</button>
+    </div>
+  </div>
+
+  <!-- HEADER (consistent with main site) -->
+  <header class="header">
     <div class="logo">
-      <h1 style="margin: 0;">
-        <a href="index-en.html" style="color: #BFECFF; text-decoration: none;" aria-label="Return to homepage">Studio Legale Lo Foco</a>
+      <h1 class="home-link">
+        <a href="index-en.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
       </h1>
     </div>
-    <!-- Language Selector -->
-    <div style="position: absolute; top: 1rem; right: 1rem;">
-      <a href="privacy.html" style="color: #BFECFF; text-decoration: none;">IT</a> | <a href="privacy-en.html" style="color: #BFECFF; text-decoration: none;">EN</a>
+    <div class="language-selector">
+      <a href="privacy.html">IT</a> | <strong>EN</strong>
     </div>
+    <div class="hamburger" id="hamburgerMenu" aria-label="Open/Close menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="Main Menu">
+      <ul>
+        <li><a href="index-en.html#about-us">About Us</a></li>
+        <li><a href="index-en.html#services">Services</a></li>
+        <li><a href="index-en.html#contact">Contact</a></li>
+        <li><a href="notizie-en.html">Insights</a></li>
+        <li><a href="verifica-incentivi-en.html">Incentives Checker</a></li>
+        <li><a href="area-clienti.html">Client Area</a></li>
+        <li class="mobile-language">
+          <a href="privacy.html">IT</a> | <strong>EN</strong>
+        </li>
+      </ul>
+    </nav>
   </header>
 
-  <h1>Privacy Policy</h1>
-  <p><strong>Last updated:</strong> 01/01/2025</p>
-  <p>
-    Studio Legale Lo Foco is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal data when you visit our website (<a href="https://studiolegalelofoco.com/" target="_blank">https://studiolegalelofoco.com/</a>).
-  </p>
+  <main id="main" class="legal-content">
+    <h1>Privacy Policy</h1>
+    <p class="last-update"><strong>Last updated:</strong> May 27, 2026</p>
 
-  <h2>1. Data Controller</h2>
-  <p>
-    The data controller is:<br />
-    <strong>Studio Legale Lo Foco</strong><br />
-    Address: Via Boezio 2/A, 00193 Rome, Italy<br />
-    Email: <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
-    Phone: 063201820
-  </p>
+    <p>
+      Studio Legale Lo Foco is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal data when you visit our website (<a href="https://studiolegalelofoco.com/" target="_blank">https://studiolegalelofoco.com/</a>).
+    </p>
 
-  <h2>2. Types of Data Collected</h2>
-  <ul>
-    <li>First and Last Name</li>
-    <li>Email Address</li>
-    <li>Phone Number (if provided)</li>
-    <li>Subject and content of the message</li>
-  </ul>
+    <h2>1. Data Controller</h2>
+    <p>
+      The data controller is:<br />
+      <strong>Studio Legale Lo Foco</strong><br />
+      Address: Via Boezio 2/A, 00193 Rome, Italy<br />
+      Email: <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
+      Phone: +39 06 3201820
+    </p>
 
-  <h2>3. Purpose of Data Processing</h2>
-  <ul>
-    <li>To respond to inquiries submitted via the contact form.</li>
-    <li>To provide information related to the legal services offered by Studio Legale Lo Foco.</li>
-  </ul>
+    <h2>2. Types of Data Collected</h2>
+    <ul>
+      <li>First and Last Name</li>
+      <li>Email Address</li>
+      <li>Phone Number (if provided)</li>
+      <li>Subject and content of the message</li>
+    </ul>
 
-  <h2>4. Legal Basis for Processing</h2>
-  <p>
-    We process your personal data based on the following legal grounds:
-  </p>
-  <ul>
-    <li><strong>Consent:</strong> When you contact us through the website form.</li>
-    <li><strong>Contractual Performance:</strong> If we enter into a contract to provide our legal services.</li>
-    <li><strong>Legal Obligations:</strong> To comply with legal or statutory obligations.</li>
-  </ul>
+    <h2>3. Purpose of Data Processing</h2>
+    <ul>
+      <li>To respond to inquiries submitted via the contact form.</li>
+      <li>To provide information related to the legal services offered by Studio Legale Lo Foco.</li>
+    </ul>
 
-  <h2>5. Methods of Processing</h2>
-  <p>
-    Personal data will be processed in a lawful, fair, and transparent manner, solely for the purposes described above, using electronic or manual methods.
-  </p>
+    <h2>4. Legal Basis for Processing</h2>
+    <p>
+      We process your personal data based on the following legal grounds:
+    </p>
+    <ul>
+      <li><strong>Consent:</strong> When you contact us through the website form.</li>
+      <li><strong>Contractual Performance:</strong> If we enter into a contract to provide our legal services.</li>
+      <li><strong>Legal Obligations:</strong> To comply with legal or statutory obligations.</li>
+    </ul>
 
-  <h2>6. Data Retention</h2>
-  <p>
-    The data collected will be retained for as long as necessary to respond to your inquiry and for a maximum of 12 months, unless required otherwise by law.
-  </p>
+    <h2>5. Methods of Processing</h2>
+    <p>
+      Personal data will be processed in a lawful, fair, and transparent manner, solely for the purposes described above, using electronic or manual methods.
+    </p>
 
-  <h2>7. Your Rights</h2>
-  <p>
-    You have the right to:
-  </p>
-  <ul>
-    <li>Access your personal data.</li>
-    <li>Request correction or deletion of your data.</li>
-    <li>Restrict or object to the processing of your data.</li>
-    <li>Request data portability to another controller.</li>
-    <li>File a complaint with the Italian Data Protection Authority (<a href="https://www.garanteprivacy.it" target="_blank">www.garanteprivacy.it</a>).</li>
-  </ul>
-  <p>
-    To exercise your rights, please send a written request to <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>, specifying the right you wish to exercise. We will respond within 30 days of receiving your request.
-  </p>
+    <h2>6. Data Retention</h2>
+    <p>
+      The data collected will be retained for as long as necessary to respond to your inquiry and for a maximum of 12 months, unless required otherwise by law.
+    </p>
 
-  <h2>8. Cookies</h2>
-  <p>
-    Our website uses the following types of cookies:
-  </p>
-  <ul>
-    <li><strong>Necessary Cookies:</strong> Essential for the proper functioning of the site. These do not require user consent.</li>
-    <li><strong>Preference Cookies:</strong> Allow the site to remember your choices (e.g., language or region).</li>
-    <li><strong>Analytical Cookies:</strong> Used to collect aggregated data on site usage to improve the user experience.</li>
-    <li><strong>Marketing Cookies:</strong> Used to personalize advertising and measure campaign effectiveness.</li>
-  </ul>
-  <p>
-    You can manage cookies via the cookie banner or your browser settings. For further details, please consult our <a href="cookie-policy-en.html" target="_blank">Cookie Policy</a>.
-  </p>
+    <h2>7. Your Rights</h2>
+    <p>
+      You have the right to:
+    </p>
+    <ul>
+      <li>Access your personal data.</li>
+      <li>Request correction or deletion of your data.</li>
+      <li>Restrict or object to the processing of your data.</li>
+      <li>Request data portability to another controller.</li>
+      <li>File a complaint with the Italian Data Protection Authority (<a href="https://www.garanteprivacy.it" target="_blank">www.garanteprivacy.it</a>).</li>
+    </ul>
+    <p>
+      To exercise your rights, please send a written request to <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>, specifying the right you wish to exercise. We will respond within 30 days of receiving your request.
+    </p>
 
-  <p><a href="index-en.html">Return to Home</a></p>
+    <h2>8. Cookies</h2>
+    <p>
+      Our website uses the following types of cookies:
+    </p>
+    <ul>
+      <li><strong>Necessary Cookies:</strong> Essential for the proper functioning of the site. These do not require user consent.</li>
+      <li><strong>Preference Cookies:</strong> Allow the site to remember your choices (e.g., language or region).</li>
+      <li><strong>Analytical Cookies:</strong> Used to collect aggregated data on site usage to improve the user experience.</li>
+      <li><strong>Marketing Cookies:</strong> Used to personalize advertising and measure campaign effectiveness.</li>
+    </ul>
+    <p>
+      You can manage cookies via the cookie banner or your browser settings. For further details, please consult our <a href="cookie-policy-en.html" target="_blank">Cookie Policy</a>.
+    </p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - All Rights Reserved</p>
+      <p class="footer-note">
+        <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
