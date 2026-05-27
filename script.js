@@ -151,7 +151,7 @@
         return prefs;
       }, {});
       
-      document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; Secure`;
+      document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; ${location.protocol === 'https:' ? 'Secure; ' : ''}`;
       this.cookiePreferences.style.display = 'none';
     },
 
