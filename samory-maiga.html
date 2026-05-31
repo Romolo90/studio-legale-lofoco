@@ -12,12 +12,45 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" href="image/favicon.png" type="image/png">
   <link rel="canonical" href="https://studiolegalelofoco.com/samory-maiga.html">
+
+  <!-- Hreflang for bilingual SEO -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/samory-maiga.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/samory-maiga-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/samory-maiga.html">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Skip Navigation Link for Accessibility -->
   <a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <!-- BANNER COOKIE -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra 
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <!-- FINESTRINA PREFERENZE COOKIE -->
+  <div id="cookie-preferences" class="hidden">
+    <h2>Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" checked />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+    </form>
+  </div>
 
   <!-- HEADER -->
   <header class="header">
@@ -119,5 +152,6 @@
     <div class="footer-right"></div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
