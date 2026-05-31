@@ -1,101 +1,169 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Area Clienti - Studio Legale Lo Foco</title>
+  <meta name="description" content="Area riservata ai clienti dello Studio Legale Lo Foco.">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="image/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#003366">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Dashboard specific styles (kept minimal for now) -->
   <style>
-    :root {
-      --primary: #003366;
-      --primary-dark: #003247;
-      --primary-darker: #002244;
-      --secondary: #BFECFF;
-      --accent: #80D9FF;
-      --bg: #BFECFF;
-      --text: #003247;
-      --white: #ffffff;
-      --error: #d32f2f;
-      --success: #2e7d32;
-      --warning: #e65100;
-      --border: rgba(0,50,71,0.15);
-      --shadow: 0 2px 12px rgba(0,50,71,0.12);
+    /* Dashboard-specific overrides (not yet fully unified) */
+    .area-clienti-main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'EB Garamond', serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
-    header { background: var(--primary); color: var(--white); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 100; }
-    header a.logo { color: var(--white); text-decoration: none; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.02em; }
-    header .header-right { display: flex; align-items: center; gap: 1.5rem; }
-    header .user-info { font-size: 1rem; color: var(--secondary); display: none; }
-    header .btn-logout { background: transparent; border: 1px solid rgba(255,255,255,0.4); color: var(--white); padding: 0.4rem 1rem; border-radius: 4px; cursor: pointer; font-family: 'EB Garamond', serif; font-size: 1rem; transition: 0.2s; display: none; }
-    header .btn-logout:hover { background: rgba(255,255,255,0.1); }
-    main { flex: 1; max-width: 1000px; width: 100%; margin: 2.5rem auto; padding: 0 1.5rem; }
-    #login-section { max-width: 440px; margin: 0 auto; }
-    .card { background: var(--white); border-radius: 10px; box-shadow: var(--shadow); padding: 2.5rem 2rem; border: 1px solid var(--border); }
-    .card h2 { font-size: 1.8rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 600; }
-    .card .subtitle { color: #557; font-size: 1.05rem; margin-bottom: 2rem; }
-    .form-group { margin-bottom: 1.2rem; }
-    .form-group label { display: block; font-size: 1rem; font-weight: 500; color: var(--primary-dark); margin-bottom: 0.4rem; }
-    .form-group input { width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border); border-radius: 5px; font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--text); background: #f8fbff; transition: border-color 0.2s; outline: none; }
-    .form-group input:focus { border-color: var(--primary); background: var(--white); }
-    .btn-cta { width: 100%; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, var(--primary), var(--primary-darker)); color: var(--white); border: none; border-radius: 5px; font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s, transform 0.1s; margin-top: 0.5rem; }
-    .btn-cta:hover { opacity: 0.9; }
-    .btn-cta:active { transform: scale(0.99); }
-    .btn-cta:disabled { opacity: 0.6; cursor: not-allowed; }
-    .error-msg { background: #fdecea; color: var(--error); border: 1px solid #f5c6cb; border-radius: 5px; padding: 0.7rem 1rem; font-size: 1rem; margin-bottom: 1.2rem; display: none; }
-    #dashboard-section { display: none; }
-    .welcome-banner { background: var(--primary); color: var(--white); border-radius: 10px; padding: 1.5rem 2rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .welcome-banner h1 { font-size: 1.6rem; font-weight: 600; }
-    .welcome-banner p { font-size: 1rem; opacity: 0.85; margin-top: 0.25rem; }
-    .welcome-icon { font-size: 2.5rem; opacity: 0.7; }
-    .tabs { display: flex; gap: 0.25rem; border-bottom: 2px solid var(--border); margin-bottom: 1.5rem; }
-    .tab-btn { padding: 0.65rem 1.4rem; border: none; background: transparent; color: #557; font-family: 'EB Garamond', serif; font-size: 1.05rem; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: 0.2s; border-radius: 5px 5px 0 0; }
-    .tab-btn:hover { color: var(--primary); background: rgba(0,51,102,0.05); }
-    .tab-btn.active { color: var(--primary); font-weight: 600; border-bottom-color: var(--primary); }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-    .data-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
-    .data-table thead th { background: var(--primary); color: var(--white); padding: 0.75rem 1rem; text-align: left; font-size: 0.95rem; font-weight: 600; }
-    .data-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
-    .data-table tbody tr:last-child { border-bottom: none; }
-    .data-table tbody tr:hover { background: #f0f8ff; }
-    .data-table td { padding: 0.7rem 1rem; font-size: 1rem; vertical-align: top; }
-    .badge { display: inline-block; padding: 0.2rem 0.65rem; border-radius: 12px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
-    .badge-aperta, .badge-in_corso { background: #e3f2fd; color: #1565c0; }
-    .badge-sospesa { background: #fff3e0; color: var(--warning); }
-    .badge-chiusa, .badge-archiviata { background: #f3e5f5; color: #6a1b9a; }
-    .badge-pagata { background: #e8f5e9; color: var(--success); }
-    .badge-emessa { background: #e3f2fd; color: #1565c0; }
-    .badge-bozza { background: #f5f5f5; color: #555; }
-    .badge-annullata { background: #fdecea; color: var(--error); }
-    .empty-state { text-align: center; padding: 3rem 2rem; color: #778; background: var(--white); border-radius: 10px; box-shadow: var(--shadow); }
-    .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
-    .empty-state p { font-size: 1.1rem; }
-    .loading { text-align: center; padding: 2rem; color: #557; font-size: 1.05rem; }
-    footer { background: var(--primary-darker); color: rgba(255,255,255,0.7); text-align: center; padding: 1.5rem; font-size: 0.95rem; margin-top: auto; }
-    footer a { color: var(--secondary); text-decoration: none; }
-    @media (max-width: 640px) {
-      main { margin: 1.5rem auto; }
-      .card { padding: 1.8rem 1.2rem; }
-      .welcome-banner { flex-direction: column; text-align: center; }
-      .welcome-icon { display: none; }
-      .tabs { flex-wrap: wrap; }
-      .data-table thead { display: none; }
-      .data-table tbody tr { display: block; padding: 0.5rem 0; }
-      .data-table td { display: block; padding: 0.3rem 1rem; }
-      .data-table td::before { content: attr(data-label) ": "; font-weight: 600; color: var(--primary); }
+    .dashboard-card {
+      background: var(--color-white);
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 50, 71, 0.12);
+      padding: 2rem;
+      border: 1px solid rgba(0, 50, 71, 0.15);
+      margin-bottom: 1.5rem;
+    }
+    .welcome-banner {
+      background: var(--color-primary);
+      color: var(--color-secondary);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .tabs {
+      display: flex;
+      gap: 0.25rem;
+      border-bottom: 2px solid rgba(0, 50, 71, 0.15);
+      margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+      padding: 0.65rem 1.4rem;
+      border: none;
+      background: transparent;
+      color: #557;
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--color-primary);
+      font-weight: 600;
+      border-bottom-color: var(--color-primary);
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--color-white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 50, 71, 0.1);
+    }
+    .data-table th {
+      background: var(--color-primary);
+      color: var(--color-secondary);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+    }
+    .in-development-banner {
+      background: #fff3cd;
+      color: #664d03;
+      border: 1px solid #ffeaa7;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="/" class="logo">Studio Legale Lo Foco</a>
-    <div class="header-right">
-      <span class="user-info" id="user-name-header"></span>
-      <button class="btn-logout" id="btn-logout" onclick="logout()">Esci</button>
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie per migliorare la tua esperienza. Consulta la nostra 
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
     </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <!-- STANDARD SITE HEADER -->
+  <header class="header">
+    <div class="logo">
+      <h1 class="home-link">
+        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      </h1>
+    </div>
+    <div class="language-selector">
+      <strong>IT</strong> | <a href="area-clienti-en.html">EN</a>
+    </div>
+    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
+      <ul>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="notizie.html">Approfondimenti</a></li>
+        <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
+        <li><a href="area-clienti.html">Area Clienti</a></li>
+        <li class="mobile-language">
+          <strong>IT</strong> | <a href="area-clienti-en.html">EN</a>
+        </li>
+      </ul>
+    </nav>
   </header>
+
+  <!-- IN SVILUPPO BANNER -->
+  <div class="area-clienti-main">
+    <div class="in-development-banner">
+      <strong>Sezione in fase di sviluppo</strong> — Questa è attualmente una preview dell’Area Clienti riservata. 
+      Per accedere ai documenti e alle informazioni relative alle tue pratiche, contatta lo studio.
+    </div>
+  </div>
   <main>
     <section id="login-section">
       <div class="card">
@@ -147,10 +215,26 @@
       </div>
     </section>
   </main>
+
+  <!-- STANDARD FOOTER -->
   <footer>
-    <p>© 2025 Studio Legale Lo Foco — <a href="/">Torna al sito</a></p>
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a>
+      </p>
+    </div>
+    <div class="footer-right"></div>
   </footer>
+
+  <script src="script.js"></script>
   <script>
+    // Original dashboard logic (kept as-is for now)
     const API_BASE = 'https://api.studiolegalelofoco.com/api';
     let authToken = null;
     window.addEventListener('DOMContentLoaded', () => {

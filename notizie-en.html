@@ -387,13 +387,18 @@
       `;
       document.getElementById('modal-source').textContent = 'Direzione Generale Cinema e Audiovisivo';
       const modal = document.getElementById('resource-modal');
+      const lastFocused = document.activeElement;
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
+
+      const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length) focusable[0].focus();
 
       const closeBtn = modal.querySelector('.modal-close');
       const close = () => {
         modal.classList.remove('active');
         modal.setAttribute('aria-hidden', 'true');
+        if (lastFocused) lastFocused.focus();
       };
       closeBtn.onclick = close;
       modal.onclick = e => { if (e.target === modal) close(); };

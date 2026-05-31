@@ -166,17 +166,29 @@
     // EASY UPDATE GUIDE - APPROFONDIMENTI (IT)
     // Per mantenere la pagina aggiornata e affidabile:
     //
-    // 1. Aggiungi oggetti NUOVI IN CIMA all'array newsItems (ordine cronologico decrescente)
-    // 2. Usa formato data ISO YYYY-MM-DD
-    // 3. Link DIRETTO alla pagina ufficiale su cinema.cultura.gov.it (evita PDF diretti se possibile)
-    // 4. Per nuove risorse: aggiungi entry all'array articles con category valida (tax-credit, contributi-selettivi, ue-media, normativa)
-    // 5. Mantieni i summary brevi e fattuali. Key points come elenco puntato.
+    // 1. Modifica il file data/notizie-it.json
+    // 2. Aggiungi oggetti NUOVI IN CIMA all'array "newsItems"
+    // 3. Usa formato data ISO YYYY-MM-DD
+    // 4. Per nuove risorse: aggiungi entry all'array "articles"
+    // 5. Mantieni i summary brevi e fattuali.
     //
-    // FUTURO: integrazione leggera con Decap CMS (o Netlify/Decap) per permettere
-    // aggiornamenti no-code da parte dello studio senza toccare il codice.
+    // FUTURO: integrazione con Decap CMS per aggiornamenti no-code.
     // =============================================
 
-    const newsItems = [
+    let newsItems = [];
+    let articles = [];
+
+    // Carica i dati dal JSON esterno
+    fetch('data/notizie-it.json')
+      .then(r => r.json())
+      .then(data => {
+        newsItems = data.newsItems || [];
+        articles = data.articles || [];
+        renderNews();
+        renderResources();
+        initFilters();
+      })
+      .catch(err => console.error('Errore caricamento JSON:', err));
       {
         date: "2026-05-20",
         title: "Contributi selettivi 2025 – Pubblicata la graduatoria completa Sviluppo I sessione",
@@ -213,79 +225,6 @@
         link: "https://cinema.cultura.gov.it/avvisi/pubblicato-il-bando-italia-francia-2026-finanziamenti-a-progetti-di-co-sviluppo-e-co-produzione/"
       }
     ];
-
-    const articles = [
-      {
-        id: "tc-produzione",
-        title: "Tax Credit per la produzione cinematografica e audiovisiva",
-        category: "tax-credit",
-        summary: "Credito d'imposta del 40% (o aliquote differenziate) sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Requisiti culturali, limiti massimi e procedure via DGCOL.",
-        keyPoints: [
-          "Aliquota base fino al 40% per lungometraggi e serie",
-          "Requisito di eleggibilità culturale obbligatorio",
-          "Spese ammissibili: personale, servizi, post-produzione in Italia",
-          "Domande preventive e definitive tramite piattaforma DGCOL"
-        ],
-        link: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/",
-        secondaryLink: {
-          label: "Vedi gli incentivi già assegnati",
-          url: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
-        }
-      },
-      {
-        id: "tc-internazionale",
-        title: "Tax Credit per l'attrazione di investimenti esteri",
-        category: "tax-credit",
-        summary: "Incentivo specifico per produzioni straniere che girano in Italia o usano servizi italiani. Aliquote interessanti per executive production e attrazione di capitali.",
-        keyPoints: [
-          "Credito per produzioni estere con requisiti minimi di spesa in Italia",
-          "Procedure semplificate per executive producer italiane",
-          "Sessioni annuali con termini pubblicati in avvisi dedicati"
-        ],
-        link: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/",
-        secondaryLink: {
-          label: "Vedi gli incentivi già assegnati",
-          url: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
-        }
-      },
-      {
-        id: "contributi-selettivi",
-        title: "Contributi selettivi per scrittura, sviluppo e produzione",
-        category: "contributi-selettivi",
-        summary: "Bandi annuali ex art. 26 L. 220/2016. Finanziamenti a fondo perduto per progetti di qualità artistica e culturale. Sessioni distinte per scrittura, sviluppo, produzione.",
-        keyPoints: [
-          "2026: 1M€ scrittura, 2M€ sviluppo, oltre 32M€ produzione",
-          "Quote riservate a giovani autori, documentari, animazione, identità culturale",
-          "Valutazione su qualità artistica, fattibilità, piano di distribuzione"
-        ],
-        link: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/"
-      },
-      {
-        id: "co-produzioni",
-        title: "Co-produzioni internazionali e accordi bilaterali",
-        category: "ue-media",
-        summary: "Accordi con Francia, Germania e altri Paesi per co-sviluppo e co-produzione. Accesso a fondi incrociati e riconoscimento di nazionalità multipla.",
-        keyPoints: [
-          "Bando Italia-Francia 2026 attivo con sessioni dedicate",
-          "Punti per coproduzioni minoritarie e maggioritarie",
-          "Integrazione con programmi Creative Europe MEDIA"
-        ],
-        link: "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/fondi-bilaterali/"
-      },
-      {
-        id: "normativa",
-        title: "Riforma e correttivi Tax Credit (2025-2026)",
-        category: "normativa",
-        summary: "Decreti correttivi e attuativi che hanno ridefinito aliquote, requisiti e procedure dopo la riforma organica. Monitoraggio costante delle sessioni e delle istruzioni operative.",
-        keyPoints: [
-          "Aggiornamenti frequenti su termini e modalità (es. D.D. 2026)",
-          "Piattaforma DGCOL per tutte le istanze",
-          "Importanza della tempestività nelle domande preventive"
-        ],
-        link: "https://cinema.cultura.gov.it/comunicazione/avvisi/"
-      }
-    ];
-
     function formatDate(iso) {
       const d = new Date(iso);
       return d.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
