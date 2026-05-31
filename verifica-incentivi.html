@@ -101,6 +101,10 @@
 
     /* Print styles for clean PDF export */
     @media print {
+      @page {
+        margin: 1.5cm;
+      }
+
       body * {
         visibility: hidden;
       }
@@ -117,15 +121,36 @@
         box-shadow: none;
         border: none;
       }
+
+      .print-header {
+        display: block !important;
+      }
+
       .results-grid {
         display: block;
       }
       .result-card {
         page-break-inside: avoid;
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
+        margin-bottom: 0.8rem;
+        border: 1px solid #999;
         box-shadow: none;
+        padding: 0.6rem 0.8rem;
       }
+      .result-card h3 {
+        font-size: 1.05rem;
+        margin: 0.2rem 0 0.3rem;
+      }
+      .result-card p {
+        font-size: 0.9rem;
+        line-height: 1.35;
+        margin: 0;
+      }
+      .badge {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+      }
+
+      .final-disclaimer,
       .tool-hero,
       header,
       footer,
@@ -134,6 +159,10 @@
       #export-btn,
       .cta-contact {
         display: none !important;
+      }
+
+      #results {
+        font-size: 11pt;
       }
     }
       width: 100%;
@@ -396,10 +425,28 @@
 
       <!-- RESULTS -->
       <div id="results" class="results-section">
+        <!-- Print-only header -->
+        <div class="print-header" style="display:none; margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:2px solid #003366;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <strong style="font-size:1.35rem; color:#003366;">Studio Legale Lo Foco</strong><br>
+              <span style="font-size:0.9rem; color:#555;">Verifica Incentivi — Risultati orientativi</span>
+            </div>
+            <div style="text-align:right; font-size:0.85rem; color:#555;">
+              <strong>Data:</strong> <span id="print-date"></span><br>
+              <span style="font-size:0.8rem;">studiolegalelofoco.com</span>
+            </div>
+          </div>
+        </div>
+
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
           <h2 style="color:#003366; margin: 0; font-size:1.5rem;">Risultati indicativi</h2>
           <button type="button" id="export-btn" class="secondary" style="font-size: 0.85rem; padding: 0.35rem 0.8rem;">📄 Esporta / Stampa risultati</button>
         </div>
+
+        <!-- Summary -->
+        <div id="results-summary" style="margin-bottom: 1rem; padding: 0.75rem 1rem; background: #f0f7ff; border-radius: 6px; font-size: 0.95rem; display: none;"></div>
+
         <div class="results-grid" id="results-grid"></div>
 
         <div class="final-disclaimer">
@@ -542,6 +589,28 @@
 
     function renderResults(results) {
       grid.innerHTML = '';
+
+      // Summary
+      const summaryEl = document.getElementById('results-summary');
+      if (summaryEl) {
+        const high = results.filter(r => r.status === 'high').length;
+        const medium = results.filter(r => r.status === 'medium').length;
+        const low = results.filter(r => r.status === 'low' || r.status === 'none').length;
+
+        let summaryText = '';
+        if (high > 0) {
+          summaryText = `Il tuo progetto mostra <strong>${high} risultato/i ad alta idoneità</strong>.`;
+          if (medium > 0) summaryText += ` Ci sono anche ${medium} risultato/i con media probabilità.`;
+        } else if (medium > 0) {
+          summaryText = `Il tuo progetto mostra <strong>${medium} risultato/i con media probabilità</strong>.`;
+        } else {
+          summaryText = `Al momento non emergono misure con alta o media probabilità.`;
+        }
+
+        summaryEl.innerHTML = summaryText;
+        summaryEl.style.display = 'block';
+      }
+
       results.forEach(r => {
         const card = document.createElement('div');
         card.className = 'result-card';
@@ -552,6 +621,7 @@
         `;
         grid.appendChild(card);
       });
+
       resultsEl.classList.add('visible');
       resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -591,6 +661,13 @@
     const exportBtn = document.getElementById('export-btn');
     if (exportBtn) {
       exportBtn.addEventListener('click', function() {
+        // Set current date for print header
+        const dateEl = document.getElementById('print-date');
+        if (dateEl) {
+          dateEl.textContent = new Date().toLocaleDateString('it-IT', {
+            year: 'numeric', month: 'long', day: 'numeric'
+          });
+        }
         window.print();
       });
     }
