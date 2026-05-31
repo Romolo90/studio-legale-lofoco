@@ -98,6 +98,44 @@
     }
     .question select,
     .question input[type="number"] {
+
+    /* Print styles for clean PDF export */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #results, #results * {
+        visibility: visible;
+      }
+      #results {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+      }
+      .results-grid {
+        display: block;
+      }
+      .result-card {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        box-shadow: none;
+      }
+      .tool-hero,
+      header,
+      footer,
+      .disclaimer-banner,
+      form,
+      #export-btn,
+      .cta-contact {
+        display: none !important;
+      }
+    }
       width: 100%;
       padding: 0.65rem 0.9rem;
       border: 1px solid #80D9FF;
@@ -266,7 +304,7 @@
         <li><a href="index-en.html#contact">Contact</a></li>
         <li><a href="notizie-en.html">Insights</a></li>
         <li><a href="verifica-incentivi-en.html" aria-current="page">Incentives Checker</a></li>
-        <li><a href="area-clienti.html">Client Area</a></li>
+        <li><a href="area-clienti-en.html">Client Area</a></li>
         <li class="mobile-language">
           <a href="verifica-incentivi.html">IT</a> | <strong>EN</strong>
         </li>
@@ -285,6 +323,10 @@
       <div class="disclaimer-banner">
         <strong>Important notice:</strong> This is an indicative simulator based on publicly available rules from the Direzione Generale Cinema e Audiovisivo (2025-2026). It does not replace professional advice, the cultural/nationality test, or the actual application process. Results are for guidance only.
       </div>
+
+      <p style="font-size: 0.9rem; color: #555; margin: -0.25rem 0 1.25rem;">
+        <strong>Rules last updated:</strong> 31 May 2026
+      </p>
 
       <form id="incentives-form" class="questions-form" novalidate>
         <div class="question">
@@ -354,7 +396,10 @@
 
       <!-- RESULTS -->
       <div id="results" class="results-section">
-        <h2 style="color:#003366; margin-bottom:1rem; font-size:1.5rem;">Indicative results</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <h2 style="color:#003366; margin: 0; font-size:1.5rem;">Indicative results</h2>
+          <button type="button" id="export-btn" class="secondary" style="font-size: 0.85rem; padding: 0.35rem 0.8rem;">📄 Export / Print results</button>
+        </div>
         <div class="results-grid" id="results-grid"></div>
 
         <div class="final-disclaimer">
@@ -365,7 +410,7 @@
           <strong>Recommended next steps:</strong>
           <ul style="margin: 0.5rem 0 0 1.2rem; font-size: 0.92rem;">
             <li>Check the latest official updates and 2026 deadlines in <a href="notizie-en.html">Insights</a></li>
-            <li>Review current calls and rankings on the <a href="https://cinema.cultura.gov.it/" target="_blank" rel="noopener">DG Cinema website</a></li>
+            <li>Review current calls and rankings on the <a href="https://cinema.cultura.gov.it/" target="_blank" rel="noopener noreferrer">DG Cinema website</a></li>
             <li>Contact the firm for a dedicated project analysis</li>
           </ul>
         </div>
@@ -430,7 +475,7 @@
         results.push({
           title: 'Tax Credit Production',
           status: 'low',
-          note: 'Italian spend appears too low for full rates. Check minimum thresholds.'
+          note: 'The planned Italian spend is likely insufficient to access the standard tax credit rates. Most Italian productions require at least €0.5–1M of qualifying territorial expenditure. Check the current thresholds for your type of work.'
         });
       }
 
@@ -445,18 +490,20 @@
         results.push({
           title: 'Tax Credit for Investment Attraction',
           status: 'medium',
-          note: 'Possible if you meet the minimum Italian spend threshold. Check annual calls for open sessions.'
+          note: 'Foreign productions usually need at least €1M of qualifying Italian spend (executive production or services). Check the 2026 calls for open windows and exact requirements.'
         });
       }
 
       // Contributi Selettivi
       if ((data.projectType === 'feature' || data.projectType === 'series' || data.projectType === 'doc' || data.projectType === 'animation') && hasArtistic) {
         let status = 'medium';
-        let note = 'The project has characteristics that may align with the 2026 selective calls (writing, development or production).';
+        let note = 'The project has valid artistic or cultural elements, but the chances for selective grants are generally medium-low unless it is still in development or pre-production. The calls strongly favour projects at the earliest stages.';
 
         if (data.stage === 'development' || data.stage === 'preproduction') {
           status = 'high';
-          note = 'Ideal phase for selective contributions on screenwriting and development (2026 calls open).';
+          note = 'Ideal phase for selective contributions on screenwriting and development. The 2026 calls particularly reward projects at these early stages.';
+        } else if (data.stage === 'production' || data.stage === 'post') {
+          note = 'In production or post-production the opportunities for selective grants are very limited. Most calls favour projects still in development or pre-production. Carefully check any remaining 2026 calls.';
         }
 
         results.push({
@@ -471,7 +518,7 @@
         results.push({
           title: 'EU Programmes (Creative Europe MEDIA) and bilateral agreements',
           status: 'medium',
-          note: 'Co-productions with EU countries (e.g. Italy-France 2026) can access cross-funding and extra points in national calls.'
+          note: 'Co-productions with EU countries (e.g. Italy-France 2026) can access cross-funding and extra points. However, without a significant Italian component the opportunities remain more limited than for a majority-Italian project.'
         });
       }
 
@@ -479,14 +526,14 @@
       results.push({
         title: 'Regional incentives and Film Commissions',
         status: 'low',
-        note: 'Many regions offer supplementary grants or free services. Contact us for a targeted mapping for your territory.'
+        note: 'Almost all Italian regions have their own incentives (rebates or grants). Check the local Film Commission where you plan to shoot: they are often stackable with the national Tax Credit.'
       });
 
       if (results.length === 0) {
         results.push({
           title: 'No main incentives identified',
           status: 'none',
-          note: 'Based on the information provided the project does not appear to fit the main current schemes. We recommend a consultation to explore alternatives.'
+          note: 'With the parameters entered, the project does not meet the minimum requirements to access the main national incentives (Tax Credit and selective grants). The most common blockers are: insufficient Italian spend, lack of Italian-majority nationality, or the project being too far advanced. We recommend a detailed review with the studio.'
         });
       }
 
@@ -539,6 +586,14 @@
       grid.innerHTML = '';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Export / Print results
+    const exportBtn = document.getElementById('export-btn');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', function() {
+        window.print();
+      });
+    }
 
     console.log('%c[Studio Legale Lo Foco] Incentives Checker (EN) tool initialized', 'color:#80D9FF');
   </script>
