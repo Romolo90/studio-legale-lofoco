@@ -178,53 +178,6 @@
     let newsItems = [];
     let articles = [];
 
-    // Carica i dati dal JSON esterno
-    fetch('data/notizie-it.json')
-      .then(r => r.json())
-      .then(data => {
-        newsItems = data.newsItems || [];
-        articles = data.articles || [];
-        renderNews();
-        renderResources();
-        initFilters();
-      })
-      .catch(err => console.error('Errore caricamento JSON:', err));
-      {
-        date: "2026-05-20",
-        title: "Contributi selettivi 2025 – Pubblicata la graduatoria completa Sviluppo I sessione",
-        context: "D.D. 20 maggio 2026 rep. 1267. Graduatorie complete per i progetti di sviluppo presentati nella prima sessione 2025.",
-        source: "DG Cinema e Audiovisivo",
-        link: "https://cinema.cultura.gov.it/avvisi/contributi-selettivi-2025-pubblicata-la-graduatoria-completa-sviluppo-i-sessione/"
-      },
-      {
-        date: "2026-05-15",
-        title: "Bando per la concessione di contributi selettivi – Anno 2026",
-        context: "D.D. 15 maggio 2026 rep. 1238. Stanziati 1 M€ per scrittura, 2 M€ per sviluppo, 32,7 M€ per produzione (quote per giovani autori, documentari, animazione e identità culturale).",
-        source: "DG Cinema e Audiovisivo",
-        link: "https://cinema.cultura.gov.it/avvisi/bando-per-la-concessione-di-contributi-selettivi-anno-2026/"
-      },
-      {
-        date: "2026-05-19",
-        title: "Tax Credit attrazione investimenti – Apertura sessione 2026",
-        context: "D.D. 19 maggio 2026 rep. 1244. Termini e modalità per richieste preventive e definitive per l'anno 2026 relative al credito d'imposta per l'attrazione in Italia di investimenti cinematografici e audiovisivi.",
-        source: "DG Cinema e Audiovisivo",
-        link: "https://cinema.cultura.gov.it/avvisi/tax-credit-per-lattrazione-in-italia-di-investimenti-cinematografici-e-audiovisivi-apertura-sessione-per-la-presentazione-delle-richieste-preventive-e-definitive-per-lanno/"
-      },
-      {
-        date: "2026-04-24",
-        title: "Tax Credit – Decreti di riconoscimento crediti d'imposta ed eleggibilità culturale (aprile 2026)",
-        context: "Esiti istruttorie su richieste preventive per produzione cinematografica, tv/web, documentari, cortometraggi e produzioni esecutive straniere.",
-        source: "DG Cinema e Audiovisivo",
-        link: "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-24-aprile-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/"
-      },
-      {
-        date: "2026-04-01",
-        title: "Bando Italia-Francia 2026 per co-sviluppo e co-produzione",
-        context: "Finanziamenti a progetti franco-italiani di sviluppo e coproduzione cinematografica e serie audiovisive. Dotazione 1 M€ (500k per sessione).",
-        source: "DG Cinema e Audiovisivo",
-        link: "https://cinema.cultura.gov.it/avvisi/pubblicato-il-bando-italia-francia-2026-finanziamenti-a-progetti-di-co-sviluppo-e-co-produzione/"
-      }
-    ];
     function formatDate(iso) {
       const d = new Date(iso);
       return d.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -333,18 +286,22 @@
       }, {once: true});
     }
 
-    function init() {
-      renderNews();
-      renderResources();
-      initFilters();
-      console.log('%c[Studio Legale Lo Foco] Approfondimenti (IT) initialized with official sources only', 'color:#80D9FF');
-    }
+    // Inizializzazione: carichiamo i dati dal JSON e poi renderizziamo
+    fetch('data/notizie-it.json')
+      .then(r => r.json())
+      .then(data => {
+        newsItems = data.newsItems || [];
+        articles = data.articles || [];
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
+        renderNews();
+        renderResources();
+        initFilters();
+
+        console.log('%c[Studio Legale Lo Foco] Approfondimenti (IT) initialized with official sources only', 'color:#80D9FF');
+      })
+      .catch(err => {
+        console.error('Errore caricamento data/notizie-it.json', err);
+      });
   </script>
 
   <!-- Script principale (cookie, hamburger, etc.) -->
