@@ -98,6 +98,44 @@
     }
     .question select,
     .question input[type="number"] {
+
+    /* Print styles for clean PDF export */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #results, #results * {
+        visibility: visible;
+      }
+      #results {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+      }
+      .results-grid {
+        display: block;
+      }
+      .result-card {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        box-shadow: none;
+      }
+      .tool-hero,
+      header,
+      footer,
+      .disclaimer-banner,
+      form,
+      #export-btn,
+      .cta-contact {
+        display: none !important;
+      }
+    }
       width: 100%;
       padding: 0.65rem 0.9rem;
       border: 1px solid #80D9FF;
@@ -286,6 +324,10 @@
         <strong>Avvertenza importante:</strong> Questo è un simulatore indicativo basato su regole pubbliche della Direzione Generale Cinema e Audiovisivo (2025-2026). Non sostituisce una valutazione professionale, il test di nazionalità/culturale né la presentazione della domanda. I risultati sono puramente orientativi.
       </div>
 
+      <p style="font-size: 0.9rem; color: #555; margin: -0.25rem 0 1.25rem;">
+        <strong>Regole aggiornate al:</strong> 31 maggio 2026
+      </p>
+
       <form id="incentives-form" class="questions-form" novalidate>
         <div class="question">
           <label for="project-type">1. Tipologia di opera</label>
@@ -354,7 +396,10 @@
 
       <!-- RESULTS -->
       <div id="results" class="results-section">
-        <h2 style="color:#003366; margin-bottom:1rem; font-size:1.5rem;">Risultati indicativi</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <h2 style="color:#003366; margin: 0; font-size:1.5rem;">Risultati indicativi</h2>
+          <button type="button" id="export-btn" class="secondary" style="font-size: 0.85rem; padding: 0.35rem 0.8rem;">📄 Esporta / Stampa risultati</button>
+        </div>
         <div class="results-grid" id="results-grid"></div>
 
         <div class="final-disclaimer">
@@ -365,7 +410,7 @@
           <strong>Prossimi passi consigliati:</strong>
           <ul style="margin: 0.5rem 0 0 1.2rem; font-size: 0.92rem;">
             <li>Consulta gli aggiornamenti ufficiali e le scadenze 2026 negli <a href="notizie.html">Approfondimenti</a></li>
-            <li>Verifica i bandi e le graduatorie sul sito della <a href="https://cinema.cultura.gov.it/" target="_blank" rel="noopener">DG Cinema</a></li>
+            <li>Verifica i bandi e le graduatorie sul sito della <a href="https://cinema.cultura.gov.it/" target="_blank" rel="noopener noreferrer">DG Cinema</a></li>
             <li>Contatta lo studio per una analisi dedicata del tuo progetto</li>
           </ul>
         </div>
@@ -430,7 +475,7 @@
         results.push({
           title: 'Tax Credit Produzione',
           status: 'low',
-          note: 'Spesa italiana probabilmente troppo bassa per accedere alle aliquote piene. Verifica i massimali minimi.'
+          note: 'La spesa prevista in Italia è verosimilmente insufficiente per accedere alle aliquote ordinarie del Tax Credit Produzione. La maggior parte delle produzioni italiane necessita di almeno 0,5–1 M€ di spesa qualificata sul territorio. Verifica i massimali aggiornati per la tua tipologia di opera.'
         });
       }
 
@@ -445,18 +490,20 @@
         results.push({
           title: 'Tax Credit Attrazione Investimenti',
           status: 'medium',
-          note: 'Possibile se raggiungi la soglia minima di spesa in Italia. Controlla gli avvisi annuali per le sessioni.'
+          note: 'Per le produzioni estere serve di solito almeno 1 M€ di spesa qualificata in Italia (executive production o servizi). Controlla gli avvisi 2026 per le finestre aperte e i requisiti precisi.'
         });
       }
 
       // Contributi Selettivi
       if ((data.projectType === 'feature' || data.projectType === 'series' || data.projectType === 'doc' || data.projectType === 'animation') && hasArtistic) {
         let status = 'medium';
-        let note = 'Il progetto presenta caratteristiche che possono allinearsi ai bandi selettivi 2026 (scrittura, sviluppo o produzione).';
+        let note = 'Il progetto ha elementi artistici o culturali validi, ma le probabilità per i contributi selettivi sono generalmente medio-basse se non si è più in fase di sviluppo o pre-produzione. I bandi premiano fortemente i progetti nelle fasi iniziali.';
 
         if (data.stage === 'development' || data.stage === 'preproduction') {
           status = 'high';
-          note = 'Fase ideale per contributi selettivi su scrittura e sviluppo (bandi 2026 aperti).';
+          note = 'Fase ideale per contributi selettivi su scrittura e sviluppo. I bandi 2026 premiano particolarmente i progetti in queste fasi iniziali.';
+        } else if (data.stage === 'production' || data.stage === 'post') {
+          note = 'In fase di produzione o post-produzione le opportunità per contributi selettivi sono molto ridotte. La maggior parte dei bandi premia progetti ancora in sviluppo o pre-produzione. Verifica con attenzione gli avvisi residui 2026.';
         }
 
         results.push({
@@ -471,7 +518,7 @@
         results.push({
           title: 'Programmi UE (Creative Europe MEDIA) e accordi bilaterali',
           status: 'medium',
-          note: 'Le coproduzioni con Paesi UE (es. Francia 2026) possono accedere a fondi incrociati e punti extra nei bandi nazionali.'
+          note: 'Le coproduzioni con Paesi UE (es. Italia-Francia 2026) possono accedere a fondi incrociati e punti extra. Tuttavia, senza una componente italiana significativa le opportunità restano limitate rispetto a un progetto maggioritariamente italiano.'
         });
       }
 
@@ -479,14 +526,14 @@
       results.push({
         title: 'Incentivi regionali e Film Commission',
         status: 'low',
-        note: 'Molte regioni offrono contributi integrativi o servizi gratuiti. Contattaci per una mappatura mirata sul tuo territorio.'
+        note: 'Quasi tutte le regioni hanno incentivi propri (rebate o contributi). Verifica la Film Commission del territorio dove intendi girare: spesso sono cumulabili con il Tax Credit nazionale.'
       });
 
       if (results.length === 0) {
         results.push({
           title: 'Nessun incentivo principale identificato',
           status: 'none',
-          note: 'In base ai dati inseriti il progetto non sembra rientrare nei principali schemi attuali. Ti consigliamo una consulenza per esplorare soluzioni alternative.'
+          note: 'Con i parametri inseriti il progetto non soddisfa i requisiti minimi per attivare Tax Credit Produzione, Contributi Selettivi o le principali misure nazionali. I motivi più frequenti sono: spesa in Italia troppo bassa, mancanza di nazionalità italiana (maggioritaria), oppure fase troppo avanzata. Ti consigliamo una verifica più approfondita con lo studio.'
         });
       }
 
@@ -539,6 +586,14 @@
       grid.innerHTML = '';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Export / Print results
+    const exportBtn = document.getElementById('export-btn');
+    if (exportBtn) {
+      exportBtn.addEventListener('click', function() {
+        window.print();
+      });
+    }
 
     // Keyboard accessibility for form
     console.log('%c[Studio Legale Lo Foco] Verifica Incentivi (IT) tool initialized', 'color:#80D9FF');
