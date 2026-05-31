@@ -3,73 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="Scopri come il nostro sito utilizza i cookie e come puoi gestirli per garantire una migliore esperienza di navigazione." />
-  <meta name="keywords" content="Cookie Policy, gestione cookie, privacy, cookie tecnici, cookie analitici, cookie marketing" />
-  <meta name="author" content="Studio Legale Lo Foco" />
   <title>Cookie Policy - Studio Legale Lo Foco</title>
-  
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  
+  <meta name="description" content="Cookie Policy dello Studio Legale Lo Foco. Scopri quali cookie utilizziamo e come puoi gestirli.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/cookie-policy.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/cookie-policy-en.html">
+
+  <!-- Fonts and main styles -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    /* Personalizzazione della pagina Cookie Policy */
-    main {
-      padding: 20px;
-      font-family: 'EB Garamond', serif;
-      line-height: 1.8;
+    /* Minimal overrides for legal pages */
+    main.legal-content {
+      max-width: 780px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      font-size: 1.05rem;
     }
-    h1, h2 {
-      color: #003366;
-    }
-    a {
-      color: #2980B9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      padding-left: 20px;
-      margin-bottom: 20px;
-    }
-    .highlight {
-      background-color: #f4f8fc;
-      padding: 15px;
-      border-left: 4px solid #003366;
-      margin: 20px 0;
-    }
-    footer {
-      background-color: #003366;
-      color: #BFECFF;
-      text-align: center;
-      padding: 15px 0;
-    }
-    footer .footer-note a {
-      color: #80D9FF;
-    }
-    footer .footer-note a:hover {
-      text-decoration: underline;
-      color: #BFECFF;
-    }
+    main.legal-content h1 { font-size: 2rem; color: #003366; margin-bottom: 0.5rem; }
+    main.legal-content h2 { font-size: 1.35rem; color: #003247; margin-top: 1.8rem; }
+    main.legal-content ul { margin-left: 1.2rem; }
+    .last-update { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie per migliorare la tua esperienza. Consulta la nostra 
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <!-- HEADER (consistent with main site) -->
   <header class="header">
     <div class="logo">
-      <h1>
-        <a href="index.html" class="home-link" aria-label="Torna alla homepage">Studio Legale Lo Foco</a>
+      <h1 class="home-link">
+        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
       </h1>
     </div>
-
-    <!-- Hamburger menu (mobile) -->
-    <button class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+    <div class="language-selector">
+      <strong>IT</strong> | <a href="cookie-policy-en.html">EN</a>
+    </div>
+    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
       <span></span>
-    </button>
-
-    <!-- Menu principale -->
+    </div>
     <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
       <ul>
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
@@ -78,40 +70,69 @@
         <li><a href="notizie.html">Approfondimenti</a></li>
         <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
+        <li class="mobile-language">
+          <strong>IT</strong> | <a href="cookie-policy-en.html">EN</a>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="section-container">
+  <main id="main" class="legal-content">
     <h1>Cookie Policy</h1>
+    <p class="last-update"><strong>Ultimo aggiornamento:</strong> 27 maggio 2026</p>
+
     <p>
-      Questa pagina descrive i tipi di cookie utilizzati dal nostro sito e come puoi gestirli
-      per personalizzare la tua esperienza di navigazione.
+      Questa Cookie Policy spiega quali cookie e tecnologie simili utilizziamo sul nostro sito web 
+      e come puoi gestirli.
     </p>
 
-    <div class="highlight">
-      <p><strong>Nota:</strong> Continuando a navigare su questo sito, acconsenti all'utilizzo dei cookie come descritto di seguito.</p>
-    </div>
+    <h2>1. Cosa sono i cookie</h2>
+    <p>
+      I cookie sono piccoli file di testo che vengono salvati sul tuo dispositivo quando visiti un sito web. 
+      Servono a migliorare la navigazione, ricordare le tue preferenze e, in alcuni casi, raccogliere 
+      informazioni statistiche sull’uso del sito.
+    </p>
 
-    <h2 id="tipi-di-cookie">Tipi di cookie</h2>
+    <h2>2. Tipi di cookie che utilizziamo</h2>
     <ul>
-      <li><strong>Cookie tecnici:</strong> Essenziali per il funzionamento del sito e per consentire l'accesso a determinate funzionalità.</li>
-      <li><strong>Cookie analitici:</strong> Raccolgono dati aggregati sull'uso del sito per aiutarci a migliorare l'esperienza utente.</li>
-      <li><strong>Cookie di marketing:</strong> Utilizzati per personalizzare la pubblicità in base ai tuoi interessi.</li>
+      <li><strong>Cookie tecnici (necessari):</strong> Essenziali per il corretto funzionamento del sito (ad esempio navigazione, menu mobile, banner cookie). Non possono essere disattivati.</li>
+      <li><strong>Cookie analitici:</strong> Utilizzati per raccogliere dati aggregati e anonimi sull’uso del sito (es. Google Analytics). Questi cookie vengono caricati <strong>solo dopo il tuo consenso esplicito</strong>.</li>
+      <li><strong>Cookie di marketing:</strong> Utilizzati per personalizzare la pubblicità o misurare l’efficacia delle campagne. Anche questi vengono attivati solo con il tuo consenso.</li>
     </ul>
 
-    <h2 id="gestione-dei-cookie">Gestione dei cookie</h2>
+    <h2>3. Come gestiamo il consenso</h2>
     <p>
-      Puoi gestire o disabilitare i cookie direttamente dalle impostazioni del tuo browser. Per
-      ulteriori informazioni, consulta la guida del tuo browser o visita:
-      <a href="https://www.allaboutcookies.org/manage-cookies/" target="_blank" rel="noopener noreferrer" aria-label="Scopri come gestire i cookie">Gestione cookie</a>.
+      Quando visiti il sito per la prima volta, appare un banner che ti permette di:
+    </p>
+    <ul>
+      <li>Cliccare su <strong>«Accetta tutti»</strong> per accettare tutti i cookie (tecnici + analitici + marketing);</li>
+      <li>Cliccare su <strong>«Gestisci cookie»</strong> per scegliere quali categorie attivare.</li>
+    </ul>
+    <p>
+      Google Analytics viene caricato <strong>esclusivamente dopo</strong> che hai dato il tuo consenso 
+      per i cookie analitici. Senza il tuo consenso, non viene attivato alcun tracciamento analitico.
     </p>
 
-    <h2 id="contatti">Contatti</h2>
+    <h2>4. Come modificare o revocare il consenso</h2>
     <p>
-      Per ulteriori informazioni sulla nostra politica sui cookie o per eventuali domande, puoi
-      contattarci tramite:
+      Puoi in qualsiasi momento modificare le tue preferenze cliccando sul link 
+      <strong>«Gestisci cookie»</strong> presente nel banner o nel footer del sito. 
+      Le tue scelte verranno salvate per un anno.
+    </p>
+    <p>
+      In alternativa, puoi gestire o disattivare i cookie direttamente dalle impostazioni del tuo browser.
+    </p>
+
+    <h2>5. Cookie di terze parti</h2>
+    <p>
+      Alcuni cookie possono essere impostati da servizi di terze parti che appaiono sul nostro sito 
+      (ad esempio Google per Analytics o per i font). Questi cookie sono soggetti alle rispettive 
+      politiche sulla privacy di tali terzi.
+    </p>
+
+    <h2>6. Contatti</h2>
+    <p>
+      Per qualsiasi domanda relativa alla nostra Cookie Policy puoi contattarci a:
     </p>
     <p>
       <strong>Email:</strong> 
@@ -121,21 +142,20 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>
-      <a href="https://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
-             src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-             alt="Valid CSS!" />
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
       </a>
-    </p>
-    <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
-    <p class="footer-note">
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Termini di Servizio</a>
-    </p>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a>
+      </p>
+    </div>
+    <div class="footer-right"></div>
   </footer>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>

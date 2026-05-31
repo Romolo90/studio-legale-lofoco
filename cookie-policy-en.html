@@ -2,100 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover how our website uses cookies and how you can manage them to ensure a better browsing experience." />
-  <meta name="keywords" content="Cookie Policy, cookie management, privacy, technical cookies, analytical cookies, marketing cookies" />
-  <meta name="author" content="Studio Legale Lo Foco" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Cookie Policy - Studio Legale Lo Foco</title>
+  <meta name="description" content="Cookie Policy of Studio Legale Lo Foco. Learn which cookies we use and how you can manage them.">
+  <meta name="robots" content="noindex, follow">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Cookie Policy - Studio Legale Lo Foco">
-  <meta property="og:description" content="Discover how our website uses cookies and how you can manage them to ensure a better browsing experience.">
-  <meta property="og:url" content="https://studiolegalelofoco.com/cookie-policy-en.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/cookie-policy.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/cookie-policy-en.html">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cookie Policy - Studio Legale Lo Foco">
-  <meta name="twitter:description" content="Discover how our website uses cookies and how you can manage them to ensure a better browsing experience.">
-  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/favicon.png">
+  <!-- Fonts and main styles -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" href="image/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="image/favicon.png">
-
-  <!-- Manifest and Theme -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#003366">
-
-  <link rel="stylesheet" href="style.css" />
-  
   <style>
-    /* Customization for the Cookie Policy page */
-    main {
-      padding: 20px;
-      font-family: 'EB Garamond', serif;
-      line-height: 1.8;
+    /* Minimal overrides for legal pages */
+    main.legal-content {
+      max-width: 780px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      font-size: 1.05rem;
     }
-    h1, h2 {
-      color: #003366;
-    }
-    a {
-      color: #2980B9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      padding-left: 20px;
-      margin-bottom: 20px;
-    }
-    .highlight {
-      background-color: #f4f8fc;
-      padding: 15px;
-      border-left: 4px solid #003366;
-      margin: 20px 0;
-    }
-    footer {
-      background-color: #003366;
-      color: #BFECFF;
-      text-align: center;
-      padding: 15px 0;
-    }
-    footer .footer-note a {
-      color: #80D9FF;
-    }
-    footer .footer-note a:hover {
-      text-decoration: underline;
-      color: #BFECFF;
-    }
+    main.legal-content h1 { font-size: 2rem; color: #003366; margin-bottom: 0.5rem; }
+    main.legal-content h2 { font-size: 1.35rem; color: #003247; margin-top: 1.8rem; }
+    main.legal-content ul { margin-left: 1.2rem; }
+    .last-update { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        We use cookies to improve your experience. See our 
+        <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accept all</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Manage cookies</button>
+    </div>
+  </div>
+
+  <!-- HEADER (consistent with main site) -->
   <header class="header">
     <div class="logo">
-      <h1>
-        <a href="index-en.html" class="home-link" aria-label="Return to homepage">Studio Legale Lo Foco</a>
+      <h1 class="home-link">
+        <a href="index-en.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
       </h1>
     </div>
-
-    <!-- Language Selector -->
     <div class="language-selector">
-      <a href="cookie-policy.html">IT</a> | <a href="cookie-policy-en.html">EN</a>
+      <a href="cookie-policy.html">IT</a> | <strong>EN</strong>
     </div>
-
-    <!-- Mobile Hamburger Menu -->
-    <button class="hamburger" id="hamburgerMenu" aria-label="Open/Close Menu">
+    <div class="hamburger" id="hamburgerMenu" aria-label="Open/Close menu">
       <span></span>
       <span></span>
       <span></span>
-    </button>
-
-    <!-- Main Navigation -->
+    </div>
     <nav class="main-nav" id="mainNav" aria-label="Main Menu">
       <ul>
         <li><a href="index-en.html#about-us">About Us</a></li>
@@ -104,40 +70,67 @@
         <li><a href="notizie-en.html">Insights</a></li>
         <li><a href="verifica-incentivi-en.html">Incentives Checker</a></li>
         <li><a href="area-clienti.html">Client Area</a></li>
-      <li class="mobile-language">
-        <a href="cookie-policy.html">IT</a> | <a href="cookie-policy-en.html">EN</a>
-      </li>
+        <li class="mobile-language">
+          <a href="cookie-policy.html">IT</a> | <strong>EN</strong>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="section-container">
+  <main id="main" class="legal-content">
     <h1>Cookie Policy</h1>
+    <p class="last-update"><strong>Last updated:</strong> May 27, 2026</p>
+
     <p>
-      This page describes the types of cookies used on our website and how you can manage them to personalize your browsing experience.
+      This Cookie Policy explains which cookies and similar technologies we use on our website 
+      and how you can manage them.
     </p>
 
-    <div class="highlight">
-      <p><strong>Note:</strong> By continuing to browse this site, you consent to the use of cookies as described below.</p>
-    </div>
+    <h2>1. What are cookies</h2>
+    <p>
+      Cookies are small text files that are saved on your device when you visit a website. 
+      They help improve navigation, remember your preferences, and in some cases collect 
+      statistical information about site usage.
+    </p>
 
-    <h2 id="tipi-di-cookie">Types of Cookies</h2>
+    <h2>2. Types of cookies we use</h2>
     <ul>
-      <li><strong>Technical Cookies:</strong> Essential for the functioning of the site and to allow access to certain features.</li>
-      <li><strong>Analytical Cookies:</strong> Collect aggregated data on how the site is used to help us improve the user experience.</li>
-      <li><strong>Marketing Cookies:</strong> Used to personalize advertising based on your interests.</li>
+      <li><strong>Technical / Necessary Cookies:</strong> Essential for the proper functioning of the site (e.g. navigation, mobile menu, cookie banner). These cannot be disabled.</li>
+      <li><strong>Analytical Cookies:</strong> Used to collect aggregated and anonymous data on how the site is used (e.g. Google Analytics). These cookies are loaded <strong>only after your explicit consent</strong>.</li>
+      <li><strong>Marketing Cookies:</strong> Used to personalize advertising or measure campaign effectiveness. These are also activated only with your consent.</li>
     </ul>
 
-    <h2 id="gestione-dei-cookie">Managing Cookies</h2>
+    <h2>3. How we manage consent</h2>
     <p>
-      You can manage or disable cookies directly through your browser settings. For more information, please refer to your browser's help guide or visit: 
-      <a href="https://www.allaboutcookies.org/manage-cookies/" target="_blank" rel="noopener noreferrer" aria-label="Learn how to manage cookies">Cookie Management</a>.
+      When you first visit the site, a banner appears allowing you to:
+    </p>
+    <ul>
+      <li>Click <strong>«Accept all»</strong> to accept all cookies (technical + analytical + marketing);</li>
+      <li>Click <strong>«Manage cookies»</strong> to choose which categories to enable.</li>
+    </ul>
+    <p>
+      Google Analytics is loaded <strong>only after</strong> you have given consent for analytical cookies. 
+      No analytical tracking is activated without your explicit consent.
     </p>
 
-    <h2 id="contatti">Contact</h2>
+    <h2>4. How to modify or withdraw consent</h2>
     <p>
-      For further information about our cookie policy or any questions, please contact us at:
+      You can change your preferences at any time by clicking the <strong>«Manage cookies»</strong> link 
+      in the banner or in the footer. Your choices will be saved for one year.
+    </p>
+    <p>
+      Alternatively, you can manage or disable cookies directly through your browser settings.
+    </p>
+
+    <h2>5. Third-party cookies</h2>
+    <p>
+      Some cookies may be set by third-party services that appear on our site (for example Google 
+      for Analytics or fonts). These cookies are subject to the respective privacy policies of those third parties.
+    </p>
+
+    <h2>6. Contact</h2>
+    <p>
+      For any questions regarding our Cookie Policy, you can contact us at:
     </p>
     <p>
       <strong>Email:</strong> 
@@ -147,19 +140,20 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>
-      <a href="https://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
       </a>
-    </p>
-    <p>&copy; 2026 Studio Legale Lo Foco - All Rights Reserved</p>
-    <p class="footer-note">
-      <a href="privacy-en.html">Privacy Policy</a> |
-      <a href="terms-en.html">Terms of Service</a>
-    </p>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - All Rights Reserved</p>
+      <p class="footer-note">
+        <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a>
+      </p>
+    </div>
+    <div class="footer-right"></div>
   </footer>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
