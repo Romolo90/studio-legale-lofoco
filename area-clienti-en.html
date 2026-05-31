@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Client Area - Studio Legale Lo Foco</title>
+  <meta name="description" content="Reserved area for clients of Studio Legale Lo Foco.">
+
+  <!-- Favicons & Manifest -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="image/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#003366">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Main site styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Dashboard specific styles (kept minimal for now) -->
+  <style>
+    /* Dashboard-specific overrides (not yet fully unified) */
+    .area-clienti-main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .dashboard-card {
+      background: var(--color-white);
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 50, 71, 0.12);
+      padding: 2rem;
+      border: 1px solid rgba(0, 50, 71, 0.15);
+      margin-bottom: 1.5rem;
+    }
+    .welcome-banner {
+      background: var(--color-primary);
+      color: var(--color-secondary);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .tabs {
+      display: flex;
+      gap: 0.25rem;
+      border-bottom: 2px solid rgba(0, 50, 71, 0.15);
+      margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+      padding: 0.65rem 1.4rem;
+      border: none;
+      background: transparent;
+      color: #557;
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--color-primary);
+      font-weight: 600;
+      border-bottom-color: var(--color-primary);
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--color-white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 50, 71, 0.1);
+    }
+    .data-table th {
+      background: var(--color-primary);
+      color: var(--color-secondary);
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+    }
+    .in-development-banner {
+      background: #fff3cd;
+      color: #664d03;
+      border: 1px solid #ffeaa7;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        We use cookies to improve your experience. See our 
+        <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="accept-cookies" class="btn-cookie">Accept all</button>
+      <button id="manage-cookies" class="btn-cookie btn-secondary">Manage cookies</button>
+    </div>
+  </div>
+
+  <!-- STANDARD SITE HEADER -->
+  <header class="header">
+    <div class="logo">
+      <h1 class="home-link">
+        <a href="index-en.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      </h1>
+    </div>
+    <div class="language-selector">
+      <a href="area-clienti.html">IT</a> | <strong>EN</strong>
+    </div>
+    <div class="hamburger" id="hamburgerMenu" aria-label="Open/Close menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="Main Menu">
+      <ul>
+        <li><a href="index-en.html#about-us">About Us</a></li>
+        <li><a href="index-en.html#services">Services</a></li>
+        <li><a href="index-en.html#contact">Contact</a></li>
+        <li><a href="notizie-en.html">Insights</a></li>
+        <li><a href="verifica-incentivi-en.html">Incentives Checker</a></li>
+        <li><a href="area-clienti-en.html">Client Area</a></li>
+        <li class="mobile-language">
+          <a href="area-clienti.html">IT</a> | <strong>EN</strong>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- IN DEVELOPMENT BANNER -->
+  <div class="area-clienti-main">
+    <div class="in-development-banner">
+      <strong>Section under development</strong> — This is currently a preview of the reserved Client Area. 
+      To access documents and information regarding your cases, please contact the firm.
+    </div>
+  </div>
+
+  <main class="area-clienti-main">
+    <section id="login-section">
+      <div class="dashboard-card">
+        <h2>🔐 Client Area</h2>
+        <p class="subtitle">Log in with the credentials provided by the firm</p>
+        <div class="error-msg" id="login-error"></div>
+        <form id="login-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="username">Email or Username</label>
+            <input type="text" id="username" name="username" placeholder="e.g. mario.rossi" required autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn-cta" id="btn-login">Log in</button>
+        </form>
+        <p style="margin-top:1.5rem; font-size:0.95rem; color:#557; text-align:center;">
+          Having trouble logging in? Contact the firm:<br>
+          <a href="mailto:info@studiolegalelofoco.com" style="color:var(--color-primary)">info@studiolegalelofoco.com</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="dashboard-section">
+      <div class="welcome-banner">
+        <div>
+          <h1 id="welcome-name">Welcome</h1>
+          <p>View the status of your cases and your documents</p>
+        </div>
+        <div class="welcome-icon">⚖️</div>
+      </div>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('pratiche', this)">📁 Cases</button>
+        <button class="tab-btn" onclick="showTab('documenti', this)">📄 Documents</button>
+        <button class="tab-btn" onclick="showTab('fatture', this)">🧾 Invoices</button>
+        <button class="tab-btn" onclick="showTab('scadenze', this)">📅 Deadlines</button>
+      </div>
+      <div id="tab-pratiche" class="tab-panel active">
+        <div id="pratiche-content" class="loading">Loading...</div>
+      </div>
+      <div id="tab-documenti" class="tab-panel">
+        <div id="documenti-content" class="loading">Loading...</div>
+      </div>
+      <div id="tab-fatture" class="tab-panel">
+        <div id="fatture-content" class="loading">Loading...</div>
+      </div>
+      <div id="tab-scadenze" class="tab-panel">
+        <div id="scadenze-content" class="loading">Loading...</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- STANDARD FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" style="border:0;width:88px;height:31px;">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - All Rights Reserved</p>
+      <p class="footer-note">
+        <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Original dashboard logic (kept as-is for now - demo only)
+    const API_BASE = 'https://api.studiolegalelofoco.com/api';
+    let authToken = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = sessionStorage.getItem('cl_token');
+      const savedName = sessionStorage.getItem('cl_nome');
+      if (saved) { authToken = saved; showDashboard(savedName || 'Client'); }
+    });
+
+    async function handleLogin(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-login');
+      const errEl = document.getElementById('login-error');
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      btn.disabled = true; btn.textContent = 'Logging in...'; errEl.style.display = 'none';
+      try {
+        const res = await fetch(API_BASE + '/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error(data.error || 'Invalid credentials');
+        if (data.data.user.ruolo !== 'cliente') throw new Error('This portal is reserved for clients of the firm.');
+        authToken = data.data.accessToken;
+        const nome = data.data.user.nome + ' ' + data.data.user.cognome;
+        sessionStorage.setItem('cl_token', authToken); sessionStorage.setItem('cl_nome', nome);
+        showDashboard(nome);
+      } catch (err) { errEl.textContent = err.message; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Log in'; }
+    }
+
+    function showDashboard(nome) {
+      document.getElementById('login-section').style.display = 'none';
+      document.getElementById('dashboard-section').style.display = 'block';
+      document.getElementById('welcome-name').textContent = 'Welcome, ' + nome;
+      document.getElementById('user-name-header').textContent = nome;
+      document.getElementById('user-name-header').style.display = 'block';
+      document.getElementById('btn-logout').style.display = 'block';
+      loadAll();
+    }
+
+    function logout() {
+      sessionStorage.removeItem('cl_token'); sessionStorage.removeItem('cl_nome'); authToken = null;
+      document.getElementById('dashboard-section').style.display = 'none';
+      document.getElementById('login-section').style.display = 'block';
+      document.getElementById('user-name-header').style.display = 'none';
+      document.getElementById('btn-logout').style.display = 'none';
+      document.getElementById('login-form').reset();
+    }
+
+    function showTab(name, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + name).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    async function apiFetch(path) {
+      const res = await fetch(API_BASE + '/cliente/' + path, { headers: { 'Authorization': 'Bearer ' + authToken } });
+      if (res.status === 401) { logout(); throw new Error('Session expired'); }
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error || 'Error');
+      return data.data;
+    }
+
+    async function loadAll() { loadPratiche(); loadDocumenti(); loadFatture(); loadScadenze(); }
+
+    function badge(stato) { return '<span class="badge badge-' + (stato||'unknown') + '">' + (stato||'—') + '</span>'; }
+    function formatDate(d) { if (!d) return '—'; try { return new Date(d).toLocaleDateString('en-US'); } catch(e) { return d; } }
+    function formatEuro(v) { if (v==null) return '—'; return new Intl.NumberFormat('en-US',{style:'currency',currency:'EUR'}).format(v); }
+
+    async function loadPratiche() {
+      const el = document.getElementById('pratiche-content');
+      try {
+        const data = await apiFetch('pratiche');
+        if (!data.length) { el.innerHTML = '<div class="empty-state"><div class="icon">📁</div><p>No cases found</p></div>'; return; }
+        el.innerHTML = '<table class="data-table"><thead><tr><th>Case No.</th><th>Subject</th><th>Type</th><th>Lawyer</th><th>Opened</th><th>Status</th></tr></thead><tbody>' +
+          data.map(p => '<tr><td data-label="Case No."><strong>' + p.numero_interno + '</strong></td><td data-label="Subject">' + p.oggetto + '</td><td data-label="Type">' + (p.sottotipo||p.tipo) + '</td><td data-label="Lawyer">' + (p.avvocato_cognome ? 'Avv. '+p.avvocato_cognome : '—') + '</td><td data-label="Opened">' + formatDate(p.data_apertura) + '</td><td data-label="Status">' + badge(p.stato) + '</td></tr>').join('') +
+          '</tbody></table>';
+      } catch(err) { el.innerHTML = '<div class="empty-state"><p>Error: ' + err.message + '</p></div>'; }
+    }
+
+    async function loadDocumenti() {
+      const el = document.getElementById('documenti-content');
+      try {
+        const data = await apiFetch('documenti');
+        if (!data.length) { el.innerHTML = '<div class="empty-state"><div class="icon">📄</div><p>No documents available</p></div>'; return; }
+        el.innerHTML = '<table class="data-table"><thead><tr><th>Title</th><th>Type</th><th>Case</th><th>Date</th></tr></thead><tbody>' +
+          data.map(d => '<tr><td data-label="Title"><strong>' + d.titolo + '</strong>' + (d.descrizione ? '<br><small style="color:#778">'+d.descrizione+'</small>' : '') + '</td><td data-label="Type">' + (d.tipo||'—') + '</td><td data-label="Case">' + (d.pratica_numero||'—') + '</td><td data-label="Date">' + formatDate(d.created_at) + '</td></tr>').join('') +
+          '</tbody></table>';
+      } catch(err) { el.innerHTML = '<div class="empty-state"><p>Error: ' + err.message + '</p></div>'; }
+    }
+
+    async function loadFatture() {
+      const el = document.getElementById('fatture-content');
+      try {
+        const data = await apiFetch('fatture');
+        if (!data.length) { el.innerHTML = '<div class="empty-state"><div class="icon">🧾</div><p>No invoices found</p></div>'; return; }
+        el.innerHTML = '<table class="data-table"><thead><tr><th>Invoice</th><th>Date</th><th>Due</th><th>Amount</th><th>Net</th><th>Status</th></tr></thead><tbody>' +
+          data.map(f => '<tr><td data-label="Invoice"><strong>' + f.numero_fattura + '/' + f.anno + '</strong>' + (f.pratica_oggetto ? '<br><small style="color:#778">'+f.pratica_oggetto+'</small>' : '') + '</td><td data-label="Date">' + formatDate(f.data_emissione) + '</td><td data-label="Due">' + formatDate(f.data_scadenza) + '</td><td data-label="Amount">' + formatEuro(f.totale_documento) + '</td><td data-label="Net">' + formatEuro(f.netto_a_pagare) + '</td><td data-label="Status">' + badge(f.stato) + '</td></tr>').join('') +
+          '</tbody></table>';
+      } catch(err) { el.innerHTML = '<div class="empty-state"><p>Error: ' + err.message + '</p></div>'; }
+    }
+
+    async function loadScadenze() {
+      const el = document.getElementById('scadenze-content');
+      try {
+        const data = await apiFetch('scadenze');
+        if (!data.length) { el.innerHTML = '<div class="empty-state"><div class="icon">📅</div><p>No deadlines found</p></div>'; return; }
+        data.sort((a,b) => new Date(a.data_scadenza) - new Date(b.data_scadenza));
+        const oggi = new Date();
+        el.innerHTML = '<table class="data-table"><thead><tr><th>Deadline</th><th>Description</th><th>Case</th><th>Date</th><th>Status</th></tr></thead><tbody>' +
+          data.map(s => {
+            const isScaduta = new Date(s.data_scadenza) < oggi && s.stato !== 'completata';
+            return '<tr><td data-label="Deadline"><strong>' + s.descrizione + '</strong></td><td data-label="Description">' + (s.pratica_oggetto||'—') + '</td><td data-label="Case">' + (s.pratica_numero||'—') + '</td><td data-label="Date">' + formatDate(s.data_scadenza) + (isScaduta ? ' <span style="color:#d32f2f;font-weight:600">(Overdue)</span>' : '') + '</td><td data-label="Status">' + badge(s.stato) + '</td></tr>';
+          }).join('') + '</tbody></table>';
+      } catch(err) { el.innerHTML = '<div class="empty-state"><p>Error: ' + err.message + '</p></div>'; }
+    }
+  </script>
+</body>
+</html>
