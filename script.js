@@ -119,7 +119,12 @@
 
       if (this.manageCookiesBtn) {
         this.manageCookiesBtn.addEventListener('click', () => {
-          this.openPreferences();
+          if (this.cookiePreferences) {
+            this.openPreferences();
+          } else {
+            // Fallback: if no preferences panel, just accept all (simple behavior on legal pages)
+            this.acceptAllCookies();
+          }
         });
       }
 
@@ -131,6 +136,8 @@
 
       if (this.hasAcceptedCookies()) {
         this.hideBanner();
+        // Load GA for returning visitors who already gave consent
+        this.loadGoogleAnalytics();
       }
     },
 
@@ -138,6 +145,7 @@
       const secureFlag = location.protocol === 'https:' ? 'Secure; ' : '';
       document.cookie = `cookiesAccepted=true; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; ${secureFlag}`;
       this.hideBanner();
+      this.loadGoogleAnalytics();   // Load GA only after explicit consent
     },
 
     openPreferences() {
@@ -154,6 +162,12 @@
       
       document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; ${location.protocol === 'https:' ? 'Secure; ' : ''}`;
       this.cookiePreferences.style.display = 'none';
+
+      // Load GA4 only if the user explicitly enabled analytical cookies
+      const analyticalEnabled = preferences['analitici'] === true || preferences['analytical'] === true;
+      if (analyticalEnabled) {
+        this.loadGoogleAnalytics();
+      }
     },
 
     hasAcceptedCookies() {
@@ -168,6 +182,32 @@
       if (this.cookiePreferences) {
         this.cookiePreferences.style.display = 'none';
       }
+    },
+
+    // Load Google Analytics 4 only after user has given consent
+    loadGoogleAnalytics() {
+      if (window.gtagLoaded) return; // Prevent loading multiple times
+
+      // Dynamically inject the GA4 script
+      const gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        gtag('js', new Date());
+        gtag('config', 'G-E7P6F0SVRY', {
+          anonymize_ip: true,           // Privacy-friendly
+          cookie_flags: 'SameSite=Strict;Secure'
+        });
+
+        window.gtagLoaded = true;
+        console.log('%c[Analytics] Google Analytics loaded after consent', 'color:#888');
+      };
     }
   };
 
