@@ -168,6 +168,7 @@ function insertFooter(content, newFooter) {
 
 function processFile(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
+  const originalContent = content;
   const filename = path.basename(filePath);
   const isEn = isEnglishFile(filename);
   const isHome = isHomeFile(filename);
@@ -220,36 +221,31 @@ function processFile(filePath) {
   content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>/gi, '');
   content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
 
-  let changed = false;
-
   // --- COOKIE ---
   const cookieResult = removeOldCookie(content);
   content = cookieResult.content;
-  if (cookieResult.changed) changed = true;
 
   content = insertCookie(content, newCookie);
-  changed = true; // we always ensure cookie is present
 
   // --- HEADER ---
   const headerResult = removeOldHeader(content);
   content = headerResult.content;
-  if (headerResult.changed) changed = true;
 
   content = insertHeader(content, newHeader);
-  changed = true;
 
   // --- FOOTER ---
   const footerResult = removeOldFooter(content);
   content = footerResult.content;
-  if (footerResult.changed) changed = true;
 
   content = insertFooter(content, newFooter);
-  changed = true;
 
   // Strip trailing whitespace (keeps sources clean, reduces html-validate no-trailing-whitespace noise)
   content = content.replace(/[ \t]+$/gm, '');
 
-  if (changed) {
+  // Only write if the content actually changed (prevents spurious disk writes and git diffs
+  // when the chrome is already up-to-date with the current partials + sanitize rules).
+  // This makes repeated `node scripts/build.js` a no-op on a clean tree.
+  if (content !== originalContent) {
     fs.writeFileSync(filePath, content, 'utf8');
     console.log('  ✓ Synced chrome (cookie+header+footer) in', filename);
     return true;
