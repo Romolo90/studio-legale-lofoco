@@ -185,18 +185,19 @@ function processFile(filePath) {
   const nuke = () => {
     let changed = false;
     const before = content;
+    // Very aggressive full-block removal for cookies (multi-line, tolerant of junk/attrs/wrappers from bad past states)
+    content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*(?:<\/div>)?\s*/gi, '');
+    content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
+    content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
     content = content.replace(/<header class=["']?header["']?[^>]*>[\s\S]*?<\/header>/gi, '');
     content = content.replace(/<footer>[\s\S]*?<\/footer>/gi, '');
-    content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>/gi, '');
-    content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>/gi, '');
     content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
-    content = content.replace(/<!--\s*(?:HEADER|FOOTER|COOKIE|BANNER|FINESTRINA| PREFERENZE).*?-->\s*[\s\S]{0,100}?(?:<div[^>]*class=["'][^"']*cookie-buttons|<\/div>)?/gi, '');
+    content = content.replace(/<!--\s*(?:HEADER|FOOTER|COOKIE|BANNER|FINESTRINA| PREFERENZE|COOKIE PREFERENCES).*?-->\s*/gi, '');
     // catch any remaining fragments with the button texts
     content = content.replace(/<button[^>]*id=["']?accept-cookies["']?[^>]*>[\s\S]*?<\/button>/gi, '');
     content = content.replace(/<button[^>]*id=["']?manage-cookies["']?[^>]*>[\s\S]*?<\/button>/gi, '');
     // extra specific for the persistent junk patterns seen in files
     content = content.replace(/<\/main><div class=["']?cookie-buttons["']?[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi, '</main>');
-    content = content.replace(/<!-- FINESTRINA PREFERENZE COOKIE --><div class=["']?cookie-buttons["']?[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi, '');
     if (content !== before) changed = true;
     return changed;
   };
