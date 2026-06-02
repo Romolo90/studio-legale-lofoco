@@ -420,7 +420,8 @@ p {
 /* Intro paragraph under "Il nostro team" / "Our Team" */
 .team-intro {
   max-width: 720px;
-  margin-bottom: 1rem;
+  margin: 0 auto 1.5rem;
+  text-align: center;
 }
 
 .team-member {
