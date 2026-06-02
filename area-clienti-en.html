@@ -119,9 +119,7 @@
 </head>
 <body>
   <!-- Skip link -->
-  <a href="#main" class="skip-link">Skip to content</a>
-  
-  <!-- COOKIE BANNER --><!-- COOKIE BANNER -->  <header class="header">
+  <a href="#main" class="skip-link">Skip to content</a>  <header class="header">
     <div class="logo">
       <h1>
         <a href="index.html" class="home-link" aria-label="Back to homepage">
@@ -193,10 +191,10 @@
         <div class="welcome-icon">⚖️</div>
       </div>
       <div class="tabs">
-        <button class="tab-btn active" onclick="showTab('pratiche', this)">📁 Cases</button>
-        <button class="tab-btn" onclick="showTab('documenti', this)">📄 Documents</button>
-        <button class="tab-btn" onclick="showTab('fatture', this)">🧾 Invoices</button>
-        <button class="tab-btn" onclick="showTab('scadenze', this)">📅 Deadlines</button>
+        <button type="button"  class="tab-btn active" onclick="showTab('pratiche', this)">📁 Cases</button>
+        <button type="button"  class="tab-btn" onclick="showTab('documenti', this)">📄 Documents</button>
+        <button type="button"  class="tab-btn" onclick="showTab('fatture', this)">🧾 Invoices</button>
+        <button type="button"  class="tab-btn" onclick="showTab('scadenze', this)">📅 Deadlines</button>
       </div>
       <div id="tab-pratiche" class="tab-panel active">
         <div id="pratiche-content" class="loading">Loading...</div>
@@ -213,11 +211,15 @@
     </section>
   </main>
 
-  <!-- STANDARD FOOTER --><!-- COOKIE BANNER --><!-- COOKIE BANNER --><!-- COOKIE BANNER --><!-- COOKIE BANNER --><div id="cookie-banner" class="cookie-banner">
+  <!-- STANDARD FOOTER -->
+    
+  </div>
+
+  <!-- COOKIE PREFERENCES --><div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
         We use cookies and similar technologies to improve your browsing experience.
-        For more information, see our 
+        For more information, see our
         <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
@@ -236,6 +238,7 @@
         Analytical cookies (Google Analytics)
       </label>
       <button id="save-preferences" type="button">Save preferences</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
     </form>
   </div>
 
@@ -258,7 +261,7 @@
 <script src="script.js"></script>
   <script>
     // Original dashboard logic (kept as-is for now - demo only)
-    
+
 // DEMO STUB (en)
 let currentUser=null;
 window.addEventListener("DOMContentLoaded",()=>{const n=sessionStorage.getItem("cl_nome");if(n)showDashboard(n);});

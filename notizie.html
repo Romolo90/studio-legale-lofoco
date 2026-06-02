@@ -26,10 +26,10 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" href="image/icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="image/icon-192.png">
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-  
+
   <!-- Foglio di stile principale -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -82,11 +82,11 @@
       <h2 id="risorse-title">Risorse e Analisi</h2>
       <div class="filters" role="search">
         <input type="search" id="search-input" placeholder="Cerca per titolo o parola chiave..." aria-label="Cerca risorse">
-        <button class="filter-btn active" data-filter="all">Tutte</button>
-        <button class="filter-btn" data-filter="tax-credit">Tax Credit</button>
-        <button class="filter-btn" data-filter="contributi-selettivi">Contributi Selettivi</button>
-        <button class="filter-btn" data-filter="ue-media">UE / MEDIA</button>
-        <button class="filter-btn" data-filter="normativa">Normativa</button>
+        <button type="button"  class="filter-btn active" data-filter="all">Tutte</button>
+        <button type="button"  class="filter-btn" data-filter="tax-credit">Tax Credit</button>
+        <button type="button"  class="filter-btn" data-filter="contributi-selettivi">Contributi Selettivi</button>
+        <button type="button"  class="filter-btn" data-filter="ue-media">UE / MEDIA</button>
+        <button type="button"  class="filter-btn" data-filter="normativa">Normativa</button>
       </div>
       <div class="resources-grid" id="resources-grid" aria-live="polite"></div>
       <p class="disclaimer">Queste schede sintetizzano informazioni pubbliche ufficiali. Non costituiscono parere legale. Per valutazioni operative, contatta lo studio o fai riferimento ai provvedimenti integrali.</p>
@@ -109,7 +109,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2 id="modal-title"></h2>
-        <button class="modal-close" aria-label="Chiudi">&times;</button>
+        <button type="button"  class="modal-close" aria-label="Chiudi">&times;</button>
       </div>
       <div class="modal-body" id="modal-body"></div>
       <div class="modal-footer">
@@ -164,8 +164,8 @@
       const term = (searchTerm || '').toLowerCase().trim();
       const filtered = articles.filter(a => {
         const matchesFilter = filter === 'all' || a.category === filter;
-        const matchesSearch = !term || 
-          a.title.toLowerCase().includes(term) || 
+        const matchesSearch = !term ||
+          a.title.toLowerCase().includes(term) ||
           a.summary.toLowerCase().includes(term) ||
           (a.keyPoints && a.keyPoints.join(' ').toLowerCase().includes(term));
         return matchesFilter && matchesSearch;
@@ -263,11 +263,13 @@
       });
   </script>
 
-  <!-- Script principale (cookie, hamburger, etc.) --><div id="cookie-banner" class="cookie-banner">
+  <!-- Script principale (cookie, hamburger, etc.) -->
+    
+  </div><div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
         Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
-        Per saperne di più, consulta la nostra 
+        Per saperne di più, consulta la nostra
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
@@ -286,6 +288,7 @@
         Cookie analitici (Google Analytics)
       </label>
       <button id="save-preferences" type="button">Salva preferenze</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
     </form>
   </div>
 

@@ -187,10 +187,10 @@
         <div class="welcome-icon">⚖️</div>
       </div>
       <div class="tabs">
-        <button class="tab-btn active" onclick="showTab('pratiche', this)">📁 Pratiche</button>
-        <button class="tab-btn" onclick="showTab('documenti', this)">📄 Documenti</button>
-        <button class="tab-btn" onclick="showTab('fatture', this)">🧾 Fatture</button>
-        <button class="tab-btn" onclick="showTab('scadenze', this)">📅 Scadenze</button>
+        <button type="button"  class="tab-btn active" onclick="showTab('pratiche', this)">📁 Pratiche</button>
+        <button type="button"  class="tab-btn" onclick="showTab('documenti', this)">📄 Documenti</button>
+        <button type="button"  class="tab-btn" onclick="showTab('fatture', this)">🧾 Fatture</button>
+        <button type="button"  class="tab-btn" onclick="showTab('scadenze', this)">📅 Scadenze</button>
       </div>
       <div id="tab-pratiche" class="tab-panel active">
         <div id="pratiche-content" class="loading">Caricamento...</div>
@@ -207,11 +207,13 @@
     </section>
   </main>
 
-  <!-- STANDARD FOOTER --><div id="cookie-banner" class="cookie-banner">
+  <!-- STANDARD FOOTER -->
+    
+  </div><div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
         Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
-        Per saperne di più, consulta la nostra 
+        Per saperne di più, consulta la nostra
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
@@ -230,6 +232,7 @@
         Cookie analitici (Google Analytics)
       </label>
       <button id="save-preferences" type="button">Salva preferenze</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
     </form>
   </div>
 

@@ -22,15 +22,21 @@ jobs:
         run: npm ci
 
       - name: Validate HTML
-        run: npm run validate:html || true   # non-blocking for now (many style warnings)
+        run: npm run validate:html
 
-      - name: Run build (partials + minify if available)
-        run: npm run build:html || echo "build:html not critical yet"
+      - name: Run production build
+        run: npm run build
 
       - name: Check for broken internal links (basic)
         run: |
-          echo "Basic link check (you can enhance with lychee or htmlproofer later)"
-          grep -o 'href="[^"]*\.html"' *.html | head -5 || true
+          echo "Basic link check (consider adding lychee or htmlproofer in future)"
+          # Fail if any .html link points to non-existing file (simple check)
+          for link in $(grep -o 'href="[^"]*\.html"' *.html | sed 's/href="//;s/"$//'); do
+            if [ ! -f "$link" ] && [ "$link" != "index.html" ]; then
+              echo "Broken link: $link"; exit 1;
+            fi
+          done
+          echo "No obviously broken internal .html links found"
 
       - name: Summary
-        run: echo "✅ Basic CI checks completed for Studio Legale Lo Foco site"
+        run: echo "✅ CI checks passed for Studio Legale Lo Foco site (validate + full prod build + links)"

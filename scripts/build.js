@@ -170,10 +170,12 @@ function processFile(filePath) {
 
   // Robust sanitization: clean artifacts from previous bad build runs (stray comments, duplicated blocks, concatenated tags)
   content = content.replace(/<!--\s*.*?(MAIN|CONTENT).*?-->\s*<header class="header">/gi, '<header class="header">');
-  content = content.replace(/<!--\s*FINE COOKIE BANNER\s*-->/gi, '');
-  // Remove stray top-level duplicate cookie-buttons (common pollution)
-  content = content.replace(/<div class="cookie-buttons">\s*<button type="button" id="accept-cookies"[\s\S]*?Gestisci cookie<\/button>\s*<\/div>\s*<\/div>\s*(?=\s*<!--|<header|<main)/gi, '');
-  content = content.replace(/<div class="cookie-buttons">\s*<button type="button" id="accept-cookies"[\s\S]*?Gestisci cookie<\/button>\s*<\/div>\s*(?=\s*<!--|<header|<main)/gi, '');
+  content = content.replace(/<!--\s*(?:FINE|END).*?COOKIE.*?(?:BANNER)?\s*-->/gi, '');
+  content = content.replace(/<!--\s*(?:COOKIE BANNER| BANNER COOKIE).*?-->/gi, '');
+  // Remove any remaining cookie UI blocks by ID or class (aggressive cleanup for polluted sources)
+  content = content.replace(/<div[^>]*id=["']cookie-banner["'][^>]*>[\s\S]*?<\/div>/gi, '');
+  content = content.replace(/<div[^>]*id=["']cookie-preferences["'][^>]*>[\s\S]*?<\/div>/gi, '');
+  content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
 
   let changed = false;
 

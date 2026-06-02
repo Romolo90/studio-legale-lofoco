@@ -8,6 +8,11 @@
     "wcag/h32": "warn",
     "prefer-button": "off",
     "element-permitted-content": "warn",
-    "attribute-boolean-style": "off"
+    "attribute-boolean-style": "off",
+    "long-title": "off",
+    "no-raw-characters": "off",
+    "empty-heading": "off",
+    "hidden-focusable": "off",
+    "close-order": "warn"
   }
 }

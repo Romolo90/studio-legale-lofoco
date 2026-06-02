@@ -4,7 +4,7 @@
   <!-- Meta and SEO -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Legale Lo Foco | Insights - Tax Credit, Selective Grants & Audiovisual Regulation</title>
+  <title>Studio Legale Lo Foco | Insights - Tax Credit, Selective Grants &amp; Audiovisual Regulation</title>
   <link rel="canonical" href="https://studiolegalelofoco.com/notizie-en.html">
   <meta name="description" content="Latest official updates, calls and resources on Tax Credit, selective contributions, European funds and audiovisual regulation. Sources: Direzione Generale Cinema e Audiovisivo - Ministry of Culture.">
   <meta name="keywords" content="Studio Legale Lo Foco, Insights, Tax Credit, selective contributions, cinema, audiovisual, film incentives, DG Cinema">
@@ -15,7 +15,7 @@
   <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/notizie-en.html">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Studio Legale Lo Foco | Insights - Tax Credit & Audiovisual Incentives">
+  <meta property="og:title" content="Studio Legale Lo Foco | Insights - Tax Credit &amp; Audiovisual Incentives">
   <meta property="og:description" content="Latest official updates and resources on Tax Credit, selective contributions and audiovisual regulation from DG Cinema (Ministry of Culture).">
   <meta property="og:url" content="https://studiolegalelofoco.com/notizie-en.html">
   <meta property="og:type" content="website">
@@ -35,23 +35,18 @@
   <!-- Manifest and Theme -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#003366">
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-  
+
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Skip Navigation Link for Accessibility -->
   <a href="#main" class="skip-link">Salta al contenuto</a>
-  
-  <!-- COOKIE BANNER --><!-- COOKIE BANNER --><div class="cookie-buttons">
-      <button type="button" id="accept-cookies" class="btn-cookie">Accept All</button>
-      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Manage Cookies</button>
-    </div>
-  </div>
-  <!-- END COOKIE BANNER -->  <header class="header">
+
+  <header class="header">
     <div class="logo">
       <h1>
         <a href="index.html" class="home-link" aria-label="Back to homepage">
@@ -101,11 +96,11 @@
       <h2 id="risorse-title">Resources &amp; Analysis</h2>
       <div class="filters" role="search">
         <input type="search" id="search-input" placeholder="Search by title or keyword..." aria-label="Search resources">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="tax-credit">Tax Credit</button>
-        <button class="filter-btn" data-filter="contributi-selettivi">Selective Contributions</button>
-        <button class="filter-btn" data-filter="ue-media">EU / MEDIA</button>
-        <button class="filter-btn" data-filter="normativa">Regulation</button>
+        <button type="button"  class="filter-btn active" data-filter="all">All</button>
+        <button type="button"  class="filter-btn" data-filter="tax-credit">Tax Credit</button>
+        <button type="button"  class="filter-btn" data-filter="contributi-selettivi">Selective Contributions</button>
+        <button type="button"  class="filter-btn" data-filter="ue-media">EU / MEDIA</button>
+        <button type="button"  class="filter-btn" data-filter="normativa">Regulation</button>
       </div>
       <div class="resources-grid" id="resources-grid" aria-live="polite"></div>
       <p class="disclaimer">These cards summarise publicly available official information. They do not constitute legal advice. For operational assessments, contact the firm or refer to the full official texts.</p>
@@ -128,7 +123,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2 id="modal-title"></h2>
-        <button class="modal-close" aria-label="Close">&times;</button>
+        <button type="button"  class="modal-close" aria-label="Close">&times;</button>
       </div>
       <div class="modal-body" id="modal-body"></div>
       <div class="modal-footer">
@@ -183,8 +178,8 @@
       const term = (searchTerm || '').toLowerCase().trim();
       const filtered = articles.filter(a => {
         const matchesFilter = filter === 'all' || a.category === filter;
-        const matchesSearch = !term || 
-          a.title.toLowerCase().includes(term) || 
+        const matchesSearch = !term ||
+          a.title.toLowerCase().includes(term) ||
           a.summary.toLowerCase().includes(term) ||
           (a.keyPoints && a.keyPoints.join(' ').toLowerCase().includes(term));
         return matchesFilter && matchesSearch;
@@ -287,11 +282,12 @@
       });
   </script>
 
-  <!-- Main Script (cookies, hamburger, etc.) --><!-- COOKIE BANNER --><!-- COOKIE BANNER --><!-- COOKIE BANNER --><!-- COOKIE BANNER --><div id="cookie-banner" class="cookie-banner">
+  <!-- Main Script (cookies, hamburger, etc.) -->
+  <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
         We use cookies and similar technologies to improve your browsing experience.
-        For more information, see our 
+        For more information, see our
         <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
@@ -310,6 +306,7 @@
         Analytical cookies (Google Analytics)
       </label>
       <button id="save-preferences" type="button">Save preferences</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
     </form>
   </div>
 
