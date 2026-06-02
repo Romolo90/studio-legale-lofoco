@@ -116,6 +116,8 @@
 
 
 
+
+
   <header class="header">
     <div class="logo">
       <h1>
@@ -187,13 +189,13 @@
       <div class="modal-header">
         <h2 id="modal-title"></h2>
         <button type="button"  class="modal-close" aria-label="Chiudi">&times;</button>
-
+      </div>
       <div class="modal-body" id="modal-body"></div>
       <div class="modal-footer">
         Fonte ufficiale: <span id="modal-source"></span> — Verifica sempre i documenti originali sul sito della DG Cinema.
-
-
-
+      </div>
+    </div>
+  </div>
 
   <!-- Script Approfondimenti: dati ufficiali + rendering + filtri + modal -->
   <script>
@@ -249,11 +251,11 @@
         <div class="resource-card" data-id="${a.id}" tabindex="0" role="button" aria-label="Apri dettaglio: ${a.title}">
           <div class="card-header">
             <span class="category-tag">${a.category.replace('-', ' ')}</span>
-
+          </div>
           <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
           <div class="card-footer">Approfondisci</div>
-
+        </div>
 `).join('');
 
       container.querySelectorAll('.resource-card').forEach(card => {
