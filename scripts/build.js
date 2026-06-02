@@ -189,7 +189,14 @@ function processFile(filePath) {
     content = content.replace(/<footer>[\s\S]*?<\/footer>/gi, '');
     content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>/gi, '');
     content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>/gi, '');
-    content = content.replace(/<!--\s*(?:HEADER|FOOTER|COOKIE|BANNER).*?-->/gi, '');
+    content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
+    content = content.replace(/<!--\s*(?:HEADER|FOOTER|COOKIE|BANNER|FINESTRINA| PREFERENZE).*?-->\s*[\s\S]{0,100}?(?:<div[^>]*class=["'][^"']*cookie-buttons|<\/div>)?/gi, '');
+    // catch any remaining fragments with the button texts
+    content = content.replace(/<button[^>]*id=["']?accept-cookies["']?[^>]*>[\s\S]*?<\/button>/gi, '');
+    content = content.replace(/<button[^>]*id=["']?manage-cookies["']?[^>]*>[\s\S]*?<\/button>/gi, '');
+    // extra specific for the persistent junk patterns seen in files
+    content = content.replace(/<\/main><div class=["']?cookie-buttons["']?[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi, '</main>');
+    content = content.replace(/<!-- FINESTRINA PREFERENZE COOKIE --><div class=["']?cookie-buttons["']?[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi, '');
     if (content !== before) changed = true;
     return changed;
   };
@@ -287,23 +294,7 @@ function processFile(filePath) {
   // Strip trailing whitespace (keeps sources clean, reduces html-validate no-trailing-whitespace noise)
   content = content.replace(/[ \t]+$/gm, '');
 
-  // Stabilize: re-apply the core remove+insert sequence a couple of times until the
-  // output stops changing. Some regex spans and insert order can produce intermediate
-  // ws/newlines; iterating reaches the fixed point so that a second build on the
-  // just-written file becomes a true no-op (content === originalContent).
-  for (let pass = 0; pass < 2; pass++) {
-    const before = content;
-    // re-do the bottom chrome nukes + inserts (header is top, less sensitive)
-    content = content.replace(/[\s\t]*<footer>[\s\S]*?<\/footer>\s*/gi, '');
-    content = content.replace(/(?:<\/div>\s*){0,4}<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
-    content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
-    content = insertFooter(content, newFooter);
-    content = insertCookie(content, newCookie);
-    content = content.replace(/[ \t]+$/gm, '');
-    if (content === before) break;
-  }
-
-  // Only write if the (stabilized) content actually differs from what was on disk.
+  // Only write if the content actually differs from what was on disk.
   // This makes repeated builds on an up-to-date tree a true no-op for the HTML files.
   if (content !== originalContent) {
     fs.writeFileSync(filePath, content, 'utf8');
