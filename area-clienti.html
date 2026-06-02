@@ -157,57 +157,45 @@
           <div class="form-group">
             <label for="username">Email o Username</label>
             <input type="text" id="username" name="username" placeholder="es. mario.rossi" required autocomplete="username">
-          </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
-          </div>
           <button type="submit" class="btn-cta" id="btn-login">Accedi</button>
         </form>
         <p style="margin-top:1.5rem; font-size:0.95rem; color:#557; text-align:center;">
           Problemi di accesso? Contatta lo studio:<br>
           <a href="mailto:info@studiolegalelofoco.com" style="color:var(--primary)">info@studiolegalelofoco.com</a>
         </p>
-      </div>
     </section>
     <section id="dashboard-section">
       <!-- Logged-in client bar (demo) -->
       <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; border:1px solid #80d9ff; border-radius:8px; padding:0.6rem 1rem; margin-bottom:1rem;">
         <div>
           <strong id="user-name-header" style="color:#003366; display:none;">Cliente</strong>
-        </div>
         <button type="button" id="btn-logout" class="btn-details" style="display:none; padding:0.4rem 1rem; font-size:0.9rem;" onclick="logout()">Esci</button>
-      </div>
 
       <div class="welcome-banner">
         <div>
           <h1 id="welcome-name">Benvenuto</h1>
           <p>Consulta lo stato delle tue pratiche e i tuoi documenti</p>
-        </div>
         <div class="welcome-icon">⚖️</div>
-      </div>
       <div class="tabs">
         <button type="button"  class="tab-btn active" onclick="showTab('pratiche', this)">📁 Pratiche</button>
         <button type="button"  class="tab-btn" onclick="showTab('documenti', this)">📄 Documenti</button>
         <button type="button"  class="tab-btn" onclick="showTab('fatture', this)">🧾 Fatture</button>
         <button type="button"  class="tab-btn" onclick="showTab('scadenze', this)">📅 Scadenze</button>
-      </div>
       <div id="tab-pratiche" class="tab-panel active">
         <div id="pratiche-content" class="loading">Caricamento...</div>
-      </div>
       <div id="tab-documenti" class="tab-panel">
         <div id="documenti-content" class="loading">Caricamento...</div>
-      </div>
       <div id="tab-fatture" class="tab-panel">
         <div id="fatture-content" class="loading">Caricamento...</div>
-      </div>
       <div id="tab-scadenze" class="tab-panel">
         <div id="scadenze-content" class="loading">Caricamento...</div>
-      </div>
     </section>
   </main>
-
-  <!-- STANDARD FOOTER -->
+    
+  </div>
     
   </div><div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">

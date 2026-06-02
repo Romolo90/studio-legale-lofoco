@@ -173,9 +173,12 @@ function processFile(filePath) {
   content = content.replace(/<!--\s*(?:FINE|END).*?COOKIE.*?(?:BANNER)?\s*-->/gi, '');
   content = content.replace(/<!--\s*(?:COOKIE BANNER| BANNER COOKIE).*?-->/gi, '');
   // Remove any remaining cookie UI blocks by ID or class (aggressive cleanup for polluted sources)
-  content = content.replace(/<div[^>]*id=["']cookie-banner["'][^>]*>[\s\S]*?<\/div>/gi, '');
-  content = content.replace(/<div[^>]*id=["']cookie-preferences["'][^>]*>[\s\S]*?<\/div>/gi, '');
+  // Remove ALL instances of cookie UI blocks to prevent any duplicates from polluted sources
+  content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>/gi, '');
+  content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>/gi, '');
   content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
+  // Also strip any leftover cookie comments
+  content = content.replace(/<!--\s*(?:COOKIE|BANNER).*?-->/gi, '');
 
   let changed = false;
 

@@ -30,13 +30,19 @@ jobs:
       - name: Check for broken internal links (basic)
         run: |
           echo "Basic link check (consider adding lychee or htmlproofer in future)"
-          # Fail if any .html link points to non-existing file (simple check)
-          for link in $(grep -o 'href="[^"]*\.html"' *.html | sed 's/href="//;s/"$//'); do
+          # Only check relative .html links (skip http/https absolute ones)
+          broken=0
+          for raw in $(grep -o 'href="[^"]*\.html[^"]*"' *.html | sed 's/href="//;s/".*//'); do
+            link=$(echo "$raw" | cut -d'#' -f1)  # strip fragment
+            if [[ "$link" =~ ^https?:// ]]; then
+              continue
+            fi
             if [ ! -f "$link" ] && [ "$link" != "index.html" ]; then
-              echo "Broken link: $link"; exit 1;
+              echo "Broken relative link: $link"; broken=1;
             fi
           done
-          echo "No obviously broken internal .html links found"
+          if [ $broken -eq 1 ]; then exit 1; fi
+          echo "No broken relative internal .html links found"
 
       - name: Summary
         run: echo "✅ CI checks passed for Studio Legale Lo Foco site (validate + full prod build + links)"

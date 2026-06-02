@@ -44,9 +44,7 @@
 </head>
 <body>
   <!-- Skip Navigation Link for Accessibility -->
-  <a href="#main" class="skip-link">Salta al contenuto</a>
-
-  <header class="header">
+  <a href="#main" class="skip-link">Salta al contenuto</a>  <header class="header">
     <div class="logo">
       <h1>
         <a href="index.html" class="home-link" aria-label="Back to homepage">
@@ -82,7 +80,6 @@
     <div class="insights-hero">
       <h1>Insights</h1>
       <p>Official resources and analysis updated as of late May 2026 for producers, filmmakers and industry professionals. All information is drawn from institutional sources (Direzione Generale Cinema e Audiovisivo, Ministry of Culture) to help you navigate tax incentives, calls and regulation. Always verify the most recent notices on the official website.</p>
-    </div>
 
     <!-- LATEST UPDATES -->
     <section class="insights-section" aria-labelledby="novita-title">
@@ -101,7 +98,6 @@
         <button type="button"  class="filter-btn" data-filter="contributi-selettivi">Selective Contributions</button>
         <button type="button"  class="filter-btn" data-filter="ue-media">EU / MEDIA</button>
         <button type="button"  class="filter-btn" data-filter="normativa">Regulation</button>
-      </div>
       <div class="resources-grid" id="resources-grid" aria-live="polite"></div>
       <p class="disclaimer">These cards summarise publicly available official information. They do not constitute legal advice. For operational assessments, contact the firm or refer to the full official texts.</p>
     </section>
@@ -110,12 +106,10 @@
     <div style="max-width:780px; margin: 0 auto 2.5rem; text-align:center; background:#f8fbff; padding:1.1rem 1.3rem; border-radius:8px; border:1px solid #80D9FF;">
       <p style="margin:0 0 0.6rem; font-size:0.95rem;"><strong>Try the new interactive tool:</strong> Check in a few clicks whether your project is eligible for Tax Credit, selective contributions and other incentives.</p>
       <a href="verifica-incentivi-en.html" class="filter-btn" style="text-decoration:none; display:inline-block; padding:0.55rem 1.2rem; font-size:0.95rem;">Go to Incentives Checker →</a>
-    </div>
 
     <!-- Cross-promo / CTA -->
     <div style="text-align:center; margin: 2rem 0 3rem;">
       <a href="index-en.html#contact" class="filter-btn" style="text-decoration:none; display:inline-block; padding:0.6rem 1.4rem;">Request tailored advice on incentives</a>
-    </div>
   </main>
 
   <!-- MODAL for resource details -->
@@ -124,13 +118,9 @@
       <div class="modal-header">
         <h2 id="modal-title"></h2>
         <button type="button"  class="modal-close" aria-label="Close">&times;</button>
-      </div>
       <div class="modal-body" id="modal-body"></div>
       <div class="modal-footer">
         Official source: <span id="modal-source"></span> — Always verify the full documents on the DG Cinema website.
-      </div>
-    </div>
-  </div>
 
 
   <!-- Insights script: official data + rendering + filters + modal (EN) -->
@@ -167,7 +157,6 @@
           <div class="meta">
             <span class="source">${item.source}</span>
             <a href="${item.link}" target="_blank" rel="noopener noreferrer">Read official notice →</a>
-          </div>
         </article>
       `).join('');
     }
@@ -188,11 +177,9 @@
         <div class="resource-card" data-id="${a.id}" tabindex="0" role="button" aria-label="Open details: ${a.title}">
           <div class="card-header">
             <span class="category-tag">${a.category.replace('-', ' ')}</span>
-          </div>
           <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
           <div class="card-footer">Read more</div>
-        </div>
       `).join('');
 
       container.querySelectorAll('.resource-card').forEach(card => {
@@ -283,7 +270,14 @@
   </script>
 
   <!-- Main Script (cookies, hamburger, etc.) -->
-  <div id="cookie-banner" class="cookie-banner">
+  
+  </footer>
+
+  
+    
+  </div>
+    
+  </div><div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
         We use cookies and similar technologies to improve your browsing experience.
