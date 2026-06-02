@@ -128,6 +128,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <header class="header">
     <div class="logo">
       <h1 class="home-link">
@@ -277,19 +291,24 @@
       <div class="form-row">
         <label for="nome">Full Name</label>
         <input type="text" id="nome" name="nome" placeholder="Enter your full name" required />
+      </div>
       <div class="form-row">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      </div>
       <div class="form-row">
         <label for="messaggio">Message</label>
         <textarea id="messaggio" name="messaggio" rows="5" placeholder="Describe your inquiry" required></textarea>
+      </div>
       <div class="form-row check-row">
         <input type="checkbox" id="privacy" name="privacy" required />
         <label for="privacy">
           I declare that I have read and accepted the <a href="privacy-en.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and the <a href="terms-en.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>.
         </label>
+      </div>
       <div id="privacy-error" class="form-error" style="display: none; color: #d32f2f; margin-top: 0.5rem; font-size: 0.95rem;">
         You must accept the Privacy Policy and Terms of Service before submitting.
+      </div>
       <button type="submit" class="btn-cta" id="submitButton">Send Request</button>
     </form>
   </section>

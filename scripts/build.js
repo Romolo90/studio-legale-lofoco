@@ -213,6 +213,9 @@ function processFile(filePath) {
   // Catch junk stray closers that appear after page inline </script> but before cookie (seen in notizie etc)
   content = content.replace(/<\/script>\s*<\/footer>\s*/gi, '</script>\n');
   content = content.replace(/<\/script>\s*(?:<\/div>\s*){1,4}(?=\s*<div id=["']?cookie-banner)/gi, '</script>\n');
+  // Targeted cleanup for repeated lone stray </div> blocks between in-page scripts and footer (pollution from notizie/index past edits)
+  content = content.replace(/<\/script>[\s\S]{0,2000}?((?:\s*<\/div>\s*){2,})[\s\S]{0,500}?(?=<footer>)/gi, '</script>\n$1'); // temp marker, will strip below
+  content = content.replace(/(<script src=["'][^"']*script[^"']*["']>[\s\S]*?<\/script>)\s*(?:<\/div>\s*){2,}/gi, '$1\n');
 
   // Purge stray </footer> right before cookie banner (handles ws + comments in between)
   content = content.replace(/\s*<\/footer>\s*(?=\s*<div id=["']?cookie-banner)/gi, '\n');

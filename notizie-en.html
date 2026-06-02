@@ -85,6 +85,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <header class="header">
     <div class="logo">
       <h1>
@@ -159,9 +173,11 @@
       <div class="modal-header">
         <h2 id="modal-title"></h2>
         <button type="button"  class="modal-close" aria-label="Close">&times;</button>
+      </div>
       <div class="modal-body" id="modal-body"></div>
       <div class="modal-footer">
         Official source: <span id="modal-source"></span> — Always verify the full documents on the DG Cinema website.
+</div>
 
   <!-- Insights script: official data + rendering + filters + modal (EN) -->
   <script>
@@ -220,9 +236,8 @@
           </div>
           <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
-          <div class="card-footer">Read more</div>
-        </div>
-      `).join('');
+          <div class="card-footer">Read more
+`).join('');
 
       container.querySelectorAll('.resource-card').forEach(card => {
         const id = card.dataset.id;
@@ -312,42 +327,6 @@
   </script>
 
   <!-- Main Script (cookies, hamburger, etc.) -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-  </div>
 
 
 
