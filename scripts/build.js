@@ -155,7 +155,9 @@ function insertFooter(content, newFooter) {
   // while preserving relative inner indentation from the partial.
   const footerBlock = newFooter.replace(/^[ \t]+/, '');
 
-  const scriptRe = /(<script src=["'][^"']*script(\.min)?\.js["'][^>]*>[\s\S]*?<\/script>\s*<\/body>)/i;
+  // Use the *same simple anchor* as insertCookie: right before the external script include.
+  // This keeps placement deterministic and avoids capturing varying spans of inline scripts/cookie.
+  const scriptRe = /(<script src=["'][^"']*script(\.min)?\.js["'][^>]*>)/i;
   if (scriptRe.test(content)) {
     return content.replace(scriptRe, `\n${footerBlock}\n$1`);
   }
@@ -221,23 +223,22 @@ function processFile(filePath) {
   content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>/gi, '');
   content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
 
-  // --- COOKIE ---
-  const cookieResult = removeOldCookie(content);
-  content = cookieResult.content;
-
-  content = insertCookie(content, newCookie);
-
-  // --- HEADER ---
+  // --- HEADER (top of body) ---
   const headerResult = removeOldHeader(content);
   content = headerResult.content;
 
   content = insertHeader(content, newHeader);
 
-  // --- FOOTER ---
+  // --- FOOTER then COOKIE (bottom of body, before scripts; canonical order for stable inserts) ---
   const footerResult = removeOldFooter(content);
   content = footerResult.content;
 
   content = insertFooter(content, newFooter);
+
+  const cookieResult = removeOldCookie(content);
+  content = cookieResult.content;
+
+  content = insertCookie(content, newCookie);
 
   // Strip trailing whitespace (keeps sources clean, reduces html-validate no-trailing-whitespace noise)
   content = content.replace(/[ \t]+$/gm, '');
