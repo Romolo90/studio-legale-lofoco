@@ -50,6 +50,12 @@
 
 
 
+
+
+
+
+
+
   <header class="header">
     <div class="logo">
       <h1>
@@ -110,6 +116,7 @@
     <div style="max-width:780px; margin: 0 auto 2.5rem; text-align:center; background:#f8fbff; padding:1.1rem 1.3rem; border-radius:8px; border:1px solid #80D9FF;">
       <p style="margin:0 0 0.6rem; font-size:0.95rem;"><strong>Prova il nuovo strumento interattivo:</strong> Verifica in pochi clic l'idoneità del tuo progetto a Tax Credit, contributi selettivi e altri incentivi.</p>
       <a href="verifica-incentivi.html" class="filter-btn" style="text-decoration:none; display:inline-block; padding:0.55rem 1.2rem; font-size:0.95rem;">Vai a Verifica Incentivi →</a>
+    </div>
 
     <!-- Cross-promo / CTA -->
     <div style="text-align:center; margin: 2rem 0 3rem;">
@@ -181,9 +188,11 @@
         <div class="resource-card" data-id="${a.id}" tabindex="0" role="button" aria-label="Apri dettaglio: ${a.title}">
           <div class="card-header">
             <span class="category-tag">${a.category.replace('-', ' ')}</span>
+          </div>
           <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
           <div class="card-footer">Approfondisci</div>
+        </div>
       `).join('');
 
       container.querySelectorAll('.resource-card').forEach(card => {
@@ -269,6 +278,9 @@
   </script>
 
   <!-- Script principale (cookie, hamburger, etc.) -->
+
+
+
 
 
 
