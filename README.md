@@ -57,6 +57,14 @@ Per aggiornare: push su `main`, deploy manuale o imposta GitHub Pages / CF Pages
 
 Aggiorna sempre `lastmod` in sitemap.xml e data JSON quando aggiungi contenuti.
 
+**Come tenere aggiornati i contenuti (notizie e tool):**
+- Le "Ultime Novità" e le schede "Risorse e Analisi" sono in `data/notizie-it.json` e `notizie-en.json` (elenco newsItems + articles).
+- Per nuovi avvisi: aggiungi in cima all'array `newsItems` (data ISO, titolo, context, source, link ufficiale dal sito DG Cinema).
+- Il tool "Verifica Incentivi" ha regole client-side in `verifica-incentivi*.html`; aggiorna i disclaimer e le note quando escono nuovi decreti correttivi.
+- Dopo edit JSON/HTML: `npm run build:html` (se partials toccati), commit & push.
+- Verifica periodicamente https://cinema.cultura.gov.it/comunicazione/avvisi/ (fonte ufficiale). Il giro di aggiornamento contenuti andrebbe fatto almeno mensilmente o a ogni nuovo bando/decreto rilevante.
+- Esempio: a fine maggio 2026 sono stati aggiunti i decreti Tax Credit del 29/5 (riconoscimento, potenziamento offerta, videogiochi).
+
 ## Form contatti
 Usa Formspree (endpoint `mgvvkobk`). Verifica ricezione email e configura thank you page se vuoi.
 
