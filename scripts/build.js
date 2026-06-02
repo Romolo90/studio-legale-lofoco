@@ -87,14 +87,18 @@ function removeOldCookie(content) {
 function insertCookie(content, newCookie) {
   const scriptRe = /(<script src=["'][^"']*script(\.min)?\.js["'][^>]*>)/i;
   const bodyCloseRe = /(\s*<\/body>)/i;
+  // Force the injected block's *first* line to start at column 0 (stable, clean in view-source)
+  // while preserving the relative indentation of inner lines as written in the partial.
+  // Only strip leading ws from the very start of the block string.
+  const cookieBlock = newCookie.replace(/^[ \t]+/, '');
 
   if (scriptRe.test(content)) {
-    return content.replace(scriptRe, `${newCookie}\n$1`);
+    return content.replace(scriptRe, `\n${cookieBlock}\n$1`);
   } else if (bodyCloseRe.test(content)) {
-    return content.replace(bodyCloseRe, `\n${newCookie}\n$1`);
+    return content.replace(bodyCloseRe, `\n${cookieBlock}\n$1`);
   }
   // fallback append at end of body content
-  return content.replace(/<\/body>/i, `\n${newCookie}\n</body>`);
+  return content.replace(/<\/body>/i, `\n${cookieBlock}\n</body>`);
 }
 
 /**
@@ -147,13 +151,17 @@ function insertFooter(content, newFooter) {
   // Remove any leftover stray partial comments from previous insertions
   content = content.replace(/<!--\s*(HEADER|FOOTER)\s*-->\s*/gi, '');
 
+  // Force the injected block's *first* line to start at column 0 (stable, clean in view-source)
+  // while preserving relative inner indentation from the partial.
+  const footerBlock = newFooter.replace(/^[ \t]+/, '');
+
   const scriptRe = /(<script src=["'][^"']*script(\.min)?\.js["'][^>]*>[\s\S]*?<\/script>\s*<\/body>)/i;
   if (scriptRe.test(content)) {
-    return content.replace(scriptRe, `\n${newFooter}\n$1`);
+    return content.replace(scriptRe, `\n${footerBlock}\n$1`);
   }
   const bodyCloseRe = /(\s*<\/body>)/i;
   if (bodyCloseRe.test(content)) {
-    return content.replace(bodyCloseRe, `\n${newFooter}\n$1`);
+    return content.replace(bodyCloseRe, `\n${footerBlock}\n$1`);
   }
   return content;
 }
@@ -263,28 +271,11 @@ function main() {
     if (processFile(full)) updated++;
   }
 
-  // Always normalize stylesheet and script references based on mode
-  console.log(`\n${production ? 'Production' : 'Development'} mode: normalizing asset references...`);
-  let refsUpdated = 0;
-  const cssRef = production ? 'style.min.css' : 'style.css';
-  const jsRef = production ? 'script.min.js' : 'script.js';
-
-  for (const f of htmlFiles) {
-    const full = path.join(ROOT, f);
-    let c = fs.readFileSync(full, 'utf8');
-    const orig = c;
-
-    c = c.replace(/href=["'][^"']*style(\.min)?\.css["']/g, `href="${cssRef}"`);
-    c = c.replace(/src=["'][^"']*script(\.min)?\.js["']/g, `src="${jsRef}"`);
-
-    if (c !== orig) {
-      fs.writeFileSync(full, c, 'utf8');
-      refsUpdated++;
-    }
-  }
-  console.log(`  ✓ Asset references normalized in ${refsUpdated} file(s) (${production ? 'minified' : 'full'})`);
-
-  // Production build: create a self-contained dist/ folder ready for deploy
+  // Production build: create a self-contained dist/ folder ready for deploy.
+  // IMPORTANT: We *never* mutate the refs in the *root* HTML files to minified versions.
+  // The committed sources in the repo always reference the full style.css / script.js
+  // so that a fresh clone + `npm run dev` / python server "just works".
+  // Min-ref versions are only produced inside dist/ for deployment.
   if (production) {
     const distDir = path.join(ROOT, 'dist');
     if (fs.existsSync(distDir)) {
@@ -294,9 +285,12 @@ function main() {
 
     console.log('\nCreating production dist/ folder...');
 
-    // Copy all HTML (now pointing to .min)
+    // Copy HTML but rewrite asset refs to .min *only for the dist/ copies*
     for (const f of htmlFiles) {
-      fs.copyFileSync(path.join(ROOT, f), path.join(distDir, f));
+      let c = fs.readFileSync(path.join(ROOT, f), 'utf8');
+      c = c.replace(/href=["'][^"']*style(\.min)?\.css["']/g, 'href="style.min.css"');
+      c = c.replace(/src=["'][^"']*script(\.min)?\.js["']/g, 'src="script.min.js"');
+      fs.writeFileSync(path.join(distDir, f), c, 'utf8');
     }
 
     // Copy essential assets (images, pdf, data, favicon, manifest, etc.)
@@ -323,6 +317,26 @@ function main() {
     if (fs.existsSync(minJs)) fs.copyFileSync(minJs, path.join(distDir, 'script.min.js'));
 
     console.log('  ✓ dist/ folder created with minified assets. Ready to deploy (e.g. upload dist/ or point your host to it).');
+  }
+
+  // Final safeguard: *always* leave the root HTML files (the ones committed to the repo)
+  // referencing the full non-minified assets. This keeps the working tree clean for git
+  // regardless of whether a prod or dev build was run, and makes fresh clones immediately
+  // usable with the dev server without requiring a build step first.
+  let rootRefsNormalized = 0;
+  for (const f of htmlFiles) {
+    const full = path.join(ROOT, f);
+    let c = fs.readFileSync(full, 'utf8');
+    const orig = c;
+    c = c.replace(/href=["'][^"']*style(\.min)?\.css["']/g, 'href="style.css"');
+    c = c.replace(/src=["'][^"']*script(\.min)?\.js["']/g, 'src="script.js"');
+    if (c !== orig) {
+      fs.writeFileSync(full, c, 'utf8');
+      rootRefsNormalized++;
+    }
+  }
+  if (rootRefsNormalized > 0) {
+    console.log(`  ✓ Root HTML asset refs normalized back to full (non-min) in ${rootRefsNormalized} file(s).`);
   }
 
   console.log(`\nDone. Updated ${updated} file(s).`);
