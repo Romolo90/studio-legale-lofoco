@@ -1063,25 +1063,23 @@ textarea:focus-visible {
 
 /* Hero / Intro */
 .insights-hero {
-  background: linear-gradient(135deg, #002244 0%, #001a33 100%);
-  color: #fff;
-  padding: 3.25rem 2rem;
+  background: linear-gradient(135deg, #003366 0%, #002244 100%);
+  color: #BFECFF;
+  padding: 3rem 2rem;
   text-align: center;
   margin-bottom: 2.5rem;
-  border-bottom: 4px solid #80D9FF;
 }
 .insights-hero h1 {
-  font-size: 2.9rem;
-  margin-bottom: 0.8rem;
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
   color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 .insights-hero p {
   max-width: 720px;
   margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.55;
-  color: #E6F7FF;
+  font-size: 1.15rem;
+  opacity: 0.95;
+  line-height: 1.5;
 }
 
 /* Generic section wrapper for insights content */
@@ -1216,12 +1214,11 @@ textarea:focus-visible {
   background: #fff;
   border: 1px solid #80D9FF;
   border-radius: 10px;
-  padding: 1.25rem 1.35rem;
+  padding: 1.1rem 1.2rem;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
-  line-height: 1.45;
 }
 .resource-card:hover {
   transform: translateY(-3px);
