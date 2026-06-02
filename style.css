@@ -410,6 +410,10 @@ p {
   border-top: 2px solid #80d9ff;
 }
 
+#professionisti h2 {
+  text-align: center;
+}
+
 .team {
   display: flex;
   flex-wrap: wrap;
