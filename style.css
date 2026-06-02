@@ -1170,7 +1170,8 @@ textarea:focus-visible {
   margin-bottom: 1.25rem;
 }
 .filters input[type="search"] {
-  flex: 1 1 260px;
+  flex: 1 1 100%;
+  width: 100%;
   min-width: 220px;
   padding: 0.6rem 1rem;
   border: 1px solid #80D9FF;
@@ -1212,6 +1213,7 @@ textarea:focus-visible {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.25rem;
+  align-items: stretch;
 }
 .resource-card {
   background: #fff;
@@ -1222,6 +1224,7 @@ textarea:focus-visible {
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  height: 100%;
 }
 .resource-card:hover {
   transform: translateY(-3px);
@@ -1229,7 +1232,7 @@ textarea:focus-visible {
 }
 .resource-card .card-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 0.5rem;
 }
