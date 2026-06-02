@@ -176,15 +176,22 @@ function processFile(filePath) {
   content = content.replace(/<\/main>\s*\n\s*<\/footer>\s*/gi, '</main>\n');
   content = content.replace(/<\/main>\s*\n\s*(?:<\/div>\s*){1,6}/gi, '</main>\n');
 
+  // Catch junk stray closers that appear after page inline </script> but before cookie (seen in notizie etc)
+  content = content.replace(/<\/script>\s*<\/footer>\s*/gi, '</script>\n');
+  content = content.replace(/<\/script>\s*(?:<\/div>\s*){1,4}(?=\s*<div id=["']?cookie-banner)/gi, '</script>\n');
+
+  // Purge stray </footer> right before cookie banner (handles ws + comments in between)
+  content = content.replace(/\s*<\/footer>\s*(?=\s*<div id=["']?cookie-banner)/gi, '\n');
+
   // Remove full old footer blocks (defense in depth, before later remove)
   content = content.replace(/[\s\t]*<footer>[\s\S]*?<\/footer>\s*/gi, '');
 
   // Remove old header blocks early
   content = content.replace(/[\s\t]*<header class=["']?header["']?[^>]*>[\s\S]*?<\/header>\s*/gi, '');
 
-  // Robust cookie block removal (flexible on attrs/quotes, span banner+prefs, even if preceded by junk)
-  content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
-  content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
+  // Robust cookie block removal (flexible on attrs/quotes, span banner+prefs, even if preceded by junk closers from pollution)
+  content = content.replace(/(?:<\/div>\s*){0,4}<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
+  content = content.replace(/(?:<\/div>\s*){0,4}<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
   content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
   content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
 
