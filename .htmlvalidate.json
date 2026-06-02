@@ -13,6 +13,8 @@
     "no-raw-characters": "off",
     "empty-heading": "off",
     "hidden-focusable": "off",
-    "close-order": "warn"
+    "close-order": "warn",
+    "unique-landmark": "warn",
+    "no-dup-id": "warn"
   }
 }

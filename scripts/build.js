@@ -179,6 +179,22 @@ function processFile(filePath) {
   const newFooter = getFooterPartial(isEn, isHome);
   const newCookie = isEn ? COOKIE_EN : COOKIE_IT;
 
+  // === MULTI-PASS NUKE: ensure *zero* copies of our managed chrome before any insert.
+  // Repeat until stable so that even if previous bad state had 2-3 copies (causing dup ids),
+  // we start from a clean slate and insert exactly one.
+  const nuke = () => {
+    let changed = false;
+    const before = content;
+    content = content.replace(/<header class=["']?header["']?[^>]*>[\s\S]*?<\/header>/gi, '');
+    content = content.replace(/<footer>[\s\S]*?<\/footer>/gi, '');
+    content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>/gi, '');
+    content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>/gi, '');
+    content = content.replace(/<!--\s*(?:HEADER|FOOTER|COOKIE|BANNER).*?-->/gi, '');
+    if (content !== before) changed = true;
+    return changed;
+  };
+  while (nuke()) { /* repeat */ }
+
   // === AGGRESSIVE PRE-CLEANUP: purge pollution from past bad builds/sed (stray closers, misplaced chrome) ===
   // Strip stray </footer> and excess </div> right after </main> (these cause "stray end tag" + close-order errors)
   content = content.replace(/<\/main>\s*<\/footer>\s*/gi, '</main>\n');
@@ -241,11 +257,9 @@ function processFile(filePath) {
     cookieRefreshed = true;
   }
 
-  // Remove any remaining cookie UI blocks by ID or class (aggressive cleanup for polluted sources)
-  // Remove ALL instances of cookie UI blocks to prevent any duplicates from polluted sources
-  content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>/gi, '');
-  content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>/gi, '');
-  content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
+  // Note: we intentionally do *not* run broad "remove any remaining cookie" here after zone refresh,
+  // because it would nuke the zone we just put. The pre-cleanup and zone refresh are sufficient for normal cases;
+  // the fallback removeOld + insert below only run for !Refreshed components.
 
   // --- HEADER (top of body) ---
   if (!headerRefreshed) {
