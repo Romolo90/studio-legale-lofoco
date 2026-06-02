@@ -840,11 +840,14 @@ footer {
 }
 
 .dogecoin-footer img {
-  width: 28px;
-  height: 28px;
-  border-radius: 4px;
+  width: auto;
+  max-width: 42px;
+  height: auto;
+  max-height: 28px;
+  border-radius: 3px;
   opacity: 0.95;
   transition: transform 0.2s ease, opacity 0.2s ease;
+  object-fit: contain;
 }
 
 .dogecoin-footer:hover img {
@@ -953,8 +956,8 @@ footer {
     gap: 4px;
   }
   .dogecoin-footer img {
-    width: 22px;
-    height: 22px;
+    max-width: 32px;
+    max-height: 22px;
   }
   .profile-container {
     flex-direction: column;

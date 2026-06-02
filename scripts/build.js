@@ -67,12 +67,12 @@ function getFooterPartial(isEn, isHome) {
  */
 function removeOldCookie(content) {
   let changed = false;
-  const fullRe = /[\s\t]*<!--\s*(?:BANNER COOKIE|COOKIE BANNER|FINESTRINA PREFERENZE COOKIE|COOKIE PREFERENCES|FINE COOKIE BANNER)[^>]*-->[\s\S]*?<div id="cookie-preferences"[\s\S]*?<\/div>\s*/i;
+  const fullRe = /[\s\t]*<div id="cookie-banner"[\s\S]*?<div id="cookie-preferences"[\s\S]*?<\/div>\s*/i;
   if (fullRe.test(content)) {
     content = content.replace(fullRe, '');
     changed = true;
   }
-  const bannerOnlyRe = /[\s\t]*<!--\s*(?:BANNER COOKIE|COOKIE BANNER|FINESTRINA PREFERENZE COOKIE|COOKIE PREFERENCES|FINE COOKIE BANNER)[^>]*-->[\s\S]*?<div id="cookie-banner"[\s\S]*?<\/div>\s*(?:<!--[^>]*-->)?\s*/i;
+  const bannerOnlyRe = /[\s\t]*<div id="cookie-banner"[\s\S]*?<\/div>\s*(?:<!--[^>]*-->)?\s*/i;
   if (bannerOnlyRe.test(content)) {
     content = content.replace(bannerOnlyRe, '');
     changed = true;
@@ -81,18 +81,20 @@ function removeOldCookie(content) {
 }
 
 /**
- * Insert cookie after skip-link or <body>
+ * Insert cookie near the end of body (before scripts or </body>) so it doesn't appear "in alto" in source view.
+ * This is cleaner for view-source and avoids any perception of it being part of header.
  */
 function insertCookie(content, newCookie) {
-  const skipLinkRe = /(<a[^>]+class=["'][^"']*skip-link[^"']*["'][^>]*>[\s\S]*?<\/a>\s*)/i;
-  const bodyOpenRe = /(<body[^>]*>\s*)/i;
+  const scriptRe = /(<script src=["'][^"']*script(\.min)?\.js["'][^>]*>)/i;
+  const bodyCloseRe = /(\s*<\/body>)/i;
 
-  if (skipLinkRe.test(content)) {
-    return content.replace(skipLinkRe, `$1\n${newCookie}\n`);
-  } else if (bodyOpenRe.test(content)) {
-    return content.replace(bodyOpenRe, `$1\n${newCookie}\n`);
+  if (scriptRe.test(content)) {
+    return content.replace(scriptRe, `${newCookie}\n$1`);
+  } else if (bodyCloseRe.test(content)) {
+    return content.replace(bodyCloseRe, `\n${newCookie}\n$1`);
   }
-  return content;
+  // fallback append at end of body content
+  return content.replace(/<\/body>/i, `\n${newCookie}\n</body>`);
 }
 
 /**
@@ -165,6 +167,13 @@ function processFile(filePath) {
   const newHeader = getHeaderPartial(isEn, isHome);
   const newFooter = getFooterPartial(isEn, isHome);
   const newCookie = isEn ? COOKIE_EN : COOKIE_IT;
+
+  // Robust sanitization: clean artifacts from previous bad build runs (stray comments, duplicated blocks, concatenated tags)
+  content = content.replace(/<!--\s*.*?(MAIN|CONTENT).*?-->\s*<header class="header">/gi, '<header class="header">');
+  content = content.replace(/<!--\s*FINE COOKIE BANNER\s*-->/gi, '');
+  // Remove stray top-level duplicate cookie-buttons (common pollution)
+  content = content.replace(/<div class="cookie-buttons">\s*<button type="button" id="accept-cookies"[\s\S]*?Gestisci cookie<\/button>\s*<\/div>\s*<\/div>\s*(?=\s*<!--|<header|<main)/gi, '');
+  content = content.replace(/<div class="cookie-buttons">\s*<button type="button" id="accept-cookies"[\s\S]*?Gestisci cookie<\/button>\s*<\/div>\s*(?=\s*<!--|<header|<main)/gi, '');
 
   let changed = false;
 
