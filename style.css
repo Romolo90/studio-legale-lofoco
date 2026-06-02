@@ -593,6 +593,42 @@ p {
 }
 
 /* ========================================
+   CONTACT INFO (improved for harmony)
+======================================== */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem 1.5rem;
+  background: #f8fbff;
+  border: 1px solid #80d9ff;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0 1.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-info .ci-label {
+  display: block;
+  font-weight: 600;
+  color: #003366;
+  font-size: 0.78rem;
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.3px;
+}
+
+.contact-info a {
+  color: #005699;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+  color: #003366;
+  text-decoration: underline;
+}
+
+/* ========================================
    MAPPA
 ======================================== */
 .map-container {
