@@ -96,6 +96,8 @@
 
 
 
+
+
   <header class="header">
     <div class="logo">
       <h1>
@@ -171,7 +173,9 @@
       <div class="modal-body" id="modal-body"></div>
       <div class="modal-footer">
         Fonte ufficiale: <span id="modal-source"></span> — Verifica sempre i documenti originali sul sito della DG Cinema.
-</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Script Approfondimenti: dati ufficiali + rendering + filtri + modal -->
   <script>
@@ -230,7 +234,8 @@
           </div>
           <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
-          <div class="card-footer">Approfondisci
+          <div class="card-footer">Approfondisci</div>
+        </div>
 `).join('');
 
       container.querySelectorAll('.resource-card').forEach(card => {
@@ -332,6 +337,10 @@
 
 
   </div>
+
+
+
+
 
 
 
