@@ -217,6 +217,30 @@ function processFile(filePath) {
 
   // === END PRE-CLEANUP ===
 
+  // In-place zone refresh for chrome (preferred path for stability).
+  // If the markers (header class, footer tag, cookie ids) are present, we replace *only the zone content*
+  // with the fresh partial. This keeps the exact location, surrounding whitespace and file bytes
+  // outside the zone identical, so repeated builds on unchanged partials are true no-ops.
+  const headerZoneRe = /<header class=["']?header["']?[^>]*>[\s\S]*?<\/header>/i;
+  let headerRefreshed = false;
+  if (headerZoneRe.test(content)) {
+    content = content.replace(headerZoneRe, newHeader);
+    headerRefreshed = true;
+  }
+  const footerZoneRe = /<footer>[\s\S]*?<\/footer>/i;
+  let footerRefreshed = false;
+  if (footerZoneRe.test(content)) {
+    content = content.replace(footerZoneRe, newFooter);
+    footerRefreshed = true;
+  }
+  // Cookie zone: banner + prefs as a unit (tolerant)
+  const cookieZoneRe = /<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*(?:<\/div>)?/i;
+  let cookieRefreshed = false;
+  if (cookieZoneRe.test(content)) {
+    content = content.replace(cookieZoneRe, newCookie);
+    cookieRefreshed = true;
+  }
+
   // Remove any remaining cookie UI blocks by ID or class (aggressive cleanup for polluted sources)
   // Remove ALL instances of cookie UI blocks to prevent any duplicates from polluted sources
   content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>/gi, '');
@@ -224,28 +248,49 @@ function processFile(filePath) {
   content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
 
   // --- HEADER (top of body) ---
-  const headerResult = removeOldHeader(content);
-  content = headerResult.content;
+  if (!headerRefreshed) {
+    const headerResult = removeOldHeader(content);
+    content = headerResult.content;
 
-  content = insertHeader(content, newHeader);
+    content = insertHeader(content, newHeader);
+  }
 
   // --- FOOTER then COOKIE (bottom of body, before scripts; canonical order for stable inserts) ---
-  const footerResult = removeOldFooter(content);
-  content = footerResult.content;
+  if (!footerRefreshed) {
+    const footerResult = removeOldFooter(content);
+    content = footerResult.content;
 
-  content = insertFooter(content, newFooter);
+    content = insertFooter(content, newFooter);
+  }
 
-  const cookieResult = removeOldCookie(content);
-  content = cookieResult.content;
+  if (!cookieRefreshed) {
+    const cookieResult = removeOldCookie(content);
+    content = cookieResult.content;
 
-  content = insertCookie(content, newCookie);
+    content = insertCookie(content, newCookie);
+  }
 
   // Strip trailing whitespace (keeps sources clean, reduces html-validate no-trailing-whitespace noise)
   content = content.replace(/[ \t]+$/gm, '');
 
-  // Only write if the content actually changed (prevents spurious disk writes and git diffs
-  // when the chrome is already up-to-date with the current partials + sanitize rules).
-  // This makes repeated `node scripts/build.js` a no-op on a clean tree.
+  // Stabilize: re-apply the core remove+insert sequence a couple of times until the
+  // output stops changing. Some regex spans and insert order can produce intermediate
+  // ws/newlines; iterating reaches the fixed point so that a second build on the
+  // just-written file becomes a true no-op (content === originalContent).
+  for (let pass = 0; pass < 2; pass++) {
+    const before = content;
+    // re-do the bottom chrome nukes + inserts (header is top, less sensitive)
+    content = content.replace(/[\s\t]*<footer>[\s\S]*?<\/footer>\s*/gi, '');
+    content = content.replace(/(?:<\/div>\s*){0,4}<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
+    content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
+    content = insertFooter(content, newFooter);
+    content = insertCookie(content, newCookie);
+    content = content.replace(/[ \t]+$/gm, '');
+    if (content === before) break;
+  }
+
+  // Only write if the (stabilized) content actually differs from what was on disk.
+  // This makes repeated builds on an up-to-date tree a true no-op for the HTML files.
   if (content !== originalContent) {
     fs.writeFileSync(filePath, content, 'utf8');
     console.log('  ✓ Synced chrome (cookie+header+footer) in', filename);
