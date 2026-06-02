@@ -198,6 +198,8 @@ function processFile(filePath) {
     content = content.replace(/<button[^>]*id=["']?manage-cookies["']?[^>]*>[\s\S]*?<\/button>/gi, '');
     // extra specific for the persistent junk patterns seen in files
     content = content.replace(/<\/main><div class=["']?cookie-buttons["']?[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi, '</main>');
+    // collapse excessive blanks between inline script and insertion point (prevents visual/source space between main and footer on notizie etc)
+    content = content.replace(/(<\/script>)\n{3,}(?=\s*<footer>|<script src=["'][^"']*script)/gi, '$1\n\n');
     if (content !== before) changed = true;
     return changed;
   };
@@ -217,6 +219,10 @@ function processFile(filePath) {
   // Targeted cleanup for repeated lone stray </div> blocks between in-page scripts and footer (pollution from notizie/index past edits)
   content = content.replace(/<\/script>[\s\S]{0,2000}?((?:\s*<\/div>\s*){2,})[\s\S]{0,500}?(?=<footer>)/gi, '</script>\n$1'); // temp marker, will strip below
   content = content.replace(/(<script src=["'][^"']*script[^"']*["']>[\s\S]*?<\/script>)\s*(?:<\/div>\s*){2,}/gi, '$1\n');
+  // Collapse any excessive blank lines / whitespace between end of inline page script and the insertion point (footer/cookie before external script.js)
+  content = content.replace(/(<\/script>)\n{3,}(?=\s*<footer>)/gi, '$1\n\n');
+  content = content.replace(/(<\/script>)\n{3,}(?=\s*<script src=["'][^"']*script)/gi, '$1\n\n');
+  content = content.replace(/(<\/script>)\s*\n+\s*(?=<footer>|<script src=["'][^"']*script)/gi, '$1\n\n');
 
   // Purge stray </footer> right before cookie banner (handles ws + comments in between)
   content = content.replace(/\s*<\/footer>\s*(?=\s*<div id=["']?cookie-banner)/gi, '\n');

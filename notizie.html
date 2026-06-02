@@ -104,6 +104,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   <header class="header">
     <div class="logo">
       <h1>
@@ -155,7 +167,7 @@
         <button type="button"  class="filter-btn" data-filter="contributi-selettivi">Contributi Selettivi</button>
         <button type="button"  class="filter-btn" data-filter="ue-media">UE / MEDIA</button>
         <button type="button"  class="filter-btn" data-filter="normativa">Normativa</button>
-      </div>
+
       <div class="resources-grid" id="resources-grid" aria-live="polite"></div>
       <p class="disclaimer">Queste schede sintetizzano informazioni pubbliche ufficiali. Non costituiscono parere legale. Per valutazioni operative, contatta lo studio o fai riferimento ai provvedimenti integrali.</p>
     </section>
@@ -166,7 +178,7 @@
       <a href="verifica-incentivi.html" class="filter-btn" style="text-decoration:none; display:inline-block; padding:0.55rem 1.2rem; font-size:0.95rem;">Vai a Verifica Incentivi →</a>
       <p style="margin:0.6rem 0 0.6rem; font-size:0.95rem;"><strong>Richiedi una consulenza mirata sugli incentivi</strong></p>
       <a href="index.html#contatti" class="filter-btn" style="text-decoration:none; display:inline-block; padding:0.55rem 1.2rem; font-size:0.95rem;">Contattaci →</a>
-    </div>
+
   </main>
 
   <!-- MODAL for resource details -->
@@ -175,13 +187,13 @@
       <div class="modal-header">
         <h2 id="modal-title"></h2>
         <button type="button"  class="modal-close" aria-label="Chiudi">&times;</button>
-      </div>
+
       <div class="modal-body" id="modal-body"></div>
       <div class="modal-footer">
         Fonte ufficiale: <span id="modal-source"></span> — Verifica sempre i documenti originali sul sito della DG Cinema.
-      </div>
-    </div>
-  </div>
+
+
+
 
   <!-- Script Approfondimenti: dati ufficiali + rendering + filtri + modal -->
   <script>
@@ -237,11 +249,11 @@
         <div class="resource-card" data-id="${a.id}" tabindex="0" role="button" aria-label="Apri dettaglio: ${a.title}">
           <div class="card-header">
             <span class="category-tag">${a.category.replace('-', ' ')}</span>
-          </div>
+
           <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
           <div class="card-footer">Approfondisci</div>
-        </div>
+
 `).join('');
 
       container.querySelectorAll('.resource-card').forEach(card => {
@@ -326,52 +338,6 @@
       });
   </script>
 
-  <!-- Script principale (cookie, hamburger, etc.) -->
-
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <footer>
     <div class="footer-left">
@@ -416,4 +382,3 @@
   </div>
 
 <script src="script.js"></script></body>
-</html>
