@@ -30,19 +30,26 @@ jobs:
       - name: Check for broken internal links (basic)
         run: |
           echo "Basic link check (consider adding lychee or htmlproofer in future)"
-          # Only check relative .html links (skip http/https absolute ones)
+          # Robust extraction: -h suppresses "filename:" prefix from multi-file grep; only .html hrefs
+          # Then clean: strip attrs, take up to # or ?, drop leading ./ or /
           broken=0
-          for raw in $(grep -o 'href="[^"]*\.html[^"]*"' *.html | sed 's/href="//;s/".*//'); do
-            link=$(echo "$raw" | cut -d'#' -f1)  # strip fragment
-            if [[ "$link" =~ ^https?:// ]]; then
+          while IFS= read -r raw || [ -n "$raw" ]; do
+            # raw is the href value e.g. foo.html or https://.../bar.html or index.html#foo
+            link=$(echo "$raw" | cut -d'#' -f1 | cut -d'?' -f1 | sed 's#^/##; s#^\./##')
+            if [ -z "$link" ]; then continue; fi
+            if [[ "$link" =~ ^https?:// ]] || [[ "$link" == "//"* ]] || [[ "$link" == javascript:* ]]; then
               continue
             fi
-            if [ ! -f "$link" ] && [ "$link" != "index.html" ]; then
-              echo "Broken relative link: $link"; broken=1;
+            if [ ! -f "$link" ]; then
+              echo "Broken relative link: $link"
+              broken=1
             fi
-          done
-          if [ $broken -eq 1 ]; then exit 1; fi
-          echo "No broken relative internal .html links found"
+          done < <(grep -h -o 'href="[^"]*\.html[^"]*"' *.html | sed 's/href="//; s/".*//')
+          if [ $broken -eq 1 ]; then
+            echo "❌ Broken internal links found (see above). Fix hrefs or add missing files."
+            exit 1
+          fi
+          echo "✅ No broken relative internal .html links found"
 
       - name: Summary
         run: echo "✅ CI checks passed for Studio Legale Lo Foco site (validate + full prod build + links)"

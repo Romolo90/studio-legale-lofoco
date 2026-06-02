@@ -168,17 +168,42 @@ function processFile(filePath) {
   const newFooter = getFooterPartial(isEn, isHome);
   const newCookie = isEn ? COOKIE_EN : COOKIE_IT;
 
-  // Robust sanitization: clean artifacts from previous bad build runs (stray comments, duplicated blocks, concatenated tags)
+  // === AGGRESSIVE PRE-CLEANUP: purge pollution from past bad builds/sed (stray closers, misplaced chrome) ===
+  // Strip stray </footer> and excess </div> right after </main> (these cause "stray end tag" + close-order errors)
+  content = content.replace(/<\/main>\s*<\/footer>\s*/gi, '</main>\n');
+  content = content.replace(/<\/main>\s*(?:<\/div>\s*){1,6}/gi, '</main>\n');
+  // Also catch cases with newlines/ws variations after main before stray closers
+  content = content.replace(/<\/main>\s*\n\s*<\/footer>\s*/gi, '</main>\n');
+  content = content.replace(/<\/main>\s*\n\s*(?:<\/div>\s*){1,6}/gi, '</main>\n');
+
+  // Remove full old footer blocks (defense in depth, before later remove)
+  content = content.replace(/[\s\t]*<footer>[\s\S]*?<\/footer>\s*/gi, '');
+
+  // Remove old header blocks early
+  content = content.replace(/[\s\t]*<header class=["']?header["']?[^>]*>[\s\S]*?<\/header>\s*/gi, '');
+
+  // Robust cookie block removal (flexible on attrs/quotes, span banner+prefs, even if preceded by junk)
+  content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
+  content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
+  content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>\s*/gi, '');
+  content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
+
+  // Strip leftover cookie / banner comments (various languages)
+  content = content.replace(/<!--\s*(?:COOKIE|BANNER| PREFERENZE| FINESTRINA|END COOKIE).*?-->/gi, '');
+
+  // Legacy comment concat artifacts
   content = content.replace(/<!--\s*.*?(MAIN|CONTENT).*?-->\s*<header class="header">/gi, '<header class="header">');
   content = content.replace(/<!--\s*(?:FINE|END).*?COOKIE.*?(?:BANNER)?\s*-->/gi, '');
   content = content.replace(/<!--\s*(?:COOKIE BANNER| BANNER COOKIE).*?-->/gi, '');
+  content = content.replace(/<!--\s*(?:COOKIE|BANNER).*?-->/gi, '');
+
+  // === END PRE-CLEANUP ===
+
   // Remove any remaining cookie UI blocks by ID or class (aggressive cleanup for polluted sources)
   // Remove ALL instances of cookie UI blocks to prevent any duplicates from polluted sources
   content = content.replace(/<div[^>]*id=["']?cookie-banner["']?[^>]*>[\s\S]*?<\/div>/gi, '');
   content = content.replace(/<div[^>]*id=["']?cookie-preferences["']?[^>]*>[\s\S]*?<\/div>/gi, '');
   content = content.replace(/<div[^>]*class=["'][^"']*cookie-buttons[^"']*["'][^>]*>[\s\S]*?<\/div>/gi, '');
-  // Also strip any leftover cookie comments
-  content = content.replace(/<!--\s*(?:COOKIE|BANNER).*?-->/gi, '');
 
   let changed = false;
 
@@ -205,6 +230,9 @@ function processFile(filePath) {
 
   content = insertFooter(content, newFooter);
   changed = true;
+
+  // Strip trailing whitespace (keeps sources clean, reduces html-validate no-trailing-whitespace noise)
+  content = content.replace(/[ \t]+$/gm, '');
 
   if (changed) {
     fs.writeFileSync(filePath, content, 'utf8');
