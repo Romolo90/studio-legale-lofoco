@@ -235,6 +235,47 @@ function main() {
   }
   console.log(`  ✓ Asset references normalized in ${refsUpdated} file(s) (${production ? 'minified' : 'full'})`);
 
+  // Production build: create a self-contained dist/ folder ready for deploy
+  if (production) {
+    const distDir = path.join(ROOT, 'dist');
+    if (fs.existsSync(distDir)) {
+      fs.rmSync(distDir, { recursive: true, force: true });
+    }
+    fs.mkdirSync(distDir, { recursive: true });
+
+    console.log('\nCreating production dist/ folder...');
+
+    // Copy all HTML (now pointing to .min)
+    for (const f of htmlFiles) {
+      fs.copyFileSync(path.join(ROOT, f), path.join(distDir, f));
+    }
+
+    // Copy essential assets (images, pdf, data, favicon, manifest, etc.)
+    const assetsToCopy = [
+      'image', 'pdf', 'data', 'favicon.svg', 'manifest.json', 
+      'robots.txt', 'sitemap.xml', 'ads.txt', 'CNAME'
+    ];
+    for (const asset of assetsToCopy) {
+      const src = path.join(ROOT, asset);
+      const dest = path.join(distDir, asset);
+      if (fs.existsSync(src)) {
+        if (fs.statSync(src).isDirectory()) {
+          fs.cpSync(src, dest, { recursive: true });
+        } else {
+          fs.copyFileSync(src, dest);
+        }
+      }
+    }
+
+    // Explicitly copy the minified files (they are normally gitignored)
+    const minCss = path.join(ROOT, 'style.min.css');
+    const minJs = path.join(ROOT, 'script.min.js');
+    if (fs.existsSync(minCss)) fs.copyFileSync(minCss, path.join(distDir, 'style.min.css'));
+    if (fs.existsSync(minJs)) fs.copyFileSync(minJs, path.join(distDir, 'script.min.js'));
+
+    console.log('  ✓ dist/ folder created with minified assets. Ready to deploy (e.g. upload dist/ or point your host to it).');
+  }
+
   console.log(`\nDone. Updated ${updated} file(s).`);
   if (!production) {
     console.log('Tip: edit only files inside partials/, then run `npm run build:html` before deploying.');

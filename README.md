@@ -44,10 +44,12 @@ npm run dev   # python http.server su :8000 (apri http://localhost:8000)
 - `npm run validate:html` – html-validate (molti warning sono preferenze style).
 - `npm run lint:css` – stylelint (richiede config).
 - `npm run format` – prettier.
-- `npm run build:html` – sincronizza i partials (cookie, header, footer in futuro) dentro tutte le pagine HTML.
-- `npm run build` – build:html + minify.
-- `npm run minify` – genera .min (non ancora linkati nei html; opzionale per prod).
+- `npm run build:html` – sincronizza i partials (cookie, header, footer) dentro tutte le pagine HTML della root. Usa questo per sviluppo.
+- `npm run build` – **produzione**: sincronizza partials + minifica + crea cartella `dist/` completa con riferimenti a `style.min.css` + `script.min.js` + tutti gli asset. **Usa questo prima del deploy**.
+- `npm run minify` – genera solo i file .min.
 - Ottimizza immagini: `sips -Z 800 --setProperty formatOptions 75 image/foo.JPG --out image/foo-opt.jpg` (su macOS).
+
+**Deploy**: esegui `npm run build`, poi carica la cartella `dist/` sul tuo hosting (Cloudflare Pages, GitHub Pages, ecc.). La `dist/` è self-contained e non va committata (è in .gitignore).
 
 ## Deploy
 Il sito è online su https://studiolegalelofoco.com (Cloudflare + custom domain da GitHub?).
