@@ -25,8 +25,8 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" href="image/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="image/favicon.png">
+  <link rel="icon" href="image/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#003366">
 
@@ -296,52 +296,60 @@
 <body>
   <!-- Skip link -->
   <a href="#main" class="skip-link">Salta al contenuto</a>
-
-  <!-- COOKIE BANNER -->
+  <!-- BANNER COOKIE -->
   <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
-        Utilizziamo cookie per migliorare la tua esperienza. Consulta la nostra 
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra 
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
     <div class="cookie-buttons">
-      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
-      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+      <button type="button" id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header class="header">
+  <!-- FINESTRINA PREFERENZE COOKIE -->
+  <div id="cookie-preferences" class="hidden">
+    <h2>Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" checked />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+    </form>
+  </div>  <header class="header">
     <div class="logo">
-      <h1 class="home-link">
-        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      <h1>
+        <a href="index.html" class="home-link" aria-label="Torna alla homepage">
+          Studio Legale Lo Foco
+        </a>
       </h1>
     </div>
-    <div class="language-selector">
-      <strong>IT</strong> | <a href="verifica-incentivi-en.html">EN</a>
-    </div>
-    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
+
     <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
       <ul>
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
         <li><a href="index.html#servizi">Servizi</a></li>
         <li><a href="index.html#contatti">Contatti</a></li>
         <li><a href="notizie.html">Approfondimenti</a></li>
-        <li><a href="verifica-incentivi.html" aria-current="page">Verifica Incentivi</a></li>
+        <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
-        <li class="mobile-language">
-          <strong>IT</strong> | <a href="verifica-incentivi-en.html">EN</a>
-        </li>
       </ul>
     </nav>
   </header>
 
-  <main id="main">
+<main id="main">
     <!-- HERO -->
     <div class="tool-hero">
       <h1>Verifica la tua idoneità agli incentivi</h1>
@@ -354,7 +362,7 @@
       </div>
 
       <p style="font-size: 0.9rem; color: #555; margin: -0.25rem 0 1.25rem;">
-        <strong>Regole aggiornate al:</strong> 31 maggio 2026
+        <strong>Regole aggiornate al:</strong> 31 giugno 2026
       </p>
 
       <form id="incentives-form" class="questions-form" novalidate>
@@ -466,8 +474,6 @@
       </div>
     </div>
   </main>
-
-  <!-- FOOTER -->
   <footer>
     <div class="footer-left">
       <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
@@ -483,7 +489,7 @@
     <div class="footer-right"></div>
   </footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 
   <script>
     // Simple but realistic client-side eligibility engine
@@ -674,6 +680,5 @@
 
     // Keyboard accessibility for form
     console.log('%c[Studio Legale Lo Foco] Verifica Incentivi (IT) tool initialized', 'color:#80D9FF');
-  </script>
-</body>
+  </script></body>
 </html>

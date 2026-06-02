@@ -8,10 +8,11 @@
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="51wEWZyeAC4zXDQtdgKSzFiO8j2Xrseyu2j_h4EJC44" />
   
-  <!-- Favicons -->
+  <!-- Favicons & PWA icons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="alternate icon" href="image/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="image/favicon.png">
+  <link rel="icon" href="image/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="image/icon-512.png">
 
   <!-- Web App Manifest -->
   <link rel="manifest" href="manifest.json">
@@ -89,34 +90,23 @@
 
 </head>
 <body>
-  <!-- BANNER COOKIE -->
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-      <p>
-        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
-        Per saperne di più, consulta la nostra 
-        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
-      </p>
-    </div>
-    <div class="cookie-buttons">
-      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
-      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
-    </div>
-  </div>
-
-  <!-- FINESTRINA PREFERENZE COOKIE -->
-  <div id="cookie-preferences" class="hidden">
-    <h2>Preferenze Cookie</h2>
-    <form>
-      <label>
-        <input type="checkbox" name="cookieType" value="analitici" checked />
-        Cookie analitici (Google Analytics)
-      </label>
-      <button id="save-preferences" type="button">Salva preferenze</button>
-    </form>
-  </div>
-
-  <!-- HEADER -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <header class="header">
     <div class="logo">
       <h1 class="home-link">
@@ -128,7 +118,7 @@
       <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
     </div>
     <!-- Hamburger menu (mobile) -->
-    <button class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
       <span></span>
@@ -149,7 +139,32 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+<!-- BANNER COOKIE -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra 
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button type="button" id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <!-- FINESTRINA PREFERENZE COOKIE -->
+  <div id="cookie-preferences" class="hidden">
+    <h2>Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" checked />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+    </form>
+  </div><!-- HERO -->
   <section class="hero" aria-label="Introduzione">
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
@@ -221,42 +236,42 @@
     
     <div class="accordion">
       <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">Diritto d'autore</button>
+        <button type="button" class="accordion-header" aria-expanded="false">Diritto d'autore</button>
         <div class="accordion-content">
           <p>Gestione e tutela dei diritti sulle opere audiovisive, editoriali e dello spettacolo, con particolare attenzione alla contrattualistica di produzione e distribuzione.</p>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">Diritto amministrativo</button>
+        <button type="button" class="accordion-header" aria-expanded="false">Diritto amministrativo</button>
         <div class="accordion-content">
           <p>Assistenza in procedimenti davanti alla Pubblica Amministrazione, contenzioso con enti pubblici e accesso ai finanziamenti e incentivi nel settore culturale.</p>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">Progetti culturali</button>
+        <button type="button" class="accordion-header" aria-expanded="false">Progetti culturali</button>
         <div class="accordion-content">
           <p>Supporto legale per la realizzazione di progetti culturali, dalla strutturazione contrattuale alla gestione dei rapporti con partner, enti e finanziatori.</p>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">Proprietà intellettuale</button>
+        <button type="button" class="accordion-header" aria-expanded="false">Proprietà intellettuale</button>
         <div class="accordion-content">
           <p>Tutela di marchi, opere e diritti connessi, con particolare attenzione alla registrazione, difesa e valorizzazione dei diritti nel mercato audiovisivo e culturale.</p>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">Diritto d'immagine e dello spettacolo</button>
+        <button type="button" class="accordion-header" aria-expanded="false">Diritto d'immagine e dello spettacolo</button>
         <div class="accordion-content">
           <p>Consulenza e tutela per la gestione dei diritti di immagine, contratti di ingaggio e rapporti tra artisti, produzioni e piattaforme.</p>
         </div>
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">Diritti connessi</button>
+        <button type="button" class="accordion-header" aria-expanded="false">Diritti connessi</button>
         <div class="accordion-content">
           <p>Tutela e gestione dei diritti degli artisti interpreti, produttori fonografici ed editori, con focus sulla distribuzione e monetizzazione dei contenuti.</p>
         </div>
@@ -316,7 +331,7 @@
     </iframe>
   </section>
 
-  <!-- FOOTER -->
+  <!-- JavaScript -->
   <footer>
     <div class="footer-left">
       <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
@@ -330,16 +345,12 @@
       </p>
     </div>
     <div class="footer-right">
-      <a href="https://dogecoin.com" target="_blank" rel="noopener noreferrer" class="dogecoin-footer">
-        <img src="image/accettiamo-dogecoin.PNG" alt="Accettiamo Dogecoin">
+      <a href="https://dogecoin.com" target="_blank" rel="noopener noreferrer" class="dogecoin-footer" title="Accettiamo pagamenti in Dogecoin">
+        <img src="image/dogecoin-badge.png" alt="Dogecoin" width="56" height="56">
+        <span class="dogecoin-label">Accettiamo Dogecoin</span>
       </a>
     </div>
   </footer>
 
-  <!-- Pulsante "Torna su" -->
-  <button id="scrollToTop" class="scroll-to-top" aria-label="Torna all'inizio della pagina">&#8593;</button>
-
-  <!-- JavaScript -->
-  <script src="script.js"></script>
-</body>
+<script src="script.js"></script></body>
 </html>

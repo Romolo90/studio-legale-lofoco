@@ -32,36 +32,49 @@
 <body>
   <!-- Skip link -->
   <a href="#main" class="skip-link">Salta al contenuto</a>
-
-  <!-- COOKIE BANNER -->
+  <!-- BANNER COOKIE -->
   <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
-        Utilizziamo cookie per migliorare la tua esperienza. Consulta la nostra 
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra 
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
     <div class="cookie-buttons">
-      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
-      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+      <button type="button" id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
     </div>
   </div>
 
-  <!-- HEADER (consistent with main site) -->
-  <header class="header">
+  <!-- FINESTRINA PREFERENZE COOKIE -->
+  <div id="cookie-preferences" class="hidden">
+    <h2>Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" checked />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+    </form>
+  </div>
+
+<!-- HEADER (consistent with main site) -->  <header class="header">
     <div class="logo">
-      <h1 class="home-link">
-        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      <h1>
+        <a href="index.html" class="home-link" aria-label="Torna alla homepage">
+          Studio Legale Lo Foco
+        </a>
       </h1>
     </div>
-    <div class="language-selector">
-      <strong>IT</strong> | <a href="cookie-policy-en.html">EN</a>
-    </div>
-    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
+
     <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
       <ul>
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
@@ -70,16 +83,13 @@
         <li><a href="notizie.html">Approfondimenti</a></li>
         <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
-        <li class="mobile-language">
-          <strong>IT</strong> | <a href="cookie-policy-en.html">EN</a>
-        </li>
       </ul>
     </nav>
   </header>
 
-  <main id="main" class="legal-content">
+<main id="main" class="legal-content">
     <h1>Cookie Policy</h1>
-    <p class="last-update"><strong>Ultimo aggiornamento:</strong> 27 maggio 2026</p>
+    <p class="last-update"><strong>Ultimo aggiornamento:</strong> 27 giugno 2026</p>
 
     <p>
       Questa Cookie Policy spiega quali cookie e tecnologie simili utilizziamo sul nostro sito web 
@@ -138,8 +148,6 @@
       <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
     </p>
   </main>
-
-  <!-- FOOTER -->
   <footer>
     <div class="footer-left">
       <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
@@ -155,6 +163,5 @@
     <div class="footer-right"></div>
   </footer>
 
-  <script src="script.js"></script>
-</body>
+<script src="script.js"></script></body>
 </html>

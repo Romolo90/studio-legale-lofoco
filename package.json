@@ -12,7 +12,8 @@
     "validate:html": "npx html-validate '*.html'",
     "lint:css": "npx stylelint '*.css'",
     "format": "npx prettier --write '*.{html,css,js,json,md}'",
-    "build": "npm run minify && echo 'Build complete!'"
+    "build:html": "node scripts/build.js",
+    "build": "npm run build:html -- --prod && npm run minify && echo 'Build complete! (production assets)'"
   },
   "keywords": [
     "law",

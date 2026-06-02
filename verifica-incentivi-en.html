@@ -25,8 +25,8 @@
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" href="image/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="image/favicon.png">
+  <link rel="icon" href="image/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#003366">
 
@@ -296,52 +296,63 @@
 <body>
   <!-- Skip link -->
   <a href="#main" class="skip-link">Skip to content</a>
-
   <!-- COOKIE BANNER -->
   <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
-        We use cookies to improve your experience. Please review our 
+        We use cookies and similar technologies to improve your browsing experience.
+        For more information, see our 
         <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
     <div class="cookie-buttons">
-      <button id="accept-cookies" class="btn-cookie">Accept All</button>
-      <button id="manage-cookies" class="btn-cookie btn-secondary">Manage Cookies</button>
+      <button type="button" id="accept-cookies" class="btn-cookie">Accept all</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Manage cookies</button>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header class="header">
+  <!-- COOKIE PREFERENCES -->
+  <div id="cookie-preferences" class="hidden">
+    <h2>Cookie Preferences</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analytical" checked />
+        Analytical cookies (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Save preferences</button>
+    </form>
+  </div>  <header class="header">
     <div class="logo">
-      <h1 class="home-link">
-        <a href="index-en.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      <h1>
+        <a href="index.html" class="home-link" aria-label="Back to homepage">
+          Studio Legale Lo Foco
+        </a>
       </h1>
     </div>
-    <div class="language-selector">
-      <a href="verifica-incentivi.html">IT</a> | <strong>EN</strong>
-    </div>
-    <div class="hamburger" id="hamburgerMenu" aria-label="Open/Close Menu">
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Open/close menu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
+
     <nav class="main-nav" id="mainNav" aria-label="Main Menu">
       <ul>
-        <li><a href="index-en.html#about-us">About Us</a></li>
-        <li><a href="index-en.html#services">Services</a></li>
-        <li><a href="index-en.html#contact">Contact</a></li>
+        <li><a href="index.html#chi-siamo">About Us</a></li>
+        <li><a href="index.html#servizi">Services</a></li>
+        <li><a href="index.html#contatti">Contact</a></li>
         <li><a href="notizie-en.html">Insights</a></li>
-        <li><a href="verifica-incentivi-en.html" aria-current="page">Incentives Checker</a></li>
+        <li><a href="verifica-incentivi-en.html">Incentives Checker</a></li>
         <li><a href="area-clienti-en.html">Client Area</a></li>
         <li class="mobile-language">
-          <a href="verifica-incentivi.html">IT</a> | <strong>EN</strong>
+          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
         </li>
       </ul>
     </nav>
   </header>
 
-  <main id="main">
+<main id="main">
     <!-- HERO -->
     <div class="tool-hero">
       <h1>Check your project's eligibility for incentives</h1>
@@ -466,8 +477,6 @@
       </div>
     </div>
   </main>
-
-  <!-- FOOTER -->
   <footer>
     <div class="footer-left">
       <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
@@ -475,7 +484,7 @@
       </a>
     </div>
     <div class="footer-center">
-      <p>&copy; 2026 Studio Legale Lo Foco - All Rights Reserved</p>
+      <p>&copy; 2026 Studio Legale Lo Foco - All rights reserved</p>
       <p class="footer-note">
         <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a>
       </p>
@@ -483,7 +492,7 @@
     <div class="footer-right"></div>
   </footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 
   <script>
     // Simple but realistic client-side eligibility engine (EN)
@@ -673,6 +682,5 @@
     }
 
     console.log('%c[Studio Legale Lo Foco] Incentives Checker (EN) tool initialized', 'color:#80D9FF');
-  </script>
-</body>
+  </script></body>
 </html>

@@ -8,8 +8,8 @@
 
   <!-- Favicons & Manifest -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" href="image/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="image/favicon.png">
+  <link rel="icon" href="image/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#003366">
 
@@ -120,36 +120,47 @@
 <body>
   <!-- Skip link -->
   <a href="#main" class="skip-link">Salta al contenuto</a>
-
-  <!-- COOKIE BANNER -->
+  <!-- BANNER COOKIE -->
   <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">
       <p>
-        Utilizziamo cookie per migliorare la tua esperienza. Consulta la nostra 
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra 
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
     <div class="cookie-buttons">
-      <button id="accept-cookies" class="btn-cookie">Accetta tutti</button>
-      <button id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+      <button type="button" id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
     </div>
   </div>
 
-  <!-- STANDARD SITE HEADER -->
-  <header class="header">
+  <!-- FINESTRINA PREFERENZE COOKIE -->
+  <div id="cookie-preferences" class="hidden">
+    <h2>Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" checked />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+    </form>
+  </div>  <header class="header">
     <div class="logo">
-      <h1 class="home-link">
-        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      <h1>
+        <a href="index.html" class="home-link" aria-label="Torna alla homepage">
+          Studio Legale Lo Foco
+        </a>
       </h1>
     </div>
-    <div class="language-selector">
-      <strong>IT</strong> | <a href="area-clienti-en.html">EN</a>
-    </div>
-    <div class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
+
     <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
       <ul>
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
@@ -158,21 +169,11 @@
         <li><a href="notizie.html">Approfondimenti</a></li>
         <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
-        <li class="mobile-language">
-          <strong>IT</strong> | <a href="area-clienti-en.html">EN</a>
-        </li>
       </ul>
     </nav>
   </header>
 
-  <!-- IN SVILUPPO BANNER -->
-  <div class="area-clienti-main">
-    <div class="in-development-banner">
-      <strong>Sezione in fase di sviluppo</strong> — Questa è attualmente una preview dell’Area Clienti riservata. 
-      Per accedere ai documenti e alle informazioni relative alle tue pratiche, contatta lo studio.
-    </div>
-  </div>
-  <main>
+<main>
     <section id="login-section">
       <div class="card">
         <h2>🔐 Area Clienti</h2>
@@ -196,6 +197,14 @@
       </div>
     </section>
     <section id="dashboard-section">
+      <!-- Logged-in client bar (demo) -->
+      <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; border:1px solid #80d9ff; border-radius:8px; padding:0.6rem 1rem; margin-bottom:1rem;">
+        <div>
+          <strong id="user-name-header" style="color:#003366; display:none;">Cliente</strong>
+        </div>
+        <button type="button" id="btn-logout" class="btn-details" style="display:none; padding:0.4rem 1rem; font-size:0.9rem;" onclick="logout()">Esci</button>
+      </div>
+
       <div class="welcome-banner">
         <div>
           <h1 id="welcome-name">Benvenuto</h1>
@@ -240,110 +249,216 @@
     <div class="footer-right"></div>
   </footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
   <script>
-    // Original dashboard logic (kept as-is for now)
-    const API_BASE = 'https://api.studiolegalelofoco.com/api';
-    let authToken = null;
+    // =====================================================
+    // DEMO INTERATTIVA Area Clienti (self-contained)
+    // Niente chiamate a backend reali — perfetta per preview
+    // Credenziali demo: demo / demo2026   oppure   cliente / lofoco
+    // =====================================================
+
+    let currentUser = null;
+
+    // Mock data realistico per uno studio legale cinema/audiovisivo
+    const MOCK = {
+      pratiche: [
+        { numero_interno: 'PR-2025-0842', oggetto: 'Lungometraggio "Le Ombre del Lago" – Tax Credit produzione', tipo: 'Tax Credit', sottotipo: 'Produzione fiction', avvocato_cognome: 'Lo Foco', data_apertura: '2025-09-12', stato: 'In istruttoria' },
+        { numero_interno: 'PR-2026-0117', oggetto: 'Serie TV "Roma Antica" – Contributi selettivi + Tax Credit', tipo: 'Contributi selettivi', sottotipo: 'Serie TV', avvocato_cognome: 'Maiga', data_apertura: '2026-02-03', stato: 'Approvata' },
+        { numero_interno: 'PR-2026-0199', oggetto: 'Documentario "La Città Invisibile" – Contrattualistica internazionale', tipo: 'Contrattualistica', sottotipo: 'Coproduzione', avvocato_cognome: 'Lo Foco', data_apertura: '2026-04-18', stato: 'In lavorazione' }
+      ],
+      documenti: [
+        { titolo: 'Decreto di riconoscimento Tax Credit – Le Ombre del Lago', tipo: 'Decreto', pratica_numero: 'PR-2025-0842', created_at: '2026-05-10', file: 'pdf/articolo1.pdf' },
+        { titolo: 'Contratto di coproduzione Italia-Francia', tipo: 'Contratto', pratica_numero: 'PR-2026-0199', created_at: '2026-05-22', file: 'pdf/articolo2.pdf' },
+        { titolo: 'Relazione tecnica eleggibilità culturale', tipo: 'Relazione', pratica_numero: 'PR-2026-0117', created_at: '2026-04-28', file: 'pdf/articolo3.pdf' }
+      ],
+      fatture: [
+        { numero_fattura: 'F-2026-031', anno: '2026', pratica_oggetto: 'Le Ombre del Lago', data_emissione: '2026-03-15', data_scadenza: '2026-04-15', totale_documento: 12500, netto_a_pagare: 10250, stato: 'Pagata' },
+        { numero_fattura: 'F-2026-058', anno: '2026', pratica_oggetto: 'Roma Antica – Fase sviluppo', data_emissione: '2026-05-20', data_scadenza: '2026-06-20', totale_documento: 4800, netto_a_pagare: 4800, stato: 'In scadenza' }
+      ],
+      scadenze: [
+        { data_scadenza: '2026-06-15', titolo: 'Scadenza presentazione domanda Tax Credit attrazione investimenti', pratica_numero: 'PR-2026-0117', stato: 'Urgente' },
+        { data_scadenza: '2026-07-30', titolo: 'Deposito contratto distribuzione piattaforma', pratica_numero: 'PR-2025-0842', stato: 'In programma' },
+        { data_scadenza: '2026-09-10', titolo: 'Rendicontazione finale contributi selettivi', pratica_numero: 'PR-2026-0117', stato: 'In programma' }
+      ]
+    };
+
     window.addEventListener('DOMContentLoaded', () => {
-      const saved = sessionStorage.getItem('cl_token');
       const savedName = sessionStorage.getItem('cl_nome');
-      if (saved) { authToken = saved; showDashboard(savedName || 'Cliente'); }
+      if (savedName) {
+        showDashboard(savedName);
+      }
+
+      // Hint nel form per la demo
+      const form = document.getElementById('login-form');
+      if (form) {
+        form.insertAdjacentHTML('beforeend',
+          '<p style="font-size:0.8rem; color:#667; margin-top:0.75rem; text-align:center;">Demo: <strong>demo</strong> / <strong>demo2026</strong> &nbsp;·&nbsp; <strong>cliente</strong> / <strong>lofoco</strong></p>');
+      }
     });
-    async function handleLogin(e) {
+
+    function handleLogin(e) {
       e.preventDefault();
       const btn = document.getElementById('btn-login');
       const errEl = document.getElementById('login-error');
-      const username = document.getElementById('username').value.trim();
+      const username = document.getElementById('username').value.trim().toLowerCase();
       const password = document.getElementById('password').value;
-      btn.disabled = true; btn.textContent = 'Accesso in corso...'; errEl.style.display = 'none';
-      try {
-        const res = await fetch(API_BASE + '/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
-        const data = await res.json();
-        if (!res.ok || !data.success) throw new Error(data.error || 'Credenziali non valide');
-        if (data.data.user.ruolo !== 'cliente') throw new Error('Questo portale è riservato ai clienti dello studio.');
-        authToken = data.data.accessToken;
-        const nome = data.data.user.nome + ' ' + data.data.user.cognome;
-        sessionStorage.setItem('cl_token', authToken); sessionStorage.setItem('cl_nome', nome);
-        showDashboard(nome);
-      } catch (err) { errEl.textContent = err.message; errEl.style.display = 'block'; btn.disabled = false; btn.textContent = 'Accedi'; }
+
+      errEl.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Accesso in corso...';
+
+      // Credenziali demo (case-insensitive su username)
+      const valid = (username === 'demo' && password === 'demo2026') ||
+                    (username === 'cliente' && password === 'lofoco') ||
+                    (username === 'mario.rossi' && password === 'demo2026');
+
+      setTimeout(() => {
+        if (valid) {
+          const nome = (username === 'demo' || username === 'cliente') ? 'Mario Rossi' : 'Mario Rossi';
+          sessionStorage.setItem('cl_nome', nome);
+          showDashboard(nome);
+        } else {
+          errEl.textContent = 'Credenziali non valide. Prova le credenziali demo indicate sotto il form.';
+          errEl.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Accedi';
+        }
+      }, 420);
     }
+
     function showDashboard(nome) {
       document.getElementById('login-section').style.display = 'none';
       document.getElementById('dashboard-section').style.display = 'block';
-      document.getElementById('welcome-name').textContent = 'Benvenuto, ' + nome;
-      document.getElementById('user-name-header').textContent = nome;
-      document.getElementById('user-name-header').style.display = 'block';
-      document.getElementById('btn-logout').style.display = 'block';
-      loadAll();
+
+      const welcome = document.getElementById('welcome-name');
+      if (welcome) welcome.textContent = 'Benvenuto, ' + nome;
+
+      const userHeader = document.getElementById('user-name-header');
+      if (userHeader) {
+        userHeader.textContent = nome;
+        userHeader.style.display = 'inline';
+      }
+
+      const logoutBtn = document.getElementById('btn-logout');
+      if (logoutBtn) logoutBtn.style.display = 'inline-block';
+
+      currentUser = nome;
+      loadAllDemo();
     }
+
     function logout() {
-      sessionStorage.removeItem('cl_token'); sessionStorage.removeItem('cl_nome'); authToken = null;
+      sessionStorage.removeItem('cl_nome');
+      currentUser = null;
+
       document.getElementById('dashboard-section').style.display = 'none';
       document.getElementById('login-section').style.display = 'block';
-      document.getElementById('user-name-header').style.display = 'none';
-      document.getElementById('btn-logout').style.display = 'none';
-      document.getElementById('login-form').reset();
+
+      const userHeader = document.getElementById('user-name-header');
+      if (userHeader) userHeader.style.display = 'none';
+
+      const logoutBtn = document.getElementById('btn-logout');
+      if (logoutBtn) logoutBtn.style.display = 'none';
+
+      const loginForm = document.getElementById('login-form');
+      if (loginForm) loginForm.reset();
+
+      const err = document.getElementById('login-error');
+      if (err) err.style.display = 'none';
     }
+
     function showTab(name, btn) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('tab-' + name).classList.add('active');
-      btn.classList.add('active');
+      const panel = document.getElementById('tab-' + name);
+      if (panel) panel.classList.add('active');
+      if (btn) btn.classList.add('active');
     }
-    async function apiFetch(path) {
-      const res = await fetch(API_BASE + '/cliente/' + path, { headers: { 'Authorization': 'Bearer ' + authToken } });
-      if (res.status === 401) { logout(); throw new Error('Sessione scaduta'); }
-      const data = await res.json();
-      if (!data.success) throw new Error(data.error || 'Errore');
-      return data.data;
+
+    function badge(stato) {
+      const s = (stato || '—').toLowerCase();
+      let cls = 'sconosciuto';
+      if (s.includes('approv') || s.includes('pagat')) cls = 'success';
+      else if (s.includes('scad') || s.includes('urgent')) cls = 'warning';
+      else if (s.includes('lavor')) cls = 'info';
+      return '<span class="badge badge-' + cls + '">' + stato + '</span>';
     }
-    async function loadAll() { loadPratiche(); loadDocumenti(); loadFatture(); loadScadenze(); }
-    function badge(stato) { return '<span class="badge badge-' + (stato||'sconosciuto') + '">' + (stato||'—') + '</span>'; }
-    function formatDate(d) { if (!d) return '—'; try { return new Date(d).toLocaleDateString('it-IT'); } catch(e) { return d; } }
-    function formatEuro(v) { if (v==null) return '—'; return new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'}).format(v); }
-    async function loadPratiche() {
+
+    function formatDate(d) {
+      if (!d) return '—';
+      try { return new Date(d).toLocaleDateString('it-IT'); } catch(e) { return d; }
+    }
+
+    function formatEuro(v) {
+      if (v == null) return '—';
+      return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' }).format(v);
+    }
+
+    function loadAllDemo() {
+      loadPraticheDemo();
+      loadDocumentiDemo();
+      loadFattureDemo();
+      loadScadenzeDemo();
+    }
+
+    function loadPraticheDemo() {
       const el = document.getElementById('pratiche-content');
-      try {
-        const data = await apiFetch('pratiche');
-        if (!data.length) { el.innerHTML = '<div class="empty-state"><div class="icon">📁</div><p>Nessuna pratica trovata</p></div>'; return; }
-        el.innerHTML = '<table class="data-table"><thead><tr><th>N° Pratica</th><th>Oggetto</th><th>Tipo</th><th>Avvocato</th><th>Apertura</th><th>Stato</th></tr></thead><tbody>' +
-          data.map(p => '<tr><td data-label="N°"><strong>' + p.numero_interno + '</strong></td><td data-label="Oggetto">' + p.oggetto + '</td><td data-label="Tipo">' + (p.sottotipo||p.tipo) + '</td><td data-label="Avvocato">' + (p.avvocato_cognome ? 'Avv. '+p.avvocato_cognome : '—') + '</td><td data-label="Apertura">' + formatDate(p.data_apertura) + '</td><td data-label="Stato">' + badge(p.stato) + '</td></tr>').join('') +
-          '</tbody></table>';
-      } catch(err) { el.innerHTML = '<div class="empty-state"><p>Errore: ' + err.message + '</p></div>'; }
+      if (!el) return;
+      const data = MOCK.pratiche;
+      if (!data.length) {
+        el.innerHTML = '<div class="empty-state"><div class="icon">📁</div><p>Nessuna pratica trovata</p></div>';
+        return;
+      }
+      el.innerHTML = '<table class="data-table"><thead><tr><th>N° Pratica</th><th>Oggetto</th><th>Tipo</th><th>Avvocato</th><th>Apertura</th><th>Stato</th></tr></thead><tbody>' +
+        data.map(p => '<tr><td data-label="N°"><strong>' + p.numero_interno + '</strong></td><td data-label="Oggetto">' + p.oggetto + '</td><td data-label="Tipo">' + (p.sottotipo || p.tipo) + '</td><td data-label="Avvocato">' + (p.avvocato_cognome ? 'Avv. ' + p.avvocato_cognome : '—') + '</td><td data-label="Apertura">' + formatDate(p.data_apertura) + '</td><td data-label="Stato">' + badge(p.stato) + '</td></tr>').join('') +
+        '</tbody></table>';
     }
-    async function loadDocumenti() {
+
+    function loadDocumentiDemo() {
       const el = document.getElementById('documenti-content');
-      try {
-        const data = await apiFetch('documenti');
-        if (!data.length) { el.innerHTML = '<div class="empty-state"><div class="icon">📄</div><p>Nessun documento disponibile</p></div>'; return; }
-        el.innerHTML = '<table class="data-table"><thead><tr><th>Titolo</th><th>Tipo</th><th>Pratica</th><th>Data</th></tr></thead><tbody>' +
-          data.map(d => '<tr><td data-label="Titolo"><strong>' + d.titolo + '</strong>' + (d.descrizione ? '<br><small style="color:#778">'+d.descrizione+'</small>' : '') + '</td><td data-label="Tipo">' + (d.tipo||'—') + '</td><td data-label="Pratica">' + (d.pratica_numero||'—') + '</td><td data-label="Data">' + formatDate(d.created_at) + '</td></tr>').join('') +
-          '</tbody></table>';
-      } catch(err) { el.innerHTML = '<div class="empty-state"><p>Errore: ' + err.message + '</p></div>'; }
+      if (!el) return;
+      const data = MOCK.documenti;
+      if (!data.length) {
+        el.innerHTML = '<div class="empty-state"><div class="icon">📄</div><p>Nessun documento disponibile</p></div>';
+        return;
+      }
+      el.innerHTML = '<table class="data-table"><thead><tr><th>Titolo</th><th>Tipo</th><th>Pratica</th><th>Data</th><th></th></tr></thead><tbody>' +
+        data.map(d => {
+          const dl = d.file ? `<a href="${d.file}" download class="btn-insight secondary" style="font-size:0.75rem;padding:0.25rem 0.6rem;">Scarica</a>` : '';
+          return '<tr><td data-label="Titolo"><strong>' + d.titolo + '</strong>' + (d.descrizione ? '<br><small style="color:#778">' + d.descrizione + '</small>' : '') + '</td><td data-label="Tipo">' + (d.tipo || '—') + '</td><td data-label="Pratica">' + (d.pratica_numero || '—') + '</td><td data-label="Data">' + formatDate(d.created_at) + '</td><td data-label="">' + dl + '</td></tr>';
+        }).join('') +
+        '</tbody></table>';
     }
-    async function loadFatture() {
+
+    function loadFattureDemo() {
       const el = document.getElementById('fatture-content');
-      try {
-        const data = await apiFetch('fatture');
-        if (!data.length) { el.innerHTML = '<div class="empty-state"><div class="icon">🧾</div><p>Nessuna fattura trovata</p></div>'; return; }
-        el.innerHTML = '<table class="data-table"><thead><tr><th>Fattura</th><th>Data</th><th>Scadenza</th><th>Importo</th><th>Netto</th><th>Stato</th></tr></thead><tbody>' +
-          data.map(f => '<tr><td data-label="Fattura"><strong>' + f.numero_fattura + '/' + f.anno + '</strong>' + (f.pratica_oggetto ? '<br><small style="color:#778">'+f.pratica_oggetto+'</small>' : '') + '</td><td data-label="Data">' + formatDate(f.data_emissione) + '</td><td data-label="Scadenza">' + formatDate(f.data_scadenza) + '</td><td data-label="Importo">' + formatEuro(f.totale_documento) + '</td><td data-label="Netto">' + formatEuro(f.netto_a_pagare) + '</td><td data-label="Stato">' + badge(f.stato) + '</td></tr>').join('') +
-          '</tbody></table>';
-      } catch(err) { el.innerHTML = '<div class="empty-state"><p>Errore: ' + err.message + '</p></div>'; }
+      if (!el) return;
+      const data = MOCK.fatture;
+      if (!data.length) {
+        el.innerHTML = '<div class="empty-state"><div class="icon">🧾</div><p>Nessuna fattura trovata</p></div>';
+        return;
+      }
+      el.innerHTML = '<table class="data-table"><thead><tr><th>Fattura</th><th>Data</th><th>Scadenza</th><th>Importo</th><th>Netto</th><th>Stato</th></tr></thead><tbody>' +
+        data.map(f => '<tr><td data-label="Fattura"><strong>' + f.numero_fattura + '/' + f.anno + '</strong>' + (f.pratica_oggetto ? '<br><small style="color:#778">' + f.pratica_oggetto + '</small>' : '') + '</td><td data-label="Data">' + formatDate(f.data_emissione) + '</td><td data-label="Scadenza">' + formatDate(f.data_scadenza) + '</td><td data-label="Importo">' + formatEuro(f.totale_documento) + '</td><td data-label="Netto">' + formatEuro(f.netto_a_pagare) + '</td><td data-label="Stato">' + badge(f.stato) + '</td></tr>').join('') +
+        '</tbody></table>';
     }
-    async function loadScadenze() {
+
+    function loadScadenzeDemo() {
       const el = document.getElementById('scadenze-content');
-      try {
-        const data = await apiFetch('scadenze');
-        if (!data.length) { el.innerHTML = '<div class="empty-state"><div class="icon">📅</div><p>Nessuna scadenza trovata</p></div>'; return; }
-        data.sort((a,b) => new Date(a.data_scadenza) - new Date(b.data_scadenza));
-        const oggi = new Date();
-        el.innerHTML = '<table class="data-table"><thead><tr><th>Scadenza</th><th>Titolo</th><th>Pratica</th><th>Stato</th></tr></thead><tbody>' +
-          data.map(s => { const scad=new Date(s.data_scadenza); const giorni=Math.ceil((scad-oggi)/86400000); const avviso=giorni>=0&&giorni<=7?'<br><small style="color:var(--warning)">⚠️ tra '+giorni+' giorni</small>':''; return '<tr><td data-label="Scadenza"><strong>'+formatDate(s.data_scadenza)+'</strong>'+avviso+'</td><td data-label="Titolo">'+s.titolo+(s.descrizione?'<br><small style="color:#778">'+s.descrizione+'</small>':'')+'</td><td data-label="Pratica">'+(s.pratica_numero||'—')+'</td><td data-label="Stato">'+badge(s.stato)+'</td></tr>'; }).join('') +
-          '</tbody></table>';
-      } catch(err) { el.innerHTML = '<div class="empty-state"><p>Errore: ' + err.message + '</p></div>'; }
+      if (!el) return;
+      const data = [...MOCK.scadenze].sort((a, b) => new Date(a.data_scadenza) - new Date(b.data_scadenza));
+      if (!data.length) {
+        el.innerHTML = '<div class="empty-state"><div class="icon">📅</div><p>Nessuna scadenza trovata</p></div>';
+        return;
+      }
+      const oggi = new Date();
+      el.innerHTML = '<table class="data-table"><thead><tr><th>Scadenza</th><th>Titolo</th><th>Pratica</th><th>Stato</th></tr></thead><tbody>' +
+        data.map(s => {
+          const scad = new Date(s.data_scadenza);
+          const giorni = Math.ceil((scad - oggi) / 86400000);
+          const avviso = (giorni >= 0 && giorni <= 7) ? '<br><small style="color:#e65100">⚠️ tra ' + giorni + ' giorni</small>' : '';
+          return '<tr><td data-label="Scadenza"><strong>' + formatDate(s.data_scadenza) + '</strong>' + avviso + '</td><td data-label="Titolo">' + s.titolo + (s.descrizione ? '<br><small style="color:#778">' + s.descrizione + '</small>' : '') + '</td><td data-label="Pratica">' + (s.pratica_numero || '—') + '</td><td data-label="Stato">' + badge(s.stato) + '</td></tr>';
+        }).join('') +
+        '</tbody></table>';
     }
-  </script>
-</body>
+  </script></body>
 </html>

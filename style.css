@@ -310,8 +310,7 @@ p {
 .hero {
   position: relative;
   height: 70vh;
-  background: url('https://images.unsplash.com/photo-1596524430648-a89d7fc6703d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')
-    center/cover no-repeat;
+  background: url('image/hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -820,16 +819,48 @@ footer {
   height: auto;
 }
 
-.dogecoin-footer img {
-  max-width: 180px;
-  height: auto;
-  opacity: 0.9;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.dogecoin-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(191, 236, 255, 0.2);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  font-size: 0.82rem;
+  white-space: nowrap;
 }
 
-.dogecoin-footer img:hover {
+.dogecoin-footer:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(191, 236, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.dogecoin-footer img {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  opacity: 0.95;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.dogecoin-footer:hover img {
+  transform: scale(1.08);
   opacity: 1;
-  transform: scale(1.05);
+}
+
+.dogecoin-label {
+  color: #BFECFF;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  opacity: 0.85;
+}
+
+.dogecoin-footer:hover .dogecoin-label {
+  opacity: 1;
 }
 
 /* ========================================
@@ -916,8 +947,14 @@ footer {
   .footer-left img {
     max-width: 80px;
   }
+  .dogecoin-footer {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    gap: 4px;
+  }
   .dogecoin-footer img {
-    max-width: 150px;
+    width: 22px;
+    height: 22px;
   }
   .profile-container {
     flex-direction: column;

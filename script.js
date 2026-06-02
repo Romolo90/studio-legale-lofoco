@@ -47,8 +47,19 @@
     },
 
     initScrollToTop() {
-      const scrollToTopBtn = document.getElementById('scrollToTop');
-      if (!scrollToTopBtn) return;
+      let scrollToTopBtn = document.getElementById('scrollToTop');
+
+      // Inject the button if missing on the page (ensures consistency across all pages without duplicating HTML)
+      if (!scrollToTopBtn) {
+        scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.id = 'scrollToTop';
+        scrollToTopBtn.className = 'scroll-to-top';
+        const isEn = (document.documentElement.lang || 'it').toLowerCase().startsWith('en');
+        scrollToTopBtn.setAttribute('aria-label', isEn ? 'Scroll to top' : 'Torna all\'inizio della pagina');
+        scrollToTopBtn.innerHTML = '&#8593;';
+        scrollToTopBtn.style.display = 'none';
+        document.body.appendChild(scrollToTopBtn);
+      }
 
       const handleScroll = debounce(() => {
         scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
