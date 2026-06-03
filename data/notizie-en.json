@@ -107,11 +107,9 @@
         "Eligible costs: development, Italian team, local services",
         "Applications via DGCOL; final (consuntivo) investigation"
       ],
-      "implications": "For independent developers: precisely document Italian costs (licenses, local outsourcing, personnel). Preliminary application timing is critical for cash-flow. Cumulability with other funds must be checked case-by-case.",
       "errorsToAvoid": "Failure to separate core costs from marketing/publishing; insufficient Italian IP for the nationality test.",
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-videogiochi-decreto-del-29-maggio-2026-di-approvazione-delle-richieste-definitive-di-credito-dimposta/",
-      "tags": ["videogames", "tax-credit", "nationality"],
-      "lastUpdated": "2026-05-29"
+      "tags": ["videogames", "tax-credit", "nationality"]
     },
     {
       "id": "tc-internazionale",
@@ -164,11 +162,9 @@
         "Peremptory deadlines: preliminary before significant qualified expenditure",
         "All communications and integrations handled online"
       ],
-      "implications": "Many rejections stem from incomplete documentation or incorrect timing. Prepare the 'technical report' for cultural eligibility in advance.",
       "errorsToAvoid": "Uploading non-compliant files or failing to list all 'qualified' expenditure on Italian territory.",
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
-      "tags": ["dgcol", "practice", "tax-credit"],
-      "lastUpdated": "2026-05-29"
+      "tags": ["dgcol", "practice", "tax-credit"]
     },
     {
       "id": "errori-eleggibilita",
@@ -181,11 +177,9 @@
         "Incomplete or outdated IP/authorship documentation",
         "Budget and distribution plan inconsistent with the declared work"
       ],
-      "implications": "For borderline works: perform an internal 'pre-assessment' or with a consultant early. Keep evidence of Italian development (contracts, director's notes, etc.).",
       "errorsToAvoid": "Underestimating the 'Italian cultural identity' or 'artistic quality' component for reserved quotas.",
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-29-maggio-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/",
-      "tags": ["eligibility", "errors", "nationality"],
-      "lastUpdated": "2026-05-29"
+      "tags": ["eligibility", "errors", "nationality"]
     },
     {
       "id": "cumulabilita-incentivi",
@@ -198,11 +192,9 @@
         "Attention to 'State aid' rules and ceilings per undertaking/production unit",
         "Separate reporting obligation for each measure"
       ],
-      "implications": "Structure the financial plan to maximise without exceeding aid intensity ceilings. Always verify the specific notice and grant decree.",
       "errorsToAvoid": "Declaring the same expenditure under multiple measures without authorisation or double counting in reporting.",
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/",
-      "tags": ["cumulability", "regional", "film-commission"],
-      "lastUpdated": "2026-05-29"
+      "tags": ["cumulability", "regional", "film-commission"]
     },
     {
       "id": "normativa",

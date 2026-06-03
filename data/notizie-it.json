@@ -107,11 +107,9 @@
         "Spese ammissibili: sviluppo, team italiano, servizi locali",
         "Istanze via DGCOL; istruttoria a consuntivo per definitive"
       ],
-      "implications": "Per sviluppatori indipendenti: documenta con precisione costi IT (licenze, outsourcing locale, personale). Tempistica domande preventive importante per cash-flow. Cumulabilità con altri fondi da verificare caso per caso.",
       "errorsToAvoid": "Mancata separazione tra costi core e marketing/publishing; IP non sufficientemente italiano per il test nazionalità.",
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-videogiochi-decreto-del-29-maggio-2026-di-approvazione-delle-richieste-definitive-di-credito-dimposta/",
-      "tags": ["videogiochi", "tax-credit", "nazionalita"],
-      "lastUpdated": "2026-05-29"
+      "tags": ["videogiochi", "tax-credit", "nazionalita"]
     },
     {
       "id": "tc-internazionale",
@@ -164,11 +162,9 @@
         "Scadenze perentorie: preventive prima di avvio spese significative",
         "Comunicazioni e integrazioni gestite interamente online"
       ],
-      "implications": "Molti rigetti derivano da documentazione incompleta o tempistica errata. Prepara in anticipo la 'relazione tecnica' per eleggibilità culturale.",
       "errorsToAvoid": "Invio di file non conformi o mancata indicazione di tutte le spese 'qualificate' sul territorio italiano.",
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
-      "tags": ["dgcol", "pratica", "tax-credit"],
-      "lastUpdated": "2026-05-29"
+      "tags": ["dgcol", "pratica", "tax-credit"]
     },
     {
       "id": "errori-eleggibilita",
@@ -181,11 +177,9 @@
         "Documentazione IP/autoriale non completa o non aggiornata",
         "Budget e piano di distribuzione non coerenti con opera dichiarata"
       ],
-      "implications": "Per opere borderline: anticipa una 'pre-valutazione' interna o con consulente. Conserva prove di sviluppo in Italia (contratti, note di regia, ecc.).",
       "errorsToAvoid": "Sottovalutare la componente 'identità culturale italiana' o 'qualità artistica' per le quote riservate.",
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-29-maggio-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/",
-      "tags": ["eleggibilita", "errori", "nazionalita"],
-      "lastUpdated": "2026-05-29"
+      "tags": ["eleggibilita", "errori", "nazionalita"]
     },
     {
       "id": "cumulabilita-incentivi",
@@ -198,11 +192,9 @@
         "Attenzione a 'aiuti di Stato' e massimali per impresa/unità produttiva",
         "Obbligo di rendicontazione separata per ogni misura"
       ],
-      "implications": "Strutturare il piano finanziario per massimizzare senza superare i massimali di intensità aiuto. Verifica sempre l'avviso specifico e il decreto di concessione.",
       "errorsToAvoid": "Dichiarare la stessa spesa su più misure senza autorizzazione o doppia rendicontazione.",
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/",
-      "tags": ["cumulabilita", "regionali", "film-commission"],
-      "lastUpdated": "2026-05-29"
+      "tags": ["cumulabilita", "regionali", "film-commission"]
     },
     {
       "id": "normativa",

@@ -93,24 +93,22 @@ function renderNewsStatic(newsItems, isEn) {
 function renderResourcesStatic(articles, isEn) {
   if (!articles || !articles.length) return '';
   const footerBase = isEn ? 'Read more' : 'Approfondisci';
-  const footerExtra = isEn ? ' / Implications' : ' / Implicazioni';
-  const updatedPrefix = isEn ? 'updated ' : 'agg. ';
   const aria = isEn ? 'Open detail: ' : 'Apri dettaglio: ';
-  // Initial static render: all items (client JS will enhance with filters/search)
+  // Initial static render: all items (client JS will enhance with filters/search).
+  // Cleaned: removed "Implicazioni operative (studio)" section entirely + date badges (agg./updated)
+  // for uniform card look across all resources. errorsToAvoid (if present) still shown in modal.
   return articles.map(a => {
     const cat = (a.category || 'all').replace('-', ' ');
     const tags = a.tags && a.tags.length ? a.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
-    const updated = a.lastUpdated ? `<span class="updated">${updatedPrefix}${a.lastUpdated}</span>` : '';
     return `
         <div class="resource-card" data-id="${a.id}" data-category="${a.category || ''}" tabindex="0" role="button" aria-label="${aria}${a.title}">
           <div class="card-header">
             <span class="category-tag">${cat}</span>
             ${tags}
-            ${updated}
           </div>
           <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
-          <div class="card-footer">${footerBase}${a.implications || a.errorsToAvoid ? footerExtra : ''}</div>
+          <div class="card-footer">${footerBase}</div>
         </div>`;
   }).join('\n');
 }
