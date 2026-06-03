@@ -1316,40 +1316,6 @@ textarea:focus-visible {
   transform: translateX(2px);
 }
 
-/* Improved card header for multiple tags + updated date */
-.resource-card .card-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.3rem;
-  margin-bottom: 0.4rem;
-}
-
-.resource-card .tag {
-  font-size: 0.62rem;
-  background: #e6f2ff;
-  color: #003366;
-  padding: 1px 5px;
-  border-radius: 3px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  white-space: nowrap;
-}
-
-.resource-card .updated {
-  font-size: 0.62rem;
-  color: #666;
-  margin-left: auto;
-  white-space: nowrap;
-  font-weight: 400;
-}
-
-/* Slight tweak for better text balance */
-.resource-card .summary {
-  font-size: 0.92rem;
-  line-height: 1.38;
-}
-
 /* Modal */
 #resource-modal {
   position: fixed;
