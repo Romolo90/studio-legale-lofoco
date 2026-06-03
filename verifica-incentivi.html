@@ -397,6 +397,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <header class="header">
     <div class="logo">
       <h1>
@@ -441,6 +469,14 @@
         <strong>Regole aggiornate al:</strong> 31 maggio 2026
       </p>
 
+      <details style="margin-bottom:1rem; font-size:0.85rem; background:#fff; border:1px solid #80D9FF; border-radius:6px; padding:0.4rem 0.6rem;">
+        <summary style="cursor:pointer; color:#003366; font-weight:600;">Metodologia &amp; aggiornamenti (clicca per dettagli)</summary>
+        <div style="padding-top:0.35rem; line-height:1.35;">
+          Motore client-side basato su avvisi DG Cinema 2026 (incl. D.D. 29/5 per TC e videogiochi, contributi selettivi, attrazione investimenti). Aliquote indicative 30-40% su spesa qualificata IT; test nazionalità/culturale e massimali annuali da verificare sempre. Non calcola importi esatti né sostituisce DGCOL o perizia.
+          <br>Per videogiochi: nazionalità dedicata + rendicontazione specifica. Per stime: usa solo come orientamento.
+        </div>
+      </details>
+
       <form id="incentives-form" class="questions-form" novalidate>
         <div class="question">
           <label for="project-type">1. Tipologia di opera</label>
@@ -451,7 +487,7 @@
             <option value="doc">Documentario</option>
             <option value="short">Cortometraggio</option>
             <option value="animation">Opera di animazione</option>
-            <option value="other">Altro (videogame, VR, etc.)</option>
+            <option value="other">Altro (videogame / VR / interactive)</option>
           </select>
         </div>
 
@@ -547,9 +583,66 @@
         </div>
 
         <a href="index.html#contatti" class="cta-contact">Richiedi una consulenza personalizzata</a>
+        <p style="text-align:center; margin-top:0.6rem; font-size:0.85rem;"><a href="notizie.html" style="color:#0066aa;">Approfondisci regole e avvisi su Approfondimenti →</a></p>
       </div>
     </div>
   </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -698,6 +791,7 @@
       const isForeignService = data.foreignProduction === 'yes-services' || data.foreignProduction === 'yes-executive';
       const hasArtistic = data.youngAuthor || data.culturalIdentity || data.artisticQuality;
       const isProductionPhase = data.stage === 'production' || data.stage === 'post';
+      const isVideogame = data.projectType === 'other' || (data.projectType && data.projectType.toLowerCase().includes('video'));
 
       // Tax Credit Produzione (main one)
       if (isItalian && spend >= 0.5 && isProductionPhase) {
@@ -722,6 +816,26 @@
           status: 'low',
           note: 'La spesa prevista in Italia è verosimilmente insufficiente per accedere alle aliquote ordinarie del Tax Credit Produzione. La maggior parte delle produzioni italiane necessita di almeno 0,5–1 M€ di spesa qualificata sul territorio. Verifica i massimali aggiornati per la tua tipologia di opera.'
         });
+      }
+
+      // Tax Credit Videogiochi (special case)
+      if (isVideogame && isItalian && spend >= 0.2) {
+        results.push({
+          title: 'Tax Credit Videogiochi',
+          status: spend >= 0.5 ? 'high' : 'medium',
+          note: `Progetto videoludico rilevato. Spesa IT ${spend} M€. Verifica nazionalità dedicata (D.D. 29/5) e rendicontazione separata. Spesso cumulabile con altri sostegni per il settore.`
+        });
+      }
+
+      // Rough orientative estimate (added for value)
+      if ((isItalian || isVideogame) && spend >= 0.5) {
+        const estMin = Math.round(spend * 0.30 * 100) / 100;
+        const estMax = Math.round(spend * 0.40 * 100) / 100;
+        // attach to last relevant or push a note card
+        const last = results[results.length-1];
+        if (last && (last.title.includes('Tax Credit') || last.title.includes('Videogiochi'))) {
+          last.note += ` Stima orientativa credito: ${estMin}–${estMax} M€ (aliquote indicative; massimali e test da verificare).`;
+        }
       }
 
       // Tax Credit Attrazione Investimenti (foreign productions)

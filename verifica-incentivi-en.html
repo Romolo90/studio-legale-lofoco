@@ -397,6 +397,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <header class="header">
     <div class="logo">
       <h1>
@@ -443,6 +471,14 @@
       <p style="font-size: 0.9rem; color: #555; margin: -0.25rem 0 1.25rem;">
         <strong>Rules last updated:</strong> 31 May 2026
       </p>
+
+      <details style="margin-bottom:1rem; font-size:0.85rem; background:#fff; border:1px solid #80D9FF; border-radius:6px; padding:0.4rem 0.6rem;">
+        <summary style="cursor:pointer; color:#003366; font-weight:600;">Methodology &amp; updates (click for details)</summary>
+        <div style="padding-top:0.35rem; line-height:1.35;">
+          Client-side engine based on official 2026 DG Cinema notices (incl. 29 May D.D. for TC and videogames, selective contributions, investment attraction). Indicative 30-40% rates on qualified Italian spend; nationality/cultural test and annual caps must always be verified. Does not compute exact amounts or replace DGCOL/professional assessment.
+          <br>For videogames: dedicated nationality + specific reporting. Estimates are for orientation only.
+        </div>
+      </details>
 
       <form id="incentives-form" class="questions-form" novalidate>
         <div class="question">
@@ -550,9 +586,66 @@
         </div>
 
         <a href="index-en.html#contact" class="cta-contact">Request a personalised consultation</a>
+        <p style="text-align:center; margin-top:0.6rem; font-size:0.85rem;"><a href="notizie-en.html" style="color:#0066aa;">Explore rules &amp; notices on Insights →</a></p>
       </div>
     </div>
   </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -701,6 +794,7 @@
       const isForeignService = data.foreignProduction === 'yes-services' || data.foreignProduction === 'yes-executive';
       const hasArtistic = data.youngAuthor || data.culturalIdentity || data.artisticQuality;
       const isProductionPhase = data.stage === 'production' || data.stage === 'post';
+      const isVideogame = data.projectType === 'other' || (data.projectType && data.projectType.toLowerCase().includes('video'));
 
       // Tax Credit Produzione (main one)
       if (isItalian && spend >= 0.5 && isProductionPhase) {
@@ -725,6 +819,25 @@
           status: 'low',
           note: 'The planned Italian spend is likely insufficient to access the standard tax credit rates. Most Italian productions require at least €0.5–1M of qualifying territorial expenditure. Check the current thresholds for your type of work.'
         });
+      }
+
+      // Tax Credit Videogames (special case)
+      if (isVideogame && isItalian && spend >= 0.2) {
+        results.push({
+          title: 'Tax Credit Videogames',
+          status: spend >= 0.5 ? 'high' : 'medium',
+          note: `Videogame project detected. Italian spend ${spend} M€. Check dedicated nationality rules (D.D. 29/5) and separate reporting. Often combinable with other sector supports.`
+        });
+      }
+
+      // Rough orientative estimate (added for value)
+      if ((isItalian || isVideogame) && spend >= 0.5) {
+        const estMin = Math.round(spend * 0.30 * 100) / 100;
+        const estMax = Math.round(spend * 0.40 * 100) / 100;
+        const last = results[results.length-1];
+        if (last && (last.title.includes('Tax Credit') || last.title.includes('Videogame'))) {
+          last.note += ` Rough credit estimate: ${estMin}–${estMax} M€ (indicative rates; caps and tests to be verified).`;
+        }
       }
 
       // Tax Credit Attrazione Investimenti (foreign productions)

@@ -2,6 +2,20 @@
   "newsItems": [
     {
       "date": "2026-05-29",
+      "title": "Tax Credit Videogiochi – Decreto 29 maggio 2026 di approvazione richieste definitive",
+      "context": "Pubblicato l'esito dell'istruttoria (D.D. rep. 1479) sulle richieste definitive di credito d'imposta per produzioni di videogiochi di nazionalità italiana. Riconoscimento automatico per le ammesse; nessuna PEC individuale.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-videogiochi-decreto-del-29-maggio-2026-di-approvazione-delle-richieste-definitive-di-credito-dimposta/"
+    },
+    {
+      "date": "2026-05-29",
+      "title": "Nazionalità italiana definitiva Videogiochi – Decreto 29 maggio 2026",
+      "context": "D.D. rep. 1480: pubblicazione della nazionalità italiana definitiva per videogiochi. Equivale a riconoscimento; consultare elenco nel decreto.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/nazionalita-italiana-definitiva-videogiochi-con-decreto-direttoriale-del-29-maggio-2026/"
+    },
+    {
+      "date": "2026-05-29",
       "title": "Tax Credit – Decreti del 29 maggio 2026 di riconoscimento crediti d’imposta ed eleggibilità culturale",
       "context": "Con i decreti direttoriali del 29 maggio 2026 sono pubblicati gli esiti delle istruttorie effettuate sull’ammissibilità delle richieste preventive di credito d’imposta per produzione cinematografica, tv/web, documentari e produzioni esecutive straniere.",
       "source": "DG Cinema e Audiovisivo",
@@ -15,11 +29,25 @@
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-potenziamento-dellofferta-cinematografica-decreto-del-29-maggio-2026/"
     },
     {
+      "date": "2026-05-27",
+      "title": "Premio di sviluppo Italia – Stati Baltici VIII edizione: esito e graduatoria",
+      "context": "Pubblicata la graduatoria completa dei progetti maggioritari italiani per co-sviluppo con Stati Baltici (ottava edizione).",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/avvisi-contributi-selettivi/premio-di-sviluppo-italia-stati-baltici-ottava-edizione-esito-e-graduatoria-completa/"
+    },
+    {
       "date": "2026-05-20",
       "title": "Contributi selettivi 2025 – Pubblicata la graduatoria completa Sviluppo I sessione",
       "context": "D.D. 20 maggio 2026 rep. 1267. Graduatorie complete per i progetti di sviluppo presentati nella prima sessione 2025.",
       "source": "DG Cinema e Audiovisivo",
       "link": "https://cinema.cultura.gov.it/avvisi/contributi-selettivi-2025-pubblicata-la-graduatoria-completa-sviluppo-i-sessione/"
+    },
+    {
+      "date": "2026-05-20",
+      "title": "Contributi selettivi 2025 – Graduatoria Scrittura I sessione e Produzione Animazione",
+      "context": "Pubblicate graduatorie scrittura I sess. 2025 e produzione animazione/identità italiana I-II sess. 2024 (art. 26 L.220/2016).",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/"
     },
     {
       "date": "2026-05-15",
@@ -69,6 +97,23 @@
       }
     },
     {
+      "id": "tc-videogiochi",
+      "title": "Tax Credit per la produzione di videogiochi (2026)",
+      "category": "tax-credit",
+      "summary": "Incentivo dedicato alle opere videoludiche di nazionalità italiana. Procedure specifiche, test di nazionalità dedicato e riconoscimento su spese di sviluppo/produzione in Italia.",
+      "keyPoints": [
+        "Riconoscimento definitivo su richieste ammesse (D.D. 29/5 rep. 1479)",
+        "Nazionalità italiana definitiva separata (D.D. rep. 1480)",
+        "Spese ammissibili: sviluppo, team italiano, servizi locali",
+        "Istanze via DGCOL; istruttoria a consuntivo per definitive"
+      ],
+      "implications": "Per sviluppatori indipendenti: documenta con precisione costi IT (licenze, outsourcing locale, personale). Tempistica domande preventive importante per cash-flow. Cumulabilità con altri fondi da verificare caso per caso.",
+      "errorsToAvoid": "Mancata separazione tra costi core e marketing/publishing; IP non sufficientemente italiano per il test nazionalità.",
+      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-videogiochi-decreto-del-29-maggio-2026-di-approvazione-delle-richieste-definitive-di-credito-dimposta/",
+      "tags": ["videogiochi", "tax-credit", "nazionalita"],
+      "lastUpdated": "2026-05-29"
+    },
+    {
       "id": "tc-internazionale",
       "title": "Tax Credit per l'attrazione di investimenti esteri",
       "category": "tax-credit",
@@ -107,6 +152,57 @@
         "Integrazione con programmi Creative Europe MEDIA"
       ],
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/fondi-bilaterali/"
+    },
+    {
+      "id": "dgcol-pratica",
+      "title": "Piattaforma DGCOL: come presentare domande Tax Credit e contributi",
+      "category": "normativa",
+      "summary": "Guida pratica alla compilazione e invio di istanze preventive/definitive sulla piattaforma DGCOL del MiC. Requisiti documentali e tempistiche.",
+      "keyPoints": [
+        "Accesso con SPID/CIE per rappresentante legale",
+        "Upload contratti, budget, piano di lavorazione, materiali",
+        "Scadenze perentorie: preventive prima di avvio spese significative",
+        "Comunicazioni e integrazioni gestite interamente online"
+      ],
+      "implications": "Molti rigetti derivano da documentazione incompleta o tempistica errata. Prepara in anticipo la 'relazione tecnica' per eleggibilità culturale.",
+      "errorsToAvoid": "Invio di file non conformi o mancata indicazione di tutte le spese 'qualificate' sul territorio italiano.",
+      "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
+      "tags": ["dgcol", "pratica", "tax-credit"],
+      "lastUpdated": "2026-05-29"
+    },
+    {
+      "id": "errori-eleggibilita",
+      "title": "Errori comuni nell'eleggibilità culturale e nazionalità (2026)",
+      "category": "normativa",
+      "summary": "Sintesi dei motivi più frequenti di rigetto o richiesta di integrazioni nei decreti 2026, con suggerimenti pratici basati su prassi.",
+      "keyPoints": [
+        "Punteggio insufficiente al test culturale (tabella allegata DM)",
+        "Mancata dimostrazione del contributo creativo italiano prevalente",
+        "Documentazione IP/autoriale non completa o non aggiornata",
+        "Budget e piano di distribuzione non coerenti con opera dichiarata"
+      ],
+      "implications": "Per opere borderline: anticipa una 'pre-valutazione' interna o con consulente. Conserva prove di sviluppo in Italia (contratti, note di regia, ecc.).",
+      "errorsToAvoid": "Sottovalutare la componente 'identità culturale italiana' o 'qualità artistica' per le quote riservate.",
+      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-29-maggio-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/",
+      "tags": ["eleggibilita", "errori", "nazionalita"],
+      "lastUpdated": "2026-05-29"
+    },
+    {
+      "id": "cumulabilita-incentivi",
+      "title": "Cumulabilità Tax Credit, contributi selettivi e incentivi regionali",
+      "category": "normativa",
+      "summary": "Regole di cumulo tra misure nazionali (Tax Credit + art.26), accordi bilaterali, Creative Europe MEDIA e Film Commission regionali. Limiti e cautele.",
+      "keyPoints": [
+        "Tax Credit generalmente cumulabile con contributi selettivi (con tetti)",
+        "Incentivi regionali (Lombardia, Lazio, Puglia, etc.) spesso stackable",
+        "Attenzione a 'aiuti di Stato' e massimali per impresa/unità produttiva",
+        "Obbligo di rendicontazione separata per ogni misura"
+      ],
+      "implications": "Strutturare il piano finanziario per massimizzare senza superare i massimali di intensità aiuto. Verifica sempre l'avviso specifico e il decreto di concessione.",
+      "errorsToAvoid": "Dichiarare la stessa spesa su più misure senza autorizzazione o doppia rendicontazione.",
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/",
+      "tags": ["cumulabilita", "regionali", "film-commission"],
+      "lastUpdated": "2026-05-29"
     },
     {
       "id": "normativa",

@@ -44,6 +44,133 @@ const FOOTER_HOME = readPartial('footer-home.html');
 const FOOTER_EN = readPartial('footer-en.html');
 const FOOTER_HOME_EN = readPartial('footer-home-en.html');
 
+// Data for pre-rendering insights (news + resources) for SEO (static HTML in source)
+const DATA_IT_PATH = path.join(ROOT, 'data', 'notizie-it.json');
+const DATA_EN_PATH = path.join(ROOT, 'data', 'notizie-en.json');
+
+let cachedDataIT = null;
+let cachedDataEN = null;
+
+function loadInsightsData(isEn) {
+  const p = isEn ? DATA_EN_PATH : DATA_IT_PATH;
+  const cache = isEn ? 'cachedDataEN' : 'cachedDataIT';
+  if (global[cache]) return global[cache];
+  if (!fs.existsSync(p)) {
+    console.warn('  ! Insights data not found:', p);
+    return { newsItems: [], articles: [] };
+  }
+  try {
+    const raw = JSON.parse(fs.readFileSync(p, 'utf8'));
+    global[cache] = raw;
+    return raw;
+  } catch (e) {
+    console.warn('  ! Failed to parse insights data:', p, e.message);
+    return { newsItems: [], articles: [] };
+  }
+}
+
+function formatDateStatic(iso) {
+  // Simple static date format (matches client but without locale variance in build)
+  const d = new Date(iso);
+  const months = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+function renderNewsStatic(newsItems, isEn) {
+  if (!newsItems || !newsItems.length) return '';
+  return newsItems.map(item => `
+        <article class="news-item">
+          <span class="date">${formatDateStatic(item.date)}</span>
+          <div class="title">${item.title}</div>
+          <p class="context">${item.context}</p>
+          <div class="meta">
+            <span class="source">${item.source}</span>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer">Leggi l'avviso ufficiale →</a>
+          </div>
+        </article>`).join('\n');
+}
+
+function renderResourcesStatic(articles, isEn) {
+  if (!articles || !articles.length) return '';
+  const footerBase = isEn ? 'Read more' : 'Approfondisci';
+  const footerExtra = isEn ? ' / Implications' : ' / Implicazioni';
+  const updatedPrefix = isEn ? 'updated ' : 'agg. ';
+  const aria = isEn ? 'Open detail: ' : 'Apri dettaglio: ';
+  // Initial static render: all items (client JS will enhance with filters/search)
+  return articles.map(a => {
+    const cat = (a.category || 'all').replace('-', ' ');
+    const tags = a.tags && a.tags.length ? a.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
+    const updated = a.lastUpdated ? `<span class="updated">${updatedPrefix}${a.lastUpdated}</span>` : '';
+    return `
+        <div class="resource-card" data-id="${a.id}" data-category="${a.category || ''}" tabindex="0" role="button" aria-label="${aria}${a.title}">
+          <div class="card-header">
+            <span class="category-tag">${cat}</span>
+            ${tags}
+            ${updated}
+          </div>
+          <h3>${a.title}</h3>
+          <p class="summary">${a.summary}</p>
+          <div class="card-footer">${footerBase}${a.implications || a.errorsToAvoid ? footerExtra : ''}</div>
+        </div>`;
+  }).join('\n');
+}
+
+function injectInsightsStatic(content, filename) {
+  const isEn = /-en\.html$/.test(filename);
+  const isInsights = /notizie(-en)?\.html$/.test(filename);
+  if (!isInsights) return { content, changed: false };
+
+  const data = loadInsightsData(isEn);
+  const newsHtml = renderNewsStatic(data.newsItems || [], isEn);
+  const resHtml = renderResourcesStatic(data.articles || [], isEn);
+
+  let changed = false;
+  let out = content;
+
+  // Robust marker-based injection (much safer than matching to first </div>)
+  const newsMarkerRe = /(<!--\s*STATIC-NEWS-START\s*-->)([\s\S]*?)(<!--\s*STATIC-NEWS-END\s*-->)/i;
+  if (newsMarkerRe.test(out) && newsHtml) {
+    out = out.replace(newsMarkerRe, `$1\n${newsHtml}\n$3`);
+    changed = true;
+  }
+
+  const resMarkerRe = /(<!--\s*STATIC-RESOURCES-START\s*-->)([\s\S]*?)(<!--\s*STATIC-RESOURCES-END\s*-->)/i;
+  if (resMarkerRe.test(out) && resHtml) {
+    out = out.replace(resMarkerRe, `$1\n${resHtml}\n$3`);
+    changed = true;
+  }
+
+  // Optionally inject a lightweight JSON-LD ItemList for the resources (SEO)
+  if (!/application\/ld\+json.*InsightsResources/i.test(out) && data.articles && data.articles.length) {
+    const listLd = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      'name': isEn ? 'Insights & Resources - Studio Legale Lo Foco' : 'Approfondimenti e Risorse - Studio Legale Lo Foco',
+      'numberOfItems': data.articles.length,
+      'itemListElement': data.articles.slice(0, 12).map((a, idx) => ({
+        '@type': 'ListItem',
+        'position': idx + 1,
+        'item': {
+          '@type': 'Article',
+          'name': a.title,
+          'description': a.summary,
+          'url': `https://studiolegalelofoco.com/${filename}#${a.id}`
+        }
+      }))
+    };
+    const ldScript = `\n<script type="application/ld+json" data-insights-resources="true">\n${JSON.stringify(listLd, null, 2)}\n</script>\n`;
+    // Insert before the page-specific inline script or before </main>
+    if (out.includes('</main>')) {
+      out = out.replace(/<\/main>/i, `${ldScript}</main>`);
+    } else if (out.includes('<script>')) {
+      out = out.replace(/<script>/i, `${ldScript}<script>`);
+    }
+    changed = true;
+  }
+
+  return { content: out, changed };
+}
+
 function isEnglishFile(filename) {
   return /-en\.html$/.test(filename);
 }
@@ -304,11 +431,20 @@ function processFile(filePath) {
   // Strip trailing whitespace (keeps sources clean, reduces html-validate no-trailing-whitespace noise)
   content = content.replace(/[ \t]+$/gm, '');
 
+  // === INSIGHTS PRE-RENDER (SEO): inject static news/resources lists + JSON-LD for notizie*.html
+  // This ensures crawlers see real keyword-rich content even if client JS enhances later.
+  const insightsResult = injectInsightsStatic(content, filename);
+  if (insightsResult.changed) {
+    content = insightsResult.content;
+  }
+
   // Only write if the content actually differs from what was on disk.
   // This makes repeated builds on an up-to-date tree a true no-op for the HTML files.
   if (content !== originalContent) {
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log('  ✓ Synced chrome (cookie+header+footer) in', filename);
+    const notes = [];
+    if (insightsResult.changed) notes.push('insights-static');
+    console.log('  ✓ Synced chrome (cookie+header+footer)' + (notes.length ? ' + ' + notes.join('+') : '') + ' in', filename);
     return true;
   }
   return false;
