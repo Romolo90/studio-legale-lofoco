@@ -184,6 +184,10 @@
 
 
 
+
+
+
+
   <header class="header">
     <div class="logo">
       <h1>
@@ -343,13 +347,15 @@
     <section class="insights-section" aria-labelledby="risorse-title">
       <h2 id="risorse-title">Risorse e Analisi</h2>
       <!-- html-validate-disable prefer-native-element -->
-      <div class="filters" role="search">
-        <input type="search" id="search-input" placeholder="Cerca per titolo o parola chiave..." aria-label="Cerca risorse">
-        <button type="button" class="filter-btn active" data-filter="all">Tutte</button>
-        <button type="button" class="filter-btn" data-filter="tax-credit">Tax Credit</button>
-        <button type="button" class="filter-btn" data-filter="contributi-selettivi">Contributi Selettivi</button>
-        <button type="button" class="filter-btn" data-filter="ue-media">UE / MEDIA</button>
-        <button type="button" class="filter-btn" data-filter="normativa">Normativa</button>
+      <div class="filters" role="search" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+        <input type="search" id="search-input" placeholder="Cerca per titolo o parola chiave..." aria-label="Cerca risorse" style="width: 100%; max-width: 400px;">
+        <div style="display:flex; justify-content: center; flex-wrap:wrap; gap:0.35rem;">
+          <button type="button" class="filter-btn active" data-filter="all">Tutte</button>
+          <button type="button" class="filter-btn" data-filter="tax-credit">Tax Credit</button>
+          <button type="button" class="filter-btn" data-filter="contributi-selettivi">Contributi Selettivi</button>
+          <button type="button" class="filter-btn" data-filter="ue-media">UE / MEDIA</button>
+          <button type="button" class="filter-btn" data-filter="normativa">Normativa</button>
+        </div>
       </div>
       <!-- html-validate-enable prefer-native-element -->
 
@@ -459,10 +465,10 @@
       <p class="disclaimer">Queste schede sintetizzano informazioni pubbliche ufficiali. Non costituiscono parere legale. Per valutazioni operative, contatta lo studio o fai riferimento ai provvedimenti integrali.</p>
 
       <!-- Risorse scaricabili & tool pratici -->
-      <div class="downloads-section" style="margin: 1rem 0 0; padding: 0.9rem 1rem; background: #f8fbff; border: 1px solid #80D9FF; border-radius: 8px;">
+      <div class="downloads-section" style="margin: 1rem 0 0; padding: 0.9rem 1rem; background: #f8fbff; border: 1px solid #80D9FF; border-radius: 8px; text-align: center;">
         <strong style="font-size:0.95rem;">Risorse scaricabili e tool pratici</strong>
         <p style="margin:0.3rem 0 0.5rem; font-size:0.88rem;">Checklist, guide operative e matrici di confronto. Prova subito il tool interattivo o contattaci per versioni personalizzate.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:0.35rem;">
+        <div style="display:flex; justify-content: center; flex-wrap:wrap; gap:0.35rem;">
           <a href="verifica-incentivi.html" class="filter-btn" style="font-size:0.82rem; padding:0.3rem 0.6rem; text-decoration:none;">Verifica Incentivi →</a>
           <a href="checklist-tax-credit-produzione-2026.html" class="filter-btn" style="font-size:0.82rem; padding:0.3rem 0.6rem; text-decoration:none;">Checklist Tax Credit Produzione 2026 →</a>
           <span class="filter-btn" style="font-size:0.82rem; opacity:0.9; cursor:default;">Guida eleggibilità culturale (in prep.)</span>
@@ -492,6 +498,208 @@
   </div>
 
   <!-- Script Approfondimenti: dati ufficiali + rendering + filtri + modal -->
+
+<script type="application/ld+json" data-insights-resources="true">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Approfondimenti e Risorse - Studio Legale Lo Foco",
+  "numberOfItems": 9,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Article",
+        "name": "Tax Credit per la produzione cinematografica e audiovisiva",
+        "description": "Credito d'imposta del 40% (o aliquote differenziate) sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Requisiti culturali, limiti massimi e procedure via DGCOL.",
+        "url": "https://studiolegalelofoco.com/notizie.html#tc-produzione"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Article",
+        "name": "Tax Credit per la produzione di videogiochi (2026)",
+        "description": "Incentivo dedicato alle opere videoludiche di nazionalità italiana. Procedure specifiche, test di nazionalità dedicato e riconoscimento su spese di sviluppo/produzione in Italia.",
+        "url": "https://studiolegalelofoco.com/notizie.html#tc-videogiochi"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Article",
+        "name": "Tax Credit per l'attrazione di investimenti esteri",
+        "description": "Incentivo specifico per produzioni straniere che girano in Italia o usano servizi italiani. Aliquote interessanti per executive production e attrazione di capitali.",
+        "url": "https://studiolegalelofoco.com/notizie.html#tc-internazionale"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Article",
+        "name": "Contributi selettivi per scrittura, sviluppo e produzione",
+        "description": "Bandi annuali ex art. 26 L. 220/2016. Finanziamenti a fondo perduto per progetti di qualità artistica e culturale. Sessioni distinte per scrittura, sviluppo, produzione.",
+        "url": "https://studiolegalelofoco.com/notizie.html#contributi-selettivi"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Article",
+        "name": "Co-produzioni internazionali e accordi bilaterali",
+        "description": "Accordi con Francia, Germania e altri Paesi per co-sviluppo e co-produzione. Accesso a fondi incrociati e riconoscimento di nazionalità multipla.",
+        "url": "https://studiolegalelofoco.com/notizie.html#co-produzioni"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Article",
+        "name": "Piattaforma DGCOL: come presentare domande Tax Credit e contributi",
+        "description": "Guida pratica alla compilazione e invio di istanze preventive/definitive sulla piattaforma DGCOL del MiC. Requisiti documentali e tempistiche.",
+        "url": "https://studiolegalelofoco.com/notizie.html#dgcol-pratica"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Article",
+        "name": "Errori comuni nell'eleggibilità culturale e nazionalità (2026)",
+        "description": "Sintesi dei motivi più frequenti di rigetto o richiesta di integrazioni nei decreti 2026, con suggerimenti pratici basati su prassi.",
+        "url": "https://studiolegalelofoco.com/notizie.html#errori-eleggibilita"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Article",
+        "name": "Cumulabilità Tax Credit, contributi selettivi e incentivi regionali",
+        "description": "Regole di cumulo tra misure nazionali (Tax Credit + art.26), accordi bilaterali, Creative Europe MEDIA e Film Commission regionali. Limiti e cautele.",
+        "url": "https://studiolegalelofoco.com/notizie.html#cumulabilita-incentivi"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Article",
+        "name": "Riforma e correttivi Tax Credit (2025-2026)",
+        "description": "Decreti correttivi e attuativi che hanno ridefinito aliquote, requisiti e procedure dopo la riforma organica. Monitoraggio costante delle sessioni e delle istruzioni operative.",
+        "url": "https://studiolegalelofoco.com/notizie.html#normativa"
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json" data-insights-resources="true">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Approfondimenti e Risorse - Studio Legale Lo Foco",
+  "numberOfItems": 9,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Article",
+        "name": "Tax Credit per la produzione cinematografica e audiovisiva",
+        "description": "Credito d'imposta del 40% (o aliquote differenziate) sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Requisiti culturali, limiti massimi e procedure via DGCOL.",
+        "url": "https://studiolegalelofoco.com/notizie.html#tc-produzione"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Article",
+        "name": "Tax Credit per la produzione di videogiochi (2026)",
+        "description": "Incentivo dedicato alle opere videoludiche di nazionalità italiana. Procedure specifiche, test di nazionalità dedicato e riconoscimento su spese di sviluppo/produzione in Italia.",
+        "url": "https://studiolegalelofoco.com/notizie.html#tc-videogiochi"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Article",
+        "name": "Tax Credit per l'attrazione di investimenti esteri",
+        "description": "Incentivo specifico per produzioni straniere che girano in Italia o usano servizi italiani. Aliquote interessanti per executive production e attrazione di capitali.",
+        "url": "https://studiolegalelofoco.com/notizie.html#tc-internazionale"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Article",
+        "name": "Contributi selettivi per scrittura, sviluppo e produzione",
+        "description": "Bandi annuali ex art. 26 L. 220/2016. Finanziamenti a fondo perduto per progetti di qualità artistica e culturale. Sessioni distinte per scrittura, sviluppo, produzione.",
+        "url": "https://studiolegalelofoco.com/notizie.html#contributi-selettivi"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Article",
+        "name": "Co-produzioni internazionali e accordi bilaterali",
+        "description": "Accordi con Francia, Germania e altri Paesi per co-sviluppo e co-produzione. Accesso a fondi incrociati e riconoscimento di nazionalità multipla.",
+        "url": "https://studiolegalelofoco.com/notizie.html#co-produzioni"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Article",
+        "name": "Piattaforma DGCOL: come presentare domande Tax Credit e contributi",
+        "description": "Guida pratica alla compilazione e invio di istanze preventive/definitive sulla piattaforma DGCOL del MiC. Requisiti documentali e tempistiche.",
+        "url": "https://studiolegalelofoco.com/notizie.html#dgcol-pratica"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Article",
+        "name": "Errori comuni nell'eleggibilità culturale e nazionalità (2026)",
+        "description": "Sintesi dei motivi più frequenti di rigetto o richiesta di integrazioni nei decreti 2026, con suggerimenti pratici basati su prassi.",
+        "url": "https://studiolegalelofoco.com/notizie.html#errori-eleggibilita"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Article",
+        "name": "Cumulabilità Tax Credit, contributi selettivi e incentivi regionali",
+        "description": "Regole di cumulo tra misure nazionali (Tax Credit + art.26), accordi bilaterali, Creative Europe MEDIA e Film Commission regionali. Limiti e cautele.",
+        "url": "https://studiolegalelofoco.com/notizie.html#cumulabilita-incentivi"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Article",
+        "name": "Riforma e correttivi Tax Credit (2025-2026)",
+        "description": "Decreti correttivi e attuativi che hanno ridefinito aliquote, requisiti e procedure dopo la riforma organica. Monitoraggio costante delle sessioni e delle istruzioni operative.",
+        "url": "https://studiolegalelofoco.com/notizie.html#normativa"
+      }
+    }
+  ]
+}
+</script>
 
 <script type="application/ld+json" data-insights-resources="true">
 {
