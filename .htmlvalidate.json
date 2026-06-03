@@ -15,6 +15,7 @@
     "hidden-focusable": "off",
     "close-order": "warn",
     "unique-landmark": "warn",
-    "no-dup-id": "warn"
+    "no-dup-id": "warn",
+    "prefer-native-element": "warn"
   }
 }
