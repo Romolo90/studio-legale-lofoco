@@ -1338,12 +1338,6 @@ textarea:focus-visible {
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0, 51, 102, 0.13);
 }
-.resource-card .card-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
-}
 .resource-card .category-tag {
   font-size: 0.72rem;
   font-weight: 700;
@@ -1361,10 +1355,10 @@ textarea:focus-visible {
   line-height: 1.25;
 }
 .resource-card .summary {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: #444;
   flex-grow: 1;
-  line-height: 1.4;
+  line-height: 1.38;
   margin-bottom: 0.75rem;
 }
 .resource-card .card-footer {
@@ -1409,12 +1403,6 @@ textarea:focus-visible {
   margin-left: auto;
   white-space: nowrap;
   font-weight: 400;
-}
-
-/* Slight tweak for better text balance */
-.resource-card .summary {
-  font-size: 0.92rem;
-  line-height: 1.38;
 }
 
 /* Modal */
