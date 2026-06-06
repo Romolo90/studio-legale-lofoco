@@ -13,7 +13,7 @@
     "lint:css": "npx stylelint '*.css'",
     "format": "npx prettier --write '*.{html,css,js,json,md}'",
     "build:html": "node scripts/build.js",
-    "build": "npm run build:html -- --prod && npm run minify && echo 'Build complete! (production assets)'"
+    "build": "npm run minify && npm run build:html -- --prod && echo 'Build complete! (production assets)'"
   },
   "keywords": [
     "law",
