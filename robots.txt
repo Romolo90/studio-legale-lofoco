@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /area-clienti.html
+Disallow: /area-clienti-en.html
 Sitemap: https://studiolegalelofoco.com/sitemap.xml

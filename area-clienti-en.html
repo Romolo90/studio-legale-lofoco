@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Client Area - Studio Legale Lo Foco</title>
   <meta name="description" content="Reserved area for clients of Studio Legale Lo Foco.">
+  <meta name="robots" content="noindex, nofollow">
 
   <!-- Favicons & Manifest -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -154,10 +155,15 @@
   </header>
 
 <main class="area-clienti-main">
+    <div class="in-development-banner" role="status">
+      <strong>⚠️ Demo preview.</strong> This Client Area is under development:
+      the data shown is fictitious and login uses demo credentials for illustration only.
+      It is not yet a real reserved area — do not enter any personal or confidential data.
+    </div>
     <section id="login-section">
       <div class="dashboard-card">
-        <h2>🔐 Client Area</h2>
-        <p class="subtitle">Log in with the credentials provided by the firm</p>
+        <h2>🔐 Client Area <span style="font-size:0.7em; color:#664d03; background:#fff3cd; padding:0.1em 0.5em; border-radius:6px; vertical-align:middle;">DEMO</span></h2>
+        <p class="subtitle">Preview: log in with the demo credentials shown below the form</p>
         <div class="error-msg" id="login-error"></div>
         <form id="login-form" onsubmit="handleLogin(event)">
           <div class="form-group">

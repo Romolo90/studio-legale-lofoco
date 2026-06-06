@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Area Clienti - Studio Legale Lo Foco</title>
   <meta name="description" content="Area riservata ai clienti dello Studio Legale Lo Foco.">
+  <meta name="robots" content="noindex, nofollow">
 
   <!-- Favicons & Manifest -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -151,10 +152,15 @@
   </header>
 
 <main>
+    <div class="in-development-banner" role="status">
+      <strong>⚠️ Anteprima dimostrativa.</strong> Questa Area Clienti è in fase di sviluppo:
+      i dati mostrati sono fittizi e l'accesso usa credenziali demo a solo scopo illustrativo.
+      Non è ancora un'area riservata reale e non vi vanno inseriti dati personali o riservati.
+    </div>
     <section id="login-section">
       <div class="card">
-        <h2>🔐 Area Clienti</h2>
-        <p class="subtitle">Accedi con le credenziali fornite dallo studio</p>
+        <h2>🔐 Area Clienti <span style="font-size:0.7em; color:#664d03; background:#fff3cd; padding:0.1em 0.5em; border-radius:6px; vertical-align:middle;">DEMO</span></h2>
+        <p class="subtitle">Anteprima: accedi con le credenziali demo indicate sotto il form</p>
         <div class="error-msg" id="login-error"></div>
         <form id="login-form" onsubmit="handleLogin(event)">
           <div class="form-group">
