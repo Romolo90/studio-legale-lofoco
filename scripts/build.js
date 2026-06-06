@@ -510,7 +510,7 @@ function main() {
 
     // Copy essential assets (images, pdf, data, favicon, manifest, etc.)
     const assetsToCopy = [
-      'image', 'pdf', 'data', 'favicon.svg', 'manifest.json',
+      'image', 'pdf', 'data', 'fonts', 'favicon.svg', 'manifest.json',
       'robots.txt', 'sitemap.xml', 'ads.txt', 'CNAME', '_headers'
     ];
     for (const asset of assetsToCopy) {

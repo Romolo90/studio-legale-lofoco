@@ -1,4 +1,16 @@
 /* ========================================
+   SELF-HOSTED FONT (privacy: nessuna richiesta a Google Fonts)
+   EB Garamond variabile (subset latin), pesi 400-700.
+======================================== */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('fonts/eb-garamond-latin.woff2') format('woff2');
+}
+
+/* ========================================
    CSS CUSTOM PROPERTIES
 ======================================== */
 :root {
