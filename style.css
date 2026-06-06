@@ -290,6 +290,18 @@ p {
   font-weight: bold;
 }
 
+/* Monogramma "LF" accanto al nome */
+.logo-title .home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-mark {
+  flex-shrink: 0;
+  display: block;
+}
+
 /* Stile per la navigazione */
 .main-nav {
   display: flex;
