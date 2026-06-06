@@ -20,6 +20,9 @@
     .checklist ul.check { list-style: none; padding-left: 0; }
     .checklist ul.check li { padding: 0.35rem 0 0.35rem 1.6rem; position: relative; }
     .checklist ul.check li:before { content: "☐ "; position: absolute; left: 0; color: #003366; }
+    .checklist ol { list-style: none; margin: 0 0 1.5rem 2rem; padding-left: 0; counter-reset: step; }
+    .checklist ol li { padding: 0.35rem 0 0.35rem 1.6rem; position: relative; counter-increment: step; }
+    .checklist ol li:before { content: counter(step) "."; position: absolute; left: 0; color: #003366; font-weight: 600; }
     .note { background: #fff3cd; border-left: 4px solid #ffeaa7; padding: 0.6rem 0.8rem; font-size: 0.9rem; }
     @media print { .no-print, header, footer, .skip-link { display: none !important; } .checklist { padding: 0; } }
   </style>
