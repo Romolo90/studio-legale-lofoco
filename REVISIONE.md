@@ -1,6 +1,29 @@
 # Revisione accurata del sito — Studio Legale Lo Foco
 
-Data: 6 giugno 2026. Revisione completa su 4 dimensioni: **tecnica/codice**, **SEO/performance/accessibilità**, **contenuti giuridici** (metodologia forense), **sicurezza/privacy/GDPR**. Solo lettura: nessun file di sito modificato.
+Data: 6 giugno 2026. Revisione completa su 4 dimensioni: **tecnica/codice**, **SEO/performance/accessibilità**, **contenuti giuridici** (metodologia forense), **sicurezza/privacy/GDPR**.
+
+---
+
+## ✅ Stato interventi (branch `revisione-2026-06`, 8 commit)
+
+Tutti i 10 BLOCCANTI e la maggior parte degli IMPORTANTI sono stati risolti e verificati (build idempotente, html-validate 0 errori, flussi cookie/mappa testati in browser).
+
+- **Build**: idempotenza JSON-LD (25→1, −210 KB su notizie), build prod riparato, normalizzazione whitespace.
+- **Cookie/GDPR**: rimosso pre-flag, aggiunto "Rifiuta", revoca da footer, granularità onorata, dialog accessibile (role/focus/Escape).
+- **Privacy**: Formspree + trasferimento extra-UE dichiarati; Area Clienti come demo (banner + noindex); mappa Google click-to-load; honeypot anti-spam; header di sicurezza (`_headers`/CSP).
+- **SEO**: canonical/og:url corretti, hreflang+x-default coerenti su tutte le coppie, nav EN riparata, sitemap pulita, JSON-LD geo + Person.
+- **a11y**: un solo `<h1>` per pagina, skip-link home, `aria-expanded` hamburger, dialog cookie.
+- **i18n**: notizie EN renderizzate in inglese; **perf**: favicon −25% + orfano rimosso.
+
+### Rimasto (minore / richiede asset o tua decisione)
+- `og:image` dedicata 1200×630 (serve un'immagine grafica).
+- Self-hosting dei font EB Garamond (cambio architetturale, da fare deliberatamente).
+- Pulizia CSS (variabili morte, regole duplicate), `FAQPage`/`BreadcrumbList`, offuscamento email, og su checklist.
+- **Da confermare a cura dello studio**: certificazione DPF/SCC dei fornitori citati nella privacy.
+
+---
+
+*Segue il referto originale della revisione (diagnosi pre-interventi).*
 
 Legenda severità: 🔴 BLOCCANTE · 🟠 IMPORTANTE · 🟡 MINORE
 
