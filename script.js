@@ -35,13 +35,20 @@
       const mainNav = document.getElementById('mainNav');
       if (!hamburgerMenu || !mainNav) return;
 
+      const syncExpanded = () => {
+        hamburgerMenu.setAttribute('aria-expanded', String(mainNav.classList.contains('active')));
+      };
+      syncExpanded();
+
       hamburgerMenu.addEventListener('click', () => {
         mainNav.classList.toggle('active');
+        syncExpanded();
       });
 
       mainNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           mainNav.classList.remove('active');
+          syncExpanded();
         });
       });
     },

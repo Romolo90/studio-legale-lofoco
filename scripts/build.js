@@ -69,23 +69,28 @@ function loadInsightsData(isEn) {
   }
 }
 
-function formatDateStatic(iso) {
+function formatDateStatic(iso, isEn) {
   // Simple static date format (matches client but without locale variance in build)
   const d = new Date(iso);
-  const months = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
-  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  const monthsIt = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+  const monthsEn = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  if (isEn) {
+    return `${monthsEn[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+  }
+  return `${d.getDate()} ${monthsIt[d.getMonth()]} ${d.getFullYear()}`;
 }
 
 function renderNewsStatic(newsItems, isEn) {
   if (!newsItems || !newsItems.length) return '';
+  const readLabel = isEn ? 'Read the official notice →' : "Leggi l'avviso ufficiale →";
   return newsItems.map(item => `
         <article class="news-item">
-          <span class="date">${formatDateStatic(item.date)}</span>
+          <span class="date">${formatDateStatic(item.date, isEn)}</span>
           <div class="title">${item.title}</div>
           <p class="context">${item.context}</p>
           <div class="meta">
             <span class="source">${item.source}</span>
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer">Leggi l'avviso ufficiale →</a>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer">${readLabel}</a>
           </div>
         </article>`).join('\n');
 }
@@ -505,8 +510,8 @@ function main() {
 
     // Copy essential assets (images, pdf, data, favicon, manifest, etc.)
     const assetsToCopy = [
-      'image', 'pdf', 'data', 'favicon.svg', 'manifest.json', 
-      'robots.txt', 'sitemap.xml', 'ads.txt', 'CNAME'
+      'image', 'pdf', 'data', 'favicon.svg', 'manifest.json',
+      'robots.txt', 'sitemap.xml', 'ads.txt', 'CNAME', '_headers'
     ];
     for (const asset of assetsToCopy) {
       const src = path.join(ROOT, asset);
