@@ -13,9 +13,9 @@
     "no-raw-characters": "off",
     "empty-heading": "off",
     "hidden-focusable": "off",
-    "close-order": "warn",
+    "close-order": "error",
     "unique-landmark": "warn",
-    "no-dup-id": "warn",
+    "no-dup-id": "error",
     "prefer-native-element": "warn"
   }
 }
