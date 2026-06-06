@@ -95,9 +95,10 @@
         "Base rate up to 40% for feature films and series",
         "Mandatory cultural eligibility requirement",
         "Eligible costs: personnel, services, post-production in Italy",
-        "Preliminary and final applications via DGCOL platform"
+        "Preliminary and final applications via DGCOL platform",
+        "Legal basis: art. 15 Law 220/2016; Min. Decree 10 July 2024 no. 225 (as amended by Min. Decree 22 April 2025 no. 141)"
       ],
-      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/",
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-nazionale/",
       "secondaryLink": {
         "label": "See awarded incentives",
         "url": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
@@ -116,7 +117,11 @@
       ],
       "errorsToAvoid": "Failure to separate core costs from marketing/publishing; insufficient Italian IP for the nationality test.",
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-videogiochi-decreto-del-29-maggio-2026-di-approvazione-delle-richieste-definitive-di-credito-dimposta/",
-      "tags": ["videogames", "tax-credit", "nationality"]
+      "tags": [
+        "videogames",
+        "tax-credit",
+        "nationality"
+      ]
     },
     {
       "id": "tc-internazionale",
@@ -128,7 +133,7 @@
         "Simplified procedures for Italian executive producers",
         "Annual sessions with published deadlines in dedicated notices"
       ],
-      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/",
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-opere-straniere/",
       "secondaryLink": {
         "label": "See awarded incentives",
         "url": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
@@ -142,9 +147,10 @@
       "keyPoints": [
         "2026 allocations: €1M writing, €2M development, >€32.7M production",
         "Reserved quotas for young authors, documentaries, animation, cultural identity",
-        "Assessment based on artistic quality, feasibility and distribution plan"
+        "Assessment based on artistic quality, feasibility and distribution plan",
+        "Implementing rules: Min. Decree 8 October 2024 rep. 345 (art. 26 Law 220/2016)"
       ],
-      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/"
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/introduzione/"
     },
     {
       "id": "co-produzioni",
@@ -171,7 +177,11 @@
       ],
       "errorsToAvoid": "Uploading non-compliant files or failing to list all 'qualified' expenditure on Italian territory.",
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
-      "tags": ["dgcol", "practice", "tax-credit"]
+      "tags": [
+        "dgcol",
+        "practice",
+        "tax-credit"
+      ]
     },
     {
       "id": "errori-eleggibilita",
@@ -186,7 +196,11 @@
       ],
       "errorsToAvoid": "Underestimating the 'Italian cultural identity' or 'artistic quality' component for reserved quotas.",
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-29-maggio-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/",
-      "tags": ["eligibility", "errors", "nationality"]
+      "tags": [
+        "eligibility",
+        "errors",
+        "nationality"
+      ]
     },
     {
       "id": "cumulabilita-incentivi",
@@ -201,13 +215,17 @@
       ],
       "errorsToAvoid": "Declaring the same expenditure under multiple measures without authorisation or double counting in reporting.",
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/",
-      "tags": ["cumulability", "regional", "film-commission"]
+      "tags": [
+        "cumulability",
+        "regional",
+        "film-commission"
+      ]
     },
     {
       "id": "normativa",
       "title": "Tax Credit Reform and Corrective Decrees (2025-2026)",
       "category": "normativa",
-      "summary": "Corrective and implementing decrees that redefined rates, requirements and procedures following the organic reform. Continuous monitoring of sessions and operational instructions.",
+      "summary": "Corrective and implementing decrees that redefined rates, requirements and procedures after the reform. Production tax credit: Min. Decree 10 July 2024 no. 225, amended by the corrective Min. Decree 22 April 2025 no. 141 (art. 15 Law 220/2016). Constant monitoring of sessions and operating instructions.",
       "keyPoints": [
         "Frequent updates on deadlines and procedures (e.g. 2026 D.D.)",
         "DGCOL platform for all applications",

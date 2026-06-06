@@ -95,9 +95,10 @@
         "Aliquota base fino al 40% per lungometraggi e serie",
         "Requisito di eleggibilità culturale obbligatorio",
         "Spese ammissibili: personale, servizi, post-produzione in Italia",
-        "Domande preventive e definitive tramite piattaforma DGCOL"
+        "Domande preventive e definitive tramite piattaforma DGCOL",
+        "Base normativa: art. 15 L. 220/2016; D.M. 10 luglio 2024 n. 225 (come modificato dal D.M. 22 aprile 2025 n. 141)"
       ],
-      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/",
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-nazionale/",
       "secondaryLink": {
         "label": "Vedi gli incentivi già assegnati",
         "url": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
@@ -116,7 +117,11 @@
       ],
       "errorsToAvoid": "Mancata separazione tra costi core e marketing/publishing; IP non sufficientemente italiano per il test nazionalità.",
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-videogiochi-decreto-del-29-maggio-2026-di-approvazione-delle-richieste-definitive-di-credito-dimposta/",
-      "tags": ["videogiochi", "tax-credit", "nazionalita"]
+      "tags": [
+        "videogiochi",
+        "tax-credit",
+        "nazionalita"
+      ]
     },
     {
       "id": "tc-internazionale",
@@ -128,7 +133,7 @@
         "Procedure semplificate per executive producer italiane",
         "Sessioni annuali con termini pubblicati in avvisi dedicati"
       ],
-      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/",
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-opere-straniere/",
       "secondaryLink": {
         "label": "Vedi gli incentivi già assegnati",
         "url": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
@@ -142,9 +147,10 @@
       "keyPoints": [
         "2026: 1M€ scrittura, 2M€ sviluppo, oltre 32M€ produzione",
         "Quote riservate a giovani autori, documentari, animazione, identità culturale",
-        "Valutazione su qualità artistica, fattibilità, piano di distribuzione"
+        "Valutazione su qualità artistica, fattibilità, piano di distribuzione",
+        "Disposizioni applicative: D.M. 8 ottobre 2024 rep. 345 (art. 26 L. 220/2016)"
       ],
-      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/"
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/introduzione/"
     },
     {
       "id": "co-produzioni",
@@ -171,7 +177,11 @@
       ],
       "errorsToAvoid": "Invio di file non conformi o mancata indicazione di tutte le spese 'qualificate' sul territorio italiano.",
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
-      "tags": ["dgcol", "pratica", "tax-credit"]
+      "tags": [
+        "dgcol",
+        "pratica",
+        "tax-credit"
+      ]
     },
     {
       "id": "errori-eleggibilita",
@@ -186,7 +196,11 @@
       ],
       "errorsToAvoid": "Sottovalutare la componente 'identità culturale italiana' o 'qualità artistica' per le quote riservate.",
       "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-29-maggio-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/",
-      "tags": ["eleggibilita", "errori", "nazionalita"]
+      "tags": [
+        "eleggibilita",
+        "errori",
+        "nazionalita"
+      ]
     },
     {
       "id": "cumulabilita-incentivi",
@@ -201,13 +215,17 @@
       ],
       "errorsToAvoid": "Dichiarare la stessa spesa su più misure senza autorizzazione o doppia rendicontazione.",
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/",
-      "tags": ["cumulabilita", "regionali", "film-commission"]
+      "tags": [
+        "cumulabilita",
+        "regionali",
+        "film-commission"
+      ]
     },
     {
       "id": "normativa",
       "title": "Riforma e correttivi Tax Credit (2025-2026)",
       "category": "normativa",
-      "summary": "Decreti correttivi e attuativi che hanno ridefinito aliquote, requisiti e procedure dopo la riforma organica. Monitoraggio costante delle sessioni e delle istruzioni operative.",
+      "summary": "Decreti correttivi e attuativi che hanno ridefinito aliquote, requisiti e procedure dopo la riforma. Tax credit produzione: D.M. 10 luglio 2024 n. 225, modificato dal correttivo D.M. 22 aprile 2025 n. 141 (art. 15 L. 220/2016). Monitoraggio costante delle sessioni e delle istruzioni operative.",
       "keyPoints": [
         "Aggiornamenti frequenti su termini e modalità (es. D.D. 2026)",
         "Piattaforma DGCOL per tutte le istanze",
