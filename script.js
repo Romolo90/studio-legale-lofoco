@@ -119,12 +119,20 @@
       this.cookieBanner = document.getElementById('cookie-banner');
       this.cookiePreferences = document.getElementById('cookie-preferences');
       this.acceptCookiesBtn = document.getElementById('accept-cookies');
+      this.rejectCookiesBtn = document.getElementById('reject-cookies');
       this.manageCookiesBtn = document.getElementById('manage-cookies');
       this.savePreferencesBtn = document.getElementById('save-preferences');
+      this.cookieSettingsLink = document.getElementById('cookie-settings');
 
       if (this.acceptCookiesBtn) {
         this.acceptCookiesBtn.addEventListener('click', () => {
           this.acceptAllCookies();
+        });
+      }
+
+      if (this.rejectCookiesBtn) {
+        this.rejectCookiesBtn.addEventListener('click', () => {
+          this.rejectNonEssential();
         });
       }
 
@@ -133,8 +141,9 @@
           if (this.cookiePreferences) {
             this.openPreferences();
           } else {
-            // Fallback: if no preferences panel, just accept all (simple behavior on legal pages)
-            this.acceptAllCookies();
+            // Fallback: no preferences panel on this page -> record a "necessary only"
+            // choice. Never silently accept analytics without an explicit opt-in.
+            this.rejectNonEssential();
           }
         });
       }
@@ -145,18 +154,43 @@
         });
       }
 
-      if (this.hasAcceptedCookies()) {
+      // Footer "Gestisci cookie" / "Cookie settings" link: reopen the banner so the
+      // user can change or withdraw consent at any time (GDPR art. 7(3)).
+      if (this.cookieSettingsLink) {
+        this.cookieSettingsLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.reopenBanner();
+        });
+      }
+
+      if (this.hasMadeChoice()) {
         this.hideBanner();
-        // Load GA for returning visitors who already gave consent
-        this.loadGoogleAnalytics();
+        // Load GA for returning visitors ONLY if they explicitly consented to analytics.
+        if (this.analyticsConsentGiven()) {
+          this.loadGoogleAnalytics();
+        }
       }
     },
 
-    acceptAllCookies() {
+    // Persist the consent choice. `analytics` true only on explicit opt-in.
+    // We store both a "choice made" flag and the analytics preference so the
+    // banner stays hidden on return while GA loads only with real consent.
+    setConsent(analytics) {
       const secureFlag = location.protocol === 'https:' ? 'Secure; ' : '';
-      document.cookie = `cookiesAccepted=true; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; ${secureFlag}`;
+      const maxAge = 60 * 60 * 24 * 365;
+      document.cookie = `cookiesAccepted=true; path=/; max-age=${maxAge}; SameSite=Strict; ${secureFlag}`;
+      document.cookie = `cookiePreferences=${JSON.stringify({ analytics: !!analytics })}; path=/; max-age=${maxAge}; SameSite=Strict; ${secureFlag}`;
+    },
+
+    acceptAllCookies() {
+      this.setConsent(true);
       this.hideBanner();
       this.loadGoogleAnalytics();   // Load GA only after explicit consent
+    },
+
+    rejectNonEssential() {
+      this.setConsent(false);       // Necessary only: GA is NOT loaded
+      this.hideBanner();
     },
 
     openPreferences() {
@@ -166,24 +200,42 @@
 
     savePreferences() {
       const checkboxes = document.querySelectorAll("#cookie-preferences input[name='cookieType']");
-      const preferences = Array.from(checkboxes).reduce((prefs, checkbox) => {
-        prefs[checkbox.value] = checkbox.checked;
-        return prefs;
-      }, {});
-      
-      document.cookie = `cookiePreferences=${JSON.stringify(preferences)}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Strict; ${location.protocol === 'https:' ? 'Secure; ' : ''}`;
+      const analyticalEnabled = Array.from(checkboxes).some(cb =>
+        (cb.value === 'analitici' || cb.value === 'analytical') && cb.checked
+      );
+
+      this.setConsent(analyticalEnabled);
       this.cookiePreferences.style.display = 'none';
 
       // Load GA4 only if the user explicitly enabled analytical cookies
-      const analyticalEnabled = preferences['analitici'] === true || preferences['analytical'] === true;
       if (analyticalEnabled) {
         this.loadGoogleAnalytics();
       }
     },
 
-    hasAcceptedCookies() {
-      // A simple cookie check; consider using a helper to parse cookies for more robust logic.
+    // Reopen the banner to let the user change or withdraw consent.
+    reopenBanner() {
+      if (this.cookiePreferences) {
+        this.cookiePreferences.style.display = 'none';
+      }
+      if (this.cookieBanner) {
+        this.cookieBanner.style.display = '';
+      }
+    },
+
+    hasMadeChoice() {
       return document.cookie.includes('cookiesAccepted=true');
+    },
+
+    analyticsConsentGiven() {
+      const match = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (!match) return false;
+      try {
+        const prefs = JSON.parse(decodeURIComponent(match[1]));
+        return prefs.analytics === true;
+      } catch (e) {
+        return false;
+      }
     },
 
     hideBanner() {

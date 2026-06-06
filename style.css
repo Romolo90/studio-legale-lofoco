@@ -855,6 +855,23 @@ footer {
   text-decoration: underline;
 }
 
+/* "Gestisci cookie" / "Cookie settings" trigger styled to match footer links */
+.footer-note .link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #80D9FF;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer-note .link-button:hover {
+  color: #BFECFF;
+  text-decoration: underline;
+}
+
 .footer-left img {
   max-width: 88px;
   height: auto;
