@@ -21,6 +21,7 @@
         this.initScrollToTop();
         this.initAccordion();
         this.initFormValidation();
+        this.initMapPlaceholder();
       } catch (error) {
         console.error('Error initializing app:', error);
       }
@@ -116,6 +117,26 @@
           errorMsg.style.display = 'block';
           privacyCheckbox.focus();
         }
+      });
+    },
+
+    // Click-to-load Google Maps: the embed (and its third-party cookies) is only
+    // requested after the user explicitly clicks the placeholder.
+    initMapPlaceholder() {
+      const placeholder = document.querySelector('.map-placeholder[data-map-src]');
+      if (!placeholder) return;
+
+      placeholder.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = placeholder.dataset.mapSrc;
+        iframe.width = '600';
+        iframe.height = '450';
+        iframe.style.border = '0';
+        iframe.loading = 'lazy';
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        iframe.title = placeholder.dataset.mapTitle || 'Map';
+        placeholder.replaceWith(iframe);
       });
     }
   };

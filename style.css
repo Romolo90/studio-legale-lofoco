@@ -641,6 +641,44 @@ p {
   border-radius: 5px;
 }
 
+/* Click-to-load map placeholder (privacy: no Google Maps request before click) */
+.map-placeholder {
+  width: 100%;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 2rem;
+  border: 2px dashed #80d9ff;
+  border-radius: 5px;
+  background: #f8fbff;
+  color: #003366;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+}
+
+.map-placeholder:hover,
+.map-placeholder:focus-visible {
+  background: #eef7ff;
+}
+
+.map-placeholder-icon {
+  font-size: 2rem;
+}
+
+.map-placeholder-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.map-placeholder small {
+  color: #557;
+  font-size: 0.85rem;
+}
+
 /* ========================================
    TASTO SCROLL TOP
 ======================================== */
