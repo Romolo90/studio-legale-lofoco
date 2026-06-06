@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#003a73"/>
+      <stop offset="1" stop-color="#002244"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Cornice sottile brand -->
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#80D9FF" stroke-width="2" opacity="0.55"/>
+
+  <!-- Emblema: bilancia stilizzata + claqueta (legale + cinema) -->
+  <g stroke="#80D9FF" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9">
+    <line x1="600" y1="120" x2="600" y2="205"/>
+    <line x1="520" y1="150" x2="680" y2="150"/>
+    <path d="M520 150 L498 196 a24 24 0 0 0 44 0 Z" fill="#80D9FF" fill-opacity="0.18"/>
+    <path d="M680 150 L658 196 a24 24 0 0 0 44 0 Z" fill="#80D9FF" fill-opacity="0.18"/>
+    <rect x="585" y="205" width="30" height="8" rx="2" fill="#80D9FF" stroke="none"/>
+  </g>
+
+  <!-- Nome studio -->
+  <text x="600" y="330" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="700" fill="#EAF7FF" letter-spacing="1">Studio Legale Lo Foco</text>
+
+  <!-- Linea accento -->
+  <line x1="420" y1="378" x2="780" y2="378" stroke="#80D9FF" stroke-width="2" opacity="0.7"/>
+
+  <!-- Sottotitolo -->
+  <text x="600" y="438" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#BFECFF">Diritto d'Autore &#183; Cinema &#183; Audiovisivo</text>
+
+  <!-- Riga inferiore -->
+  <text x="600" y="540" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#80D9FF" letter-spacing="2">ROMA &#183; studiolegalelofoco.com</text>
+</svg>
