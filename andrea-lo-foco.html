@@ -26,11 +26,11 @@
 
   <header class="header">
     <div class="logo">
-      <h1>
+      <p class="logo-title">
         <a href="index.html" class="home-link" aria-label="Torna alla homepage">
           Studio Legale Lo Foco
         </a>
-      </h1>
+      </p>
     </div>
 
     <!-- Mobile Hamburger Menu -->
@@ -48,6 +48,9 @@
         <li><a href="notizie.html">Approfondimenti</a></li>
         <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
+        <li class="mobile-language">
+          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -62,7 +65,7 @@
             <img src="image/andrealofoco.JPG" alt="Foto di Andrea Lo Foco" class="profile-image" loading="lazy" decoding="async" width="320" height="320">
           </div>
           <div class="profile-text">
-            <h2 class="profile-title">Avv. Andrea Lo Foco</h2>
+            <h1 class="profile-title">Avv. Andrea Lo Foco</h1>
             <p class="profile-subtitle">Esperto in diritto d'autore e diritto amministrativo</p>
             <p>
               Avvocato con esperienza in diritto d'autore e diritto amministrativo, con consolidata attività nei settori cinematografico, audiovisivo e dello spettacolo. Si occupa della gestione editoriale e commerciale dei diritti di sfruttamento delle opere audiovisive, con particolare attenzione a tax credit cinema e alla tutela delle opere creative in Italia e in Europa.
@@ -157,8 +160,8 @@
     </div>
   </div>
 
-  <div id="cookie-preferences" class="hidden">
-    <h2>Preferenze Cookie</h2>
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Preferenze Cookie</h2>
     <form>
       <label>
         <input type="checkbox" name="cookieType" value="analitici" />

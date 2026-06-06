@@ -27,11 +27,11 @@
 
   <header class="header">
     <div class="logo">
-      <h1>
+      <p class="logo-title">
         <a href="index.html" class="home-link" aria-label="Torna alla homepage">
           Studio Legale Lo Foco
         </a>
-      </h1>
+      </p>
     </div>
 
     <!-- Mobile Hamburger Menu -->
@@ -49,6 +49,9 @@
         <li><a href="notizie.html">Approfondimenti</a></li>
         <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
         <li><a href="area-clienti.html">Area Clienti</a></li>
+        <li class="mobile-language">
+          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -63,7 +66,7 @@
             <img src="image/samorymaiga.JPG" alt="Foto di Samory Maiga" class="profile-image" loading="lazy" decoding="async" width="320" height="320">
           </div>
           <div class="profile-text">
-            <h2 class="profile-title">Avv. Samory Maiga</h2>
+            <h1 class="profile-title">Avv. Samory Maiga</h1>
             <p class="profile-subtitle">Diritto d'autore e contrattualistica cinematografica</p>
             <p>
               Avvocato con competenze specifiche in diritto d'autore applicato all'industria cinematografica e audiovisiva, con particolare attenzione alla contrattualistica e alla tutela delle opere creative. Si occupa di consulenza legale e di tutela giudiziale e stragiudiziale per autori, produzioni e operatori dei settori cinema, cultura e spettacolo.
@@ -137,8 +140,8 @@
     </div>
   </div>
 
-  <div id="cookie-preferences" class="hidden">
-    <h2>Preferenze Cookie</h2>
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Preferenze Cookie</h2>
     <form>
       <label>
         <input type="checkbox" name="cookieType" value="analitici" />

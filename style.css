@@ -248,7 +248,7 @@ p {
 }
 
 /* Stile per il logo */
-.logo h1 {
+.logo .logo-title {
   font-size: 1.8rem;
   margin: 0;
   white-space: nowrap;
@@ -334,7 +334,7 @@ p {
   max-width: 800px;
 }
 
-.hero-content h2 {
+.hero-content h1, .hero-content h2 {
   font-size: 2.3rem;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -935,7 +935,7 @@ footer {
     flex-wrap: wrap;
     padding: 1rem;
   }
-  .logo h1 {
+  .logo .logo-title {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     white-space: normal;
@@ -986,7 +986,7 @@ footer {
     height: auto;
     padding: 3rem 1rem;
   }
-  .hero-content h2 {
+  .hero-content h1, .hero-content h2 {
     font-size: 2.3rem;
   }
   .hero-content p {

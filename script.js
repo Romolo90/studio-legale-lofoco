@@ -203,6 +203,30 @@
     openPreferences() {
       this.cookiePreferences.style.display = 'block';
       this.cookieBanner.style.display = 'none';
+
+      // Accessibility: move focus into the dialog and allow Escape to close it.
+      const focusable = this.cookiePreferences.querySelector('input, button, [tabindex]');
+      if (focusable) focusable.focus();
+      this._onPrefsKeydown = (e) => {
+        if (e.key === 'Escape') this.closePreferences();
+      };
+      this.cookiePreferences.addEventListener('keydown', this._onPrefsKeydown);
+    },
+
+    _teardownPrefsKeydown() {
+      if (this._onPrefsKeydown) {
+        this.cookiePreferences.removeEventListener('keydown', this._onPrefsKeydown);
+        this._onPrefsKeydown = null;
+      }
+    },
+
+    // Cancel the dialog (e.g. Escape): hide it and bring back the banner so the
+    // user can still make a choice. No consent is recorded.
+    closePreferences() {
+      this.cookiePreferences.style.display = 'none';
+      this._teardownPrefsKeydown();
+      if (this.cookieBanner) this.cookieBanner.style.display = '';
+      if (this.manageCookiesBtn) this.manageCookiesBtn.focus();
     },
 
     savePreferences() {
@@ -213,6 +237,7 @@
 
       this.setConsent(analyticalEnabled);
       this.cookiePreferences.style.display = 'none';
+      this._teardownPrefsKeydown();
 
       // Load GA4 only if the user explicitly enabled analytical cookies
       if (analyticalEnabled) {

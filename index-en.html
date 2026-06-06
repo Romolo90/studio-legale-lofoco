@@ -94,9 +94,9 @@
 
   <header class="header">
     <div class="logo">
-      <h1 class="home-link">
-        <a href="index.html" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
-      </h1>
+      <p class="logo-title">
+        <a href="index.html" class="home-link" aria-label="Homepage Studio Legale Lo Foco">Studio Legale Lo Foco</a>
+      </p>
     </div>
     <!-- Language selector -->
     <div class="language-selector">
@@ -129,7 +129,7 @@
   <section class="hero" aria-label="Introduction">
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <h2>Studio Legale Lo Foco</h2>
+      <h1>Studio Legale Lo Foco</h1>
       <p>
         Legal solutions for film, audiovisual and the creative sectors.<br>
         We assist producers, authors and cultural enterprises in protecting their rights, accessing funding and developing their projects.
@@ -351,8 +351,8 @@
     </div>
   </div>
 
-  <div id="cookie-preferences" class="hidden">
-    <h2>Cookie Preferences</h2>
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Cookie Preferences</h2>
     <form>
       <label>
         <input type="checkbox" name="cookieType" value="analytical" />

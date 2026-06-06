@@ -27,11 +27,11 @@
 
   <header class="header">
     <div class="logo">
-      <h1>
+      <p class="logo-title">
         <a href="index.html" class="home-link" aria-label="Back to homepage">
           Studio Legale Lo Foco
         </a>
-      </h1>
+      </p>
     </div>
 
     <!-- Mobile Hamburger Menu -->
@@ -43,9 +43,9 @@
 
     <nav class="main-nav" id="mainNav" aria-label="Main Menu">
       <ul>
-        <li><a href="index.html#chi-siamo">About Us</a></li>
-        <li><a href="index.html#servizi">Services</a></li>
-        <li><a href="index.html#contatti">Contact</a></li>
+        <li><a href="index-en.html#about-us">About Us</a></li>
+        <li><a href="index-en.html#services">Services</a></li>
+        <li><a href="index-en.html#contact">Contact</a></li>
         <li><a href="notizie-en.html">Insights</a></li>
         <li><a href="verifica-incentivi-en.html">Incentives Checker</a></li>
         <li><a href="area-clienti-en.html">Client Area</a></li>
@@ -66,7 +66,7 @@
             <img src="image/samorymaiga.JPG" alt="Photo of Samory Maiga" class="profile-image" loading="lazy" decoding="async" width="320" height="320">
           </div>
           <div class="profile-text">
-            <h2 class="profile-title">Avv. Samory Maiga</h2>
+            <h1 class="profile-title">Avv. Samory Maiga</h1>
             <p class="profile-subtitle">Copyright and Film & Audiovisual Contracting</p>
             <p>
               Lawyer with specific expertise in copyright law applied to the film and audiovisual industry, with particular focus on entertainment contracting and the protection of creative works. He provides legal advice and judicial and extrajudicial protection for authors, production companies, and professionals in the cinema, culture, and performing arts sectors.
@@ -140,8 +140,8 @@
     </div>
   </div>
 
-  <div id="cookie-preferences" class="hidden">
-    <h2>Cookie Preferences</h2>
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Cookie Preferences</h2>
     <form>
       <label>
         <input type="checkbox" name="cookieType" value="analytical" />
