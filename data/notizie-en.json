@@ -1,6 +1,41 @@
 {
   "newsItems": [
     {
+      "date": "2026-07-01",
+      "title": "National Plan 'Cinema and Images for School' 2026 – Calls published",
+      "context": "The Ministry of Culture and the Ministry of Education and Merit publish the three 2026 calls (Action B.1 national relevance, Action B.2 territorial relevance and cinematic language), with €20.1M total. Platform open from 13 July (3:00 pm) to 18 September 2026 (3:00 pm) on cinemaperlascuola.istruzione.it.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/piano-nazionale-cinema-e-immagini-per-la-scuola-promosso-dal-mic-e-dal-mim-pubblicati-gli-avvisi-2026/"
+    },
+    {
+      "date": "2026-06-30",
+      "title": "Videogames Tax Credit – 30 June 2026 Decree approving final applications",
+      "context": "Directorial Decree rep. 2012: the outcome on final tax credit applications for the production of videogames of Italian nationality is published. Online publication counts as recognition; no individual PEC notification will be sent.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-videogiochi-decreto-del-30-giugno-2026-di-approvazione-delle-richieste-definitive-di-credito-dimposta/"
+    },
+    {
+      "date": "2026-06-30",
+      "title": "Provisional and Final Italian Nationality for Videogames – 30 June 2026 Decrees",
+      "context": "Directorial Decrees rep. 2014 and 2015: recognition of provisional and final Italian nationality for videogame works. Online publication is the official notification; lists are available in the 'Italian nationality of works' section.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/nazionalita-italiana-provvisoria-e-definitiva-videogiochi-con-decreti-direttoriali-del-30-giugno-2026/"
+    },
+    {
+      "date": "2026-06-23",
+      "title": "Selective Contributions – Opening of 2025 advance-payment requests (Production, Development, Screenwriting)",
+      "context": "Advance-payment requests (50%) are open for winning projects of the 2025 Session I. Screenwriting and development: within 90 days of the award resolution, deadline 18 August 2026. Production: within 12 months of the ranking decree. Submission via DGCOL with DURC and, above €150,000, anti-mafia documentation.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/apertura-richieste-acconto-2025-produzione-sviluppo-e-scrittura/"
+    },
+    {
+      "date": "2026-06-12",
+      "title": "Payments – Cinema and multipurpose venues enhancement plan – DM 190/2025",
+      "context": "From 15 June 2026 beneficiaries (intervention Line D) may request the 30% advance of the assigned grant, filing via PEC with proof of works commencement and a substitute declaration under DPR 445/2000.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/erogazioni-piano-potenziamento-sale-cinematografiche-e-polifunzionali-dm-190-del-10-giugno-2025/"
+    },
+    {
       "date": "2026-06-10",
       "title": "Videogames Tax Credit – 2025 preliminary applications session open (10 June 2026)",
       "context": "Directorial Decree rep. 1657: terms and procedures for preliminary tax credit applications for videogame production. Submission window on DGCOL from 19 June (10:00) to 20 August 2026 (23:59).",
@@ -55,34 +90,6 @@
       "context": "Full ranking published for majority-Italian projects submitted to the 8th edition of the co-development award with Baltic States.",
       "source": "DG Cinema e Audiovisivo",
       "link": "https://cinema.cultura.gov.it/avvisi/avvisi-contributi-selettivi/premio-di-sviluppo-italia-stati-baltici-ottava-edizione-esito-e-graduatoria-completa/"
-    },
-    {
-      "date": "2026-05-20",
-      "title": "Selective Contributions 2025 – Full ranking published for Development Session I",
-      "context": "D.D. 20 May 2026 rep. 1267. Complete rankings for development projects submitted in the first 2025 session.",
-      "source": "DG Cinema e Audiovisivo",
-      "link": "https://cinema.cultura.gov.it/avvisi/contributi-selettivi-2025-pubblicata-la-graduatoria-completa-sviluppo-i-sessione/"
-    },
-    {
-      "date": "2026-05-20",
-      "title": "Selective Contributions 2025 – Screenwriting Session I and Animation/Identity Production rankings",
-      "context": "Rankings published for 2025 Screenwriting I session and 2024 Animation/Italian Identity Production sessions (Art. 26 Law 220/2016).",
-      "source": "DG Cinema e Audiovisivo",
-      "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/"
-    },
-    {
-      "date": "2026-05-15",
-      "title": "Call for Selective Contributions – Year 2026",
-      "context": "D.D. 15 May 2026 rep. 1238. €1M for screenwriting, €2M for development, €32.7M for production (with dedicated quotas for young authors, documentaries, animation and cultural identity projects).",
-      "source": "DG Cinema e Audiovisivo",
-      "link": "https://cinema.cultura.gov.it/avvisi/bando-per-la-concessione-di-contributi-selettivi-anno-2026/"
-    },
-    {
-      "date": "2026-05-19",
-      "title": "Tax Credit for Investment Attraction – 2026 Session Opened",
-      "context": "D.D. 19 May 2026 rep. 1244. Terms and procedures for preliminary and final applications for 2026 regarding the tax credit for attracting cinematographic and audiovisual investments to Italy.",
-      "source": "DG Cinema e Audiovisivo",
-      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-per-lattrazione-in-italia-di-investimenti-cinematografici-e-audiovisivi-apertura-sessione-per-la-presentazione-delle-richieste-preventive-e-definitive-per-lanno/"
     }
   ],
   "articles": [
