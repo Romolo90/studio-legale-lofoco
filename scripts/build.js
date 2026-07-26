@@ -183,7 +183,13 @@ function injectInsightsStatic(content, filename) {
   return { content: out, changed };
 }
 
-function isEnglishFile(filename) {
+// Il suffisso -en.html resta la convenzione, ma non basta come unico criterio: una
+// pagina inglese chiamata diversamente (es. checklist-tax-credit-production-2026.html)
+// si ritroverebbe header, footer e cookie banner in italiano. Il <html lang> dichiarato
+// nella pagina e' la fonte piu' affidabile, quindi vince quando c'e'.
+function isEnglishFile(filename, content) {
+  const lang = content && content.match(/<html[^>]*\slang=["']([^"']+)["']/i);
+  if (lang) return lang[1].toLowerCase().startsWith('en');
   return /-en\.html$/.test(filename);
 }
 
@@ -311,7 +317,7 @@ function processFile(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
   const originalContent = content;
   const filename = path.basename(filePath);
-  const isEn = isEnglishFile(filename);
+  const isEn = isEnglishFile(filename, content);
   const isHome = isHomeFile(filename);
 
   const newHeader = getHeaderPartial(isEn, isHome);
