@@ -279,6 +279,9 @@
     <form class="contact-form" action="https://formspree.io/f/mgvvkobk" method="POST">
       <!-- Honeypot anti-spam: i bot compilano questo campo nascosto; Formspree scarta tali invii -->
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+      <!-- Dopo l'invio Formspree rimanda alla nostra pagina di conferma invece che alla sua:
+           l'utente resta sul sito e la conversione è tracciabile in Analytics -->
+      <input type="hidden" name="_next" value="https://studiolegalelofoco.com/grazie.html" />
       <div class="form-row">
         <label for="nome">Nome e Cognome</label>
         <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required />

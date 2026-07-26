@@ -12,6 +12,14 @@
     };
   }
 
+  // Utility: send a GA4 event, but only if the visitor consented to analytics.
+  // `window.gtag` is defined only after CookieManager.loadGoogleAnalytics() has run,
+  // so this is a silent no-op for anyone who refused or ignored the cookie banner.
+  function trackEvent(name, params) {
+    if (!window.gtagLoaded || typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params || {});
+  }
+
   // Main App object
   const App = {
     init() {
@@ -21,6 +29,7 @@
         this.initScrollToTop();
         this.initAccordion();
         this.initFormValidation();
+        this.initLeadTracking();
         this.initMapPlaceholder();
       } catch (error) {
         console.error('Error initializing app:', error);
@@ -117,6 +126,33 @@
           errorMsg.style.display = 'block';
           privacyCheckbox.focus();
         }
+      });
+    },
+
+    // Lead tracking. Without these events GA4 only ever sees pageviews, so the
+    // "Generazione di lead" report can show nothing but zeros no matter how many
+    // people actually get in touch.
+    initLeadTracking() {
+      const form = document.querySelector('.contact-form');
+      if (form) {
+        // Registered after initFormValidation(), so a submit blocked by the privacy
+        // check reaches this listener already prevented and is not counted as a lead.
+        // Submits blocked by native `required` validation never fire the event at all.
+        form.addEventListener('submit', e => {
+          if (e.defaultPrevented) return;
+          trackEvent('generate_lead', { method: 'contact_form' });
+        });
+      }
+
+      // Email and phone links are the other two ways a visitor becomes a lead.
+      // Delegated on document because the href is resolved at click time: Cloudflare
+      // rewrites mailto: addresses into /cdn-cgi/l/email-protection placeholders and
+      // restores them via its own script, so binding at load time would miss them.
+      document.addEventListener('click', e => {
+        const link = e.target.closest && e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+        if (!link) return;
+        const isEmail = link.getAttribute('href').toLowerCase().startsWith('mailto:');
+        trackEvent('contact_click', { method: isEmail ? 'email' : 'phone' });
       });
     },
 
