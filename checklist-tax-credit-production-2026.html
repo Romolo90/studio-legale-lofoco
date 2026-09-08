@@ -2,7 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google tag (gtag.js) - Consent Mode v2.
+       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
+       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
+       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
+    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
+    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
+    var glfAnalytics = 'denied';
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        glfAnalytics = 'granted';
+      }
+    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: glfAnalytics,
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tax Credit Production 2026 Application Checklist | Studio Legale Lo Foco</title>

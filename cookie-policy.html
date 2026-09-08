@@ -2,7 +2,40 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google tag (gtag.js) - Consent Mode v2.
+       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
+       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
+       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
+    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
+    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
+    var glfAnalytics = 'denied';
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        glfAnalytics = 'granted';
+      }
+    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: glfAnalytics,
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Cookie Policy - Studio Legale Lo Foco</title>
@@ -98,7 +131,7 @@
     <h2>2. Tipi di cookie che utilizziamo</h2>
     <ul>
       <li><strong>Cookie tecnici (necessari):</strong> Essenziali per il corretto funzionamento del sito (ad esempio navigazione, menu mobile, banner cookie). Non possono essere disattivati.</li>
-      <li><strong>Cookie analitici:</strong> Utilizzati per raccogliere dati aggregati e anonimi sull’uso del sito (Google Analytics). Questi cookie vengono caricati <strong>solo dopo il tuo consenso esplicito</strong>.</li>
+      <li><strong>Cookie analitici:</strong> Utilizzati per raccogliere dati aggregati e anonimi sull’uso del sito (Google Analytics 4). Questi cookie vengono installati <strong>solo dopo il tuo consenso esplicito</strong>.</li>
     </ul>
 
     <h2>3. Come gestiamo il consenso</h2>
@@ -110,8 +143,16 @@
       <li>Cliccare su <strong>«Gestisci cookie»</strong> per scegliere se attivare o meno i cookie analitici.</li>
     </ul>
     <p>
-      Google Analytics viene caricato <strong>esclusivamente dopo</strong> che hai dato il tuo consenso
-      per i cookie analitici. Senza il tuo consenso, non viene attivato alcun tracciamento analitico.
+      Utilizziamo la <strong>modalità di consenso (Consent Mode v2)</strong> di Google. Finché non presti
+      il tuo consenso ai cookie analitici, <strong>nessun cookie di Google Analytics viene installato</strong>
+      sul tuo dispositivo e nessun identificatore ti viene attribuito: Google riceve unicamente
+      segnalazioni prive di cookie, che confluiscono in statistiche puramente aggregate e non
+      consentono di identificarti né di ricostruire il tuo percorso di navigazione.
+    </p>
+    <p>
+      Solo dopo che hai cliccato «Accetta tutti» o hai attivato i cookie analitici da «Gestisci cookie»
+      la misurazione diventa completa, con l’installazione dei cookie analitici descritti sopra.
+      Se rifiuti, o se semplicemente non compi alcuna scelta, la misurazione resta priva di cookie.
     </p>
 
     <h2>4. Come modificare o revocare il consenso</h2>
@@ -127,8 +168,9 @@
     <h2>5. Cookie di terze parti</h2>
     <p>
       Alcuni cookie possono essere impostati da servizi di terze parti che utilizziamo
-      (principalmente Google per Analytics e per i font). Questi cookie sono soggetti alle rispettive
-      politiche sulla privacy di tali terzi.
+      (principalmente Google per Analytics). I font sono ospitati direttamente sui nostri server e
+      non comportano richieste a terzi. Questi cookie sono soggetti alle rispettive politiche sulla
+      privacy di tali terzi.
     </p>
 
     <h2>6. Contatti</h2>

@@ -2,7 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google tag (gtag.js) - Consent Mode v2.
+       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
+       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
+       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
+    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
+    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
+    var glfAnalytics = 'denied';
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        glfAnalytics = 'granted';
+      }
+    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: glfAnalytics,
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Privacy Policy - Studio Legale Lo Foco</title>
@@ -136,7 +169,7 @@
 
     <h2>6. Recipients and Data Processors</h2>
     <p>
-      Data submitted through the contact form is processed on our behalf by <strong>Formspree Inc.</strong> (a form-handling service based in the United States), acting as data processor under Art. 28 GDPR. Anonymized browsing data collected via Google Analytics 4 is processed by <strong>Google Ireland Ltd.</strong>, and is activated only after your consent. We do not sell or share your data with third parties for marketing purposes.
+      Data submitted through the contact form is processed on our behalf by <strong>Formspree Inc.</strong> (a form-handling service based in the United States), acting as data processor under Art. 28 GDPR. Anonymized browsing data collected via Google Analytics 4 is processed by <strong>Google Ireland Ltd.</strong>. Without your consent, measurement is cookieless and purely aggregate, with no identifier attributable to you; analytical cookies are set only after your explicit consent. We do not sell or share your data with third parties for marketing purposes.
     </p>
 
     <h2>7. Transfer of Data Outside the EU</h2>
@@ -172,7 +205,7 @@
       <li><strong>Necessary Cookies:</strong> Essential for the proper functioning of the site. These do not require user consent.</li>
       <li><strong>Preference Cookies:</strong> Allow the site to remember your choices (e.g., language or region).</li>
       <li><strong>Analytical Cookies:</strong> Used to collect aggregated data on site usage to improve the user experience.</li>
-      <li><strong>Third-party Cookies (analytical):</strong> Used to collect aggregated data on site usage (e.g. Google Analytics), loaded only with your consent.</li>
+      <li><strong>Third-party Cookies (analytical):</strong> Used to collect aggregated data on site usage (e.g. Google Analytics), set only with your consent.</li>
     </ul>
     <p>
       You can manage cookies via the cookie banner or your browser settings. For further details, please consult our <a href="cookie-policy-en.html" target="_blank">Cookie Policy</a>.

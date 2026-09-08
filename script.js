@@ -12,11 +12,11 @@
     };
   }
 
-  // Utility: send a GA4 event, but only if the visitor consented to analytics.
-  // `window.gtag` is defined only after CookieManager.loadGoogleAnalytics() has run,
-  // so this is a silent no-op for anyone who refused or ignored the cookie banner.
+  // Utility: send a GA4 event. With Consent Mode v2 the tag is always present
+  // (bootstrapped in <head>), so this never no-ops: before consent GA4 records the
+  // event as a cookieless, aggregate-only ping; after consent as a normal event.
   function trackEvent(name, params) {
-    if (!window.gtagLoaded || typeof window.gtag !== 'function') return;
+    if (typeof window.gtag !== 'function') return;
     window.gtag('event', name, params || {});
   }
 
@@ -229,16 +229,14 @@
 
       if (this.hasMadeChoice()) {
         this.hideBanner();
-        // Load GA for returning visitors ONLY if they explicitly consented to analytics.
-        if (this.analyticsConsentGiven()) {
-          this.loadGoogleAnalytics();
-        }
+        // Re-assert the stored choice: full measurement only for who opted in.
+        this.setAnalyticsConsent(this.analyticsConsentGiven());
       }
     },
 
     // Persist the consent choice. `analytics` true only on explicit opt-in.
-    // We store both a "choice made" flag and the analytics preference so the
-    // banner stays hidden on return while GA loads only with real consent.
+    // We store both a "choice made" flag and the analytics preference so the banner
+    // stays hidden on return while the <head> bootstrap can re-read the real consent.
     setConsent(analytics) {
       const secureFlag = location.protocol === 'https:' ? 'Secure; ' : '';
       const maxAge = 60 * 60 * 24 * 365;
@@ -249,11 +247,12 @@
     acceptAllCookies() {
       this.setConsent(true);
       this.hideBanner();
-      this.loadGoogleAnalytics();   // Load GA only after explicit consent
+      this.setAnalyticsConsent(true);   // Full measurement only after explicit consent
     },
 
     rejectNonEssential() {
-      this.setConsent(false);       // Necessary only: GA is NOT loaded
+      this.setConsent(false);       // Necessary only: GA stays cookieless
+      this.setAnalyticsConsent(false);
       this.hideBanner();
     },
 
@@ -296,10 +295,8 @@
       this.cookiePreferences.style.display = 'none';
       this._teardownPrefsKeydown();
 
-      // Load GA4 only if the user explicitly enabled analytical cookies
-      if (analyticalEnabled) {
-        this.loadGoogleAnalytics();
-      }
+      // Cookie-based GA4 only if the user explicitly enabled analytical cookies
+      this.setAnalyticsConsent(analyticalEnabled);
     },
 
     // Reopen the banner to let the user change or withdraw consent.
@@ -336,30 +333,14 @@
       }
     },
 
-    // Load Google Analytics 4 only after user has given consent
-    loadGoogleAnalytics() {
-      if (window.gtagLoaded) return; // Prevent loading multiple times
-
-      // Dynamically inject the GA4 script
-      const gaScript = document.createElement('script');
-      gaScript.async = true;
-      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
-      document.head.appendChild(gaScript);
-
-      gaScript.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        window.gtag = gtag;
-
-        gtag('js', new Date());
-        gtag('config', 'G-E7P6F0SVRY', {
-          anonymize_ip: true,           // Privacy-friendly
-          cookie_flags: 'SameSite=Strict;Secure'
-        });
-
-        window.gtagLoaded = true;
-        console.log('%c[Analytics] Google Analytics loaded after consent', 'color:#888');
-      };
+    // Consent Mode v2: the gtag bootstrap in <head> already declared every storage
+    // type as 'denied'. Here we only push the update once the visitor has chosen,
+    // so GA4 switches to (or stays out of) cookie-based measurement accordingly.
+    setAnalyticsConsent(granted) {
+      if (typeof window.gtag !== 'function') return;
+      window.gtag('consent', 'update', {
+        analytics_storage: granted ? 'granted' : 'denied'
+      });
     }
   };
 
