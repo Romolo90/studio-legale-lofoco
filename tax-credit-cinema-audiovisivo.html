@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google tag (gtag.js) - Consent Mode v2.
+       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
+       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
+       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
+    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
+    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
+    var glfAnalytics = 'denied';
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        glfAnalytics = 'granted';
+      }
+    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: glfAnalytics,
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Credit Cinema e Audiovisivo - Assistenza Legale | Studio Legale Lo Foco</title>
+  <meta name="description" content="Assistenza legale sul tax credit per cinema e audiovisivo: eleggibilità culturale, nazionalità italiana dell'opera, domanda preventiva e definitiva su DGCOL, rendicontazione, dinieghi e revoche. Studio Legale Lo Foco, Roma.">
+  <link rel="canonical" href="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo.html">
+
+  <!-- Hreflang for bilingual SEO -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo.html">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Tax Credit Cinema e Audiovisivo - Assistenza Legale">
+  <meta property="og:description" content="Eleggibilità culturale, nazionalità dell'opera, domande su DGCOL, rendicontazione e contenzioso: assistenza legale sul credito d'imposta per il cinema e l'audiovisivo.">
+  <meta property="og:url" content="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="image/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema.org: servizio legale + domande frequenti -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Assistenza legale su tax credit cinema e audiovisivo",
+    "url": "https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo.html",
+    "areaServed": { "@type": "Country", "name": "Italia" },
+    "provider": {
+      "@type": "LegalService",
+      "name": "Studio Legale Lo Foco",
+      "url": "https://studiolegalelofoco.com",
+      "telephone": "+39 06 3201820",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Boezio, 2/A",
+        "postalCode": "00193",
+        "addressLocality": "Roma",
+        "addressCountry": "IT"
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qual è la differenza tra eleggibilità culturale e nazionalità italiana dell'opera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sono due requisiti distinti che seguono procedimenti separati. La nazionalità italiana è il riconoscimento che collega l'opera all'ordinamento italiano sulla base di criteri produttivi e di composizione della troupe. L'eleggibilità culturale è invece una valutazione a punti sul contenuto e sugli elementi culturali dell'opera. Un progetto può soddisfare l'una e non l'altra, e ciascuna va documentata con materiale proprio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quando va presentata la domanda preventiva di tax credit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Di regola prima dell'avvio delle spese significative, secondo i termini e le finestre indicati nell'avviso della linea di riferimento. I termini variano tra le diverse linee e cambiano da una sessione all'altra, quindi vanno verificati sull'avviso vigente prima di impostare il calendario di produzione."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Il tax credit è cumulabile con i contributi selettivi o con gli incentivi regionali?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Il cumulo tra misure diverse è possibile entro limiti precisi, che dipendono dalla natura delle risorse, dalla percentuale di copertura del costo dell'opera e dalle regole della singola misura. È uno degli aspetti in cui gli errori sono più frequenti e più costosi, perché emergono in sede di rendicontazione, quando le spese sono già state sostenute."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cosa si può fare se la domanda viene respinta o il credito viene revocato?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A seconda della fase, si può rispondere a una richiesta di integrazione, presentare osservazioni nel procedimento oppure impugnare il provvedimento davanti al giudice amministrativo entro i termini di decadenza, che sono brevi. Poiché quei termini decorrono dalla comunicazione del provvedimento, conviene far esaminare l'atto subito, non dopo aver tentato altre strade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Serve un avvocato se la produzione ha già un commercialista?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I due ruoli sono complementari e non alternativi. Il commercialista presidia la quantificazione del credito, il suo utilizzo in compensazione e i profili fiscali. L'avvocato interviene sui presupposti che rendono il credito spettante: assetto contrattuale dell'opera, titolarità dei diritti, struttura della coproduzione, requisiti di accesso e rapporto con l'amministrazione, incluso l'eventuale contenzioso."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- Skip Navigation Link for Accessibility -->
+  <a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <header class="header">
+    <div class="logo">
+      <p class="logo-title">
+        <a href="index.html" class="home-link" aria-label="Torna alla homepage"><svg class="logo-mark" viewBox="0 0 44 44" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="20" fill="none" stroke="#80D9FF" stroke-width="2"></circle><text x="22" y="23" text-anchor="middle" dominant-baseline="middle" font-family="Lora, serif" font-weight="600" font-size="18" fill="#BFECFF" letter-spacing="1">LF</text></svg>
+          Studio Legale Lo Foco
+        </a>
+      </p>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
+      <ul>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="notizie.html">Approfondimenti</a></li>
+        <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
+        <li class="mobile-language">
+          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<main id="main">
+    <div class="insights-hero">
+      <h1>Tax Credit per il cinema e l'audiovisivo</h1>
+      <p>Assistiamo produttori, autori e imprese del settore lungo tutto il percorso del credito d'imposta: dalla verifica dei requisiti alla struttura contrattuale dell'opera, dalla presentazione delle domande su DGCOL alla rendicontazione, fino al contenzioso quando il beneficio viene negato o revocato.</p>
+    </div>
+
+    <section class="insights-section" aria-labelledby="cosa-title">
+      <h2 id="cosa-title">Un beneficio fiscale che si decide sui presupposti giuridici</h2>
+      <p>Il credito d'imposta per il cinema e l'audiovisivo è disciplinato dalla legge 14 novembre 2016, n. 220 e dai decreti ministeriali attuativi, oggetto negli ultimi anni di una riforma e di successivi correttivi. È uno strumento generoso, ma il suo funzionamento è meno automatico di quanto il nome suggerisca: l'importo si calcola sui numeri, mentre il diritto a ottenerlo si gioca su questioni giuridiche a monte.</p>
+      <p>Chi si vede negare o revocare il beneficio, nella nostra esperienza, quasi mai sbaglia il calcolo. Sbaglia prima: un contratto di coproduzione che non regge alla verifica dei requisiti, spese qualificate documentate male, una domanda presentata fuori tempo rispetto all'avvio della lavorazione, un cumulo con altre misure non verificato. Sono tutti problemi che si risolvono con poco all'inizio e con molta fatica alla fine.</p>
+    </section>
+
+    <section class="insights-section" aria-labelledby="linee-title">
+      <h2 id="linee-title">Le linee su cui offriamo assistenza</h2>
+      <p>La Direzione Generale Cinema e Audiovisivo articola il credito d'imposta in linee distinte, ciascuna con requisiti, aliquote e avvisi propri. Seguiamo in particolare:</p>
+      <div class="profile-box">
+        <ul>
+          <li><strong>Produzione nazionale</strong> — opere cinematografiche, televisive e web di nazionalità italiana</li>
+          <li><strong>Produzione di opere straniere</strong> — lavorazioni estere realizzate in Italia</li>
+          <li><strong>Produzione con investitori esterni</strong> — apporti di soggetti esterni alla filiera</li>
+          <li><strong>Sviluppo</strong> — la fase che precede la produzione vera e propria</li>
+          <li><strong>Distribuzione nazionale e internazionale</strong></li>
+          <li><strong>Industrie tecniche e post-produzione</strong></li>
+          <li><strong>Esercizio e potenziamento delle sale</strong></li>
+          <li><strong>Produzione di videogiochi</strong></li>
+          <li><strong>Musica</strong></li>
+        </ul>
+      </div>
+      <p>Aliquote, soglie di spesa e finestre di presentazione cambiano da una linea all'altra e vengono aggiornate a ogni sessione: per questo non le riportiamo qui. Le trovi negli avvisi ufficiali, che seguiamo e commentiamo negli <a href="notizie.html">Approfondimenti</a>.</p>
+    </section>
+
+    <section class="insights-section" aria-labelledby="dove-title">
+      <h2 id="dove-title">Dove interveniamo</h2>
+      <div class="profile-box">
+        <h3>Requisiti di accesso</h3>
+        <p>Nazionalità italiana dell'opera ed eleggibilità culturale sono due procedimenti distinti, con documentazione propria. Prepariamo e verifichiamo il materiale a supporto di entrambi, incluse le relazioni tecniche e artistiche per il test a punti.</p>
+      </div>
+      <div class="profile-box">
+        <h3>Assetto contrattuale dell'opera</h3>
+        <p>Contratti di produzione e coproduzione, catena dei diritti, rapporti con autori e sceneggiatori, accordi con distributori e piattaforme. È qui che si determina se i requisiti saranno soddisfatti: intervenire dopo la firma significa quasi sempre rinegoziare.</p>
+      </div>
+      <div class="profile-box">
+        <h3>Domande su DGCOL e rapporti con l'amministrazione</h3>
+        <p>Domanda preventiva e domanda definitiva, gestione delle richieste di integrazione, interlocuzione con gli uffici della Direzione Generale. Il rispetto delle scansioni temporali è dirimente e non ammette recuperi.</p>
+      </div>
+      <div class="profile-box">
+        <h3>Spese qualificate, rendicontazione e cumulo</h3>
+        <p>Qualificazione delle spese sostenute in Italia, coerenza tra budget dichiarato e consuntivo, verifica preventiva del cumulo con contributi selettivi, automatici e incentivi regionali. Il cumulo mal impostato emerge quando le spese sono già state sostenute.</p>
+      </div>
+      <div class="profile-box">
+        <h3>Dinieghi, revoche e contenzioso</h3>
+        <p>Osservazioni nel procedimento, istanze di riesame e impugnazione davanti al giudice amministrativo. I termini di decadenza sono brevi e decorrono dalla comunicazione del provvedimento: la valutazione va fatta subito.</p>
+      </div>
+    </section>
+
+    <section class="insights-section" aria-labelledby="faq-title">
+      <h2 id="faq-title">Domande frequenti</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">Qual è la differenza tra eleggibilità culturale e nazionalità italiana dell'opera?</button>
+          <div class="accordion-content">
+            <p>Sono due requisiti distinti che seguono procedimenti separati. La nazionalità italiana collega l'opera all'ordinamento italiano sulla base di criteri produttivi e di composizione della troupe; l'eleggibilità culturale è una valutazione a punti sul contenuto e sugli elementi culturali dell'opera. Un progetto può soddisfare l'una e non l'altra, e ciascuna va documentata con materiale proprio.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">Quando va presentata la domanda preventiva?</button>
+          <div class="accordion-content">
+            <p>Di regola prima dell'avvio delle spese significative, secondo i termini e le finestre indicati nell'avviso della linea di riferimento. I termini variano tra le linee e cambiano da una sessione all'altra: vanno verificati sull'avviso vigente prima di fissare il calendario di produzione, non dopo.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">Il tax credit è cumulabile con contributi selettivi o incentivi regionali?</button>
+          <div class="accordion-content">
+            <p>Il cumulo è possibile entro limiti precisi, che dipendono dalla natura delle risorse, dalla percentuale di copertura del costo dell'opera e dalle regole della singola misura. È uno degli aspetti in cui gli errori sono più frequenti e più costosi, perché emergono in sede di rendicontazione, quando le spese sono già state sostenute.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">Cosa si può fare se la domanda viene respinta o il credito revocato?</button>
+          <div class="accordion-content">
+            <p>A seconda della fase si può rispondere a una richiesta di integrazione, presentare osservazioni nel procedimento oppure impugnare il provvedimento davanti al giudice amministrativo entro i termini di decadenza, che sono brevi. Poiché decorrono dalla comunicazione del provvedimento, conviene far esaminare l'atto immediatamente.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">Serve un avvocato se la produzione ha già un commercialista?</button>
+          <div class="accordion-content">
+            <p>I due ruoli sono complementari. Il commercialista presidia la quantificazione del credito, il suo utilizzo in compensazione e i profili fiscali. L'avvocato interviene sui presupposti che rendono il credito spettante: assetto contrattuale, titolarità dei diritti, struttura della coproduzione, requisiti di accesso e rapporto con l'amministrazione, incluso l'eventuale contenzioso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="insights-section" aria-labelledby="strumenti-title">
+      <h2 id="strumenti-title">Strumenti utili</h2>
+      <div class="profile-box" style="background:#f8fbff; border:1px solid #80D9FF;">
+        <p style="margin:0; line-height:1.6;">
+          Con <a href="verifica-incentivi.html">Verifica Incentivi</a> puoi fare una prima valutazione degli incentivi accessibili al tuo progetto. La <a href="checklist-tax-credit-produzione-2026.html">Checklist Tax Credit Produzione</a> raccoglie requisiti, documenti ed errori ricorrenti in un unico prospetto. Negli <a href="notizie.html">Approfondimenti</a> seguiamo gli avvisi della Direzione Generale Cinema e Audiovisivo man mano che escono.
+        </p>
+      </div>
+    </section>
+
+    <section class="insights-section" aria-labelledby="contatto-title">
+      <h2 id="contatto-title">Parliamo del tuo progetto</h2>
+      <p>Una verifica preventiva costa una frazione di quanto costa rimediare a un diniego. Se hai un'opera in sviluppo o in preparazione, il momento utile per un confronto è prima della firma dei contratti e prima dell'avvio delle spese.</p>
+      <div class="contact-info">
+        <div>
+          <span class="ci-label">✉️ Email</span>
+          <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
+        </div>
+        <div>
+          <span class="ci-label">📞 Telefono</span>
+          <a href="tel:+39063201820">+39&nbsp;06&nbsp;3201820</a>
+        </div>
+        <div>
+          <span class="ci-label">📍 Indirizzo</span>
+          <span>Via Boezio, 2/A - 00193, Roma</span>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1.5rem;">
+        <a href="index.html#contatti" class="btn-cta">Richiedi una consulenza</a>
+      </p>
+      <p style="font-size:0.9rem; color:#555; margin-top:2rem; line-height:1.5;">
+        Questa pagina ha finalità informative e non costituisce parere legale. Aliquote, requisiti e termini sono quelli fissati dagli avvisi e dai decreti vigenti: verifica sempre le fonti ufficiali della Direzione Generale Cinema e Audiovisivo prima di assumere decisioni.
+      </p>
+    </section>
+
+  </main>
+
+<footer>
+    <div class="footer-left"></div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a> | <a href="cookie-policy.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Gestisci cookie</button>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button type="button" id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button type="button" id="reject-cookies" class="btn-cookie btn-secondary">Rifiuta</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
+    </form>
+  </div>
+
+<script src="script.js"></script></body>
+</html>

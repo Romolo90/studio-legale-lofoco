@@ -573,11 +573,15 @@ p {
   margin: 0;
 }
 
-/* Stato "aperto" */
+/* Stato "aperto".
+   max-height serve solo come valore verso cui animare: va tenuto abbondante,
+   perche' su schermi stretti il testo va a capo molte piu' volte e un limite
+   troppo basso taglierebbe le risposte piu' lunghe (es. le FAQ delle pagine
+   di servizio). Il valore non allarga il contenuto, lo lascia solo respirare. */
 .accordion-header[aria-expanded="true"] + .accordion-content {
   visibility: visible;
   opacity: 1;
-  max-height: 200px;
+  max-height: 60rem;
 }
 
 /* ========================================

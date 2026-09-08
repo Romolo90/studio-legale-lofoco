@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google tag (gtag.js) - Consent Mode v2.
+       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
+       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
+       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
+    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
+    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
+    var glfAnalytics = 'denied';
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        glfAnalytics = 'granted';
+      }
+    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: glfAnalytics,
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Italian Film Tax Credit - Legal Assistance | Studio Legale Lo Foco</title>
+  <meta name="description" content="Legal assistance on the Italian film and audiovisual tax credit: cultural eligibility, Italian nationality of the work, preliminary and final applications on DGCOL, reporting, refusals and revocations. Studio Legale Lo Foco, Rome.">
+  <link rel="canonical" href="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo-en.html">
+
+  <!-- Hreflang for bilingual SEO -->
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo.html">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Italian Film Tax Credit - Legal Assistance">
+  <meta property="og:description" content="Cultural eligibility, nationality of the work, DGCOL applications, reporting and litigation: legal assistance on the Italian film and audiovisual tax credit.">
+  <meta property="og:url" content="https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo-en.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="image/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema.org: legal service + frequently asked questions -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Legal assistance on the Italian film and audiovisual tax credit",
+    "url": "https://studiolegalelofoco.com/tax-credit-cinema-audiovisivo-en.html",
+    "areaServed": { "@type": "Country", "name": "Italy" },
+    "provider": {
+      "@type": "LegalService",
+      "name": "Studio Legale Lo Foco",
+      "url": "https://studiolegalelofoco.com",
+      "telephone": "+39 06 3201820",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Boezio, 2/A",
+        "postalCode": "00193",
+        "addressLocality": "Rome",
+        "addressCountry": "IT"
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between cultural eligibility and Italian nationality of the work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They are two separate requirements handled through separate procedures. Italian nationality connects the work to the Italian legal system on the basis of production criteria and crew composition. Cultural eligibility is a points-based assessment of the content and cultural elements of the work. A project may satisfy one and not the other, and each must be documented with its own material."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When must the preliminary application be filed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As a rule before significant expenditure begins, within the deadlines and windows set out in the notice governing the relevant line. Deadlines differ between lines and change from one session to the next, so they must be checked against the notice in force before the production schedule is set."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the tax credit be combined with selective contributions or regional incentives?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Combination is possible within precise limits, which depend on the nature of the resources, the share of the cost of the work being covered and the rules of each individual measure. This is one of the areas where mistakes are most frequent and most expensive, because they surface at the reporting stage, once the expenditure has already been incurred."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can be done if an application is refused or the credit is revoked?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depending on the stage, it is possible to respond to a request for further documentation, file observations within the administrative procedure, or challenge the decision before the administrative court within the applicable time limits, which are short. Since those limits run from notification of the decision, the measure should be examined immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a lawyer needed if the production already has an accountant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The two roles are complementary rather than alternative. The accountant handles quantification of the credit, its use as a set-off and the tax aspects. The lawyer addresses the conditions on which entitlement to the credit depends: the contractual structure of the work, ownership of rights, the co-production arrangement, access requirements and dealings with the administration, including any litigation."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- Skip Navigation Link for Accessibility -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <div class="logo">
+      <p class="logo-title">
+        <a href="index.html" class="home-link" aria-label="Back to homepage"><svg class="logo-mark" viewBox="0 0 44 44" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="20" fill="none" stroke="#80D9FF" stroke-width="2"></circle><text x="22" y="23" text-anchor="middle" dominant-baseline="middle" font-family="Lora, serif" font-weight="600" font-size="18" fill="#BFECFF" letter-spacing="1">LF</text></svg>
+          Studio Legale Lo Foco
+        </a>
+      </p>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Open/close menu" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main Menu">
+      <ul>
+        <li><a href="index-en.html#about-us">About Us</a></li>
+        <li><a href="index-en.html#services">Services</a></li>
+        <li><a href="index-en.html#contact">Contact</a></li>
+        <li><a href="notizie-en.html">Insights</a></li>
+        <li><a href="verifica-incentivi-en.html">Incentives Checker</a></li>
+        <li class="mobile-language">
+          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<main id="main">
+    <div class="insights-hero">
+      <h1>Italian film and audiovisual tax credit</h1>
+      <p>We assist producers, authors and companies throughout the tax credit process: from checking the requirements to structuring the contracts behind the work, from filing applications on DGCOL to the reporting stage, and through to litigation when the benefit is refused or revoked.</p>
+    </div>
+
+    <section class="insights-section" aria-labelledby="what-title">
+      <h2 id="what-title">A fiscal benefit decided on legal grounds</h2>
+      <p>The Italian film and audiovisual tax credit is governed by Law no. 220 of 14 November 2016 and its implementing ministerial decrees, which have been reformed and subsequently amended in recent years. It is a generous instrument, but it works less automatically than the name suggests: the amount follows from the figures, while entitlement to it turns on legal questions decided much earlier.</p>
+      <p>In our experience, those who lose the benefit rarely get the arithmetic wrong. The problem lies upstream: a co-production agreement that does not hold up against the access requirements, qualified expenditure that is poorly documented, an application filed too late in relation to the start of production, a combination with other measures that was never verified. Each of these costs little to address at the outset and a great deal to repair at the end.</p>
+    </section>
+
+    <section class="insights-section" aria-labelledby="lines-title">
+      <h2 id="lines-title">The lines we cover</h2>
+      <p>The Directorate-General for Cinema and Audiovisual divides the tax credit into distinct lines, each with its own requirements, rates and notices. We work in particular on:</p>
+      <div class="profile-box">
+        <ul>
+          <li><strong>National production</strong> — film, television and web works of Italian nationality</li>
+          <li><strong>Production of foreign works</strong> — foreign productions shot in Italy</li>
+          <li><strong>Production with external investors</strong> — contributions from outside the industry</li>
+          <li><strong>Development</strong> — the stage preceding production itself</li>
+          <li><strong>National and international distribution</strong></li>
+          <li><strong>Technical industries and post-production</strong></li>
+          <li><strong>Exhibition and cinema upgrading</strong></li>
+          <li><strong>Videogame production</strong></li>
+          <li><strong>Music</strong></li>
+        </ul>
+      </div>
+      <p>Rates, expenditure thresholds and filing windows differ from line to line and are updated at each session, which is why we do not reproduce them here. They are set out in the official notices, which we follow and comment on in our <a href="notizie-en.html">Insights</a>.</p>
+    </section>
+
+    <section class="insights-section" aria-labelledby="where-title">
+      <h2 id="where-title">Where we come in</h2>
+      <div class="profile-box">
+        <h3>Access requirements</h3>
+        <p>Italian nationality of the work and cultural eligibility are two separate procedures, each with its own documentation. We prepare and review the supporting material for both, including the technical and artistic reports for the points-based test.</p>
+      </div>
+      <div class="profile-box">
+        <h3>Contractual structure of the work</h3>
+        <p>Production and co-production agreements, chain of title, relations with authors and screenwriters, agreements with distributors and platforms. This is where it is settled whether the requirements will be met: stepping in after signature almost always means renegotiating.</p>
+      </div>
+      <div class="profile-box">
+        <h3>DGCOL applications and dealings with the administration</h3>
+        <p>Preliminary and final applications, handling requests for further documentation, correspondence with the Directorate-General. Timing is decisive here and missed deadlines cannot be recovered.</p>
+      </div>
+      <div class="profile-box">
+        <h3>Qualified expenditure, reporting and combination of measures</h3>
+        <p>Qualification of expenditure incurred in Italy, consistency between the declared budget and the final account, advance verification of how the credit combines with selective and automatic contributions and regional incentives. A badly structured combination surfaces once the money has already been spent.</p>
+      </div>
+      <div class="profile-box">
+        <h3>Refusals, revocations and litigation</h3>
+        <p>Observations within the administrative procedure, applications for review and challenges before the administrative court. Time limits are short and run from notification of the decision, so the assessment has to be made straight away.</p>
+      </div>
+    </section>
+
+    <section class="insights-section" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">What is the difference between cultural eligibility and Italian nationality of the work?</button>
+          <div class="accordion-content">
+            <p>They are two separate requirements handled through separate procedures. Italian nationality connects the work to the Italian legal system on the basis of production criteria and crew composition; cultural eligibility is a points-based assessment of the content and cultural elements of the work. A project may satisfy one and not the other, and each must be documented with its own material.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">When must the preliminary application be filed?</button>
+          <div class="accordion-content">
+            <p>As a rule before significant expenditure begins, within the deadlines and windows set out in the notice governing the relevant line. Deadlines differ between lines and change from one session to the next: they must be checked against the notice in force before the production schedule is set, not afterwards.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">Can the tax credit be combined with selective contributions or regional incentives?</button>
+          <div class="accordion-content">
+            <p>Combination is possible within precise limits, which depend on the nature of the resources, the share of the cost of the work being covered and the rules of each individual measure. This is one of the areas where mistakes are most frequent and most expensive, because they surface at the reporting stage, once the expenditure has already been incurred.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">What can be done if an application is refused or the credit revoked?</button>
+          <div class="accordion-content">
+            <p>Depending on the stage, it is possible to respond to a request for further documentation, file observations within the administrative procedure, or challenge the decision before the administrative court within the applicable time limits, which are short. Since those limits run from notification of the decision, the measure should be examined immediately.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">Is a lawyer needed if the production already has an accountant?</button>
+          <div class="accordion-content">
+            <p>The two roles are complementary. The accountant handles quantification of the credit, its use as a set-off and the tax aspects. The lawyer addresses the conditions on which entitlement depends: contractual structure, ownership of rights, the co-production arrangement, access requirements and dealings with the administration, including any litigation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="insights-section" aria-labelledby="tools-title">
+      <h2 id="tools-title">Useful tools</h2>
+      <div class="profile-box" style="background:#f8fbff; border:1px solid #80D9FF;">
+        <p style="margin:0; line-height:1.6;">
+          The <a href="verifica-incentivi-en.html">Incentives Checker</a> gives you a first assessment of the incentives available to your project. The <a href="checklist-tax-credit-production-2026.html">Production Tax Credit Checklist</a> brings requirements, documents and recurring mistakes together in a single overview. In our <a href="notizie-en.html">Insights</a> we track the notices issued by the Directorate-General for Cinema and Audiovisual as they are published.
+        </p>
+      </div>
+    </section>
+
+    <section class="insights-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Let's discuss your project</h2>
+      <p>Checking the ground in advance costs a fraction of putting a refusal right. If you have a work in development or in preparation, the moment to talk is before the contracts are signed and before expenditure begins.</p>
+      <div class="contact-info">
+        <div>
+          <span class="ci-label">✉️ Email</span>
+          <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
+        </div>
+        <div>
+          <span class="ci-label">📞 Phone</span>
+          <a href="tel:+39063201820">+39&nbsp;06&nbsp;3201820</a>
+        </div>
+        <div>
+          <span class="ci-label">📍 Address</span>
+          <span>Via Boezio, 2/A - 00193, Rome, Italy</span>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1.5rem;">
+        <a href="index-en.html#contact" class="btn-cta">Request a consultation</a>
+      </p>
+      <p style="font-size:0.9rem; color:#555; margin-top:2rem; line-height:1.5;">
+        This page is for information purposes only and does not constitute legal advice. Rates, requirements and deadlines are those set by the notices and decrees in force: always check the official sources of the Directorate-General for Cinema and Audiovisual before making decisions.
+      </p>
+    </section>
+
+  </main>
+
+<footer>
+    <div class="footer-left"></div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - All rights reserved</p>
+      <p class="footer-note">
+        <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a> | <a href="cookie-policy-en.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Cookie settings</button>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        We use cookies and similar technologies to improve your browsing experience.
+        For more information, see our
+        <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button type="button" id="accept-cookies" class="btn-cookie">Accept all</button>
+      <button type="button" id="reject-cookies" class="btn-cookie btn-secondary">Reject</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Manage cookies</button>
+    </div>
+  </div>
+
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Cookie Preferences</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analytical" />
+        Analytical cookies (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Save preferences</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
+    </form>
+  </div>
+
+<script src="script.js"></script></body>
+</html>
