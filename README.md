@@ -20,13 +20,12 @@ Progetto statico HTML/CSS/JS (senza framework) con supporto bilingue completo (I
 - `notizie.html` / `notizie-en.html`: Hub Approfondimenti (static pre-rendered lists da build per SEO + JS filters + 12+ schede con implicazioni/errori/tags; sezione risorse scaricabili).
 - `verifica-incentivi.html` / `-en.html`: Tool interattivo (esteso videogiochi, stime orientative, metodologia statica, link a risorse).
 - `checklist-tax-credit-produzione-2026.html` (+ en): Checklist pratica stampabile.
-- `area-clienti.html` / `-en.html`: Preview area riservata (in sviluppo).
 - Pagine legali: privacy*, terms*, cookie-policy* (bilingue).
 - `style.css`: Unico foglio di stile (molto esteso per componenti insights/modali).
 - `script.js`: Logica condivisa (menu, cookie, scroll, form, GA consent). Inietta scroll button se assente.
 - `data/`: JSON per notizie (it/en) – aggiornare qui per nuove voci ufficiali.
 - `image/`, `pdf/`: Asset (ottimizza JPG grandi prima di commit).
-- `sitemap.xml`, `robots.txt`, `ads.txt`, `manifest.json`, `CNAME`.
+- `sitemap.xml`, `robots.txt`, `manifest.json`, `CNAME`.
 
 **Nota**: Sistema partials attivo per ridurre duplicazione.
 - `partials/` (cookie, header-home/sub, footer) — vedi `partials/README.md`
@@ -75,7 +74,6 @@ Usa Formspree (endpoint `mgvvkobk`). Verifica ricezione email e configura thank 
 - [x] Pre-render statico insights (build.js) + schede arricchite per SEO (news + 9+ nuovi articoli con implicazioni).
 - [x] Risorse scaricabili (checklist HTML print-friendly + link in hub).
 - [x] Tool esteso (videogiochi, stime, metodologia statica, link risorse).
-- [ ] Migliorare Area Clienti (demo più ricca o nota "solo per clienti autenticati").
 - [ ] GitHub Action per validazione + deploy automatico (es. CF Pages).
 - [ ] Lighthouse trimestrale (SEO/perf/a11y) + GSC monitoring long-tail.
 - [ ] Aggiungere FAQPage schema + più pagine deep-dive (es. videogiochi dedicato).

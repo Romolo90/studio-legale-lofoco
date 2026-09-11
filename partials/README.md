@@ -4,7 +4,7 @@ Questi file sono la **fonte di verità** per le parti ripetute del sito:
 
 - `cookie-*.html` → banner + pannello preferenze
 - `header-home-*.html` → header per le homepage (index) con selettore lingua desktop + anchor interni
-- `header-sub-*.html` → header per le pagine interne (bio, notizie, tool, legali, area-clienti) con link completi
+- `header-sub-*.html` → header per le pagine interne (bio, notizie, tool, legali, 404) con link completi
 - `footer*.html` → footer comune (versione "home" include il banner Dogecoin)
 
 ## Come usare

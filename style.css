@@ -351,6 +351,7 @@ p {
   position: relative;
   height: 70vh;
   background: url('image/hero.jpg') center/cover no-repeat;
+  background-image: image-set(url('image/hero-1400.webp') type('image/webp'), url('image/hero.jpg') type('image/jpeg'));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1073,6 +1074,7 @@ footer {
   .hero {
     height: auto;
     padding: 3rem 1rem;
+    background-image: image-set(url('image/hero-800.webp') type('image/webp'), url('image/hero.jpg') type('image/jpeg'));
   }
   .hero-content h1, .hero-content h2 {
     font-size: 2.3rem;
@@ -1104,6 +1106,20 @@ footer {
   .dogecoin-footer img {
     max-width: 38px;
     max-height: 26px;
+  }
+  /* Banner cookie: su schermi stretti testo sopra e pulsanti sotto, senza uscire dal bordo */
+  .cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .cookie-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-cookie {
+    flex: 1 1 auto;
   }
   .profile-container {
     flex-direction: column;
