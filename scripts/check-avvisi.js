@@ -42,17 +42,23 @@ async function main() {
     process.exit(1);
   }
 
-  // estrai i link di dettaglio /avvisi/<slug>/
+  // estrai i link di dettaglio /avvisi/<slug>/ e /avvisi/<categoria>/<slug>/.
+  // Prima si catturava solo il primo segmento: gli avvisi annidati in una categoria
+  // venivano ridotti alla pagina-indice della categoria e sparivano dal controllo.
   const found = new Map(); // url -> slug
-  const re = /https:\/\/cinema\.cultura\.gov\.it\/avvisi\/([a-z0-9-]+)\/?/gi;
+  const re = /https:\/\/cinema\.cultura\.gov\.it\/avvisi\/((?:[a-z0-9-]+\/)*[a-z0-9-]+)\/?/gi;
   let m;
   while ((m = re.exec(html)) !== null) {
     const url = ('https://cinema.cultura.gov.it/avvisi/' + m[1]).replace(/\/$/, '');
     found.set(url, m[1]);
   }
 
+  // Le pagine-indice di categoria non sono avvisi: si riconoscono perché altri
+  // link trovati le hanno come prefisso.
+  const urls = [...found.keys()];
+  const isCategory = u => urls.some(o => o !== u && o.startsWith(u + '/'));
   const known = linksFromJson();
-  const fresh = [...found.keys()].filter(u => !known.has(u));
+  const fresh = urls.filter(u => !known.has(u) && !isCategory(u));
 
   if (!fresh.length) {
     console.log('✓ Nessun nuovo avviso: il JSON è allineato all’elenco ufficiale.');
