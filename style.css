@@ -926,6 +926,12 @@ footer {
   font-size: 1rem;
 }
 
+/* Dati obbligatori: Ordine di appartenenza (art. 35 CDF) e P.IVA (art. 35 DPR 633/72) */
+.footer-legal {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
 .footer-note a {
   color: #80D9FF;
   text-decoration: none;

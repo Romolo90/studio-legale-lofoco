@@ -1,0 +1,15 @@
+# GitHub Pages pubblica la root del branch main passando da Jekyll.
+# Senza questa lista verrebbero serviti anche i file di lavoro del repo
+# (note interne, sorgenti del build, partials): li escludiamo dal sito.
+# data/ resta pubblicata perché notizie*.html la legge via fetch.
+exclude:
+  - REVISIONE.md
+  - README.md
+  - package.json
+  - package-lock.json
+  - scripts/
+  - partials/
+  - node_modules/
+  - dist/
+  - "*.min.js"
+  - "*.min.css"
