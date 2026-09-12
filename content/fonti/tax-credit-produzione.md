@@ -75,9 +75,20 @@ Verificato il **12 settembre 2026** da Andrea Lo Foco (assistito da Claude Code)
 | verifica-incentivi | «per le produzioni estere serve almeno 1 M€ di spesa qualificata» | **Non verificata**: da rimuovere finché non si verifica il Capo dedicato |
 | verifica-incentivi | 35% per «coproduzione europea» | **Errato**: il 35% dell'art. 17 riguarda tv/web in casi specifici, non le coproduzioni cinematografiche |
 
+### Struttura del decreto (verificata il 12/09/2026)
+Capo I disposizioni generali · Capo II opere cinematografiche · Capo III opere televisive e web · Capo IV documentari · Capo V animazione · Capo VI cortometraggi · Capo VIII disposizioni comuni e finali.
+**Il decreto non disciplina l'attrazione degli investimenti esteri**: è misura distinta, con norme proprie. (Il 12/09/2026 avevo scritto per errore «capo distinto del decreto» nel simulatore: corretto lo stesso giorno.)
+
+### Art. 15 L. 220/2016 (Normattiva, testo vigente aggiornato al 30/12/2025)
+Credito d'imposta dal **15% al 40%** del costo complessivo di produzione; 40% come misura massima per le opere cinematografiche e per le audiovisive, con priorità alle opere destinate a emittenti televisive nazionali e alle coproduzioni internazionali; le aliquote puntuali sono rimesse al decreto di cui all'art. 21.
+
+### Abrogazioni e regime transitorio (artt. 37 e 38)
+- Il D.I. 225/2024 **abroga il D.M. 4 febbraio 2021** dalla data di pubblicazione, fatti salvi i commi 3, 4 e 5 dell'art. 38.
+- Resta il D.M. 2021 per: le richieste presentate **entro il 21 gennaio 2024** a valere sulle risorse 2023; le opere per cui, alla data di entrata in vigore, erano stati stipulati **contratti con data certa** con fornitori di servizi media o distributori, oppure erano state realizzate **almeno quattro settimane consecutive di riprese o il 50% delle giornate di lavorazione**.
+- Art. 38, commi 1 e 2: decreti direttoriali attuativi e modelli DGCA entro **trenta giorni** dalla pubblicazione.
+
 ## Da verificare prima di scrivere la guida
 
-- Testo dell'art. 15 L. 220/2016 su Normattiva (versione vigente).
-- Capo dedicato all'**attrazione di investimenti esteri** (produzione esecutiva di opere straniere): aliquote, soglie, requisiti.
-- Decreti direttoriali attuativi: spese di istruttoria, finestre di presentazione, modulistica DGCOL.
-- Regime transitorio del D.I. 141/2025 per le opere già avviate al 14 agosto 2024.
+- Disciplina dell'**attrazione di investimenti esteri** (misura distinta): norma di riferimento, aliquote, soglie, requisiti.
+- Decreti direttoriali attuativi: importo delle spese di istruttoria, finestre di presentazione, modulistica DGCOL.
+- Testo integrale dell'art. 15 L. 220/2016 da Normattiva (finora letto in sintesi: serve il testo dei commi per citarlo puntualmente).
