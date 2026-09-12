@@ -372,18 +372,17 @@
 
     <div class="tool-container">
       <div class="disclaimer-banner">
-        <strong>Important notice:</strong> This is an indicative simulator based on publicly available rules from the Direzione Generale Cinema e Audiovisivo (updated to May 2026, including 29 May decrees). It does not replace professional advice, the cultural/nationality test, or the actual application process. Results are for guidance only. Always verify the latest official notices.
+        <strong>Important notice:</strong> This is an indicative simulator based on publicly available rules from the Direzione Generale Cinema e Audiovisivo (rules verified against the text of the decrees on 12 September 2026). It does not replace professional advice, the cultural/nationality test, or the actual application process. Results are for guidance only. Always verify the latest official notices.
       </div>
 
       <p style="font-size: 0.9rem; color: #555; margin: -0.25rem 0 1.25rem;">
-        <strong>Rules last updated:</strong> 31 May 2026
+        <strong>Rules verified on:</strong> 12 September 2026
       </p>
 
       <details style="margin-bottom:1rem; font-size:0.85rem; background:#fff; border:1px solid #80D9FF; border-radius:6px; padding:0.4rem 0.6rem;">
         <summary style="cursor:pointer; color:#003366; font-weight:600;">Methodology &amp; updates (click for details)</summary>
         <div style="padding-top:0.35rem; line-height:1.35;">
-          Client-side engine based on official 2026 DG Cinema notices (incl. 29 May D.D. for TC and videogames, selective contributions, investment attraction). Indicative 30-40% rates on qualified Italian spend; nationality/cultural test and annual caps must always be verified. Does not compute exact amounts or replace DGCOL/professional assessment.
-          <br>For videogames: dedicated nationality + specific reporting. Estimates are for orientation only.
+          Client-side engine based on official 2026 DG Cinema notices (incl. 29 May D.D. for TC and videogames, selective contributions, investment attraction). Production tax credit rates follow Interministerial Decree MiC-MEF of 10 July 2024, rep. no. 225, as amended by Interministerial Decree of 22 April 2025, rep. no. 141: 40% for independent producers of film works (art. 13(1)), 30% for non-independent producers and non-European undertakings (art. 13(3)), 25% for television and web works, raised to 35% in the cases listed in art. 17(1). The credit cannot exceed €9m per work, or €18m with at least 30% of foreign resources (art. 5). The nationality test and cultural eligibility still have to be assessed case by case. <br>For videogames: dedicated nationality + specific reporting. Estimates are for orientation only.
         </div>
       </details>
 
@@ -480,7 +479,7 @@
         <div class="results-grid" id="results-grid"></div>
 
         <div class="final-disclaimer">
-          <strong>Important note:</strong> This is an indicative simulator based on public rules (D.D. 2025-2026, including 29 May 2026 decrees). Actual granting of any incentive depends on passing the nationality/cultural eligibility test, respecting spending caps, complete documentation, and final approval by the Direzione Generale Cinema e Audiovisivo. For a precise, tailored assessment please contact the firm. Always check the most recent official notices.
+          <strong>Important note:</strong> This is an indicative simulator based on Interministerial Decree MiC-MEF 225/2024, as amended by Interministerial Decree 141/2025, and on the notices of the Directorate General for Cinema and Audiovisual. Actual granting of any incentive depends on passing the nationality/cultural eligibility test, respecting spending caps, complete documentation, and final approval by the Direzione Generale Cinema e Audiovisivo. For a precise, tailored assessment please contact the firm. Always check the most recent official notices.
         </div>
 
         <div style="margin: 1.25rem 0; padding: 1rem; background: #f8fbff; border-radius: 6px; border-left: 4px solid #80D9FF;">
@@ -557,27 +556,32 @@
       const isVideogame = data.projectType === 'other' || (data.projectType && data.projectType.toLowerCase().includes('video'));
 
       // Tax Credit Produzione (main one)
-      if (isItalian && spend >= 0.5 && isProductionPhase) {
-        let rate = 0.40;
-        let label = 'Tax Credit Production (up to 40%)';
-        let status = 'high';
-        let note = 'High likelihood if you pass the nationality test and cultural requirements.';
+      // Rates: Interministerial Decree 225/2024 as amended by Decree 141/2025.
+      // Film works: 40% for independent producers (art. 13(1)), 30% for non-independent
+      // producers and non-European undertakings (art. 13(3)). Television and web: 25%,
+      // up to 35% under art. 17(1). The decree sets no minimum Italian spend threshold.
+      if (isItalian && isProductionPhase) {
+        // In this form, television and web works correspond to the "series" option.
+        const isTvWeb = data.projectType === 'series';
+        const isDocOrShort = data.projectType === 'doc' || data.projectType === 'short';
+        const label = isTvWeb
+          ? 'Production tax credit, television and web works (25%, up to 35%)'
+          : isDocOrShort
+            ? 'Production tax credit (rate depends on how the work is released)'
+            : 'Production tax credit, film works (40% for independent producers)';
+        let note = isTvWeb
+          ? 'Rate of 25% of the eligible cost, raised to 35% for international co-productions that are not merely financial, for an international contribution of at least 30%, for pre-purchase or licence deals, or for production partnerships where the independent producer keeps the required share of rights (art. 17(1)). Fiction works must run at least 52 minutes and cost at least €2,000 per minute (art. 16(6)).'
+          : 'Rate of 40% of the eligible cost for independent producers (art. 13(1)). For European undertakings with high production and financial capacity it drops to 35% above €5m of eligible cost and to 30% above €10m; for non-independent producers and non-European undertakings it is 30% (art. 13(2) and (3)). Private financing of at least 40% of the cost and a distribution agreement are required, unless the work has a selective grant or EU funding (art. 12).';
 
-        if (data.projectType === 'doc' || data.projectType === 'short') rate = 0.30;
-        if (data.nationality === 'co-eu') rate = 0.35;
-
-        if (hasArtistic) note += ' Possible additional quotas for artistic quality works or young authors.';
+        if (isDocOrShort) {
+          note += ' For documentaries and short films the rate depends on whether the work is released in cinemas or on television and web, and on the corresponding chapter of the decree.';
+        }
+        if (hasArtistic) note += ' Artistic quality or young authors are relevant to the cultural eligibility test.';
 
         results.push({
           title: label,
-          status,
-          note: `${note} Estimated Italian spend: ${spend} M€.`
-        });
-      } else if (isItalian && spend < 0.5) {
-        results.push({
-          title: 'Tax Credit Production',
-          status: 'low',
-          note: 'The planned Italian spend is likely insufficient to access the standard tax credit rates. Most Italian productions require at least €0.5–1M of qualifying territorial expenditure. Check the current thresholds for your type of work.'
+          status: 'high',
+          note: `${note} Italian spend entered: ${spend} M€. The credit cannot exceed €9m per work, or €18m with at least 30% of foreign resources (art. 5).`
         });
       }
 
@@ -592,11 +596,11 @@
 
       // Rough orientative estimate (added for value)
       if ((isItalian || isVideogame) && spend >= 0.5) {
-        const estMin = Math.round(spend * 0.30 * 100) / 100;
+        const estMin = Math.round(spend * 0.25 * 100) / 100;
         const estMax = Math.round(spend * 0.40 * 100) / 100;
         const last = results[results.length-1];
         if (last && (last.title.includes('Tax Credit') || last.title.includes('Videogame'))) {
-          last.note += ` Rough credit estimate: ${estMin}–${estMax} M€ (indicative rates; caps and tests to be verified).`;
+          last.note += ` Order of magnitude of the credit, applying rates from 25% to 40% to the figure entered: ${estMin}–${estMax} M€. The eligible cost is not the same as the spend entered (art. 3).`;
         }
       }
 
@@ -605,13 +609,13 @@
         results.push({
           title: 'Tax Credit for Investment Attraction',
           status: 'high',
-          note: 'Good eligibility for foreign productions using Italian executive production or services. Attractive rates for films and series.'
+          note: 'Foreign productions shooting in Italy or buying Italian services fall under the investment attraction line, governed by a separate chapter of the decree. Rates, thresholds and windows must be checked against the notice in force.'
         });
       } else if (isForeignService) {
         results.push({
           title: 'Tax Credit for Investment Attraction',
           status: 'medium',
-          note: 'Foreign productions usually need at least €1M of qualifying Italian spend (executive production or services). Check the 2026 calls for open windows and exact requirements.'
+          note: 'Investment attraction line for foreign productions (executive production and services in Italy): requirements, rates and thresholds are set by the decree and by the notices of the Directorate General, and should be checked before locking the shooting plan.'
         });
       }
 

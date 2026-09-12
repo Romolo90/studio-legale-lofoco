@@ -3,6 +3,8 @@
 # (note interne, sorgenti del build, partials): li escludiamo dal sito.
 # data/ resta pubblicata perché notizie*.html la legge via fetch.
 exclude:
+  - content/
+  - preview/
   - REVISIONE.md
   - README.md
   - package.json
