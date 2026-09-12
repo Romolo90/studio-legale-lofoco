@@ -1014,6 +1014,60 @@ footer {
 }
 
 /* ========================================
+   PAGINE GUIDA (generate da scripts/build-guide.js)
+======================================== */
+.guida {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+.guida-abstract {
+  font-size: 1.05rem;
+}
+
+/* Riga autore e date: chi ha scritto e a quando è aggiornata la guida devono
+   essere leggibili subito, non in fondo alla pagina. */
+.guida-meta {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Richiamo alla fonte accanto all'affermazione che sostiene */
+.guida-rif {
+  font-size: 0.85rem;
+  white-space: normal;
+}
+
+.guida-rif a {
+  color: #00518f;
+  text-decoration: underline dotted;
+}
+
+.guida-correlate {
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+}
+
+.guida-disclaimer {
+  background: #f8fbff;
+  border-left: 4px solid #80D9FF;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.guida-cta {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+#fonti li {
+  margin-bottom: 0.4rem;
+  font-size: 0.92rem;
+}
+
+/* ========================================
    VERSIONE MOBILE
 ======================================== */
 @media (max-width: 768px) {

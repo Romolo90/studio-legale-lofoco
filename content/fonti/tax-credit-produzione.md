@@ -87,6 +87,10 @@ Credito d'imposta dal **15% al 40%** del costo complessivo di produzione; 40% co
 - Resta il D.M. 2021 per: le richieste presentate **entro il 21 gennaio 2024** a valere sulle risorse 2023; le opere per cui, alla data di entrata in vigore, erano stati stipulati **contratti con data certa** con fornitori di servizi media o distributori, oppure erano state realizzate **almeno quattro settimane consecutive di riprese o il 50% delle giornate di lavorazione**.
 - Art. 38, commi 1 e 2: decreti direttoriali attuativi e modelli DGCA entro **trenta giorni** dalla pubblicazione.
 
+### Limiti pratici emersi il 12/09/2026
+- **Normattiva non è consultabile automaticamente**: la pagina per singolo articolo risponde «Errore nel caricamento delle informazioni» alle richieste non interattive. L'art. 15 va quindi **citato per estremi con link a Normattiva**, e il testo dei commi va letto a mano dal browser prima di riprodurlo.
+- **I decreti direttoriali sulla produzione escono periodicamente** (riconoscimenti mensili: 30 giugno, 30 luglio, 31 agosto 2026…). La guida non deve fissare date di finestre: deve rinviare agli avvisi della DGCA, altrimenti invecchia in poche settimane.
+
 ## Da verificare prima di scrivere la guida
 
 - Disciplina dell'**attrazione di investimenti esteri** (misura distinta): norma di riferimento, aliquote, soglie, requisiti.

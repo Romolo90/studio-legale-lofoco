@@ -12,6 +12,7 @@
     "validate:html": "npx html-validate '*.html'",
     "lint:css": "npx stylelint '*.css'",
     "format": "npx prettier --write '*.{html,css,js,json,md}'",
+    "build:guide": "node scripts/build-guide.js",
     "build:html": "node scripts/build.js",
     "check:avvisi": "node scripts/check-avvisi.js",
     "check:guide": "node scripts/check-guide.js",

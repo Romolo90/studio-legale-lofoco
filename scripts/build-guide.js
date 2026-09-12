@@ -1,0 +1,227 @@
+#!/usr/bin/env node
+/**
+ * build-guide.js — genera le pagine-guida da content/guide/*.json.
+ *
+ * Uso: npm run build:guide
+ *      node scripts/build-guide.js --id tc-produzione
+ *
+ * Scelte di progetto (vedi il piano approvato):
+ * - è SEPARATO da build.js, che con ~40 sostituzioni regex agisce su tutte le pagine:
+ *   un errore qui non può corrompere le altre venti;
+ * - emette pagine già complete di header, footer e banner cookie letti dai partials,
+ *   nella forma esatta che build.js si aspetta, così `npm run build:html` resta un no-op;
+ * - ogni file generato porta in testa un marcatore, e il generatore si RIFIUTA di
+ *   sovrascrivere una pagina che non lo contiene: le pagine scritte a mano sono al sicuro;
+ * - status draft = nessun file; review = solo preview/ (ignorata da git e da Pages);
+ *   published = guida-<slug>.html in root.
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.join(__dirname, '..');
+const GUIDE_DIR = path.join(ROOT, 'content', 'guide');
+const PREVIEW_DIR = path.join(ROOT, 'preview');
+const SITE = 'https://studiolegalelofoco.com/';
+const MARKER = '<!-- GENERATO da scripts/build-guide.js — non modificare a mano;';
+
+const argId = (() => {
+  const i = process.argv.indexOf('--id');
+  return i > -1 ? process.argv[i + 1] : null;
+})();
+
+const leggiPartial = (f) => fs.readFileSync(path.join(ROOT, 'partials', f), 'utf8').trimEnd();
+
+const esc = (s) => String(s == null ? '' : s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+// Il CSP e il bootstrap Consent Mode sono identici in tutte le pagine del sito:
+// li prendiamo da una pagina esistente, così restano allineati se cambiano.
+function headComune() {
+  const rif = fs.readFileSync(path.join(ROOT, 'grazie.html'), 'utf8');
+  const inizio = rif.indexOf('<meta http-equiv="Content-Security-Policy"');
+  const fine = rif.indexOf('<meta name="referrer"');
+  if (inizio < 0 || fine < 0) throw new Error('Non trovo CSP/gtag in grazie.html: il generatore va aggiornato.');
+  return rif.slice(inizio, fine).trimEnd();
+}
+
+function jsonLd(g, url) {
+  const article = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: g.title,
+    description: g.metaDescription,
+    inLanguage: g.lang || 'it',
+    datePublished: g.datePublished,
+    dateModified: g.dateModified,
+    author: { '@type': 'Person', name: g.author.name, url: SITE + (g.author.url || '') },
+    publisher: { '@type': 'Organization', name: 'Studio Legale Lo Foco', url: SITE },
+    mainEntityOfPage: url,
+    citation: (g.sources || []).map((s) => ({ '@type': 'CreativeWork', name: s.citation, url: s.url })),
+  };
+  const briciole = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+      { '@type': 'ListItem', position: 2, name: 'Approfondimenti', item: SITE + 'notizie.html' },
+      { '@type': 'ListItem', position: 3, name: g.title, item: url },
+    ],
+  };
+  const blocchi = [article, briciole];
+  if ((g.faq || []).length >= 2) {
+    blocchi.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: g.faq.map((f) => ({
+        '@type': 'Question', name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    });
+  }
+  // JSON.stringify, mai concatenazione: la prosa può contenere virgolette.
+  return blocchi.map((b) => `  <script type="application/ld+json">\n${JSON.stringify(b, null, 2)}\n  </script>`).join('\n');
+}
+
+function corpo(g) {
+  const fonteById = new Map((g.sources || []).map((s) => [s.id, s]));
+  const rif = (refs) => (refs || []).length
+    ? ` <span class="guida-rif">(${refs.map((r) => `<a href="#fonte-${esc(r)}">${esc((fonteById.get(r) || {}).citation || r)}</a>`).join('; ')})</span>`
+    : '';
+
+  const sezioni = (g.sections || []).map((s) => {
+    const par = (s.paragraphs || []).map((p) => `        <p>${esc(p.text)}${rif(p.refs)}</p>`).join('\n');
+    const elenco = (s.list || []).length
+      ? `        <ul>\n${s.list.map((v) => `          <li>${esc(v)}</li>`).join('\n')}\n        </ul>${rif(s.listRefs)}`
+      : '';
+    return `      <section class="insights-section" id="${esc(s.id)}" aria-labelledby="${esc(s.id)}-title">\n        <h2 id="${esc(s.id)}-title">${esc(s.heading)}</h2>\n${par}\n${elenco}\n      </section>`;
+  }).join('\n\n');
+
+  const faq = (g.faq || []).length
+    ? `\n      <section class="insights-section" id="faq" aria-labelledby="faq-title">\n        <h2 id="faq-title">Domande frequenti</h2>\n` +
+      g.faq.map((f) => `        <h3>${esc(f.q)}</h3>\n        <p>${esc(f.a)}${rif(f.refs)}</p>`).join('\n') +
+      `\n      </section>`
+    : '';
+
+  const fonti = `\n      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">\n        <h2 id="fonti-title">Fonti</h2>\n        <ul>\n` +
+    (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}">${esc(s.citation)} — <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">testo</a>${s.urlType === 'primaria' ? ' (fonte primaria)' : ''}, consultata il ${esc(s.accessedAt)}</li>`).join('\n') +
+    `\n        </ul>\n      </section>`;
+
+  const correlate = (g.related || []).length
+    ? `\n      <p class="guida-correlate">Vedi anche: ${g.related.map((r) => `<a href="guida-${esc(r)}.html">${esc(r.replace(/-/g, ' '))}</a>`).join(' · ')}</p>`
+    : '';
+
+  return `    <article class="guida">
+      <header class="insights-hero">
+        <h1>${esc(g.title)}</h1>
+        <p class="guida-abstract">${esc(g.abstract)}</p>
+        <p class="guida-meta">A cura dell'<a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · Aggiornata al ${esc(g.dateModified)} · Dati verificati sulle fonti il ${esc(g.verifiedAt)}</p>
+      </header>
+
+${sezioni}
+${faq}
+${fonti}${correlate}
+
+      <p class="guida-disclaimer">${esc(g.disclaimer || "Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini cambiano con i decreti attuativi e con gli avvisi della Direzione generale Cinema e audiovisivo: prima di presentare una domanda verifica la disciplina in vigore o contattaci.")}</p>
+
+      <p class="guida-cta"><a href="index.html#contatti" class="btn-cta">Parlane con lo studio</a></p>
+    </article>`;
+}
+
+function pagina(g) {
+  const file = `guida-${g.slug}.html`;
+  const url = SITE + file;
+  return `<!DOCTYPE html>
+${MARKER}
+     sorgente: content/guide/${g.id}.json -->
+<html lang="${esc(g.lang || 'it')}">
+<head>
+  <meta charset="UTF-8">
+${headComune()}
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${esc(g.metaTitle)}</title>
+  <meta name="description" content="${esc(g.metaDescription)}">
+  <link rel="canonical" href="${url}">
+  <link rel="alternate" hreflang="it" href="${url}">
+  <link rel="alternate" hreflang="x-default" href="${url}">${g.altLang && g.altLang.en ? `\n  <link rel="alternate" hreflang="en" href="${SITE}${esc(g.altLang.en)}">` : ''}
+  <meta property="og:title" content="${esc(g.metaTitle)}">
+  <meta property="og:description" content="${esc(g.metaDescription)}">
+  <meta property="og:url" content="${url}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="${SITE}image/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(g.metaTitle)}">
+  <meta name="twitter:image" content="${SITE}image/og-image.jpg">
+  <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
+  <link rel="stylesheet" href="style.css">
+${jsonLd(g, url)}
+</head>
+<body>
+
+<a href="#main" class="skip-link">Salta al contenuto</a>
+
+${leggiPartial('header-sub-it.html')}
+
+<main id="main">
+${corpo(g)}
+  </main>
+
+${leggiPartial('footer.html')}
+
+${leggiPartial('cookie-it.html')}
+
+<script src="script.js"></script></body>
+</html>
+`;
+}
+
+function scrivi(destinazione, contenuto, nome) {
+  if (fs.existsSync(destinazione)) {
+    const attuale = fs.readFileSync(destinazione, 'utf8');
+    if (!attuale.includes(MARKER)) {
+      console.error(`❌ ${nome} esiste e non è generato da questo script: non lo sovrascrivo.`);
+      process.exit(1);
+    }
+    if (attuale === contenuto) return 'invariata';
+  }
+  fs.mkdirSync(path.dirname(destinazione), { recursive: true });
+  fs.writeFileSync(destinazione, contenuto, 'utf8');
+  return 'scritta';
+}
+
+function main() {
+  if (!fs.existsSync(GUIDE_DIR)) { console.log('✓ Nessuna guida da generare.'); return; }
+  const files = fs.readdirSync(GUIDE_DIR).filter((f) => f.endsWith('.json'));
+  if (!files.length) { console.log('✓ Nessuna guida da generare.'); return; }
+
+  let generate = 0;
+  for (const f of files) {
+    const g = JSON.parse(fs.readFileSync(path.join(GUIDE_DIR, f), 'utf8'));
+    if (argId && g.id !== argId) continue;
+
+    const nome = `guida-${g.slug}.html`;
+    const inRoot = path.join(ROOT, nome);
+
+    if (g.status === 'draft') {
+      if (fs.existsSync(inRoot)) console.log(`⚠︎ ${g.id}: è in bozza ma ${nome} esiste ancora in root: va rimosso a mano.`);
+      console.log(`· ${g.id}: bozza, nessun file generato`);
+      continue;
+    }
+    if (g.status === 'review') {
+      const esito = scrivi(path.join(PREVIEW_DIR, nome), pagina(g), `preview/${nome}`);
+      console.log(`· ${g.id}: in revisione → preview/${nome} (${esito}) — apri con npm run dev`);
+      generate++;
+      continue;
+    }
+    if (g.status === 'published') {
+      const esito = scrivi(inRoot, pagina(g), nome);
+      console.log(`· ${g.id}: pubblicata → ${nome} (${esito})`);
+      generate++;
+    }
+  }
+  console.log(`✓ ${generate} pagina/e generata/e.`);
+}
+
+main();
