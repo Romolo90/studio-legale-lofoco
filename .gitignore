@@ -9,6 +9,9 @@ pnpm-lock.yaml
 dist/
 build/
 
+# Guide in revisione: generate solo in locale, mai committate né pubblicate
+preview/
+
 # IDE and editor files
 .vscode/
 .idea/

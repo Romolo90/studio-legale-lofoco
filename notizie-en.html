@@ -473,7 +473,7 @@
       <div class="resources-grid" id="resources-grid" aria-live="polite">
 <!-- STATIC-RESOURCES-START -->
 
-        <div class="resource-card" data-id="tc-produzione" data-category="tax-credit" tabindex="0" role="button" aria-label="Open detail: Tax Credit for Cinematographic and Audiovisual Production">
+        <div class="resource-card" id="tc-produzione" data-id="tc-produzione" data-category="tax-credit" tabindex="0" role="button" aria-label="Open detail: Tax Credit for Cinematographic and Audiovisual Production">
           <div class="card-header">
             <span class="category-tag">tax credit</span>
 
@@ -483,7 +483,7 @@
           <div class="card-footer">Read more</div>
         </div>
 
-        <div class="resource-card" data-id="tc-videogiochi" data-category="tax-credit" tabindex="0" role="button" aria-label="Open detail: Tax Credit for Videogame Production (2026)">
+        <div class="resource-card" id="tc-videogiochi" data-id="tc-videogiochi" data-category="tax-credit" tabindex="0" role="button" aria-label="Open detail: Tax Credit for Videogame Production (2026)">
           <div class="card-header">
             <span class="category-tag">tax credit</span>
             <span class="tag">videogames</span><span class="tag">tax-credit</span><span class="tag">nationality</span>
@@ -493,7 +493,7 @@
           <div class="card-footer">Read more</div>
         </div>
 
-        <div class="resource-card" data-id="tc-internazionale" data-category="tax-credit" tabindex="0" role="button" aria-label="Open detail: Tax Credit for Attracting Foreign Investment">
+        <div class="resource-card" id="tc-internazionale" data-id="tc-internazionale" data-category="tax-credit" tabindex="0" role="button" aria-label="Open detail: Tax Credit for Attracting Foreign Investment">
           <div class="card-header">
             <span class="category-tag">tax credit</span>
 
@@ -503,7 +503,7 @@
           <div class="card-footer">Read more</div>
         </div>
 
-        <div class="resource-card" data-id="contributi-selettivi" data-category="contributi-selettivi" tabindex="0" role="button" aria-label="Open detail: Selective Contributions for Screenwriting, Development and Production">
+        <div class="resource-card" id="contributi-selettivi" data-id="contributi-selettivi" data-category="contributi-selettivi" tabindex="0" role="button" aria-label="Open detail: Selective Contributions for Screenwriting, Development and Production">
           <div class="card-header">
             <span class="category-tag">contributi selettivi</span>
 
@@ -513,7 +513,7 @@
           <div class="card-footer">Read more</div>
         </div>
 
-        <div class="resource-card" data-id="co-produzioni" data-category="ue-media" tabindex="0" role="button" aria-label="Open detail: International Co-productions and Bilateral Agreements">
+        <div class="resource-card" id="co-produzioni" data-id="co-produzioni" data-category="ue-media" tabindex="0" role="button" aria-label="Open detail: International Co-productions and Bilateral Agreements">
           <div class="card-header">
             <span class="category-tag">ue media</span>
 
@@ -523,7 +523,7 @@
           <div class="card-footer">Read more</div>
         </div>
 
-        <div class="resource-card" data-id="dgcol-pratica" data-category="normativa" tabindex="0" role="button" aria-label="Open detail: DGCOL Platform: how to submit Tax Credit and contribution applications">
+        <div class="resource-card" id="dgcol-pratica" data-id="dgcol-pratica" data-category="normativa" tabindex="0" role="button" aria-label="Open detail: DGCOL Platform: how to submit Tax Credit and contribution applications">
           <div class="card-header">
             <span class="category-tag">normativa</span>
             <span class="tag">dgcol</span><span class="tag">practice</span><span class="tag">tax-credit</span>
@@ -533,7 +533,7 @@
           <div class="card-footer">Read more</div>
         </div>
 
-        <div class="resource-card" data-id="errori-eleggibilita" data-category="normativa" tabindex="0" role="button" aria-label="Open detail: Common errors in cultural eligibility and nationality (2026)">
+        <div class="resource-card" id="errori-eleggibilita" data-id="errori-eleggibilita" data-category="normativa" tabindex="0" role="button" aria-label="Open detail: Common errors in cultural eligibility and nationality (2026)">
           <div class="card-header">
             <span class="category-tag">normativa</span>
             <span class="tag">eligibility</span><span class="tag">errors</span><span class="tag">nationality</span>
@@ -543,7 +543,7 @@
           <div class="card-footer">Read more</div>
         </div>
 
-        <div class="resource-card" data-id="cumulabilita-incentivi" data-category="normativa" tabindex="0" role="button" aria-label="Open detail: Cumulability of Tax Credit, selective contributions and regional incentives">
+        <div class="resource-card" id="cumulabilita-incentivi" data-id="cumulabilita-incentivi" data-category="normativa" tabindex="0" role="button" aria-label="Open detail: Cumulability of Tax Credit, selective contributions and regional incentives">
           <div class="card-header">
             <span class="category-tag">normativa</span>
             <span class="tag">cumulability</span><span class="tag">regional</span><span class="tag">film-commission</span>
@@ -553,7 +553,7 @@
           <div class="card-footer">Read more</div>
         </div>
 
-        <div class="resource-card" data-id="normativa" data-category="normativa" tabindex="0" role="button" aria-label="Open detail: Tax Credit Reform and Corrective Decrees (2025-2026)">
+        <div class="resource-card" id="normativa" data-id="normativa" data-category="normativa" tabindex="0" role="button" aria-label="Open detail: Tax Credit Reform and Corrective Decrees (2025-2026)">
           <div class="card-header">
             <span class="category-tag">normativa</span>
 
@@ -651,7 +651,7 @@
         const cat = (a.category || 'all').replace('-', ' ');
         const tagsHtml = a.tags && a.tags.length ? a.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
         return `
-        <div class="resource-card" data-id="${a.id}" data-category="${a.category || ''}" tabindex="0" role="button" aria-label="Open detail: ${a.title}">
+        <div class="resource-card" id="${a.id}" data-id="${a.id}" data-category="${a.category || ''}" tabindex="0" role="button" aria-label="Open detail: ${a.title}">
           <div class="card-header">
             <span class="category-tag">${cat}</span>
             ${tagsHtml}

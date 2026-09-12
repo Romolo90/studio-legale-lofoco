@@ -51,5 +51,26 @@ jobs:
           fi
           echo "✅ No broken relative internal .html links found"
 
+      - name: Validate guides (sources, dates, length)
+        run: npm run check:guide
+
+      - name: Check anchors (#fragments in links and JSON-LD)
+        run: npm run check:anchors
+
+      - name: Check sitemap consistency
+        run: npm run check:sitemap
+
+      # Il build deve essere un no-op su albero pulito: nel giugno 2026 una guardia
+      # sbagliata aveva accodato 25 blocchi JSON-LD duplicati a ogni esecuzione.
+      - name: Build must be idempotent
+        run: |
+          npm run build:html
+          npm run build:html
+          git diff --exit-code -- '*.html' sitemap.xml || {
+            echo "❌ Il build modifica i file a ogni esecuzione: non è idempotente."
+            exit 1
+          }
+          echo "✅ Build idempotente"
+
       - name: Summary
-        run: echo "✅ CI checks passed for Studio Legale Lo Foco site (validate + full prod build + links)"
+        run: echo "✅ CI checks passed for Studio Legale Lo Foco site (validate + build + links + guide/anchors/sitemap + idempotency)"

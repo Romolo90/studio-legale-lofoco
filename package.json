@@ -14,6 +14,11 @@
     "format": "npx prettier --write '*.{html,css,js,json,md}'",
     "build:html": "node scripts/build.js",
     "check:avvisi": "node scripts/check-avvisi.js",
+    "check:guide": "node scripts/check-guide.js",
+    "check:anchors": "node scripts/check-anchors.js",
+    "check:sitemap": "node scripts/check-sitemap.js",
+    "check:links": "node scripts/check-links.js",
+    "check": "npm run validate:html && npm run check:guide && npm run check:anchors && npm run check:sitemap",
     "build": "npm run minify && npm run build:html -- --prod && echo 'Build complete! (production assets)'"
   },
   "keywords": [

@@ -1,0 +1,24 @@
+name: Fonti esterne raggiungibili
+
+# Deliberatamente separato dalla CI e NON legato ai push: se il sito della DG Cinema
+# è lento o blocca le richieste automatiche, non deve impedire una pubblicazione.
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # ogni lunedì alle 6:00 UTC
+  workflow_dispatch:
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # 403 e 429 sono avvisi (blocco anti-bot), 404/410/5xx sono errori: una fonte
+      # citata che non esiste più va sistemata subito, sul sito di uno studio legale.
+      - name: Controlla i link esterni citati come fonte
+        run: npm run check:links

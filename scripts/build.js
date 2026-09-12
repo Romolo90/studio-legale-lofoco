@@ -106,7 +106,7 @@ function renderResourcesStatic(articles, isEn) {
     const cat = (a.category || 'all').replace('-', ' ');
     const tags = a.tags && a.tags.length ? a.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
     return `
-        <div class="resource-card" data-id="${a.id}" data-category="${a.category || ''}" tabindex="0" role="button" aria-label="${aria}${a.title}">
+        <div class="resource-card" id="${a.id}" data-id="${a.id}" data-category="${a.category || ''}" tabindex="0" role="button" aria-label="${aria}${a.title}">
           <div class="card-header">
             <span class="category-tag">${cat}</span>
             ${tags}
