@@ -32,6 +32,14 @@ const argId = (() => {
 
 const leggiPartial = (f) => fs.readFileSync(path.join(ROOT, 'partials', f), 'utf8').trimEnd();
 
+// Le date in pagina vanno lette da un cliente, non da una macchina: "12 settembre 2026".
+const MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+const dataIt = (iso) => {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ''));
+  if (!m) return String(iso || '');
+  return `${Number(m[3])} ${MESI[Number(m[2]) - 1]} ${m[1]}`;
+};
+
 const esc = (s) => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
@@ -87,7 +95,7 @@ function jsonLd(g, url) {
 function corpo(g) {
   const fonteById = new Map((g.sources || []).map((s) => [s.id, s]));
   const rif = (refs) => (refs || []).length
-    ? ` <span class="guida-rif">(${refs.map((r) => `<a href="#fonte-${esc(r)}">${esc((fonteById.get(r) || {}).citation || r)}</a>`).join('; ')})</span>`
+    ? ` <span class="guida-rif">(${refs.map((r) => { const s = fonteById.get(r) || {}; return `<a href="#fonte-${esc(r)}" title="${esc(s.citation || '')}">${esc(s.short || s.citation || r)}</a>`; }).join('; ')})</span>`
     : '';
 
   const sezioni = (g.sections || []).map((s) => {
@@ -105,7 +113,7 @@ function corpo(g) {
     : '';
 
   const fonti = `\n      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">\n        <h2 id="fonti-title">Fonti</h2>\n        <ul>\n` +
-    (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}">${esc(s.citation)} — <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">testo</a>${s.urlType === 'primaria' ? ' (fonte primaria)' : ''}, consultata il ${esc(s.accessedAt)}</li>`).join('\n') +
+    (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}">${esc(s.citation)} — <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">testo</a>${s.urlType === 'primaria' ? ' (fonte primaria)' : ''}, consultata il ${esc(dataIt(s.accessedAt))}</li>`).join('\n') +
     `\n        </ul>\n      </section>`;
 
   const correlate = (g.related || []).length
@@ -116,7 +124,7 @@ function corpo(g) {
       <header class="insights-hero">
         <h1>${esc(g.title)}</h1>
         <p class="guida-abstract">${esc(g.abstract)}</p>
-        <p class="guida-meta">A cura dell'<a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · Aggiornata al ${esc(g.dateModified)} · Dati verificati sulle fonti il ${esc(g.verifiedAt)}</p>
+        <p class="guida-meta">A cura dell'<a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · Aggiornata al ${esc(dataIt(g.dateModified))} · Dati verificati sulle fonti il ${esc(dataIt(g.verifiedAt))}</p>
       </header>
 
 ${sezioni}
@@ -129,15 +137,18 @@ ${fonti}${correlate}
     </article>`;
 }
 
-function pagina(g) {
+function pagina(g, anteprima) {
   const file = `guida-${g.slug}.html`;
   const url = SITE + file;
+  const base = anteprima
+    ? '\n  <!-- Solo in anteprima: la pagina sta in preview/, gli asset in root. -->\n  <base href="/">'
+    : '';
   return `<!DOCTYPE html>
 ${MARKER}
      sorgente: content/guide/${g.id}.json -->
 <html lang="${esc(g.lang || 'it')}">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8">${base}
 ${headComune()}
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -210,7 +221,7 @@ function main() {
       continue;
     }
     if (g.status === 'review') {
-      const esito = scrivi(path.join(PREVIEW_DIR, nome), pagina(g), `preview/${nome}`);
+      const esito = scrivi(path.join(PREVIEW_DIR, nome), pagina(g, true), `preview/${nome}`);
       console.log(`· ${g.id}: in revisione → preview/${nome} (${esito}) — apri con npm run dev`);
       generate++;
       continue;

@@ -39,6 +39,7 @@ Validatore: `npm run check:guide`. Non passa, non si pubblica.
       "id": "di-225-2024",
       "type": "dm",                     // legge | dm | dd | avviso | ue | prassi
       "citation": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, art. 13, comma 1",
+      "short": "D.I. 225/2024",   // sigla usata nei richiami accanto al testo; la citazione piena resta in fondo
       "url": "https://cinema.cultura.gov.it/…pdf",
       "urlType": "primaria",           // primaria | istituzionale
       "accessedAt": "2026-09-12",
