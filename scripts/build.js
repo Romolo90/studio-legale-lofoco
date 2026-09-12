@@ -111,7 +111,7 @@ function renderResourcesStatic(articles, isEn) {
             <span class="category-tag">${cat}</span>
             ${tags}
           </div>
-          <h3>${a.title}</h3>
+          <h3>${a.guideUrl ? `<a href="${a.guideUrl}">${a.title}</a>` : a.title}</h3>
           <p class="summary">${a.summary}</p>
           <div class="card-footer">${footerBase}</div>
         </div>`;
@@ -166,7 +166,7 @@ function injectInsightsStatic(content, filename) {
           '@type': 'Article',
           'name': a.title,
           'description': a.summary,
-          'url': `https://studiolegalelofoco.com/${filename}#${a.id}`
+          'url': a.guideUrl ? `https://studiolegalelofoco.com/${a.guideUrl}` : `https://studiolegalelofoco.com/${filename}#${a.id}`
         }
       }))
     };

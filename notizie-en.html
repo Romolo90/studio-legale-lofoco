@@ -656,7 +656,7 @@
             <span class="category-tag">${cat}</span>
             ${tagsHtml}
           </div>
-          <h3>${a.title}</h3>
+          <h3>${a.guideUrl ? `<a href="${a.guideUrl}">${a.title}</a>` : a.title}</h3>
           <p class="summary">${a.summary}</p>
           <div class="card-footer">Read more</div>
         </div>`;

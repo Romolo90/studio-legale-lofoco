@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!-- GENERATO da scripts/build-guide.js — non modificare a mano;
+     sorgente: content/guide/tc-produzione.json -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google tag (gtag.js) - Consent Mode v2.
+       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
+       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
+       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
+    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
+    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
+    var glfAnalytics = 'denied';
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        glfAnalytics = 'granted';
+      }
+    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: glfAnalytics,
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax credit produzione: aliquote, requisiti e procedura | Studio Legale Lo Foco</title>
+  <meta name="description" content="Aliquote, tetti, costo eleggibile, requisiti e procedura del credito d&#39;imposta per la produzione cinematografica e audiovisiva, con i riferimenti normativi.">
+  <link rel="canonical" href="https://studiolegalelofoco.com/guida-tax-credit-produzione.html">
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/guida-tax-credit-produzione.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/guida-tax-credit-produzione.html">
+  <meta property="og:title" content="Tax credit produzione: aliquote, requisiti e procedura | Studio Legale Lo Foco">
+  <meta property="og:description" content="Aliquote, tetti, costo eleggibile, requisiti e procedura del credito d&#39;imposta per la produzione cinematografica e audiovisiva, con i riferimenti normativi.">
+  <meta property="og:url" content="https://studiolegalelofoco.com/guida-tax-credit-produzione.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tax credit produzione: aliquote, requisiti e procedura | Studio Legale Lo Foco">
+  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tax credit per la produzione cinematografica e audiovisiva",
+  "description": "Aliquote, tetti, costo eleggibile, requisiti e procedura del credito d'imposta per la produzione cinematografica e audiovisiva, con i riferimenti normativi.",
+  "inLanguage": "it",
+  "datePublished": "2026-09-12",
+  "dateModified": "2026-09-12",
+  "author": {
+    "@type": "Person",
+    "name": "Andrea Lo Foco",
+    "url": "https://studiolegalelofoco.com/andrea-lo-foco.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Studio Legale Lo Foco",
+    "url": "https://studiolegalelofoco.com/"
+  },
+  "mainEntityOfPage": "https://studiolegalelofoco.com/guida-tax-credit-produzione.html",
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Legge 14 novembre 2016, n. 220, art. 15",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2025/06/DEF-D.I.-10-LUGLIO-2024-N.225-TAX-CREDIT.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "D.I. MiC-MEF 22 aprile 2025, rep. n. 141, modificativo del D.I. 225/2024",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2025/06/250418_Decreto_produzione_17_aprile_2025_signed__1__signed.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Direzione generale Cinema e audiovisivo, avviso del 6 giugno 2025 sul decreto correttivo e sulle modalità di presentazione delle domande",
+      "url": "https://cinema.cultura.gov.it/avvisi/decreto-correttivo-tax-credit-produzione-nazionale-e-modalita-di-presentazione-delle-domande/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Ministero della cultura, comunicato del 19 giugno 2026: nuovo decreto sui contributi automatici e sul tax credit alle imprese di produzione",
+      "url": "https://cultura.gov.it/comunicato/29118"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "ANSA, 7 luglio 2026: firmato il decreto MiC-MEF sulle nuove regole del tax credit",
+      "url": "https://www.ansa.it/sito/notizie/cultura/cinema/2026/07/07/borgonzoni-firmato-il-decreto-mic-mef-sulle-nuove-regole-del-tax_07ff5e9d-5f7d-4362-a468-178f1f73a0f6.html"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "ANSA, 10 settembre 2026: via libera bipartisan al testo unico sul cinema, 218 voti a favore alla Camera",
+      "url": "https://www.ansa.it/sito/notizie/politica/2026/09/10/via-libera-bipartisan-al-testo-unico-sul-cinema-218-voti-a-favore_c084acde-f20d-4c18-8a2a-62190e14412d.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://studiolegalelofoco.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Approfondimenti",
+      "item": "https://studiolegalelofoco.com/notizie.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Tax credit per la produzione cinematografica e audiovisiva",
+      "item": "https://studiolegalelofoco.com/guida-tax-credit-produzione.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Il 40 per cento vale per tutte le opere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. È l'aliquota dei produttori indipendenti sulle opere cinematografiche. Le opere televisive e web partono dal 25 per cento, i produttori non indipendenti e le imprese non europee si fermano al 30 e per le imprese ad elevata capacità la misura scende sugli scaglioni più alti."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Esiste una spesa minima da sostenere in Italia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il decreto non fissa una soglia generale di spesa minima. Esistono invece requisiti per tipologia di opera, come il costo minimo al minuto per la fiction televisiva e web e, per le opere cinematografiche, la copertura finanziaria privata e l'accordo di distribuzione."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo passa prima di poter usare il credito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si utilizza in compensazione dopo l'esito positivo dell'istruttoria, in due tempi con preventiva e definitiva, in un'unica soluzione con la sola definitiva."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <header class="header">
+    <div class="logo">
+      <p class="logo-title">
+        <a href="index.html" class="home-link"><svg class="logo-mark" viewBox="0 0 44 44" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="20" fill="none" stroke="#80D9FF" stroke-width="2"></circle><text x="22" y="23" text-anchor="middle" dominant-baseline="middle" font-family="Lora, serif" font-weight="600" font-size="18" fill="#BFECFF" letter-spacing="1">LF</text></svg>
+          Studio Legale Lo Foco
+        </a>
+      </p>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
+      <ul>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="notizie.html">Approfondimenti</a></li>
+        <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
+        <li class="mobile-language">
+          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<main id="main">
+    <article class="guida">
+      <header class="insights-hero">
+        <h1>Tax credit per la produzione cinematografica e audiovisiva</h1>
+        <p class="guida-abstract">Il credito d&#39;imposta per la produzione non è un beneficio automatico: l&#39;importo dipende da chi presenta la domanda, dal tipo di opera e da come è costruito il costo eleggibile. Qui trovi ciò che stabilisce la disciplina vigente, con il riferimento normativo accanto a ogni dato.</p>
+        <p class="guida-meta">A cura dell'<a href="andrea-lo-foco.html">Avv. Andrea Lo Foco</a> · Aggiornata al 12 settembre 2026 · Dati verificati sulle fonti il 12 settembre 2026</p>
+      </header>
+
+      <section class="insights-section" id="avvertenza" aria-labelledby="avvertenza-title">
+        <h2 id="avvertenza-title">Avvertenza: due provvedimenti in movimento</h2>
+        <p>La disciplina descritta in questa pagina è quella applicabile oggi. Due provvedimenti sono però in movimento, e chi programma una domanda dovrebbe verificarne lo stato prima di chiudere il piano finanziario.</p>
+        <p>Un decreto interministeriale che modifica il D.I. 225/2024 riduce le aliquote massime, diminuisce i limiti massimi di credito riconoscibili per ciascuna opera e introduce tetti massimi per singola impresa. È stato firmato dal Ministro della cultura il 18 giugno 2026 e, secondo la stampa di settore, dal Ministro dell&#39;economia e delle finanze il 7 luglio 2026, quindi trasmesso agli organi di controllo. Alla data di aggiornamento di questa guida non risulta pubblicato: fino alla pubblicazione non produce effetti. <span class="guida-rif">(<a href="#fonte-mic-19-giugno-2026" title="Ministero della cultura, comunicato del 19 giugno 2026: nuovo decreto sui contributi automatici e sul tax credit alle imprese di produzione">comunicato MiC 19 giugno 2026</a>; <a href="#fonte-stampa-firma-mef" title="ANSA, 7 luglio 2026: firmato il decreto MiC-MEF sulle nuove regole del tax credit">stampa, 7 luglio 2026</a>)</span></p>
+        <p>Il 10 settembre 2026 la Camera ha inoltre approvato in prima lettura, con 218 voti favorevoli e 6 contrari, il testo unificato sul cinema e sull&#39;audiovisivo, che dispone fra l&#39;altro il riordino del credito d&#39;imposta e la nascita di un&#39;Agenzia per il cinema e l&#39;audiovisivo. Il testo passa ora all&#39;esame del Senato. <span class="guida-rif">(<a href="#fonte-stampa-testo-unico" title="ANSA, 10 settembre 2026: via libera bipartisan al testo unico sul cinema, 218 voti a favore alla Camera">voto della Camera del 10 settembre 2026</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="cosa-e" aria-labelledby="cosa-e-title">
+        <h2 id="cosa-e-title">Che cos&#39;è e chi può chiederlo</h2>
+        <p>Il credito d&#39;imposta per le imprese di produzione è previsto dall&#39;articolo 15 della legge sul cinema e sull&#39;audiovisivo, che lo colloca in una forbice compresa fra il 15 e il 40 per cento del costo complessivo di produzione e rimette a un decreto attuativo la determinazione puntuale delle aliquote. <span class="guida-rif">(<a href="#fonte-l220-2016" title="Legge 14 novembre 2016, n. 220, art. 15">art. 15, L. 220/2016</a>)</span></p>
+        <p>La disciplina di dettaglio è oggi contenuta nel decreto interministeriale MiC-MEF del 10 luglio 2024, rep. n. 225, come modificato dal decreto correttivo del 22 aprile 2025, rep. n. 141, in vigore dal 6 giugno 2025. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">D.I. 225/2024 e D.I. 141/2025</a>; <a href="#fonte-di-141-2025" title="D.I. MiC-MEF 22 aprile 2025, rep. n. 141, modificativo del D.I. 225/2024">D.I. 141/2025</a>; <a href="#fonte-avviso-correttivo" title="Direzione generale Cinema e audiovisivo, avviso del 6 giugno 2025 sul decreto correttivo e sulle modalità di presentazione delle domande">avviso DGCA 6 giugno 2025</a>)</span></p>
+        <p>Sul piano soggettivo il beneficio spetta a società di capitali con capitale sociale interamente versato e patrimonio netto non inferiori a 40.000 euro, ridotti a 10.000 euro per i cortometraggi, con sede legale nello Spazio economico europeo, soggette a tassazione in Italia e in possesso del codice ATECO J 59.11. Sono escluse le associazioni culturali e le fondazioni senza scopo di lucro. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 2, c. 4, D.I. 225/2024</a>)</span></p>
+        <p>Sono requisiti da verificare prima di impostare la struttura societaria: intervenire a produzione avviata è quasi sempre più costoso.</p>
+
+      </section>
+
+      <section class="insights-section" id="aliquote" aria-labelledby="aliquote-title">
+        <h2 id="aliquote-title">Quanto vale: aliquote e tetti</h2>
+        <p>Per le opere cinematografiche l&#39;aliquota ordinaria è del 40 per cento del costo eleggibile in favore dei produttori indipendenti. Per l&#39;impresa indipendente europea qualificabile come ad elevata capacità produttiva e finanziaria la misura si riduce al 35 per cento sulla parte di costo eleggibile superiore a 5 milioni di euro e fino a 10 milioni, e al 30 per cento sulla parte eccedente i 10 milioni. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 13, cc. 1 e 2, D.I. 225/2024</a>)</span></p>
+        <p>Ai produttori non indipendenti e alle imprese non europee spetta il 30 per cento del costo eleggibile, entro un massimo annuo di 5 milioni di euro per impresa o gruppo e nel limite complessivo del 15 per cento delle risorse annue destinate ai crediti d&#39;imposta per la produzione cinematografica. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 13, c. 3</a>)</span></p>
+        <p>Per le opere televisive e web l&#39;aliquota è del 25 per cento, elevata al 35 in alternativa nei casi di coproduzione o produzione internazionale non meramente finanziaria, di apporto di risorse internazionali pari ad almeno il 30 per cento, di preacquisto, acquisto o licenza di prodotto, oppure di associazione produttiva con conservazione in capo al produttore indipendente delle quote di diritti indicate dal decreto. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 17, c. 1</a>)</span></p>
+        <p>In ogni caso il credito non può superare 9 milioni di euro per opera, che diventano 18 milioni quando almeno il 30 per cento del costo complessivo è coperto da risorse provenienti da Paesi diversi dall&#39;Italia. Nella seconda ipotesi l&#39;imputazione è scaglionata: 9 milioni nell&#39;esercizio della richiesta preventiva e l&#39;eccedenza in parti uguali nei tre esercizi successivi. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 5</a>)</span></p>
+        <p>Nelle produzioni associate la misura dipende dalla quota di diritti di utilizzazione economica: sopra la metà vale il regime del produttore indipendente, altrimenti quello meno favorevole. Anche per questo la ripartizione dei diritti va decisa guardando al credito d&#39;imposta. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 13, c. 4</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="costo-eleggibile" aria-labelledby="costo-eleggibile-title">
+        <h2 id="costo-eleggibile-title">Il costo eleggibile non è il costo del film</h2>
+        <p>La base di calcolo non coincide con il budget complessivo. I costi cosiddetti sopra la linea, cioè soggetto e sceneggiatura, direzione e attori principali, sono eleggibili entro il 30 per cento del costo complessivo di produzione. Gli oneri finanziari, assicurativi e di garanzia sono eleggibili entro il 7,5 per cento complessivo, a condizione che siano imputabili esclusivamente all&#39;opera per cui si chiede il beneficio. Il compenso di produzione e le spese generali dell&#39;impresa non sono eleggibili, e ciascuna delle due voci può essere imputata al costo complessivo entro il 7,5 per cento del costo medesimo. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 3, c. 2, D.I. 225/2024</a>)</span></p>
+        <p>La Tabella B allegata al decreto aggiunge un vincolo che la sola lettura dell&#39;articolo non rivela: il 7,5 per cento delle spese generali è condiviso con imprevisti, deferrals e altri contributi in servizi, mentre il compenso di produzione dispone del proprio limite autonomo. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">Tabella B, voci 7.1-7.5</a>)</span></p>
+        <p>I costi del personale disciplinati dai contratti collettivi nazionali sono eleggibili, per ciascun prestatore di lavoro, entro l&#39;importo previsto dai contratti stipulati dalle associazioni datoriali e sindacali maggiormente rappresentative, incrementato fino al 20 per cento. Non sono eleggibili i costi dell&#39;intelligenza artificiale riferibili alle prestazioni creative o artistiche sopra la linea, salvo l&#39;impiego riconducibile agli effetti speciali sulla voce relativa agli attori principali. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 3, c. 2</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="requisiti-opera" aria-labelledby="requisiti-opera-title">
+        <h2 id="requisiti-opera-title">Requisiti dell&#39;opera e della domanda</h2>
+        <p>Per le opere cinematografiche di finzione di durata superiore a 52 minuti servono la copertura finanziaria con risorse di origine privata di almeno il 40 per cento del costo di produzione, senza contare il credito richiesto, e un accordo vincolante con una società di distribuzione cinematografica. L&#39;accordo, presentato e verificato in sede di richiesta definitiva, deve prevedere un piano di promozione con investimento minimo e numeri minimi di proiezioni e di sale, che variano sopra e sotto la soglia di 3,5 milioni di euro di costo. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 12, c. 1</a>)</span></p>
+        <p>In alternativa sono ammissibili le opere destinatarie di un contributo selettivo alla produzione a valere sui bandi pubblicati dopo il 1° gennaio 2024, oppure di un contributo di organismi dell&#39;Unione europea o del Consiglio d&#39;Europa, purché sia assicurata la circuitazione cinematografica minima indicata dal decreto. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 12, c. 2</a>)</span></p>
+        <p>Per le opere televisive e web di fiction la durata complessiva non deve essere inferiore a 52 minuti e il costo complessivo non inferiore a 2.000 euro al minuto. Entrambi i parametri sono derogabili con provvedimento del Direttore generale per motivate esigenze artistiche, produttive, finanziarie o commerciali. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 16, c. 6</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="procedura" aria-labelledby="procedura-title">
+        <h2 id="procedura-title">Come si presenta la domanda e quando si incassa</h2>
+        <p>Il credito è riconosciuto dopo la comunicazione della Direzione generale su nazionalità italiana provvisoria, eleggibilità culturale e credito teorico, e a condizione che le spese siano state sostenute secondo le regole fiscali ordinarie ed effettivamente pagate. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 6, c. 1</a>)</span></p>
+        <p>L&#39;impresa può presentare la richiesta preventiva e poi quella definitiva, oppure la sola richiesta definitiva. Nel primo caso il credito è utilizzabile in compensazione per il 70 per cento all&#39;approvazione della preventiva e per la restante parte all&#39;approvazione della definitiva. La quota iniziale scende al 40 per cento per le imprese ad elevata capacità produttiva e finanziaria e per le imprese che ne facciano specifica richiesta. Chi presenta la sola definitiva utilizza il 100 per cento dell&#39;importo approvato in un&#39;unica soluzione. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 6, c. 5</a>)</span></p>
+        <p>A pena di inammissibilità va documentato il versamento delle spese di istruttoria, comprese fra 200 e 10.000 euro e quantificate da un decreto direttoriale, cui sono affidati anche i modelli di domanda e le modalità tecniche. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 2, c. 3, e art. 38, c. 1</a>)</span></p>
+        <p>Il credito approvato in via definitiva è cedibile a intermediari bancari, finanziari e assicurativi sottoposti a vigilanza prudenziale, che possono utilizzarlo solo in compensazione dei propri debiti d&#39;imposta o contributivi. La cessione presuppone il riconoscimento definitivo, una domanda alla Direzione generale con la comprova delle spese di istruttoria e il contratto di cessione redatto in forma pubblica; la Direzione verifica l&#39;effettività del credito entro sessanta giorni e rilascia la relativa attestazione. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 8, cc. 1, 3 e 4</a>)</span></p>
+        <p>Sul beneficiario grava infine un obbligo di reinvestimento di una quota dei proventi dell&#39;opera, proporzionale al credito riconosciuto e fino a concorrenza del medesimo, dovuto solo dopo la copertura dei costi dell&#39;opera ed entro cinque anni dal riconoscimento definitivo del credito. L&#39;obbligo si adempie nello sviluppo, nella produzione o nella distribuzione, in Italia e all&#39;estero, di nuove opere difficili. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 7, cc. 9 e 10</a>)</span></p>
+        <p>Finestre di presentazione e modelli sono definiti con avvisi e decreti direttoriali della Direzione generale pubblicati nel corso dell&#39;anno. I termini effettivi stanno lì, e vanno verificati prima di programmare l&#39;invio. <span class="guida-rif">(<a href="#fonte-avviso-correttivo" title="Direzione generale Cinema e audiovisivo, avviso del 6 giugno 2025 sul decreto correttivo e sulle modalità di presentazione delle domande">avvisi DGCA</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="transitorio" aria-labelledby="transitorio-title">
+        <h2 id="transitorio-title">Che cosa resta del regime precedente</h2>
+        <p>Il decreto vigente ha abrogato quello del 4 febbraio 2021, con eccezioni rilevanti. La disciplina precedente resta per le richieste presentate entro il 21 gennaio 2024 a valere sulle risorse dell&#39;anno 2023, e per le opere che alla data di entrata in vigore del nuovo decreto, il 14 agosto 2024, avevano in alternativa contratti con data certa con fornitori di servizi di media audiovisivi o con distributori cinematografici, oppure quattro settimane consecutive di riprese o il 50 per cento delle giornate di lavorazione già realizzate. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">artt. 37 e 38, cc. 3 e 4</a>; <a href="#fonte-avviso-correttivo" title="Direzione generale Cinema e audiovisivo, avviso del 6 giugno 2025 sul decreto correttivo e sulle modalità di presentazione delle domande">avviso DGCA 6 giugno 2025</a>)</span></p>
+        <p>Per le lavorazioni a cavallo fra i due regimi la prima domanda non è quale aliquota convenga, ma quale disciplina si applichi, e la risposta dipende da documenti da recuperare e datare con precisione.</p>
+
+      </section>
+
+      <section class="insights-section" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Domande frequenti</h2>
+        <h3>Il 40 per cento vale per tutte le opere?</h3>
+        <p>No. È l&#39;aliquota dei produttori indipendenti sulle opere cinematografiche. Le opere televisive e web partono dal 25 per cento, i produttori non indipendenti e le imprese non europee si fermano al 30 e per le imprese ad elevata capacità la misura scende sugli scaglioni più alti. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">artt. 13 e 17</a>)</span></p>
+        <h3>Esiste una spesa minima da sostenere in Italia?</h3>
+        <p>Il decreto non fissa una soglia generale di spesa minima. Esistono invece requisiti per tipologia di opera, come il costo minimo al minuto per la fiction televisiva e web e, per le opere cinematografiche, la copertura finanziaria privata e l&#39;accordo di distribuzione. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">artt. 12 e 16</a>)</span></p>
+        <h3>Quanto tempo passa prima di poter usare il credito?</h3>
+        <p>Si utilizza in compensazione dopo l&#39;esito positivo dell&#39;istruttoria, in due tempi con preventiva e definitiva, in un&#39;unica soluzione con la sola definitiva. <span class="guida-rif">(<a href="#fonte-di-225-2024" title="D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025">art. 6, c. 5</a>)</span></p>
+      </section>
+
+      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">
+        <h2 id="fonti-title">Fonti</h2>
+        <ul>
+          <li id="fonte-l220-2016">Legge 14 novembre 2016, n. 220, art. 15 — <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-di-225-2024">D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025 — <a href="https://cinema.cultura.gov.it/wp-content/uploads/2025/06/DEF-D.I.-10-LUGLIO-2024-N.225-TAX-CREDIT.pdf" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-di-141-2025">D.I. MiC-MEF 22 aprile 2025, rep. n. 141, modificativo del D.I. 225/2024 — <a href="https://cinema.cultura.gov.it/wp-content/uploads/2025/06/250418_Decreto_produzione_17_aprile_2025_signed__1__signed.pdf" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-avviso-correttivo">Direzione generale Cinema e audiovisivo, avviso del 6 giugno 2025 sul decreto correttivo e sulle modalità di presentazione delle domande — <a href="https://cinema.cultura.gov.it/avvisi/decreto-correttivo-tax-credit-produzione-nazionale-e-modalita-di-presentazione-delle-domande/" target="_blank" rel="noopener noreferrer">testo</a>, consultata il 12 settembre 2026</li>
+          <li id="fonte-mic-19-giugno-2026">Ministero della cultura, comunicato del 19 giugno 2026: nuovo decreto sui contributi automatici e sul tax credit alle imprese di produzione — <a href="https://cultura.gov.it/comunicato/29118" target="_blank" rel="noopener noreferrer">testo</a>, consultata il 12 settembre 2026</li>
+          <li id="fonte-stampa-firma-mef">ANSA, 7 luglio 2026: firmato il decreto MiC-MEF sulle nuove regole del tax credit — <a href="https://www.ansa.it/sito/notizie/cultura/cinema/2026/07/07/borgonzoni-firmato-il-decreto-mic-mef-sulle-nuove-regole-del-tax_07ff5e9d-5f7d-4362-a468-178f1f73a0f6.html" target="_blank" rel="noopener noreferrer">testo</a>, consultata il 12 settembre 2026</li>
+          <li id="fonte-stampa-testo-unico">ANSA, 10 settembre 2026: via libera bipartisan al testo unico sul cinema, 218 voti a favore alla Camera — <a href="https://www.ansa.it/sito/notizie/politica/2026/09/10/via-libera-bipartisan-al-testo-unico-sul-cinema-218-voti-a-favore_c084acde-f20d-4c18-8a2a-62190e14412d.html" target="_blank" rel="noopener noreferrer">testo</a>, consultata il 12 settembre 2026</li>
+        </ul>
+      </section>
+
+      <p class="guida-disclaimer">Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini dipendono dai decreti attuativi e dagli avvisi della Direzione generale Cinema e audiovisivo, che cambiano nel corso dell&#39;anno: prima di presentare una domanda verificare la disciplina in vigore o contattare lo studio.</p>
+
+      <p class="guida-cta"><a href="index.html#contatti" class="btn-cta">Parlane con lo studio</a></p>
+    </article>
+  </main>
+
+<footer>
+    <div class="footer-left"></div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma &middot; P.IVA 18468821006</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a> | <a href="cookie-policy.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Gestisci cookie</button>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button type="button" id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button type="button" id="reject-cookies" class="btn-cookie btn-secondary">Rifiuta</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
+    </form>
+  </div>
+
+<script src="script.js"></script></body>
+</html>

@@ -470,7 +470,7 @@
             <span class="category-tag">tax credit</span>
 
           </div>
-          <h3>Tax Credit per la produzione cinematografica e audiovisiva</h3>
+          <h3><a href="guida-tax-credit-produzione.html">Tax Credit per la produzione cinematografica e audiovisiva</a></h3>
           <p class="summary">Credito d'imposta del 40% (o aliquote differenziate) sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Requisiti culturali, limiti massimi e procedure via DGCOL.</p>
           <div class="card-footer">Approfondisci</div>
         </div>
@@ -650,7 +650,7 @@
             <span class="category-tag">${cat}</span>
             ${tagsHtml}
           </div>
-          <h3>${a.title}</h3>
+          <h3>${a.guideUrl ? `<a href="${a.guideUrl}">${a.title}</a>` : a.title}</h3>
           <p class="summary">${a.summary}</p>
           <div class="card-footer">Approfondisci</div>
         </div>`;
@@ -787,7 +787,7 @@
         "@type": "Article",
         "name": "Tax Credit per la produzione cinematografica e audiovisiva",
         "description": "Credito d'imposta del 40% (o aliquote differenziate) sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Requisiti culturali, limiti massimi e procedure via DGCOL.",
-        "url": "https://studiolegalelofoco.com/notizie.html#tc-produzione"
+        "url": "https://studiolegalelofoco.com/guida-tax-credit-produzione.html"
       }
     },
     {

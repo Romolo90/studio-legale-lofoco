@@ -236,6 +236,7 @@
     {
       "id": "tc-produzione",
       "title": "Tax Credit per la produzione cinematografica e audiovisiva",
+      "guideUrl": "guida-tax-credit-produzione.html",
       "category": "tax-credit",
       "summary": "Credito d'imposta del 40% (o aliquote differenziate) sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Requisiti culturali, limiti massimi e procedure via DGCOL.",
       "keyPoints": [
