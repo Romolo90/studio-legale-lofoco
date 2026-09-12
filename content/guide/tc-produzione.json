@@ -9,38 +9,50 @@
   "metaDescription": "Aliquote, tetti, costo eleggibile, requisiti e procedura del credito d'imposta per la produzione cinematografica e audiovisiva, con i riferimenti normativi.",
   "abstract": "Il credito d'imposta per la produzione non è un beneficio automatico: l'importo dipende da chi presenta la domanda, dal tipo di opera e da come è costruito il costo eleggibile. Qui trovi ciò che stabilisce la disciplina vigente, con il riferimento normativo accanto a ogni dato.",
   "category": "tax-credit",
-  "author": {
-    "name": "Andrea Lo Foco",
-    "role": "Avvocato",
-    "url": "andrea-lo-foco.html"
-  },
+  "author": { "name": "Andrea Lo Foco", "role": "Avvocato", "url": "andrea-lo-foco.html" },
   "datePublished": "2026-09-12",
   "dateModified": "2026-09-12",
   "verifiedAt": "2026-09-12",
   "sections": [
     {
+      "id": "avvertenza",
+      "heading": "Avvertenza: due provvedimenti in movimento",
+      "paragraphs": [
+        {
+          "text": "La disciplina descritta in questa pagina è quella applicabile oggi. Due provvedimenti sono però in movimento, e chi programma una domanda dovrebbe verificarne lo stato prima di chiudere il piano finanziario.",
+          "refs": [],
+          "noSourceReason": "avvertenza redazionale; i dati puntuali sono nei due paragrafi successivi"
+        },
+        {
+          "text": "Un decreto interministeriale che modifica il D.I. 225/2024 riduce le aliquote massime, diminuisce i limiti massimi di credito riconoscibili per ciascuna opera e introduce tetti massimi per singola impresa. È stato firmato dal Ministro della cultura il 18 giugno 2026 e, secondo la stampa di settore, dal Ministro dell'economia e delle finanze il 7 luglio 2026, quindi trasmesso agli organi di controllo. Alla data di aggiornamento di questa guida non risulta pubblicato: fino alla pubblicazione non produce effetti.",
+          "refs": ["mic-19-giugno-2026", "stampa-firma-mef"],
+          "cite": "comunicato MiC 19 giugno 2026"
+        },
+        {
+          "text": "Il 10 settembre 2026 la Camera ha inoltre approvato in prima lettura, con 218 voti favorevoli e 6 contrari, il testo unificato sul cinema e sull'audiovisivo, che dispone fra l'altro il riordino del credito d'imposta e la nascita di un'Agenzia per il cinema e l'audiovisivo. Il testo passa ora all'esame del Senato.",
+          "refs": ["stampa-testo-unico"],
+          "cite": "voto della Camera del 10 settembre 2026"
+        }
+      ]
+    },
+    {
       "id": "cosa-e",
       "heading": "Che cos'è e chi può chiederlo",
       "paragraphs": [
         {
-          "text": "Il credito d'imposta per le imprese di produzione è previsto dall'articolo 15 della legge sul cinema e sull'audiovisivo, che lo colloca in una forbice compresa fra il quindici e il quaranta per cento del costo complessivo di produzione e rimette a un decreto attuativo la determinazione puntuale delle aliquote.",
-          "refs": [
-            "l220-2016"
-          ]
+          "text": "Il credito d'imposta per le imprese di produzione è previsto dall'articolo 15 della legge sul cinema e sull'audiovisivo, che lo colloca in una forbice compresa fra il 15 e il 40 per cento del costo complessivo di produzione e rimette a un decreto attuativo la determinazione puntuale delle aliquote.",
+          "refs": ["l220-2016"],
+          "cite": "art. 15, L. 220/2016"
         },
         {
-          "text": "La disciplina di dettaglio è oggi contenuta nel decreto interministeriale del Ministero della cultura e del Ministero dell'economia e delle finanze del 10 luglio 2024, come modificato dal decreto correttivo del 22 aprile 2025, in vigore dal 6 giugno 2025.",
-          "refs": [
-            "di-225-2024",
-            "di-141-2025",
-            "avviso-correttivo"
-          ]
+          "text": "La disciplina di dettaglio è oggi contenuta nel decreto interministeriale MiC-MEF del 10 luglio 2024, rep. n. 225, come modificato dal decreto correttivo del 22 aprile 2025, rep. n. 141, in vigore dal 6 giugno 2025.",
+          "refs": ["di-225-2024", "di-141-2025", "avviso-correttivo"],
+          "cite": "D.I. 225/2024 e D.I. 141/2025"
         },
         {
-          "text": "Sul piano soggettivo il beneficio spetta a società di capitali con capitale sociale interamente versato e patrimonio netto non inferiori a quarantamila euro, ridotti a diecimila per i cortometraggi, con sede legale nello Spazio economico europeo, soggette a tassazione in Italia e in possesso del codice ATECO J 59.11. Sono escluse le associazioni culturali e le fondazioni senza scopo di lucro.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "Sul piano soggettivo il beneficio spetta a società di capitali con capitale sociale interamente versato e patrimonio netto non inferiori a 40.000 euro, ridotti a 10.000 euro per i cortometraggi, con sede legale nello Spazio economico europeo, soggette a tassazione in Italia e in possesso del codice ATECO J 59.11. Sono escluse le associazioni culturali e le fondazioni senza scopo di lucro.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 2, c. 4, D.I. 225/2024"
         },
         {
           "text": "Sono requisiti da verificare prima di impostare la struttura societaria: intervenire a produzione avviata è quasi sempre più costoso.",
@@ -54,34 +66,29 @@
       "heading": "Quanto vale: aliquote e tetti",
       "paragraphs": [
         {
-          "text": "Per le opere cinematografiche l'aliquota ordinaria è del quaranta per cento del costo eleggibile in favore dei produttori indipendenti. Per l'impresa indipendente europea qualificabile come ad elevata capacità produttiva e finanziaria la misura si riduce al trentacinque per cento sulla parte di costo eleggibile superiore a cinque milioni di euro e fino a dieci milioni, e al trenta per cento sulla parte eccedente i dieci milioni.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "Per le opere cinematografiche l'aliquota ordinaria è del 40 per cento del costo eleggibile in favore dei produttori indipendenti. Per l'impresa indipendente europea qualificabile come ad elevata capacità produttiva e finanziaria la misura si riduce al 35 per cento sulla parte di costo eleggibile superiore a 5 milioni di euro e fino a 10 milioni, e al 30 per cento sulla parte eccedente i 10 milioni.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 13, cc. 1 e 2, D.I. 225/2024"
         },
         {
-          "text": "Ai produttori non indipendenti e alle imprese non europee spetta invece il trenta per cento del costo eleggibile, entro un massimo annuo di cinque milioni di euro per impresa o gruppo e nel limite complessivo del quindici per cento delle risorse annue destinate ai crediti d'imposta per la produzione cinematografica.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "Ai produttori non indipendenti e alle imprese non europee spetta il 30 per cento del costo eleggibile, entro un massimo annuo di 5 milioni di euro per impresa o gruppo e nel limite complessivo del 15 per cento delle risorse annue destinate ai crediti d'imposta per la produzione cinematografica.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 13, c. 3"
         },
         {
-          "text": "Per le opere televisive e web l'aliquota è del venticinque per cento, elevata al trentacinque in alternativa nei casi di coproduzione o produzione internazionale non meramente finanziaria, di apporto di risorse internazionali pari ad almeno il trenta per cento, di preacquisto, acquisto o licenza di prodotto, oppure di associazione produttiva con conservazione in capo al produttore indipendente delle quote di diritti indicate dal decreto.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "Per le opere televisive e web l'aliquota è del 25 per cento, elevata al 35 in alternativa nei casi di coproduzione o produzione internazionale non meramente finanziaria, di apporto di risorse internazionali pari ad almeno il 30 per cento, di preacquisto, acquisto o licenza di prodotto, oppure di associazione produttiva con conservazione in capo al produttore indipendente delle quote di diritti indicate dal decreto.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 17, c. 1"
         },
         {
-          "text": "In ogni caso il credito non può superare nove milioni di euro per opera, che diventano diciotto milioni quando almeno il trenta per cento del costo complessivo è coperto da risorse provenienti da Paesi diversi dall'Italia. Nella seconda ipotesi l'imputazione è scaglionata: nove milioni nell'esercizio della richiesta preventiva e l'eccedenza in parti uguali nei tre esercizi successivi.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "In ogni caso il credito non può superare 9 milioni di euro per opera, che diventano 18 milioni quando almeno il 30 per cento del costo complessivo è coperto da risorse provenienti da Paesi diversi dall'Italia. Nella seconda ipotesi l'imputazione è scaglionata: 9 milioni nell'esercizio della richiesta preventiva e l'eccedenza in parti uguali nei tre esercizi successivi.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 5"
         },
         {
           "text": "Nelle produzioni associate la misura dipende dalla quota di diritti di utilizzazione economica: sopra la metà vale il regime del produttore indipendente, altrimenti quello meno favorevole. Anche per questo la ripartizione dei diritti va decisa guardando al credito d'imposta.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "refs": ["di-225-2024"],
+          "cite": "art. 13, c. 4"
         }
       ]
     },
@@ -90,16 +97,19 @@
       "heading": "Il costo eleggibile non è il costo del film",
       "paragraphs": [
         {
-          "text": "La base di calcolo non coincide con il budget complessivo. I costi cosiddetti sopra la linea, cioè soggetto e sceneggiatura, direzione e attori principali, sono eleggibili entro il trenta per cento del costo complessivo di produzione; gli oneri finanziari, assicurativi e di garanzia entro il sette e mezzo per cento; il compenso di produzione e le spese generali non sono eleggibili e possono essere imputati al costo complessivo al massimo per il sette e mezzo per cento ciascuno.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "La base di calcolo non coincide con il budget complessivo. I costi cosiddetti sopra la linea, cioè soggetto e sceneggiatura, direzione e attori principali, sono eleggibili entro il 30 per cento del costo complessivo di produzione. Gli oneri finanziari, assicurativi e di garanzia sono eleggibili entro il 7,5 per cento complessivo, a condizione che siano imputabili esclusivamente all'opera per cui si chiede il beneficio. Il compenso di produzione e le spese generali dell'impresa non sono eleggibili, e ciascuna delle due voci può essere imputata al costo complessivo entro il 7,5 per cento del costo medesimo.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 3, c. 2, D.I. 225/2024"
         },
         {
-          "text": "I costi del personale disciplinati dai contratti collettivi nazionali sono eleggibili entro gli importi contrattuali maggiorati fino al venti per cento. Non sono eleggibili i costi dell'intelligenza artificiale riferibili alle prestazioni creative o artistiche, salvo l'impiego riconducibile agli effetti speciali sulla voce relativa agli attori principali.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "La Tabella B allegata al decreto aggiunge un vincolo che la sola lettura dell'articolo non rivela: il 7,5 per cento delle spese generali è condiviso con imprevisti, deferrals e altri contributi in servizi, mentre il compenso di produzione dispone del proprio limite autonomo.",
+          "refs": ["di-225-2024"],
+          "cite": "Tabella B, voci 7.1-7.5"
+        },
+        {
+          "text": "I costi del personale disciplinati dai contratti collettivi nazionali sono eleggibili, per ciascun prestatore di lavoro, entro l'importo previsto dai contratti stipulati dalle associazioni datoriali e sindacali maggiormente rappresentative, incrementato fino al 20 per cento. Non sono eleggibili i costi dell'intelligenza artificiale riferibili alle prestazioni creative o artistiche sopra la linea, salvo l'impiego riconducibile agli effetti speciali sulla voce relativa agli attori principali.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 3, c. 2"
         }
       ]
     },
@@ -108,22 +118,19 @@
       "heading": "Requisiti dell'opera e della domanda",
       "paragraphs": [
         {
-          "text": "Per le opere cinematografiche di finzione oltre i cinquantadue minuti servono la copertura finanziaria privata di almeno il quaranta per cento del costo, senza contare il credito richiesto, e un accordo vincolante con una società di distribuzione, con piano di promozione e numeri minimi di proiezioni e sale che variano sopra o sotto i tre milioni e mezzo di euro di costo.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "Per le opere cinematografiche di finzione di durata superiore a 52 minuti servono la copertura finanziaria con risorse di origine privata di almeno il 40 per cento del costo di produzione, senza contare il credito richiesto, e un accordo vincolante con una società di distribuzione cinematografica. L'accordo, presentato e verificato in sede di richiesta definitiva, deve prevedere un piano di promozione con investimento minimo e numeri minimi di proiezioni e di sale, che variano sopra e sotto la soglia di 3,5 milioni di euro di costo.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 12, c. 1"
         },
         {
-          "text": "In alternativa sono ammissibili le opere con un contributo selettivo alla produzione o con un contributo di organismi dell'Unione europea o del Consiglio d'Europa, purché sia assicurata una circuitazione cinematografica minima.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "In alternativa sono ammissibili le opere destinatarie di un contributo selettivo alla produzione a valere sui bandi pubblicati dopo il 1° gennaio 2024, oppure di un contributo di organismi dell'Unione europea o del Consiglio d'Europa, purché sia assicurata la circuitazione cinematografica minima indicata dal decreto.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 12, c. 2"
         },
         {
-          "text": "Per le opere televisive e web di fiction la durata complessiva non deve essere inferiore a cinquantadue minuti e il costo complessivo non inferiore a duemila euro al minuto, parametri derogabili con provvedimento del Direttore generale per motivate esigenze artistiche, produttive, finanziarie o commerciali.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "Per le opere televisive e web di fiction la durata complessiva non deve essere inferiore a 52 minuti e il costo complessivo non inferiore a 2.000 euro al minuto. Entrambi i parametri sono derogabili con provvedimento del Direttore generale per motivate esigenze artistiche, produttive, finanziarie o commerciali.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 16, c. 6"
         }
       ]
     },
@@ -133,27 +140,33 @@
       "paragraphs": [
         {
           "text": "Il credito è riconosciuto dopo la comunicazione della Direzione generale su nazionalità italiana provvisoria, eleggibilità culturale e credito teorico, e a condizione che le spese siano state sostenute secondo le regole fiscali ordinarie ed effettivamente pagate.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "refs": ["di-225-2024"],
+          "cite": "art. 6, c. 1"
         },
         {
-          "text": "L'impresa può presentare la richiesta preventiva e poi quella definitiva, oppure la sola richiesta definitiva. Nel primo caso il credito è utilizzabile in compensazione per il settanta per cento all'approvazione della preventiva e per il resto all'approvazione della definitiva; la quota iniziale scende al quaranta per cento per le imprese ad elevata capacità produttiva e finanziaria, mentre chi presenta la sola definitiva utilizza l'intero importo in un'unica soluzione.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "L'impresa può presentare la richiesta preventiva e poi quella definitiva, oppure la sola richiesta definitiva. Nel primo caso il credito è utilizzabile in compensazione per il 70 per cento all'approvazione della preventiva e per la restante parte all'approvazione della definitiva. La quota iniziale scende al 40 per cento per le imprese ad elevata capacità produttiva e finanziaria e per le imprese che ne facciano specifica richiesta. Chi presenta la sola definitiva utilizza il 100 per cento dell'importo approvato in un'unica soluzione.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 6, c. 5"
         },
         {
-          "text": "A pena di inammissibilità va documentato il versamento delle spese di istruttoria, fra un minimo di duecento e un massimo di diecimila euro, quantificate da un decreto direttoriale, cui sono affidati anche i modelli di domanda e le modalità tecniche.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "A pena di inammissibilità va documentato il versamento delle spese di istruttoria, comprese fra 200 e 10.000 euro e quantificate da un decreto direttoriale, cui sono affidati anche i modelli di domanda e le modalità tecniche.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 2, c. 3, e art. 38, c. 1"
         },
         {
-          "text": "Finestre di presentazione e modelli sono aperti e aggiornati con avvisi della Direzione generale pubblicati durante l'anno: i termini effettivi stanno lì, e vanno verificati prima di programmare l'invio.",
-          "refs": [
-            "avviso-correttivo"
-          ]
+          "text": "Il credito approvato in via definitiva è cedibile a intermediari bancari, finanziari e assicurativi sottoposti a vigilanza prudenziale, che possono utilizzarlo solo in compensazione dei propri debiti d'imposta o contributivi. La cessione presuppone il riconoscimento definitivo, una domanda alla Direzione generale con la comprova delle spese di istruttoria e il contratto di cessione redatto in forma pubblica; la Direzione verifica l'effettività del credito entro sessanta giorni e rilascia la relativa attestazione.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 8, cc. 1, 3 e 4"
+        },
+        {
+          "text": "Sul beneficiario grava infine un obbligo di reinvestimento di una quota dei proventi dell'opera, proporzionale al credito riconosciuto e fino a concorrenza del medesimo, dovuto solo dopo la copertura dei costi dell'opera ed entro cinque anni dal riconoscimento definitivo del credito. L'obbligo si adempie nello sviluppo, nella produzione o nella distribuzione, in Italia e all'estero, di nuove opere difficili.",
+          "refs": ["di-225-2024"],
+          "cite": "art. 7, cc. 9 e 10"
+        },
+        {
+          "text": "Finestre di presentazione e modelli sono definiti con avvisi e decreti direttoriali della Direzione generale pubblicati nel corso dell'anno. I termini effettivi stanno lì, e vanno verificati prima di programmare l'invio.",
+          "refs": ["avviso-correttivo"],
+          "cite": "avvisi DGCA"
         }
       ]
     },
@@ -162,13 +175,12 @@
       "heading": "Che cosa resta del regime precedente",
       "paragraphs": [
         {
-          "text": "Il decreto vigente ha abrogato quello del 4 febbraio 2021, con eccezioni rilevanti: la disciplina precedente resta per le richieste presentate entro il 21 gennaio 2024 sulle risorse 2023 e per le opere che, alla data di entrata in vigore, avevano contratti con data certa con fornitori di servizi media o distributori, oppure quattro settimane consecutive di riprese o metà delle giornate di lavorazione già realizzate.",
-          "refs": [
-            "di-225-2024"
-          ]
+          "text": "Il decreto vigente ha abrogato quello del 4 febbraio 2021, con eccezioni rilevanti. La disciplina precedente resta per le richieste presentate entro il 21 gennaio 2024 a valere sulle risorse dell'anno 2023, e per le opere che alla data di entrata in vigore del nuovo decreto, il 14 agosto 2024, avevano in alternativa contratti con data certa con fornitori di servizi di media audiovisivi o con distributori cinematografici, oppure quattro settimane consecutive di riprese o il 50 per cento delle giornate di lavorazione già realizzate.",
+          "refs": ["di-225-2024", "avviso-correttivo"],
+          "cite": "artt. 37 e 38, cc. 3 e 4"
         },
         {
-          "text": "Per le lavorazioni a cavallo fra i due regimi la prima domanda non è quale aliquota convenga, ma quale disciplina si applichi: dipende da documenti da recuperare e datare con precisione.",
+          "text": "Per le lavorazioni a cavallo fra i due regimi la prima domanda non è quale aliquota convenga, ma quale disciplina si applichi, e la risposta dipende da documenti da recuperare e datare con precisione.",
           "refs": [],
           "noSourceReason": "indicazione di metodo, nessun dato normativo"
         }
@@ -177,25 +189,22 @@
   ],
   "faq": [
     {
-      "q": "Il quaranta per cento vale per tutte le opere?",
-      "a": "No: è l'aliquota per i produttori indipendenti sulle opere cinematografiche. Le opere televisive e web partono dal venticinque per cento, i produttori non indipendenti e le imprese non europee si fermano al trenta, e per le imprese ad elevata capacità la misura scende sugli scaglioni più alti.",
-      "refs": [
-        "di-225-2024"
-      ]
+      "q": "Il 40 per cento vale per tutte le opere?",
+      "a": "No. È l'aliquota dei produttori indipendenti sulle opere cinematografiche. Le opere televisive e web partono dal 25 per cento, i produttori non indipendenti e le imprese non europee si fermano al 30 e per le imprese ad elevata capacità la misura scende sugli scaglioni più alti.",
+      "refs": ["di-225-2024"],
+      "cite": "artt. 13 e 17"
     },
     {
       "q": "Esiste una spesa minima da sostenere in Italia?",
-      "a": "Il decreto non fissa una soglia generale di spesa minima. Esistono invece requisiti per tipologia di opera: il costo minimo al minuto per la fiction televisiva e web, la copertura finanziaria e l'accordo di distribuzione per le opere cinematografiche.",
-      "refs": [
-        "di-225-2024"
-      ]
+      "a": "Il decreto non fissa una soglia generale di spesa minima. Esistono invece requisiti per tipologia di opera, come il costo minimo al minuto per la fiction televisiva e web e, per le opere cinematografiche, la copertura finanziaria privata e l'accordo di distribuzione.",
+      "refs": ["di-225-2024"],
+      "cite": "artt. 12 e 16"
     },
     {
       "q": "Quanto tempo passa prima di poter usare il credito?",
-      "a": "Si utilizza in compensazione dopo l'esito positivo dell'istruttoria: in due tempi con preventiva e definitiva, in un'unica soluzione con la sola definitiva.",
-      "refs": [
-        "di-225-2024"
-      ]
+      "a": "Si utilizza in compensazione dopo l'esito positivo dell'istruttoria, in due tempi con preventiva e definitiva, in un'unica soluzione con la sola definitiva.",
+      "refs": ["di-225-2024"],
+      "cite": "art. 6, c. 5"
     }
   ],
   "sources": [
@@ -203,42 +212,72 @@
       "id": "l220-2016",
       "type": "legge",
       "citation": "Legge 14 novembre 2016, n. 220, art. 15",
+      "short": "L. 220/2016, art. 15",
       "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220",
       "urlType": "primaria",
       "accessedAt": "2026-09-12",
       "checkedAt": "2026-09-12",
-      "note": "Testo vigente aggiornato al 30 dicembre 2025.",
-      "short": "L. 220/2016, art. 15"
+      "note": "Testo vigente aggiornato al 30 dicembre 2025."
     },
     {
       "id": "di-225-2024",
       "type": "dm",
-      "citation": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225 (artt. 2, 3, 5, 6, 12, 13, 16, 17, 37 e 38)",
-      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2024/09/rep_-225___DM_MIC_MEF_nuovo_tax_credit_produzione_ex_art_15_L_220_2016___Decreto_controfirmato_Ministro.pdf",
+      "citation": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025",
+      "short": "D.I. 225/2024",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2025/06/DEF-D.I.-10-LUGLIO-2024-N.225-TAX-CREDIT.pdf",
       "urlType": "primaria",
       "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12",
-      "short": "D.I. 225/2024"
+      "checkedAt": "2026-09-12"
     },
     {
       "id": "di-141-2025",
       "type": "dm",
       "citation": "D.I. MiC-MEF 22 aprile 2025, rep. n. 141, modificativo del D.I. 225/2024",
+      "short": "D.I. 141/2025",
       "url": "https://cinema.cultura.gov.it/wp-content/uploads/2025/06/250418_Decreto_produzione_17_aprile_2025_signed__1__signed.pdf",
       "urlType": "primaria",
       "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12",
-      "short": "D.I. 141/2025"
+      "checkedAt": "2026-09-12"
     },
     {
       "id": "avviso-correttivo",
       "type": "avviso",
       "citation": "Direzione generale Cinema e audiovisivo, avviso del 6 giugno 2025 sul decreto correttivo e sulle modalità di presentazione delle domande",
+      "short": "avviso DGCA 6 giugno 2025",
       "url": "https://cinema.cultura.gov.it/avvisi/decreto-correttivo-tax-credit-produzione-nazionale-e-modalita-di-presentazione-delle-domande/",
       "urlType": "istituzionale",
       "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12",
-      "short": "avviso DGCA 6 giugno 2025"
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "mic-19-giugno-2026",
+      "type": "prassi",
+      "citation": "Ministero della cultura, comunicato del 19 giugno 2026: nuovo decreto sui contributi automatici e sul tax credit alle imprese di produzione",
+      "short": "comunicato MiC 19 giugno 2026",
+      "url": "https://cultura.gov.it/comunicato/29118",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "stampa-firma-mef",
+      "type": "prassi",
+      "citation": "ANSA, 7 luglio 2026: firmato il decreto MiC-MEF sulle nuove regole del tax credit",
+      "short": "stampa, 7 luglio 2026",
+      "url": "https://www.ansa.it/sito/notizie/cultura/cinema/2026/07/07/borgonzoni-firmato-il-decreto-mic-mef-sulle-nuove-regole-del-tax_07ff5e9d-5f7d-4362-a468-178f1f73a0f6.html",
+      "urlType": "stampa",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "stampa-testo-unico",
+      "type": "prassi",
+      "citation": "ANSA, 10 settembre 2026: via libera bipartisan al testo unico sul cinema, 218 voti a favore alla Camera",
+      "short": "stampa, 10 settembre 2026",
+      "url": "https://www.ansa.it/sito/notizie/politica/2026/09/10/via-libera-bipartisan-al-testo-unico-sul-cinema-218-voti-a-favore_c084acde-f20d-4c18-8a2a-62190e14412d.html",
+      "urlType": "stampa",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
     }
   ],
   "related": [],

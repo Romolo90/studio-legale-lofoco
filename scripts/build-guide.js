@@ -94,21 +94,25 @@ function jsonLd(g, url) {
 
 function corpo(g) {
   const fonteById = new Map((g.sources || []).map((s) => [s.id, s]));
-  const rif = (refs) => (refs || []).length
-    ? ` <span class="guida-rif">(${refs.map((r) => { const s = fonteById.get(r) || {}; return `<a href="#fonte-${esc(r)}" title="${esc(s.citation || '')}">${esc(s.short || s.citation || r)}</a>`; }).join('; ')})</span>`
+  const rif = (refs, cite) => (refs || []).length
+    ? ` <span class="guida-rif">(${refs.map((r, i) => {
+        const s = fonteById.get(r) || {};
+        const etichetta = (i === 0 && cite) ? cite : (s.short || s.citation || r);
+        return `<a href="#fonte-${esc(r)}" title="${esc(s.citation || '')}">${esc(etichetta)}</a>`;
+      }).join('; ')})</span>`
     : '';
 
   const sezioni = (g.sections || []).map((s) => {
-    const par = (s.paragraphs || []).map((p) => `        <p>${esc(p.text)}${rif(p.refs)}</p>`).join('\n');
+    const par = (s.paragraphs || []).map((p) => `        <p>${esc(p.text)}${rif(p.refs, p.cite)}</p>`).join('\n');
     const elenco = (s.list || []).length
-      ? `        <ul>\n${s.list.map((v) => `          <li>${esc(v)}</li>`).join('\n')}\n        </ul>${rif(s.listRefs)}`
+      ? `        <ul>\n${s.list.map((v) => `          <li>${esc(v)}</li>`).join('\n')}\n        </ul>${rif(s.listRefs, s.listCite)}`
       : '';
     return `      <section class="insights-section" id="${esc(s.id)}" aria-labelledby="${esc(s.id)}-title">\n        <h2 id="${esc(s.id)}-title">${esc(s.heading)}</h2>\n${par}\n${elenco}\n      </section>`;
   }).join('\n\n');
 
   const faq = (g.faq || []).length
     ? `\n      <section class="insights-section" id="faq" aria-labelledby="faq-title">\n        <h2 id="faq-title">Domande frequenti</h2>\n` +
-      g.faq.map((f) => `        <h3>${esc(f.q)}</h3>\n        <p>${esc(f.a)}${rif(f.refs)}</p>`).join('\n') +
+      g.faq.map((f) => `        <h3>${esc(f.q)}</h3>\n        <p>${esc(f.a)}${rif(f.refs, f.cite)}</p>`).join('\n') +
       `\n      </section>`
     : '';
 

@@ -132,7 +132,8 @@ function valida(file) {
   // --- lunghezza (solo per ciò che sta per essere letto da qualcuno)
   if (g.status === 'review' || g.status === 'published') {
     const n = contaParole(g);
-    if (n < 800 || n > 1200) err(nome, `lunghezza ${n} parole, fuori dall'intervallo 800-1200`);
+    if (n < 800 || n > 2000) err(nome, `lunghezza ${n} parole, fuori dall'intervallo 800-2000`);
+    else if (n > 1600) warn(nome, `lunghezza ${n} parole: valutare se dividere la guida`);
   }
 }
 

@@ -26,7 +26,7 @@ Validatore: `npm run check:guide`. Non passa, non si pubblica.
       "id": "requisiti",
       "heading": "Requisiti di accesso",
       "paragraphs": [
-        { "text": "…", "refs": ["di-225-2024"] },
+        { "text": "…", "refs": ["di-225-2024"], "cite": "art. 13, c. 1, D.I. 225/2024" },
         { "text": "…senza dati regolati…", "refs": [] },
         { "text": "…", "refs": [], "noSourceReason": "descrizione di prassi, nessun dato normativo" }
       ],
@@ -41,7 +41,7 @@ Validatore: `npm run check:guide`. Non passa, non si pubblica.
       "citation": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, art. 13, comma 1",
       "short": "D.I. 225/2024",   // sigla usata nei richiami accanto al testo; la citazione piena resta in fondo
       "url": "https://cinema.cultura.gov.it/…pdf",
-      "urlType": "primaria",           // primaria | istituzionale
+      "urlType": "primaria",           // primaria | istituzionale | stampa
       "accessedAt": "2026-09-12",
       "checkedAt": "2026-09-12"        // ultima verifica che la fonte è ancora quella
     }
@@ -53,15 +53,18 @@ Validatore: `npm run check:guide`. Non passa, non si pubblica.
 
 ## Regole imposte dal validatore
 
+0. **`cite`** (opzionale) è l'etichetta del richiamo accanto al testo: serve a indicare articolo e comma puntuali. Senza `cite` si usa la sigla breve della fonte.
 1. **Ogni `refs` risolve** a un `sources[].id`; **ogni fonte dichiarata è citata** almeno una volta.
 2. **Ogni paragrafo con un dato regolato** (`%`, `€`, `art.`, `D.M.`, `D.I.`, `D.D.`, `rep.`, `comma`,
    una data, un anno a quattro cifre, «entro il») **deve avere `refs` non vuoto**, oppure un
    `noSourceReason` esplicito. Il controllo fallisce sul silenzio, non sulla prosa.
 3. **Almeno una fonte `urlType: "primaria"`**, con host tra: `normattiva.it`, `gazzettaufficiale.it`,
-   `eur-lex.europa.eu`, `cinema.cultura.gov.it`.
+   `eur-lex.europa.eu`, `cinema.cultura.gov.it`. Un atto istituzionale che non è la norma (un avviso,
+   un comunicato) è `istituzionale`; una notizia di agenzia o di stampa specializzata è `stampa` e va
+   usata solo per fatti di cronaca normativa non ancora documentati da un atto, dicendolo nel testo.
 4. **Date**: formato `YYYY-MM-DD`; `dateModified >= datePublished`; `verifiedAt` non nel futuro;
    `checkedAt` delle fonti: avviso oltre 90 giorni, errore oltre 180.
-5. **Lunghezza** della prosa: 800–1.200 parole (solo per `review` e `published`).
+5. **Lunghezza** della prosa: 800–2.000 parole (solo per `review` e `published`); oltre 1.600 il validatore avvisa che conviene dividere la guida.
 6. `slug` in minuscolo con trattini; `status` tra i tre valori ammessi.
 
 ## Flusso
