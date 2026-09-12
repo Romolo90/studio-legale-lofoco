@@ -92,15 +92,42 @@ function jsonLd(g, url) {
   return blocchi.map((b) => `  <script type="application/ld+json">\n${JSON.stringify(b, null, 2)}\n  </script>`).join('\n');
 }
 
-function corpo(g) {
+// Indice slug → guida: serve a dare al "Vedi anche" il titolo vero invece dello slug
+// e a non pubblicare rimandi verso guide che online non ci sono ancora.
+let indice = null;
+function indiceGuide() {
+  if (indice) return indice;
+  indice = new Map();
+  if (fs.existsSync(GUIDE_DIR)) {
+    for (const f of fs.readdirSync(GUIDE_DIR).filter((x) => x.endsWith('.json'))) {
+      const a = JSON.parse(fs.readFileSync(path.join(GUIDE_DIR, f), 'utf8'));
+      if (a.slug) indice.set(a.slug, { title: a.title, status: a.status });
+    }
+  }
+  return indice;
+}
+
+function corpo(g, anteprima) {
   const fonteById = new Map((g.sources || []).map((s) => [s.id, s]));
-  const rif = (refs, cite) => (refs || []).length
-    ? ` <span class="guida-rif">(${refs.map((r, i) => {
-        const s = fonteById.get(r) || {};
-        const etichetta = (i === 0 && cite) ? cite : (s.short || s.citation || r);
-        return `<a href="#fonte-${esc(r)}" title="${esc(s.citation || '')}">${esc(etichetta)}</a>`;
-      }).join('; ')})</span>`
-    : '';
+  // Quando il paragrafo indica una citazione puntuale, quella copre l'intero richiamo:
+  // il primo riferimento la porta come etichetta e gli altri restano solo come collegamento
+  // numerato alla voce in fondo. Accodare anche le sigle produceva richiami doppi e, se la
+  // stessa fonte è citata per un articolo diverso dalla sua sigla, un riferimento fuorviante.
+  const rif = (refs, cite) => {
+    if (!(refs || []).length) return '';
+    const link = (r, testo) => {
+      const s = fonteById.get(r) || {};
+      return `<a href="#fonte-${esc(r)}" title="${esc(s.citation || '')}">${esc(testo)}</a>`;
+    };
+    // Con una citazione puntuale il richiamo è quella e basta: le altre fonti del paragrafo
+    // restano raggiungibili dall'elenco in fondo. Appendere sigle o numeri rende il testo
+    // meno leggibile senza aggiungere informazione.
+    if (cite) return ` <span class="guida-rif">(${link(refs[0], cite)})</span>`;
+    return ` <span class="guida-rif">(${refs.map((r) => {
+      const s = fonteById.get(r) || {};
+      return link(r, s.short || s.citation || r);
+    }).join('; ')})</span>`;
+  };
 
   const sezioni = (g.sections || []).map((s) => {
     const par = (s.paragraphs || []).map((p) => `        <p>${esc(p.text)}${rif(p.refs, p.cite)}</p>`).join('\n');
@@ -120,8 +147,14 @@ function corpo(g) {
     (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}">${esc(s.citation)} — <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">testo</a>${s.urlType === 'primaria' ? ' (fonte primaria)' : ''}, consultata il ${esc(dataIt(s.accessedAt))}</li>`).join('\n') +
     `\n        </ul>\n        </div>\n      </section>`;
 
-  const correlate = (g.related || []).length
-    ? `\n      <p class="guida-correlate">Vedi anche: ${g.related.map((r) => `<a href="guida-${esc(r)}.html">${esc(r.replace(/-/g, ' '))}</a>`).join(' · ')}</p>`
+  // In anteprima si vedono tutti i rimandi, anche verso guide ancora in revisione:
+  // servono proprio a rileggere l'insieme. In pagina pubblicata si linka solo ciò che esiste.
+  const idx = indiceGuide();
+  const voci = (g.related || [])
+    .filter((r) => anteprima || (idx.get(r) || {}).status === 'published')
+    .map((r) => `<a href="guida-${esc(r)}.html">${esc((idx.get(r) || {}).title || r.replace(/-/g, ' '))}</a>`);
+  const correlate = voci.length
+    ? `\n      <p class="guida-correlate">Vedi anche: ${voci.join(' · ')}</p>`
     : '';
 
   return `    <article class="guida">
@@ -206,7 +239,7 @@ ${jsonLd(g, url)}
 ${leggiPartial('header-sub-it.html')}
 
 <main id="main">
-${corpo(g)}
+${corpo(g, anteprima)}
   </main>
 
 ${leggiPartial('footer.html')}
