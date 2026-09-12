@@ -111,14 +111,14 @@ function corpo(g) {
   }).join('\n\n');
 
   const faq = (g.faq || []).length
-    ? `\n      <section class="insights-section" id="faq" aria-labelledby="faq-title">\n        <h2 id="faq-title">Domande frequenti</h2>\n` +
-      g.faq.map((f) => `        <h3>${esc(f.q)}</h3>\n        <p>${esc(f.a)}${rif(f.refs, f.cite)}</p>`).join('\n') +
-      `\n      </section>`
+    ? `\n      <section class="insights-section" id="faq" aria-labelledby="faq-title">\n        <h2 id="faq-title">Domande frequenti</h2>\n        <div class="accordion">\n` +
+      g.faq.map((f) => `          <div class="accordion-item">\n            <button type="button" class="accordion-header" aria-expanded="false">${esc(f.q)}</button>\n            <div class="accordion-content">\n              <p>${esc(f.a)}${rif(f.refs, f.cite)}</p>\n            </div>\n          </div>`).join('\n') +
+      `\n        </div>\n      </section>`
     : '';
 
-  const fonti = `\n      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">\n        <h2 id="fonti-title">Fonti</h2>\n        <ul>\n` +
+  const fonti = `\n      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">\n        <h2 id="fonti-title">Fonti</h2>\n        <div class="profile-box">\n        <ul>\n` +
     (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}">${esc(s.citation)} — <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">testo</a>${s.urlType === 'primaria' ? ' (fonte primaria)' : ''}, consultata il ${esc(dataIt(s.accessedAt))}</li>`).join('\n') +
-    `\n        </ul>\n      </section>`;
+    `\n        </ul>\n        </div>\n      </section>`;
 
   const correlate = (g.related || []).length
     ? `\n      <p class="guida-correlate">Vedi anche: ${g.related.map((r) => `<a href="guida-${esc(r)}.html">${esc(r.replace(/-/g, ' '))}</a>`).join(' · ')}</p>`
@@ -131,13 +131,39 @@ function corpo(g) {
         <p class="guida-meta">A cura dell'<a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · Aggiornata al ${esc(dataIt(g.dateModified))} · Dati verificati sulle fonti il ${esc(dataIt(g.verifiedAt))}</p>
       </header>
 
+      <nav class="profile-box guida-sommario" aria-label="Indice della guida">
+        <strong>In questa guida</strong>
+        <ul>
+${(g.sections || []).map((s) => `          <li><a href="#${esc(s.id)}">${esc(s.heading)}</a></li>`).join('\n')}
+${(g.faq || []).length ? '          <li><a href="#faq">Domande frequenti</a></li>\n' : ''}          <li><a href="#fonti">Fonti</a></li>
+        </ul>
+      </nav>
+
 ${sezioni}
 ${faq}
 ${fonti}${correlate}
 
       <p class="guida-disclaimer">${esc(g.disclaimer || "Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini cambiano con i decreti attuativi e con gli avvisi della Direzione generale Cinema e audiovisivo: prima di presentare una domanda verifica la disciplina in vigore o contattaci.")}</p>
 
-      <p class="guida-cta"><a href="index.html#contatti" class="btn-cta">Parlane con lo studio</a></p>
+      <section class="insights-section" id="contatto" aria-labelledby="contatto-title">
+        <h2 id="contatto-title">Parliamo del tuo progetto</h2>
+        <p>Una verifica preventiva costa una frazione di quanto costa rimediare a un diniego. Se hai un'opera in sviluppo o in preparazione, il momento utile per un confronto è prima della firma dei contratti e prima dell'avvio delle spese.</p>
+        <div class="contact-info">
+          <div>
+            <span class="ci-label">✉️ Email</span>
+            <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
+          </div>
+          <div>
+            <span class="ci-label">📞 Telefono</span>
+            <a href="tel:+39063201820">+39&nbsp;06&nbsp;3201820</a>
+          </div>
+          <div>
+            <span class="ci-label">📍 Indirizzo</span>
+            <span>Via Boezio, 2/A - 00193, Roma</span>
+          </div>
+        </div>
+        <p class="guida-cta"><a href="index.html#contatti" class="btn-cta">Richiedi una consulenza</a></p>
+      </section>
     </article>`;
 }
 

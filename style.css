@@ -1044,6 +1044,19 @@ footer {
   text-decoration: underline dotted;
 }
 
+.guida-sommario {
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.guida-sommario ul {
+  margin: 0.4rem 0 0 1.1rem;
+}
+
+.guida-sommario li {
+  margin-bottom: 0.2rem;
+}
+
 .guida-correlate {
   font-size: 0.95rem;
   margin-top: 1.5rem;

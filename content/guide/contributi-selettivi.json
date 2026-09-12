@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "id": "contributi-selettivi",
+  "slug": "contributi-selettivi",
+  "lang": "it",
+  "status": "review",
+  "title": "Contributi selettivi per scrittura, sviluppo e produzione",
+  "metaTitle": "Contributi selettivi cinema: linee, importi e requisiti | Studio Legale Lo Foco",
+  "metaDescription": "Contributi selettivi ex art. 26 L. 220/2016: linee di intervento, dotazioni e importi del bando 2026, requisiti, valutazione ed erogazione.",
+  "abstract": "I contributi selettivi non si calcolano: si vincono. A differenza del tax credit, qui non esiste un'aliquota da applicare al budget, ma una graduatoria costruita da una commissione di esperti su punteggi e motivazioni. Questa guida mette in fila la disciplina stabile e i numeri del bando in corso, con il riferimento normativo accanto a ogni dato.",
+  "category": "contributi-selettivi",
+  "author": {
+    "name": "Andrea Lo Foco",
+    "role": "Avvocato",
+    "url": "andrea-lo-foco.html"
+  },
+  "datePublished": "2026-09-12",
+  "dateModified": "2026-09-12",
+  "verifiedAt": "2026-09-12",
+  "sections": [
+    {
+      "id": "cosa-sono",
+      "heading": "Che cosa sono e da dove nascono",
+      "paragraphs": [
+        {
+          "text": "I contributi selettivi sono previsti dall'articolo 26 della legge sul cinema e sull'audiovisivo e sono contributi a fondo perduto, assegnati attraverso bandi e non attraverso un calcolo automatico. La disciplina applicativa è contenuta nel decreto ministeriale dell'8 ottobre 2024, rep. n. 345, che ha preso il posto del decreto del 31 luglio 2017, rep. n. 343.",
+          "refs": [
+            "l220-2016",
+            "dm-345-2024"
+          ],
+          "cite": "art. 26, L. 220/2016 e D.M. 345/2024"
+        },
+        {
+          "text": "Il decreto individua le linee di intervento finanziabili: scrittura di sceneggiature per opere cinematografiche, televisive e web; sviluppo di opere cinematografiche, televisive, web e videogiochi; produzione, articolata in sei tipologie; distribuzione nazionale e internazionale; esercizio cinematografico. Ogni anno il decreto di riparto stabilisce quali linee vengono effettivamente attivate e con quante risorse.",
+          "refs": [
+            "dm-345-2024"
+          ],
+          "cite": "art. 3, D.M. 345/2024"
+        },
+        {
+          "text": "È il bando annuale a fissare tutto ciò che cambia: risorse disponibili, beneficiari e requisiti, termini, documentazione, massimali di costo, limiti di intensità dell'aiuto, criteri di valutazione, numero massimo di progetti finanziabili e importo massimo del singolo contributo. Il bando fissa anche le spese di istruttoria, comprese fra 200 e 10.000 euro, il cui mancato versamento rende la domanda inammissibile.",
+          "refs": [
+            "dm-345-2024"
+          ],
+          "cite": "art. 4, D.M. 345/2024"
+        }
+      ]
+    },
+    {
+      "id": "chi-puo-chiederli",
+      "heading": "Chi può chiederli, linea per linea",
+      "paragraphs": [
+        {
+          "text": "La scrittura è l'unica linea rivolta alle persone fisiche. Possono presentare domanda, anche congiuntamente, i cittadini maggiorenni italiani o di altro Paese dello Spazio economico europeo, fiscalmente residenti in Italia al momento dell'erogazione, titolari in modo pieno e incondizionato dei diritti di elaborazione creativa sui materiali artistici, dotati di posta elettronica certificata e firma elettronica qualificata.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 7, bando 2026"
+        },
+        {
+          "text": "Sulla stessa linea opera un'incompatibilità che vale la pena conoscere prima di impostare la domanda: non può concorrere chi è titolare, socio, amministratore o legale rappresentante di un'impresa di produzione audiovisiva, di distribuzione o di servizi di media audiovisivi, secondo i codici Ateco 59.11, 59.13 e 60.20 risultanti dalla visura camerale.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 7, bando 2026"
+        },
+        {
+          "text": "Sviluppo e produzione riguardano invece le imprese: imprese indipendenti cinematografiche e audiovisive italiane, anche in forma associata o nell'ambito di una coproduzione internazionale, e reti di imprese. Servono sede legale nello Spazio economico europeo, tassazione in Italia, qualifica di produttore indipendente, iscrizione nella sezione ordinaria del Registro delle imprese e, per la produzione, codice Ateco 59.1 e ultimo bilancio depositato.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "artt. 14 e 22, bando 2026"
+        },
+        {
+          "text": "Un requisito merita attenzione perché esclude molte società giovani: occorre aver prodotto almeno un'opera audiovisiva conforme ai requisiti di legge e diffusa al pubblico negli ultimi cinque anni, salvo quanto previsto per le società di nuova costituzione.",
+          "refs": [
+            "bando-2026",
+            "faq-selettivi-2026"
+          ],
+          "cite": "artt. 14 e 22, bando 2026"
+        }
+      ]
+    },
+    {
+      "id": "quanto-vale",
+      "heading": "Quanto vale il contributo nel bando 2026",
+      "paragraphs": [
+        {
+          "text": "Per il 2026 le risorse dell'articolo 26 sono ripartite fra scrittura di sceneggiature, con 1.000.000 di euro, sviluppo, con 2.000.000, e produzione, con 32.700.000. Ogni linea è divisa in due sessioni di valutazione e per ciascuna sessione il bando fissa un numero massimo di progetti finanziabili.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 1, bando 2026"
+        },
+        {
+          "text": "Nella scrittura le risorse si dividono fra sceneggiature per il cinema, con 700.000 euro e un massimo di 18 progetti per sessione, e sceneggiature per opere televisive e web, con 300.000 euro e un massimo di 8 progetti per sessione. Il contributo per singolo progetto è compreso fra 10.000 e 20.000 euro.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "artt. 6 e 11, bando 2026"
+        },
+        {
+          "text": "Nello sviluppo vanno 1.300.000 euro alle opere non seriali, con un massimo di 11 progetti per sessione, e 700.000 euro alle opere televisive e web seriali, con un massimo di 6 progetti. Il contributo massimo è il minore fra quello richiesto, il 50 per cento dei costi ammissibili e 100.000 euro, e non può comunque scendere sotto il 70 per cento di tale importo, salvo l'ultimo assegnatario in graduatoria.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "artt. 13 e 18, bando 2026"
+        },
+        {
+          "text": "Nella produzione le sei tipologie hanno dotazioni distinte: 7.800.000 euro per i lungometraggi di giovani autori, 7.500.000 per le opere prime e seconde, 4.000.000 per i documentari, 900.000 per i cortometraggi, 5.000.000 per l'animazione e 7.500.000 per i film di particolare qualità artistica e sull'identità culturale italiana. Il contributo massimo è il minore fra quello richiesto e il 40 per cento dei costi ammissibili, con tetti di 1.000.000 di euro per l'animazione, ridotti a 600.000 per giovani autori e opere prime e seconde, e di 1.200.000 euro per i film di particolare qualità artistica.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "artt. 21 e 24, bando 2026"
+        },
+        {
+          "text": "Sul totale del sostegno pubblico vale poi un limite di intensità: i contributi selettivi e le altre misure pubbliche non possono superare il 50 per cento del costo dell'opera, elevato al 60 per cento in alcuni casi previsti dalla disciplina europea sugli aiuti di Stato, all'80 per cento per le opere difficili sotto determinate soglie di costo e al 100 per cento per le coproduzioni con Paesi in via di sviluppo.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 4, bando 2026"
+        }
+      ]
+    },
+    {
+      "id": "come-si-decide",
+      "heading": "Come si decide chi vince",
+      "paragraphs": [
+        {
+          "text": "Le richieste ammissibili sono valutate da una commissione di esperti, che attribuisce all'unanimità o a maggioranza un punteggio per ciascun criterio e sotto criterio indicato nel bando e redige una sintetica motivazione. La commissione può svolgere audizioni e determina l'entità del contributo tenendo conto del punteggio e del piano finanziario del progetto.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 5, bando 2026"
+        },
+        {
+          "text": "Nella produzione la valutazione si ferma quando un progetto non raggiunge i punteggi minimi previsti per i singoli criteri: in quel caso la commissione non esprime valutazione sui criteri successivi e motiva solo su quelli esaminati. È la ragione per cui un progetto con un'ottima idea ma un dossier debole su un criterio d'ingresso non arriva in fondo alla valutazione.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 24, bando 2026"
+        },
+        {
+          "text": "I tempi sono scanditi: la commissione valuta entro 60 giorni dalla scadenza della sessione, l'eventuale soccorso istruttorio non può superare 10 giorni e le graduatorie sono approvate con decreto del Direttore generale entro 120 giorni dal termine di presentazione. Le valutazioni sui singoli progetti sono poi visionabili dai partecipanti.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 5, bando 2026"
+        }
+      ]
+    },
+    {
+      "id": "quando-si-incassa",
+      "heading": "Quando si incassa, e come lo si perde",
+      "paragraphs": [
+        {
+          "text": "Il contributo si incassa in due tempi. Il beneficiario può chiedere un acconto pari al 50 per cento del contributo riconosciuto; nella scrittura la richiesta va presentata entro novanta giorni dalla pubblicazione della graduatoria e l'acconto è erogato entro trenta giorni. Il saldo arriva con la richiesta definitiva di liquidazione, che nella scrittura va presentata entro dodici mesi dal decreto di graduatoria, a pena di decadenza dell'intero contributo.",
+          "refs": [
+            "bando-2026",
+            "avviso-acconti-2026"
+          ],
+          "cite": "art. 11, bando 2026"
+        },
+        {
+          "text": "Alla richiesta di acconto vanno allegati, a pena di inammissibilità, i contratti con gli autori dei materiali artistici e con il regista, insieme a un'autodichiarazione congiunta. È il punto in cui una catena dei diritti incompleta blocca un contributo già vinto.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 26, bando 2026"
+        },
+        {
+          "text": "Prima dell'erogazione intervengono poi i controlli ordinari sui contributi pubblici: la documentazione antimafia per importi superiori a 150.000 euro e la verifica sui carichi pendenti per importi superiori a 5.000 euro. Il decreto prevede inoltre monitoraggio e sanzioni amministrative pecuniarie da 10.000 a 50.000 euro per ciascuna violazione.",
+          "refs": [
+            "bando-2026",
+            "dm-345-2024"
+          ],
+          "cite": "art. 3, bando 2026, e art. 14, D.M. 345/2024"
+        }
+      ]
+    },
+    {
+      "id": "differenza-tax-credit",
+      "heading": "Perché non vanno confusi con il tax credit",
+      "paragraphs": [
+        {
+          "text": "Il credito d'imposta è una misura automatica: verificati i requisiti, l'importo discende da un'aliquota applicata al costo eleggibile. Il contributo selettivo è invece discrezionale nel merito artistico e capiente solo fino all'esaurimento delle risorse della sessione, con un numero chiuso di progetti finanziabili.",
+          "refs": [],
+          "noSourceReason": "confronto descrittivo fra due misure, i dati puntuali sono nelle rispettive sezioni"
+        },
+        {
+          "text": "Le due misure convivono, ma il contributo selettivo pesa nel calcolo dell'intensità complessiva dell'aiuto pubblico, e l'assegnazione di un contributo selettivo rileva anche come requisito alternativo di accesso al credito d'imposta per la produzione cinematografica. Chi progetta il piano finanziario dovrebbe quindi valutarle insieme, non in sequenza.",
+          "refs": [
+            "bando-2026",
+            "di-225-2024"
+          ],
+          "cite": "art. 4, bando 2026, e art. 12, c. 2, D.I. 225/2024"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Posso chiedere il contributo per la scrittura se ho una società di produzione?",
+      "a": "No, se ne sei titolare, socio, amministratore o legale rappresentante: il bando esclude chi riveste queste posizioni in imprese con codici Ateco 59.11, 59.13 o 60.20. La linea scrittura è pensata per gli autori come persone fisiche.",
+      "refs": [
+        "bando-2026"
+      ],
+      "cite": "art. 7, bando 2026"
+    },
+    {
+      "q": "Una società costituita da poco può partecipare?",
+      "a": "Il requisito ordinario è aver prodotto almeno un'opera conforme ai requisiti di legge e diffusa al pubblico negli ultimi cinque anni, con un'eccezione prevista per le società di nuova costituzione. È il punto su cui la Direzione generale ha pubblicato apposite FAQ nel 2026.",
+      "refs": [
+        "bando-2026",
+        "faq-selettivi-2026"
+      ],
+      "cite": "artt. 14 e 22, bando 2026"
+    },
+    {
+      "q": "Quanto si può ottenere davvero?",
+      "a": "Dipende dalla linea: da 10.000 a 20.000 euro per la scrittura, fino a 100.000 euro e comunque non oltre il 50 per cento dei costi per lo sviluppo, fino al 40 per cento dei costi per la produzione, con tetti specifici per animazione e film di particolare qualità artistica.",
+      "refs": [
+        "bando-2026"
+      ],
+      "cite": "artt. 11, 18 e 24, bando 2026"
+    }
+  ],
+  "sources": [
+    {
+      "id": "l220-2016",
+      "type": "legge",
+      "citation": "Legge 14 novembre 2016, n. 220, art. 26",
+      "short": "L. 220/2016, art. 26",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "dm-345-2024",
+      "type": "dm",
+      "citation": "D.M. 8 ottobre 2024, rep. n. 345, disposizioni applicative in materia di contributi selettivi ex art. 26 L. 220/2016",
+      "short": "D.M. 345/2024",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2024/11/DM-8-ottobre-2024-rep.-345-art.-26-contributi-selettivi-signed.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "bando-2026",
+      "type": "dd",
+      "citation": "D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026",
+      "short": "bando 2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/dlm_uploads/2026/05/Anno-2026-Bando-per-la-concessione-di-contributi-selettivi-per-la-scrittura-lo-sviluppo-e-la-produzione-di-opere-cinematograf.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "di-225-2024",
+      "type": "dm",
+      "citation": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025",
+      "short": "D.I. 225/2024",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2025/06/DEF-D.I.-10-LUGLIO-2024-N.225-TAX-CREDIT.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "faq-selettivi-2026",
+      "type": "avviso",
+      "citation": "Direzione generale Cinema e audiovisivo, FAQ del 10 giugno 2026 sui requisiti di accesso al bando contributi selettivi 2026",
+      "short": "FAQ DGCA 10 giugno 2026",
+      "url": "https://cinema.cultura.gov.it/avvisi/pubblicazione-faq-bando-selettivi/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "avviso-acconti-2026",
+      "type": "avviso",
+      "citation": "Direzione generale Cinema e audiovisivo, avviso del 23 giugno 2026 sull'apertura delle richieste di acconto 2025 per produzione, sviluppo e scrittura",
+      "short": "avviso DGCA 23 giugno 2026",
+      "url": "https://cinema.cultura.gov.it/avvisi/apertura-richieste-acconto-2025-produzione-sviluppo-e-scrittura/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    }
+  ],
+  "related": [
+    "tax-credit-produzione"
+  ],
+  "disclaimer": "Questa guida ha scopo informativo e non costituisce parere legale. Dotazioni, importi, requisiti e termini sono fissati dal bando annuale e possono cambiare a ogni sessione: prima di presentare una domanda verificare il bando in vigore e gli avvisi della Direzione generale Cinema e audiovisivo, o contattare lo studio."
+}
