@@ -91,6 +91,20 @@ avvertimento operativo. Non è un obiettivo da centrare né una percentuale da i
 sintomo. Una guida molto sotto quella soglia sta scivolando verso il manuale. Riferimento misurato
 il 13/09/2026: contributi selettivi 40% e 50%, tax credit produzione 22%.
 
+## Raggiungibilità
+
+Una guida **non è pubblicata finché non ha almeno tre punti d'ingresso** dal *corpo* di altre pagine.
+Header e footer non contano: sono identici ovunque, e una voce di menu non rende raggiungibile una
+pagina in senso utile se nessun contenuto ci punta.
+
+Vale come ingresso: la scheda in `data/notizie-it.json` (`guideUrl`), un pulsante nella sezione
+«Risorse gratuite per il settore» della home, un collegamento dentro una frase pertinente di una
+pagina di servizio, il «Vedi anche» di un'altra guida.
+
+Nasce da un errore vero: la prima guida ebbe quattro ingressi perché li costruimmo a mano dopo che
+l'avvocato la segnalò irraggiungibile; la seconda nacque con uno e la terza con zero, perché era
+stato risolto il caso singolo invece della procedura.
+
 ## Flusso
 
 | status | Dove finisce | Chi la vede |

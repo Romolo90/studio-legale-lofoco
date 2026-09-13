@@ -181,6 +181,7 @@ ${fonti}${correlate}
       <section class="insights-section" id="contatto" aria-labelledby="contatto-title">
         <h2 id="contatto-title">Parliamo del tuo progetto</h2>
         <p>Una verifica preventiva costa una frazione di quanto costa rimediare a un diniego. Se hai un'opera in sviluppo o in preparazione, il momento utile per un confronto è prima della firma dei contratti e prima dell'avvio delle spese.</p>
+        <p>Su come lo studio assiste nelle pratiche di incentivo, vedi la pagina <a href="tax-credit-cinema-audiovisivo.html">Tax Credit per il cinema e l'audiovisivo</a>.</p>
         <div class="contact-info">
           <div>
             <span class="ci-label">✉️ Email</span>

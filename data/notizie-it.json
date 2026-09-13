@@ -302,6 +302,20 @@
       "guideUrl": "guida-contributi-selettivi.html"
     },
     {
+      "id": "contributi-selettivi-erogazione",
+      "title": "Contributi selettivi, valutazione ed erogazione",
+      "category": "contributi-selettivi",
+      "summary": "Come la Commissione valuta i progetti, in quanto tempo escono le graduatorie, quando si incassano acconto e saldo e in quali casi il contributo viene revocato.",
+      "keyPoints": [
+        "Acconto del 50% entro 90 giorni dalla graduatoria, saldo dopo la liquidazione",
+        "Sessanta giorni per le verifiche e sessanta per la valutazione della Commissione",
+        "Antimafia sopra 150.000 euro e verifica della regolarità contributiva",
+        "Nella scrittura la revoca può colpire anche il merito dell'opera"
+      ],
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/introduzione/",
+      "guideUrl": "guida-contributi-selettivi-erogazione.html"
+    },
+    {
       "id": "co-produzioni",
       "title": "Co-produzioni internazionali e accordi bilaterali",
       "category": "ue-media",
