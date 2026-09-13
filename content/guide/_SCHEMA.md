@@ -67,6 +67,30 @@ Validatore: `npm run check:guide`. Non passa, non si pubblica.
 5. **Lunghezza** della prosa: 800–2.000 parole (solo per `review` e `published`); oltre 1.600 il validatore avvisa che conviene dividere la guida.
 6. `slug` in minuscolo con trattini; `status` tra i tre valori ammessi.
 
+## Che cosa si pubblica e che cosa no
+
+Il discrimine non è **quanta** informazione diamo, ma **se consegniamo un documento pronto all'uso**.
+Le norme sono pubbliche e chiunque le scarica: quello che pubblichiamo non è l'informazione, è la
+lettura dell'informazione, e la lettura non mette nessuno in condizione di fare da sé.
+
+**Si pubblica** la regola e il punto in cui morde: termini perentori, incompatibilità, decadenze,
+scelte da compiere prima di firmare un contratto o di costituire la società, vincoli che la sola
+lettura dell'articolo non rivela. È ciò che distingue la guida di uno studio dal riassunto di un
+blog, e rende evidente al lettore dove gli serve un parere invece di suggerirgli che non gli serve.
+
+**Non si pubblica mai** il manufatto per cui il cliente paga: clausole e modelli contrattuali,
+fac-simile di autodichiarazioni, moduli compilabili da allegare a una domanda, procedure passo-passo
+sulla piattaforma DGCOL, responsi automatici di idoneità («hai diritto al 40%»).
+
+Corollario deontologico, art. 35 CDF (informazione vera e non ingannevole): un responso di idoneità
+dato a chi idoneo non è espone lo studio molto più di qualunque guida dettagliata. Nel dubbio si
+descrive il requisito e si dice chi lo verifica.
+
+**Misura di controllo.** `check:guide` avvisa quando meno di un terzo dei capoversi contiene un
+avvertimento operativo. Non è un obiettivo da centrare né una percentuale da inseguire: è un
+sintomo. Una guida molto sotto quella soglia sta scivolando verso il manuale. Riferimento misurato
+il 13/09/2026: contributi selettivi 40% e 50%, tax credit produzione 22%.
+
 ## Flusso
 
 | status | Dove finisce | Chi la vede |

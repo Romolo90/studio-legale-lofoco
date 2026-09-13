@@ -22,6 +22,12 @@ const HOST_PRIMARIE = ['normattiva.it', 'gazzettaufficiale.it', 'eur-lex.europa.
 // Marcatori di "dato regolato": se compaiono nel testo, serve una fonte.
 const TOKEN_REGOLATO = /(\d+(?:[.,]\d+)?\s*(?:%|per cento))|(€|euro)|\bart\.|\bcomma\b|\bD\.[IMD]\.|\brep\.\s*n?\.?\s*\d|\bn\.\s*\d{1,4}\/\d{4}|\b(19|20)\d{2}\b|\bentro il\b/i;
 
+// Marcatori di "avvertimento operativo": il punto in cui la norma morde, cioè ciò che
+// distingue la guida di uno studio dal riassunto di un blog. Non è un dato da imporre,
+// è un sintomo da misurare: vedi _SCHEMA.md, "Che cosa si pubblica e che cosa no".
+const TOKEN_AVVERTIMENTO = /convien|prima di (impostare|presentare|firmare|programmare|avviare)|pena l|a pena|blocca|più costoso|va decisa|va verificat|dovrebbe|rischi|non rivela|si ferma|esclude|inammissibil|decaden|revoc|incompatibil|attenzione/i;
+const QUOTA_AVVERTIMENTI = 1 / 3;
+
 const GIORNI_AVVISO = 90;
 const GIORNI_ERRORE = 180;
 
@@ -134,6 +140,14 @@ function valida(file) {
     const n = contaParole(g);
     if (n < 800 || n > 2000) err(nome, `lunghezza ${n} parole, fuori dall'intervallo 800-2000`);
     else if (n > 1600) warn(nome, `lunghezza ${n} parole: valutare se dividere la guida`);
+
+    // Mai bloccante: una percentuale imposta produrrebbe avvertimenti finti.
+    const capoversi = (g.sections || []).flatMap((s) => (s.paragraphs || []).map((p) => p.text || ''));
+    const conAvviso = capoversi.filter((t) => TOKEN_AVVERTIMENTO.test(t)).length;
+    if (capoversi.length && conAvviso / capoversi.length < QUOTA_AVVERTIMENTI) {
+      const pct = Math.round((100 * conAvviso) / capoversi.length);
+      warn(nome, `avvertimenti operativi in ${conAvviso} capoversi su ${capoversi.length} (${pct}%): sotto un terzo, la guida sta scivolando verso il manuale`);
+    }
   }
 }
 
