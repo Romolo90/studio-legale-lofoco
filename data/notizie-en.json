@@ -237,7 +237,7 @@
       "id": "tc-produzione",
       "title": "Tax Credit for Cinematographic and Audiovisual Production",
       "category": "tax-credit",
-      "summary": "40% (or variable rates) tax credit on eligible expenditure for Italian nationality works or co-productions. Cultural eligibility requirements, caps and procedures via the DGCOL platform.",
+      "summary": "Tax credit on eligible expenditure for Italian nationality works or co-productions: 40% for films by independent producers, 25% raised to 35% for TV and web works. Total public support may not exceed 50% of the cost of the work.",
       "keyPoints": [
         "Films 40% for independent producers, TV and web works 25% raised to 35%",
         "Mandatory cultural eligibility requirement",
@@ -275,7 +275,7 @@
       "id": "tc-internazionale",
       "title": "Tax Credit for Attracting Foreign Investment",
       "category": "tax-credit",
-      "summary": "The beneficiary is the Italian executive production or post-production company working on commission, not the foreign client. A credit of 40% of the eligible cost incurred in Italy.",
+      "summary": "The beneficiary is the Italian executive production or post-production company working on commission, not the foreign client. A credit of 40% of the eligible cost incurred in Italy, within the 50% ceiling on total public support.",
       "keyPoints": [
         "40% of the eligible cost, provided it is at least 250,000 euro",
         "The Italian company must not hold any share of the rights in the work, save express derogation",
@@ -357,7 +357,7 @@
       "id": "cumulabilita-incentivi",
       "title": "Cumulability of Tax Credit, selective contributions and regional incentives",
       "category": "normativa",
-      "summary": "Cumulation rules between national measures (Tax Credit + Art.26), bilateral agreements, Creative Europe MEDIA and regional Film Commission incentives. Limits and cautions.",
+      "summary": "Cumulation rules between national measures, bilateral agreements, Creative Europe MEDIA and regional film commissions. The constraint governing all of them is the 50% ceiling on public support for the cost of the work.",
       "keyPoints": [
         "Cumulation is possible, but total public support may not exceed 50% of the cost of the work",
         "Regional funds and film commission grants also fall within that limit",

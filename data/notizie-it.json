@@ -238,7 +238,7 @@
       "title": "Tax Credit per la produzione cinematografica e audiovisiva",
       "guideUrl": "guida-tax-credit-produzione.html",
       "category": "tax-credit",
-      "summary": "Credito d'imposta del 40% (o aliquote differenziate) sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Requisiti culturali, limiti massimi e procedure via DGCOL.",
+      "summary": "Credito d'imposta sulle spese ammissibili per opere di nazionalità italiana o coproduzioni: 40% alle opere cinematografiche di produttori indipendenti, 25% elevabile al 35% alle opere tv e web. Il sostegno pubblico complessivo non può comunque superare il 50% del costo dell'opera.",
       "keyPoints": [
         "Opere cinematografiche 40% ai produttori indipendenti, opere tv e web 25% elevabile al 35%",
         "Requisito di eleggibilità culturale obbligatorio",
@@ -276,7 +276,7 @@
       "id": "tc-internazionale",
       "title": "Tax Credit per l'attrazione di investimenti esteri",
       "category": "tax-credit",
-      "summary": "Il beneficiario è l'impresa italiana di produzione esecutiva o di post-produzione che lavora su commissione estera, non il committente straniero. Credito del 40% del costo eleggibile sostenuto in Italia.",
+      "summary": "Il beneficiario è l'impresa italiana di produzione esecutiva o di post-produzione che lavora su commissione estera, non il committente straniero. Credito del 40% del costo eleggibile sostenuto in Italia, entro il limite del 50% di sostegno pubblico complessivo.",
       "keyPoints": [
         "40% del costo eleggibile, a condizione che sia almeno di 250.000 euro",
         "L'impresa italiana non deve possedere quote di diritti sull'opera, salvo deroga espressa",
@@ -373,7 +373,7 @@
       "id": "cumulabilita-incentivi",
       "title": "Cumulabilità Tax Credit, contributi selettivi e incentivi regionali",
       "category": "normativa",
-      "summary": "Regole di cumulo tra misure nazionali (Tax Credit + art.26), accordi bilaterali, Creative Europe MEDIA e Film Commission regionali. Limiti e cautele.",
+      "summary": "Regole di cumulo tra misure nazionali, accordi bilaterali, Creative Europe MEDIA e film commission regionali. Il vincolo che le governa tutte è il tetto del 50% di sostegno pubblico sul costo dell'opera.",
       "keyPoints": [
         "Il cumulo è possibile, ma il sostegno pubblico complessivo non può superare il 50% del costo dell'opera",
         "Anche i fondi regionali e i contributi delle film commission rientrano in quel limite",
