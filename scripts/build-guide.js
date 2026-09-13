@@ -23,6 +23,15 @@ const ROOT = path.join(__dirname, '..');
 const GUIDE_DIR = path.join(ROOT, 'content', 'guide');
 const PREVIEW_DIR = path.join(ROOT, 'preview');
 const SITE = 'https://studiolegalelofoco.com/';
+
+// Stessa impronta usata da build.js: le due pagine devono concordare, altrimenti
+// ogni build:guide riscriverebbe ciò che build:html ha appena normalizzato.
+const crypto = require('crypto');
+function versioneAsset(nome) {
+  const p = path.join(ROOT, nome);
+  if (!fs.existsSync(p)) return '';
+  return '?v=' + crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex').slice(0, 8);
+}
 const MARKER = '<!-- GENERATO da scripts/build-guide.js — non modificare a mano;';
 
 const argId = (() => {
@@ -276,7 +285,7 @@ ${hreflang}
   <meta name="twitter:title" content="${esc(g.metaTitle)}">
   <meta name="twitter:image" content="${SITE}image/og-image.jpg">
   <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css${versioneAsset('style.css')}">
 ${jsonLd(g, url)}
 </head>
 <body>
@@ -293,7 +302,7 @@ ${leggiPartial(L.footer)}
 
 ${leggiPartial(L.cookie)}
 
-<script src="script.js"></script></body>
+<script src="script.js${versioneAsset('script.js')}"></script></body>
 </html>
 `;
 }

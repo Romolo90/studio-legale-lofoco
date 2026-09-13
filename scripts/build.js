@@ -18,6 +18,20 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
+
+// Impronta del contenuto degli asset condivisi. Serve a invalidare la cache del
+// browser: style.css e script.js sono richiamati senza versione e Cloudflare li
+// serve con quattro ore di validità, quindi una modifica alla grafica resta
+// invisibile per ore a chi è già stato sul sito. L'impronta dipende dal
+// contenuto, non dalla data: se il file non cambia il numero non cambia, e i
+// visitatori non riscaricano nulla inutilmente.
+const crypto = require('crypto');
+function versioneAsset(nome) {
+  const p = path.join(ROOT, nome);
+  if (!fs.existsSync(p)) return '';
+  return '?v=' + crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex').slice(0, 8);
+}
+
 const PARTIALS_DIR = path.join(ROOT, 'partials');
 
 function readPartial(name) {
@@ -510,8 +524,8 @@ function main() {
     // Copy HTML but rewrite asset refs to .min *only for the dist/ copies*
     for (const f of htmlFiles) {
       let c = fs.readFileSync(path.join(ROOT, f), 'utf8');
-      c = c.replace(/href=["'][^"']*style(\.min)?\.css["']/g, 'href="style.min.css"');
-      c = c.replace(/src=["'][^"']*script(\.min)?\.js["']/g, 'src="script.min.js"');
+      c = c.replace(/href=["'][^"']*style(\.min)?\.css(\?[^"']*)?["']/g, `href="style.min.css${versioneAsset('style.min.css') || versioneAsset('style.css')}"`);
+      c = c.replace(/src=["'][^"']*script(\.min)?\.js(\?[^"']*)?["']/g, `src="script.min.js${versioneAsset('script.min.js') || versioneAsset('script.js')}"`);
       fs.writeFileSync(path.join(distDir, f), c, 'utf8');
     }
 
@@ -550,8 +564,8 @@ function main() {
     const full = path.join(ROOT, f);
     let c = fs.readFileSync(full, 'utf8');
     const orig = c;
-    c = c.replace(/href=["'][^"']*style(\.min)?\.css["']/g, 'href="style.css"');
-    c = c.replace(/src=["'][^"']*script(\.min)?\.js["']/g, 'src="script.js"');
+    c = c.replace(/href=["'][^"']*style(\.min)?\.css(\?[^"']*)?["']/g, `href="style.css${versioneAsset('style.css')}"`);
+    c = c.replace(/src=["'][^"']*script(\.min)?\.js(\?[^"']*)?["']/g, `src="script.js${versioneAsset('script.js')}"`);
     if (c !== orig) {
       fs.writeFileSync(full, c, 'utf8');
       rootRefsNormalized++;
