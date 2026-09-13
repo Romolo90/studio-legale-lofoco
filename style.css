@@ -1661,3 +1661,28 @@ textarea:focus-visible {
   text-underline-offset: 2px;
 }
 .resource-card .card-footer a.card-guide:hover { text-decoration-thickness: 2px; }
+
+
+/* Il pulsante dentro la finestra sta su fondo bianco. La classe generica .btn-cta
+   porta testo #BFECFF - azzurro chiarissimo, pensato per stagliarsi sul blu pieno
+   delle sezioni - e lì risultava azzurro su blu, illeggibile. Stesso blu, testo bianco. */
+/* Specificità: .modal-body a (classe + elemento) batte .btn-guida (una classe sola),
+   quindi il bianco non arrivava mai a schermo e il pulsante restava blu su blu,
+   con un rapporto di contrasto di 1,35 contro la soglia di 4,5. Si pareggia la
+   specificità invece di ricorrere a !important, che sposterebbe solo il problema. */
+.modal-body a.btn-guida,
+.btn-guida {
+  display: inline-block;
+  background: #0066CC;
+  color: #fff;
+  padding: 0.55rem 1.1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.modal-body a.btn-guida:hover,
+.modal-body a.btn-guida:focus,
+.btn-guida:hover,
+.btn-guida:focus { background: #004766; color: #fff; }

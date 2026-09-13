@@ -72,7 +72,7 @@
   <meta name="theme-color" content="#003366">
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css?v=2aa924f4">
+  <link rel="stylesheet" href="style.css?v=7bf2ab48">
 </head>
 <body>
 
@@ -572,7 +572,7 @@
             <a href="https://cinema.cultura.gov.it/avvisi/piano-potenziamento-sale-cinematografiche-2024-linea-intervento-ristrutturazione-adeguamento-strutturale-tecnologico-sale-cinematografiche/" target="_blank" rel="noopener noreferrer">Read the official notice →</a>
           </div>
         </article>
-        <button type="button" class="news-toggle" hidden>Show all updates (33)</button>
+        <button type="button" class="news-toggle" aria-expanded="false" data-piu="Show all updates" data-meno="Show fewer" hidden></button>
 <!-- STATIC-NEWS-END -->
       </div>
       <p class="disclaimer">News items are taken from official communications and notices published on the website of the Direzione Generale Cinema e Audiovisivo. For complete texts and exact deadlines, always consult the original sources.</p>
@@ -633,7 +633,7 @@
           </div>
         </article>
       `).join('') + `
-        <button type="button" class="news-toggle" hidden>Show all updates (${newsItems.length})</button>`;
+        <button type="button" class="news-toggle" aria-expanded="false" data-piu="Show all updates" data-meno="Show fewer" hidden></button>`;
       collassaNovita();
     }
 
@@ -643,9 +643,15 @@
         const lista = document.getElementById('news-list');
         const bottone = lista && lista.querySelector('.news-toggle');
         if (!lista || !bottone) return;
-        lista.classList.add('collapsed');
+        const voci = lista.querySelectorAll('article.news-item').length;
+        const aggiorna = (chiuso) => {
+          lista.classList.toggle('collapsed', chiuso);
+          bottone.setAttribute('aria-expanded', String(!chiuso));
+          bottone.textContent = chiuso ? `${bottone.dataset.piu} (${voci})` : bottone.dataset.meno;
+        };
+        aggiorna(true);
         bottone.hidden = false;
-        bottone.onclick = () => { lista.classList.remove('collapsed'); bottone.hidden = true; };
+        bottone.onclick = () => aggiorna(!lista.classList.contains('collapsed'));
       }
 
       // Il blocco statico esiste già nel documento: si collassa subito, senza aspettare
@@ -733,7 +739,7 @@
       document.getElementById('modal-title').textContent = article.title;
       const body = document.getElementById('modal-body');
       body.innerHTML = `
-        ${article.guideUrl ? `<p style="margin:0 0 .6rem;"><a class="btn-cta" href="${article.guideUrl}">Read the full guide →</a></p>` : ''}
+        ${article.guideUrl ? `<p style="margin:0 0 .6rem;"><a class="btn-guida" href="${article.guideUrl}">Read the full guide →</a></p>` : ''}
         <div class="meta">Category: <strong>${article.category.replace('-', ' ')}</strong>${article.tags && article.tags.length ? ` • <span style="color:#0066aa;">${article.tags.join(', ')}</span>` : ''}</div>
         <p>${article.summary}</p>
         ${article.keyPoints && article.keyPoints.length ? `
