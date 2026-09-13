@@ -1631,3 +1631,33 @@ textarea:focus-visible {
     width: 100%;
   }
 }
+
+
+/* Elenco novità: 33 voci sono troppe da scorrere, ma toglierle dal documento le
+   toglierebbe anche ai motori di ricerca. Restano tutte, nascoste da una classe
+   che aggiunge il JavaScript: senza JavaScript si vedono per intero. */
+.news-list.collapsed .news-item:nth-of-type(n+9) { display: none; }
+.news-toggle {
+  align-self: center;
+  margin-top: 0.25rem;
+  padding: 0.5rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #005699;
+  background: #f8fbff;
+  border: 1px solid #80D9FF;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.news-toggle:hover { background: #eaf6ff; }
+
+/* Il collegamento alla guida sta nel piè di pagina della scheda, non nel titolo:
+   un link dentro un elemento dichiarato come pulsante non era raggiungibile. */
+.resource-card .card-footer a.card-guide {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.resource-card .card-footer a.card-guide:hover { text-decoration-thickness: 2px; }

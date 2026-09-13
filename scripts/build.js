@@ -92,7 +92,8 @@ function renderNewsStatic(newsItems, isEn) {
             <span class="source">${item.source}</span>
             <a href="${item.link}" target="_blank" rel="noopener noreferrer">${readLabel}</a>
           </div>
-        </article>`).join('\n');
+        </article>`).join('\n') +
+    `\n        <button type="button" class="news-toggle" id="news-toggle" hidden>${isEn ? 'Show all updates' : 'Mostra tutte le novità'} (${newsItems.length})</button>`;
 }
 
 function renderResourcesStatic(articles, isEn) {
@@ -106,14 +107,14 @@ function renderResourcesStatic(articles, isEn) {
     const cat = (a.category || 'all').replace('-', ' ');
     const tags = a.tags && a.tags.length ? a.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
     return `
-        <div class="resource-card" id="${a.id}" data-id="${a.id}" data-category="${a.category || ''}" tabindex="0" role="button" aria-label="${aria}${a.title}">
+        <div class="resource-card" id="${a.id}" data-id="${a.id}" data-category="${a.category || ''}" data-guide="${a.guideUrl || ''}">
           <div class="card-header">
             <span class="category-tag">${cat}</span>
             ${tags}
           </div>
-          <h3>${a.guideUrl ? `<a href="${a.guideUrl}">${a.title}</a>` : a.title}</h3>
+          <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
-          <div class="card-footer">${footerBase}</div>
+          <div class="card-footer">${a.guideUrl ? `<a class="card-guide" href="${a.guideUrl}">${footerBase === "Read more" ? "Read the guide" : "Leggi la guida"}</a>` : '${footerBase}'}</div>
         </div>`;
   }).join('\n');
 }
