@@ -289,6 +289,10 @@ ${hreflang}
   <meta name="twitter:title" content="${esc(g.metaTitle)}">
   <meta name="twitter:image" content="${SITE}image/og-image.jpg">
   <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="image/icon-192.png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003366">
   <link rel="stylesheet" href="style.css${versioneAsset('style.css')}">
 ${jsonLd(g, url)}
 </head>
@@ -422,6 +426,10 @@ ${headComune()}
   <meta name="twitter:title" content="${esc(I.metaTitle)}">
   <meta name="twitter:image" content="${SITE}image/og-image.jpg">
   <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="image/icon-192.png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003366">
   <link rel="stylesheet" href="style.css${versioneAsset('style.css')}">
 ${dati}
 </head>

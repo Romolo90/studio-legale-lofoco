@@ -32,6 +32,30 @@ function versioneAsset(nome) {
   return '?v=' + crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex').slice(0, 8);
 }
 
+// Icone, manifest e colore del tema: stesso insieme su ogni pagina. Il 13/09/2026 le 32
+// pagine ne dichiaravano sette combinazioni diverse, e sei nessuna. Il build rimuove
+// quelle presenti e inserisce l'insieme canonico prima del foglio di stile: una modifica
+// a mano rompe il controllo di idempotenza in CI invece di restare lì. build-guide.js
+// emette lo stesso blocco, altrimenti i due generatori si riscriverebbero a vicenda.
+const ICONE = [
+  '<link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">',
+  '<link rel="icon" type="image/png" sizes="192x192" href="image/icon-192.png">',
+  '<link rel="apple-touch-icon" href="image/icon-192.png">',
+  '<link rel="manifest" href="manifest.json">',
+  '<meta name="theme-color" content="#003366">',
+];
+function normalizzaIcone(html) {
+  const fine = html.indexOf('</head>');
+  if (fine < 0) return html;
+  let head = html.slice(0, fine);
+  head = head.replace(/^[ \t]*<link\b[^>]*\brel=["'](?:shortcut icon|icon|apple-touch-icon|manifest|mask-icon)["'][^>]*>[ \t]*\r?\n/gim, '');
+  head = head.replace(/^[ \t]*<meta\b[^>]*\bname=["']theme-color["'][^>]*>[ \t]*\r?\n/gim, '');
+  const m = head.match(/^([ \t]*)<link rel="stylesheet"[^>]*>/m);
+  if (!m) return html;
+  head = head.slice(0, m.index) + ICONE.map((t) => m[1] + t).join('\n') + '\n' + head.slice(m.index);
+  return head + html.slice(fine);
+}
+
 const PARTIALS_DIR = path.join(ROOT, 'partials');
 
 function readPartial(name) {
@@ -526,6 +550,7 @@ function main() {
       let c = fs.readFileSync(path.join(ROOT, f), 'utf8');
       c = c.replace(/href=["'][^"']*style(\.min)?\.css(\?[^"']*)?["']/g, `href="style.min.css${versioneAsset('style.min.css') || versioneAsset('style.css')}"`);
       c = c.replace(/src=["'][^"']*script(\.min)?\.js(\?[^"']*)?["']/g, `src="script.min.js${versioneAsset('script.min.js') || versioneAsset('script.js')}"`);
+      c = normalizzaIcone(c);
       fs.writeFileSync(path.join(distDir, f), c, 'utf8');
     }
 
@@ -566,6 +591,7 @@ function main() {
     const orig = c;
     c = c.replace(/href=["'][^"']*style(\.min)?\.css(\?[^"']*)?["']/g, `href="style.css${versioneAsset('style.css')}"`);
     c = c.replace(/src=["'][^"']*script(\.min)?\.js(\?[^"']*)?["']/g, `src="script.js${versioneAsset('script.js')}"`);
+    c = normalizzaIcone(c);
     if (c !== orig) {
       fs.writeFileSync(full, c, 'utf8');
       rootRefsNormalized++;
