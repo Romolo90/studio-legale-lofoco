@@ -128,7 +128,7 @@ function renderResourcesStatic(articles, isEn) {
           </div>
           <h3>${a.title}</h3>
           <p class="summary">${a.summary}</p>
-          <div class="card-footer">${a.guideUrl ? `<a class="card-guide" href="${a.guideUrl}">${footerBase === "Read more" ? "Read the guide" : "Leggi la guida"}</a>` : '${footerBase}'}</div>
+          <div class="card-footer">${a.guideUrl ? `<a class="card-guide" href="${a.guideUrl}">${footerBase === "Read more" ? "Read the guide" : "Leggi la guida"}</a>` : footerBase}</div>
         </div>`;
   }).join('\n');
 }
