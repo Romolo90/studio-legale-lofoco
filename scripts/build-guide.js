@@ -59,8 +59,8 @@ const T = {
     skip: 'Salta al contenuto', header: 'header-sub-it.html', footer: 'footer.html', cookie: 'cookie-it.html',
     briciola: 'Approfondimenti', briciolaUrl: 'notizie.html',
     inGuida: 'In questa guida', faq: 'Domande frequenti', fonti: 'Fonti', vediAnche: 'Vedi anche',
-    testo: 'testo', primaria: ' (fonte primaria)', consultata: 'consultata il',
-    aCura: "A cura dell'", aggiornata: 'Aggiornata al', verificati: 'Dati verificati sulle fonti il',
+    consultata: 'consultata il', stampa: ' (fonte di stampa)', verificateIl: 'Verificate sul testo il',
+    aggiornata: 'Aggiornata al',
     disclaimer: 'Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini cambiano con i decreti attuativi e con gli avvisi della Direzione generale Cinema e audiovisivo: prima di presentare una domanda verifica la disciplina in vigore o contattaci.',
     contattoH2: 'Parliamo del tuo progetto',
     contattoP1: "Una verifica preventiva costa una frazione di quanto costa rimediare a un diniego. Se hai un'opera in sviluppo o in preparazione, il momento utile per un confronto è prima della firma dei contratti e prima dell'avvio delle spese.",
@@ -73,8 +73,8 @@ const T = {
     skip: 'Skip to content', header: 'header-sub-en.html', footer: 'footer-en.html', cookie: 'cookie-en.html',
     briciola: 'Insights', briciolaUrl: 'notizie-en.html',
     inGuida: 'In this guide', faq: 'Frequently asked questions', fonti: 'Sources', vediAnche: 'See also',
-    testo: 'text', primaria: ' (primary source)', consultata: 'accessed on',
-    aCura: 'By ', aggiornata: 'Updated on', verificati: 'Sources checked on',
+    consultata: 'accessed on', stampa: ' (press source)', verificateIl: 'Checked against the texts on',
+    aggiornata: 'Updated on',
     disclaimer: 'This guide is for information only and is not legal advice. Rates, thresholds and deadlines change with implementing decrees and with the notices of the Directorate General for Cinema and Audiovisual: before filing an application, check the rules in force or contact us.',
     contattoH2: "Let's discuss your project",
     contattoP1: 'Checking the requirements in advance costs a fraction of what it costs to fix a refusal. If a production is in development or in preparation, the useful moment to talk is before the contracts are signed and before the spending starts.',
@@ -190,8 +190,12 @@ function corpo(g, anteprima) {
       `\n        </div>\n      </section>`
     : '';
 
-  const fonti = `\n      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">\n        <h2 id="fonti-title">${L.fonti}</h2>\n        <div class="profile-box">\n        <ul>\n` +
-    (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}">${esc(s.citation)} — <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${L.testo}</a>${s.urlType === 'primaria' ? L.primaria : ''}, ${L.consultata} ${esc(dataIt(s.accessedAt, g.lang))}</li>`).join('\n') +
+  // La data di verifica si dice una volta, in testa all'elenco: ripetuta su ogni fonte
+  // appesantiva la pagina senza aggiungere nulla. Una fonte consultata in un'altra data
+  // porta la sua. Si segnalano solo le fonti di stampa, che valgono meno di un atto:
+  // "fonte primaria" su quasi ogni riga era rumore.
+  const fonti = `\n      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">\n        <h2 id="fonti-title">${L.fonti}</h2>\n        <div class="profile-box">\n        <p class="guida-meta">${L.verificateIl} ${esc(dataIt(g.verifiedAt, g.lang))}</p>\n        <ul>\n` +
+    (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.citation)}</a>${s.urlType === 'stampa' ? L.stampa : ''}${s.accessedAt && s.accessedAt !== g.verifiedAt ? `, ${L.consultata} ${esc(dataIt(s.accessedAt, g.lang))}` : ''}</li>`).join('\n') +
     `\n        </ul>\n        </div>\n      </section>`;
 
   // In anteprima si vedono tutti i rimandi, anche verso guide ancora in revisione:
@@ -208,7 +212,7 @@ function corpo(g, anteprima) {
       <header class="insights-hero">
         <h1>${esc(g.title)}</h1>
         <p class="guida-abstract">${esc(g.abstract)}</p>
-        <p class="guida-meta">${L.aCura}<a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · ${L.aggiornata} ${esc(dataIt(g.dateModified, g.lang))} · ${L.verificati} ${esc(dataIt(g.verifiedAt, g.lang))}</p>
+        <p class="guida-meta"><a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · ${L.aggiornata} ${esc(dataIt(g.dateModified, g.lang))}</p>
       </header>
 
       <nav class="profile-box guida-sommario" aria-label="Indice della guida">
