@@ -38,9 +38,9 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Verifica Incentivi | Studio Legale Lo Foco - Tax Credit e Contributi Audiovisivo</title>
+  <title>Quali incentivi guardare per il tuo progetto | Studio Legale Lo Foco</title>
   <link rel="canonical" href="https://studiolegalelofoco.com/verifica-incentivi.html">
-  <meta name="description" content="Simulatore interattivo per verificare l'idoneità del tuo progetto cinematografico o audiovisivo a Tax Credit, contributi selettivi e altri incentivi. Basato su regole ufficiali 2026 della DG Cinema.">
+  <meta name="description" content="Strumento di orientamento sugli incentivi italiani al cinema e all'audiovisivo: quali misure guardare per un progetto e quali requisiti far verificare. Non esprime un giudizio di idoneità.">
   <meta name="keywords" content="Verifica Incentivi, Tax Credit, contributi selettivi, cinema, audiovisivo, incentivi fiscali, Studio Legale Lo Foco">
 
   <!-- Hreflang -->
@@ -49,14 +49,14 @@
   <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/verifica-incentivi.html">
 
   <!-- OG / Twitter -->
-  <meta property="og:title" content="Verifica Incentivi | Studio Legale Lo Foco">
-  <meta property="og:description" content="Scopri in pochi clic a quali incentivi può accedere il tuo progetto: Tax Credit, contributi selettivi e fondi europei.">
+  <meta property="og:title" content="Quali incentivi guardare per il tuo progetto | Studio Legale Lo Foco">
+  <meta property="og:description" content="Strumento di orientamento sugli incentivi italiani al cinema e all'audiovisivo: quali misure guardare per un progetto e quali requisiti far verificare. Non esprime un giudizio di idoneità.">
   <meta property="og:url" content="https://studiolegalelofoco.com/verifica-incentivi.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Verifica Incentivi - Tax Credit e Contributi per il Cinema">
-  <meta name="twitter:description" content="Strumento pratico per produttori e filmmaker: valuta l'idoneità del tuo progetto agli incentivi italiani ed europei.">
+  <meta name="twitter:title" content="Quali incentivi guardare per il tuo progetto | Studio Legale Lo Foco">
+  <meta name="twitter:description" content="Strumento di orientamento sugli incentivi italiani al cinema e all'audiovisivo: quali misure guardare per un progetto e quali requisiti far verificare. Non esprime un giudizio di idoneità.">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
@@ -367,8 +367,8 @@
 <main id="main">
     <!-- HERO -->
     <div class="tool-hero">
-      <h1>Verifica la tua idoneità agli incentivi</h1>
-      <p>Strumento pratico e riservato per produttori, registi e operatori del settore audiovisivo. In pochi clic valuta a quali misure di sostegno — Tax Credit, contributi selettivi e fondi europei — il tuo progetto può accedere sulla base delle regole ufficiali 2026 della Direzione Generale Cinema e Audiovisivo.</p>
+      <h1>Quali incentivi guardare per il tuo progetto</h1>
+      <p>Strumento pratico e riservato per produttori, registi e operatori del settore audiovisivo. In pochi passaggi indica quali misure di sostegno — Tax Credit, contributi selettivi e fondi europei — conviene guardare per un progetto come il tuo, e quali requisiti far verificare, sulla base delle regole ufficiali 2026 della Direzione Generale Cinema e Audiovisivo.</p>
     </div>
 
     <div class="tool-container">
@@ -449,7 +449,7 @@
         </div>
 
         <div class="form-actions">
-          <button type="submit" id="calculate-btn">Calcola idoneità</button>
+          <button type="submit" id="calculate-btn">Vedi quali misure considerare</button>
           <button type="button" id="reset-btn" class="secondary">Reimposta</button>
         </div>
       </form>
@@ -477,6 +477,7 @@
 
         <!-- Summary -->
         <div id="results-summary" style="margin-bottom: 1rem; padding: 0.75rem 1rem; background: #f8fbff; border-radius: 6px; font-size: 0.95rem; display: none;"></div>
+        <p style="margin:0.75rem 0 0; font-size:0.9rem;">Nessuno di questi esiti è una valutazione di idoneità. Nazionalità italiana, eleggibilità culturale, titolarità dei diritti e limiti di cumulo si accertano sui documenti del progetto, non su un questionario. <a href="tax-credit-cinema-audiovisivo.html">Come lo studio assiste nelle pratiche di incentivo</a>.</p>
 
         <div class="results-grid" id="results-grid"></div>
 
@@ -681,12 +682,12 @@
 
         let summaryText = '';
         if (high > 0) {
-          summaryText = `Il tuo progetto mostra <strong>${high} risultato/i ad alta idoneità</strong>.`;
-          if (medium > 0) summaryText += ` Ci sono anche ${medium} risultato/i con media probabilità.`;
+          summaryText = `Sulla base di quanto hai indicato, le misure da guardare per prime sono <strong>${high}</strong>.`;
+          if (medium > 0) summaryText += ` Altre ${medium} meritano una verifica più approfondita.`;
         } else if (medium > 0) {
-          summaryText = `Il tuo progetto mostra <strong>${medium} risultato/i con media probabilità</strong>.`;
+          summaryText = `Sulla base di quanto hai indicato, <strong>${medium} misure</strong> meritano una verifica più approfondita.`;
         } else {
-          summaryText = `Al momento non emergono misure con alta o media probabilità.`;
+          summaryText = `Con i dati inseriti non emergono misure da guardare in via prioritaria. Non significa che non ce ne siano: molti requisiti non si deducono da un questionario.`;
         }
 
         summaryEl.innerHTML = summaryText;
@@ -697,7 +698,7 @@
         const card = document.createElement('div');
         card.className = 'result-card';
         card.innerHTML = `
-          <span class="badge ${r.status}">${r.status === 'high' ? 'Alta idoneità' : r.status === 'medium' ? 'Media idoneità' : r.status === 'low' ? 'Bassa / da verificare' : 'Non prioritario'}</span>
+          <span class="badge ${r.status}">${r.status === 'high' ? 'Da guardare per prima' : r.status === 'medium' ? 'Possibile, con condizioni' : r.status === 'low' ? 'Poco probabile' : 'Non prioritaria'}</span>
           <h3>${r.title}</h3>
           <p>${r.note}</p>
         `;

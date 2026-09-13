@@ -38,9 +38,9 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Incentives Eligibility Checker | Studio Legale Lo Foco - Tax Credit & Audiovisual Grants</title>
+  <title>Which Italian incentives to look at | Studio Legale Lo Foco</title>
   <link rel="canonical" href="https://studiolegalelofoco.com/verifica-incentivi-en.html">
-  <meta name="description" content="Interactive tool to check your film or audiovisual project's eligibility for Italian Tax Credit, selective contributions and other incentives. Based on official 2026 DG Cinema rules.">
+  <meta name="description" content="Orientation tool on Italian film and audiovisual incentives: which measures to look at for a project and which requirements to have checked. It does not express an eligibility opinion.">
   <meta name="keywords" content="Incentives Checker, Tax Credit, selective contributions, film incentives, audiovisual grants, Studio Legale Lo Foco">
 
   <!-- Hreflang -->
@@ -49,14 +49,14 @@
   <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/verifica-incentivi.html">
 
   <!-- OG / Twitter -->
-  <meta property="og:title" content="Incentives Eligibility Checker | Studio Legale Lo Foco">
-  <meta property="og:description" content="Quick tool for producers and filmmakers: assess your project's eligibility for Italian Tax Credit, selective grants and European funds.">
+  <meta property="og:title" content="Which Italian incentives to look at | Studio Legale Lo Foco">
+  <meta property="og:description" content="Orientation tool on Italian film and audiovisual incentives: which measures to look at for a project and which requirements to have checked. It does not express an eligibility opinion.">
   <meta property="og:url" content="https://studiolegalelofoco.com/verifica-incentivi-en.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Incentives Checker - Tax Credit & Grants for Cinema">
-  <meta name="twitter:description" content="Practical eligibility simulator for film and audiovisual projects based on official 2026 Italian rules.">
+  <meta name="twitter:title" content="Which Italian incentives to look at | Studio Legale Lo Foco">
+  <meta name="twitter:description" content="Orientation tool on Italian film and audiovisual incentives: which measures to look at for a project and which requirements to have checked. It does not express an eligibility opinion.">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
@@ -367,8 +367,8 @@
 <main id="main">
     <!-- HERO -->
     <div class="tool-hero">
-      <h1>Check your project's eligibility for incentives</h1>
-      <p>Practical and confidential tool for producers, directors and audiovisual professionals. In a few clicks assess which support measures — Tax Credit, selective contributions and European funds — your project may qualify for, based on the official 2026 rules of the Direzione Generale Cinema e Audiovisivo.</p>
+      <h1>Which Italian incentives to look at for your project</h1>
+      <p>Practical and confidential tool for producers, directors and audiovisual professionals. In a few steps it shows which support measures — Tax Credit, selective grants and European funds — are worth looking at for a project like yours, and which requirements to have checked, based on the official 2026 rules of the Direzione Generale Cinema e Audiovisivo.</p>
     </div>
 
     <div class="tool-container">
@@ -448,7 +448,7 @@
         </div>
 
         <div class="form-actions">
-          <button type="submit" id="calculate-btn">Calculate eligibility</button>
+          <button type="submit" id="calculate-btn">See which measures to consider</button>
           <button type="button" id="reset-btn" class="secondary">Reset</button>
         </div>
       </form>
@@ -476,6 +476,7 @@
 
         <!-- Summary -->
         <div id="results-summary" style="margin-bottom: 1rem; padding: 0.75rem 1rem; background: #f8fbff; border-radius: 6px; font-size: 0.95rem; display: none;"></div>
+        <p style="margin:0.75rem 0 0; font-size:0.9rem;">None of these outcomes is an eligibility assessment. Italian nationality, cultural eligibility, ownership of rights and cumulation limits are established on the project documents, not on a questionnaire. <a href="tax-credit-cinema-audiovisivo-en.html">How the firm assists with incentive applications</a>.</p>
 
         <div class="results-grid" id="results-grid"></div>
 
@@ -678,12 +679,12 @@
 
         let summaryText = '';
         if (high > 0) {
-          summaryText = `Your project shows <strong>${high} high-likelihood result(s)</strong>.`;
-          if (medium > 0) summaryText += ` There are also ${medium} medium-probability result(s).`;
+          summaryText = `Based on what you entered, the measures to look at first are <strong>${high}</strong>.`;
+          if (medium > 0) summaryText += ` Another ${medium} deserve a closer look.`;
         } else if (medium > 0) {
-          summaryText = `Your project shows <strong>${medium} medium-probability result(s)</strong>.`;
+          summaryText = `Based on what you entered, <strong>${medium} measures</strong> deserve a closer look.`;
         } else {
-          summaryText = `No high or medium probability measures currently emerge.`;
+          summaryText = `With the data entered, no measure stands out as a priority. That does not mean there is none: many requirements cannot be inferred from a questionnaire.`;
         }
 
         summaryEl.innerHTML = summaryText;
@@ -694,7 +695,7 @@
         const card = document.createElement('div');
         card.className = 'result-card';
         card.innerHTML = `
-          <span class="badge ${r.status}">${r.status === 'high' ? 'High eligibility' : r.status === 'medium' ? 'Medium eligibility' : r.status === 'low' ? 'Low / to verify' : 'Not priority'}</span>
+          <span class="badge ${r.status}">${r.status === 'high' ? 'Look at this first' : r.status === 'medium' ? 'Possible, with conditions' : r.status === 'low' ? 'Unlikely' : 'Not a priority'}</span>
           <h3>${r.title}</h3>
           <p>${r.note}</p>
         `;
