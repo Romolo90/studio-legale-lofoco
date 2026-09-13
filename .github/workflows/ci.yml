@@ -60,6 +60,11 @@ jobs:
       - name: Check sitemap consistency
         run: npm run check:sitemap
 
+      # Il 13/09/2026 "${footerBase}" è finito in pagina come testo su dodici schede:
+      # HTML valido e build idempotente non potevano accorgersene.
+      - name: Check unresolved template placeholders
+        run: npm run check:placeholders
+
       # Il build deve essere un no-op su albero pulito: nel giugno 2026 una guardia
       # sbagliata aveva accodato 25 blocchi JSON-LD duplicati a ogni esecuzione.
       - name: Build must be idempotent
