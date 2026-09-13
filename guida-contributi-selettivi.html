@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!-- GENERATO da scripts/build-guide.js — non modificare a mano;
+     sorgente: content/guide/contributi-selettivi.json -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google tag (gtag.js) - Consent Mode v2.
+       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
+       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
+       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
+    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
+    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
+    var glfAnalytics = 'denied';
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        glfAnalytics = 'granted';
+      }
+    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: glfAnalytics,
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contributi selettivi cinema: linee, requisiti e importi | Studio Legale Lo Foco</title>
+  <meta name="description" content="Contributi selettivi ex art. 26 L. 220/2016: finestre del bando 2026, requisiti, dotazioni e importi per scrittura, sviluppo e produzione.">
+  <link rel="canonical" href="https://studiolegalelofoco.com/guida-contributi-selettivi.html">
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/guida-contributi-selettivi.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/guida-contributi-selettivi.html">
+  <meta property="og:title" content="Contributi selettivi cinema: linee, requisiti e importi | Studio Legale Lo Foco">
+  <meta property="og:description" content="Contributi selettivi ex art. 26 L. 220/2016: finestre del bando 2026, requisiti, dotazioni e importi per scrittura, sviluppo e produzione.">
+  <meta property="og:url" content="https://studiolegalelofoco.com/guida-contributi-selettivi.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contributi selettivi cinema: linee, requisiti e importi | Studio Legale Lo Foco">
+  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Contributi selettivi: linee, requisiti e importi",
+  "description": "Contributi selettivi ex art. 26 L. 220/2016: finestre del bando 2026, requisiti, dotazioni e importi per scrittura, sviluppo e produzione.",
+  "inLanguage": "it",
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "author": {
+    "@type": "Person",
+    "name": "Andrea Lo Foco",
+    "url": "https://studiolegalelofoco.com/andrea-lo-foco.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Studio Legale Lo Foco",
+    "url": "https://studiolegalelofoco.com/"
+  },
+  "mainEntityOfPage": "https://studiolegalelofoco.com/guida-contributi-selettivi.html",
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Legge 14 novembre 2016, n. 220, art. 26",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "D.M. 8 ottobre 2024, rep. n. 345, disposizioni applicative in materia di contributi selettivi ex art. 26 L. 220/2016",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2024/11/DM-8-ottobre-2024-rep.-345-art.-26-contributi-selettivi-signed.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/dlm_uploads/2026/05/Anno-2026-Bando-per-la-concessione-di-contributi-selettivi-per-la-scrittura-lo-sviluppo-e-la-produzione-di-opere-cinematograf.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Direzione generale Cinema e audiovisivo, FAQ del 10 giugno 2026 sui requisiti di accesso al bando contributi selettivi 2026",
+      "url": "https://cinema.cultura.gov.it/avvisi/pubblicazione-faq-bando-selettivi/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "D.D. 14 ottobre 2024, rep. n. 3362, versamento delle spese istruttorie, come modificato dai D.D. 5 novembre 2024, rep. n. 3572, e 25 febbraio 2025, rep. n. 642",
+      "url": "https://cinema.cultura.gov.it/avvisi/importante-pagamento-spese-istruttorie-ai-sensi-del-d-d-14-ottobre-2024-rep-3362-e-ss-mm-ii/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://studiolegalelofoco.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Approfondimenti",
+      "item": "https://studiolegalelofoco.com/notizie.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Contributi selettivi: linee, requisiti e importi",
+      "item": "https://studiolegalelofoco.com/guida-contributi-selettivi.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Posso chiedere il contributo per la scrittura se ho una società di produzione?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, se sei titolare, socio, amministratore o legale rappresentante di un'impresa con codice Ateco 59.11, 59.13 o 60.20. L'incompatibilità si valuta sulla visura camerale alla data della domanda e comprende anche le imprese non iscritte alla sezione ordinaria del Registro delle imprese. Riguarda la linea scrittura, che è rivolta alle persone fisiche. Per lo sviluppo e per la produzione la posizione si rovescia, perché lì il richiedente deve essere un'impresa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Una società costituita da poco può partecipare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. Il requisito dell'opera prodotta e diffusa negli ultimi cinque anni non si applica alle società che alla scadenza della sessione non sono costituite da più di 36 mesi, salvo che la costituzione sia avvenuta per fusione, scissione o cessione d'azienda. In caso di produzione associata la disciplina è meno lineare di quanto sembri, perché le FAQ indicano da un lato che il requisito di nuova costituzione dev'essere posseduto dal capofila e dalla maggioranza degli associati, dall'altro che il quinquennio va soddisfatto solo dal capofila e dagli associati che non siano di nuova costituzione. Le due indicazioni non coincidono in tutti gli scenari, quindi per un'associazione conviene una verifica prima di impostare la compagine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto si può ottenere davvero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nella scrittura fra 10.000 e 20.000 euro a progetto. Nello sviluppo il minore fra l'importo richiesto, il 50 per cento dei costi ammissibili e 100.000 euro, con una soglia minima del 70 per cento di quel massimo. Nella produzione il minore fra l'importo richiesto, il 40 per cento dei costi ammissibili e i tetti per tipologia, con una soglia minima del 40 per cento. Il vincolo che morde per primo, però, di solito non è la percentuale. Ogni sessione finanzia un numero chiuso di progetti — 18 sceneggiature per il cinema e 8 per tv e web, 11 progetti di sviluppo non seriale e 6 seriali — e nella produzione il limite è la dotazione della singola sottolinea."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <header class="header">
+    <div class="logo">
+      <p class="logo-title">
+        <a href="index.html" class="home-link"><svg class="logo-mark" viewBox="0 0 44 44" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="20" fill="none" stroke="#80D9FF" stroke-width="2"></circle><text x="22" y="23" text-anchor="middle" dominant-baseline="middle" font-family="Lora, serif" font-weight="600" font-size="18" fill="#BFECFF" letter-spacing="1">LF</text></svg>
+          Studio Legale Lo Foco
+        </a>
+      </p>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
+      <ul>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="notizie.html">Approfondimenti</a></li>
+        <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
+        <li class="mobile-language">
+          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<main id="main">
+    <article class="guida">
+      <header class="insights-hero">
+        <h1>Contributi selettivi: linee, requisiti e importi</h1>
+        <p class="guida-abstract">I contributi selettivi non si calcolano. Si vincono. A differenza del tax credit, qui non esiste un&#39;aliquota da applicare al budget, ma una graduatoria costruita da una commissione di esperti su punteggi e motivazioni. Questa prima parte mette in fila la disciplina stabile, chi può chiedere il contributo e quanto vale nel bando in corso, con il riferimento normativo accanto a ogni dato; valutazione, erogazione e revoche sono nella seconda parte.</p>
+        <p class="guida-meta">A cura dell'<a href="andrea-lo-foco.html">Avv. Andrea Lo Foco</a> · Aggiornata al 13 settembre 2026 · Dati verificati sulle fonti il 12 settembre 2026</p>
+      </header>
+
+      <nav class="profile-box guida-sommario" aria-label="Indice della guida">
+        <strong>In questa guida</strong>
+        <ul>
+          <li><a href="#finestre">Le finestre del bando 2026</a></li>
+          <li><a href="#cosa-sono">Che cosa sono e da dove nascono</a></li>
+          <li><a href="#chi-puo-chiederli">Chi può chiederli, linea per linea</a></li>
+          <li><a href="#quanto-vale">Quanto vale il contributo nel bando 2026</a></li>
+          <li><a href="#faq">Domande frequenti</a></li>
+          <li><a href="#fonti">Fonti</a></li>
+        </ul>
+      </nav>
+
+      <section class="insights-section" id="finestre" aria-labelledby="finestre-title">
+        <h2 id="finestre-title">Le finestre del bando 2026</h2>
+        <p>La prima sessione si è chiusa il 17 giugno 2026. La seconda va dal 1° al 15 ottobre 2026, ore 23.59. Per la stessa opera la linea o la sottolinea scelta non può cambiare fra le due sessioni, a pena di inammissibilità, e nella scrittura sono inammissibili i progetti già assegnatari nella prima. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 2, cc. 3 e 5, e art. 7, c. 5, bando 2026</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="cosa-sono" aria-labelledby="cosa-sono-title">
+        <h2 id="cosa-sono-title">Che cosa sono e da dove nascono</h2>
+        <p>I contributi selettivi sono previsti dall&#39;articolo 26 della legge sul cinema e sull&#39;audiovisivo e sono contributi a fondo perduto, assegnati attraverso bandi e non attraverso un calcolo automatico. La disciplina applicativa è contenuta nel decreto ministeriale dell&#39;8 ottobre 2024, rep. n. 345, che ha abrogato il decreto del 31 luglio 2017, rep. n. 343. <span class="guida-rif">(<a href="#fonte-l220-2016" title="Legge 14 novembre 2016, n. 220, art. 26">art. 26, L. 220/2016 e D.M. 345/2024</a>)</span></p>
+        <p>Il decreto individua le linee di intervento finanziabili — scrittura di sceneggiature per opere cinematografiche, televisive e web, sviluppo di opere cinematografiche, televisive, web e videogiochi, produzione articolata in sei tipologie, distribuzione nazionale e internazionale, esercizio cinematografico. Ogni anno il decreto di riparto stabilisce quali linee vengono effettivamente attivate e con quante risorse. <span class="guida-rif">(<a href="#fonte-dm-345-2024" title="D.M. 8 ottobre 2024, rep. n. 345, disposizioni applicative in materia di contributi selettivi ex art. 26 L. 220/2016">art. 3, D.M. 345/2024</a>)</span></p>
+        <p>È il bando annuale a fissare tutto ciò che cambia — risorse disponibili, beneficiari e requisiti, termini, documentazione, massimali di costo, limiti di intensità dell&#39;aiuto, criteri di valutazione, numero massimo di progetti finanziabili e importo massimo del singolo contributo. <span class="guida-rif">(<a href="#fonte-dm-345-2024" title="D.M. 8 ottobre 2024, rep. n. 345, disposizioni applicative in materia di contributi selettivi ex art. 26 L. 220/2016">art. 4, D.M. 345/2024</a>)</span></p>
+        <p>Fra questi ci sono le spese istruttorie, comprese fra 200 e 10.000 euro, il cui mancato versamento rende la domanda inammissibile. Gli importi effettivi sono fissati con decreto direttoriale e per le linee di questo bando vanno da 200 euro per la scrittura e per i cortometraggi a 400 euro per lo sviluppo e per i documentari, 500 per i lungometraggi di giovani autori, 600 per l&#39;animazione e 800 per le opere prime e seconde; salgono a 5.000 euro per i film e per le opere tv e web sull&#39;identità culturale italiana con costo fino a 3,5 milioni e a 10.000 euro oltre tale soglia. L&#39;eventuale rimborso per versamento errato o tardivo si chiede esclusivamente tramite il servizio PagOnline del Ministero della cultura, entro 15 giorni dal versamento o, dove prevista, dalla ricezione della comunicazione di inammissibilità. Richieste presentate con altre modalità non sono accolte. <span class="guida-rif">(<a href="#fonte-dd-3362-2024" title="D.D. 14 ottobre 2024, rep. n. 3362, versamento delle spese istruttorie, come modificato dai D.D. 5 novembre 2024, rep. n. 3572, e 25 febbraio 2025, rep. n. 642">D.D. 3362/2024 e successive modifiche</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="chi-puo-chiederli" aria-labelledby="chi-puo-chiederli-title">
+        <h2 id="chi-puo-chiederli-title">Chi può chiederli, linea per linea</h2>
+        <p>La scrittura è l&#39;unica linea rivolta alle persone fisiche. Possono presentare domanda, anche congiuntamente, i cittadini maggiorenni italiani o di altro Paese dello Spazio economico europeo, fiscalmente residenti in Italia al momento dell&#39;erogazione, titolari in modo pieno e incondizionato dei diritti di elaborazione creativa sui materiali artistici alla data di scadenza della sessione, dotati di posta elettronica certificata e firma elettronica qualificata. Ciascun autore può presentare un solo progetto per sessione, pena l&#39;inammissibilità dell&#39;ultimo presentato. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 7, cc. 1 e 3, bando 2026</a>)</span></p>
+        <p>Sulla stessa linea opera un&#39;incompatibilità che conviene verificare prima di impostare la domanda. Non può concorrere chi è titolare, socio, amministratore o legale rappresentante di un&#39;impresa di produzione audiovisiva, di distribuzione o di servizi di media audiovisivi, secondo i codici Ateco 59.11, 59.13 e 60.20 risultanti dalla visura camerale, comprese le imprese non iscritte alla sezione ordinaria del Registro delle imprese. Sono inoltre esclusi i progetti realizzati utilizzando sistemi di intelligenza artificiale. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 7, cc. 1 e 6</a>)</span></p>
+        <p>Sviluppo e produzione riguardano invece le imprese — imprese indipendenti cinematografiche e audiovisive italiane, anche in forma associata o nell&#39;ambito di una coproduzione, compartecipazione o produzione internazionale, e reti di imprese. Servono sede legale nello Spazio economico europeo, tassazione in Italia, qualifica di produttore indipendente, non qualificabilità come impresa non europea, iscrizione nella sezione ordinaria del Registro delle imprese e, per la produzione, codice Ateco 59.1 e ultimo bilancio depositato. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 14 e 22</a>)</span></p>
+        <p>Un requisito esclude molte società giovani. Occorre aver prodotto e diffuso al pubblico almeno un&#39;opera audiovisiva conforme ai requisiti per l&#39;ammissione ai benefici di legge negli ultimi cinque anni, che per questo bando significa fra il 15 maggio 2021 e il 15 maggio 2026. Sono esentate le società di nuova costituzione, cioè quelle che alla scadenza della sessione non risultano costituite da più di 36 mesi, con decorrenza dalla stipula dell&#39;atto costitutivo e a condizione che la costituzione non sia avvenuta per fusione, scissione o cessione d&#39;azienda. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 14 e 22, c. 2, e FAQ DGCA 10 giugno 2026</a>)</span></p>
+        <p>Nella produzione ci sono poi due requisiti che vanno preparati molto prima della domanda. Il richiedente deve aver già acquisito, per contratto o per opzione, i diritti di elaborazione creativa sulla sceneggiatura, il soggetto, il trattamento o gli altri materiali artistici, e in caso di contributo l&#39;opzione dev&#39;essere esercitata entro il termine per la richiesta di acconto, pena l&#39;inammissibilità della richiesta. Va inoltre attestato che l&#39;inizio delle riprese è previsto non oltre 18 mesi dalla scadenza della sessione. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 22, c. 2</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="quanto-vale" aria-labelledby="quanto-vale-title">
+        <h2 id="quanto-vale-title">Quanto vale il contributo nel bando 2026</h2>
+        <p>Per il 2026 le risorse dell&#39;articolo 26 sono ripartite fra scrittura di sceneggiature, con 1.000.000 di euro, sviluppo, con 2.000.000, e produzione, con 32.700.000. Ogni linea è divisa in due sessioni di valutazione e per ciascuna sessione il bando fissa un numero massimo di progetti finanziabili. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 6, 13 e 21, bando 2026</a>)</span></p>
+        <p>Nella scrittura le risorse si dividono fra sceneggiature per il cinema, con 700.000 euro e un massimo di 18 progetti per sessione, e sceneggiature per opere televisive e web, con 300.000 euro e un massimo di 8 progetti per sessione. Il contributo per singolo progetto è compreso fra 10.000 e 20.000 euro. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 6 e 10</a>)</span></p>
+        <p>Nello sviluppo vanno 1.300.000 euro alle opere non seriali, con un massimo di 11 progetti per sessione, e 700.000 euro alle opere televisive e web seriali, con un massimo di 6 progetti. Il contributo massimo è il minore fra quello richiesto, il 50 per cento dei costi ammissibili e 100.000 euro, e non può comunque scendere sotto il 70 per cento di tale importo, salvo l&#39;ultimo assegnatario in graduatoria. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 13 e 17, cc. 2 e 3</a>)</span></p>
+        <p>Nella produzione le sei tipologie hanno dotazioni distinte — 7.800.000 euro per i lungometraggi di giovani autori, 7.500.000 per le opere prime e seconde, 4.000.000 per i documentari, 900.000 per i cortometraggi, 5.000.000 per l&#39;animazione e 7.500.000 per i film di particolare qualità artistica e sull&#39;identità culturale italiana. Il contributo massimo è il minore fra quello richiesto e il 40 per cento dei costi ammissibili, con un tetto di 1.000.000 di euro per le opere di animazione, ridotto a 600.000 per le opere di animazione di giovani autori e per le prime e seconde, e di 1.200.000 euro per i film di particolare qualità artistica. Il contributo assegnato non può comunque essere inferiore al 40 per cento di tale massimo, salvo quello attribuito all&#39;ultimo progetto in graduatoria. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 21 e 24, cc. 6 e 7</a>)</span></p>
+        <p>I limiti di intensità del sostegno pubblico non sono gli stessi per tutte le linee. Per la produzione i contributi selettivi e le altre misure pubbliche non possono superare complessivamente il 50 per cento del costo dell&#39;opera, elevato al 60 per cento nei casi previsti dalla disciplina europea sugli aiuti di Stato, all&#39;80 per cento per le opere difficili sotto determinate soglie di costo e al 100 per cento per le coproduzioni cui partecipino Paesi DAC, come definiti dal bando. Per lo sviluppo vale invece un limite proprio, l&#39;80 per cento dei costi totali di sviluppo. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 4, bando 2026</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Domande frequenti</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">Posso chiedere il contributo per la scrittura se ho una società di produzione?</button>
+            <div class="accordion-content">
+              <p>No, se sei titolare, socio, amministratore o legale rappresentante di un&#39;impresa con codice Ateco 59.11, 59.13 o 60.20. L&#39;incompatibilità si valuta sulla visura camerale alla data della domanda e comprende anche le imprese non iscritte alla sezione ordinaria del Registro delle imprese. Riguarda la linea scrittura, che è rivolta alle persone fisiche. Per lo sviluppo e per la produzione la posizione si rovescia, perché lì il richiedente deve essere un&#39;impresa. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 7, c. 1</a>)</span></p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">Una società costituita da poco può partecipare?</button>
+            <div class="accordion-content">
+              <p>Sì. Il requisito dell&#39;opera prodotta e diffusa negli ultimi cinque anni non si applica alle società che alla scadenza della sessione non sono costituite da più di 36 mesi, salvo che la costituzione sia avvenuta per fusione, scissione o cessione d&#39;azienda. In caso di produzione associata la disciplina è meno lineare di quanto sembri, perché le FAQ indicano da un lato che il requisito di nuova costituzione dev&#39;essere posseduto dal capofila e dalla maggioranza degli associati, dall&#39;altro che il quinquennio va soddisfatto solo dal capofila e dagli associati che non siano di nuova costituzione. Le due indicazioni non coincidono in tutti gli scenari, quindi per un&#39;associazione conviene una verifica prima di impostare la compagine. <span class="guida-rif">(<a href="#fonte-faq-selettivi-2026" title="Direzione generale Cinema e audiovisivo, FAQ del 10 giugno 2026 sui requisiti di accesso al bando contributi selettivi 2026">FAQ DGCA 10 giugno 2026</a>)</span></p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">Quanto si può ottenere davvero?</button>
+            <div class="accordion-content">
+              <p>Nella scrittura fra 10.000 e 20.000 euro a progetto. Nello sviluppo il minore fra l&#39;importo richiesto, il 50 per cento dei costi ammissibili e 100.000 euro, con una soglia minima del 70 per cento di quel massimo. Nella produzione il minore fra l&#39;importo richiesto, il 40 per cento dei costi ammissibili e i tetti per tipologia, con una soglia minima del 40 per cento. Il vincolo che morde per primo, però, di solito non è la percentuale. Ogni sessione finanzia un numero chiuso di progetti — 18 sceneggiature per il cinema e 8 per tv e web, 11 progetti di sviluppo non seriale e 6 seriali — e nella produzione il limite è la dotazione della singola sottolinea. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 6, 10, 13, 17, 21 e 24</a>)</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">
+        <h2 id="fonti-title">Fonti</h2>
+        <div class="profile-box">
+        <ul>
+          <li id="fonte-l220-2016">Legge 14 novembre 2016, n. 220, art. 26 — <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-dm-345-2024">D.M. 8 ottobre 2024, rep. n. 345, disposizioni applicative in materia di contributi selettivi ex art. 26 L. 220/2016 — <a href="https://cinema.cultura.gov.it/wp-content/uploads/2024/11/DM-8-ottobre-2024-rep.-345-art.-26-contributi-selettivi-signed.pdf" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-bando-2026">D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026 — <a href="https://cinema.cultura.gov.it/wp-content/uploads/dlm_uploads/2026/05/Anno-2026-Bando-per-la-concessione-di-contributi-selettivi-per-la-scrittura-lo-sviluppo-e-la-produzione-di-opere-cinematograf.pdf" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-faq-selettivi-2026">Direzione generale Cinema e audiovisivo, FAQ del 10 giugno 2026 sui requisiti di accesso al bando contributi selettivi 2026 — <a href="https://cinema.cultura.gov.it/avvisi/pubblicazione-faq-bando-selettivi/" target="_blank" rel="noopener noreferrer">testo</a>, consultata il 12 settembre 2026</li>
+          <li id="fonte-dd-3362-2024">D.D. 14 ottobre 2024, rep. n. 3362, versamento delle spese istruttorie, come modificato dai D.D. 5 novembre 2024, rep. n. 3572, e 25 febbraio 2025, rep. n. 642 — <a href="https://cinema.cultura.gov.it/avvisi/importante-pagamento-spese-istruttorie-ai-sensi-del-d-d-14-ottobre-2024-rep-3362-e-ss-mm-ii/" target="_blank" rel="noopener noreferrer">testo</a>, consultata il 12 settembre 2026</li>
+        </ul>
+        </div>
+      </section>
+      <p class="guida-correlate">Vedi anche: <a href="guida-tax-credit-produzione.html">Tax credit per la produzione cinematografica e audiovisiva</a> · <a href="guida-contributi-selettivi-erogazione.html">Contributi selettivi: valutazione, erogazione e revoche</a></p>
+
+      <p class="guida-disclaimer">Questa guida ha scopo informativo e non costituisce parere legale. Dotazioni, importi, requisiti e termini sono fissati dal bando annuale e possono cambiare a ogni sessione, anche con rettifiche pubblicate a ridosso dell&#39;apertura. Prima di presentare una domanda verificare il bando in vigore e gli avvisi della Direzione generale Cinema e audiovisivo, o contattare lo studio.</p>
+
+      <section class="insights-section" id="contatto" aria-labelledby="contatto-title">
+        <h2 id="contatto-title">Parliamo del tuo progetto</h2>
+        <p>Una verifica preventiva costa una frazione di quanto costa rimediare a un diniego. Se hai un'opera in sviluppo o in preparazione, il momento utile per un confronto è prima della firma dei contratti e prima dell'avvio delle spese.</p>
+        <div class="contact-info">
+          <div>
+            <span class="ci-label">✉️ Email</span>
+            <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
+          </div>
+          <div>
+            <span class="ci-label">📞 Telefono</span>
+            <a href="tel:+39063201820">+39&nbsp;06&nbsp;3201820</a>
+          </div>
+          <div>
+            <span class="ci-label">📍 Indirizzo</span>
+            <span>Via Boezio, 2/A - 00193, Roma</span>
+          </div>
+        </div>
+        <p class="guida-cta"><a href="index.html#contatti" class="btn-cta">Richiedi una consulenza</a></p>
+      </section>
+    </article>
+  </main>
+
+<footer>
+    <div class="footer-left"></div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma &middot; P.IVA 18468821006</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a> | <a href="cookie-policy.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Gestisci cookie</button>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button type="button" id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button type="button" id="reject-cookies" class="btn-cookie btn-secondary">Rifiuta</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
+    </form>
+  </div>
+
+<script src="script.js"></script></body>
+</html>

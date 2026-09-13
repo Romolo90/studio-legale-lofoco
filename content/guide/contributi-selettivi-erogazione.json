@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "id": "contributi-selettivi-erogazione",
+  "slug": "contributi-selettivi-erogazione",
+  "lang": "it",
+  "status": "published",
+  "title": "Contributi selettivi: valutazione, erogazione e revoche",
+  "metaTitle": "Contributi selettivi: valutazione, erogazione e revoche | Studio Legale Lo Foco",
+  "metaDescription": "Come la Commissione valuta i progetti, in quanto tempo escono le graduatorie, quando si incassano acconto e saldo e in quali casi il contributo viene revocato.",
+  "abstract": "Vinta la graduatoria, il contributo non è ancora incassato. Fra il punteggio della Commissione e il bonifico stanno i termini del procedimento, gli adempimenti da allegare alla richiesta di acconto, i controlli di regolarità e un elenco di cause di revoca che arriva a toccare il merito artistico. Questa seconda parte segue il contributo dalla valutazione all'erogazione; linee, requisiti e importi sono nella prima.",
+  "category": "contributi-selettivi",
+  "author": {
+    "name": "Andrea Lo Foco",
+    "role": "Avvocato",
+    "url": "andrea-lo-foco.html"
+  },
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "verifiedAt": "2026-09-12",
+  "sections": [
+    {
+      "id": "come-si-decide",
+      "heading": "Come si decide chi vince",
+      "paragraphs": [
+        {
+          "text": "Le richieste ammissibili sono valutate dalla Commissione degli esperti, che attribuisce all'unanimità o a maggioranza un punteggio per ciascun criterio e sotto criterio e redige una sintetica motivazione. La Commissione può svolgere audizioni, anche da remoto e anche su istanza del richiedente, e determina l'entità del contributo tenendo conto del punteggio e del piano finanziario, previa verifica dei limiti di intensità d'aiuto.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 3, cc. 5, 6 e 7, bando 2026"
+        },
+        {
+          "text": "La valutazione si ferma quando un progetto non raggiunge i punteggi minimi previsti per i singoli criteri. In quel caso la Commissione non esprime valutazione sui criteri successivi e motiva solo su quelli esaminati. Vale per tutte e tre le linee. È la ragione per cui un progetto con un'ottima idea ma un dossier debole su un criterio d'ingresso non arriva in fondo alla valutazione.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "artt. 9, c. 3, e 24, c. 5"
+        },
+        {
+          "text": "I termini previsti sono tre. Entro 60 giorni dalla scadenza della sessione la DGCA completa le verifiche amministrative e trasmette alla Commissione le richieste ammissibili. La Commissione dispone di ulteriori 60 giorni per valutare e determinare i contributi. Entro 120 giorni dal termine di presentazione il Direttore generale approva con decreto le graduatorie, e la pubblicazione vale come notifica agli interessati. L'eventuale soccorso istruttorio non può superare 10 giorni.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 3, cc. 2, 3, 10 e 13"
+        },
+        {
+          "text": "I tempi effettivi sono stati più lunghi. Per il bando 2025 le graduatorie della prima sessione sono state approvate il 2 aprile 2026 per la produzione e il 20 maggio 2026 per la scrittura, quelle della seconda sessione il 10 luglio 2026 per la produzione e il 31 luglio 2026 per sviluppo e scrittura.",
+          "refs": [
+            "graduatorie-2025"
+          ],
+          "cite": "D.D. rep. 738/2026, 1268/2026, 2211/2026, 2503/2026 e 2504/2026"
+        },
+        {
+          "text": "Chi costruisce un piano finanziario su un contributo selettivo dovrebbe quindi ragionare in mesi, non nei quattro previsti dal bando.",
+          "refs": [],
+          "noSourceReason": "valutazione dello studio fondata sulle date dei decreti citati nel paragrafo precedente"
+        },
+        {
+          "text": "I punteggi e le motivazioni sui singoli progetti sono visionabili sulla piattaforma DGCOL.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 3, c. 11"
+        }
+      ]
+    },
+    {
+      "id": "quando-si-incassa",
+      "heading": "Quando si incassa, e come lo si perde",
+      "paragraphs": [
+        {
+          "text": "Il contributo si incassa in due tempi. Entro 90 giorni dalla pubblicazione della graduatoria il beneficiario può chiedere un acconto pari al 50 per cento del contributo riconosciuto, erogato entro 30 giorni dalla richiesta. Il saldo arriva con la richiesta definitiva di liquidazione, che nella scrittura va presentata entro dodici mesi dal decreto di graduatoria a pena di decadenza dell'intero contributo, ed è erogato entro 90 giorni dalla presentazione.",
+          "refs": [
+            "bando-2026",
+            "avviso-acconti-2026"
+          ],
+          "cite": "artt. 10, c. 3, e 18, bando 2026"
+        },
+        {
+          "text": "Il termine dei dodici mesi è prorogabile, in via ordinaria fino a sei mesi previa autorizzazione della DGCA e, una sola volta e per cause sopravvenute e imprevedibili di forza maggiore, previo parere della Commissione. La richiesta di proroga va presentata prima della scadenza. In alternativa il beneficiario può rinunciare all'acconto e chiedere l'intero contributo in unica soluzione.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 10, cc. 3 e 5"
+        },
+        {
+          "text": "Alla richiesta di acconto vanno allegati, a pena di inammissibilità, i contratti con gli autori dei materiali artistici — con il regista nella produzione, senza nello sviluppo — insieme a un'autodichiarazione congiunta che attesti l'assenza di accordi volti a modificare l'assetto economico del contratto. Nella produzione, se i diritti sono stati acquisiti in opzione, l'opzione va esercitata entro lo stesso termine. È il punto in cui una catena dei diritti incompleta blocca un contributo già vinto.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "artt. 18, c. 1, 22, c. 2, e 26"
+        },
+        {
+          "text": "Prima dell'erogazione intervengono i controlli ordinari. Né acconto né saldo sono erogati se il beneficiario non è in regola con i versamenti previdenziali, assistenziali e assicurativi verso INPS e INAIL. Per contributi superiori a 150.000 euro viene acquisita l'informazione antimafia e il contributo è concesso sotto clausola risolutiva espressa. Per importi superiori a 5.000 euro la DGCA verifica, ai sensi dell'articolo 48-bis del D.P.R. 602/1973, se il beneficiario sia inadempiente rispetto a cartelle di pagamento notificate e, in caso affermativo, non paga e segnala all'agente della riscossione.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 3, cc. 16, 17 e 18, e art. 10, c. 4"
+        },
+        {
+          "text": "In caso di dichiarazioni mendaci, omesse comunicazioni o falsa documentazione, oltre alla revoca e alla restituzione integrale è disposta, ai sensi dell'articolo 37 della legge cinema, l'esclusione per cinque anni da tutti i contributi previsti dalla medesima legge, e l'esclusione si estende a ogni altra impresa o ente che comprenda soci, amministratori o legali rappresentanti del soggetto escluso. Distinta è la sanzione che colpisce i soggetti incaricati della certificazione, ai quali si applica una sanzione amministrativa pecuniaria da 10.000 a 50.000 euro per ciascuna certificazione infedele resa.",
+          "refs": [
+            "bando-2026",
+            "l220-2016"
+          ],
+          "cite": "art. 5, cc. 2 e 3, bando 2026"
+        },
+        {
+          "text": "La revoca può infine riguardare il merito. Nella scrittura la DGCA può revocare in tutto o in parte se la Commissione ritiene che la sceneggiatura finale non presenti un adeguato livello di professionalità o sia sostanzialmente difforme dal progetto premiato. Il contributo decade anche se i materiali artistici sono realizzati con sistemi di intelligenza artificiale o se vengono apportate variazioni non autorizzate dalla DGCA o dalla Commissione.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 12, bando 2026"
+        }
+      ]
+    },
+    {
+      "id": "differenza-tax-credit",
+      "heading": "Perché non vanno confusi con il tax credit",
+      "paragraphs": [
+        {
+          "text": "Il credito d'imposta è una misura automatica. Verificati i requisiti, l'importo discende da un'aliquota applicata al costo eleggibile. Il contributo selettivo è invece discrezionale nel merito artistico e capiente solo fino all'esaurimento delle risorse della sessione, con un numero chiuso di progetti finanziabili.",
+          "refs": [],
+          "noSourceReason": "confronto descrittivo fra due misure, i dati puntuali sono nelle rispettive sezioni"
+        },
+        {
+          "text": "Le due misure convivono, ma il contributo selettivo pesa nel calcolo dell'intensità complessiva dell'aiuto pubblico, e la sua assegnazione rileva anche come requisito alternativo di accesso al credito d'imposta per la produzione cinematografica, purché ottenuta su bandi pubblicati dopo il 1° gennaio 2024. Chi progetta il piano finanziario dovrebbe quindi valutarle insieme, non in sequenza.",
+          "refs": [
+            "bando-2026",
+            "di-225-2024"
+          ],
+          "cite": "art. 4, bando 2026, e art. 12, c. 2, D.I. 225/2024"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Quando arrivano materialmente i soldi?",
+      "a": "In due tempi. Entro 90 giorni dalla pubblicazione della graduatoria si può chiedere un acconto del 50 per cento del contributo riconosciuto, che viene erogato entro 30 giorni dalla richiesta; il saldo segue la richiesta definitiva di liquidazione ed è erogato entro 90 giorni dalla presentazione. In alternativa si può rinunciare all'acconto e chiedere l'intero contributo in unica soluzione. I termini decorrono però dal decreto di graduatoria, che per il bando 2025 è arrivato molto oltre i quattro mesi previsti.",
+      "refs": [
+        "bando-2026"
+      ],
+      "cite": "artt. 10, cc. 3 e 5, e 18, bando 2026"
+    },
+    {
+      "q": "Un contributo già assegnato si può perdere?",
+      "a": "Sì, e non solo per irregolarità amministrative. Nella scrittura la DGCA può revocare in tutto o in parte se la Commissione ritiene che la sceneggiatura finale non abbia un adeguato livello di professionalità o sia sostanzialmente difforme dal progetto premiato; il contributo decade anche se i materiali artistici sono realizzati con sistemi di intelligenza artificiale o se si apportano variazioni non autorizzate. Si perde inoltre per decadenza chi non presenta in tempo la richiesta di liquidazione, e resta inammissibile la richiesta di acconto priva dei contratti con gli autori.",
+      "refs": [
+        "bando-2026"
+      ],
+      "cite": "artt. 12 e 18, bando 2026"
+    }
+  ],
+  "sources": [
+    {
+      "id": "l220-2016",
+      "type": "legge",
+      "citation": "Legge 14 novembre 2016, n. 220, art. 26",
+      "short": "L. 220/2016, art. 26",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "bando-2026",
+      "type": "dd",
+      "citation": "D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026",
+      "short": "bando 2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/dlm_uploads/2026/05/Anno-2026-Bando-per-la-concessione-di-contributi-selettivi-per-la-scrittura-lo-sviluppo-e-la-produzione-di-opere-cinematograf.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "di-225-2024",
+      "type": "dm",
+      "citation": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025",
+      "short": "D.I. 225/2024",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2025/06/DEF-D.I.-10-LUGLIO-2024-N.225-TAX-CREDIT.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "avviso-acconti-2026",
+      "type": "avviso",
+      "citation": "Direzione generale Cinema e audiovisivo, avviso del 23 giugno 2026 sull'apertura delle richieste di acconto 2025 per produzione, sviluppo e scrittura",
+      "short": "avviso DGCA 23 giugno 2026",
+      "url": "https://cinema.cultura.gov.it/avvisi/apertura-richieste-acconto-2025-produzione-sviluppo-e-scrittura/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "graduatorie-2025",
+      "type": "dd",
+      "citation": "Decreti direttoriali di approvazione delle graduatorie 2025 — rep. 738 del 2 aprile 2026, rep. 1268 del 20 maggio 2026, rep. 2211 del 10 luglio 2026, rep. 2503 e 2504 del 31 luglio 2026",
+      "short": "graduatorie 2025",
+      "url": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-09-12",
+      "checkedAt": "2026-09-12"
+    }
+  ],
+  "related": [
+    "contributi-selettivi",
+    "tax-credit-produzione"
+  ],
+  "disclaimer": "Questa guida ha scopo informativo e non costituisce parere legale. Dotazioni, importi, requisiti e termini sono fissati dal bando annuale e possono cambiare a ogni sessione, anche con rettifiche pubblicate a ridosso dell'apertura. Prima di presentare una domanda verificare il bando in vigore e gli avvisi della Direzione generale Cinema e audiovisivo, o contattare lo studio."
+}

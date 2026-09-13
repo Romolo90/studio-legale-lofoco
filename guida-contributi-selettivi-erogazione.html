@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!-- GENERATO da scripts/build-guide.js — non modificare a mano;
+     sorgente: content/guide/contributi-selettivi-erogazione.json -->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google tag (gtag.js) - Consent Mode v2.
+       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
+       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
+       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
+    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
+    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
+    var glfAnalytics = 'denied';
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        glfAnalytics = 'granted';
+      }
+    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: glfAnalytics,
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-E7P6F0SVRY', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=Lax;Secure'
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contributi selettivi: valutazione, erogazione e revoche | Studio Legale Lo Foco</title>
+  <meta name="description" content="Come la Commissione valuta i progetti, in quanto tempo escono le graduatorie, quando si incassano acconto e saldo e in quali casi il contributo viene revocato.">
+  <link rel="canonical" href="https://studiolegalelofoco.com/guida-contributi-selettivi-erogazione.html">
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/guida-contributi-selettivi-erogazione.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/guida-contributi-selettivi-erogazione.html">
+  <meta property="og:title" content="Contributi selettivi: valutazione, erogazione e revoche | Studio Legale Lo Foco">
+  <meta property="og:description" content="Come la Commissione valuta i progetti, in quanto tempo escono le graduatorie, quando si incassano acconto e saldo e in quali casi il contributo viene revocato.">
+  <meta property="og:url" content="https://studiolegalelofoco.com/guida-contributi-selettivi-erogazione.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contributi selettivi: valutazione, erogazione e revoche | Studio Legale Lo Foco">
+  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Contributi selettivi: valutazione, erogazione e revoche",
+  "description": "Come la Commissione valuta i progetti, in quanto tempo escono le graduatorie, quando si incassano acconto e saldo e in quali casi il contributo viene revocato.",
+  "inLanguage": "it",
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "author": {
+    "@type": "Person",
+    "name": "Andrea Lo Foco",
+    "url": "https://studiolegalelofoco.com/andrea-lo-foco.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Studio Legale Lo Foco",
+    "url": "https://studiolegalelofoco.com/"
+  },
+  "mainEntityOfPage": "https://studiolegalelofoco.com/guida-contributi-selettivi-erogazione.html",
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Legge 14 novembre 2016, n. 220, art. 26",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/dlm_uploads/2026/05/Anno-2026-Bando-per-la-concessione-di-contributi-selettivi-per-la-scrittura-lo-sviluppo-e-la-produzione-di-opere-cinematograf.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2025/06/DEF-D.I.-10-LUGLIO-2024-N.225-TAX-CREDIT.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Direzione generale Cinema e audiovisivo, avviso del 23 giugno 2026 sull'apertura delle richieste di acconto 2025 per produzione, sviluppo e scrittura",
+      "url": "https://cinema.cultura.gov.it/avvisi/apertura-richieste-acconto-2025-produzione-sviluppo-e-scrittura/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Decreti direttoriali di approvazione delle graduatorie 2025 — rep. 738 del 2 aprile 2026, rep. 1268 del 20 maggio 2026, rep. 2211 del 10 luglio 2026, rep. 2503 e 2504 del 31 luglio 2026",
+      "url": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://studiolegalelofoco.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Approfondimenti",
+      "item": "https://studiolegalelofoco.com/notizie.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Contributi selettivi: valutazione, erogazione e revoche",
+      "item": "https://studiolegalelofoco.com/guida-contributi-selettivi-erogazione.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quando arrivano materialmente i soldi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In due tempi. Entro 90 giorni dalla pubblicazione della graduatoria si può chiedere un acconto del 50 per cento del contributo riconosciuto, che viene erogato entro 30 giorni dalla richiesta; il saldo segue la richiesta definitiva di liquidazione ed è erogato entro 90 giorni dalla presentazione. In alternativa si può rinunciare all'acconto e chiedere l'intero contributo in unica soluzione. I termini decorrono però dal decreto di graduatoria, che per il bando 2025 è arrivato molto oltre i quattro mesi previsti."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Un contributo già assegnato si può perdere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì, e non solo per irregolarità amministrative. Nella scrittura la DGCA può revocare in tutto o in parte se la Commissione ritiene che la sceneggiatura finale non abbia un adeguato livello di professionalità o sia sostanzialmente difforme dal progetto premiato; il contributo decade anche se i materiali artistici sono realizzati con sistemi di intelligenza artificiale o se si apportano variazioni non autorizzate. Si perde inoltre per decadenza chi non presenta in tempo la richiesta di liquidazione, e resta inammissibile la richiesta di acconto priva dei contratti con gli autori."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Salta al contenuto</a>
+
+  <header class="header">
+    <div class="logo">
+      <p class="logo-title">
+        <a href="index.html" class="home-link"><svg class="logo-mark" viewBox="0 0 44 44" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="20" fill="none" stroke="#80D9FF" stroke-width="2"></circle><text x="22" y="23" text-anchor="middle" dominant-baseline="middle" font-family="Lora, serif" font-weight="600" font-size="18" fill="#BFECFF" letter-spacing="1">LF</text></svg>
+          Studio Legale Lo Foco
+        </a>
+      </p>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Menu Principale">
+      <ul>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="index.html#servizi">Servizi</a></li>
+        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="notizie.html">Approfondimenti</a></li>
+        <li><a href="verifica-incentivi.html">Verifica Incentivi</a></li>
+        <li class="mobile-language">
+          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<main id="main">
+    <article class="guida">
+      <header class="insights-hero">
+        <h1>Contributi selettivi: valutazione, erogazione e revoche</h1>
+        <p class="guida-abstract">Vinta la graduatoria, il contributo non è ancora incassato. Fra il punteggio della Commissione e il bonifico stanno i termini del procedimento, gli adempimenti da allegare alla richiesta di acconto, i controlli di regolarità e un elenco di cause di revoca che arriva a toccare il merito artistico. Questa seconda parte segue il contributo dalla valutazione all&#39;erogazione; linee, requisiti e importi sono nella prima.</p>
+        <p class="guida-meta">A cura dell'<a href="andrea-lo-foco.html">Avv. Andrea Lo Foco</a> · Aggiornata al 13 settembre 2026 · Dati verificati sulle fonti il 12 settembre 2026</p>
+      </header>
+
+      <nav class="profile-box guida-sommario" aria-label="Indice della guida">
+        <strong>In questa guida</strong>
+        <ul>
+          <li><a href="#come-si-decide">Come si decide chi vince</a></li>
+          <li><a href="#quando-si-incassa">Quando si incassa, e come lo si perde</a></li>
+          <li><a href="#differenza-tax-credit">Perché non vanno confusi con il tax credit</a></li>
+          <li><a href="#faq">Domande frequenti</a></li>
+          <li><a href="#fonti">Fonti</a></li>
+        </ul>
+      </nav>
+
+      <section class="insights-section" id="come-si-decide" aria-labelledby="come-si-decide-title">
+        <h2 id="come-si-decide-title">Come si decide chi vince</h2>
+        <p>Le richieste ammissibili sono valutate dalla Commissione degli esperti, che attribuisce all&#39;unanimità o a maggioranza un punteggio per ciascun criterio e sotto criterio e redige una sintetica motivazione. La Commissione può svolgere audizioni, anche da remoto e anche su istanza del richiedente, e determina l&#39;entità del contributo tenendo conto del punteggio e del piano finanziario, previa verifica dei limiti di intensità d&#39;aiuto. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 3, cc. 5, 6 e 7, bando 2026</a>)</span></p>
+        <p>La valutazione si ferma quando un progetto non raggiunge i punteggi minimi previsti per i singoli criteri. In quel caso la Commissione non esprime valutazione sui criteri successivi e motiva solo su quelli esaminati. Vale per tutte e tre le linee. È la ragione per cui un progetto con un&#39;ottima idea ma un dossier debole su un criterio d&#39;ingresso non arriva in fondo alla valutazione. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 9, c. 3, e 24, c. 5</a>)</span></p>
+        <p>I termini previsti sono tre. Entro 60 giorni dalla scadenza della sessione la DGCA completa le verifiche amministrative e trasmette alla Commissione le richieste ammissibili. La Commissione dispone di ulteriori 60 giorni per valutare e determinare i contributi. Entro 120 giorni dal termine di presentazione il Direttore generale approva con decreto le graduatorie, e la pubblicazione vale come notifica agli interessati. L&#39;eventuale soccorso istruttorio non può superare 10 giorni. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 3, cc. 2, 3, 10 e 13</a>)</span></p>
+        <p>I tempi effettivi sono stati più lunghi. Per il bando 2025 le graduatorie della prima sessione sono state approvate il 2 aprile 2026 per la produzione e il 20 maggio 2026 per la scrittura, quelle della seconda sessione il 10 luglio 2026 per la produzione e il 31 luglio 2026 per sviluppo e scrittura. <span class="guida-rif">(<a href="#fonte-graduatorie-2025" title="Decreti direttoriali di approvazione delle graduatorie 2025 — rep. 738 del 2 aprile 2026, rep. 1268 del 20 maggio 2026, rep. 2211 del 10 luglio 2026, rep. 2503 e 2504 del 31 luglio 2026">D.D. rep. 738/2026, 1268/2026, 2211/2026, 2503/2026 e 2504/2026</a>)</span></p>
+        <p>Chi costruisce un piano finanziario su un contributo selettivo dovrebbe quindi ragionare in mesi, non nei quattro previsti dal bando.</p>
+        <p>I punteggi e le motivazioni sui singoli progetti sono visionabili sulla piattaforma DGCOL. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 3, c. 11</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="quando-si-incassa" aria-labelledby="quando-si-incassa-title">
+        <h2 id="quando-si-incassa-title">Quando si incassa, e come lo si perde</h2>
+        <p>Il contributo si incassa in due tempi. Entro 90 giorni dalla pubblicazione della graduatoria il beneficiario può chiedere un acconto pari al 50 per cento del contributo riconosciuto, erogato entro 30 giorni dalla richiesta. Il saldo arriva con la richiesta definitiva di liquidazione, che nella scrittura va presentata entro dodici mesi dal decreto di graduatoria a pena di decadenza dell&#39;intero contributo, ed è erogato entro 90 giorni dalla presentazione. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 10, c. 3, e 18, bando 2026</a>)</span></p>
+        <p>Il termine dei dodici mesi è prorogabile, in via ordinaria fino a sei mesi previa autorizzazione della DGCA e, una sola volta e per cause sopravvenute e imprevedibili di forza maggiore, previo parere della Commissione. La richiesta di proroga va presentata prima della scadenza. In alternativa il beneficiario può rinunciare all&#39;acconto e chiedere l&#39;intero contributo in unica soluzione. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 10, cc. 3 e 5</a>)</span></p>
+        <p>Alla richiesta di acconto vanno allegati, a pena di inammissibilità, i contratti con gli autori dei materiali artistici — con il regista nella produzione, senza nello sviluppo — insieme a un&#39;autodichiarazione congiunta che attesti l&#39;assenza di accordi volti a modificare l&#39;assetto economico del contratto. Nella produzione, se i diritti sono stati acquisiti in opzione, l&#39;opzione va esercitata entro lo stesso termine. È il punto in cui una catena dei diritti incompleta blocca un contributo già vinto. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 18, c. 1, 22, c. 2, e 26</a>)</span></p>
+        <p>Prima dell&#39;erogazione intervengono i controlli ordinari. Né acconto né saldo sono erogati se il beneficiario non è in regola con i versamenti previdenziali, assistenziali e assicurativi verso INPS e INAIL. Per contributi superiori a 150.000 euro viene acquisita l&#39;informazione antimafia e il contributo è concesso sotto clausola risolutiva espressa. Per importi superiori a 5.000 euro la DGCA verifica, ai sensi dell&#39;articolo 48-bis del D.P.R. 602/1973, se il beneficiario sia inadempiente rispetto a cartelle di pagamento notificate e, in caso affermativo, non paga e segnala all&#39;agente della riscossione. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 3, cc. 16, 17 e 18, e art. 10, c. 4</a>)</span></p>
+        <p>In caso di dichiarazioni mendaci, omesse comunicazioni o falsa documentazione, oltre alla revoca e alla restituzione integrale è disposta, ai sensi dell&#39;articolo 37 della legge cinema, l&#39;esclusione per cinque anni da tutti i contributi previsti dalla medesima legge, e l&#39;esclusione si estende a ogni altra impresa o ente che comprenda soci, amministratori o legali rappresentanti del soggetto escluso. Distinta è la sanzione che colpisce i soggetti incaricati della certificazione, ai quali si applica una sanzione amministrativa pecuniaria da 10.000 a 50.000 euro per ciascuna certificazione infedele resa. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 5, cc. 2 e 3, bando 2026</a>)</span></p>
+        <p>La revoca può infine riguardare il merito. Nella scrittura la DGCA può revocare in tutto o in parte se la Commissione ritiene che la sceneggiatura finale non presenti un adeguato livello di professionalità o sia sostanzialmente difforme dal progetto premiato. Il contributo decade anche se i materiali artistici sono realizzati con sistemi di intelligenza artificiale o se vengono apportate variazioni non autorizzate dalla DGCA o dalla Commissione. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 12, bando 2026</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="differenza-tax-credit" aria-labelledby="differenza-tax-credit-title">
+        <h2 id="differenza-tax-credit-title">Perché non vanno confusi con il tax credit</h2>
+        <p>Il credito d&#39;imposta è una misura automatica. Verificati i requisiti, l&#39;importo discende da un&#39;aliquota applicata al costo eleggibile. Il contributo selettivo è invece discrezionale nel merito artistico e capiente solo fino all&#39;esaurimento delle risorse della sessione, con un numero chiuso di progetti finanziabili.</p>
+        <p>Le due misure convivono, ma il contributo selettivo pesa nel calcolo dell&#39;intensità complessiva dell&#39;aiuto pubblico, e la sua assegnazione rileva anche come requisito alternativo di accesso al credito d&#39;imposta per la produzione cinematografica, purché ottenuta su bandi pubblicati dopo il 1° gennaio 2024. Chi progetta il piano finanziario dovrebbe quindi valutarle insieme, non in sequenza. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">art. 4, bando 2026, e art. 12, c. 2, D.I. 225/2024</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Domande frequenti</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">Quando arrivano materialmente i soldi?</button>
+            <div class="accordion-content">
+              <p>In due tempi. Entro 90 giorni dalla pubblicazione della graduatoria si può chiedere un acconto del 50 per cento del contributo riconosciuto, che viene erogato entro 30 giorni dalla richiesta; il saldo segue la richiesta definitiva di liquidazione ed è erogato entro 90 giorni dalla presentazione. In alternativa si può rinunciare all&#39;acconto e chiedere l&#39;intero contributo in unica soluzione. I termini decorrono però dal decreto di graduatoria, che per il bando 2025 è arrivato molto oltre i quattro mesi previsti. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 10, cc. 3 e 5, e 18, bando 2026</a>)</span></p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">Un contributo già assegnato si può perdere?</button>
+            <div class="accordion-content">
+              <p>Sì, e non solo per irregolarità amministrative. Nella scrittura la DGCA può revocare in tutto o in parte se la Commissione ritiene che la sceneggiatura finale non abbia un adeguato livello di professionalità o sia sostanzialmente difforme dal progetto premiato; il contributo decade anche se i materiali artistici sono realizzati con sistemi di intelligenza artificiale o se si apportano variazioni non autorizzate. Si perde inoltre per decadenza chi non presenta in tempo la richiesta di liquidazione, e resta inammissibile la richiesta di acconto priva dei contratti con gli autori. <span class="guida-rif">(<a href="#fonte-bando-2026" title="D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026">artt. 12 e 18, bando 2026</a>)</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">
+        <h2 id="fonti-title">Fonti</h2>
+        <div class="profile-box">
+        <ul>
+          <li id="fonte-l220-2016">Legge 14 novembre 2016, n. 220, art. 26 — <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-bando-2026">D.D. 15 maggio 2026, rep. n. 1238, bando contributi selettivi per scrittura, sviluppo e produzione – Anno 2026 — <a href="https://cinema.cultura.gov.it/wp-content/uploads/dlm_uploads/2026/05/Anno-2026-Bando-per-la-concessione-di-contributi-selettivi-per-la-scrittura-lo-sviluppo-e-la-produzione-di-opere-cinematograf.pdf" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-di-225-2024">D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025 — <a href="https://cinema.cultura.gov.it/wp-content/uploads/2025/06/DEF-D.I.-10-LUGLIO-2024-N.225-TAX-CREDIT.pdf" target="_blank" rel="noopener noreferrer">testo</a> (fonte primaria), consultata il 12 settembre 2026</li>
+          <li id="fonte-avviso-acconti-2026">Direzione generale Cinema e audiovisivo, avviso del 23 giugno 2026 sull&#39;apertura delle richieste di acconto 2025 per produzione, sviluppo e scrittura — <a href="https://cinema.cultura.gov.it/avvisi/apertura-richieste-acconto-2025-produzione-sviluppo-e-scrittura/" target="_blank" rel="noopener noreferrer">testo</a>, consultata il 12 settembre 2026</li>
+          <li id="fonte-graduatorie-2025">Decreti direttoriali di approvazione delle graduatorie 2025 — rep. 738 del 2 aprile 2026, rep. 1268 del 20 maggio 2026, rep. 2211 del 10 luglio 2026, rep. 2503 e 2504 del 31 luglio 2026 — <a href="https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/" target="_blank" rel="noopener noreferrer">testo</a>, consultata il 12 settembre 2026</li>
+        </ul>
+        </div>
+      </section>
+      <p class="guida-correlate">Vedi anche: <a href="guida-contributi-selettivi.html">Contributi selettivi: linee, requisiti e importi</a> · <a href="guida-tax-credit-produzione.html">Tax credit per la produzione cinematografica e audiovisiva</a></p>
+
+      <p class="guida-disclaimer">Questa guida ha scopo informativo e non costituisce parere legale. Dotazioni, importi, requisiti e termini sono fissati dal bando annuale e possono cambiare a ogni sessione, anche con rettifiche pubblicate a ridosso dell&#39;apertura. Prima di presentare una domanda verificare il bando in vigore e gli avvisi della Direzione generale Cinema e audiovisivo, o contattare lo studio.</p>
+
+      <section class="insights-section" id="contatto" aria-labelledby="contatto-title">
+        <h2 id="contatto-title">Parliamo del tuo progetto</h2>
+        <p>Una verifica preventiva costa una frazione di quanto costa rimediare a un diniego. Se hai un'opera in sviluppo o in preparazione, il momento utile per un confronto è prima della firma dei contratti e prima dell'avvio delle spese.</p>
+        <div class="contact-info">
+          <div>
+            <span class="ci-label">✉️ Email</span>
+            <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
+          </div>
+          <div>
+            <span class="ci-label">📞 Telefono</span>
+            <a href="tel:+39063201820">+39&nbsp;06&nbsp;3201820</a>
+          </div>
+          <div>
+            <span class="ci-label">📍 Indirizzo</span>
+            <span>Via Boezio, 2/A - 00193, Roma</span>
+          </div>
+        </div>
+        <p class="guida-cta"><a href="index.html#contatti" class="btn-cta">Richiedi una consulenza</a></p>
+      </section>
+    </article>
+  </main>
+
+<footer>
+    <div class="footer-left"></div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma &middot; P.IVA 18468821006</p>
+      <p class="footer-note">
+        <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a> | <a href="cookie-policy.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Gestisci cookie</button>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
+        Per saperne di più, consulta la nostra
+        <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button type="button" id="accept-cookies" class="btn-cookie">Accetta tutti</button>
+      <button type="button" id="reject-cookies" class="btn-cookie btn-secondary">Rifiuta</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Gestisci cookie</button>
+    </div>
+  </div>
+
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Preferenze Cookie</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analitici" />
+        Cookie analitici (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Salva preferenze</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
+    </form>
+  </div>
+
+<script src="script.js"></script></body>
+</html>
