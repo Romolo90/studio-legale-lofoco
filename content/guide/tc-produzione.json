@@ -7,7 +7,7 @@
   "title": "Tax credit per la produzione cinematografica e audiovisiva",
   "metaTitle": "Tax credit produzione: aliquote, requisiti e procedura | Studio Legale Lo Foco",
   "metaDescription": "Aliquote, tetti, costo eleggibile, requisiti e procedura del credito d'imposta per la produzione cinematografica e audiovisiva, con i riferimenti normativi.",
-  "abstract": "Il credito d'imposta per la produzione non è un beneficio automatico: l'importo dipende da chi presenta la domanda, dal tipo di opera e da come è costruito il costo eleggibile. Qui trovi ciò che stabilisce la disciplina vigente, con il riferimento normativo accanto a ogni dato.",
+  "abstract": "Il credito d'imposta per la produzione non è un beneficio automatico, perché l'importo dipende da chi presenta la domanda, dal tipo di opera e da come è costruito il costo eleggibile. Qui trovi ciò che stabilisce la disciplina vigente, con il riferimento normativo accanto a ogni dato.",
   "category": "tax-credit",
   "author": {
     "name": "Andrea Lo Foco",
@@ -15,12 +15,12 @@
     "url": "andrea-lo-foco.html"
   },
   "datePublished": "2026-09-12",
-  "dateModified": "2026-09-12",
+  "dateModified": "2026-09-13",
   "verifiedAt": "2026-09-12",
   "sections": [
     {
       "id": "avvertenza",
-      "heading": "Avvertenza: due provvedimenti in movimento",
+      "heading": "Avvertenza sui due provvedimenti in movimento",
       "paragraphs": [
         {
           "text": "La disciplina descritta in questa pagina è quella applicabile oggi. Due provvedimenti sono però in movimento, e chi programma una domanda dovrebbe verificarne lo stato prima di chiudere il piano finanziario.",
@@ -28,7 +28,7 @@
           "noSourceReason": "avvertenza redazionale; i dati puntuali sono nei due paragrafi successivi"
         },
         {
-          "text": "Un decreto interministeriale che modifica il D.I. 225/2024 riduce le aliquote massime, diminuisce i limiti massimi di credito riconoscibili per ciascuna opera e introduce tetti massimi per singola impresa. È stato firmato dal Ministro della cultura il 18 giugno 2026 e, secondo la stampa di settore, dal Ministro dell'economia e delle finanze il 7 luglio 2026, quindi trasmesso agli organi di controllo. Alla data di aggiornamento di questa guida non risulta pubblicato: fino alla pubblicazione non produce effetti.",
+          "text": "Un decreto interministeriale che modifica il D.I. 225/2024 riduce le aliquote massime, diminuisce i limiti massimi di credito riconoscibili per ciascuna opera e introduce tetti massimi per singola impresa. È stato firmato dal Ministro della cultura il 18 giugno 2026 e, secondo la stampa di settore, dal Ministro dell'economia e delle finanze il 7 luglio 2026, quindi trasmesso agli organi di controllo. Alla data di aggiornamento di questa guida non risulta pubblicato, e fino alla pubblicazione non produce effetti.",
           "refs": [
             "mic-19-giugno-2026",
             "stampa-firma-mef"
@@ -70,7 +70,7 @@
           "cite": "art. 2, c. 4, D.I. 225/2024"
         },
         {
-          "text": "Sono requisiti da verificare prima di impostare la struttura societaria: intervenire a produzione avviata è quasi sempre più costoso.",
+          "text": "Sono requisiti da verificare prima di impostare la struttura societaria, perché intervenire a produzione avviata è quasi sempre più costoso.",
           "refs": [],
           "noSourceReason": "valutazione operativa dello studio, non un dato normativo"
         }
@@ -78,7 +78,7 @@
     },
     {
       "id": "aliquote",
-      "heading": "Quanto vale: aliquote e tetti",
+      "heading": "Aliquote e tetti",
       "paragraphs": [
         {
           "text": "Per le opere cinematografiche l'aliquota ordinaria è del 40 per cento del costo eleggibile in favore dei produttori indipendenti. Per l'impresa indipendente europea qualificabile come ad elevata capacità produttiva e finanziaria la misura si riduce al 35 per cento sulla parte di costo eleggibile superiore a 5 milioni di euro e fino a 10 milioni, e al 30 per cento sulla parte eccedente i 10 milioni.",
@@ -102,18 +102,25 @@
           "cite": "art. 17, c. 1"
         },
         {
-          "text": "In ogni caso il credito non può superare 9 milioni di euro per opera, che diventano 18 milioni quando almeno il 30 per cento del costo complessivo è coperto da risorse provenienti da Paesi diversi dall'Italia. Nella seconda ipotesi l'imputazione è scaglionata: 9 milioni nell'esercizio della richiesta preventiva e l'eccedenza in parti uguali nei tre esercizi successivi.",
+          "text": "In ogni caso il credito non può superare 9 milioni di euro per opera, che diventano 18 milioni quando almeno il 30 per cento del costo complessivo è coperto da risorse provenienti da Paesi diversi dall'Italia. Nella seconda ipotesi l'imputazione è scaglionata, con 9 milioni nell'esercizio della richiesta preventiva e l'eccedenza in parti uguali nei tre esercizi successivi.",
           "refs": [
             "di-225-2024"
           ],
           "cite": "art. 5"
         },
         {
-          "text": "Nelle produzioni associate la misura dipende dalla quota di diritti di utilizzazione economica: sopra la metà vale il regime del produttore indipendente, altrimenti quello meno favorevole. Anche per questo la ripartizione dei diritti va decisa guardando al credito d'imposta.",
+          "text": "Nelle produzioni associate la misura dipende dalla quota di diritti di utilizzazione economica, perché sopra la metà vale il regime del produttore indipendente e sotto quello meno favorevole. Anche per questo la ripartizione dei diritti va decisa guardando al credito d'imposta.",
           "refs": [
             "di-225-2024"
           ],
           "cite": "art. 13, c. 4"
+        },
+        {
+          "text": "Le aliquote non si sommano liberamente con gli altri sostegni pubblici. I crediti d'imposta e le altre misure di sostegno pubblico non possono superare complessivamente il 50 per cento del costo dell'opera, limite elevato al 60 per cento per le produzioni indicate dalla disciplina europea sugli aiuti di Stato richiamata dal decreto, al 100 per cento per le coproduzioni cui partecipino Paesi DAC e all'80 per cento per le opere difficili, individuate in parte per soglia di costo e in parte per dichiarazione degli esperti che l'opera non è in grado di attrarre risorse finanziarie significative dal settore privato. È il vincolo da verificare per primo quando si costruisce il piano finanziario, perché opera a monte del calcolo delle singole misure.",
+          "refs": [
+            "di-225-2024"
+          ],
+          "cite": "art. 4, D.I. 225/2024"
         }
       ]
     },
@@ -129,7 +136,7 @@
           "cite": "art. 3, c. 2, D.I. 225/2024"
         },
         {
-          "text": "La Tabella B allegata al decreto aggiunge un vincolo che la sola lettura dell'articolo non rivela: il 7,5 per cento delle spese generali è condiviso con imprevisti, deferrals e altri contributi in servizi, mentre il compenso di produzione dispone del proprio limite autonomo.",
+          "text": "La Tabella B allegata al decreto aggiunge un vincolo che la sola lettura dell'articolo non rivela, perché il 7,5 per cento delle spese generali è condiviso con imprevisti, deferrals e altri contributi in servizi, mentre il compenso di produzione dispone del proprio limite autonomo.",
           "refs": [
             "di-225-2024"
           ],
@@ -211,11 +218,12 @@
           "cite": "art. 7, cc. 9 e 10"
         },
         {
-          "text": "Finestre di presentazione e modelli sono definiti con avvisi e decreti direttoriali della Direzione generale pubblicati nel corso dell'anno. I termini effettivi stanno lì, e vanno verificati prima di programmare l'invio.",
+          "text": "Finestre di presentazione e modelli di domanda sono rimessi a decreti direttoriali della Direzione generale, da adottare entro trenta giorni dalla pubblicazione del decreto, e agli avvisi che li accompagnano nel corso dell'anno. I termini effettivi stanno lì, e vanno verificati prima di programmare l'invio.",
           "refs": [
+            "di-225-2024",
             "avviso-correttivo"
           ],
-          "cite": "avvisi DGCA"
+          "cite": "art. 38, cc. 1 e 2, D.I. 225/2024"
         }
       ]
     },
@@ -339,5 +347,5 @@
     }
   ],
   "related": [],
-  "disclaimer": "Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini dipendono dai decreti attuativi e dagli avvisi della Direzione generale Cinema e audiovisivo, che cambiano nel corso dell'anno: prima di presentare una domanda verificare la disciplina in vigore o contattare lo studio."
+  "disclaimer": "Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini dipendono dai decreti attuativi e dagli avvisi della Direzione generale Cinema e audiovisivo, che cambiano nel corso dell'anno. Prima di presentare una domanda verificare la disciplina in vigore o contattare lo studio."
 }
