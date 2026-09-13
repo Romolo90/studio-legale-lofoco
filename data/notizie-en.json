@@ -284,7 +284,8 @@
       "secondaryLink": {
         "label": "See awarded incentives",
         "url": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/incentivi-assegnati/#tax-credit"
-      }
+      },
+      "guideUrl": "guida-foreign-productions-tax-credit.html"
     },
     {
       "id": "contributi-selettivi",

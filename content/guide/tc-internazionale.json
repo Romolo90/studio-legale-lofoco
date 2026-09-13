@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "id": "tc-internazionale",
+  "slug": "foreign-productions-tax-credit",
+  "lang": "en",
+  "status": "published",
+  "title": "Italian tax credit for foreign productions",
+  "metaTitle": "Italian tax credit for foreign productions | Studio Legale Lo Foco",
+  "metaDescription": "Italy's 40% tax credit for foreign productions: who claims it, eligible costs, deadlines, and the rights restriction that most often costs the credit.",
+  "abstract": "The Italian tax credit for foreign productions is not paid to the foreign producer. It goes to the Italian executive production or post-production company that carries out the work in Italy on commission. That single fact governs everything else, including a restriction on rights that a service agreement drafted abroad will often breach without anyone noticing.",
+  "category": "tax-credit",
+  "author": {
+    "name": "Andrea Lo Foco",
+    "role": "Avvocato",
+    "url": "andrea-lo-foco-en.html"
+  },
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "verifiedAt": "2026-09-13",
+  "altLang": {
+    "it": "guida-tax-credit-produzioni-estere.html"
+  },
+  "sections": [
+    {
+      "id": "what-it-is",
+      "heading": "What the credit is, and who receives it",
+      "paragraphs": [
+        {
+          "text": "The credit is granted to Italian executive production and post-production companies, on the expenditure they incur on Italian territory to make an audiovisual work that does not hold Italian nationality, using Italian or European Economic Area labour, on commission from foreign production companies. The foreign producer is the client, not the beneficiary.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 2(1), Interministerial Decree 329/2024"
+        },
+        {
+          "text": "The enabling provision sets a band rather than a figure. Article 19 of the film and audiovisual law provides for a credit of not less than 25 and not more than 40 per cent of the expenditure incurred in Italy. The implementing decree sits at the top of that band, which is why the rate quoted in the market is 40 per cent.",
+          "refs": [
+            "l220-art19"
+          ],
+          "cite": "art. 19(1), Law 220/2016"
+        },
+        {
+          "text": "The work must also meet the cultural eligibility requirements set out in Table A to the decree, and works falling within the statutory exclusions are not admissible in any event.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 2(4) and (5)"
+        }
+      ]
+    },
+    {
+      "id": "how-much",
+      "heading": "How much it is worth",
+      "paragraphs": [
+        {
+          "text": "The credit is 40 per cent of the eligible production cost of the single work, as defined in Table B annexed to the decree.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 3(1)"
+        },
+        {
+          "text": "A different rate applies to above-the-line costs attributable to individuals who are not tax resident in a country of the European Economic Area. On those costs the rate is 30 per cent. This is not a cap on above-the-line costs, which is a separate rule, but a lower rate on part of them.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 3(2)"
+        },
+        {
+          "text": "The benefit applies only if the eligible cost is at least 250,000 euro, and it is capped at 20 million euro per year for each company or group of companies. The credit taken by the same company for the production of works of Italian nationality does not count towards that annual cap. The total production cost of the work must be certified by the foreign commissioning company.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 3(3), (4) and (5)"
+        },
+        {
+          "text": "One ceiling sits above all of this. The credit and any other form of public support may not together exceed 50 per cent of the cost of the work. Regional funds and film commission grants therefore reduce the headroom, and the 40 per cent rate is not additive to them without limit.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 5(5)"
+        }
+      ]
+    },
+    {
+      "id": "eligible-cost",
+      "heading": "Eligible cost is not the cost of the film",
+      "paragraphs": [
+        {
+          "text": "Above-the-line costs, meaning story and screenplay, direction and principal cast, are eligible up to 30 per cent of the total production cost. Costs incurred in Italy for the use of artificial intelligence in creative or artistic work are not eligible at all. The single exception is artificial intelligence used for special effects under the principal cast item.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 4(2)(b)"
+        },
+        {
+          "text": "Financial, insurance and guarantee charges are eligible up to 7.5 per cent of the total production cost, and only if directly attributable to the specific work. The producer fee and the company's general overheads are not eligible, and each may be booked in the total production cost up to 7.5 per cent of it.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 4(2)(a) and (c)"
+        },
+        {
+          "text": "Costs of personnel covered by national collective agreements are eligible, for each worker, within the amount set by those agreements, which may be increased by up to 20 per cent. Budgeting a key crew member above that ceiling does not make the production ineligible, but the excess does not attract the credit.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 4(2)(d)"
+        },
+        {
+          "text": "Who is paid also matters, not only what is paid for. Expenditure qualifies where goods and services are bought from individuals and entities tax resident in Italy, from companies with their registered office and tax domicile in Italy or otherwise subject to tax in Italy, and, on a reciprocity basis, from companies of another European Economic Area country with a branch or permanent establishment in Italy that carries on its activity there and is taxed there. Payments to individuals who are not resident in Italy but are taxed in Italy on the specific income also qualify. The costs of complying with the industry health and safety protocol and of environmental sustainability protocols are eligible as well.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 4(3)"
+        },
+        {
+          "text": "Where part of the work is contracted out under a service agreement, those costs are eligible only if the contractor has its registered office in Italy and does not sub-contract onward down a chain. At the reporting stage the beneficiary must itemise each service performed and its cost. Supply structures built abroad for other jurisdictions frequently fail this test.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 4(4)"
+        },
+        {
+          "text": "Expenditure used to claim tax credits in other States is not eligible here.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 4(5)"
+        }
+      ]
+    },
+    {
+      "id": "requirements",
+      "heading": "Requirements, and the one that is usually breached",
+      "paragraphs": [
+        {
+          "text": "The applicant must have its registered office in the European Economic Area, be subject to tax in Italy by residence or through a permanent establishment to which the work is attributable, be a company with fully paid-up share capital and net assets of at least 40,000 euro (10,000 euro for short films), not be a non-profit association or foundation, and hold ATECO classification J 59.11. It must be compliant with social security, tax and insurance obligations, with occupational health and safety rules and with the applicable national collective agreements, must not be in a position that prevents it from contracting with public authorities, must not be subject to insolvency proceedings, and must operate in accordance with the industry protocol against harassment and violence at work.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 2(3)"
+        },
+        {
+          "text": "One requirement deserves separate attention because it is the one a service agreement drafted abroad most often breaches. The Italian executive production or post-production company must not hold any share of the rights in the work. A derogation is possible, but only on express decision of the Directorate General and only where it is shown that the work objectively could not be made through an international co-production, co-participation or international production agreement.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 3(6)"
+        },
+        {
+          "text": "The restriction is not merely declared. The cost certification filed with the final application must expressly attest compliance with it, alongside the effectiveness of the expenditure and its strict attribution to the work. The certification is signed digitally, is paid for by the applicant, and a certifier issuing an untrue certification faces an administrative fine of 10,000 to 50,000 euro for each one.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 5(1) and (3)"
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "heading": "Windows and deadlines",
+      "paragraphs": [
+        {
+          "text": "Applications are not open all year. Each annual session is opened by a directorial decree. The 2026 session ran from 12.00 on 3 June 2026 to 23.59 on 31 August 2026 and is now closed. A production planning Italian work should check whether the session for the relevant year is open before committing to a shooting calendar.",
+          "refs": [
+            "dd-1244-2026"
+          ],
+          "cite": "art. 2(1), Directorial Decree 1244/2026"
+        },
+        {
+          "text": "Within the session, the preliminary application must be filed no later than 90 days before the start of the work, and the final application no later than 180 days from the end of the work, subject to derogations for supervening reasons notified promptly and properly documented. The Directorate General replies within 60 days in both cases. A company may also skip the preliminary application and file the final one alone.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "artt. 7 and 8"
+        },
+        {
+          "text": "A filing fee is payable on pain of inadmissibility, set by decree between 200 and 10,000 euro. For this line it is 5,000 euro where the cost borne by the executive production or post-production company is 3.5 million euro or less, and 10,000 euro above that threshold. The basis is the Italian company's own cost, not the total cost of the work, which for a large foreign production with a modest Italian leg is not the same figure. A further 200 euro is payable on an application to assign the credit, and if the cost stated in the final application moves the work into the higher bracket the difference must be paid when that application is filed.",
+          "refs": [
+            "dd-3362-consolidato"
+          ],
+          "cite": "Table 1.A and art. 1(3) and (4), consolidated Directorial Decree 3362/2024"
+        },
+        {
+          "text": "Applications are examined in order of the declared start date of the work, and only at equal start dates in order of filing. Filing early is therefore not, by itself, an advantage.",
+          "refs": [
+            "dd-1244-2026"
+          ],
+          "cite": "art. 4(1), Directorial Decree 1244/2026"
+        },
+        {
+          "text": "The annual decree also adds a ground of inadmissibility that is not in the principal decree. The application must be accompanied by an insurance contract covering damage to assets caused by natural disasters and catastrophic events. It is the kind of document nobody prepares by reading the principal decree alone.",
+          "refs": [
+            "dd-1244-2026"
+          ],
+          "cite": "art. 5(1)(a), Directorial Decree 1244/2026"
+        }
+      ]
+    },
+    {
+      "id": "after-approval",
+      "heading": "After approval, and how the credit is lost",
+      "paragraphs": [
+        {
+          "text": "The credit is recognised in full once the review is completed, and may be used to offset tax at 70 per cent upon approval of the preliminary application and the remainder upon approval of the final one. The 70 per cent is reduced to 40 per cent for companies that specifically ask for it. Where only the final application is filed, the whole approved amount may be used at once. Offsetting is available from the fifteenth day of the month following recognition, through the Revenue Agency's online services.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "artt. 6(3) and 14"
+        },
+        {
+          "text": "If the eligible costs in the final application exceed those in the preliminary application by more than 10 per cent, the credit is calculated on the preliminary figure increased by 10 per cent and no more. Derogations exist for proven substantial changes in the production structure and for force majeure, but they must be requested together with the final application and remain subject to prior verification that funds are available.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 8(6) and (7)"
+        },
+        {
+          "text": "Several obligations carry forfeiture of the benefit. The work must carry the insurance cover listed in the decree, which is a different requirement from the natural disaster policy demanded by the annual decree. The beneficiary must disclose, with the final application, which stages of the work carried out in Italy used artificial intelligence, and must report exploitation data. Contracts with authors, performers and executants must contain clauses allowing them to withhold consent to the exploitation of their work, image or performance by artificial intelligence systems, and their absence makes the application inadmissible. The Ministry of Culture's name and logo must finally appear in the credits and promotional materials with the same prominence as the producer's own.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 9"
+        },
+        {
+          "text": "The credit lapses if cultural eligibility is refused or falls away, or if any other requirement of the decree is not met, and any benefit already used is recovered with interest and penalties.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 10"
+        },
+        {
+          "text": "The approved credit may be assigned to banking, financial and insurance intermediaries subject to prudential supervision, who may use it only to offset their own tax or social security debts. The assignment requires a final recognition, an application to the Directorate General accompanied by proof of the filing fee, and an assignment contract in public form. The Directorate verifies the credit within 60 days and issues an attestation, and the assignee may use the credit from the tenth day of the month following the Directorate's acceptance.",
+          "refs": [
+            "di-329-2024"
+          ],
+          "cite": "art. 11"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can the Italian executive producer keep a share of the rights?",
+      "a": "As a rule, no. Holding any share of the rights in the work makes the Italian executive production or post-production company ineligible. The Directorate General may grant an express derogation, but only where it is shown that the work objectively could not have been made through an international co-production, co-participation or international production agreement, which is a demanding test. The point is worth settling before the service agreement is signed, because the cost certification filed at the end must expressly attest compliance.",
+      "refs": [
+        "di-329-2024"
+      ],
+      "cite": "art. 3(6) and art. 5(1)"
+    },
+    {
+      "q": "Is the 2026 session still open?",
+      "a": "No. It closed at 23.59 on 31 August 2026. A new session is opened each year by a separate directorial decree, which also sets the order in which applications are examined. Since applications are ranked by the declared start date of the work, the shooting calendar and the session calendar need to be planned together rather than in sequence.",
+      "refs": [
+        "dd-1244-2026"
+      ],
+      "cite": "art. 2(1), Directorial Decree 1244/2026"
+    }
+  ],
+  "sources": [
+    {
+      "id": "l220-art19",
+      "type": "legge",
+      "citation": "Law 14 November 2016 no. 220, article 19 — tax credit for attracting film and audiovisual investment to Italy",
+      "short": "Law 220/2016, art. 19",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-13",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "di-329-2024",
+      "type": "dm",
+      "citation": "Interministerial Decree of the Minister of Culture and the Minister of Economy and Finance, 4 October 2024, rep. no. 329 — implementing provisions on the tax credit under article 19 of Law 220/2016",
+      "short": "Decree 329/2024",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2024/11/DM-TC-internazionale.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-13",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "dd-1244-2026",
+      "type": "dd",
+      "citation": "Directorial Decree 19 May 2026, rep. no. 1244 — terms and procedures for preliminary and final applications, 2026 session",
+      "short": "Directorial Decree 1244/2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/05/20260518_D1.D-apertura-sessione-Tax-credit-internazionale_signed_signed.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-13",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "dd-3362-consolidato",
+      "type": "dd",
+      "citation": "Directorial Decree 14 October 2024, rep. no. 3362 on filing fees, consolidated text of February 2025 — Table 1.A, applications under article 19 of Law 220/2016",
+      "short": "consolidated Decree 3362/2024",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2025/02/TESTO-CONSOLIDATO-DEL-D.D.-14-ottobre-2024-rep.3362.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-13",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "related": [],
+  "disclaimer": "This guide is for information only and is not legal advice. Rates, thresholds and deadlines are set by decree and change, and the annual session in particular is opened each year by a separate directorial decree. Before filing an application, check the rules in force and the notices of the Directorate General for Cinema and Audiovisual, or contact the firm."
+}

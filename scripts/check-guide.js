@@ -23,9 +23,12 @@ const HOST_PRIMARIE = ['normattiva.it', 'gazzettaufficiale.it', 'eur-lex.europa.
 const TOKEN_REGOLATO = /(\d+(?:[.,]\d+)?\s*(?:%|per cento))|(€|euro)|\bart\.|\bcomma\b|\bD\.[IMD]\.|\brep\.\s*n?\.?\s*\d|\bn\.\s*\d{1,4}\/\d{4}|\b(19|20)\d{2}\b|\bentro il\b/i;
 
 // Marcatori di "avvertimento operativo": il punto in cui la norma morde, cioè ciò che
+// (gli elenchi vanno tenuti severi: un marcatore generico come "deve" o "must" conta
+// la prosa invece delle trappole, e rende le due lingue non confrontabili)
 // distingue la guida di uno studio dal riassunto di un blog. Non è un dato da imporre,
 // è un sintomo da misurare: vedi _SCHEMA.md, "Che cosa si pubblica e che cosa no".
-const TOKEN_AVVERTIMENTO = /convien|prima di (impostare|presentare|firmare|programmare|avviare)|pena l|a pena|blocca|più costoso|va decisa|va verificat|dovrebbe|rischi|non rivela|si ferma|esclude|inammissibil|decaden|revoc|incompatibil|attenzione/i;
+const TOKEN_AVVERTIMENTO = /convien|prima di (impostare|presentare|firmare|programmare|avviare)|pena l|a pena di|blocca|più costoso|va decisa|va verificat|va presentat|va allegat|va integrat|dovrebbe|rischi|non rivela|si ferma|esclude|inammissibil|decaden|revoc|incompatibil|attenzione|non sono eleggibili|non è eleggibile|non sono ammissibili|solo se|non oltre|non deve|obbligo|sanzione|non concorre|salvo deroga|divieto/i;
+const TOKEN_AVVERTIMENTO_EN = /on pain of|must not|no later than|deadline|failure to|forfeit|revoc|ineligib|inadmissib|not eligible|not admissible|excluded|penalt|fine of|before (signing|starting|filing)|worth checking|\brisk\b|barred|lapses|recovered with interest|does not count|is not additive/i;
 const QUOTA_AVVERTIMENTI = 1 / 3;
 
 const GIORNI_AVVISO = 90;
@@ -50,6 +53,8 @@ function contaParole(guida) {
   return testo.split(/\s+/).filter(Boolean).length;
 }
 
+const caricate = [];
+
 function valida(file) {
   const nome = path.relative(ROOT, file);
   let g;
@@ -59,6 +64,8 @@ function valida(file) {
     err(nome, `JSON non valido: ${e.message}`);
     return;
   }
+
+  caricate.push({ nome, g });
 
   for (const campo of ['id', 'slug', 'lang', 'status', 'title', 'metaTitle', 'metaDescription', 'abstract', 'author', 'datePublished', 'dateModified', 'verifiedAt', 'sections', 'sources']) {
     if (g[campo] === undefined || g[campo] === null || g[campo] === '') err(nome, `campo obbligatorio mancante: ${campo}`);
@@ -143,7 +150,8 @@ function valida(file) {
 
     // Mai bloccante: una percentuale imposta produrrebbe avvertimenti finti.
     const capoversi = (g.sections || []).flatMap((s) => (s.paragraphs || []).map((p) => p.text || ''));
-    const conAvviso = capoversi.filter((t) => TOKEN_AVVERTIMENTO.test(t)).length;
+    const marcatore = g.lang === 'en' ? TOKEN_AVVERTIMENTO_EN : TOKEN_AVVERTIMENTO;
+    const conAvviso = capoversi.filter((t) => marcatore.test(t)).length;
     if (capoversi.length && conAvviso / capoversi.length < QUOTA_AVVERTIMENTI) {
       const pct = Math.round((100 * conAvviso) / capoversi.length);
       warn(nome, `avvertimenti operativi in ${conAvviso} capoversi su ${capoversi.length} (${pct}%): sotto un terzo, la guida sta scivolando verso il manuale`);
@@ -168,6 +176,27 @@ function main() {
   }
 
   files.forEach(valida);
+
+  // Coppie di lingua: una guida tradotta che resta indietro dice cose non più vere.
+  // Il controllo vale solo sul set completo, altrimenti la gemella non è caricata.
+  if (!argomenti.length) {
+    const perSlug = new Map(caricate.map((x) => [x.g.slug, x]));
+    for (const { nome, g } of caricate) {
+      for (const [lingua, pagina] of Object.entries(g.altLang || {})) {
+        const slug = String(pagina).replace(/^guida-/, '').replace(/\.html$/, '');
+        const altra = perSlug.get(slug);
+        if (!altra) { err(nome, `altLang "${lingua}" punta a ${pagina}, che non corrisponde a nessuna guida`); continue; }
+        const ritorno = Object.values(altra.g.altLang || {}).some((v) => v === `guida-${g.slug}.html`);
+        if (!ritorno) err(nome, `altLang "${lingua}": ${altra.nome} non rimanda indietro a questa guida`);
+        if (altra.g.dateModified !== g.dateModified) {
+          err(nome, `coppia di lingua disallineata: dateModified ${g.dateModified} contro ${altra.g.dateModified} di ${altra.nome}`);
+        }
+        if (altra.g.status !== g.status) {
+          err(nome, `coppia di lingua disallineata: status ${g.status} contro ${altra.g.status} di ${altra.nome}`);
+        }
+      }
+    }
+  }
 
   for (const a of avvisi) console.log('⚠︎ ' + a);
   if (errori.length) {

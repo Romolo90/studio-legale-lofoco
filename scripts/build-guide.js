@@ -34,11 +34,48 @@ const leggiPartial = (f) => fs.readFileSync(path.join(ROOT, 'partials', f), 'utf
 
 // Le date in pagina vanno lette da un cliente, non da una macchina: "12 settembre 2026".
 const MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-const dataIt = (iso) => {
+const MESI_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const dataIt = (iso, lang) => {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ''));
   if (!m) return String(iso || '');
-  return `${Number(m[3])} ${MESI[Number(m[2]) - 1]} ${m[1]}`;
+  const mesi = lang === 'en' ? MESI_EN : MESI;
+  return `${Number(m[3])} ${mesi[Number(m[2]) - 1]} ${m[1]}`;
 };
+
+// Tutto ciò che nella pagina non viene dal JSON della guida. Una guida inglese che
+// eredita l'impalcatura italiana manda il lettore sulle pagine sbagliate: i due
+// collegamenti in fondo (contatti e pagina di servizio) cambiano con la lingua.
+const T = {
+  it: {
+    skip: 'Salta al contenuto', header: 'header-sub-it.html', footer: 'footer.html', cookie: 'cookie-it.html',
+    briciola: 'Approfondimenti', briciolaUrl: 'notizie.html',
+    inGuida: 'In questa guida', faq: 'Domande frequenti', fonti: 'Fonti', vediAnche: 'Vedi anche',
+    testo: 'testo', primaria: ' (fonte primaria)', consultata: 'consultata il',
+    aCura: "A cura dell'", aggiornata: 'Aggiornata al', verificati: 'Dati verificati sulle fonti il',
+    disclaimer: 'Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini cambiano con i decreti attuativi e con gli avvisi della Direzione generale Cinema e audiovisivo: prima di presentare una domanda verifica la disciplina in vigore o contattaci.',
+    contattoH2: 'Parliamo del tuo progetto',
+    contattoP1: "Una verifica preventiva costa una frazione di quanto costa rimediare a un diniego. Se hai un'opera in sviluppo o in preparazione, il momento utile per un confronto è prima della firma dei contratti e prima dell'avvio delle spese.",
+    contattoP2pre: 'Su come lo studio assiste nelle pratiche di incentivo, vedi la pagina ',
+    servizioUrl: 'tax-credit-cinema-audiovisivo.html', servizioLabel: "Tax Credit per il cinema e l'audiovisivo",
+    email: 'Email', telefono: 'Telefono', indirizzo: 'Indirizzo',
+    cta: 'Richiedi una consulenza', ctaUrl: 'index.html#contatti',
+  },
+  en: {
+    skip: 'Skip to content', header: 'header-sub-en.html', footer: 'footer-en.html', cookie: 'cookie-en.html',
+    briciola: 'Insights', briciolaUrl: 'notizie-en.html',
+    inGuida: 'In this guide', faq: 'Frequently asked questions', fonti: 'Sources', vediAnche: 'See also',
+    testo: 'text', primaria: ' (primary source)', consultata: 'accessed on',
+    aCura: 'By ', aggiornata: 'Updated on', verificati: 'Sources checked on',
+    disclaimer: 'This guide is for information only and is not legal advice. Rates, thresholds and deadlines change with implementing decrees and with the notices of the Directorate General for Cinema and Audiovisual: before filing an application, check the rules in force or contact us.',
+    contattoH2: "Let's discuss your project",
+    contattoP1: 'Checking the requirements in advance costs a fraction of what it costs to fix a refusal. If a production is in development or in preparation, the useful moment to talk is before the contracts are signed and before the spending starts.',
+    contattoP2pre: 'On how the firm assists with incentive applications, see ',
+    servizioUrl: 'tax-credit-cinema-audiovisivo-en.html', servizioLabel: 'Italian film and audiovisual tax credit',
+    email: 'Email', telefono: 'Phone', indirizzo: 'Address',
+    cta: 'Request a consultation', ctaUrl: 'index-en.html#contact',
+  },
+};
+const tr = (g) => T[(g && g.lang) === 'en' ? 'en' : 'it'];
 
 const esc = (s) => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -73,7 +110,7 @@ function jsonLd(g, url) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
-      { '@type': 'ListItem', position: 2, name: 'Approfondimenti', item: SITE + 'notizie.html' },
+      { '@type': 'ListItem', position: 2, name: tr(g).briciola, item: SITE + tr(g).briciolaUrl },
       { '@type': 'ListItem', position: 3, name: g.title, item: url },
     ],
   };
@@ -108,6 +145,7 @@ function indiceGuide() {
 }
 
 function corpo(g, anteprima) {
+  const L = tr(g);
   const fonteById = new Map((g.sources || []).map((s) => [s.id, s]));
   // Quando il paragrafo indica una citazione puntuale, quella copre l'intero richiamo:
   // il primo riferimento la porta come etichetta e gli altri restano solo come collegamento
@@ -138,13 +176,13 @@ function corpo(g, anteprima) {
   }).join('\n\n');
 
   const faq = (g.faq || []).length
-    ? `\n      <section class="insights-section" id="faq" aria-labelledby="faq-title">\n        <h2 id="faq-title">Domande frequenti</h2>\n        <div class="accordion">\n` +
+    ? `\n      <section class="insights-section" id="faq" aria-labelledby="faq-title">\n        <h2 id="faq-title">${L.faq}</h2>\n        <div class="accordion">\n` +
       g.faq.map((f) => `          <div class="accordion-item">\n            <button type="button" class="accordion-header" aria-expanded="false">${esc(f.q)}</button>\n            <div class="accordion-content">\n              <p>${esc(f.a)}${rif(f.refs, f.cite)}</p>\n            </div>\n          </div>`).join('\n') +
       `\n        </div>\n      </section>`
     : '';
 
-  const fonti = `\n      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">\n        <h2 id="fonti-title">Fonti</h2>\n        <div class="profile-box">\n        <ul>\n` +
-    (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}">${esc(s.citation)} — <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">testo</a>${s.urlType === 'primaria' ? ' (fonte primaria)' : ''}, consultata il ${esc(dataIt(s.accessedAt))}</li>`).join('\n') +
+  const fonti = `\n      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">\n        <h2 id="fonti-title">${L.fonti}</h2>\n        <div class="profile-box">\n        <ul>\n` +
+    (g.sources || []).map((s) => `          <li id="fonte-${esc(s.id)}">${esc(s.citation)} — <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${L.testo}</a>${s.urlType === 'primaria' ? L.primaria : ''}, ${L.consultata} ${esc(dataIt(s.accessedAt, g.lang))}</li>`).join('\n') +
     `\n        </ul>\n        </div>\n      </section>`;
 
   // In anteprima si vedono tutti i rimandi, anche verso guide ancora in revisione:
@@ -154,21 +192,21 @@ function corpo(g, anteprima) {
     .filter((r) => anteprima || (idx.get(r) || {}).status === 'published')
     .map((r) => `<a href="guida-${esc(r)}.html">${esc((idx.get(r) || {}).title || r.replace(/-/g, ' '))}</a>`);
   const correlate = voci.length
-    ? `\n      <p class="guida-correlate">Vedi anche: ${voci.join(' · ')}</p>`
+    ? `\n      <p class="guida-correlate">${L.vediAnche}: ${voci.join(' · ')}</p>`
     : '';
 
   return `    <article class="guida">
       <header class="insights-hero">
         <h1>${esc(g.title)}</h1>
         <p class="guida-abstract">${esc(g.abstract)}</p>
-        <p class="guida-meta">A cura dell'<a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · Aggiornata al ${esc(dataIt(g.dateModified))} · Dati verificati sulle fonti il ${esc(dataIt(g.verifiedAt))}</p>
+        <p class="guida-meta">${L.aCura}<a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · ${L.aggiornata} ${esc(dataIt(g.dateModified, g.lang))} · ${L.verificati} ${esc(dataIt(g.verifiedAt, g.lang))}</p>
       </header>
 
       <nav class="profile-box guida-sommario" aria-label="Indice della guida">
-        <strong>In questa guida</strong>
+        <strong>${L.inGuida}</strong>
         <ul>
 ${(g.sections || []).map((s) => `          <li><a href="#${esc(s.id)}">${esc(s.heading)}</a></li>`).join('\n')}
-${(g.faq || []).length ? '          <li><a href="#faq">Domande frequenti</a></li>\n' : ''}          <li><a href="#fonti">Fonti</a></li>
+${(g.faq || []).length ? `          <li><a href="#faq">${L.faq}</a></li>\n` : ''}          <li><a href="#fonti">${L.fonti}</a></li>
         </ul>
       </nav>
 
@@ -176,34 +214,43 @@ ${sezioni}
 ${faq}
 ${fonti}${correlate}
 
-      <p class="guida-disclaimer">${esc(g.disclaimer || "Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini cambiano con i decreti attuativi e con gli avvisi della Direzione generale Cinema e audiovisivo: prima di presentare una domanda verifica la disciplina in vigore o contattaci.")}</p>
+      <p class="guida-disclaimer">${esc(g.disclaimer || L.disclaimer)}</p>
 
       <section class="insights-section" id="contatto" aria-labelledby="contatto-title">
-        <h2 id="contatto-title">Parliamo del tuo progetto</h2>
-        <p>Una verifica preventiva costa una frazione di quanto costa rimediare a un diniego. Se hai un'opera in sviluppo o in preparazione, il momento utile per un confronto è prima della firma dei contratti e prima dell'avvio delle spese.</p>
-        <p>Su come lo studio assiste nelle pratiche di incentivo, vedi la pagina <a href="tax-credit-cinema-audiovisivo.html">Tax Credit per il cinema e l'audiovisivo</a>.</p>
+        <h2 id="contatto-title">${L.contattoH2}</h2>
+        <p>${L.contattoP1}</p>
+        <p>${L.contattoP2pre}<a href="${L.servizioUrl}">${L.servizioLabel}</a>.</p>
         <div class="contact-info">
           <div>
-            <span class="ci-label">✉️ Email</span>
+            <span class="ci-label">✉️ ${L.email}</span>
             <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
           </div>
           <div>
-            <span class="ci-label">📞 Telefono</span>
+            <span class="ci-label">📞 ${L.telefono}</span>
             <a href="tel:+39063201820">+39&nbsp;06&nbsp;3201820</a>
           </div>
           <div>
-            <span class="ci-label">📍 Indirizzo</span>
+            <span class="ci-label">📍 ${L.indirizzo}</span>
             <span>Via Boezio, 2/A - 00193, Roma</span>
           </div>
         </div>
-        <p class="guida-cta"><a href="index.html#contatti" class="btn-cta">Richiedi una consulenza</a></p>
+        <p class="guida-cta"><a href="${L.ctaUrl}" class="btn-cta">${L.cta}</a></p>
       </section>
     </article>`;
 }
 
 function pagina(g, anteprima) {
+  const L = tr(g);
   const file = `guida-${g.slug}.html`;
   const url = SITE + file;
+  // Una coppia di lingua dichiarata a senso unico, per i motori, vale come non dichiarata:
+  // ogni pagina elenca sé stessa e tutte le gemelle. x-default designa la versione italiana,
+  // che è quella predefinita del sito, non sé stessa su entrambe.
+  const paginaIt = (g.lang || 'it') === 'it' ? file : ((g.altLang || {}).it || file);
+  const hreflang = [`  <link rel="alternate" hreflang="${esc(g.lang || 'it')}" href="${url}">`]
+    .concat(Object.entries(g.altLang || {}).map(([lingua, p]) => `  <link rel="alternate" hreflang="${esc(lingua)}" href="${SITE}${esc(p)}">`))
+    .concat([`  <link rel="alternate" hreflang="x-default" href="${SITE}${esc(paginaIt)}">`])
+    .join('\n');
   const base = anteprima
     ? '\n  <!-- Solo in anteprima: la pagina sta in preview/, gli asset in root. -->\n  <base href="/">'
     : '';
@@ -219,8 +266,7 @@ ${headComune()}
   <title>${esc(g.metaTitle)}</title>
   <meta name="description" content="${esc(g.metaDescription)}">
   <link rel="canonical" href="${url}">
-  <link rel="alternate" hreflang="it" href="${url}">
-  <link rel="alternate" hreflang="x-default" href="${url}">${g.altLang && g.altLang.en ? `\n  <link rel="alternate" hreflang="en" href="${SITE}${esc(g.altLang.en)}">` : ''}
+${hreflang}
   <meta property="og:title" content="${esc(g.metaTitle)}">
   <meta property="og:description" content="${esc(g.metaDescription)}">
   <meta property="og:url" content="${url}">
@@ -235,17 +281,17 @@ ${jsonLd(g, url)}
 </head>
 <body>
 
-<a href="#main" class="skip-link">Salta al contenuto</a>
+<a href="#main" class="skip-link">${L.skip}</a>
 
-${leggiPartial('header-sub-it.html')}
+${leggiPartial(L.header)}
 
 <main id="main">
 ${corpo(g, anteprima)}
   </main>
 
-${leggiPartial('footer.html')}
+${leggiPartial(L.footer)}
 
-${leggiPartial('cookie-it.html')}
+${leggiPartial(L.cookie)}
 
 <script src="script.js"></script></body>
 </html>

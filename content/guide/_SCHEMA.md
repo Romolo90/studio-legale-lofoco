@@ -88,8 +88,10 @@ descrive il requisito e si dice chi lo verifica.
 
 **Misura di controllo.** `check:guide` avvisa quando meno di un terzo dei capoversi contiene un
 avvertimento operativo. Non è un obiettivo da centrare né una percentuale da inseguire: è un
-sintomo. Una guida molto sotto quella soglia sta scivolando verso il manuale. Riferimento misurato
-il 13/09/2026: contributi selettivi 40% e 50%, tax credit produzione 22%.
+sintomo. Una guida molto sotto quella soglia sta scivolando verso il manuale. Riferimento misurato il
+13/09/2026, dopo aver ritarato i marcatori nelle due lingue: contributi-selettivi-erogazione 57%, contributi-selettivi 40%, tc-internazionale-it 54%, tc-internazionale 58%, tc-produzione 37%.
+Gli elenchi vanno tenuti severi: un marcatore generico («deve», «must», «only if») conta la prosa invece
+delle trappole e rende le lingue non confrontabili.
 
 ## Raggiungibilità
 
