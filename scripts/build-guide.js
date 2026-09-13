@@ -321,12 +321,142 @@ function scrivi(destinazione, contenuto, nome) {
   return 'scritta';
 }
 
+// Indici delle guide, uno per lingua. Sono generati dalle guide pubblicate, così una
+// guida nuova compare il giorno stesso in cui viene pubblicata e l'elenco non può
+// restare indietro. Una guida che ha la gemella nella lingua dell'indice compare una
+// volta sola, nella lingua dell'indice, con il rimando all'altra: elencarle entrambe
+// sarebbe un doppione. Le guide senza gemella compaiono segnate con la loro lingua.
+const INDICE = {
+  it: {
+    file: 'guide.html', home: 'index.html', h1: 'Le guide dello studio', h2: 'Tutte le guide',
+    metaTitle: 'Guide su tax credit e contributi al cinema | Studio Legale Lo Foco',
+    descr: "Le guide dello studio su tax credit, contributi selettivi e incentivi al cinema e all'audiovisivo, verificate sulle fonti primarie.",
+    intro: "Guide approfondite su incentivi e contributi al cinema e all'audiovisivo. Ogni dato è accompagnato dall'articolo e dal comma della norma che lo stabilisce, e ogni guida indica quando è stata verificata sulle fonti primarie.",
+    lingua: { it: 'in italiano', en: 'in inglese' }, anche: { it: 'Disponibile anche in italiano', en: 'Disponibile anche in inglese' },
+  },
+  en: {
+    file: 'guides-en.html', home: 'index-en.html', h1: 'Our guides', h2: 'All guides',
+    metaTitle: 'Guides to Italian film tax credits and grants | Studio Legale Lo Foco',
+    descr: "The firm's guides on Italian film tax credits, selective grants and audiovisual incentives, checked against primary sources.",
+    intro: 'In-depth guides on Italian film and audiovisual incentives. Every figure comes with the article of the provision that sets it, and every guide states when it was last checked against primary sources. Guides marked in Italian have not been translated yet.',
+    lingua: { it: 'in Italian', en: 'in English' }, anche: { it: 'Also available in Italian', en: 'Also available in English' },
+  },
+};
+
+function paginaIndice(lang, pubblicate) {
+  const L = T[lang];
+  const I = INDICE[lang];
+  const altra = lang === 'it' ? 'en' : 'it';
+  const url = SITE + I.file;
+  const perPagina = new Map(pubblicate.map((g) => [`guida-${g.slug}.html`, g]));
+
+  const voci = pubblicate.filter((g) => {
+    const gl = g.lang || 'it';
+    if (gl === lang) return true;
+    const gemella = (g.altLang || {})[lang];
+    return !(gemella && perPagina.has(gemella));
+  }).sort((a, b) =>
+    ((a.lang || 'it') === lang ? 0 : 1) - ((b.lang || 'it') === lang ? 0 : 1)
+    || String(b.dateModified).localeCompare(String(a.dateModified))
+    || a.title.localeCompare(b.title));
+
+  const schede = voci.map((g) => {
+    const gl = g.lang || 'it';
+    const note = [`${L.aggiornata} ${esc(dataIt(g.dateModified, lang))}`];
+    if (gl !== lang) note.push(esc(I.lingua[gl]));
+    const gemella = (g.altLang || {})[altra];
+    if (gl === lang && gemella && perPagina.has(gemella)) {
+      note.push(`<a href="${esc(gemella)}" hreflang="${altra}">${esc(I.anche[altra])}</a>`);
+    }
+    return `        <div class="profile-box">
+          <h3><a href="guida-${esc(g.slug)}.html"${gl !== lang ? ` hreflang="${gl}"` : ''}>${esc(g.title)}</a></h3>
+          <p>${esc(g.abstract)}</p>
+          <p class="guida-meta">${note.join(' · ')}</p>
+        </div>`;
+  }).join('\n');
+
+  const dati = [
+    {
+      '@context': 'https://schema.org', '@type': 'CollectionPage',
+      name: I.h1, description: I.descr, inLanguage: lang, url,
+      publisher: { '@type': 'Organization', name: 'Studio Legale Lo Foco', url: SITE },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: voci.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: g.title, url: `${SITE}guida-${g.slug}.html` })),
+      },
+    },
+    {
+      '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + (lang === 'it' ? '' : I.home) },
+        { '@type': 'ListItem', position: 2, name: I.h1, item: url },
+      ],
+    },
+  ].map((b) => `  <script type="application/ld+json">\n${JSON.stringify(b, null, 2)}\n  </script>`).join('\n');
+
+  return `<!DOCTYPE html>
+${MARKER}
+     sorgente: content/guide/*.json (indice ${lang}) -->
+<html lang="${lang}">
+<head>
+  <meta charset="UTF-8">
+${headComune()}
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${esc(I.metaTitle)}</title>
+  <meta name="description" content="${esc(I.descr)}">
+  <link rel="canonical" href="${url}">
+  <link rel="alternate" hreflang="it" href="${SITE}${INDICE.it.file}">
+  <link rel="alternate" hreflang="en" href="${SITE}${INDICE.en.file}">
+  <link rel="alternate" hreflang="x-default" href="${SITE}${INDICE.it.file}">
+  <meta property="og:title" content="${esc(I.metaTitle)}">
+  <meta property="og:description" content="${esc(I.descr)}">
+  <meta property="og:url" content="${url}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="${SITE}image/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(I.metaTitle)}">
+  <meta name="twitter:image" content="${SITE}image/og-image.jpg">
+  <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
+  <link rel="stylesheet" href="style.css${versioneAsset('style.css')}">
+${dati}
+</head>
+<body>
+
+<a href="#main" class="skip-link">${L.skip}</a>
+
+${leggiPartial(L.header)}
+
+<main id="main">
+    <article class="guida">
+      <header class="insights-hero">
+        <h1>${esc(I.h1)}</h1>
+        <p class="guida-abstract">${esc(I.intro)}</p>
+      </header>
+
+      <section class="insights-section" id="elenco" aria-labelledby="elenco-title">
+        <h2 id="elenco-title">${esc(I.h2)}</h2>
+${schede}
+      </section>
+    </article>
+  </main>
+
+${leggiPartial(L.footer)}
+
+${leggiPartial(L.cookie)}
+
+<script src="script.js${versioneAsset('script.js')}"></script></body>
+</html>
+`;
+}
+
 function main() {
   if (!fs.existsSync(GUIDE_DIR)) { console.log('✓ Nessuna guida da generare.'); return; }
   const files = fs.readdirSync(GUIDE_DIR).filter((f) => f.endsWith('.json'));
   if (!files.length) { console.log('✓ Nessuna guida da generare.'); return; }
 
   let generate = 0;
+  const pubblicate = [];
   for (const f of files) {
     const g = JSON.parse(fs.readFileSync(path.join(GUIDE_DIR, f), 'utf8'));
     if (argId && g.id !== argId) continue;
@@ -346,9 +476,19 @@ function main() {
       continue;
     }
     if (g.status === 'published') {
+      pubblicate.push(g);
       const esito = scrivi(inRoot, pagina(g), nome);
       console.log(`· ${g.id}: pubblicata → ${nome} (${esito})`);
       generate++;
+    }
+  }
+  // Gli indici servono l'insieme delle guide: con --id se ne rigenera una sola e
+  // l'elenco risulterebbe incompleto, quindi in quel caso non si toccano.
+  if (!argId && pubblicate.length) {
+    for (const lang of ['it', 'en']) {
+      const nome = INDICE[lang].file;
+      const esito = scrivi(path.join(ROOT, nome), paginaIndice(lang, pubblicate), nome);
+      console.log(`· indice ${lang}: ${nome} (${esito})`);
     }
   }
   console.log(`✓ ${generate} pagina/e generata/e.`);
