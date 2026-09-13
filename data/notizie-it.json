@@ -244,7 +244,7 @@
         "Requisito di eleggibilità culturale obbligatorio",
         "Spese ammissibili: personale, servizi, post-produzione in Italia",
         "Domande preventive e definitive tramite piattaforma DGCOL",
-        "Base normativa: art. 15 L. 220/2016; D.M. 10 luglio 2024 n. 225 (come modificato dal D.M. 22 aprile 2025 n. 141)",
+        "Base normativa art. 15 L. 220/2016 e D.I. MiC-MEF 10 luglio 2024 rep. 225, come modificato dal D.I. 22 aprile 2025 rep. 141",
         "Il sostegno pubblico complessivo non può superare il 50% del costo dell'opera"
       ],
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-nazionale/",
@@ -391,13 +391,14 @@
     },
     {
       "id": "normativa",
-      "title": "Riforma e correttivi Tax Credit (2025-2026)",
+      "title": "Tax credit, cosa è in vigore e cosa sta cambiando (2026)",
       "category": "normativa",
-      "summary": "Decreti correttivi e attuativi che hanno ridefinito aliquote, requisiti e procedure dopo la riforma. Tax credit produzione: D.M. 10 luglio 2024 n. 225, modificato dal correttivo D.M. 22 aprile 2025 n. 141 (art. 15 L. 220/2016). Monitoraggio costante delle sessioni e delle istruzioni operative.",
+      "summary": "La disciplina in vigore è il decreto interministeriale MiC-MEF 225/2024, modificato dal correttivo 141/2025. Un nuovo decreto che riduce le aliquote massime e i limiti di credito per opera e introduce tetti per singola impresa è stato firmato dal Ministro della cultura il 18 giugno 2026, ma a settembre 2026 non risultava pubblicato e fino ad allora non produce effetti. Il 10 settembre 2026 la Camera ha approvato in prima lettura il testo unico sul cinema, ora all'esame del Senato.",
       "keyPoints": [
-        "Aggiornamenti frequenti su termini e modalità (es. D.D. 2026)",
-        "Piattaforma DGCOL per tutte le istanze",
-        "Importanza della tempestività nelle domande preventive"
+        "In vigore il D.I. MiC-MEF 10 luglio 2024 rep. 225, modificato dal D.I. 22 aprile 2025 rep. 141",
+        "Il nuovo decreto riduce le aliquote massime e introduce tetti per impresa, ma finché non è pubblicato non si applica",
+        "Il testo unico approvato alla Camera prevede il riordino del credito d'imposta e un'Agenzia per il cinema e l'audiovisivo",
+        "Prima di chiudere un piano finanziario conviene verificare se il nuovo decreto sia stato pubblicato"
       ],
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
       "guideUrl": "guida-tax-credit-produzione.html"
