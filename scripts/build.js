@@ -93,7 +93,7 @@ function renderNewsStatic(newsItems, isEn) {
             <a href="${item.link}" target="_blank" rel="noopener noreferrer">${readLabel}</a>
           </div>
         </article>`).join('\n') +
-    `\n        <button type="button" class="news-toggle" id="news-toggle" hidden>${isEn ? 'Show all updates' : 'Mostra tutte le novità'} (${newsItems.length})</button>`;
+    `\n        <button type="button" class="news-toggle" hidden>${isEn ? 'Show all updates' : 'Mostra tutte le novità'} (${newsItems.length})</button>`;
 }
 
 function renderResourcesStatic(articles, isEn) {

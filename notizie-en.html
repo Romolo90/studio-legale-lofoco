@@ -572,7 +572,7 @@
             <a href="https://cinema.cultura.gov.it/avvisi/piano-potenziamento-sale-cinematografiche-2024-linea-intervento-ristrutturazione-adeguamento-strutturale-tecnologico-sale-cinematografiche/" target="_blank" rel="noopener noreferrer">Read the official notice →</a>
           </div>
         </article>
-        <button type="button" class="news-toggle" id="news-toggle" hidden>Show all updates (33)</button>
+        <button type="button" class="news-toggle" hidden>Show all updates (33)</button>
 <!-- STATIC-NEWS-END -->
       </div>
       <p class="disclaimer">News items are taken from official communications and notices published on the website of the Direzione Generale Cinema e Audiovisivo. For complete texts and exact deadlines, always consult the original sources.</p>
@@ -633,7 +633,7 @@
           </div>
         </article>
       `).join('') + `
-        <button type="button" class="news-toggle" id="news-toggle" hidden>Show all updates (${newsItems.length})</button>`;
+        <button type="button" class="news-toggle" hidden>Show all updates (${newsItems.length})</button>`;
       collassaNovita();
     }
 
@@ -641,7 +641,7 @@
       // contenitore, aggiunta solo se il JavaScript è attivo. Senza JavaScript si vedono tutte.
       function collassaNovita() {
         const lista = document.getElementById('news-list');
-        const bottone = document.getElementById('news-toggle');
+        const bottone = lista && lista.querySelector('.news-toggle');
         if (!lista || !bottone) return;
         lista.classList.add('collapsed');
         bottone.hidden = false;
