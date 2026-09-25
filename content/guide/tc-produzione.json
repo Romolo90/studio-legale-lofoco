@@ -7,7 +7,7 @@
   "title": "Tax credit per la produzione cinematografica e audiovisiva",
   "metaTitle": "Tax credit produzione: aliquote, requisiti e procedura | Studio Legale Lo Foco",
   "metaDescription": "Aliquote, tetti, costo eleggibile, requisiti e procedura del credito d'imposta per la produzione cinematografica e audiovisiva, con i riferimenti normativi.",
-  "abstract": "Il credito d'imposta per la produzione non è un beneficio automatico, perché l'importo dipende da chi presenta la domanda, dal tipo di opera e da come è costruito il costo eleggibile. Qui trovi ciò che stabilisce la disciplina vigente, con il riferimento normativo accanto a ogni dato.",
+  "abstract": "Il credito d'imposta per la produzione non è un beneficio automatico, perché l'importo dipende da chi presenta la domanda, dal tipo di opera e da come è costruito il costo eleggibile. Questa pagina descrive il D.I. 225/2024 nel testo anteriore alle modifiche del D.I. 281/2026, che sono in corso di inserimento, con il riferimento normativo accanto a ogni dato.",
   "category": "tax-credit",
   "author": {
     "name": "Andrea Lo Foco",
@@ -15,24 +15,26 @@
     "url": "andrea-lo-foco.html"
   },
   "datePublished": "2026-09-12",
-  "dateModified": "2026-09-13",
+  "dateModified": "2026-09-25",
   "verifiedAt": "2026-09-12",
   "sections": [
     {
       "id": "avvertenza",
-      "heading": "Avvertenza sui due provvedimenti in movimento",
+      "heading": "Avvertenza sull'aggiornamento in corso",
       "paragraphs": [
         {
-          "text": "La disciplina descritta in questa pagina è quella applicabile oggi. Due provvedimenti sono però in movimento, e chi programma una domanda dovrebbe verificarne lo stato prima di chiudere il piano finanziario.",
-          "refs": [],
-          "noSourceReason": "avvertenza redazionale; i dati puntuali sono nei due paragrafi successivi"
+          "text": "Aliquote, massimali e soglie indicati in questa pagina sono quelli del D.I. 225/2024 prima delle modifiche del 2026 e sono in corso di aggiornamento. Chi prepara una domanda per la sessione 2026, aperta dal 30 settembre al 14 ottobre, deve fare riferimento al decreto modificativo e al testo coordinato pubblicati dalla Direzione generale Cinema e audiovisivo.",
+          "refs": [
+            "di-281-2026",
+            "dd-2821-2026"
+          ]
         },
         {
-          "text": "Un decreto interministeriale che modifica il D.I. 225/2024 riduce le aliquote massime, diminuisce i limiti massimi di credito riconoscibili per ciascuna opera e introduce tetti massimi per singola impresa. È stato firmato dal Ministro della cultura il 18 giugno 2026 e, secondo la stampa di settore, dal Ministro dell'economia e delle finanze il 7 luglio 2026, quindi trasmesso agli organi di controllo. Alla data di aggiornamento di questa guida non risulta pubblicato, e fino alla pubblicazione non produce effetti.",
+          "text": "Il D.I. MiC-MEF 6 luglio 2026 rep. 281, richiamato dal decreto direttoriale che apre la sessione 2026, riduce le aliquote (per le opere cinematografiche dei produttori indipendenti dal 40 al 30 per cento), sostituisce il massimale di 9 milioni per opera con limiti di 4 milioni per le opere cinematografiche e di 7 milioni per quelle televisive e web, e introduce tetti annui per impresa. Le modifiche principali sono riepilogate nella notizia del 24 settembre 2026 in Approfondimenti.",
           "refs": [
-            "mic-19-giugno-2026",
-            "stampa-firma-mef"
-          ]
+            "di-281-2026"
+          ],
+          "cite": "artt. 5 e 13 del D.I. 225/2024 come modificati"
         },
         {
           "text": "Il 10 settembre 2026 la Camera ha inoltre approvato in prima lettura, con 218 voti favorevoli e 6 contrari, il testo unificato sul cinema e sull'audiovisivo, che dispone fra l'altro il riordino del credito d'imposta e la nascita di un'Agenzia per il cinema e l'audiovisivo. Il testo passa ora all'esame del Senato.",
@@ -286,6 +288,27 @@
       "note": "Testo vigente aggiornato al 30 dicembre 2025."
     },
     {
+      "id": "di-281-2026",
+      "type": "dm",
+      "citation": "D.I. MiC-MEF 6 luglio 2026, rep. n. 281, modifiche al D.I. 225/2024",
+      "short": "D.I. 281/2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-25",
+      "checkedAt": "2026-09-25",
+      "note": "Testo coordinato pubblicato dalla DGCA: https://cinema.cultura.gov.it/wp-content/uploads/2026/09/20260618_Consolidato_TC-art.-15_Modifica-2026_rev.pdf"
+    },
+    {
+      "id": "dd-2821-2026",
+      "type": "dd",
+      "citation": "D.D. 24 settembre 2026, rep. n. 2821, apertura della sessione 2026 del credito d'imposta per la produzione",
+      "short": "D.D. 2821/2026",
+      "url": "https://cinema.cultura.gov.it/avvisi/tax-credit-apertura-sessione-per-la-presentazione-delle-richieste-preventive-e-definitive-in-materia-di-credito-di-imposta-per-le-imprese-di-produzione-cinematografica-e-audiovisiva-2/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-09-25",
+      "checkedAt": "2026-09-25"
+    },
+    {
       "id": "di-225-2024",
       "type": "dm",
       "citation": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, testo consolidato con le modifiche del D.I. 141/2025",
@@ -312,26 +335,6 @@
       "short": "avviso DGCA 6 giugno 2025",
       "url": "https://cinema.cultura.gov.it/avvisi/decreto-correttivo-tax-credit-produzione-nazionale-e-modalita-di-presentazione-delle-domande/",
       "urlType": "istituzionale",
-      "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12"
-    },
-    {
-      "id": "mic-19-giugno-2026",
-      "type": "prassi",
-      "citation": "Ministero della cultura, comunicato del 19 giugno 2026: nuovo decreto sui contributi automatici e sul tax credit alle imprese di produzione",
-      "short": "comunicato MiC 19 giugno 2026",
-      "url": "https://cultura.gov.it/comunicato/29118",
-      "urlType": "istituzionale",
-      "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12"
-    },
-    {
-      "id": "stampa-firma-mef",
-      "type": "prassi",
-      "citation": "ANSA, 7 luglio 2026: firmato il decreto MiC-MEF sulle nuove regole del tax credit",
-      "short": "stampa, 7 luglio 2026",
-      "url": "https://www.ansa.it/sito/notizie/cultura/cinema/2026/07/07/borgonzoni-firmato-il-decreto-mic-mef-sulle-nuove-regole-del-tax_07ff5e9d-5f7d-4362-a468-178f1f73a0f6.html",
-      "urlType": "stampa",
       "accessedAt": "2026-09-12",
       "checkedAt": "2026-09-12"
     },

@@ -1,6 +1,27 @@
 {
   "newsItems": [
     {
+      "date": "2026-09-25",
+      "title": "Coproduzioni Italia–Portogallo – Il bando per lo sviluppo esce il 30 settembre",
+      "context": "La DG Cinema e audiovisivo comunica che mercoledì 30 settembre 2026 sarà pubblicato il bando per lo sviluppo di coproduzioni di opere cinematografiche tra Italia e Portogallo, annualità 2025. Requisiti, termini e modalità di presentazione saranno fissati dal bando, che l'avviso non anticipa.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/bando-per-lo-sviluppo-di-coproduzioni-di-opere-cinematografiche-tra-italia-e-portogallo-prossima-uscita/"
+    },
+    {
+      "date": "2026-09-24",
+      "title": "Tax credit produzione – Sessione 2026 aperta dal 30 settembre al 14 ottobre",
+      "context": "Con il D.D. 24 settembre 2026 rep. 2821 la DG Cinema e audiovisivo apre la sessione 2026 del credito d'imposta per la produzione. Le richieste preventive e le richieste definitive in assenza di preventiva si presentano sulla piattaforma DGCOL dalle ore 10:00 del 30 settembre alle ore 23:59 del 14 ottobre 2026, per opere cinematografiche, opere televisive e web, documentari, animazione e cortometraggi; per i videoclip è ammessa la sola richiesta definitiva. Le domande sono istruite secondo la data di avvio delle riprese, o delle lavorazioni per l'animazione, e a parità di data secondo l'ordine di invio. Se le richieste superano lo stanziamento di una linea non si riconoscono crediti parziali, e le domande ammissibili rimaste escluse possono essere ripresentate nella sessione successiva senza versare di nuovo le spese istruttorie. A pena di inammissibilità la domanda deve contenere la polizza contro i danni da calamità naturali ed eventi catastrofali prevista dall'art. 1, commi 101 e 102, della L. 213/2023. La sessione si svolge sotto il D.I. 225/2024 come modificato dal D.I. 281/2026, che riduce aliquote e massimali.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-apertura-sessione-per-la-presentazione-delle-richieste-preventive-e-definitive-in-materia-di-credito-di-imposta-per-le-imprese-di-produzione-cinematografica-e-audiovisiva-2/"
+    },
+    {
+      "date": "2026-09-24",
+      "title": "Tax credit produzione – Il D.I. 281/2026 riduce aliquote e massimali",
+      "context": "La DG Cinema e audiovisivo ha pubblicato il D.I. MiC-MEF 6 luglio 2026 rep. 281, che modifica il D.I. 225/2024, insieme al testo coordinato. Per le opere cinematografiche dei produttori indipendenti l'aliquota scende dal 40 al 30 per cento; per i produttori non indipendenti e le imprese non europee dal 30 al 20 per cento, con tetto annuo per impresa ridotto da 5 a 3 milioni di euro (art. 13). Per le opere tv e web l'aliquota passa dal 25 al 20 per cento, e dal 35 al 30 nei casi maggiorati (art. 17); per documentari, cortometraggi e videoclip dal 40 al 30 per cento, per l'animazione dal 40 al 35. Il massimale per opera, finora di 9 milioni, diventa di 4 milioni per le opere cinematografiche e di 7 milioni per quelle tv e web, con nuovi tetti annui per impresa di 7 e 15 milioni; con almeno il 40 per cento di risorse estere (prima bastava il 30) sale a 6 e 10 milioni (art. 5). I costi sopra la linea sono eleggibili fino al 25 per cento del costo complessivo, 30 per cento per le opere sotto i 3,5 milioni (art. 3), e la mancanza della polizza catastrofale diventa causa di inammissibilità (art. 7, c. 11). Resta fermo il limite di intensità d'aiuto dell'art. 4.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf"
+    },
+    {
       "date": "2026-09-18",
       "title": "Cinema e Immagini per la Scuola 2026 – Termine prorogato al 25 settembre",
       "context": "Il termine per la presentazione delle proposte progettuali sui tre avvisi del Piano Nazionale Cinema e Immagini per la Scuola 2026 è prorogato al 25 settembre 2026, ore 15:00 (D.D. 18 settembre 2026 rep. 2762, 2763 e 2764). La proroga riguarda l'avviso a favore delle istituzioni scolastiche e i due avvisi sui progetti di rilevanza nazionale e territoriale. Le proposte devono prevedere iniziative da svolgersi dalla pubblicazione delle graduatorie e fino al 15 dicembre 2027; le domande si inviano dal sito cinemaperlascuola.istruzione.it.",
@@ -287,13 +308,13 @@
       "title": "Tax Credit per la produzione cinematografica e audiovisiva",
       "guideUrl": "guida-tax-credit-produzione.html",
       "category": "tax-credit",
-      "summary": "Credito d'imposta sulle spese ammissibili per opere di nazionalità italiana o coproduzioni: 40% alle opere cinematografiche di produttori indipendenti, 25% elevabile al 35% alle opere tv e web. Il sostegno pubblico complessivo non può comunque superare il 50% del costo dell'opera.",
+      "summary": "Credito d'imposta sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Con le modifiche del D.I. 281/2026 spetta il 30% alle opere cinematografiche di produttori indipendenti e il 20%, elevabile al 30%, alle opere tv e web, fino a 4 milioni di euro per opera cinematografica e 7 milioni per opera tv e web. Il sostegno pubblico complessivo non può comunque superare il 50% del costo dell'opera.",
       "keyPoints": [
-        "Opere cinematografiche 40% ai produttori indipendenti, opere tv e web 25% elevabile al 35%",
+        "Opere cinematografiche 30% ai produttori indipendenti, opere tv e web 20% elevabile al 30% (D.I. 281/2026)",
         "Requisito di eleggibilità culturale obbligatorio",
         "Spese ammissibili: personale, servizi, post-produzione in Italia",
         "Domande preventive e definitive tramite piattaforma DGCOL",
-        "Base normativa art. 15 L. 220/2016 e D.I. MiC-MEF 10 luglio 2024 rep. 225, come modificato dal D.I. 22 aprile 2025 rep. 141",
+        "Base normativa art. 15 L. 220/2016 e D.I. MiC-MEF 10 luglio 2024 rep. 225, come modificato dal D.I. 22 aprile 2025 rep. 141 e dal D.I. 6 luglio 2026 rep. 281",
         "Il sostegno pubblico complessivo non può superare il 50% del costo dell'opera"
       ],
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-nazionale/",
