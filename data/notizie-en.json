@@ -307,14 +307,14 @@
       "id": "tc-produzione",
       "title": "Tax Credit for Cinematographic and Audiovisual Production",
       "category": "tax-credit",
-      "summary": "Tax credit on eligible expenditure for Italian nationality works or co-productions. Following the amendments of Interministerial Decree 281/2026, the credit is 30% for films by independent producers and 20%, raised to 30%, for TV and web works, up to €4m per film and €7m per TV or web work. Total public support may not exceed 50% of the cost of the work.",
+      "summary": "Tax credit on eligible expenditure for works of Italian nationality, including recognised co-productions. Following the amendments of Interministerial Decree 281/2026, the credit is 30% for films by independent producers and 20%, which may be raised to 30% in the cases set out in art. 17, for TV and web works, up to €4m per film and €7m per TV or web work. As a rule, total public support may not exceed 50% of the cost of the work.",
       "keyPoints": [
-        "Films 30% for independent producers, TV and web works 20% raised to 30% (Decree 281/2026)",
+        "Films 30% for independent producers, TV and web works 20%, which may be raised to 30% (Decree 281/2026)",
         "Mandatory cultural eligibility requirement",
-        "Eligible costs: personnel, services, post-production in Italy",
+        "Eligible costs, as a rule, paid to suppliers resident or taxable in Italy, within the limits of art. 3 and Table B (for documentaries a share of expenditure in the European Economic Area is allowed, art. 21)",
         "Preliminary and final applications via DGCOL platform",
         "Legal basis art. 15 Law 220/2016 and Interministerial Decree MiC-MEF 10 July 2024 rep. 225, as amended by Decree 22 April 2025 rep. 141 and Decree 6 July 2026 rep. 281",
-        "Total public support may not exceed 50% of the cost of the work"
+        "As a rule, total public support may not exceed 50% of the cost of the work (60, 80 or 100% in the cases of art. 4)"
       ],
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-nazionale/",
       "secondaryLink": {
@@ -404,12 +404,12 @@
       "category": "normativa",
       "summary": "Practical guide to completing and submitting preliminary/final applications on the MiC DGCOL platform. Documentary requirements and timing.",
       "keyPoints": [
-        "Access via SPID/CIE for the legal representative",
+        "Application signed with the legal representative's digital signature",
         "Upload contracts, budget, production plan, materials",
-        "Peremptory deadlines: preliminary before significant qualified expenditure",
-        "All communications and integrations handled online"
+        "Preliminary application no earlier than sixty days before the start of four consecutive weeks of shooting or of 50% of shooting days (with specific rules for documentaries, animation and short films), and after the provisional nationality request",
+        "All communications and requests for additional documents handled online"
       ],
-      "errorsToAvoid": "Uploading non-compliant files or failing to list all 'qualified' expenditure on Italian territory.",
+      "errorsToAvoid": "Uploading non-compliant files, or claiming costs as eligible without meeting art. 3 of Decree 225/2024, for example suppliers neither resident nor taxable in Italy.",
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
       "tags": [
         "dgcol",
@@ -440,14 +440,13 @@
       "id": "cumulabilita-incentivi",
       "title": "Cumulability of Tax Credit, selective contributions and regional incentives",
       "category": "normativa",
-      "summary": "Cumulation rules between national measures, bilateral agreements, Creative Europe MEDIA and regional film commissions. The constraint governing all of them is the 50% ceiling on public support for the cost of the work.",
+      "summary": "Cumulation rules between national measures, bilateral agreements, Creative Europe MEDIA and regional film commissions. For the production tax credit the general constraint is the ceiling on total public support, as a rule 50% of the cost of the work, raised to 60, 80 or 100% in the cases of art. 4 of Decree 225/2024.",
       "keyPoints": [
-        "Cumulation is possible, but total public support may not exceed 50% of the cost of the work",
-        "Regional funds and film commission grants also fall within that limit",
-        "Attention to 'State aid' rules and ceilings per undertaking/production unit",
-        "Separate reporting obligation for each measure"
+        "Cumulation is possible within the overall public-support ceiling, as a rule 50% of the cost of the work (art. 4 of Decree 225/2024 for the production tax credit)",
+        "For works claiming the production tax credit, regional funds and film commission grants also fall within that limit",
+        "Expenditure already used for tax credits of other States is not eligible (art. 3(7))"
       ],
-      "errorsToAvoid": "Declaring the same expenditure under multiple measures without authorisation or double counting in reporting.",
+      "errorsToAvoid": "Using the same expenditure for tax credits of other States (art. 3(7)) or exceeding the overall public-support ceiling.",
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/",
       "tags": [
         "cumulability",
@@ -459,12 +458,12 @@
       "id": "normativa",
       "title": "Tax credit, what is in force and what is changing (2026)",
       "category": "normativa",
-      "summary": "The rules in force are Interministerial Decree MiC-MEF 225/2024, as amended by corrective Decree 141/2025. A new decree lowering maximum rates and per-work credit limits and introducing per-company caps was signed by the Minister of Culture on 18 June 2026, but as of September 2026 it had not been published and has no effect until it is. On 10 September 2026 the Chamber of Deputies approved at first reading the consolidated film law, now before the Senate.",
+      "summary": "The rules in force are Interministerial Decree MiC-MEF of 10 July 2024 rep. 225, as amended by Decree of 22 April 2025 rep. 141 and by Decree of 6 July 2026 rep. 281, which lowers rates and per-work caps, introduces annual caps per company of €7m and €15m, lowers to €3m the cap for non-independent producers and contains no transitional provisions. The 2026 session, opened by Directorial Decree of 24 September 2026 rep. 2821, runs under the amended text. On 10 September 2026 the Chamber of Deputies approved at first reading the consolidated film law, now before the Senate.",
       "keyPoints": [
-        "Rules in force are Interministerial Decree MiC-MEF 10 July 2024 rep. 225, as amended by Decree 22 April 2025 rep. 141",
-        "The new decree lowers maximum rates and introduces per-company caps, but does not apply until published",
-        "The consolidated law approved by the Chamber reorganises the tax credit and creates an Agency for film and audiovisual",
-        "Before closing a financing plan, check whether the new decree has been published"
+        "Rules in force: Interministerial Decree MiC-MEF 10 July 2024 rep. 225, as amended by Decree 22 April 2025 rep. 141 and Decree 6 July 2026 rep. 281",
+        "Decree 281/2026 lowers rates (for films by independent producers from 40 to 30%) and per-work caps, and introduces annual caps per company of €7m and €15m",
+        "Applications in the 2026 session are processed by start date of shooting until resources run out (art. 6-bis)",
+        "The consolidated law approved by the Chamber provides for a reorganised tax credit and the creation of an Agency for film and audiovisual"
       ],
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/"
     }

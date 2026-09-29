@@ -372,22 +372,18 @@
     </div>
 
     <div class="tool-container">
-      <div class="disclaimer-banner" role="note">
-        <strong>Dati in aggiornamento.</strong> Il <a href="https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf" target="_blank" rel="noopener">D.I. MiC-MEF 6 luglio 2026, rep. n. 281</a>, pubblicato dalla Direzione generale Cinema e audiovisivo a settembre 2026, ha ridotto aliquote e massimali del credito per la produzione (per le opere cinematografiche dei produttori indipendenti dal 40 al 30 per cento; massimale per opera da 9 milioni a 4 milioni per il cinema e 7 milioni per tv e web) e introdotto tetti annui per impresa. Il simulatore usa ancora le regole precedenti e saranno aggiornate a breve. Il riepilogo delle modifiche è nelle <a href="notizie.html#novita-title">Ultime Novità</a>.
-      </div>
-
       <div class="disclaimer-banner">
-        <strong>Avvertenza importante:</strong> Questo è un simulatore indicativo basato su regole pubbliche della Direzione Generale Cinema e Audiovisivo (regole verificate sul testo dei decreti il 12 settembre 2026). Non sostituisce una valutazione professionale, il test di nazionalità/culturale né la presentazione della domanda. I risultati sono puramente orientativi. Verifica sempre gli ultimi avvisi ufficiali.
+        <strong>Avvertenza importante:</strong> Questo è un simulatore indicativo basato su regole pubbliche della Direzione Generale Cinema e Audiovisivo (regole verificate sul testo dei decreti il 29 settembre 2026). Non sostituisce una valutazione professionale, il test di nazionalità/culturale né la presentazione della domanda. I risultati sono puramente orientativi. Verifica sempre gli ultimi avvisi ufficiali.
       </div>
 
       <p style="font-size: 0.9rem; color: #555; margin: -0.25rem 0 1.25rem;">
-        <strong>Regole verificate al:</strong> 12 settembre 2026
+        <strong>Regole verificate al:</strong> 29 settembre 2026
       </p>
 
       <details style="margin-bottom:1rem; font-size:0.85rem; background:#fff; border:1px solid #80D9FF; border-radius:6px; padding:0.4rem 0.6rem;">
         <summary style="cursor:pointer; color:#003366; font-weight:600;">Metodologia &amp; aggiornamenti (clicca per dettagli)</summary>
         <div style="padding-top:0.35rem; line-height:1.35;">
-          Motore che gira nel browser, senza inviare dati. Le aliquote del tax credit produzione sono quelle del D.I. MiC-MEF 10 luglio 2024, rep. n. 225, come modificato dal D.I. 22 aprile 2025, rep. n. 141: 40% per i produttori indipendenti su opere cinematografiche (art. 13, comma 1), 30% per produttori non indipendenti e imprese non europee (art. 13, comma 3), 25% per le opere televisive e web, elevabile al 35% nei casi dell'art. 17, comma 1. Il credito non supera 9 milioni di euro per opera, 18 milioni con almeno il 30% di risorse estere (art. 5). Il test di nazionalità e l'eleggibilità culturale restano da verificare caso per caso. Lo strumento non calcola importi esatti e non sostituisce la domanda su DGCOL.
+          Motore che gira nel browser, senza inviare dati. Le aliquote del tax credit produzione sono quelle del D.I. MiC-MEF 10 luglio 2024, rep. n. 225, come modificato dal D.I. 22 aprile 2025, rep. n. 141 e dal <a href="https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf" target="_blank" rel="noopener">D.I. 6 luglio 2026, rep. n. 281</a>: 30% per i produttori indipendenti su opere cinematografiche (art. 13, comma 1), 20% per produttori non indipendenti e imprese non europee (art. 13, comma 3), 20% per le opere televisive e web, elevabile al 30% nei casi dell'art. 17, comma 1, 30% per documentari e cortometraggi, 35% per l'animazione (artt. 21, 28 e 24). Il credito non supera 4 milioni di euro per opera cinematografica e 7 milioni per opera tv e web, con tetti annui per impresa; con almeno il 40% di risorse estere 6 e 10 milioni (art. 5). Sono ammessi solo i cortometraggi con costo eleggibile non superiore a 200.000 € (art. 27). Le domande sono istruite per data di avvio delle riprese, per l'animazione delle lavorazioni, fino a esaurimento delle risorse (art. 6-bis). Il test di nazionalità e l'eleggibilità culturale restano da verificare caso per caso. Lo strumento non calcola importi esatti e non sostituisce la domanda su DGCOL.
           <br>Per videogiochi: nazionalità dedicata + rendicontazione specifica. Per stime: usa solo come orientamento.
         </div>
       </details>
@@ -486,7 +482,7 @@
         <div class="results-grid" id="results-grid"></div>
 
         <div class="final-disclaimer">
-          <strong>Nota importante:</strong> Questo è un simulatore orientativo basato sul D.I. MiC-MEF 225/2024, come modificato dal D.I. 141/2025, e sugli avvisi della Direzione generale Cinema e audiovisivo. L'effettiva concessione di qualsiasi incentivo dipende dal superamento del test di nazionalità/culturale, dal rispetto dei massimali di spesa, dalla completezza della documentazione e dall'approvazione finale della Direzione Generale Cinema e Audiovisivo. Per una valutazione precisa e personalizzata contatta lo studio. Verifica sempre gli avvisi più recenti.
+          <strong>Nota importante:</strong> Questo è un simulatore orientativo basato sul D.I. MiC-MEF 225/2024, come modificato dai D.I. 141/2025 e 281/2026, e sugli avvisi della Direzione generale Cinema e audiovisivo. L'effettiva concessione di qualsiasi incentivo dipende dal superamento del test di nazionalità/culturale, dal rispetto dei massimali del credito, dalla completezza della documentazione e dall'approvazione finale della Direzione Generale Cinema e Audiovisivo. Per una valutazione precisa e personalizzata contatta lo studio. Verifica sempre gli avvisi più recenti.
         </div>
 
         <div style="margin: 1.25rem 0; padding: 1rem; background: #f8fbff; border-radius: 6px; border-left: 4px solid #80D9FF;">
@@ -524,33 +520,53 @@
       const isVideogame = data.projectType === 'other' || (data.projectType && data.projectType.toLowerCase().includes('video'));
 
       // Tax Credit Produzione (main one)
-      // Aliquote: D.I. 225/2024 come modificato dal D.I. 141/2025.
-      // Cinema: 40% ai produttori indipendenti (art. 13 c.1), 30% ai non indipendenti
-      // e alle imprese non europee (art. 13 c.3). Tv e web: 25%, fino al 35% nei casi
-      // dell'art. 17 c.1. Il decreto non prevede una soglia minima di spesa in Italia.
-      if (isItalian && isProductionPhase) {
+      // Aliquote: D.I. 225/2024 come modificato dai D.I. 141/2025 e 281/2026.
+      // Cinema: 30% ai produttori indipendenti (art. 13 c.1), 20% ai non indipendenti
+      // e alle imprese non europee (art. 13 c.3). Tv e web: 20%, fino al 30% nei casi
+      // dell'art. 17 c.1. Documentari 30% (art. 21 c.2), animazione 35% (art. 24 c.1),
+      // cortometraggi 30% (art. 28 c.1). Il decreto non prevede una soglia minima di spesa in Italia.
+      // L'opzione "other" (videogiochi) segue un'altra disciplina e non riceve questa scheda.
+      const isCoIntl = data.nationality === 'co-international';
+      if ((isItalian || isCoIntl) && (isProductionPhase || data.stage === 'preproduction') && data.projectType !== 'other') {
         // Nel modulo le opere tv e web corrispondono all'opzione "series".
-        const isTvWeb = data.projectType === 'series';
-        const rate = isTvWeb ? 0.25 : 0.40;
-        const isDocOrShort = data.projectType === 'doc' || data.projectType === 'short';
-        const label = isTvWeb
-          ? 'Tax Credit Produzione opere tv e web (25%, fino al 35%)'
-          : isDocOrShort
-            ? 'Tax Credit Produzione (aliquota secondo la destinazione dell\'opera)'
-            : 'Tax Credit Produzione opere cinematografiche (40% ai produttori indipendenti)';
-        let note = isTvWeb
-          ? 'Aliquota del 25% del costo eleggibile, elevata al 35% per coproduzioni internazionali non meramente finanziarie, apporto di risorse internazionali di almeno il 30%, preacquisto o licenza, o associazione produttiva con quote di diritti conservate (art. 17, comma 1). Le opere di fiction devono durare almeno 52 minuti e costare almeno 2.000 € al minuto (art. 16, comma 6).'
-          : 'Aliquota del 40% del costo eleggibile per i produttori indipendenti (art. 13, comma 1). Per le imprese europee ad elevata capacità produttiva e finanziaria scende al 35% oltre 5 milioni di costo eleggibile e al 30% oltre 10 milioni; per produttori non indipendenti e imprese non europee è del 30% (art. 13, commi 2 e 3). Serve la copertura privata di almeno il 40% del costo e un accordo di distribuzione, salvo opere con contributo selettivo o europeo (art. 12).';
+        const type = data.projectType;
+        const label = type === 'series'
+          ? 'Tax Credit Produzione opere tv e web (20%, fino al 30%)'
+          : type === 'doc'
+            ? 'Tax Credit Produzione documentari (30%)'
+            : type === 'short'
+              ? 'Tax Credit Produzione cortometraggi (30%)'
+              : type === 'animation'
+                ? 'Tax Credit Produzione opere di animazione (35%)'
+                : 'Tax Credit Produzione opere cinematografiche (30% ai produttori indipendenti)';
+        let note = type === 'series'
+          ? 'Aliquota del 20% del costo eleggibile, elevata al 30% in quattro casi alternativi: coproduzione o produzione internazionale non meramente finanziaria, apporto di risorse internazionali di almeno il 30%, preacquisto, acquisto o licenza di prodotto, associazione produttiva con quote di diritti conservate (art. 17, comma 1). Per le imprese ad elevata capacità produttiva e finanziaria si riduce di cinque punti fra 10 e 20 milioni di costo eleggibile e di altri cinque oltre i 20 milioni (art. 17, comma 2). Le opere tv e web devono essere di fiction, avere una durata complessiva non inferiore a 52 minuti e costare almeno 2.000 € al minuto, salvo deroga della Direzione generale (art. 16, comma 6).'
+          : type === 'doc'
+            ? 'Aliquota del 30% del costo eleggibile, qualunque sia la destinazione del documentario, cinematografica oppure televisiva e web (art. 21, comma 2), ridotta di cinque punti per scaglione di costo per le imprese ad elevata capacità produttiva e finanziaria (art. 21, comma 3).'
+            : type === 'short'
+              ? 'Aliquota del 30% del costo eleggibile (art. 28, comma 1). Per i cortometraggi capitale sociale interamente versato e patrimonio netto minimi dell\'impresa scendono a 10.000 € (art. 2, comma 4).'
+              : type === 'animation'
+                ? 'Aliquota del 35% del costo eleggibile, ridotta di cinque punti per scaglione di costo per le imprese ad elevata capacità produttiva e finanziaria (art. 24).'
+                : 'Aliquota del 30% del costo eleggibile per i produttori indipendenti (art. 13, comma 1). Per le imprese indipendenti europee ad elevata capacità produttiva e finanziaria scende al 25% sulla parte di costo eleggibile fra 5 e 10 milioni e al 20% sulla parte oltre 10 milioni; per produttori non indipendenti e imprese non europee è del 20% (art. 13, commi 2 e 3). Servono la copertura finanziaria di almeno il 40% del costo e un accordo con una società di distribuzione cinematografica; le opere con contributo selettivo o di organismi sovranazionali ne sono esentate, ma resta l\'obbligo di circuitazione minima (art. 12).';
+        const caps = type === 'feature'
+          ? 'Il credito non supera 4 milioni di euro per opera, 6 con almeno il 40% di risorse estere, con un tetto annuo di 7 milioni per impresa (art. 5).'
+          : type === 'series'
+            ? 'Il credito non supera 7 milioni di euro per opera, 10 con almeno il 40% di risorse estere, con un tetto annuo di 15 milioni per impresa (art. 5).'
+            : type === 'short'
+              ? 'Sono ammessi solo i cortometraggi con costo eleggibile non superiore a 200.000 € (art. 27, comma 1).'
+              : 'Il credito non supera 4 milioni di euro per opera se destinata alla sala e 7 milioni se televisiva o web, 6 e 10 con almeno il 40% di risorse estere, con tetti annui per impresa (art. 5).';
+        const order = type === 'animation'
+          ? 'Le domande sono istruite per data di avvio delle lavorazioni fino a esaurimento delle risorse (art. 6-bis)'
+          : 'Le domande sono istruite per data di avvio delle riprese fino a esaurimento delle risorse (art. 6-bis)';
 
-        if (isDocOrShort) {
-          note += ' Per documentari e cortometraggi l\'aliquota dipende dalla destinazione dell\'opera, cinematografica oppure televisiva e web, e dal relativo capo del decreto.';
-        }
         if (hasArtistic) note += ' Elementi di qualità artistica o giovani autori rilevano nel test di eleggibilità culturale.';
+        if (isCoIntl) note += ' Con un accordo di coproduzione vigente con quello Stato l\'opera è una coproduzione internazionale; senza accordo può essere una compartecipazione internazionale, se cinematografica, o una produzione internazionale, se non cinematografica. In ogni caso serve il riconoscimento della nazionalità italiana (art. 1, comma 2, lett. f, g e h).';
+        if (data.stage === 'preproduction') note += ' In pre-produzione la richiesta preventiva si presenta dopo la richiesta di nazionalità provvisoria e non prima dei sessanta giorni che precedono l\'avvio delle riprese o delle lavorazioni indicato per la tipologia (artt. 14, 18, 22, 25 e 29).';
 
         results.push({
           title: label,
           status: 'high',
-          note: `${note} Spesa indicata in Italia: ${spend} M€. Il credito non supera 9 milioni di euro per opera, 18 milioni con almeno il 30% di risorse estere (art. 5).`
+          note: `${note} Spesa indicata in Italia: ${String(spend).replace('.', ',')} M€. ${caps} ${order}; per la sessione 2026 non sono previsti riconoscimenti parziali (D.D. 24 settembre 2026, rep. 2821, art. 2, comma 6).`
         });
       }
 
@@ -559,18 +575,29 @@
         results.push({
           title: 'Tax Credit Videogiochi',
           status: spend >= 0.5 ? 'high' : 'medium',
-          note: `Progetto videoludico rilevato. Spesa IT ${spend} M€. Verifica nazionalità dedicata (D.D. 29/5) e rendicontazione separata. Il cumulo con altri sostegni resta soggetto al limite di intensità dell’aiuto.`
+          note: `Progetto videoludico rilevato. Spesa IT ${String(spend).replace('.', ',')} M€. Verifica nazionalità dedicata (D.D. 29/5) e rendicontazione separata. Il cumulo con altri sostegni resta soggetto al limite di intensità dell’aiuto.`
         });
       }
 
       // Rough orientative estimate (added for value)
-      if ((isItalian || isVideogame) && spend >= 0.5) {
-        const estMin = Math.round(spend * 0.25 * 100) / 100;
-        const estMax = Math.round(spend * 0.40 * 100) / 100;
-        // attach to last relevant or push a note card
-        const last = results[results.length-1];
-        if (last && (last.title.includes('Tax Credit') || last.title.includes('Videogiochi'))) {
-          last.note += ` Ordine di grandezza del credito, applicando le aliquote dal 25% al 40% al costo indicato: ${estMin}–${estMax} M€. Il costo eleggibile non coincide con la spesa indicata (art. 3).`;
+      // Solo per il credito alla produzione: aliquota base della tipologia, entro i massimali.
+      if (spend >= 0.5) {
+        const last = results.find(r => r.title.startsWith('Tax Credit Produzione'));
+        if (last) {
+          const type = data.projectType;
+          const [pMin, pMax] = type === 'feature' || type === 'series' ? [20, 30] : type === 'animation' ? [35, 35] : [30, 30];
+          const base = type === 'short' ? Math.min(spend, 0.2) : spend;
+          // Documentaries and animation: €4m if theatrical, €7m if television or web (art. 5).
+          const capMin = type === 'short' ? Infinity : type === 'series' ? 7 : type === 'feature' ? 3 : 4;
+          const capMax = type === 'short' ? Infinity : type === 'feature' ? 4 : 7;
+          const estMin = Math.round(Math.min(base * pMin / 100, capMin) * 100) / 100;
+          const estMax = Math.round(Math.min(base * pMax / 100, capMax) * 100) / 100;
+          const fmt = n => String(n).replace('.', ',');
+          const range = estMin === estMax ? fmt(estMax) : `${fmt(estMin)}–${fmt(estMax)}`;
+          const rates = pMin === pMax ? `l'aliquota del ${pMin}%` : `le aliquote dal ${pMin}% al ${pMax}%`;
+          const limit = type === 'short' ? ' (entro 200.000 € di costo eleggibile)' : type === 'feature' ? ', entro i massimali dell\'art. 5 e il tetto annuo di 3 milioni per i non indipendenti' : ', entro i massimali dell\'art. 5';
+          const reduced = type === 'short' ? '' : ' Le imprese ad elevata capacità produttiva e finanziaria hanno aliquote ridotte sulle parti di costo più alte.';
+          last.note += ` Ordine di grandezza del credito, applicando ${rates} al costo indicato${limit}: ${range} M€.${reduced} Il costo eleggibile non coincide con la spesa indicata (art. 3).`;
         }
       }
 
@@ -621,7 +648,7 @@
       results.push({
         title: 'Incentivi regionali e Film Commission',
         status: 'low',
-        note: 'Quasi tutte le regioni hanno incentivi propri, sotto forma di rebate o di contributi, e vanno verificati con la Film Commission del territorio in cui si gira. Concorrono al limite del sostegno pubblico complessivo, che non può superare il 50 per cento del costo dell’opera.'
+        note: 'Quasi tutte le regioni hanno incentivi propri, sotto forma di rebate o di contributi, e vanno verificati con la Film Commission del territorio in cui si gira. Concorrono al limite del sostegno pubblico complessivo, che di norma non può superare il 50 per cento del costo dell’opera.'
       });
 
       if (results.length === 0) {

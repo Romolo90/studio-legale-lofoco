@@ -15,7 +15,7 @@
     "url": "andrea-lo-foco.html"
   },
   "datePublished": "2026-09-13",
-  "dateModified": "2026-09-13",
+  "dateModified": "2026-09-29",
   "verifiedAt": "2026-09-12",
   "sections": [
     {
@@ -119,9 +119,11 @@
       "heading": "Perché non vanno confusi con il tax credit",
       "paragraphs": [
         {
-          "text": "Il credito d'imposta è una misura automatica. Verificati i requisiti, l'importo discende da un'aliquota applicata al costo eleggibile. Il contributo selettivo è invece discrezionale nel merito artistico e capiente solo fino all'esaurimento delle risorse della sessione, con un numero chiuso di progetti finanziabili.",
-          "refs": [],
-          "noSourceReason": "confronto descrittivo fra due misure, i dati puntuali sono nelle rispettive sezioni"
+          "text": "Il credito d'imposta non dipende da una valutazione di merito artistico. Verificati i requisiti, l'importo discende da un'aliquota applicata al costo eleggibile, ma dal 2026 anche il credito è riconosciuto secondo un ordine di istruttoria e fino a esaurimento delle risorse della sessione. Il contributo selettivo è invece discrezionale nel merito artistico, con un numero chiuso di progetti finanziabili.",
+          "refs": [
+            "di-281-2026"
+          ],
+          "cite": "art. 6-bis, D.I. 225/2024, introdotto dal D.I. 281/2026"
         },
         {
           "text": "Le due misure convivono, ma il contributo selettivo pesa nel calcolo dell'intensità complessiva dell'aiuto pubblico, e la sua assegnazione rileva anche come requisito alternativo di accesso al credito d'imposta per la produzione cinematografica, purché ottenuta su bandi pubblicati dopo il 1° gennaio 2024. Chi progetta il piano finanziario dovrebbe quindi valutarle insieme, non in sequenza.",
@@ -202,6 +204,16 @@
       "urlType": "istituzionale",
       "accessedAt": "2026-09-12",
       "checkedAt": "2026-09-12"
+    },
+    {
+      "id": "di-281-2026",
+      "type": "dm",
+      "citation": "D.I. MiC-MEF 6 luglio 2026, rep. n. 281, modifiche al D.I. 225/2024",
+      "short": "D.I. 281/2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-09-29",
+      "checkedAt": "2026-09-29"
     }
   ],
   "related": [

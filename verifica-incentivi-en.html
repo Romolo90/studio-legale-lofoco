@@ -372,22 +372,18 @@
     </div>
 
     <div class="tool-container">
-      <div class="disclaimer-banner" role="note">
-        <strong>Figures being updated.</strong> <a href="https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf" target="_blank" rel="noopener">Interministerial Decree MiC-MEF of 6 July 2026, rep. no. 281</a>, published by the Directorate-General for Cinema and Audiovisual in September 2026, lowers the rates and caps of the production tax credit (for feature films by independent producers from 40 to 30 per cent; per-work cap from €9m to €4m for feature films and €7m for TV and web works) and introduces annual caps per company. The simulator still uses the previous rules and will be updated shortly. A summary of the changes is in the <a href="notizie-en.html#novita-title">Latest Updates</a>.
-      </div>
-
       <div class="disclaimer-banner">
-        <strong>Important notice:</strong> This is an indicative simulator based on publicly available rules from the Direzione Generale Cinema e Audiovisivo (rules verified against the text of the decrees on 12 September 2026). It does not replace professional advice, the cultural/nationality test, or the actual application process. Results are for guidance only. Always verify the latest official notices.
+        <strong>Important notice:</strong> This is an indicative simulator based on publicly available rules from the Direzione Generale Cinema e Audiovisivo (rules verified against the text of the decrees on 29 September 2026). It does not replace professional advice, the cultural/nationality test, or the actual application process. Results are for guidance only. Always verify the latest official notices.
       </div>
 
       <p style="font-size: 0.9rem; color: #555; margin: -0.25rem 0 1.25rem;">
-        <strong>Rules verified on:</strong> 12 September 2026
+        <strong>Rules verified on:</strong> 29 September 2026
       </p>
 
       <details style="margin-bottom:1rem; font-size:0.85rem; background:#fff; border:1px solid #80D9FF; border-radius:6px; padding:0.4rem 0.6rem;">
         <summary style="cursor:pointer; color:#003366; font-weight:600;">Methodology &amp; updates (click for details)</summary>
         <div style="padding-top:0.35rem; line-height:1.35;">
-          Client-side engine based on official 2026 DG Cinema notices (incl. 29 May D.D. for TC and videogames, selective contributions, investment attraction). Production tax credit rates follow Interministerial Decree MiC-MEF of 10 July 2024, rep. no. 225, as amended by Interministerial Decree of 22 April 2025, rep. no. 141: 40% for independent producers of film works (art. 13(1)), 30% for non-independent producers and non-European undertakings (art. 13(3)), 25% for television and web works, raised to 35% in the cases listed in art. 17(1). The credit cannot exceed €9m per work, or €18m with at least 30% of foreign resources (art. 5). The nationality test and cultural eligibility still have to be assessed case by case. <br>For videogames: dedicated nationality + specific reporting. Estimates are for orientation only.
+          Client-side engine that sends no data. Production tax credit rates follow Interministerial Decree MiC-MEF of 10 July 2024, rep. no. 225, as amended by Interministerial Decree of 22 April 2025, rep. no. 141 and by <a href="https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf" target="_blank" rel="noopener">Interministerial Decree of 6 July 2026, rep. no. 281</a>: 30% for independent producers of film works (art. 13(1)), 20% for non-independent producers and non-European undertakings (art. 13(3)), 20% for television and web works, raised to 30% in the cases listed in art. 17(1), 30% for documentaries and short films, 35% for animation (arts. 21, 28 and 24). The credit cannot exceed €4m per film work and €7m per television or web work, with annual caps per undertaking; with at least 40% of foreign resources €6m and €10m (art. 5). Only short films with an eligible cost of no more than €200,000 are admitted (art. 27). Applications are processed by start date of shooting, or of production work for animation, until resources run out (art. 6-bis). The nationality test and cultural eligibility still have to be assessed case by case. The tool does not calculate exact amounts and does not replace the DGCOL application. <br>For videogames: dedicated nationality + specific reporting. Estimates are for orientation only.
         </div>
       </details>
 
@@ -485,7 +481,7 @@
         <div class="results-grid" id="results-grid"></div>
 
         <div class="final-disclaimer">
-          <strong>Important note:</strong> This is an indicative simulator based on Interministerial Decree MiC-MEF 225/2024, as amended by Interministerial Decree 141/2025, and on the notices of the Directorate General for Cinema and Audiovisual. Actual granting of any incentive depends on passing the nationality/cultural eligibility test, respecting spending caps, complete documentation, and final approval by the Direzione Generale Cinema e Audiovisivo. For a precise, tailored assessment please contact the firm. Always check the most recent official notices.
+          <strong>Important note:</strong> This is an indicative simulator based on Interministerial Decree MiC-MEF 225/2024, as amended by Interministerial Decrees 141/2025 and 281/2026, and on the notices of the Directorate General for Cinema and Audiovisual. Actual granting of any incentive depends on passing the nationality/cultural eligibility test, respecting the credit caps, complete documentation, and final approval by the Direzione Generale Cinema e Audiovisivo. For a precise, tailored assessment please contact the firm. Always check the most recent official notices.
         </div>
 
         <div style="margin: 1.25rem 0; padding: 1rem; background: #f8fbff; border-radius: 6px; border-left: 4px solid #80D9FF;">
@@ -523,32 +519,53 @@
       const isVideogame = data.projectType === 'other' || (data.projectType && data.projectType.toLowerCase().includes('video'));
 
       // Tax Credit Produzione (main one)
-      // Rates: Interministerial Decree 225/2024 as amended by Decree 141/2025.
-      // Film works: 40% for independent producers (art. 13(1)), 30% for non-independent
-      // producers and non-European undertakings (art. 13(3)). Television and web: 25%,
-      // up to 35% under art. 17(1). The decree sets no minimum Italian spend threshold.
-      if (isItalian && isProductionPhase) {
+      // Rates: Interministerial Decree 225/2024 as amended by Decrees 141/2025 and 281/2026.
+      // Film works: 30% for independent producers (art. 13(1)), 20% for non-independent
+      // producers and non-European undertakings (art. 13(3)). Television and web: 20%,
+      // up to 30% under art. 17(1). Documentaries 30% (art. 21(2)), animation 35% (art. 24(1)),
+      // short films 30% (art. 28(1)). The decree sets no minimum Italian spend threshold.
+      // The "other" option (videogames) follows different rules and does not get this card.
+      const isCoIntl = data.nationality === 'co-international';
+      if ((isItalian || isCoIntl) && (isProductionPhase || data.stage === 'preproduction') && data.projectType !== 'other') {
         // In this form, television and web works correspond to the "series" option.
-        const isTvWeb = data.projectType === 'series';
-        const isDocOrShort = data.projectType === 'doc' || data.projectType === 'short';
-        const label = isTvWeb
-          ? 'Production tax credit, television and web works (25%, up to 35%)'
-          : isDocOrShort
-            ? 'Production tax credit (rate depends on how the work is released)'
-            : 'Production tax credit, film works (40% for independent producers)';
-        let note = isTvWeb
-          ? 'Rate of 25% of the eligible cost, raised to 35% for international co-productions that are not merely financial, for an international contribution of at least 30%, for pre-purchase or licence deals, or for production partnerships where the independent producer keeps the required share of rights (art. 17(1)). Fiction works must run at least 52 minutes and cost at least €2,000 per minute (art. 16(6)).'
-          : 'Rate of 40% of the eligible cost for independent producers (art. 13(1)). For European undertakings with high production and financial capacity it drops to 35% above €5m of eligible cost and to 30% above €10m; for non-independent producers and non-European undertakings it is 30% (art. 13(2) and (3)). Private financing of at least 40% of the cost and a distribution agreement are required, unless the work has a selective grant or EU funding (art. 12).';
+        const type = data.projectType;
+        const label = type === 'series'
+          ? 'Production tax credit, television and web works (20%, up to 30%)'
+          : type === 'doc'
+            ? 'Production tax credit, documentaries (30%)'
+            : type === 'short'
+              ? 'Production tax credit, short films (30%)'
+              : type === 'animation'
+                ? 'Production tax credit, animation (35%)'
+                : 'Production tax credit, film works (30% for independent producers)';
+        let note = type === 'series'
+          ? 'Rate of 20% of the eligible cost, raised to 30% in four alternative cases: international co-production or international production that is not merely financial, an international contribution of at least 30%, pre-purchase, purchase or licence deals, or production partnerships where the independent producer keeps the required share of rights (art. 17(1)). For undertakings with high production and financial capacity it is reduced by five points between €10m and €20m of eligible cost and by a further five points above €20m (art. 17(2)). Television and web works must be fiction, have a total running time of at least 52 minutes and cost at least €2,000 per minute, save for derogation by the Directorate-General (art. 16(6)).'
+          : type === 'doc'
+            ? 'Rate of 30% of the eligible cost, whether the documentary is released in cinemas or on television and web (art. 21(2)), reduced by five points per cost band for undertakings with high production and financial capacity (art. 21(3)).'
+            : type === 'short'
+              ? 'Rate of 30% of the eligible cost (art. 28(1)). For short films the minimum fully paid-up share capital and net equity of the company drop to €10,000 (art. 2(4)).'
+              : type === 'animation'
+                ? 'Rate of 35% of the eligible cost, reduced by five points per cost band for undertakings with high production and financial capacity (art. 24).'
+                : 'Rate of 30% of the eligible cost for independent producers (art. 13(1)). For European independent undertakings with high production and financial capacity it drops to 25% on the portion of eligible cost between €5m and €10m and to 20% on the portion above €10m; for non-independent producers and non-European undertakings it is 20% (art. 13(2) and (3)). Financing of at least 40% of the cost and an agreement with a theatrical distributor are required; works with a selective grant or funding from supranational bodies are exempt, but a minimum theatrical release is still required (art. 12).';
+        const caps = type === 'feature'
+          ? 'The credit cannot exceed €4m per work, €6m with at least 40% of foreign resources, with an annual cap of €7m per undertaking (art. 5).'
+          : type === 'series'
+            ? 'The credit cannot exceed €7m per work, €10m with at least 40% of foreign resources, with an annual cap of €15m per undertaking (art. 5).'
+            : type === 'short'
+              ? 'Only short films with an eligible cost of no more than €200,000 are admitted (art. 27(1)).'
+              : 'The credit cannot exceed €4m per work if released in cinemas and €7m if for television or web, €6m and €10m with at least 40% of foreign resources, with annual caps per undertaking (art. 5).';
+        const order = type === 'animation'
+          ? 'Applications are processed by start date of production work until resources run out (art. 6-bis)'
+          : 'Applications are processed by start date of shooting until resources run out (art. 6-bis)';
 
-        if (isDocOrShort) {
-          note += ' For documentaries and short films the rate depends on whether the work is released in cinemas or on television and web, and on the corresponding chapter of the decree.';
-        }
         if (hasArtistic) note += ' Artistic quality or young authors are relevant to the cultural eligibility test.';
+        if (isCoIntl) note += ' With a co-production agreement in force with that State the work is an international co-production; without one it may be an international co-participation, if a film, or an international production, if not a film. In every case the work needs recognition of Italian nationality (art. 1(2)(f), (g) and (h)).';
+        if (data.stage === 'preproduction') note += ' In pre-production the preliminary application is filed after the provisional nationality request and no earlier than sixty days before the start of shooting or production work defined for the type of work (arts. 14, 18, 22, 25 and 29).';
 
         results.push({
           title: label,
           status: 'high',
-          note: `${note} Italian spend entered: ${spend} M€. The credit cannot exceed €9m per work, or €18m with at least 30% of foreign resources (art. 5).`
+          note: `${note} Italian spend entered: ${spend} M€. ${caps} ${order}; in the 2026 session no partial credit is granted (Directorial Decree of 24 September 2026, rep. 2821, art. 2(6)).`
         });
       }
 
@@ -562,12 +579,23 @@
       }
 
       // Rough orientative estimate (added for value)
-      if ((isItalian || isVideogame) && spend >= 0.5) {
-        const estMin = Math.round(spend * 0.25 * 100) / 100;
-        const estMax = Math.round(spend * 0.40 * 100) / 100;
-        const last = results[results.length-1];
-        if (last && (last.title.includes('Tax Credit') || last.title.includes('Videogame'))) {
-          last.note += ` Order of magnitude of the credit, applying rates from 25% to 40% to the figure entered: ${estMin}–${estMax} M€. The eligible cost is not the same as the spend entered (art. 3).`;
+      // Production tax credit only: base rate of the work type, within the caps.
+      if (spend >= 0.5) {
+        const last = results.find(r => r.title.startsWith('Production tax credit'));
+        if (last) {
+          const type = data.projectType;
+          const [pMin, pMax] = type === 'feature' || type === 'series' ? [20, 30] : type === 'animation' ? [35, 35] : [30, 30];
+          const base = type === 'short' ? Math.min(spend, 0.2) : spend;
+          // Documentaries and animation: €4m if theatrical, €7m if television or web (art. 5).
+          const capMin = type === 'short' ? Infinity : type === 'series' ? 7 : type === 'feature' ? 3 : 4;
+          const capMax = type === 'short' ? Infinity : type === 'feature' ? 4 : 7;
+          const estMin = Math.round(Math.min(base * pMin / 100, capMin) * 100) / 100;
+          const estMax = Math.round(Math.min(base * pMax / 100, capMax) * 100) / 100;
+          const range = estMin === estMax ? `${estMax}` : `${estMin}–${estMax}`;
+          const rates = pMin === pMax ? `the ${pMin}% rate` : `rates from ${pMin}% to ${pMax}%`;
+          const limit = type === 'short' ? ' (within €200,000 of eligible cost)' : type === 'feature' ? ', within the caps of art. 5 and the €3m annual cap for non-independent producers' : ', within the caps of art. 5';
+          const reduced = type === 'short' ? '' : ' Undertakings with high production and financial capacity have reduced rates on the higher cost bands.';
+          last.note += ` Order of magnitude of the credit, applying ${rates} to the figure entered${limit}: ${range} M€.${reduced} The eligible cost is not the same as the spend entered (art. 3).`;
         }
       }
 
@@ -618,7 +646,7 @@
       results.push({
         title: 'Regional incentives and Film Commissions',
         status: 'low',
-        note: 'Almost all Italian regions have their own incentives, as rebates or grants, and they should be checked with the Film Commission for the area where you plan to shoot. They count towards the ceiling on total public support, which may not exceed 50 per cent of the cost of the work.'
+        note: 'Almost all Italian regions have their own incentives, as rebates or grants, and they should be checked with the Film Commission for the area where you plan to shoot. They count towards the ceiling on total public support, which as a rule may not exceed 50 per cent of the cost of the work.'
       });
 
       if (results.length === 0) {

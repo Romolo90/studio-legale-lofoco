@@ -96,3 +96,85 @@ Credito d'imposta dal **15% al 40%** del costo complessivo di produzione; 40% co
 - Disciplina dell'**attrazione di investimenti esteri** (misura distinta): norma di riferimento, aliquote, soglie, requisiti.
 - Decreti direttoriali attuativi: importo delle spese di istruttoria, finestre di presentazione, modulistica DGCOL.
 - Testo integrale dell'art. 15 L. 220/2016 da Normattiva (finora letto in sintesi: serve il testo dei commi per citarlo puntualmente).
+
+---
+
+## Aggiornamento 29 settembre 2026 — D.I. 281/2026 e D.D. 2821/2026
+
+Fonti riscaricate e lette il 29/09/2026 (Andrea Lo Foco, assistito da Claude Code):
+
+| id | Atto | Testo consultato |
+|---|---|---|
+| `di-281-2026` | D.I. MiC-MEF 6 luglio 2026, rep. n. 281 (firmato 6/7/2026), modifiche al D.I. 225/2024; due soli articoli, **nessuna norma transitoria** | https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf |
+| `testo-coordinato-2026` | Testo coordinato DGCA 225/2024 + 141/2025 + 281/2026, **privo di valore giuridico** | https://cinema.cultura.gov.it/wp-content/uploads/2026/09/20260618_Consolidato_TC-art.-15_Modifica-2026_rev.pdf |
+| `dd-2821-2026` | D.D. 24 settembre 2026, rep. n. 2821, apertura sessione 2026 (30/9 ore 10:00 – 14/10 ore 23:59) | https://cinema.cultura.gov.it/wp-content/uploads/2026/09/D.D.-apertura-sessione-finestra-2026-_produzione_REP.-2821.pdf |
+
+Riletti anche il testo originario del 225/2024 e il D.I. 141/2025 per la questione dell'art. 12 (sotto).
+
+### Tabella vecchio → nuovo → norma (per la revisione)
+
+| Voce | Prima | Dopo il D.I. 281/2026 | Norma (D.I. 225/2024) / modifica |
+|---|---|---|---|
+| Forbice del decreto | 15–40% | **15–35%** | art. 2 c.1 / 281 art. 1 lett. b) |
+| Diritti in Italia (requisiti artt. 16, 20, 23 e aliquote art. 17) | — | nuovo art. 2 c.9, rinvio alla Tabella C | 281 lett. b) n. 2 |
+| Costi sopra la linea | 30% CP | **25% CP, 30% se costo < 3,5 M€** (anche Tabella B, 1.1–3.1) | art. 3 c.2 b) / 281 lett. c) ed ee) |
+| Costi protocollo COVID | eleggibili | **lettera soppressa** | art. 3 c.3 d) / 281 lett. c) n. 2 |
+| Massimale per opera | 9 M€ (18 M€ con ≥30% risorse estere) | **cinema, doc. e animazione cinematografici 4 M€; tv-web 7 M€** | art. 5 c.1 a) / 281 lett. d) |
+| Tetto annuo per impresa | — | **7 M€ (gruppo cinema) e 15 M€ (gruppo tv-web)**, non cumulati fra i gruppi | art. 5 c.1 a) |
+| Risorse estere | ≥30% → 18 M€ | **≥40% → 6 M€ cinema, 10 M€ tv-web** | art. 5 c.1 b) |
+| Imputazione | 9 M€ nell'esercizio della preventiva, eccedenza nei 3 successivi | **3 M€ (cinema) / 5 M€ (tv-web)** nell'esercizio della preventiva, eccedenza nei 3 successivi | art. 5 c.2 |
+| Ordine di istruttoria | — | **per data di avvio riprese/lavorazioni, fino a esaurimento; eccedenti «non finanziabili»** | nuovo art. 6-bis |
+| Polizza catastrofale | — | **a pena di inammissibilità** (L. 213/2023, art. 1 cc. 101-102) | nuovo art. 7 c.11 |
+| Cessionari | rispondono per utilizzo irregolare (c.1) | anche accertamento e sanzioni nei loro confronti | art. 8 c.6 |
+| Distribuzione cinema ≤ 3,5 M€ | 300 proiezioni, 50 sale, 2 settimane | **300 proiezioni, 30 sale, 6 settimane** | art. 12 c.1 b) n. 2 |
+| Cinema, produttori indipendenti | 40% | **30%** | art. 13 c.1 |
+| Cinema, elevata capacità | 35% (5–10 M) / 30% (>10 M) | **25% / 20%** | art. 13 c.2 |
+| Cinema, non indip./non europee (extra SEE) | 30%, max 5 M€/anno | **20%, max 3 M€/anno** | art. 13 c.3 |
+| Tv e web | 25%, elevabile a 35% | **20%, elevabile a 30%** | art. 17 c.1 |
+| Tv e web, elevata capacità | −3 punti per scaglione | **−5 punti** | art. 17 c.2 |
+| Definitiva tv-web dopo preventiva | 18 mesi | **24 mesi** (come il cinema, art. 15) | art. 19 c.1 c) |
+| Documentari | 40% | **30%**; riduzioni elev. capacità −5 punti | art. 21 cc. 2-3 |
+| Preventiva doc., animazione, corti | non prima dei 60 gg antecedenti il «conseguimento» | non prima dei 60 gg antecedenti la **«data di avvio»** del 50% delle giornate (animazione: 50% delle giornate di lavorazione o 4 settimane consecutive) | artt. 22, 25, 29 / 281 lett. r), u), z) |
+| Animazione | 40% | **35%**; riduzioni −5 punti | art. 24 |
+| Cortometraggi | 40% | **30%** | art. 28 |
+| Videoclip | 40%, max 80.000 € | **30%**, max 80.000 € | art. 30 c.2 |
+| Intensità d'aiuto (50/60/100/80%) | — | **invariata** | art. 4 |
+| Compensazione 70/40/100% | — | **invariata** (ribadita dal D.D. 2821 art. 3 c.2) | art. 6 c.5 |
+
+**D.D. 2821/2026 (sessione 2026).** Domande istruite per data di avvio delle riprese dichiarata (DPR 445/2000) e comprovata secondo il D.D. 2541/2025; a parità, marca temporale DGCOL (art. 3 c.3). Niente riconoscimenti parziali; le ammissibili escluse per esaurimento si ripresentano nella prima sessione utile senza nuove spese istruttorie, altrimenti niente rimborso (art. 2 cc. 6-7). Inammissibilità per mancanza di polizza, spese istruttorie, documentazione della copertura finanziaria minima (salvo definitive su opere già completate), firma digitale del legale rappresentante (art. 4). La DGCA può verificare l'effettivo avvio delle riprese (art. 5). **Il decreto non indica gli importi dello stanziamento.**
+
+### Errori preesistenti trovati sul sito il 29/09/2026 (non dipendono dal 281)
+
+1. **«Copertura finanziaria privata»**: il D.I. 141/2025, art. 1 lett. g), ha eliminato «con risorse di origine privata» dagli artt. 12, 16, 20, 23, 27 e 30 dal 6 giugno 2025. Guida, checklist IT/EN e simulatore dicevano ancora «privata».
+2. **Art. 12 c.1 a), 40% contro 30%.** Testo originario 225/2024 = 40%; il 141 toglie solo «privata»; il 281 non tocca la lettera a). Il testo coordinato DGCA 2026 riporta però «almeno il 30 per cento» senza evidenziare modifiche. Fa fede il 40% dei decreti; sul sito lo si scrive con l'avviso della divergenza (scelta dell'avvocato del 29/09). **Da chiedere alla DGCA** (ticket DGCOL o PEC dg-ca@pec.cultura.gov.it).
+3. **Nazionalità «o» eleggibilità culturale** nella checklist: servono entrambe (art. 2 c.5).
+4. **«Preventiva prima di avviare le spese significative»** nella checklist (e nella scheda DGCOL di Approfondimenti): il decreto fissa una finestra diversa, non prima dei 60 giorni che precedono l'avvio di 4 settimane consecutive di riprese o del 50% delle giornate, e dopo la richiesta di nazionalità provvisoria (artt. 14 c.1-2 e 18 c.1-2).
+5. **Documentari e cortometraggi «secondo la destinazione»** nel simulatore: hanno aliquote proprie (artt. 21 e 28). L'animazione cadeva nel ramo cinema (40%): ora 35%.
+6. **Stima nel simulatore EN mai mostrata** per la produzione (filtro su «Tax Credit» contro titolo «Production tax credit»); nella versione IT la stima 25–40% veniva applicata anche ai videogiochi, che hanno un'altra disciplina. Ora la stima (20–35%) vale solo per la produzione.
+7. **Tabella B**: il 7,5% delle spese generali è condiviso con 7.2, 7.4, 7.5 **e 7.6** (costi di amministrazione); la guida citava solo le voci 7.1-7.5.
+
+### Restano da valutare (non toccati)
+- Simulatore: una coproduzione extra-UE non mostra il tax credit produzione (`isItalian` falso), mentre può avere nazionalità italiana; la scelta «Altro (videogame)» mostra comunque la scheda del credito cinematografico.
+- Scheda Approfondimenti tc-produzione: «non può comunque superare il 50%» senza le eccezioni dell'art. 4 → reso «di norma» il 29/09.
+- `art. 26` del testo coordinato rinvia ancora ai «diciotto mesi» dell'art. 19 (difetto di coordinamento del 281, non riportato sul sito).
+
+### Verifica indipendente del 29/09/2026 sera (quattro revisori, solo fonti primarie)
+
+Correzioni applicate dopo la verifica:
+- **Scheda «normativa» di Approfondimenti, online dal 13/09**: diceva che il nuovo decreto «non risultava pubblicato e fino ad allora non produce effetti» e lo datava 18 giugno 2026. Riscritta: 225 + 141 + 281, sessione 2026 sotto il testo modificato.
+- **Scheda «DGCOL»**: stesso errore della checklist sulla preventiva; «SPID/CIE» non verificabile, sostituito con la firma digitale (D.D. 2821 art. 4 lett. d).
+- **Scheda «cumulabilità»**: 50% «di norma», con le eccezioni dell'art. 4.
+- **Guida tc-produzione**: il reinvestimento (art. 7 cc. 9-10) e l'art. 38 c. 4 vengono dal D.I. 141 (lett. d e cc), non dal 225 originario; «14 agosto 2024» senza fonte → «entrata in vigore del D.I. 225/2024»; art. 13 c. 4 limitato a indipendente + non indipendente/non europeo, 50% esatto = regime meno favorevole; art. 17 c. 2 riduzione cumulativa (5 + 5 punti); art. 26 c. 2 animazione +12 mesi, con difetto di coordinamento (rinvia ai «diciotto mesi» dell'art. 19): prudenza sul termine più breve; FAQ sul 40% riformulata; art. 34 c. 1 (utilizzo dal giorno 15).
+- **Guida contributi-selettivi-erogazione**: «il credito d'imposta è una misura automatica» superato dall'art. 6-bis.
+- **Checklist IT/EN**: tolta la voce «quote riservate» (nessun fondamento nelle fonti); termini della definitiva (24 mesi + 180 giorni artt. 15 e 19 + animazione art. 26 c. 2); finestra dei 60 giorni per ogni tipologia; requisiti di copertura e accordi per tv/web (art. 16, 50%), doc/animazione/corti (30%), videoclip (40%); corti con costo eleggibile max 200.000 € (art. 27 c. 1); clausole IA e trasparenza dati (art. 7 cc. 2 e 6) e accessibilità (art. 7 c. 4) a pena di inammissibilità; domanda congiunta (art. 14 c. 3); titolo dell'opera sulle fatture > 1.000 € (art. 3 c. 8, dal 141 lett. b); art. 12 c. 2 con bandi dopo l'1/1/2024 e obbligo di circuitazione; EN «sworn statement» → self-certification art. 47 DPR 445/2000; stessa struttura nelle due lingue.
+- **Simulatore IT/EN**: massimali dell'art. 5 per tipologia (i corti non vi rientrano); stima con l'aliquota della tipologia entro i massimali; animazione istruita per data di avvio delle **lavorazioni**; «nessun riconoscimento parziale» attribuito al D.D. 2821 art. 2 c. 6 e non al 6-bis; scheda del credito cinema non più mostrata per i videogiochi.
+
+Verificati anche: i PDF ufficiali coincidono bit per bit con quelli usati (sha256, 29/09 sera); art. 15 L. 220/2016 riletto su Normattiva il 29/09 («non inferiore al 15 per cento e non superiore al 40 per cento»); avviso DGCA 6/6/2025 («entrano in vigore, in data odierna» le disposizioni del 141); il vademecum DGCOL per la produzione 2026 non è ancora pubblicato.
+
+Restano aperti, non toccati: coproduzioni extra-UE e pre-produzione nel simulatore (logica); schede e guide sull'art. 19 (D.I. 329/2024, misura distinta, non modificata dal 281); formato decimale con il punto nella pagina italiana del simulatore.
+
+**Secondo e terzo giro (29/09 sera).** Numeri tutti confermati da revisori diversi. Corretti inoltre:
+- guida: art. 6-bis attribuito al 225 originario (è del 281, lett. e); modelli all'art. 38 c. 2, non c. 1; «tetti annui a tutte le opere» (esclusi corti e videoclip); art. 13 c. 2 limitato ai punti 1) e 3) della lett. k) (dal 141 lett. l); 180 giorni della definitiva (artt. 15 e 19 lett. b); FAQ sul 40% riferita alla sessione 2026; polizza con il rinvio letterale all'art. 2424 c.c. (voce B-II, nn. 1-3: il testo del c.c. non è stato letto, quindi niente parafrasi); tolto il paragrafo sul voto della Camera (solo fonte di stampa; resta nella scheda «normativa»);
+- schede: «normativa» dice «introduce tetti annui di 7 e 15 milioni e riduce a 3 quello dei non indipendenti»; cumulabilità senza le affermazioni non documentate (rendicontazione separata, massimali per unità produttiva); spese eleggibili «di regola» in Italia, con la quota SEE dei documentari (art. 21 c. 1);
+- checklist: art. 16 c. 3 (opere con selettivo: niente 50% né 20%, accordi entro la definitiva); art. 7 c. 2 «inammissibilità o decadenza»; termini della definitiva ristrutturati; animazione tv prudenzialmente 30 mesi; deroghe «possono essere ammesse» (artt. 15 e 19 c. 2);
+- simulatore: scheda del credito anche in pre-produzione e per le coproduzioni extra UE (art. 1 c. 2 lett. f, g, h: coproduzione con accordo, compartecipazione o produzione internazionale senza); corti «ammessi solo con costo eleggibile fino a 200.000 €» (requisito di ammissione, non massimale); niente frase sulle aliquote ridotte per i corti (art. 28 ha un solo comma); stima dei lungometraggi con il tetto di 3 milioni dei non indipendenti; decimali con la virgola nella pagina italiana.

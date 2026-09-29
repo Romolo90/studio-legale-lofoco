@@ -308,14 +308,14 @@
       "title": "Tax Credit per la produzione cinematografica e audiovisiva",
       "guideUrl": "guida-tax-credit-produzione.html",
       "category": "tax-credit",
-      "summary": "Credito d'imposta sulle spese ammissibili per opere di nazionalità italiana o coproduzioni. Con le modifiche del D.I. 281/2026 spetta il 30% alle opere cinematografiche di produttori indipendenti e il 20%, elevabile al 30%, alle opere tv e web, fino a 4 milioni di euro per opera cinematografica e 7 milioni per opera tv e web. Il sostegno pubblico complessivo non può comunque superare il 50% del costo dell'opera.",
+      "summary": "Credito d'imposta sulle spese ammissibili per opere di nazionalità italiana, comprese le coproduzioni riconosciute. Con le modifiche del D.I. 281/2026 spetta il 30% alle opere cinematografiche di produttori indipendenti e il 20%, elevabile al 30%, alle opere tv e web, fino a 4 milioni di euro per opera cinematografica e 7 milioni per opera tv e web. Il sostegno pubblico complessivo non può di norma superare il 50% del costo dell'opera.",
       "keyPoints": [
         "Opere cinematografiche 30% ai produttori indipendenti, opere tv e web 20% elevabile al 30% (D.I. 281/2026)",
         "Requisito di eleggibilità culturale obbligatorio",
-        "Spese ammissibili: personale, servizi, post-produzione in Italia",
+        "Costi eleggibili, di regola, verso fornitori fiscalmente residenti o soggetti a tassazione in Italia, nei limiti dell'art. 3 e della Tabella B (per i documentari è ammessa una quota di spese nello Spazio economico europeo, art. 21)",
         "Domande preventive e definitive tramite piattaforma DGCOL",
         "Base normativa art. 15 L. 220/2016 e D.I. MiC-MEF 10 luglio 2024 rep. 225, come modificato dal D.I. 22 aprile 2025 rep. 141 e dal D.I. 6 luglio 2026 rep. 281",
-        "Il sostegno pubblico complessivo non può superare il 50% del costo dell'opera"
+        "Il sostegno pubblico complessivo non può di norma superare il 50% del costo dell'opera (60, 80 o 100% nei casi dell'art. 4)"
       ],
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-nazionale/",
       "secondaryLink": {
@@ -407,12 +407,12 @@
       "category": "normativa",
       "summary": "Guida pratica alla compilazione e invio di istanze preventive/definitive sulla piattaforma DGCOL del MiC. Requisiti documentali e tempistiche.",
       "keyPoints": [
-        "Accesso con SPID/CIE per rappresentante legale",
+        "Domanda sottoscritta con firma digitale del legale rappresentante",
         "Upload contratti, budget, piano di lavorazione, materiali",
-        "Scadenze perentorie: preventive prima di avvio spese significative",
+        "Richiesta preventiva non prima dei sessanta giorni che precedono l'avvio di quattro settimane consecutive di riprese o del 50% delle giornate di ripresa (criteri propri per documentari, animazione e corti), e dopo la richiesta di nazionalità provvisoria",
         "Comunicazioni e integrazioni gestite interamente online"
       ],
-      "errorsToAvoid": "Invio di file non conformi o mancata indicazione di tutte le spese 'qualificate' sul territorio italiano.",
+      "errorsToAvoid": "Invio di file non conformi, o costi indicati come eleggibili senza i requisiti dell'art. 3 del D.I. 225/2024, per esempio fornitori non residenti né soggetti a tassazione in Italia.",
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
       "tags": [
         "dgcol",
@@ -443,14 +443,13 @@
       "id": "cumulabilita-incentivi",
       "title": "Cumulabilità Tax Credit, contributi selettivi e incentivi regionali",
       "category": "normativa",
-      "summary": "Regole di cumulo tra misure nazionali, accordi bilaterali, Creative Europe MEDIA e film commission regionali. Il vincolo che le governa tutte è il tetto del 50% di sostegno pubblico sul costo dell'opera.",
+      "summary": "Regole di cumulo tra misure nazionali, accordi bilaterali, Creative Europe MEDIA e film commission regionali. Per il credito alla produzione il vincolo generale è il tetto del sostegno pubblico complessivo, di norma il 50% del costo dell'opera, elevato al 60, 80 o 100% nei casi dell'art. 4 del D.I. 225/2024.",
       "keyPoints": [
-        "Il cumulo è possibile, ma il sostegno pubblico complessivo non può superare il 50% del costo dell'opera",
-        "Anche i fondi regionali e i contributi delle film commission rientrano in quel limite",
-        "Attenzione a 'aiuti di Stato' e massimali per impresa/unità produttiva",
-        "Obbligo di rendicontazione separata per ogni misura"
+        "Il cumulo è possibile entro il limite complessivo di sostegno pubblico, di norma il 50% del costo dell'opera (art. 4 del D.I. 225/2024 per il credito alla produzione)",
+        "Per le opere che chiedono il credito alla produzione anche i fondi regionali e i contributi delle film commission rientrano in quel limite",
+        "Non sono eleggibili le spese già usate per crediti d'imposta di altri Stati (art. 3, comma 7)"
       ],
-      "errorsToAvoid": "Dichiarare la stessa spesa su più misure senza autorizzazione o doppia rendicontazione.",
+      "errorsToAvoid": "Usare la stessa spesa per crediti d'imposta di altri Stati (art. 3, comma 7) o superare il limite complessivo di sostegno pubblico.",
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/",
       "tags": [
         "cumulabilita",
@@ -463,12 +462,12 @@
       "id": "normativa",
       "title": "Tax credit, cosa è in vigore e cosa sta cambiando (2026)",
       "category": "normativa",
-      "summary": "La disciplina in vigore è il decreto interministeriale MiC-MEF 225/2024, modificato dal correttivo 141/2025. Un nuovo decreto che riduce le aliquote massime e i limiti di credito per opera e introduce tetti per singola impresa è stato firmato dal Ministro della cultura il 18 giugno 2026, ma a settembre 2026 non risultava pubblicato e fino ad allora non produce effetti. Il 10 settembre 2026 la Camera ha approvato in prima lettura il testo unico sul cinema, ora all'esame del Senato.",
+      "summary": "La disciplina in vigore è il decreto interministeriale MiC-MEF 10 luglio 2024 rep. 225, modificato dal D.I. 22 aprile 2025 rep. 141 e dal D.I. 6 luglio 2026 rep. 281, che riduce aliquote e massimali per opera, introduce tetti annui per impresa di 7 e 15 milioni, riduce a 3 milioni quello dei non indipendenti e non contiene disposizioni transitorie. La sessione 2026, aperta con il D.D. 24 settembre 2026 rep. 2821, si svolge sotto il testo modificato. Il 10 settembre 2026 la Camera ha approvato in prima lettura il testo unico sul cinema, ora all'esame del Senato.",
       "keyPoints": [
-        "In vigore il D.I. MiC-MEF 10 luglio 2024 rep. 225, modificato dal D.I. 22 aprile 2025 rep. 141",
-        "Il nuovo decreto riduce le aliquote massime e introduce tetti per impresa, ma finché non è pubblicato non si applica",
-        "Il testo unico approvato alla Camera prevede il riordino del credito d'imposta e un'Agenzia per il cinema e l'audiovisivo",
-        "Prima di chiudere un piano finanziario conviene verificare se il nuovo decreto sia stato pubblicato"
+        "In vigore il D.I. MiC-MEF 10 luglio 2024 rep. 225, modificato dal D.I. 22 aprile 2025 rep. 141 e dal D.I. 6 luglio 2026 rep. 281",
+        "Il D.I. 281/2026 riduce le aliquote (per le opere cinematografiche dei produttori indipendenti dal 40 al 30%) e i massimali per opera, e introduce tetti annui per impresa di 7 e 15 milioni",
+        "Le domande della sessione 2026 sono istruite per data di avvio delle riprese fino a esaurimento delle risorse (art. 6-bis)",
+        "Il testo unico approvato alla Camera prevede il riordino del credito d'imposta e l'istituzione di un'Agenzia per il cinema e l'audiovisivo"
       ],
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
       "guideUrl": "guida-tax-credit-produzione.html"
