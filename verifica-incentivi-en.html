@@ -574,7 +574,7 @@
         results.push({
           title: 'Tax Credit Videogames',
           status: spend >= 0.5 ? 'high' : 'medium',
-          note: `Videogame project detected. Italian spend ${spend} M€. Check dedicated nationality rules (D.D. 29/5) and separate reporting. Combining it with other support remains subject to the aid intensity ceiling.`
+          note: `Videogame project detected. Italian spend ${spend} M€. Check the nationality requirements specific to video games and separate reporting. Combining it with other support remains subject to the aid intensity ceiling.`
         });
       }
 
@@ -636,9 +636,18 @@
       // UE / MEDIA + co-productions
       if (data.nationality === 'co-eu' || data.nationality === 'co-international') {
         results.push({
-          title: 'EU Programmes (Creative Europe MEDIA) and bilateral agreements',
+          title: 'European programmes and bilateral co-production calls',
           status: 'medium',
-          note: 'Co-productions with EU countries (e.g. Italy-France 2026) can access cross-funding and extra points. However, without a significant Italian component the opportunities remain more limited than for a majority-Italian project.'
+          note: 'For co-productions, what matters is the co-production agreement with the partner country, European programmes such as Creative Europe MEDIA and the bilateral calls published by the Directorate-General, for example those with France and Portugal. Requirements and windows must be checked call by call.'
+        });
+      }
+
+      // If no national measure emerges, say so before the regional note.
+      if (results.length === 0) {
+        results.push({
+          title: 'No national measure to look at first',
+          status: 'none',
+          note: 'With the data entered no national measure stands out as a priority. This may depend on the stage of the project, the nationality of the work or its type, and many requirements cannot be inferred from a questionnaire. A review with the firm can clarify which options remain open.'
         });
       }
 
@@ -648,14 +657,6 @@
         status: 'low',
         note: 'Almost all Italian regions have their own incentives, as rebates or grants, and they should be checked with the Film Commission for the area where you plan to shoot. They count towards the ceiling on total public support, which as a rule may not exceed 50 per cent of the cost of the work.'
       });
-
-      if (results.length === 0) {
-        results.push({
-          title: 'No main incentives identified',
-          status: 'none',
-          note: 'With the parameters entered, the project does not meet the minimum requirements to access the main national incentives (Tax Credit and selective grants). The most common blockers are: insufficient Italian spend, lack of Italian-majority nationality, or the project being too far advanced. We recommend a detailed review with the studio.'
-        });
-      }
 
       return results;
     }
@@ -672,10 +673,14 @@
 
         let summaryText = '';
         if (high > 0) {
-          summaryText = `Based on what you entered, the measures to look at first are <strong>${high}</strong>.`;
-          if (medium > 0) summaryText += ` Another ${medium} deserve a closer look.`;
+          summaryText = high === 1
+            ? `Based on what you entered, there is <strong>one</strong> measure to look at first.`
+            : `Based on what you entered, the measures to look at first are <strong>${high}</strong>.`;
+          if (medium > 0) summaryText += medium === 1 ? ` Another one deserves a closer look.` : ` Another ${medium} deserve a closer look.`;
         } else if (medium > 0) {
-          summaryText = `Based on what you entered, <strong>${medium} measures</strong> deserve a closer look.`;
+          summaryText = medium === 1
+            ? `Based on what you entered, <strong>one measure</strong> deserves a closer look.`
+            : `Based on what you entered, <strong>${medium} measures</strong> deserve a closer look.`;
         } else {
           summaryText = `With the data entered, no measure stands out as a priority. That does not mean there is none: many requirements cannot be inferred from a questionnaire.`;
         }
@@ -716,6 +721,10 @@
       // Basic validation
       if (!data.projectType || !data.stage || !data.italianSpend || !data.nationality) {
         alert('Please complete all required fields to receive an assessment.');
+        return;
+      }
+      if (!(parseFloat(data.italianSpend) >= 0)) {
+        alert('The estimated spend in Italy must be a number equal to or greater than zero.');
         return;
       }
 

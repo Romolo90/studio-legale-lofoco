@@ -575,7 +575,7 @@
         results.push({
           title: 'Tax Credit Videogiochi',
           status: spend >= 0.5 ? 'high' : 'medium',
-          note: `Progetto videoludico rilevato. Spesa IT ${String(spend).replace('.', ',')} M€. Verifica nazionalità dedicata (D.D. 29/5) e rendicontazione separata. Il cumulo con altri sostegni resta soggetto al limite di intensità dell’aiuto.`
+          note: `Progetto videoludico rilevato. Spesa IT ${String(spend).replace('.', ',')} M€. Verifica i requisiti di nazionalità propri dei videogiochi e la rendicontazione separata. Il cumulo con altri sostegni resta soggetto al limite di intensità dell’aiuto.`
         });
       }
 
@@ -638,9 +638,18 @@
       // UE / MEDIA + co-productions
       if (data.nationality === 'co-eu' || data.nationality === 'co-international') {
         results.push({
-          title: 'Programmi UE (Creative Europe MEDIA) e accordi bilaterali',
+          title: 'Programmi europei e bandi bilaterali di coproduzione',
           status: 'medium',
-          note: 'Le coproduzioni con Paesi UE (es. Italia-Francia 2026) possono accedere a fondi incrociati e punti extra. Tuttavia, senza una componente italiana significativa le opportunità restano limitate rispetto a un progetto maggioritariamente italiano.'
+          note: 'Per le coproduzioni contano gli accordi di coproduzione con il Paese partner, i programmi europei come Creative Europe MEDIA e i bandi bilaterali pubblicati dalla Direzione generale, per esempio quelli con la Francia e con il Portogallo. Requisiti e finestre vanno verificati bando per bando.'
+        });
+      }
+
+      // Se nessuna misura nazionale emerge, lo si dice prima della nota regionale.
+      if (results.length === 0) {
+        results.push({
+          title: 'Nessuna misura nazionale da guardare per prima',
+          status: 'none',
+          note: 'Con i dati inseriti non emergono misure nazionali da guardare in via prioritaria. Può dipendere dalla fase del progetto, dalla nazionalità dell\'opera o dalla tipologia, e molti requisiti non si deducono da un questionario. Una verifica con lo studio può chiarire quali strade restano aperte.'
         });
       }
 
@@ -650,14 +659,6 @@
         status: 'low',
         note: 'Quasi tutte le regioni hanno incentivi propri, sotto forma di rebate o di contributi, e vanno verificati con la Film Commission del territorio in cui si gira. Concorrono al limite del sostegno pubblico complessivo, che di norma non può superare il 50 per cento del costo dell’opera.'
       });
-
-      if (results.length === 0) {
-        results.push({
-          title: 'Nessun incentivo principale identificato',
-          status: 'none',
-          note: 'Con i parametri inseriti il progetto non soddisfa i requisiti minimi per attivare Tax Credit Produzione, Contributi Selettivi o le principali misure nazionali. I motivi più frequenti sono: spesa in Italia troppo bassa, mancanza di nazionalità italiana (maggioritaria), oppure fase troppo avanzata. Ti consigliamo una verifica più approfondita con lo studio.'
-        });
-      }
 
       return results;
     }
@@ -674,10 +675,14 @@
 
         let summaryText = '';
         if (high > 0) {
-          summaryText = `Sulla base di quanto hai indicato, le misure da guardare per prime sono <strong>${high}</strong>.`;
-          if (medium > 0) summaryText += ` Altre ${medium} meritano una verifica più approfondita.`;
+          summaryText = high === 1
+            ? `Sulla base di quanto hai indicato, c'è <strong>una</strong> misura da guardare per prima.`
+            : `Sulla base di quanto hai indicato, le misure da guardare per prime sono <strong>${high}</strong>.`;
+          if (medium > 0) summaryText += medium === 1 ? ` Un'altra merita una verifica più approfondita.` : ` Altre ${medium} meritano una verifica più approfondita.`;
         } else if (medium > 0) {
-          summaryText = `Sulla base di quanto hai indicato, <strong>${medium} misure</strong> meritano una verifica più approfondita.`;
+          summaryText = medium === 1
+            ? `Sulla base di quanto hai indicato, <strong>una misura</strong> merita una verifica più approfondita.`
+            : `Sulla base di quanto hai indicato, <strong>${medium} misure</strong> meritano una verifica più approfondita.`;
         } else {
           summaryText = `Con i dati inseriti non emergono misure da guardare in via prioritaria. Non significa che non ce ne siano: molti requisiti non si deducono da un questionario.`;
         }
@@ -718,6 +723,10 @@
       // Basic validation
       if (!data.projectType || !data.stage || !data.italianSpend || !data.nationality) {
         alert('Compila tutti i campi obbligatori per ottenere una valutazione.');
+        return;
+      }
+      if (!(parseFloat(data.italianSpend) >= 0)) {
+        alert('La spesa stimata in Italia deve essere un numero pari o superiore a zero.');
         return;
       }
 
