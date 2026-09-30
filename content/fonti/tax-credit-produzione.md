@@ -108,6 +108,7 @@ Fonti riscaricate e lette il 29/09/2026 (Andrea Lo Foco, assistito da Claude Cod
 | `di-281-2026` | D.I. MiC-MEF 6 luglio 2026, rep. n. 281 (firmato 6/7/2026), modifiche al D.I. 225/2024; due soli articoli, **nessuna norma transitoria** | https://cinema.cultura.gov.it/wp-content/uploads/2026/09/DM_MIC_MEF_tax_credit_cinema_225_2024_per_firma_signed.pdf |
 | `testo-coordinato-2026` | Testo coordinato DGCA 225/2024 + 141/2025 + 281/2026, **privo di valore giuridico** | https://cinema.cultura.gov.it/wp-content/uploads/2026/09/20260618_Consolidato_TC-art.-15_Modifica-2026_rev.pdf |
 | `dd-2821-2026` | D.D. 24 settembre 2026, rep. n. 2821, apertura sessione 2026 (30/9 ore 10:00 – 14/10 ore 23:59) | https://cinema.cultura.gov.it/wp-content/uploads/2026/09/D.D.-apertura-sessione-finestra-2026-_produzione_REP.-2821.pdf |
+| `dl-34-2020` | D.L. 19 maggio 2020, n. 34, conv. L. 17 luglio 2020, n. 77, art. 122-bis (letto su Normattiva il 30/09/2026) | https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2020-05-19;34~art122bis |
 
 Riletti anche il testo originario del 225/2024 e il D.I. 141/2025 per la questione dell'art. 12 (sotto).
 
@@ -125,7 +126,8 @@ Riletti anche il testo originario del 225/2024 e il D.I. 141/2025 per la questio
 | Imputazione | 9 M€ nell'esercizio della preventiva, eccedenza nei 3 successivi | **3 M€ (cinema) / 5 M€ (tv-web)** nell'esercizio della preventiva, eccedenza nei 3 successivi | art. 5 c.2 |
 | Ordine di istruttoria | — | **per data di avvio riprese/lavorazioni, fino a esaurimento; eccedenti «non finanziabili»** | nuovo art. 6-bis |
 | Polizza catastrofale | — | **a pena di inammissibilità** (L. 213/2023, art. 1 cc. 101-102) | nuovo art. 7 c.11 |
-| Cessionari | rispondono per utilizzo irregolare (c.1) | anche accertamento e sanzioni nei loro confronti | art. 8 c.6 |
+| Cessionari | rispondono per utilizzo irregolare (c.1) | anche accertamento e sanzioni nei loro confronti | art. 8 c.6 / 281 lett. g) n. 2 |
+| Rinvio all'art. 122-bis D.L. 34/2020 (sospensione fino a 30 giorni, da parte dell'Agenzia delle entrate, delle comunicazioni di cessione con profili di rischio) | applicabile «in quanto compatibile» | **soppresso** (il testo coordinato 2026 lo riporta barrato) | art. 8 c.2 / 281 lett. g) n. 1 |
 | Distribuzione cinema ≤ 3,5 M€ | 300 proiezioni, 50 sale, 2 settimane | **300 proiezioni, 30 sale, 6 settimane** | art. 12 c.1 b) n. 2 |
 | Cinema, produttori indipendenti | 40% | **30%** | art. 13 c.1 |
 | Cinema, elevata capacità | 35% (5–10 M) / 30% (>10 M) | **25% / 20%** | art. 13 c.2 |
