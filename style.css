@@ -662,6 +662,10 @@ p {
   letter-spacing: 0.3px;
 }
 
+.contact-info > div {
+  min-width: 0; /* un indirizzo lungo (PEC) non deve invadere la colonna accanto */
+}
+
 .contact-info a {
   color: #005699;
   text-decoration: none;
@@ -1149,8 +1153,12 @@ footer {
     padding: 3rem 1rem;
     background-image: image-set(url('image/hero-800.webp') type('image/webp'), url('image/hero.jpg') type('image/jpeg'));
   }
+  /* Il titolo è nowrap su desktop: qui scala con lo schermo e può andare a capo,
+     altrimenti sotto i 414 px allarga la pagina e la fa scorrere di lato */
   .hero-content h1, .hero-content h2 {
-    font-size: 2.3rem;
+    font-size: clamp(1.5rem, 7.5vw, 2.3rem);
+    white-space: normal;
+    text-wrap: balance;
   }
   .hero-content p {
     font-size: 1.1rem;
@@ -1710,3 +1718,33 @@ textarea:focus-visible {
   padding: 0.25rem 0.4rem;
 }
 .cookie-close:focus-visible { outline: 2px solid #80D9FF; outline-offset: 2px; }
+
+/* I link a forma di pulsante (es. «Guida al tax credit per produzioni estere →») sono
+   più larghi di un telefono: lì vanno a capo invece di allargare la pagina */
+@media (max-width: 768px) {
+  a.filter-btn {
+    white-space: normal;
+    display: inline-block;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* Fra il menu a scomparsa (≤768 px) e i ~1100 px le sei voci affiancate al nome dello
+   studio non ci stanno e allargavano la pagina: qui il menu passa su una seconda riga */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .header {
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+  }
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.75rem;
+  }
+}
