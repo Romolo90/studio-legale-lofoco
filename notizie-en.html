@@ -4,44 +4,41 @@
   <!-- Meta and SEO -->
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <!-- Google tag (gtag.js) - Consent Mode v2.
-       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
-       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
-       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <!-- Google Analytics 4: caricato solo dopo il consenso.
+       Senza consenso nessuna richiesta parte verso Google. Chi ha gia' accettato in una
+       visita precedente lo carica qui; gli altri lo caricano da script.js quando accettano
+       dal banner. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
-    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
-    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
-    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
-    var glfAnalytics = 'denied';
+    window.glfLoadAnalytics = function () {
+      if (window.glfAnalyticsLoaded) return;
+      window.glfAnalyticsLoaded = true;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-E7P6F0SVRY', { cookie_flags: 'SameSite=Lax;Secure' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(s);
+    };
     try {
       var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
       if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
-        glfAnalytics = 'granted';
+        window.glfLoadAnalytics();
       }
-    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: glfAnalytics,
-      functionality_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-E7P6F0SVRY', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=Lax;Secure'
-    });
+    } catch (e) { /* cookie illeggibile o malformato: GA4 non viene caricato */ }
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studio Legale Lo Foco | Insights - Tax Credit, Selective Grants &amp; Audiovisual Regulation</title>
+  <title>Updates and analysis on Italian film tax credits and grants | Studio Legale Lo Foco</title>
   <link rel="canonical" href="https://studiolegalelofoco.com/notizie-en.html">
-  <meta name="description" content="Latest official updates, calls and resources on Tax Credit, selective contributions, European funds and audiovisual regulation. Sources: Direzione Generale Cinema e Audiovisivo - Ministry of Culture.">
+  <meta name="description" content="Official notices from the Italian Directorate-General for Cinema and Audiovisual and analysis of film tax credits, selective grants and co-productions.">
   <meta name="keywords" content="Studio Legale Lo Foco, Insights, Tax Credit, selective contributions, cinema, audiovisual, film incentives, DG Cinema">
 
   <!-- Hreflang for bilingual SEO -->
@@ -50,16 +47,16 @@
   <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/notizie.html">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Studio Legale Lo Foco | Insights - Tax Credit &amp; Audiovisual Incentives">
-  <meta property="og:description" content="Latest official updates and resources on Tax Credit, selective contributions and audiovisual regulation from DG Cinema (Ministry of Culture).">
+  <meta property="og:title" content="Updates and analysis on Italian film tax credits and grants | Studio Legale Lo Foco">
+  <meta property="og:description" content="Official notices from the Italian Directorate-General for Cinema and Audiovisual and analysis of film tax credits, selective grants and co-productions.">
   <meta property="og:url" content="https://studiolegalelofoco.com/notizie-en.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Studio Legale Lo Foco | Insights">
-  <meta name="twitter:description" content="Official DG Cinema updates, Tax Credit sessions 2026, selective grants and practical resources for producers and filmmakers.">
+  <meta name="twitter:title" content="Updates and analysis on Italian film tax credits and grants | Studio Legale Lo Foco">
+  <meta name="twitter:description" content="Official notices from the Italian Directorate-General for Cinema and Audiovisual and analysis of film tax credits, selective grants and co-productions.">
   <meta name="twitter:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
 
   <!-- Favicons -->
@@ -72,7 +69,7 @@
   <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#003366">
-  <link rel="stylesheet" href="style.css?v=7bf2ab48">
+  <link rel="stylesheet" href="style.css?v=36781444">
 </head>
 <body>
 
@@ -86,6 +83,11 @@
           Studio Legale Lo Foco
         </a>
       </p>
+    </div>
+
+    <!-- Language selector -->
+    <div class="language-selector">
+      <a href="notizie.html" hreflang="it">IT</a> | <a href="notizie-en.html" hreflang="en">EN</a>
     </div>
 
     <!-- Mobile Hamburger Menu -->
@@ -104,7 +106,7 @@
         <li><a href="guides-en.html">Guides</a></li>
         <li><a href="index-en.html#contact">Contact</a></li>
         <li class="mobile-language">
-          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+          <a href="notizie.html" hreflang="it">IT</a> | <a href="notizie-en.html" hreflang="en">EN</a>
         </li>
       </ul>
     </nav>
@@ -125,9 +127,9 @@
         <div style="display:flex; justify-content: center; flex-wrap:wrap; gap:0.35rem;">
           <button type="button" class="filter-btn active" data-filter="all">All</button>
           <button type="button" class="filter-btn" data-filter="tax-credit">Tax Credit</button>
-          <button type="button" class="filter-btn" data-filter="contributi-selettivi">Selective Contributions</button>
+          <button type="button" class="filter-btn" data-filter="contributi-selettivi">Selective grants</button>
           <button type="button" class="filter-btn" data-filter="coproduzioni">Co-productions</button>
-          <button type="button" class="filter-btn" data-filter="normativa">Regulation</button>
+          <button type="button" class="filter-btn" data-filter="normativa">Legislation</button>
         </div>
       </div>
 
@@ -166,7 +168,7 @@
 
         <div class="resource-card" id="contributi-selettivi" data-id="contributi-selettivi" data-category="contributi-selettivi" data-guide="">
           <div class="card-header">
-            <span class="category-tag">contributi selettivi</span>
+            <span class="category-tag">selective grants</span>
 
           </div>
           <h3>Selective Contributions for Screenwriting, Development and Production</h3>
@@ -176,7 +178,7 @@
 
         <div class="resource-card" id="contributi-selettivi-erogazione" data-id="contributi-selettivi-erogazione" data-category="contributi-selettivi" data-guide="">
           <div class="card-header">
-            <span class="category-tag">contributi selettivi</span>
+            <span class="category-tag">selective grants</span>
 
           </div>
           <h3>Selective Contributions, assessment and payment</h3>
@@ -186,7 +188,7 @@
 
         <div class="resource-card" id="co-produzioni" data-id="co-produzioni" data-category="coproduzioni" data-guide="">
           <div class="card-header">
-            <span class="category-tag">coproduzioni</span>
+            <span class="category-tag">co-productions</span>
 
           </div>
           <h3>International co-productions and bilateral funds</h3>
@@ -196,7 +198,7 @@
 
         <div class="resource-card" id="dgcol-pratica" data-id="dgcol-pratica" data-category="normativa" data-guide="">
           <div class="card-header">
-            <span class="category-tag">normativa</span>
+            <span class="category-tag">legislation</span>
             <span class="tag">dgcol</span><span class="tag">practice</span><span class="tag">tax-credit</span>
           </div>
           <h3>DGCOL Platform: how to submit Tax Credit and contribution applications</h3>
@@ -206,7 +208,7 @@
 
         <div class="resource-card" id="errori-eleggibilita" data-id="errori-eleggibilita" data-category="normativa" data-guide="">
           <div class="card-header">
-            <span class="category-tag">normativa</span>
+            <span class="category-tag">legislation</span>
             <span class="tag">eligibility</span><span class="tag">errors</span><span class="tag">nationality</span>
           </div>
           <h3>Cultural eligibility and nationality, requirements not to underestimate</h3>
@@ -216,7 +218,7 @@
 
         <div class="resource-card" id="cumulabilita-incentivi" data-id="cumulabilita-incentivi" data-category="normativa" data-guide="">
           <div class="card-header">
-            <span class="category-tag">normativa</span>
+            <span class="category-tag">legislation</span>
             <span class="tag">cumulability</span><span class="tag">regional</span><span class="tag">film-commission</span>
           </div>
           <h3>Cumulability of Tax Credit, selective contributions and regional incentives</h3>
@@ -226,7 +228,7 @@
 
         <div class="resource-card" id="normativa" data-id="normativa" data-category="normativa" data-guide="">
           <div class="card-header">
-            <span class="category-tag">normativa</span>
+            <span class="category-tag">legislation</span>
 
           </div>
           <h3>Tax credit, what is in force and what is changing (2026)</h3>
@@ -865,7 +867,8 @@
         return matchesFilter && matchesSearch;
       });
       container.innerHTML = filtered.map(a => {
-        const cat = (a.category || 'all').replace('-', ' ');
+        const CAT_EN = { 'tax-credit': 'tax credit', 'contributi-selettivi': 'selective grants', 'normativa': 'legislation', 'coproduzioni': 'co-productions' };
+        const cat = CAT_EN[a.category] || (a.category || 'all').replace('-', ' ');
         const tagsHtml = a.tags && a.tags.length ? a.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
         return `
         <div class="resource-card" id="${a.id}" data-id="${a.id}" data-category="${a.category || ''}" data-guide="${a.guideUrl || ''}">
@@ -930,7 +933,7 @@
       const body = document.getElementById('modal-body');
       body.innerHTML = `
         ${article.guideUrl ? `<p style="margin:0 0 .6rem;"><a class="btn-guida" href="${article.guideUrl}">Read the full guide →</a></p>` : ''}
-        <div class="meta">Category: <strong>${article.category.replace('-', ' ')}</strong>${article.tags && article.tags.length ? ` • <span style="color:#0066aa;">${article.tags.join(', ')}</span>` : ''}</div>
+        <div class="meta">Category: <strong>${({ 'tax-credit': 'tax credit', 'contributi-selettivi': 'selective grants', 'normativa': 'legislation', 'coproduzioni': 'co-productions' })[article.category] || article.category.replace('-', ' ')}</strong>${article.tags && article.tags.length ? ` • <span style="color:#0066aa;">${article.tags.join(', ')}</span>` : ''}</div>
         <p>${article.summary}</p>
         ${article.keyPoints && article.keyPoints.length ? `
           <h4 style="margin:0.8rem 0 0.3rem; color:#003366; font-size:1rem;">Key points</h4>
@@ -1114,12 +1117,12 @@
 </script>
 </main>
 
-<script src="script.js?v=6ab3966a"></script>
+<script src="script.js?v=879e1129"></script>
 <footer>
     <div class="footer-left"></div>
     <div class="footer-center">
       <p>&copy; 2026 Studio Legale Lo Foco - All rights reserved</p>
-      <p class="footer-legal">Avv. Andrea Lo Foco, member of the Rome Bar (Ordine degli Avvocati di Roma) &middot; VAT No. IT18468821006</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, member of the Rome Bar (Ordine degli Avvocati di Roma, no. A55651) &middot; VAT No. IT18468821006</p>
       <p class="footer-note">
         <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a> | <a href="cookie-policy-en.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Cookie settings</button>
       </p>
@@ -1127,10 +1130,11 @@
     <div class="footer-right"></div>
   </footer>
 <div id="cookie-banner" class="cookie-banner">
+    <button type="button" id="close-cookie-banner" class="cookie-close" aria-label="Close and continue with technical cookies only" title="Close and continue with technical cookies only">&times;</button>
     <div class="cookie-content">
       <p>
-        We use cookies and similar technologies to improve your browsing experience.
-        For more information, see our
+        We use technical cookies, needed for the site to work and stay secure, and, only with your consent, Google Analytics statistics cookies.
+        If you choose «Reject», only the technical cookies remain. For more information, see the
         <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>

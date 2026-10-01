@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <!-- Google tag (gtag.js) - Consent Mode v2.
-       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
-       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
-       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <!-- Google Analytics 4: caricato solo dopo il consenso.
+       Senza consenso nessuna richiesta parte verso Google. Chi ha gia' accettato in una
+       visita precedente lo carica qui; gli altri lo caricano da script.js quando accettano
+       dal banner. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
-    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
-    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
-    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
-    var glfAnalytics = 'denied';
+    window.glfLoadAnalytics = function () {
+      if (window.glfAnalyticsLoaded) return;
+      window.glfAnalyticsLoaded = true;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-E7P6F0SVRY', { cookie_flags: 'SameSite=Lax;Secure' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(s);
+    };
     try {
       var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
       if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
-        glfAnalytics = 'granted';
+        window.glfLoadAnalytics();
       }
-    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: glfAnalytics,
-      functionality_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-E7P6F0SVRY', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=Lax;Secure'
-    });
+    } catch (e) { /* cookie illeggibile o malformato: GA4 non viene caricato */ }
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - Studio Legale Lo Foco</title>
   <meta name="description" content="Privacy Policy for Studio Legale Lo Foco website.">
   <meta name="robots" content="noindex, follow">
@@ -56,7 +53,7 @@
   <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#003366">
-  <link rel="stylesheet" href="style.css?v=7bf2ab48">
+  <link rel="stylesheet" href="style.css?v=36781444">
 
   <!-- Favicons -->
 
@@ -100,6 +97,11 @@
       </p>
     </div>
 
+    <!-- Language selector -->
+    <div class="language-selector">
+      <a href="privacy.html" hreflang="it">IT</a> | <a href="privacy-en.html" hreflang="en">EN</a>
+    </div>
+
     <!-- Mobile Hamburger Menu -->
     <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Open/close menu" aria-controls="mainNav" aria-expanded="false">
       <span></span>
@@ -116,7 +118,7 @@
         <li><a href="guides-en.html">Guides</a></li>
         <li><a href="index-en.html#contact">Contact</a></li>
         <li class="mobile-language">
-          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+          <a href="privacy.html" hreflang="it">IT</a> | <a href="privacy-en.html" hreflang="en">EN</a>
         </li>
       </ul>
     </nav>
@@ -124,102 +126,86 @@
 
 <main id="main" class="legal-content">
     <h1>Privacy Policy</h1>
-    <p class="last-update"><strong>Last updated:</strong> 02 June 2026</p>
-
+    <p class="last-update"><strong>Last updated:</strong> 1 October 2026</p>
     <p>
-      Studio Legale Lo Foco is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal data when you visit our website (<a href="https://studiolegalelofoco.com/" target="_blank">https://studiolegalelofoco.com/</a>).
+      This notice explains which personal data the website studiolegalelofoco.com processes, for what purposes, on which legal basis and for how long, under Article 13 of Regulation (EU) 2016/679 (GDPR).
     </p>
 
-    <h2>1. Data Controller</h2>
+    <h2>1. Controller</h2>
     <p>
-      The data controller is:<br />
-      <strong>Studio Legale Lo Foco</strong><br />
-      Address: Via Boezio 2/A, 00193 Rome, Italy<br />
-      Email: <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
-      Phone: +39 06 3201820
+      <strong>Avv. Andrea Lo Foco</strong>, practising as Studio Legale Lo Foco<br />
+      Via Boezio 2/A, 00193 Rome, Italy<br />
+      VAT No. IT18468821006<br />
+      Email <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
+      Telephone +39 06 3201820
     </p>
 
-    <h2>2. Types of Data Collected</h2>
+    <h2>2. Data we process</h2>
     <ul>
-      <li>First and Last Name</li>
-      <li>Email Address</li>
-      <li>Phone Number (if provided)</li>
-      <li>Subject and content of the message</li>
+      <li>The data you send through the contact form, namely name, email address and the text of your message, with any information you choose to include.</li>
+      <li>The data you give us by email or telephone.</li>
+      <li>Technical browsing data, such as IP address, date and time of the request, page visited, browser and device type, processed by the services that deliver and protect the site (section 5).</li>
+      <li>Only if you consent, Google Analytics statistics, namely pages visited and interactions with the site, linked to a random identifier stored in a cookie in your browser, together with information on device, browser, referring page and approximate location derived from the IP address.</li>
     </ul>
 
-    <h2>3. Purpose of Data Processing</h2>
+    <h2>3. Purposes and legal bases</h2>
     <ul>
-      <li>To respond to inquiries submitted via the contact form.</li>
-      <li>To provide information related to the legal services offered by Studio Legale Lo Foco.</li>
-    </ul>
-
-    <h2>4. Legal Basis for Processing</h2>
-    <p>
-      We process your personal data based on the following legal grounds:
-    </p>
-    <ul>
-      <li><strong>Consent:</strong> When you contact us through the website form.</li>
-      <li><strong>Contractual Performance:</strong> If we enter into a contract to provide our legal services.</li>
-      <li><strong>Legal Obligations:</strong> To comply with legal or statutory obligations.</li>
-    </ul>
-
-    <h2>5. Methods of Processing</h2>
-    <p>
-      Personal data will be processed in a lawful, fair, and transparent manner, solely for the purposes described above, using electronic or manual methods.
-    </p>
-
-    <h2>6. Recipients and Data Processors</h2>
-    <p>
-      Data submitted through the contact form is processed on our behalf by <strong>Formspree Inc.</strong> (a form-handling service based in the United States), acting as data processor under Art. 28 GDPR. Anonymized browsing data collected via Google Analytics 4 is processed by <strong>Google Ireland Ltd.</strong>. Without your consent, measurement is cookieless and purely aggregate, with no identifier attributable to you; analytical cookies are set only after your explicit consent. We do not sell or share your data with third parties for marketing purposes.
-    </p>
-
-    <h2>7. Transfer of Data Outside the EU</h2>
-    <p>
-      Some of the providers listed above (Google, Formspree) may process data outside the European Union, in particular in the United States. Such transfers are based on the adequacy decision relating to the <strong>EU-US Data Privacy Framework</strong> and/or on <strong>Standard Contractual Clauses (SCC)</strong> approved by the European Commission. You may request a copy of the safeguards in place by writing to <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>.
-    </p>
-
-    <h2>8. Data Retention</h2>
-    <p>
-      The data collected will be retained for as long as necessary to respond to your inquiry and for a maximum of 12 months, unless required otherwise by law.
-    </p>
-
-    <h2>9. Your Rights</h2>
-    <p>
-      You have the right to:
-    </p>
-    <ul>
-      <li>Access your personal data.</li>
-      <li>Request correction or deletion of your data.</li>
-      <li>Restrict or object to the processing of your data.</li>
-      <li>Request data portability to another controller.</li>
-      <li>File a complaint with the Italian Data Protection Authority (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">www.garanteprivacy.it</a>).</li>
+      <li><strong>Answering your request and assessing a possible engagement.</strong> The legal basis is steps taken at your request before entering into a contract (Art. 6(1)(b) GDPR) or, for other kinds of request, our legitimate interest in replying (Art. 6(1)(f) GDPR).</li>
+      <li><strong>Performing the engagement, if given, and complying with legal and professional obligations.</strong> The legal bases are performance of a contract and compliance with legal obligations (Art. 6(1)(b) and (c) GDPR).</li>
+      <li><strong>Running the site and protecting it from abuse and cyber attacks.</strong> The legal basis is the firm's legitimate interest in the security and proper functioning of the site (Art. 6(1)(f) GDPR).</li>
+      <li><strong>Measuring use of the site statistically with Google Analytics.</strong> The legal basis is your consent (Art. 6(1)(a) GDPR), which you may withdraw at any time without affecting the lawfulness of processing carried out before withdrawal.</li>
     </ul>
     <p>
-      To exercise your rights, please send a written request to <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>, specifying the right you wish to exercise. We will respond within 30 days of receiving your request.
+      Please do not include in the form data about health, criminal proceedings or other people unless it is needed to understand your request. If we receive such data, we will process it only as far as necessary to assess the engagement and to establish, exercise or defend legal claims (Art. 9(2)(f) and Art. 10 GDPR; Art. 2-octies(3)(e) of the Italian Privacy Code), and in any case within the limits allowed by law.
     </p>
 
-    <h2>10. Cookies</h2>
+    <h2>4. Whether you must provide the data</h2>
     <p>
-      Our website uses the following types of cookies:
+      Providing the form data is optional, but without name, email and message we cannot reply. Technical browsing data are needed to show you the site. Consent to Google Analytics is optional and refusing it does not limit your use of the site in any way. We do not take decisions based solely on automated processing.
     </p>
+
+    <h2>5. Recipients</h2>
+    <p>The data are processed by the lawyer acting as controller and by the firm's staff and associates authorised to process data and bound by professional secrecy. They may also be processed, on the firm's behalf or as part of their own services, by these providers.</p>
     <ul>
-      <li><strong>Necessary Cookies:</strong> Essential for the proper functioning of the site. These do not require user consent.</li>
-      <li><strong>Preference Cookies:</strong> Allow the site to remember your choices (e.g., language or region).</li>
-      <li><strong>Analytical Cookies:</strong> Used to collect aggregated data on site usage to improve the user experience.</li>
-      <li><strong>Third-party Cookies (analytical):</strong> Used to collect aggregated data on site usage (e.g. Google Analytics), set only with your consent.</li>
+      <li>Formspree Inc. (United States), which receives messages sent through the form and forwards them to the firm by email. When you submit, your browser connects to Formspree's servers, which may display an anti-spam check (Google reCAPTCHA) under its own privacy notice.</li>
+      <li>Apple (iCloud Mail service), which handles the firm's email.</li>
+      <li>Cloudflare Inc. (United States), which delivers the site's pages and protects it from automated traffic and cyber attacks.</li>
+      <li>GitHub Inc. (United States), which hosts the site's files.</li>
+      <li>Google Ireland Limited, for Google Analytics, only if you consent, and for the Google Maps map, only if you choose to load it. For data collected through the map, Google acts under its own privacy notice. In the firm's Google Analytics account, Google Signals and the options for sharing data with Google are turned off.</li>
     </ul>
+    <p>Data are not sold or disclosed to third parties for marketing purposes.</p>
+
+    <h2>6. Transfers outside the European Union</h2>
     <p>
-      You can manage cookies via the cookie banner or your browser settings. For further details, please consult our <a href="cookie-policy-en.html" target="_blank">Cookie Policy</a>.
+      Formspree, Apple, Cloudflare, GitHub and Google may process data in the United States. Transfers take place with the safeguards under Chapter V GDPR set out by each provider in its own terms, such as the adequacy decision on the EU-US Data Privacy Framework or the standard contractual clauses approved by the European Commission. You can obtain a copy by writing to <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>.
     </p>
 
+    <h2>7. How long we keep the data</h2>
+    <ul>
+      <li>Requests not followed by an engagement, up to 12 months from receipt or from the last communication, then deleted from the mailbox and from the form service.</li>
+      <li>Requests leading to an engagement, for the duration of the engagement and then for as long as required by legal and professional obligations.</li>
+      <li>Technical browsing data, for as long as strictly necessary for security, under the policies of the providers listed in section 5.</li>
+      <li>Google Analytics data linked to your browser's identifier, 14 months, a period that restarts with each new visit; detailed data on individual events, 2 months. When the period expires Google deletes them automatically. Only the aggregate statistics in the reports remain, which do not refer to individual visitors.</li>
+      <li>Cookies last as stated in the <a href="cookie-policy-en.html">Cookie Policy</a>.</li>
+    </ul>
+
+    <h2>8. Your rights</h2>
+    <p>
+      You may request access to your data, rectification, erasure, restriction of processing and portability, and you may object to processing based on legitimate interest. You can withdraw consent to Google Analytics at any time from the «Cookie settings» button in the footer. To exercise your rights write to <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>. We reply within one month of the request, a period that may be extended by two further months in the cases set out in Art. 12(3) GDPR. You also have the right to lodge a complaint with the Italian Data Protection Authority (Garante per la protezione dei dati personali, <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">www.garanteprivacy.it</a>).
+    </p>
+
+    <h2>9. Cookies</h2>
+    <p>
+      The site uses technical cookies and, only with your consent, Google Analytics cookies. The full list, with duration and purpose, is in the <a href="cookie-policy-en.html">Cookie Policy</a>.
+    </p>
   </main>
 
-<script src="script.js?v=6ab3966a"></script>
+<script src="script.js?v=879e1129"></script>
 <footer>
     <div class="footer-left"></div>
     <div class="footer-center">
       <p>&copy; 2026 Studio Legale Lo Foco - All rights reserved</p>
-      <p class="footer-legal">Avv. Andrea Lo Foco, member of the Rome Bar (Ordine degli Avvocati di Roma) &middot; VAT No. IT18468821006</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, member of the Rome Bar (Ordine degli Avvocati di Roma, no. A55651) &middot; VAT No. IT18468821006</p>
       <p class="footer-note">
         <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a> | <a href="cookie-policy-en.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Cookie settings</button>
       </p>
@@ -227,10 +213,11 @@
     <div class="footer-right"></div>
   </footer>
 <div id="cookie-banner" class="cookie-banner">
+    <button type="button" id="close-cookie-banner" class="cookie-close" aria-label="Close and continue with technical cookies only" title="Close and continue with technical cookies only">&times;</button>
     <div class="cookie-content">
       <p>
-        We use cookies and similar technologies to improve your browsing experience.
-        For more information, see our
+        We use technical cookies, needed for the site to work and stay secure, and, only with your consent, Google Analytics statistics cookies.
+        If you choose «Reject», only the technical cookies remain. For more information, see the
         <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>

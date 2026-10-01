@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <!-- Google tag (gtag.js) - Consent Mode v2.
-       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
-       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
-       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <!-- Google Analytics 4: caricato solo dopo il consenso.
+       Senza consenso nessuna richiesta parte verso Google. Chi ha gia' accettato in una
+       visita precedente lo carica qui; gli altri lo caricano da script.js quando accettano
+       dal banner. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
-    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
-    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
-    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
-    var glfAnalytics = 'denied';
+    window.glfLoadAnalytics = function () {
+      if (window.glfAnalyticsLoaded) return;
+      window.glfAnalyticsLoaded = true;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-E7P6F0SVRY', { cookie_flags: 'SameSite=Lax;Secure' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(s);
+    };
     try {
       var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
       if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
-        glfAnalytics = 'granted';
+        window.glfLoadAnalytics();
       }
-    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: glfAnalytics,
-      functionality_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-E7P6F0SVRY', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=Lax;Secure'
-    });
+    } catch (e) { /* cookie illeggibile o malformato: GA4 non viene caricato */ }
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms of Service - Studio Legale Lo Foco</title>
   <meta name="description" content="Terms of Service for Studio Legale Lo Foco website.">
   <meta name="robots" content="noindex, follow">
@@ -56,7 +53,7 @@
   <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#003366">
-  <link rel="stylesheet" href="style.css?v=7bf2ab48">
+  <link rel="stylesheet" href="style.css?v=36781444">
 
   <!-- Favicons -->
 
@@ -100,6 +97,11 @@
       </p>
     </div>
 
+    <!-- Language selector -->
+    <div class="language-selector">
+      <a href="terms.html" hreflang="it">IT</a> | <a href="terms-en.html" hreflang="en">EN</a>
+    </div>
+
     <!-- Mobile Hamburger Menu -->
     <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Open/close menu" aria-controls="mainNav" aria-expanded="false">
       <span></span>
@@ -116,7 +118,7 @@
         <li><a href="guides-en.html">Guides</a></li>
         <li><a href="index-en.html#contact">Contact</a></li>
         <li class="mobile-language">
-          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+          <a href="terms.html" hreflang="it">IT</a> | <a href="terms-en.html" hreflang="en">EN</a>
         </li>
       </ul>
     </nav>
@@ -124,73 +126,71 @@
 
 <main id="main" class="legal-content">
     <h1>Terms of Service</h1>
-    <p class="last-update"><strong>Last updated:</strong> 02 June 2026</p>
-
+    <p class="last-update"><strong>Last updated:</strong> 1 October 2026</p>
     <p>
-      Welcome to the website of Studio Legale Lo Foco. By using this website
-      (<a href="https://studiolegalelofoco.com/" target="_blank">https://studiolegalelofoco.com/</a>),
-      you agree to the terms and conditions outlined below. Please read these Terms of Service carefully.
+      These terms govern the use of the website studiolegalelofoco.com. Please read them together with the <a href="privacy-en.html">privacy notice</a> and the <a href="cookie-policy-en.html">Cookie Policy</a>.
     </p>
 
-    <h2>1. General Information</h2>
+    <h2>1. Who runs the site</h2>
     <p>
-      The website is managed by:<br />
-      <strong>Studio Legale Lo Foco</strong><br />
-      Address: Via Boezio 2/A, 00193 Rome, Italy<br />
-      Email: <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
-      Phone: +39 06 3201820
+      <strong>Avv. Andrea Lo Foco</strong>, practising as Studio Legale Lo Foco<br />
+      Professional title of avvocato (lawyer), issued in Italy<br />
+      Member of the Rome Bar (Ordine degli Avvocati di Roma), no. A55651<br />
+      Via Boezio 2/A, 00193 Rome, Italy<br />
+      VAT No. IT18468821006<br />
+      Email <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
+      Telephone +39 06 3201820
+    </p>
+    <p>
+      The profession is governed by Italian Law no. 247 of 31 December 2012 and by the Italian Code of Conduct for Lawyers (Codice deontologico forense), available on the <a href="https://www.consiglionazionaleforense.it/codice-deontologico-forense" target="_blank" rel="noopener noreferrer">website of the Italian National Bar Council</a>.
     </p>
 
-    <h2>2. Use of the Website</h2>
+    <h2>2. Nature of the content</h2>
+    <p>
+      The guides, news, resource cards and orientation tool on this site are for information only and do not constitute legal advice. Rules and notices change over time, and before taking decisions or filing applications you should check the rules in force or seek advice.
+    </p>
+
+    <h2>3. Requests sent through the site</h2>
+    <p>
+      Sending a request through the contact form does not create a professional relationship with the firm. Any engagement is given separately.
+    </p>
+
+    <h2>4. Limitation of liability</h2>
+    <p>
+      We take care that the content is accurate and up to date, but we cannot guarantee that it is always complete and free from errors. To the extent permitted by law, and except in cases of wilful misconduct, gross negligence and personal injury, the firm is not liable for damage arising from the use of the information on the site without specific advice.
+    </p>
+
+    <h2>5. Intellectual property</h2>
+    <p>
+      The original texts, graphics and logo of the site belong to the firm, unless otherwise stated. Official legislative texts cited are not protected by copyright (Art. 5 of Italian Law no. 633 of 22 April 1941), and other third-party materials remain with their owners. Reproducing the original content requires the firm's written permission, save for quotations allowed by law.
+    </p>
+
+    <h2>6. Proper use of the site</h2>
+    <p>You may not</p>
     <ul>
-      <li>This website is intended to provide information about the legal services offered by Studio Legale Lo Foco.</li>
-      <li>You are not permitted to use the website in any unlawful manner or in violation of applicable regulations.</li>
-      <li>Submitting inquiries through the contact form does not establish any professional or contractual relationship with the firm.</li>
+      <li>use the site unlawfully or contrary to applicable rules;</li>
+      <li>send false or misleading information through the site;</li>
+      <li>carry out activities that may compromise its security or operation;</li>
+      <li>spread through the site content that infringes the law or third-party rights.</li>
     </ul>
 
-    <h2>3. Limitation of Liability</h2>
+    <h2>7. Changes</h2>
     <p>
-      Although we strive to provide accurate and up-to-date information, we do not guarantee that the content on this website is error-free or always current. Studio Legale Lo Foco is not responsible for any damages resulting from the use of this website.
+      These terms may be updated. The version in force is the one published on this page, with the date of the last update.
     </p>
 
-    <h2>4. Intellectual Property</h2>
+    <h2>8. Governing law and jurisdiction</h2>
     <p>
-      All content on this website (including texts, images, logos, and graphics) is the exclusive property of Studio Legale Lo Foco, unless otherwise stated. Reproduction, distribution, or modification of the content without prior written authorization is prohibited.
+      These terms are governed by Italian law, without prejudice to mandatory consumer protection rules of the country of residence. Jurisdiction is determined by law; for consumers it lies with the courts of their place of residence or domicile.
     </p>
-
-    <h2>5. Changes to the Terms of Service</h2>
-    <p>
-      Studio Legale Lo Foco reserves the right to modify these Terms of Service at any time. Changes will be posted on this page along with the updated date. We encourage you to review the terms periodically.
-    </p>
-
-    <h2>6. Governing Law and Jurisdiction</h2>
-    <p>
-      These Terms of Service are governed by Italian law. Any disputes arising from the use of this website shall be subject exclusively to the jurisdiction of the courts of Rome.
-    </p>
-
-    <h2>7. User Responsibilities</h2>
-    <p>
-      Users are responsible for the accuracy of the information provided through the website and for the proper use of its features. The following actions are prohibited:
-    </p>
-    <ul>
-      <li>Submitting false or misleading information.</li>
-      <li>Engaging in activities that could compromise the security of the website.</li>
-      <li>Distributing content that violates the law or the rights of third parties.</li>
-    </ul>
-
-    <h2>8. Data Security</h2>
-    <p>
-      Studio Legale Lo Foco is committed to protecting users' personal data by implementing appropriate technical and organizational measures to prevent unauthorized access, loss, or destruction of data.
-    </p>
-
   </main>
 
-<script src="script.js?v=6ab3966a"></script>
+<script src="script.js?v=879e1129"></script>
 <footer>
     <div class="footer-left"></div>
     <div class="footer-center">
       <p>&copy; 2026 Studio Legale Lo Foco - All rights reserved</p>
-      <p class="footer-legal">Avv. Andrea Lo Foco, member of the Rome Bar (Ordine degli Avvocati di Roma) &middot; VAT No. IT18468821006</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, member of the Rome Bar (Ordine degli Avvocati di Roma, no. A55651) &middot; VAT No. IT18468821006</p>
       <p class="footer-note">
         <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a> | <a href="cookie-policy-en.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Cookie settings</button>
       </p>
@@ -198,10 +198,11 @@
     <div class="footer-right"></div>
   </footer>
 <div id="cookie-banner" class="cookie-banner">
+    <button type="button" id="close-cookie-banner" class="cookie-close" aria-label="Close and continue with technical cookies only" title="Close and continue with technical cookies only">&times;</button>
     <div class="cookie-content">
       <p>
-        We use cookies and similar technologies to improve your browsing experience.
-        For more information, see our
+        We use technical cookies, needed for the site to work and stay secure, and, only with your consent, Google Analytics statistics cookies.
+        If you choose «Reject», only the technical cookies remain. For more information, see the
         <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>

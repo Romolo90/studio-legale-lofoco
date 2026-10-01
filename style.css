@@ -881,6 +881,12 @@ p {
   color: #666;
 }
 
+.profile-box h2.profile-box-title {
+  /* Stesso aspetto dei vecchi h3: la gerarchia dei titoli passa a h1 → h2 */
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
 .profile-box ul {
   list-style-type: disc;
   margin-left: 20px;
@@ -1240,9 +1246,11 @@ footer {
   text-decoration: underline;
 }
 
-/* Hide mobile language selector on desktop */
-.mobile-language {
-  display: none;
+/* Hide mobile language selector on desktop (on mobile it is shown by the media query above) */
+@media (min-width: 769px) {
+  .mobile-language {
+    display: none;
+  }
 }
 
 /* ========================================
@@ -1686,3 +1694,19 @@ textarea:focus-visible {
 .modal-body a.btn-guida:focus,
 .btn-guida:hover,
 .btn-guida:focus { background: #004766; color: #fff; }
+
+/* X di chiusura del banner cookie: equivale a «Rifiuta» (linee guida Garante 10/6/2021) */
+.cookie-banner { padding-right: 2.75rem; }
+.cookie-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.4rem;
+}
+.cookie-close:focus-visible { outline: 2px solid #80D9FF; outline-offset: 2px; }

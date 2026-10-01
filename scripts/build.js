@@ -142,7 +142,8 @@ function renderResourcesStatic(articles, isEn) {
   // Cleaned: removed "Implicazioni operative (studio)" section entirely + date badges (agg./updated)
   // for uniform card look across all resources. errorsToAvoid (if present) still shown in modal.
   return articles.map(a => {
-    const cat = (a.category || 'all').replace('-', ' ');
+    const CAT_EN = { 'tax-credit': 'tax credit', 'contributi-selettivi': 'selective grants', 'normativa': 'legislation', 'coproduzioni': 'co-productions' };
+    const cat = isEn ? (CAT_EN[a.category] || (a.category || 'all').replace('-', ' ')) : (a.category || 'all').replace('-', ' ');
     const tags = a.tags && a.tags.length ? a.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
     return `
         <div class="resource-card" id="${a.id}" data-id="${a.id}" data-category="${a.category || ''}" data-guide="${a.guideUrl || ''}">
@@ -352,6 +353,22 @@ function insertFooter(content, newFooter) {
   return content;
 }
 
+// Il selettore IT | EN porta alla pagina gemella dichiarata negli hreflang della
+// pagina stessa, non alla home dell'altra lingua. Senza gemella resta la home.
+function withLanguageLinks(header, content) {
+  const alt = (lang) => {
+    const m = content.match(new RegExp('<link rel="alternate" hreflang="' + lang + '" href="https://studiolegalelofoco\\.com/([^"]*)"'));
+    if (!m) return null;
+    return m[1] === '' ? 'index.html' : m[1];
+  };
+  const it = alt('it');
+  const en = alt('en');
+  let out = header;
+  if (it) out = out.split('href="index.html">IT</a>').join(`href="${it}" hreflang="it">IT</a>`);
+  if (en) out = out.split('href="index-en.html">EN</a>').join(`href="${en}" hreflang="en">EN</a>`);
+  return out;
+}
+
 function processFile(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
   const originalContent = content;
@@ -359,7 +376,7 @@ function processFile(filePath) {
   const isEn = isEnglishFile(filename, content);
   const isHome = isHomeFile(filename);
 
-  const newHeader = getHeaderPartial(isEn, isHome);
+  const newHeader = withLanguageLinks(getHeaderPartial(isEn, isHome), content);
   const newFooter = getFooterPartial(isEn, isHome);
   const newCookie = isEn ? COOKIE_EN : COOKIE_IT;
 

@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <!-- Google tag (gtag.js) - Consent Mode v2.
-       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
-       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
-       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <!-- Google Analytics 4: caricato solo dopo il consenso.
+       Senza consenso nessuna richiesta parte verso Google. Chi ha gia' accettato in una
+       visita precedente lo carica qui; gli altri lo caricano da script.js quando accettano
+       dal banner. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
-    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
-    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
-    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
-    var glfAnalytics = 'denied';
+    window.glfLoadAnalytics = function () {
+      if (window.glfAnalyticsLoaded) return;
+      window.glfAnalyticsLoaded = true;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-E7P6F0SVRY', { cookie_flags: 'SameSite=Lax;Secure' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(s);
+    };
     try {
       var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
       if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
-        glfAnalytics = 'granted';
+        window.glfLoadAnalytics();
       }
-    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: glfAnalytics,
-      functionality_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-E7P6F0SVRY', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=Lax;Secure'
-    });
+    } catch (e) { /* cookie illeggibile o malformato: GA4 non viene caricato */ }
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - Studio Legale Lo Foco</title>
   <meta name="description" content="Privacy Policy dello Studio Legale Lo Foco.">
   <meta name="robots" content="noindex, follow">
@@ -56,7 +53,7 @@
   <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#003366">
-  <link rel="stylesheet" href="style.css?v=7bf2ab48">
+  <link rel="stylesheet" href="style.css?v=36781444">
 
   <style>
     /* Minimal overrides for legal pages */
@@ -96,6 +93,11 @@
       </p>
     </div>
 
+    <!-- Selettore lingua -->
+    <div class="language-selector">
+      <a href="privacy.html" hreflang="it">IT</a> | <a href="privacy-en.html" hreflang="en">EN</a>
+    </div>
+
     <!-- Mobile Hamburger Menu -->
     <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu" aria-controls="mainNav" aria-expanded="false">
       <span></span>
@@ -112,7 +114,7 @@
         <li><a href="guide.html">Guide</a></li>
         <li><a href="index.html#contatti">Contatti</a></li>
         <li class="mobile-language">
-          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+          <a href="privacy.html" hreflang="it">IT</a> | <a href="privacy-en.html" hreflang="en">EN</a>
         </li>
       </ul>
     </nav>
@@ -120,101 +122,86 @@
 
 <main id="main" class="legal-content">
     <h1>Privacy Policy</h1>
-    <p class="last-update"><strong>Ultimo aggiornamento:</strong> 02 giugno 2026</p>
+    <p class="last-update"><strong>Ultimo aggiornamento:</strong> 1 ottobre 2026</p>
     <p>
-      Lo Studio Legale Lo Foco si impegna a proteggere la tua privacy. Questa Privacy Policy descrive come raccogliamo, utilizziamo e proteggiamo i tuoi dati personali quando visiti il nostro sito web (<a href="https://studiolegalelofoco.com/" target="_blank">https://studiolegalelofoco.com/</a>).
+      Questa informativa spiega quali dati personali tratta il sito studiolegalelofoco.com, per quali scopi, su quale base giuridica e per quanto tempo, ai sensi dell'art. 13 del Regolamento (UE) 2016/679 (GDPR).
     </p>
 
-    <h2>1. Titolare del trattamento dei dati</h2>
+    <h2>1. Titolare del trattamento</h2>
     <p>
-      Il titolare del trattamento è:<br />
-      <strong>Studio Legale Lo Foco</strong><br />
-      Indirizzo: Via Boezio 2/A, 00193 Roma, Italia<br />
-      Email: <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
-      Telefono: +39 06 3201820
+      <strong>Avv. Andrea Lo Foco</strong>, che esercita con la denominazione Studio Legale Lo Foco<br />
+      Via Boezio 2/A, 00193 Roma<br />
+      P.IVA 18468821006<br />
+      Email <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a><br />
+      Telefono +39 06 3201820
     </p>
 
-  <h2>2. Tipologia di dati raccolti</h2>
-  <ul>
-    <li>Nome e cognome</li>
-    <li>Indirizzo email</li>
-    <li>Numero di telefono (se fornito)</li>
-    <li>Oggetto e contenuto del messaggio</li>
-  </ul>
+    <h2>2. Quali dati trattiamo</h2>
+    <ul>
+      <li>I dati che ci invii con il modulo di contatto, cioè nome e cognome, indirizzo email e testo del messaggio, con le informazioni che decidi di includervi.</li>
+      <li>I dati che ci comunichi per email o per telefono.</li>
+      <li>I dati tecnici di navigazione, come indirizzo IP, data e ora della richiesta, pagina visitata, tipo di browser e di dispositivo, trattati dai servizi che erogano e proteggono il sito (punto 5).</li>
+      <li>Solo se acconsenti, i dati statistici di Google Analytics, cioè le pagine visitate e le interazioni con il sito, associati a un identificativo casuale memorizzato in un cookie del tuo browser, insieme a informazioni su dispositivo, browser, pagina di provenienza e posizione approssimativa ricavata dall'indirizzo IP.</li>
+    </ul>
 
-  <h2>3. Finalità del trattamento</h2>
-  <ul>
-    <li>Rispondere alle richieste inviate tramite il modulo di contatto.</li>
-    <li>Fornire informazioni relative ai servizi legali offerti dallo Studio Legale Lo Foco.</li>
-  </ul>
+    <h2>3. Finalità e basi giuridiche</h2>
+    <ul>
+      <li><strong>Rispondere alla tua richiesta e valutare un eventuale incarico.</strong> La base giuridica sono le misure precontrattuali adottate su tua richiesta (art. 6, par. 1, lett. b, GDPR) oppure, per richieste di altro tipo, il nostro legittimo interesse a rispondere (art. 6, par. 1, lett. f, GDPR).</li>
+      <li><strong>Svolgere l'incarico, se conferito, e adempiere agli obblighi di legge e professionali.</strong> Le basi giuridiche sono l'esecuzione del contratto e l'adempimento di obblighi legali (art. 6, par. 1, lett. b e c, GDPR).</li>
+      <li><strong>Far funzionare il sito e proteggerlo da abusi e attacchi informatici.</strong> La base giuridica è il legittimo interesse dello studio alla sicurezza e al corretto funzionamento del sito (art. 6, par. 1, lett. f, GDPR).</li>
+      <li><strong>Misurare in forma statistica l'uso del sito con Google Analytics.</strong> La base giuridica è il tuo consenso (art. 6, par. 1, lett. a, GDPR), che puoi revocare in qualsiasi momento senza pregiudicare la liceità del trattamento svolto prima della revoca.</li>
+    </ul>
+    <p>
+      Ti invitiamo a non inserire nel modulo dati relativi alla salute, a procedimenti penali o ad altre persone, se non sono necessari a capire la richiesta. Se li ricevessimo, li tratteremo solo nella misura necessaria a valutare l'incarico e a tutelare un diritto in sede giudiziaria (art. 9, par. 2, lett. f, e art. 10 GDPR; art. 2-octies, comma 3, lett. e, del Codice privacy) e comunque nei limiti consentiti dalla legge.
+    </p>
 
-  <h2>4. Base giuridica del trattamento</h2>
-  <p>
-    Trattiamo i tuoi dati personali sulla base delle seguenti basi giuridiche:
-  </p>
-  <ul>
-    <li><strong>Consenso:</strong> Quando ci contatti tramite il modulo del sito.</li>
-    <li><strong>Esecuzione di un contratto:</strong> Se stipuliamo un contratto per la fornitura dei nostri servizi legali.</li>
-    <li><strong>Obblighi legali:</strong> Per adempiere a obblighi normativi o legali.</li>
-  </ul>
+    <h2>4. Conferimento dei dati</h2>
+    <p>
+      Il conferimento dei dati del modulo è facoltativo, ma senza nome, email e messaggio non possiamo risponderti. I dati tecnici di navigazione sono necessari per mostrarti il sito. Il consenso a Google Analytics è facoltativo e il rifiuto non limita in alcun modo l'uso del sito. Non adottiamo decisioni basate unicamente su trattamenti automatizzati.
+    </p>
 
-  <h2>5. Modalità del trattamento</h2>
-  <p>
-    I dati personali saranno trattati in modo lecito, corretto e trasparente, esclusivamente per le finalità sopra indicate, utilizzando strumenti elettronici o manuali.
-  </p>
+    <h2>5. Destinatari</h2>
+    <p>I dati sono trattati dall'avvocato titolare e dai collaboratori e professionisti dello studio autorizzati al trattamento e tenuti al segreto professionale. Possono inoltre essere trattati, per conto dello studio o nell'ambito dei propri servizi, da questi fornitori.</p>
+    <ul>
+      <li>Formspree Inc. (Stati Uniti), che riceve i messaggi inviati con il modulo e li inoltra allo studio per email. Al momento dell'invio il browser si collega ai server di Formspree, che può mostrare una verifica anti-spam (Google reCAPTCHA) secondo la propria informativa.</li>
+      <li>Apple (servizio iCloud Mail), che gestisce la posta elettronica dello studio.</li>
+      <li>Cloudflare Inc. (Stati Uniti), che distribuisce le pagine del sito e lo protegge da traffico automatizzato e attacchi informatici.</li>
+      <li>GitHub Inc. (Stati Uniti), che ospita i file del sito.</li>
+      <li>Google Ireland Limited, per Google Analytics, solo se acconsenti, e per la mappa di Google Maps, solo se scegli di caricarla. Per i dati raccolti con la mappa Google opera secondo la propria informativa. Nell'account Google Analytics dello studio Google Signals e le opzioni di condivisione dei dati con Google sono disattivati.</li>
+    </ul>
+    <p>I dati non sono venduti né comunicati a terzi per finalità di marketing.</p>
 
-  <h2>6. Destinatari e responsabili del trattamento</h2>
-  <p>
-    I dati inviati tramite il modulo di contatto sono trattati per nostro conto da <strong>Formspree Inc.</strong> (servizio di gestione dei moduli, con sede negli Stati Uniti), che agisce come responsabile del trattamento ai sensi dell'art. 28 GDPR. I dati di navigazione anonimizzati raccolti tramite Google Analytics 4 sono trattati da <strong>Google Ireland Ltd.</strong>. In assenza del tuo consenso la misurazione avviene in forma priva di cookie e puramente aggregata, senza alcun identificatore a te riferibile; i cookie analitici vengono installati solo previo tuo consenso esplicito. Non vendiamo né cediamo i tuoi dati a terzi per finalità di marketing.
-  </p>
+    <h2>6. Trasferimenti fuori dall'Unione europea</h2>
+    <p>
+      Formspree, Apple, Cloudflare, GitHub e Google possono trattare dati negli Stati Uniti. I trasferimenti avvengono con le garanzie previste dal capo V del GDPR indicate da ciascun fornitore nelle proprie condizioni, come la decisione di adeguatezza relativa all'EU-US Data Privacy Framework o le clausole contrattuali standard approvate dalla Commissione europea. Puoi ottenerne copia scrivendo a <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>.
+    </p>
 
-  <h2>7. Trasferimento dei dati verso Paesi extra-UE</h2>
-  <p>
-    Alcuni dei fornitori sopra indicati (Google, Formspree) possono trattare i dati anche al di fuori dell'Unione Europea, in particolare negli Stati Uniti. Tali trasferimenti avvengono sulla base della decisione di adeguatezza relativa all'<strong>EU-US Data Privacy Framework</strong> e/o di <strong>Clausole Contrattuali Standard (SCC)</strong> approvate dalla Commissione Europea. Puoi richiedere copia delle garanzie adottate scrivendo a <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>.
-  </p>
+    <h2>7. Per quanto tempo conserviamo i dati</h2>
+    <ul>
+      <li>Richieste a cui non segue un incarico, fino a 12 mesi dalla ricezione o dall'ultima comunicazione, poi cancellate dalla casella email e dal servizio del modulo.</li>
+      <li>Richieste che portano a un incarico, per la durata dell'incarico e poi per il tempo richiesto dagli obblighi di legge e professionali.</li>
+      <li>Dati tecnici di navigazione, per il tempo strettamente necessario alla sicurezza, secondo le politiche dei fornitori indicati al punto 5.</li>
+      <li>Dati di Google Analytics collegati all'identificativo del tuo browser, 14 mesi, con un periodo che riparte a ogni nuova visita; dati di dettaglio sui singoli eventi, 2 mesi. Alla scadenza Google li elimina automaticamente. Restano soltanto le statistiche aggregate dei report, non riferite a singoli visitatori.</li>
+      <li>I cookie hanno la durata indicata nella <a href="cookie-policy.html">Cookie Policy</a>.</li>
+    </ul>
 
-  <h2>8. Conservazione dei dati</h2>
-  <p>
-    I dati raccolti saranno conservati per il tempo necessario a rispondere alla tua richiesta e per un massimo di 12 mesi, salvo obblighi legali diversi.
-  </p>
+    <h2>8. I tuoi diritti</h2>
+    <p>
+      Puoi chiedere l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti al trattamento basato sul legittimo interesse. Puoi revocare il consenso a Google Analytics in qualsiasi momento dal pulsante «Gestisci cookie» nel piè di pagina. Per esercitare i diritti scrivi a <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>. Rispondiamo entro un mese dalla richiesta, termine prorogabile di due mesi nei casi previsti dall'art. 12, par. 3, GDPR. Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">www.garanteprivacy.it</a>).
+    </p>
 
-  <h2>9. Diritti dell'interessato</h2>
-  <p>
-    Hai il diritto di:
-  </p>
-  <ul>
-    <li>Accedere ai tuoi dati personali.</li>
-    <li>Richiedere la rettifica o la cancellazione dei dati.</li>
-    <li>Limitare o opporti al trattamento dei dati.</li>
-    <li>Portabilità dei dati verso un altro titolare del trattamento.</li>
-    <li>Presentare un reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">www.garanteprivacy.it</a>).</li>
-  </ul>
-  <p>
-    Per esercitare i tuoi diritti, invia una richiesta scritta all'indirizzo email <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>, specificando quale diritto desideri esercitare. Ti risponderemo entro 30 giorni dal ricevimento della tua richiesta.
-  </p>
-
-  <h2>10. Cookies</h2>
-  <p>
-    Il nostro sito utilizza i seguenti tipi di cookie:
-  </p>
-  <ul>
-    <li><strong>Cookie necessari:</strong> Essenziali per il funzionamento del sito. Non richiedono il consenso dell'utente.</li>
-    <li><strong>Cookie di preferenze:</strong> Consentono al sito di ricordare le scelte dell'utente (ad esempio, lingua o area geografica).</li>
-    <li><strong>Cookie analitici:</strong> Utilizzati per raccogliere dati aggregati sull'uso del sito al fine di migliorare l'esperienza utente.</li>
-    <li><strong>Cookie di terze parti (analitici):</strong> Utilizzati per raccogliere dati aggregati sull’uso del sito (es. Google Analytics), installati solo con il tuo consenso.</li>
-  </ul>
-  <p>
-    Puoi gestire i cookie tramite il banner dei cookie o le impostazioni del browser. Per ulteriori dettagli, consulta la nostra <a href="cookie-policy.html">Cookie Policy</a>.
-  </p>
-
+    <h2>9. Cookie</h2>
+    <p>
+      Il sito usa cookie tecnici e, solo con il tuo consenso, i cookie di Google Analytics. L'elenco completo, con durata e funzione, è nella <a href="cookie-policy.html">Cookie Policy</a>.
+    </p>
   </main>
 
-<script src="script.js?v=6ab3966a"></script>
+<script src="script.js?v=879e1129"></script>
 <footer>
     <div class="footer-left"></div>
     <div class="footer-center">
       <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
-      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma &middot; P.IVA 18468821006</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma (n. A55651) &middot; P.IVA 18468821006</p>
       <p class="footer-note">
         <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a> | <a href="cookie-policy.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Gestisci cookie</button>
       </p>
@@ -222,10 +209,11 @@
     <div class="footer-right"></div>
   </footer>
 <div id="cookie-banner" class="cookie-banner">
+    <button type="button" id="close-cookie-banner" class="cookie-close" aria-label="Chiudi e continua con i soli cookie tecnici" title="Chiudi e continua con i soli cookie tecnici">&times;</button>
     <div class="cookie-content">
       <p>
-        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
-        Per saperne di più, consulta la nostra
+        Usiamo cookie tecnici, necessari al funzionamento e alla sicurezza del sito, e, solo con il tuo consenso, i cookie statistici di Google Analytics.
+        Con «Rifiuta» restano attivi soltanto quelli tecnici. Per saperne di più, consulta la
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>

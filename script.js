@@ -12,11 +12,10 @@
     };
   }
 
-  // Utility: send a GA4 event. With Consent Mode v2 the tag is always present
-  // (bootstrapped in <head>), so this never no-ops: before consent GA4 records the
-  // event as a cookieless, aggregate-only ping; after consent as a normal event.
+  // Utility: send a GA4 event. GA4 is loaded only after the visitor consents
+  // (see window.glfLoadAnalytics in <head>), so without consent nothing is sent.
   function trackEvent(name, params) {
-    if (typeof window.gtag !== 'function') return;
+    if (!window.glfAnalyticsLoaded || window.glfAnalyticsDisabled || typeof window.gtag !== 'function') return;
     window.gtag('event', name, params || {});
   }
 
@@ -28,8 +27,7 @@
         this.initMenu();
         this.initScrollToTop();
         this.initAccordion();
-        this.initFormValidation();
-        this.initLeadTracking();
+                this.initLeadTracking();
         this.initMapPlaceholder();
       } catch (error) {
         console.error('Error initializing app:', error);
@@ -105,29 +103,6 @@
       });
     },
 
-    initFormValidation() {
-      const privacyCheckbox = document.getElementById('privacy');
-      const form = document.querySelector('.contact-form');
-      const errorMsg = document.getElementById('privacy-error');
-
-      if (!form || !privacyCheckbox || !errorMsg) return;
-
-      // Hide error when checkbox is checked
-      privacyCheckbox.addEventListener('change', () => {
-        if (privacyCheckbox.checked) {
-          errorMsg.style.display = 'none';
-        }
-      });
-
-      // Validate on submit
-      form.addEventListener('submit', e => {
-        if (!privacyCheckbox.checked) {
-          e.preventDefault();
-          errorMsg.style.display = 'block';
-          privacyCheckbox.focus();
-        }
-      });
-    },
 
     // Lead tracking. Without these events GA4 only ever sees pageviews, so the
     // "Generazione di lead" report can show nothing but zeros no matter how many
@@ -135,8 +110,6 @@
     initLeadTracking() {
       const form = document.querySelector('.contact-form');
       if (form) {
-        // Registered after initFormValidation(), so a submit blocked by the privacy
-        // check reaches this listener already prevented and is not counted as a lead.
         // Submits blocked by native `required` validation never fire the event at all.
         form.addEventListener('submit', e => {
           if (e.defaultPrevented) return;
@@ -170,7 +143,7 @@
         iframe.style.border = '0';
         iframe.loading = 'lazy';
         iframe.allowFullscreen = true;
-        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
         iframe.title = placeholder.dataset.mapTitle || 'Map';
         placeholder.replaceWith(iframe);
       });
@@ -187,6 +160,14 @@
       this.manageCookiesBtn = document.getElementById('manage-cookies');
       this.savePreferencesBtn = document.getElementById('save-preferences');
       this.cookieSettingsLink = document.getElementById('cookie-settings');
+      this.closeBannerBtn = document.getElementById('close-cookie-banner');
+
+      // The X keeps the default settings: technical cookies only (Garante, 10 June 2021).
+      if (this.closeBannerBtn) {
+        this.closeBannerBtn.addEventListener('click', () => {
+          this.rejectNonEssential();
+        });
+      }
 
       if (this.acceptCookiesBtn) {
         this.acceptCookiesBtn.addEventListener('click', () => {
@@ -251,12 +232,17 @@
     },
 
     rejectNonEssential() {
-      this.setConsent(false);       // Necessary only: GA stays cookieless
+      this.setConsent(false);       // Necessary only: GA4 is not loaded
       this.setAnalyticsConsent(false);
       this.hideBanner();
     },
 
     openPreferences() {
+      // Show the choice already made, so saving without changes does not revoke it.
+      const current = this.analyticsConsentGiven();
+      this.cookiePreferences.querySelectorAll("input[name='cookieType']").forEach(cb => {
+        if (cb.value === 'analitici' || cb.value === 'analytical') cb.checked = current;
+      });
       this.cookiePreferences.style.display = 'block';
       this.cookieBanner.style.display = 'none';
 
@@ -333,13 +319,39 @@
       }
     },
 
-    // Consent Mode v2: the gtag bootstrap in <head> already declared every storage
-    // type as 'denied'. Here we only push the update once the visitor has chosen,
-    // so GA4 switches to (or stays out of) cookie-based measurement accordingly.
+    // GA4 is loaded only after consent (window.glfLoadAnalytics in <head>).
+    // On refusal or withdrawal we stop it on this page and delete its cookies.
     setAnalyticsConsent(granted) {
-      if (typeof window.gtag !== 'function') return;
-      window.gtag('consent', 'update', {
-        analytics_storage: granted ? 'granted' : 'denied'
+      if (granted) {
+        window.glfAnalyticsDisabled = false;
+        window['ga-disable-G-E7P6F0SVRY'] = false;
+        if (window.glfAnalyticsLoaded && typeof window.gtag === 'function') {
+          window.gtag('consent', 'update', { analytics_storage: 'granted' });
+        } else if (typeof window.glfLoadAnalytics === 'function') {
+          window.glfLoadAnalytics();
+        }
+        return;
+      }
+      // Withdrawal: stop GA4 on this page too, not only from the next one.
+      window.glfAnalyticsDisabled = true;
+      window['ga-disable-G-E7P6F0SVRY'] = true;
+      if (window.glfAnalyticsLoaded && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: 'denied' });
+      }
+      this.deleteAnalyticsCookies();
+    },
+
+    // Remove _ga and _ga_<ID> on this host and on the parent domain.
+    deleteAnalyticsCookies() {
+      const names = document.cookie.split(';')
+        .map(c => c.split('=')[0].trim())
+        .filter(n => n === '_ga' || n.indexOf('_ga_') === 0);
+      const host = location.hostname;
+      const domains = ['', host, '.' + host.replace(/^www\./, '')];
+      names.forEach(n => {
+        domains.forEach(d => {
+          document.cookie = `${n}=; path=/; max-age=0${d ? '; domain=' + d : ''}`;
+        });
       });
     }
   };

@@ -3,44 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <!-- Google tag (gtag.js) - Consent Mode v2.
-       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
-       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
-       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <!-- Google Analytics 4: caricato solo dopo il consenso.
+       Senza consenso nessuna richiesta parte verso Google. Chi ha gia' accettato in una
+       visita precedente lo carica qui; gli altri lo caricano da script.js quando accettano
+       dal banner. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
-    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
-    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
-    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
-    var glfAnalytics = 'denied';
+    window.glfLoadAnalytics = function () {
+      if (window.glfAnalyticsLoaded) return;
+      window.glfAnalyticsLoaded = true;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-E7P6F0SVRY', { cookie_flags: 'SameSite=Lax;Secure' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(s);
+    };
     try {
       var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
       if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
-        glfAnalytics = 'granted';
+        window.glfLoadAnalytics();
       }
-    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: glfAnalytics,
-      functionality_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-E7P6F0SVRY', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=Lax;Secure'
-    });
+    } catch (e) { /* cookie illeggibile o malformato: GA4 non viene caricato */ }
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quali incentivi guardare per il tuo progetto | Studio Legale Lo Foco</title>
   <link rel="canonical" href="https://studiolegalelofoco.com/verifica-incentivi.html">
-  <meta name="description" content="Strumento di orientamento sugli incentivi italiani al cinema e all'audiovisivo: quali misure guardare per un progetto e quali requisiti far verificare. Non esprime un giudizio di idoneità.">
+  <meta name="description" content="Orientamento sugli incentivi al cinema e all'audiovisivo, quali misure guardare e quali requisiti far verificare. Non è un giudizio di idoneità.">
   <meta name="keywords" content="Verifica Incentivi, Tax Credit, contributi selettivi, cinema, audiovisivo, incentivi fiscali, Studio Legale Lo Foco">
 
   <!-- Hreflang -->
@@ -50,13 +47,13 @@
 
   <!-- OG / Twitter -->
   <meta property="og:title" content="Quali incentivi guardare per il tuo progetto | Studio Legale Lo Foco">
-  <meta property="og:description" content="Strumento di orientamento sugli incentivi italiani al cinema e all'audiovisivo: quali misure guardare per un progetto e quali requisiti far verificare. Non esprime un giudizio di idoneità.">
+  <meta property="og:description" content="Orientamento sugli incentivi al cinema e all'audiovisivo, quali misure guardare e quali requisiti far verificare. Non è un giudizio di idoneità.">
   <meta property="og:url" content="https://studiolegalelofoco.com/verifica-incentivi.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Quali incentivi guardare per il tuo progetto | Studio Legale Lo Foco">
-  <meta name="twitter:description" content="Strumento di orientamento sugli incentivi italiani al cinema e all'audiovisivo: quali misure guardare per un progetto e quali requisiti far verificare. Non esprime un giudizio di idoneità.">
+  <meta name="twitter:description" content="Orientamento sugli incentivi al cinema e all'audiovisivo, quali misure guardare e quali requisiti far verificare. Non è un giudizio di idoneità.">
 
   <!-- Favicons -->
 
@@ -66,7 +63,7 @@
   <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#003366">
-  <link rel="stylesheet" href="style.css?v=7bf2ab48">
+  <link rel="stylesheet" href="style.css?v=36781444">
 
   <style>
     /* Page-specific styles for the incentives checker */
@@ -342,6 +339,11 @@
       </p>
     </div>
 
+    <!-- Selettore lingua -->
+    <div class="language-selector">
+      <a href="verifica-incentivi.html" hreflang="it">IT</a> | <a href="verifica-incentivi-en.html" hreflang="en">EN</a>
+    </div>
+
     <!-- Mobile Hamburger Menu -->
     <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu" aria-controls="mainNav" aria-expanded="false">
       <span></span>
@@ -358,7 +360,7 @@
         <li><a href="guide.html">Guide</a></li>
         <li><a href="index.html#contatti">Contatti</a></li>
         <li class="mobile-language">
-          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+          <a href="verifica-incentivi.html" hreflang="it">IT</a> | <a href="verifica-incentivi-en.html" hreflang="en">EN</a>
         </li>
       </ul>
     </nav>
@@ -420,7 +422,7 @@
         </div>
 
         <div class="question">
-          <label>4. Nazionalità e struttura produttiva</label>
+          <label for="nationality">4. Nazionalità e struttura produttiva</label>
           <select id="nationality" required>
             <option value="">Seleziona...</option>
             <option value="italian">100% italiana o coproduzione maggioritaria italiana</option>
@@ -500,7 +502,7 @@
     </div>
   </main>
 
-<script src="script.js?v=6ab3966a"></script>
+<script src="script.js?v=879e1129"></script>
 
   <script>
     // Simple but realistic client-side eligibility engine
@@ -763,7 +765,7 @@
     <div class="footer-left"></div>
     <div class="footer-center">
       <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
-      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma &middot; P.IVA 18468821006</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma (n. A55651) &middot; P.IVA 18468821006</p>
       <p class="footer-note">
         <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a> | <a href="cookie-policy.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Gestisci cookie</button>
       </p>
@@ -771,10 +773,11 @@
     <div class="footer-right"></div>
   </footer>
 <div id="cookie-banner" class="cookie-banner">
+    <button type="button" id="close-cookie-banner" class="cookie-close" aria-label="Chiudi e continua con i soli cookie tecnici" title="Chiudi e continua con i soli cookie tecnici">&times;</button>
     <div class="cookie-content">
       <p>
-        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
-        Per saperne di più, consulta la nostra
+        Usiamo cookie tecnici, necessari al funzionamento e alla sicurezza del sito, e, solo con il tuo consenso, i cookie statistici di Google Analytics.
+        Con «Rifiuta» restano attivi soltanto quelli tecnici. Per saperne di più, consulta la
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>

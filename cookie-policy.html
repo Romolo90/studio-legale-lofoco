@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <!-- Google tag (gtag.js) - Consent Mode v2.
-       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
-       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
-       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <!-- Google Analytics 4: caricato solo dopo il consenso.
+       Senza consenso nessuna richiesta parte verso Google. Chi ha gia' accettato in una
+       visita precedente lo carica qui; gli altri lo caricano da script.js quando accettano
+       dal banner. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
-    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
-    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
-    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
-    var glfAnalytics = 'denied';
+    window.glfLoadAnalytics = function () {
+      if (window.glfAnalyticsLoaded) return;
+      window.glfAnalyticsLoaded = true;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-E7P6F0SVRY', { cookie_flags: 'SameSite=Lax;Secure' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(s);
+    };
     try {
       var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
       if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
-        glfAnalytics = 'granted';
+        window.glfLoadAnalytics();
       }
-    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: glfAnalytics,
-      functionality_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-E7P6F0SVRY', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=Lax;Secure'
-    });
+    } catch (e) { /* cookie illeggibile o malformato: GA4 non viene caricato */ }
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cookie Policy - Studio Legale Lo Foco</title>
   <meta name="description" content="Cookie Policy dello Studio Legale Lo Foco. Scopri quali cookie utilizziamo e come puoi gestirli.">
   <meta name="robots" content="noindex, follow">
@@ -56,7 +53,7 @@
   <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#003366">
-  <link rel="stylesheet" href="style.css?v=7bf2ab48">
+  <link rel="stylesheet" href="style.css?v=36781444">
 
   <style>
     /* Minimal overrides for legal pages */
@@ -96,6 +93,11 @@
       </p>
     </div>
 
+    <!-- Selettore lingua -->
+    <div class="language-selector">
+      <a href="cookie-policy.html" hreflang="it">IT</a> | <a href="cookie-policy-en.html" hreflang="en">EN</a>
+    </div>
+
     <!-- Mobile Hamburger Menu -->
     <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu" aria-controls="mainNav" aria-expanded="false">
       <span></span>
@@ -112,7 +114,7 @@
         <li><a href="guide.html">Guide</a></li>
         <li><a href="index.html#contatti">Contatti</a></li>
         <li class="mobile-language">
-          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+          <a href="cookie-policy.html" hreflang="it">IT</a> | <a href="cookie-policy-en.html" hreflang="en">EN</a>
         </li>
       </ul>
     </nav>
@@ -120,93 +122,54 @@
 
 <main id="main" class="legal-content">
     <h1>Cookie Policy</h1>
-    <p class="last-update"><strong>Ultimo aggiornamento:</strong> 13 settembre 2026</p>
-
+    <p class="last-update"><strong>Ultimo aggiornamento:</strong> 1 ottobre 2026</p>
     <p>
-      Questa Cookie Policy spiega quali cookie e tecnologie simili utilizziamo sul nostro sito web
-      e come puoi gestirli.
+      Questa pagina spiega quali cookie e strumenti simili usa il sito studiolegalelofoco.com e come puoi gestirli. Il titolare è l'Avv. Andrea Lo Foco, come indicato nell'<a href="privacy.html">informativa privacy</a>.
     </p>
 
     <h2>1. Cosa sono i cookie</h2>
     <p>
-      I cookie sono piccoli file di testo che vengono salvati sul tuo dispositivo quando visiti un sito web.
-      Servono a migliorare la navigazione, ricordare le tue preferenze e, in alcuni casi, raccogliere
-      informazioni statistiche sull’uso del sito.
+      I cookie sono piccoli file di testo che un sito salva sul tuo dispositivo. Alcuni servono a far funzionare il sito e a proteggerlo, altri a raccogliere statistiche sul suo utilizzo.
     </p>
 
-    <h2>2. Tipi di cookie che utilizziamo</h2>
+    <h2>2. Cookie tecnici</h2>
+    <p>Sono necessari al funzionamento e alla sicurezza del sito e non richiedono il consenso.</p>
     <ul>
-      <li><strong>Cookie tecnici (necessari):</strong> Essenziali per il corretto funzionamento del sito (ad esempio navigazione, menu mobile, banner cookie). Non possono essere disattivati.</li>
-      <li><strong>Cookie analitici:</strong> Utilizzati per raccogliere dati aggregati e anonimi sull’uso del sito (Google Analytics 4). Questi cookie vengono installati <strong>solo dopo il tuo consenso esplicito</strong>.</li>
+      <li><strong>cookiesAccepted</strong>, registra che hai fatto una scelta sul banner, così non ti viene riproposto. Durata 1 anno.</li>
+      <li><strong>cookiePreferences</strong>, conserva la tua scelta sui cookie statistici, per rispettarla e per permetterti di cambiarla. Durata 1 anno.</li>
+      <li><strong>cf_clearance</strong>, impostato da Cloudflare, il servizio che distribuisce e protegge il sito, per distinguere i visitatori dal traffico automatizzato. Durata 1 anno. Se il sistema richiede una verifica, Cloudflare può impostare altri cookie tecnici di sicurezza, come __cf_bm.</li>
     </ul>
 
-    <p><strong>Cookie effettivamente utilizzati</strong></p>
-    <ul>
-      <li><strong>cookiesAccepted</strong> — cookie tecnico. Registra che hai espresso una scelta sul banner, così non ti viene riproposto. Durata: 1 anno. <code>SameSite=Strict</code>.</li>
-      <li><strong>cookiePreferences</strong> — cookie tecnico. Conserva la scelta sui cookie analitici, per poterla rispettare e per consentirti di revocarla. Durata: 1 anno. <code>SameSite=Strict</code>.</li>
-      <li><strong>_ga</strong> e <strong>_ga_E7P6F0SVRY</strong> — cookie analitici di Google Analytics 4, installati <em>soltanto</em> dopo consenso esplicito. Servono a distinguere le visite in forma aggregata. La durata è stabilita da Google ed è indicata nella sua documentazione (in configurazione predefinita, 2 anni).</li>
-    </ul>
+    <h2>3. Cookie statistici di Google Analytics</h2>
     <p>
-      Prima del consenso non viene installato alcun cookie analitico: la modalità di consenso di Google
-      registra un conteggio aggregato e privo di identificatori.
+      Sono installati solo se acconsenti. <strong>_ga</strong> e <strong>_ga_E7P6F0SVRY</strong> assegnano al tuo browser un identificativo casuale che permette a Google Analytics di riconoscere le visite successive e di produrre statistiche sull'uso del sito. La durata è stabilita da Google e nella configurazione predefinita arriva a 2 anni dall'ultima visita. Finché non acconsenti, lo script di Google Analytics non viene caricato e nessun dato è inviato a Google per finalità statistiche.
     </p>
 
-    <h2>3. Come gestiamo il consenso</h2>
+    <h2>4. Contenuti di terze parti caricati su tua richiesta</h2>
     <p>
-      Quando visiti il sito per la prima volta, appare un banner che ti permette di:
-    </p>
-    <ul>
-      <li>Cliccare su <strong>«Accetta tutti»</strong> per accettare cookie tecnici e analitici;</li>
-      <li>Cliccare su <strong>«Gestisci cookie»</strong> per scegliere se attivare o meno i cookie analitici.</li>
-    </ul>
-    <p>
-      Utilizziamo la <strong>modalità di consenso (Consent Mode v2)</strong> di Google. Finché non presti
-      il tuo consenso ai cookie analitici, <strong>nessun cookie di Google Analytics viene installato</strong>
-      sul tuo dispositivo e nessun identificatore ti viene attribuito: Google riceve unicamente
-      segnalazioni prive di cookie, che confluiscono in statistiche puramente aggregate e non
-      consentono di identificarti né di ricostruire il tuo percorso di navigazione.
-    </p>
-    <p>
-      Solo dopo che hai cliccato «Accetta tutti» o hai attivato i cookie analitici da «Gestisci cookie»
-      la misurazione diventa completa, con l’installazione dei cookie analitici descritti sopra.
-      Se rifiuti, o se semplicemente non compi alcuna scelta, la misurazione resta priva di cookie.
+      La mappa di Google Maps nella sezione contatti si carica solo se clicchi sul riquadro. Da quel momento Google riceve i dati del tuo browser e può installare cookie propri, secondo la propria informativa. I font del sito sono distribuiti insieme alle pagine e non sono caricati da servizi di terzi come Google Fonts.
     </p>
 
-    <h2>4. Come modificare o revocare il consenso</h2>
+    <h2>5. Come funziona il consenso</h2>
     <p>
-      Puoi in qualsiasi momento modificare le tue preferenze cliccando sul link
-      <strong>«Gestisci cookie»</strong> presente nel banner o nel footer del sito.
-      Le tue scelte verranno salvate per un anno.
-    </p>
-    <p>
-      In alternativa, puoi gestire o disattivare i cookie direttamente dalle impostazioni del tuo browser.
+      Alla prima visita un banner ti propone tre pulsanti. Con «Accetta tutti» attivi anche i cookie statistici, con «Rifiuta» restano attivi solo quelli tecnici, con «Gestisci cookie» puoi scegliere tu. Chiudere il banner con la X equivale a rifiutare. La scelta vale un anno.
     </p>
 
-    <h2>5. Cookie di terze parti</h2>
+    <h2>6. Come modificare o revocare il consenso</h2>
     <p>
-      Alcuni cookie possono essere impostati da servizi di terze parti che utilizziamo
-      (principalmente Google per Analytics). I font sono ospitati direttamente sui nostri server e
-      non comportano richieste a terzi. Questi cookie sono soggetti alle rispettive politiche sulla
-      privacy di tali terzi.
+      Puoi cambiare la tua scelta in qualsiasi momento dal pulsante «Gestisci cookie» nel piè di pagina. Se revochi il consenso, i cookie di Google Analytics vengono cancellati dal tuo browser. Puoi anche bloccare o cancellare i cookie dalle impostazioni del browser, ma bloccare quelli tecnici può impedire il corretto funzionamento del sito.
     </p>
 
-    <h2>6. Contatti</h2>
-    <p>
-      Per qualsiasi domanda relativa alla nostra Cookie Policy puoi contattarci a:
-    </p>
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
-    </p>
-
+    <h2>7. Contatti</h2>
+    <p>Per domande su questa pagina scrivi a <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>.</p>
   </main>
 
-<script src="script.js?v=6ab3966a"></script>
+<script src="script.js?v=879e1129"></script>
 <footer>
     <div class="footer-left"></div>
     <div class="footer-center">
       <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
-      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma &middot; P.IVA 18468821006</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma (n. A55651) &middot; P.IVA 18468821006</p>
       <p class="footer-note">
         <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a> | <a href="cookie-policy.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Gestisci cookie</button>
       </p>
@@ -214,10 +177,11 @@
     <div class="footer-right"></div>
   </footer>
 <div id="cookie-banner" class="cookie-banner">
+    <button type="button" id="close-cookie-banner" class="cookie-close" aria-label="Chiudi e continua con i soli cookie tecnici" title="Chiudi e continua con i soli cookie tecnici">&times;</button>
     <div class="cookie-content">
       <p>
-        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
-        Per saperne di più, consulta la nostra
+        Usiamo cookie tecnici, necessari al funzionamento e alla sicurezza del sito, e, solo con il tuo consenso, i cookie statistici di Google Analytics.
+        Con «Rifiuta» restano attivi soltanto quelli tecnici. Per saperne di più, consulta la
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>

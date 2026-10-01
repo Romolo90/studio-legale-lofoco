@@ -90,7 +90,7 @@ const esc = (s) => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
-// Il CSP e il bootstrap Consent Mode sono identici in tutte le pagine del sito:
+// Il CSP e il caricamento di Google Analytics subordinato al consenso sono identici in tutte le pagine del sito:
 // li prendiamo da una pagina esistente, così restano allineati se cambiano.
 function headComune() {
   const rif = fs.readFileSync(path.join(ROOT, 'grazie.html'), 'utf8');

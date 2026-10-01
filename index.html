@@ -3,39 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
-  <!-- Google tag (gtag.js) - Consent Mode v2.
-       Il tag e' presente su ogni pagina ma parte con analytics_storage negato:
-       finche' il visitatore non accetta dal banner cookie, GA4 riceve solo ping
-       aggregati e senza cookie. Il consenso viene aggiornato da script.js. -->
+  <!-- Google Analytics 4: caricato solo dopo il consenso.
+       Senza consenso nessuna richiesta parte verso Google. Chi ha gia' accettato in una
+       visita precedente lo carica qui; gli altri lo caricano da script.js quando accettano
+       dal banner. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
-    // Consenso gia' espresso in una visita precedente? Lo rileggiamo qui, prima che il
-    // tag parta, cosi' la prima pageview di chi aveva accettato non resta appesa in
-    // attesa dell'update inviato da script.js dopo il DOMContentLoaded.
-    var glfAnalytics = 'denied';
+    window.glfLoadAnalytics = function () {
+      if (window.glfAnalyticsLoaded) return;
+      window.glfAnalyticsLoaded = true;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-E7P6F0SVRY', { cookie_flags: 'SameSite=Lax;Secure' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(s);
+    };
     try {
       var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
       if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
-        glfAnalytics = 'granted';
+        window.glfLoadAnalytics();
       }
-    } catch (e) { /* cookie illeggibile o malformato: restiamo su 'denied' */ }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: glfAnalytics,
-      functionality_storage: 'granted',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-E7P6F0SVRY', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=Lax;Secure'
-    });
+    } catch (e) { /* cookie illeggibile o malformato: GA4 non viene caricato */ }
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY"></script>
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Studio Legale Lo Foco - Diritto d'Autore, Cinema e Audiovisivo a Roma</title>
@@ -56,13 +53,13 @@
   <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/">
 
   <!-- Meta Tag SEO -->
-  <meta name="description" content="Studio Legale Lo Foco: consulenza legale in diritto d'autore, diritto amministrativo, progetti culturali e cinema. Assistenza in Tax Credit, TAR Lazio e rapporti con la Direzione Generale Cinema. Sede a Roma." />
+  <meta name="description" content="Studio Legale Lo Foco a Roma. Diritto d'autore, diritto amministrativo e cinema, tax credit e contributi della DG Cinema, contenzioso davanti al TAR Lazio." />
   <meta name="keywords" content="Studio Legale Roma, consulenza legale, diritto d'autore, diritto amministrativo, cinema, Ministero della Cultura, MIBACT, Direzione Generale Cinema, Tax Credit cinema, TAR Lazio, progetti culturali, audiovisivo, avvocati Roma, Andrea Lo Foco, Michele Lo Foco, agevolazioni fiscali cinema, leggi cinema, tutela opere creative" />
   <meta name="author" content="Studio Legale Lo Foco" />
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Studio Legale Lo Foco - Diritto d'Autore, Cinema e Audiovisivo a Roma" />
-  <meta property="og:description" content="Consulenza legale in diritto d'autore, cinema, e amministrativo. Assistenza in Tax Credit e progetti culturali." />
+  <meta property="og:description" content="Consulenza legale in diritto d'autore, cinema e diritto amministrativo. Assistenza in Tax Credit e progetti culturali." />
   <meta property="og:url" content="https://studiolegalelofoco.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg" />
@@ -70,7 +67,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Studio Legale Lo Foco - Diritto d'Autore, Cinema e Audiovisivo a Roma" />
-  <meta name="twitter:description" content="Consulenza legale in diritto d'autore, cinema, e amministrativo. Assistenza in Tax Credit e progetti culturali." />
+  <meta name="twitter:description" content="Consulenza legale in diritto d'autore, cinema e diritto amministrativo. Assistenza in Tax Credit e progetti culturali." />
   <meta name="twitter:image" content="https://studiolegalelofoco.com/image/og-image.jpg" />
 
   <!-- Schema.org Local Business -->
@@ -129,7 +126,7 @@
   <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#003366">
-  <link rel="stylesheet" href="style.css?v=7bf2ab48" />
+  <link rel="stylesheet" href="style.css?v=36781444" />
 
 </head>
 <body>
@@ -144,7 +141,7 @@
     </div>
     <!-- Selettore lingua -->
     <div class="language-selector">
-      <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+      <a href="index.html" hreflang="it">IT</a> | <a href="index-en.html" hreflang="en">EN</a>
     </div>
     <!-- Hamburger menu (mobile) -->
     <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Apri/chiudi menu" aria-controls="mainNav" aria-expanded="false">
@@ -162,7 +159,7 @@
         <li><a href="guide.html">Guide</a></li>
         <li><a href="#contatti">Contatti</a></li>
         <li class="mobile-language">
-          <a href="index.html">IT</a> | <a href="index-en.html">EN</a>
+          <a href="index.html" hreflang="it">IT</a> | <a href="index-en.html" hreflang="en">EN</a>
         </li>
       </ul>
     </nav>
@@ -337,15 +334,9 @@
         <label for="messaggio">Messaggio</label>
         <textarea id="messaggio" name="messaggio" rows="5" placeholder="Descrivi la tua richiesta" required></textarea>
       </div>
-      <div class="form-row check-row">
-        <input type="checkbox" id="privacy" name="privacy" required />
-        <label for="privacy">
-          Dichiaro di aver letto e accettato la <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> e i <a href="terms.html" target="_blank" rel="noopener noreferrer">Termini di Servizio</a>.
-        </label>
-      </div>
-      <div id="privacy-error" class="form-error" style="display: none; color: #d32f2f; margin-top: 0.5rem; font-size: 0.95rem;">
-        Devi accettare la Privacy Policy e i Termini di Servizio prima di inviare.
-      </div>
+      <p class="form-note" style="font-size:0.92rem; margin:0.5rem 0 1rem;">
+        Inviando la richiesta prendi visione dell'<a href="privacy.html" target="_blank" rel="noopener noreferrer">informativa privacy</a>. Ti invitiamo a non inserire nel messaggio dati sulla salute, su procedimenti penali o su altre persone, se non sono necessari a capire la richiesta. Per questioni con termini in scadenza è meglio telefonarci invece di usare il modulo.
+      </p>
       <button type="submit" class="btn-cta" id="submitButton">Invia Richiesta</button>
     </form>
   </section>
@@ -365,12 +356,12 @@
 
   </main>
 
-<script src="script.js?v=6ab3966a"></script>
+<script src="script.js?v=879e1129"></script>
 <footer>
     <div class="footer-left"></div>
     <div class="footer-center">
       <p>&copy; 2026 Studio Legale Lo Foco - Tutti i diritti riservati</p>
-      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma &middot; P.IVA 18468821006</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, iscritto all'Ordine degli Avvocati di Roma (n. A55651) &middot; P.IVA 18468821006</p>
       <p class="footer-note">
         <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Termini di Servizio</a> | <a href="cookie-policy.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Gestisci cookie</button>
       </p>
@@ -383,10 +374,11 @@
     </div>
   </footer>
 <div id="cookie-banner" class="cookie-banner">
+    <button type="button" id="close-cookie-banner" class="cookie-close" aria-label="Chiudi e continua con i soli cookie tecnici" title="Chiudi e continua con i soli cookie tecnici">&times;</button>
     <div class="cookie-content">
       <p>
-        Utilizziamo cookie e tecnologie simili per migliorare la tua esperienza di navigazione.
-        Per saperne di più, consulta la nostra
+        Usiamo cookie tecnici, necessari al funzionamento e alla sicurezza del sito, e, solo con il tuo consenso, i cookie statistici di Google Analytics.
+        Con «Rifiuta» restano attivi soltanto quelli tecnici. Per saperne di più, consulta la
         <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
       </p>
     </div>
