@@ -1,6 +1,34 @@
 {
   "newsItems": [
     {
+      "date": "2026-10-01",
+      "title": "National Cinema Days for Schools 2026 – Call for the reference school",
+      "context": "Within the «Cinema and images for schools» Plan, promoted by the Ministry of Culture and the Ministry of Education and Merit, call prot. no. 718 of 30 September 2026 seeks expressions of interest to select the reference school for the National Cinema Days for Schools 2026. The call replaces the one of 3 August 2026, prot. no. 614. State upper-secondary schools, also as lead of a network, may apply by certified email (PEC) by 12:00 on 5 October 2026. The selected school will work with the Directorate-General for Cinema and Audiovisual and the Ministry of Education and Merit's Directorate-General for Communication and Institutional Relations.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/avviso-per-lindividuazione-dellistituzione-scolastica-di-riferimento-per-le-giornate-nazionali-del-cinema-per-la-scuola-2026/"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Production tax credit – Decree 281/2026 published on 24 September",
+      "context": "The Directorate-General for Cinema and Audiovisual announces that Interministerial Decree MiC-MEF of 6 July 2026, no. 281, amending Interministerial Decree of 10 July 2024, no. 225 on the tax credit for film and audiovisual production companies, was published on 24 September 2026. The consolidated text of Decree 225/2024 with the amendments of Decrees 141/2025 and 281/2026 is also available, and the Directorate-General states that it has no legal value.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/pubblicazione-decreto-interministeriale-mic-e-mef-6-luglio-2026-n-281/"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Italian nationality for video games – Provisional and final decrees of 29 September 2026",
+      "context": "Directorial Decree of 29 September 2026 rep. 2905 ('provisional Italian nationality for video games') and Directorial Decree of 29 September 2026 rep. 2906 ('final Italian nationality for video games') have been published. Publication constitutes formal notice that Italian nationality has been recognised and no individual notices will be sent by certified email. Works still under assessment will be covered by later decrees. The lists are also available under 'Administrative activities – Italian nationality of works' on the institutional website.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/nazionalita-italiana-provvisoria-e-definitiva-videogiochi-con-decreti-direttoriali-del-29-settembre-2026/"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Impact assessment of the film and audiovisual law – Report on 2025",
+      "context": "The Directorate-General for Cinema and Audiovisual publishes the report on the impact assessment of the film and audiovisual law for 2025, sent to Parliament on 29 September 2026.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/pubblicazione-valutazione-dimpatto-legge-cinema-e-audiovisivo-relativa-allanno-2025/"
+    },
+    {
       "date": "2026-09-29",
       "title": "Production tax credit – Recognitions, eligibility and cultural eligibility (rep. 2897-2900 and 2903)",
       "context": "The directorial decrees of 29 September 2026 publish the outcome of the admissibility assessments of preliminary tax credit claims for film, TV/web, short film, animation and documentary production (rep. 2903); final claims for film and TV/web production, documentaries and research and training works (rep. 2900); claims for tax credit eligibility (rep. 2897) and cultural eligibility (rep. 2899), including for the reinvestment of automatic contributions (rep. 2898). The publication constitutes notice of recognition of the tax credit and is not followed by individual certified emails (PEC). The credit may be used from the 10th day of the month following the notice, pursuant to Art. 6 of the 'Ministerial Decree on production tax credit 2021' and Art. 3 of the 'Ministerial Decree on other tax credits 2021' as amended, or from the 15th day pursuant to Art. 34(1) of the 'Ministerial Decree on production tax credit 2024' and Art. 14(1) of the 'Ministerial Decree on international tax credit 2024'. Claims still under assessment will be covered by later decrees.",
@@ -352,17 +380,17 @@
     },
     {
       "id": "tc-videogiochi",
-      "title": "Tax Credit for Videogame Production (2026)",
+      "title": "Video game production tax credit",
       "category": "tax-credit",
-      "summary": "Dedicated incentive for Italian-nationality videogame works. Specific procedures, dedicated nationality test and recognition on development/production expenditure incurred in Italy.",
+      "summary": "Tax credit of 25% of eligible cost for Italian-nationality video games recognised as having cultural value, up to €1m a year per company or group (Interministerial Decree 12 May 2021 rep. 187). The credit and other public aid may not together exceed 50% of eligible cost, and an amount at least equal to the credit must be spent in the European Economic Area.",
       "keyPoints": [
-        "Final recognition on admitted applications (D.D. 29/5 rep. 1479)",
-        "Separate final Italian nationality decree (D.D. rep. 1480)",
-        "Eligible costs: development, Italian team, local services",
-        "Applications via DGCOL; final (consuntivo) investigation"
+        "Cultural value assessed by a committee, with at least 70/100 in Table A and at least 35 points in the Contents section",
+        "Eligible costs as set out in Table B of the decree and the DGCA forms",
+        "Applications via the DGCOL platform, in sessions opened by directorial decree",
+        "Italian nationality of video games recognised by periodic directorial decrees, most recently those of 29 September 2026 (rep. 2905 and 2906)"
       ],
-      "errorsToAvoid": "Failure to separate core costs from marketing/publishing; insufficient Italian IP for the nationality test.",
-      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-videogiochi-decreto-del-29-maggio-2026-di-approvazione-delle-richieste-definitive-di-credito-dimposta/",
+      "errorsToAvoid": "A score below 70/100 in the Table A cultural-value test, or below 35 points in the Contents section, or expenditure in the European Economic Area lower than the credit recognised.",
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/tax-credit/produzione-videogiochi/",
       "tags": [
         "videogames",
         "tax-credit",
@@ -391,13 +419,13 @@
       "id": "contributi-selettivi",
       "title": "Selective Contributions for Screenwriting, Development and Production",
       "category": "contributi-selettivi",
-      "summary": "Annual calls under Art. 26 of Law 220/2016. Non-repayable grants for artistically and culturally valuable projects. Separate sessions for writing, development and production.",
+      "summary": "Annual calls under Art. 26 of Law 220/2016, non-repayable grants assessed by an expert Committee and awarded by decree of the Director-General. In the 2026 call, writing, development and production share two windows, 3 to 17 June and 1 to 15 October 2026.",
       "keyPoints": [
-        "2026 allocations: €1M writing, €2M development, >€32.7M production",
-        "Reserved quotas for young authors, documentaries, animation, cultural identity",
-        "Assessment based on artistic quality, feasibility and distribution plan",
-        "Implementing rules: Min. Decree 8 October 2024 rep. 345 (art. 26 Law 220/2016)",
-        "Aid intensity limits: 50% of the cost of the work in production, 80% in development"
+        "2026 call (Directorial Decree 15 May 2026 rep. 1238) with €1m for screenwriting, €2m for development and €32.7m for production",
+        "Production resources allocated by type of work (art. 21 of the call)",
+        "Different criteria for each strand, set by the call for writing, development and production",
+        "Implementing provisions in Ministerial Decree 8 October 2024 rep. 345 (art. 26 Law 220/2016)",
+        "As a rule, total public support for production may not exceed 50% of the cost of the work (60, 80 or 100% in the cases of art. 4 of the call), and 80% of costs for development"
       ],
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/introduzione/"
     },
@@ -407,24 +435,25 @@
       "category": "contributi-selettivi",
       "summary": "How the Committee assesses projects, how long the rankings take, when the advance and the balance are paid, and when a grant can be revoked.",
       "keyPoints": [
-        "Ninety days to request the 50% advance, paid within 30 days of the request",
-        "Sixty days for administrative checks and sixty for the Committee's assessment",
-        "Anti-mafia check above 150,000 euro and verification of social security compliance",
-        "In screenwriting, revocation can also concern the merit of the work"
+        "In writing and development the 50% advance is requested within 90 days and paid within 30 days of the request. In production it is paid within 90 days, after provisional nationality (arts. 10, 18 and 26 of the 2026 call)",
+        "Sixty days for checks and sixty for the Committee's assessment",
+        "Anti-mafia checks above €150,000 and verification of social security compliance",
+        "In all strands the grant may be revoked if the Committee finds the result lacks an adequate professional standard or substantially departs from the funded project (arts. 12, 20 and 28 of the call)"
       ],
       "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/introduzione/"
     },
     {
       "id": "co-produzioni",
-      "title": "International Co-productions and Bilateral Agreements",
-      "category": "ue-media",
-      "summary": "Agreements with France and other countries for co-development and co-production. Access to cross-funding and multi-nationality recognition.",
+      "title": "International co-productions and bilateral funds",
+      "category": "coproduzioni",
+      "summary": "Together with its counterpart agencies, the DGCA has set up bilateral funds with France, Tunisia, Portugal and the Baltic States. The French fund supports the development of films and series and the co-production of films, the latter up to €200,000 and 50% of eligible costs, as a rule for Italian majority or equal-share projects and exceptionally also for Italian minority co-producers. Minority co-productions have a dedicated call, with €5m in 2026.",
       "keyPoints": [
-        "Active Italy-France 2026 call with dedicated sessions",
-        "Points for minority and majority co-productions",
-        "Integration with Creative Europe MEDIA programmes"
+        "Italy-France 2026 call (Directorial Decree 1 April 2026 rep. 711) closed on 24 September 2026",
+        "2026 minority co-production call (Directorial Decree 31 July 2026 rep. 2496), second window 30 November to 18 December 2026",
+        "In selective production grants, production as an international co-production, international co-participation or international production is one of the assessment criteria (art. 24(1)(g) of the 2026 call)"
       ],
-      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/fondi-bilaterali/"
+      "link": "https://cinema.cultura.gov.it/cosa-facciamo/sostegni-economici/linee-di-sostegno/contributi-selettivi/fondi-bilaterali/",
+      "errorsToAvoid": "Confusing bilateral funds, which are calls with their own windows and budgets, with co-production agreements that allow recognition of Italian nationality."
     },
     {
       "id": "dgcol-pratica",
@@ -447,17 +476,16 @@
     },
     {
       "id": "errori-eleggibilita",
-      "title": "Common errors in cultural eligibility and nationality (2026)",
+      "title": "Cultural eligibility and nationality, requirements not to underestimate",
       "category": "normativa",
-      "summary": "Summary of the most frequent reasons for rejection or requests for integration in the 2026 decrees, with practical suggestions based on practice.",
+      "summary": "For the production tax credit a work needs both Italian nationality and cultural eligibility. Cultural eligibility requires at least 50/100 under Table A of Interministerial Decree 225/2024, while nationality as a rule requires at least 70/100 under the tables of the Prime Ministerial Decree of 11 July 2017, which differ by type of work.",
       "keyPoints": [
-        "Insufficient score in the cultural test (table annexed to the DM)",
-        "Failure to demonstrate prevailing Italian creative contribution",
-        "Incomplete or outdated IP/authorship documentation",
-        "Budget and distribution plan inconsistent with the declared work"
+        "Cultural eligibility, at least 50/100 under Table A of Decree 225/2024",
+        "Italian nationality, as a rule at least 70/100 under the tables of the Prime Ministerial Decree of 11 July 2017 as amended, where points for authors and crew are also awarded to EU or EEA nationals and to persons tax-resident in Italy",
+        "Cultural eligibility recognised by periodic directorial decrees, most recently Directorial Decree of 29 September 2026 rep. 2899"
       ],
-      "errorsToAvoid": "Underestimating the 'Italian cultural identity' or 'artistic quality' component for reserved quotas.",
-      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-29-maggio-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/",
+      "errorsToAvoid": "Taking either requirement for granted, or scoring the work on the table for a type of work other than the one declared.",
+      "link": "https://cinema.cultura.gov.it/avvisi/tax-credit-decreti-del-29-settembre-2026-di-riconoscimento-crediti-dimposta-ed-eleggibilita-culturale/",
       "tags": [
         "eligibility",
         "errors",
