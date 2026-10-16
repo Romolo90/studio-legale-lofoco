@@ -6,8 +6,8 @@
   "status": "published",
   "title": "Contributi selettivi: linee, requisiti e importi",
   "metaTitle": "Contributi selettivi cinema: linee, requisiti e importi | Studio Legale Lo Foco",
-  "metaDescription": "Contributi selettivi ex art. 26 L. 220/2016: finestre del bando 2026, requisiti, dotazioni e importi per scrittura, sviluppo e produzione.",
-  "abstract": "I contributi selettivi non si calcolano. Si vincono. A differenza del tax credit, qui non esiste un'aliquota da applicare al budget, ma una graduatoria costruita da una commissione di esperti su punteggi e motivazioni. Questa prima parte mette in fila la disciplina stabile, chi può chiedere il contributo e quanto vale nel bando in corso, con il riferimento normativo accanto a ogni dato; valutazione, erogazione e revoche sono nella seconda parte.",
+  "metaDescription": "Contributi selettivi ex art. 26 L. 220/2016 nel bando 2026, requisiti, documenti a pena di inammissibilità e importi per scrittura, sviluppo e produzione.",
+  "abstract": "I contributi selettivi non si calcolano. Si vincono. A differenza del tax credit, qui non esiste un'aliquota da applicare al budget, ma una graduatoria costruita da una commissione di esperti su punteggi e motivazioni. Questa prima parte mette in fila chi può chiederlo, che cosa preparare prima della domanda e quanto vale nel bando 2026, con il riferimento normativo accanto a ogni dato; valutazione, erogazione e revoche sono nella seconda parte.",
   "category": "contributi-selettivi",
   "author": {
     "name": "Andrea Lo Foco",
@@ -15,19 +15,19 @@
     "url": "andrea-lo-foco.html"
   },
   "datePublished": "2026-09-13",
-  "dateModified": "2026-10-01",
-  "verifiedAt": "2026-09-12",
+  "dateModified": "2026-10-16",
+  "verifiedAt": "2026-10-16",
   "sections": [
     {
       "id": "finestre",
-      "heading": "Le finestre del bando 2026",
+      "heading": "Le sessioni del bando 2026",
       "paragraphs": [
         {
-          "text": "La prima sessione si è chiusa il 17 giugno 2026. La seconda va dal 1° al 15 ottobre 2026, ore 23.59. Per la stessa opera la linea o la sottolinea scelta non può cambiare fra le due sessioni, a pena di inammissibilità, e nella scrittura sono inammissibili i progetti già assegnatari nella prima.",
+          "text": "Il bando 2026 ha previsto due sessioni, dal 3 al 17 giugno e dal 1° al 15 ottobre 2026, ore 23.59, ed entrambe sono chiuse. Per la stessa opera non si poteva cambiare linea o sottolinea fra le due sessioni, a pena di inammissibilità, e in tutte e tre le linee erano esclusi dalla seconda i progetti già assegnatari nella prima. Le graduatorie vanno approvate entro 120 giorni dal termine di presentazione, quindi entro il 15 ottobre 2026 per la prima sessione ed entro il 12 febbraio 2027 per la seconda; i tempi effettivi sono nella seconda parte.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "art. 2, cc. 3 e 5, e art. 7, c. 5, bando 2026"
+          "cite": "art. 2, cc. 3 e 5, artt. 7, c. 5, 14, c. 6, 22, c. 8, e art. 3, c. 10, bando 2026"
         }
       ]
     },
@@ -36,19 +36,20 @@
       "heading": "Che cosa sono e da dove nascono",
       "paragraphs": [
         {
-          "text": "I contributi selettivi sono previsti dall'articolo 26 della legge sul cinema e sull'audiovisivo e sono contributi a fondo perduto, assegnati attraverso bandi e non attraverso un calcolo automatico. La disciplina applicativa è contenuta nel decreto ministeriale dell'8 ottobre 2024, rep. n. 345, che ha abrogato il decreto del 31 luglio 2017, rep. n. 343.",
+          "text": "I contributi selettivi sono previsti dall'articolo 26 della legge sul cinema e sull'audiovisivo e si assegnano con bandi, sulla base della valutazione di una commissione di esperti e non di un calcolo automatico. La disciplina applicativa è contenuta nel decreto ministeriale dell'8 ottobre 2024, rep. n. 345, che ha abrogato il decreto del 31 luglio 2017, rep. n. 343.",
           "refs": [
             "l220-2016",
             "dm-345-2024"
           ],
-          "cite": "art. 26, L. 220/2016 e D.M. 345/2024"
+          "cite": "art. 26, L. 220/2016, e artt. 3, c. 2, e 15, c. 1, D.M. 345/2024"
         },
         {
-          "text": "Il decreto individua le linee di intervento finanziabili — scrittura di sceneggiature per opere cinematografiche, televisive e web, sviluppo di opere cinematografiche, televisive, web e videogiochi, produzione articolata in sei tipologie, distribuzione nazionale e internazionale, esercizio cinematografico. Ogni anno il decreto di riparto stabilisce quali linee vengono effettivamente attivate e con quante risorse.",
+          "text": "Il decreto individua le linee di intervento finanziabili — scrittura di sceneggiature, sviluppo di opere e videogiochi, produzione di più tipologie di opere cinematografiche e di opere audiovisive innovative, distribuzione nazionale e internazionale, esercizio cinematografico. Ogni anno il decreto di riparto stabilisce quali linee vengono effettivamente attivate e con quante risorse, e il bando 2026 riguarda scrittura, sviluppo e sei sottolinee di produzione.",
           "refs": [
-            "dm-345-2024"
+            "dm-345-2024",
+            "bando-2026"
           ],
-          "cite": "art. 3, D.M. 345/2024"
+          "cite": "art. 3, D.M. 345/2024, e artt. 1 e 21, bando 2026"
         },
         {
           "text": "È il bando annuale a fissare tutto ciò che cambia — risorse disponibili, beneficiari e requisiti, termini, documentazione, massimali di costo, limiti di intensità dell'aiuto, criteri di valutazione, numero massimo di progetti finanziabili e importo massimo del singolo contributo.",
@@ -58,11 +59,12 @@
           "cite": "art. 4, D.M. 345/2024"
         },
         {
-          "text": "Fra questi ci sono le spese istruttorie, comprese fra 200 e 10.000 euro, il cui mancato versamento rende la domanda inammissibile. Gli importi effettivi sono fissati con decreto direttoriale e per le linee di questo bando vanno da 200 euro per la scrittura e per i cortometraggi a 400 euro per lo sviluppo e per i documentari, 500 per i lungometraggi di giovani autori, 600 per l'animazione e 800 per le opere prime e seconde; salgono a 5.000 euro per i film e per le opere tv e web sull'identità culturale italiana con costo fino a 3,5 milioni e a 10.000 euro oltre tale soglia. L'eventuale rimborso per versamento errato o tardivo si chiede esclusivamente tramite il servizio PagOnline del Ministero della cultura, entro 15 giorni dal versamento o, dove prevista, dalla ricezione della comunicazione di inammissibilità. Richieste presentate con altre modalità non sono accolte.",
+          "text": "Fra questi ci sono le spese istruttorie, comprese fra 200 e 10.000 euro, da versare esclusivamente con il servizio PagOnline del Ministero della cultura all'invio della domanda. Il versamento mancato o tardivo rende la domanda inammissibile. Per le linee di questo bando gli importi vanno da 200 euro per la scrittura e per i cortometraggi a 400 per lo sviluppo e per i documentari, 500 per i lungometraggi di giovani autori, 600 per l'animazione e 800 per le opere prime e seconde; per i film di particolare qualità artistica e sull'identità culturale italiana salgono a 5.000 euro con costo fino a 3,5 milioni e a 10.000 oltre tale soglia, che nelle coproduzioni si misura sulla sola quota delle imprese italiane. L'eventuale rimborso per versamento errato o tardivo si chiede soltanto tramite PagOnline, entro 15 giorni dal versamento o, dove prevista, dalla comunicazione di inammissibilità.",
           "refs": [
+            "dm-345-2024",
             "dd-3362-2024"
           ],
-          "cite": "D.D. 3362/2024 e successive modifiche"
+          "cite": "art. 4, c. 1, lett. g), D.M. 345/2024, e D.D. 3362/2024, artt. 4-6 e Tabella 2"
         }
       ]
     },
@@ -71,40 +73,68 @@
       "heading": "Chi può chiederli, linea per linea",
       "paragraphs": [
         {
-          "text": "La scrittura è l'unica linea rivolta alle persone fisiche. Possono presentare domanda, anche congiuntamente, i cittadini maggiorenni italiani o di altro Paese dello Spazio economico europeo, fiscalmente residenti in Italia al momento dell'erogazione, titolari in modo pieno e incondizionato dei diritti di elaborazione creativa sui materiali artistici alla data di scadenza della sessione, dotati di posta elettronica certificata e firma elettronica qualificata. Ciascun autore può presentare un solo progetto per sessione, pena l'inammissibilità dell'ultimo presentato.",
+          "text": "La scrittura è l'unica linea rivolta alle persone fisiche, anche in forma congiunta. Ciascun autore deve essere titolare in modo pieno e incondizionato, alla scadenza della sessione, dei diritti di elaborazione creativa sui materiali artistici; il capofila deve inoltre essere cittadino maggiorenne italiano o di altro Paese dello Spazio economico europeo, fiscalmente residente in Italia al momento dell'erogazione e dotato di posta elettronica certificata e firma elettronica qualificata. Ogni autore può presentare un solo progetto per sessione, pena l'inammissibilità dell'ultimo, e la sceneggiatura deve essere in italiano, per un'opera di durata superiore a 52 minuti.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "art. 7, cc. 1 e 3, bando 2026"
+          "cite": "art. 7, cc. 1-4, bando 2026"
         },
         {
-          "text": "Sulla stessa linea opera un'incompatibilità che conviene verificare prima di impostare la domanda. Non può concorrere chi è titolare, socio, amministratore o legale rappresentante di un'impresa di produzione audiovisiva, di distribuzione o di servizi di media audiovisivi, secondo i codici Ateco 59.11, 59.13 e 60.20 risultanti dalla visura camerale, comprese le imprese non iscritte alla sezione ordinaria del Registro delle imprese. Sono inoltre esclusi i progetti realizzati utilizzando sistemi di intelligenza artificiale.",
+          "text": "Sulla stessa linea opera un'incompatibilità che conviene verificare prima di impostare la domanda. Non può concorrere chi è titolare, socio, amministratore o legale rappresentante di un'impresa di produzione audiovisiva, di distribuzione o di servizi di media audiovisivi, secondo i codici Ateco 59.11, 59.13 e 60.20 risultanti dalla visura camerale, comprese le imprese non iscritte alla sezione ordinaria del Registro delle imprese. Il requisito deve durare, perché se viene meno il contributo decade. Sono inoltre esclusi i progetti realizzati utilizzando sistemi di intelligenza artificiale.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "art. 7, cc. 1 e 6"
+          "cite": "art. 7, cc. 1, lett. f), e 6, e art. 12, c. 3, bando 2026"
         },
         {
-          "text": "Sviluppo e produzione riguardano invece le imprese — imprese indipendenti cinematografiche e audiovisive italiane, anche in forma associata o nell'ambito di una coproduzione, compartecipazione o produzione internazionale, e reti di imprese. Servono sede legale nello Spazio economico europeo, tassazione in Italia, qualifica di produttore indipendente, non qualificabilità come impresa non europea, iscrizione nella sezione ordinaria del Registro delle imprese e, per la produzione, codice Ateco 59.1 e ultimo bilancio depositato.",
+          "text": "Sviluppo e produzione riguardano invece le imprese — imprese indipendenti cinematografiche e audiovisive italiane, anche in forma associata o nell'ambito di una coproduzione, compartecipazione o produzione internazionale, e reti di imprese. In entrambe le linee servono, a pena di inammissibilità, sede legale nello Spazio economico europeo, tassazione in Italia, qualifica di produttore indipendente, non qualificabilità come impresa non europea, iscrizione nella sezione ordinaria del Registro delle imprese, codice Ateco 59.1 e deposito dell'ultimo bilancio, salvo esenzione.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "artt. 14 e 22"
+          "cite": "artt. 14, cc. 1-2, e 22, cc. 1-2, bando 2026"
         },
         {
-          "text": "Un requisito esclude molte società giovani. Occorre aver prodotto e diffuso al pubblico almeno un'opera audiovisiva conforme ai requisiti per l'ammissione ai benefici di legge negli ultimi cinque anni, che per questo bando significa fra il 15 maggio 2021 e il 15 maggio 2026. Sono esentate le società di nuova costituzione, cioè quelle che alla scadenza della sessione non risultano costituite da più di 36 mesi, con decorrenza dalla stipula dell'atto costitutivo e a condizione che la costituzione non sia avvenuta per fusione, scissione o cessione d'azienda.",
+          "text": "Un requisito esclude molte società giovani. Occorre aver prodotto e diffuso al pubblico almeno un'opera audiovisiva conforme ai requisiti per l'ammissione ai benefici di legge negli ultimi cinque anni, che per questo bando significa fra il 15 maggio 2021 e il 15 maggio 2026. Sono esentate le società di nuova costituzione, cioè quelle che alla scadenza della sessione non risultano costituite da più di 36 mesi, con decorrenza dalla stipula dell'atto costitutivo e a condizione che la costituzione non sia avvenuta per fusione, scissione o cessione d'azienda. Il decreto ministeriale aggiunge che fra soci, amministratori e legali rappresentanti non devono esserci quelli di un'altra impresa cinematografica, condizione che il bando non ripete e che conviene comunque verificare.",
           "refs": [
             "bando-2026",
-            "faq-selettivi-2026"
+            "faq-selettivi-2026",
+            "dm-345-2024"
           ],
-          "cite": "artt. 14 e 22, c. 2, e FAQ DGCA 10 giugno 2026"
+          "cite": "art. 1, c. 6, lett. d), e artt. 14 e 22, c. 2, bando 2026; FAQ DGCA 10 giugno 2026; art. 2, c. 3, lett. d), D.M. 345/2024"
         },
         {
-          "text": "Nella produzione ci sono poi due requisiti che vanno preparati molto prima della domanda. Il richiedente deve aver già acquisito, per contratto o per opzione, i diritti di elaborazione creativa sulla sceneggiatura, il soggetto, il trattamento o gli altri materiali artistici, e in caso di contributo l'opzione dev'essere esercitata entro il termine per la richiesta di acconto, pena l'inammissibilità della richiesta. Va inoltre attestato che l'inizio delle riprese è previsto non oltre 18 mesi dalla scadenza della sessione.",
+          "text": "Nello sviluppo il costo del progetto deve essere di almeno 20.000 euro, per un'opera di durata superiore a 52 minuti, e ogni impresa può presentare un solo progetto per sessione. Sono escluse le società che hanno già ottenuto tre contributi allo sviluppo senza chiedere per nessuna di quelle opere la nazionalità definitiva.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "art. 22, c. 2"
+          "cite": "art. 14, cc. 5-7, bando 2026"
+        },
+        {
+          "text": "Nella produzione il richiedente deve aver già acquisito, per contratto o per opzione, i diritti di elaborazione creativa sui materiali artistici, e deve attestare che l'inizio delle riprese è previsto non oltre 18 mesi dalla scadenza della sessione. Alla data della domanda l'opera deve avere la nazionalità italiana provvisoria o almeno averla chiesta, con un assetto produttivo identico a quello dichiarato nella richiesta di nazionalità. Ci sono poi limiti di costo, sempre a pena di inammissibilità. Opere prime e seconde e di giovani autori devono costare meno di 4 milioni, con costi sopra la linea non oltre il 25 per cento; documentari e cortometraggi meno di 1 milione e di 200.000 euro; nei film e nei documentari di particolare qualità artistica e sull'identità culturale i costi sopra la linea non possono superare il 30 per cento. Nelle coproduzioni i limiti di costo si riferiscono alla quota italiana e quelli sui costi sopra la linea non si applicano.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "art. 22, cc. 2, 5 e 6, bando 2026"
+        }
+      ]
+    },
+    {
+      "id": "prima-della-domanda",
+      "heading": "Che cosa preparare prima della domanda",
+      "paragraphs": [
+        {
+          "text": "Nello sviluppo e nella produzione la domanda deve contenere, a pena di inammissibilità, il contratto assicurativo contro i danni da calamità naturali ed eventi catastrofali ai terreni e fabbricati, agli impianti e macchinari e alle attrezzature dell'impresa, previsto dalla legge di bilancio 2024; se il progetto è presentato in forma associata la copertura deve averla ciascun associato.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "artt. 15, c. 1, e 23, c. 1, bando 2026"
+        },
+        {
+          "text": "I contratti con gli autori devono prevedere, sempre a pena di inammissibilità, clausole che consentono agli autori di non assentire allo sfruttamento della propria opera da parte di sistemi di intelligenza artificiale; nella produzione la stessa clausola serve nei contratti con interpreti ed esecutori. Chi usa contratti tipo redatti prima del 2026 deve rivederli. Anche la sceneggiatura ha una forma obbligata, quella delle linee guida allegate al bando, e una sceneggiatura impaginata diversamente rende inammissibile la domanda di sviluppo o di produzione.",
+          "refs": [
+            "bando-2026"
+          ],
+          "cite": "artt. 15, c. 1, 23, c. 1, e 26, c. 3, e Allegato 2, bando 2026"
         }
       ]
     },
@@ -113,35 +143,35 @@
       "heading": "Quanto vale il contributo nel bando 2026",
       "paragraphs": [
         {
-          "text": "Per il 2026 le risorse dell'articolo 26 sono ripartite fra scrittura di sceneggiature, con 1.000.000 di euro, sviluppo, con 2.000.000, e produzione, con 32.700.000. Ogni linea è divisa in due sessioni di valutazione e per ciascuna sessione il bando fissa un numero massimo di progetti finanziabili.",
+          "text": "Per il 2026 le risorse dell'articolo 26 sono ripartite fra scrittura di sceneggiature, con 1.000.000 di euro, sviluppo, con 2.000.000, e produzione, con 32.700.000, ciascuna divisa in due sessioni di valutazione. Dove il bando fissa un numero massimo di progetti per sessione, può derogarvi se restano risorse non assegnate.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "artt. 6, 13 e 21, bando 2026"
+          "cite": "art. 1, c. 1, e artt. 6, 13 e 21, cc. 1 e 2, bando 2026"
         },
         {
           "text": "Nella scrittura le risorse si dividono fra sceneggiature per il cinema, con 700.000 euro e un massimo di 18 progetti per sessione, e sceneggiature per opere televisive e web, con 300.000 euro e un massimo di 8 progetti per sessione. Il contributo per singolo progetto è compreso fra 10.000 e 20.000 euro.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "artt. 6 e 10"
+          "cite": "artt. 6 e 10, bando 2026"
         },
         {
           "text": "Nello sviluppo vanno 1.300.000 euro alle opere non seriali, con un massimo di 11 progetti per sessione, e 700.000 euro alle opere televisive e web seriali, con un massimo di 6 progetti. Il contributo massimo è il minore fra quello richiesto, il 50 per cento dei costi ammissibili e 100.000 euro, e non può comunque scendere sotto il 70 per cento di tale importo, salvo l'ultimo assegnatario in graduatoria.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "artt. 13 e 17, cc. 2 e 3"
+          "cite": "artt. 13 e 17, cc. 2 e 3, bando 2026"
         },
         {
-          "text": "Nella produzione le sei tipologie hanno dotazioni distinte — 7.800.000 euro per i lungometraggi di giovani autori, 7.500.000 per le opere prime e seconde, 4.000.000 per i documentari, 900.000 per i cortometraggi, 5.000.000 per l'animazione e 7.500.000 per i film di particolare qualità artistica e sull'identità culturale italiana. Il contributo massimo è il minore fra quello richiesto e il 40 per cento dei costi ammissibili, con un tetto di 1.000.000 di euro per le opere di animazione, ridotto a 600.000 per le opere di animazione di giovani autori e per le prime e seconde, e di 1.200.000 euro per i film di particolare qualità artistica. Il contributo assegnato non può comunque essere inferiore al 40 per cento di tale massimo, salvo quello attribuito all'ultimo progetto in graduatoria.",
+          "text": "Nella produzione le sei sottolinee hanno dotazioni distinte — 7.800.000 euro per i lungometraggi di giovani autori, con un massimo di 13 opere per sessione, 7.500.000 per le opere prime e seconde, con un massimo di 12, 4.000.000 per i documentari, con un massimo di 26, 900.000 per i cortometraggi, con un massimo di 15, 5.000.000 per l'animazione e 7.500.000 per i film di particolare qualità artistica e sull'identità culturale italiana, queste ultime due senza un numero massimo. Il contributo massimo è il minore fra quello richiesto e il 40 per cento dei costi ammissibili, e solo due sottolinee hanno anche un tetto in euro, 1.000.000 per l'animazione, ridotto a 600.000 quando l'opera di animazione è di giovani autori o è un'opera prima o seconda, e 1.200.000 per i film di particolare qualità artistica. Il contributo assegnato non può essere inferiore al 40 per cento di tale massimo, salvo quello dell'ultimo progetto in graduatoria.",
           "refs": [
             "bando-2026"
           ],
-          "cite": "artt. 21 e 24, cc. 6 e 7"
+          "cite": "artt. 21, c. 1, e 24, cc. 6 e 7, bando 2026"
         },
         {
-          "text": "I limiti di intensità del sostegno pubblico non sono gli stessi per tutte le linee. Per la produzione i contributi selettivi e le altre misure pubbliche non possono superare complessivamente il 50 per cento del costo dell'opera, elevato al 60 per cento nei casi previsti dalla disciplina europea sugli aiuti di Stato, all'80 per cento per le opere difficili sotto determinate soglie di costo e al 100 per cento per le coproduzioni cui partecipino Paesi DAC, come definiti dal bando. Per lo sviluppo vale invece un limite proprio, l'80 per cento dei costi totali di sviluppo.",
+          "text": "Per la produzione i contributi selettivi e le altre misure pubbliche non possono superare complessivamente il 50 per cento del costo dell'opera, elevato al 60 per cento nei casi previsti dalla disciplina europea sugli aiuti di Stato e al 100 per cento per le coproduzioni cui partecipino Paesi DAC. Sale all'80 per cento per le opere difficili, che sono in parte individuate da soglie di costo (3,5 milioni, 1 milione per i documentari, 200.000 euro per i cortometraggi) e in parte da una dichiarazione della Commissione che l'opera non è in grado di attrarre risorse private significative. Per lo sviluppo vale invece un limite proprio, l'80 per cento dei costi totali di sviluppo.",
           "refs": [
             "bando-2026"
           ],
@@ -153,27 +183,29 @@
   "faq": [
     {
       "q": "Posso chiedere il contributo per la scrittura se ho una società di produzione?",
-      "a": "No, se sei titolare, socio, amministratore o legale rappresentante di un'impresa con codice Ateco 59.11, 59.13 o 60.20. L'incompatibilità si valuta sulla visura camerale alla data della domanda e comprende anche le imprese non iscritte alla sezione ordinaria del Registro delle imprese. Riguarda la linea scrittura, che è rivolta alle persone fisiche. Per lo sviluppo e per la produzione la posizione si rovescia, perché lì il richiedente deve essere un'impresa.",
+      "a": "No, se sei titolare, socio, amministratore o legale rappresentante di un'impresa con codice Ateco 59.11, 59.13 o 60.20 risultante dalla visura camerale, comprese le imprese non iscritte alla sezione ordinaria del Registro delle imprese. Il requisito non si esaurisce con la domanda, perché se viene meno dopo il contributo decade. Per lo sviluppo e per la produzione la posizione si rovescia, perché lì il richiedente deve essere un'impresa.",
       "refs": [
         "bando-2026"
       ],
-      "cite": "art. 7, c. 1"
+      "cite": "art. 7, c. 1, lett. f), art. 12, c. 3, e artt. 14, c. 1, e 22, c. 1, bando 2026"
     },
     {
       "q": "Una società costituita da poco può partecipare?",
-      "a": "Sì. Il requisito dell'opera prodotta e diffusa negli ultimi cinque anni non si applica alle società che alla scadenza della sessione non sono costituite da più di 36 mesi, salvo che la costituzione sia avvenuta per fusione, scissione o cessione d'azienda. In caso di produzione associata la disciplina è meno lineare di quanto sembri, perché le FAQ indicano da un lato che il requisito di nuova costituzione dev'essere posseduto dal capofila e dalla maggioranza degli associati, dall'altro che il quinquennio va soddisfatto solo dal capofila e dagli associati che non siano di nuova costituzione. Le due indicazioni non coincidono in tutti gli scenari, quindi per un'associazione conviene una verifica prima di impostare la compagine.",
+      "a": "Sì. Il requisito dell'opera prodotta e diffusa negli ultimi cinque anni non si applica alle società che alla scadenza della sessione non sono costituite da più di 36 mesi, salvo che la costituzione sia avvenuta per fusione, scissione o cessione d'azienda. In caso di produzione associata il bando chiede che la nuova costituzione riguardi il capofila e la maggioranza delle imprese associate, mentre le FAQ indicano che il quinquennio va soddisfatto dal capofila e dagli associati che non siano di nuova costituzione. Le due indicazioni non coincidono in tutti gli scenari, e il decreto ministeriale aggiunge una condizione sui soci che il bando non riporta, quindi per un'associazione conviene una verifica prima di impostare la compagine.",
       "refs": [
-        "faq-selettivi-2026"
+        "bando-2026",
+        "faq-selettivi-2026",
+        "dm-345-2024"
       ],
-      "cite": "FAQ DGCA 10 giugno 2026"
+      "cite": "art. 1, c. 6, lett. d), bando 2026; FAQ DGCA 10 giugno 2026; art. 2, c. 3, lett. d), D.M. 345/2024"
     },
     {
       "q": "Quanto si può ottenere davvero?",
-      "a": "Nella scrittura fra 10.000 e 20.000 euro a progetto. Nello sviluppo il minore fra l'importo richiesto, il 50 per cento dei costi ammissibili e 100.000 euro, con una soglia minima del 70 per cento di quel massimo. Nella produzione il minore fra l'importo richiesto, il 40 per cento dei costi ammissibili e i tetti per tipologia, con una soglia minima del 40 per cento. Il vincolo che morde per primo, però, di solito non è la percentuale. Ogni sessione finanzia un numero chiuso di progetti — 18 sceneggiature per il cinema e 8 per tv e web, 11 progetti di sviluppo non seriale e 6 seriali — e nella produzione il limite è la dotazione della singola sottolinea.",
+      "a": "Nella scrittura fra 10.000 e 20.000 euro a progetto. Nello sviluppo il minore fra l'importo richiesto, il 50 per cento dei costi ammissibili e 100.000 euro, con una soglia minima del 70 per cento di quel massimo. Nella produzione il minore fra l'importo richiesto e il 40 per cento dei costi ammissibili, con un tetto in euro solo per l'animazione e per i film di particolare qualità artistica, e una soglia minima del 40 per cento. Il vincolo che morde per primo, però, di solito non è la percentuale ma il numero chiuso di progetti finanziabili in ogni sessione, che manca solo per l'animazione e per i film di particolare qualità artistica, dove il limite è la dotazione.",
       "refs": [
         "bando-2026"
       ],
-      "cite": "artt. 6, 10, 13, 17, 21 e 24"
+      "cite": "artt. 6, 10, 13, 17, 21 e 24, bando 2026"
     }
   ],
   "sources": [
@@ -185,7 +217,7 @@
       "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-11-14;220",
       "urlType": "primaria",
       "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12"
+      "checkedAt": "2026-10-16"
     },
     {
       "id": "dm-345-2024",
@@ -195,7 +227,7 @@
       "url": "https://cinema.cultura.gov.it/wp-content/uploads/2024/11/DM-8-ottobre-2024-rep.-345-art.-26-contributi-selettivi-signed.pdf",
       "urlType": "primaria",
       "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12"
+      "checkedAt": "2026-10-16"
     },
     {
       "id": "bando-2026",
@@ -205,7 +237,7 @@
       "url": "https://cinema.cultura.gov.it/wp-content/uploads/dlm_uploads/2026/05/Anno-2026-Bando-per-la-concessione-di-contributi-selettivi-per-la-scrittura-lo-sviluppo-e-la-produzione-di-opere-cinematograf.pdf",
       "urlType": "primaria",
       "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12"
+      "checkedAt": "2026-10-16"
     },
     {
       "id": "faq-selettivi-2026",
@@ -215,7 +247,7 @@
       "url": "https://cinema.cultura.gov.it/avvisi/pubblicazione-faq-bando-selettivi/",
       "urlType": "istituzionale",
       "accessedAt": "2026-09-12",
-      "checkedAt": "2026-09-12"
+      "checkedAt": "2026-10-16"
     },
     {
       "id": "dd-3362-2024",
@@ -225,7 +257,7 @@
       "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/09/20260915_SPESE-ISTRUTTORIE-_TESTO-CONSOLIDATO.pdf",
       "urlType": "istituzionale",
       "accessedAt": "2026-10-01",
-      "checkedAt": "2026-10-01"
+      "checkedAt": "2026-10-16"
     }
   ],
   "related": [
