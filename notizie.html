@@ -62,7 +62,7 @@
   <link rel="apple-touch-icon" href="image/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#003366">
-  <link rel="stylesheet" href="style.css?v=483672cd">
+  <link rel="stylesheet" href="style.css?v=4c0d351b">
 </head>
 <body>
 
@@ -252,6 +252,16 @@
 
         <article class="news-item">
           <span class="date">12 ottobre 2026</span>
+          <div class="title">Regione Lazio – «Lazio Next Generation 2026», approvati modulistica e chiarimenti, la domanda si data dalla consegna della PEC</div>
+          <p class="context">Con la determinazione n. G13879 del 12 ottobre 2026 la Regione Lazio ha approvato la modulistica dell'avviso «Lazio Next Generation – Anno 2026» (domanda, dichiarazione dei requisiti, piano dei costi, piano finanziario e piano di lavorazione) e un documento di chiarimenti applicativi (Allegato F), che dichiara di non modificare né l'avviso né i criteri di valutazione. La stessa determinazione corregge due errori materiali dell'avviso. La Data della Domanda (art. 3) è quella risultante dalla notifica di avvenuta consegna della PEC, e non più dalla conferma di una piattaforma telematica, ed è stato tolto dall'art. 16, comma 2, il rinvio alla documentazione «indicata nella piattaforma», perché le domande si inviano soltanto via PEC. Secondo i chiarimenti sono ammesse sia le opere con riprese iniziate dal 1° gennaio 2026, anche prima della domanda, sia quelle che le avviano entro 30 giorni dalla graduatoria, purché non completate e con costo complessivo fino a 2,5 milioni di euro (punto 1.1). Chi ha già presentato al MiC l'istanza preventiva di tax credit può allegarla al posto della richiesta di idoneità (punto 1.3). Tax credit e contributo regionale possono concorrere sulla stessa spesa entro il limite di cumulo del 50% del costo complessivo, elevato al 60, all'80 o al 100% nei casi dell'art. 8 (punto 1.5). Per le opere web contano solo gli accordi con un servizio di media audiovisivo a richiesta che prevedano un corrispettivo determinato o un minimo garantito, non quelli con piattaforme di condivisione di video (punto 1.6). I termini restano invariati, dalle ore 12:00 del 15 ottobre alle ore 17:00 del 4 novembre 2026.</p>
+          <div class="meta">
+            <span class="source">Regione Lazio</span>
+            <a href="https://www.regione.lazio.it/documenti/91031" target="_blank" rel="noopener noreferrer">Leggi l'avviso ufficiale →</a>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <span class="date">12 ottobre 2026</span>
           <div class="title">Tax credit distribuzione 2025 – Compilazione preliminare prorogata al 14 ottobre</div>
           <p class="context">Con il D.D. 12 ottobre 2026 rep. 3026 la DG Cinema e audiovisivo proroga alle ore 23:59 del 14 ottobre 2026 il termine per la compilazione preliminare su DGCOL delle domande di credito d'imposta per la distribuzione nazionale (TCDN) e internazionale (TCDIF), sessione 2025, che il D.D. 25 settembre 2026 rep. 2828 fissava al 12 ottobre. Alla trasmissione definitiva accedono solo le domande compilate entro il nuovo termine. Restano invariati la finestra di trasmissione definitiva, dalle ore 12:00 del 21 ottobre alle ore 23:59 del 29 ottobre 2026, e tutte le altre disposizioni del D.D. 2828.</p>
           <div class="meta">
@@ -286,7 +296,7 @@
           <p class="context">Con la determinazione n. G13701 del 7 ottobre 2026, pubblicata insieme all'avviso (Allegato A) nel BURL n. 81 dell'8 ottobre, la Regione Lazio mette a disposizione 3 milioni di euro a fondo perduto per opere di finzione, documentari, animazione e cortometraggi con costo complessivo di produzione fino a 2,5 milioni di euro, non ancora completate (art. 5). Possono partecipare i produttori indipendenti, PMI o no, titolari dei diritti almeno per l'Italia e con una sede operativa attiva nel Lazio, con una sola domanda per impresa unica (art. 4). Alla data della domanda l'opera deve aver già chiesto al MiC l'idoneità al tax credit e la nazionalità italiana, anche provvisoria (art. 5, comma 3), e deve soddisfare almeno due requisiti territoriali, di cui uno fra riprese, maestranze e post-produzione nel Lazio (art. 6). Il contributo è pari al 20% dei costi sostenuti nel Lazio maggiorati del 7% forfettario, e al 25% per documentari, animazione, cortometraggi, opere prime e seconde, con premialità fino al 30% complessivo (art. 7) e massimali di 50.000, 200.000 o 500.000 euro secondo il costo dell'opera (art. 9). L'insieme degli aiuti pubblici sull'opera, compreso il tax credit, non può superare il 50% del costo di produzione, salvo le soglie più alte previste dal reg. UE 651/2014 (art. 8). La procedura è a graduatoria (artt. 11-15). Le domande, firmate digitalmente, si inviano via PEC a cinemaaudiovisivo@pec.regione.lazio.it dalle ore 12:00 del 15 ottobre alle ore 17:00 del 4 novembre 2026 (art. 16), e la modulistica sarà approvata con un atto successivo.</p>
           <div class="meta">
             <span class="source">Regione Lazio</span>
-            <a href="https://www.regione.lazio.it/sites/default/files/documentazione/2026/DD-G13701-07-10-2026.pdf" target="_blank" rel="noopener noreferrer">Leggi l'avviso ufficiale →</a>
+            <a href="https://www.regione.lazio.it/documenti/91029" target="_blank" rel="noopener noreferrer">Leggi l'avviso ufficiale →</a>
           </div>
         </article>
 
@@ -900,6 +910,47 @@
         aggiorna(true);
         bottone.hidden = false;
         bottone.onclick = () => aggiorna(!lista.classList.contains('collapsed'));
+        filtroFonti(lista, bottone, aggiorna);
+      }
+
+      // Filtro per fonte: i pulsanti nascono dalle fonti delle voci, quindi una fonte nuova
+      // compare da sola. Con una fonte scelta l'elenco si apre per intero e il pulsante
+      // «mostra tutte» sparisce; con «Tutte le fonti» torna l'elenco accorciato.
+      function filtroFonti(lista, bottone, aggiorna) {
+        const voci = [...lista.querySelectorAll('article.news-item')];
+        const fonteDi = (v) => (v.querySelector('.source') || {}).textContent || '';
+        const conteggi = new Map();
+        voci.forEach(v => { const f = fonteDi(v).trim(); if (f) conteggi.set(f, (conteggi.get(f) || 0) + 1); });
+        const vecchia = document.getElementById('news-sources');
+        if (vecchia) vecchia.remove();
+        if (conteggi.size < 2) return;
+        const barra = document.createElement('div');
+        barra.id = 'news-sources';
+        barra.className = 'news-sources';
+        barra.setAttribute('role', 'group');
+        barra.setAttribute('aria-label', 'Filtra le novità per fonte');
+        const scelte = [['', 'Tutte le fonti']].concat([...conteggi].sort((a, b) => b[1] - a[1]).map(([f, n]) => [f, `${f} (${n})`]));
+        scelte.forEach(([fonte, etichetta]) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'filter-btn';
+          b.dataset.fonte = fonte;
+          b.textContent = etichetta;
+          b.setAttribute('aria-pressed', String(fonte === ''));
+          b.addEventListener('click', () => {
+            barra.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+            voci.forEach(v => v.classList.toggle('fuori-fonte', fonte !== '' && fonteDi(v).trim() !== fonte));
+            if (fonte === '') {
+              bottone.hidden = false;
+              aggiorna(true);
+            } else {
+              lista.classList.remove('collapsed');
+              bottone.hidden = true;
+            }
+          });
+          barra.appendChild(b);
+        });
+        lista.parentNode.insertBefore(barra, lista);
       }
 
       // Il blocco statico esiste già nel documento: si collassa subito, senza aspettare
@@ -965,7 +1016,7 @@
 
     function initFilters() {
       const input = document.getElementById('search-input');
-      const buttons = document.querySelectorAll('.filter-btn');
+      const buttons = document.querySelectorAll('.filter-btn[data-filter]');
       buttons.forEach(btn => {
         btn.addEventListener('click', () => {
           buttons.forEach(b => b.classList.remove('active'));

@@ -1669,6 +1669,21 @@ textarea:focus-visible {
 }
 .news-toggle:hover { background: #eaf6ff; }
 
+/* Filtro per fonte delle novità: la barra la crea il JavaScript. */
+.news-sources {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+.news-sources .filter-btn[aria-pressed="true"] {
+  background: #003366;
+  color: #fff;
+  box-shadow: 0 0 0 2px #80D9FF;
+}
+.news-list .news-item.fuori-fonte { display: none; }
+
 /* Il collegamento alla guida sta nel piè di pagina della scheda, non nel titolo:
    un link dentro un elemento dichiarato come pulsante non era raggiungibile. */
 .resource-card .card-footer a.card-guide {
