@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!-- GENERATO da scripts/build-guide.js — non modificare a mano;
+     sorgente: content/guide/repliche-digitali-en.json -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+  <!-- Google Analytics 4: caricato solo dopo il consenso.
+       Senza consenso nessuna richiesta parte verso Google. Chi ha gia' accettato in una
+       visita precedente lo carica qui; gli altri lo caricano da script.js quando accettano
+       dal banner. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.glfLoadAnalytics = function () {
+      if (window.glfAnalyticsLoaded) return;
+      window.glfAnalyticsLoaded = true;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'granted'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-E7P6F0SVRY', { cookie_flags: 'SameSite=Lax;Secure' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7P6F0SVRY';
+      document.head.appendChild(s);
+    };
+    try {
+      var glfPrefs = document.cookie.match(/cookiePreferences=([^;]+)/);
+      if (glfPrefs && JSON.parse(decodeURIComponent(glfPrefs[1])).analytics === true) {
+        window.glfLoadAnalytics();
+      }
+    } catch (e) { /* cookie illeggibile o malformato: GA4 non viene caricato */ }
+  </script>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital replicas of performers, voice, biometric data and the AI Act | Studio Legale Lo Foco</title>
+  <meta name="description" content="How the GDPR, the AI Act, Italian copyright law and the Italian Criminal Code treat a digital replica of a performer&#39;s voice, and what to settle before signing.">
+  <link rel="canonical" href="https://studiolegalelofoco.com/guida-digital-replicas-performers.html">
+  <link rel="alternate" hreflang="en" href="https://studiolegalelofoco.com/guida-digital-replicas-performers.html">
+  <link rel="alternate" hreflang="it" href="https://studiolegalelofoco.com/guida-repliche-digitali-interpreti.html">
+  <link rel="alternate" hreflang="x-default" href="https://studiolegalelofoco.com/guida-repliche-digitali-interpreti.html">
+  <meta property="og:title" content="Digital replicas of performers, voice, biometric data and the AI Act | Studio Legale Lo Foco">
+  <meta property="og:description" content="How the GDPR, the AI Act, Italian copyright law and the Italian Criminal Code treat a digital replica of a performer&#39;s voice, and what to settle before signing.">
+  <meta property="og:url" content="https://studiolegalelofoco.com/guida-digital-replicas-performers.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Digital replicas of performers, voice, biometric data and the AI Act | Studio Legale Lo Foco">
+  <meta name="twitter:image" content="https://studiolegalelofoco.com/image/og-image.jpg">
+  <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="image/icon-192.png">
+  <link rel="apple-touch-icon" href="image/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#003366">
+  <link rel="stylesheet" href="style.css?v=4c0d351b">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Digital replicas of performers. Voice, biometric data and the AI Act",
+  "description": "How the GDPR, the AI Act, Italian copyright law and the Italian Criminal Code treat a digital replica of a performer's voice, and what to settle before signing.",
+  "inLanguage": "en",
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "author": {
+    "@type": "Person",
+    "name": "Andrea Lo Foco",
+    "url": "https://studiolegalelofoco.com/andrea-lo-foco-en.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Studio Legale Lo Foco",
+    "url": "https://studiolegalelofoco.com/"
+  },
+  "mainEntityOfPage": "https://studiolegalelofoco.com/guida-digital-replicas-performers.html",
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Regulation (EU) 2026/1744 of 8 July 2026 (Digital Omnibus on AI), OJ L of 24 July 2026, Article 1, point 40",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202601744"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Commissione europea, Guidelines on the implementation of the transparency obligations for certain AI systems under Article 50 of Regulation (EU) 2024/1689, C(2026) 5054 final, punti 123 e 124",
+      "url": "https://ai-act-service-desk.ec.europa.eu/sites/default/files/2026-07/guidelines_on_the_implementation_of_the_transparency_obligations_for_certain_ai_systems_under_article_50_of_the_ai_act_bzptwqhk0ikg1dtlddap41psfy_131215.pdf"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "European Data Protection Board, Guidelines 02/2021 on virtual voice assistants, version 2.0 of 7 July 2021",
+      "url": "https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-022021-virtual-voice-assistants_en"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Italian Data Protection Authority (Garante), decision no. 789 of 18 December 2025, doc. web no. 10207132",
+      "url": "https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/10207132"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Italian Law no. 633 of 22 April 1941 (Copyright Law), Articles 70-ter, 70-quater, 70-septies, 80, 81, 96 and 97",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-22;633"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Italian Civil Code, Articles 6, 7 and 10",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-03-16;262"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Italian Legislative Decree no. 196 of 30 June 2003, Articles 2-terdecies, 136 and 137",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Italian Law no. 132 of 23 September 2025, Article 26(1)(c), introducing Article 612-quater of the Criminal Code",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art26"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Kulturministeriet (Danish Ministry of Culture), press release of 8 October 2026 on the bill against digital imitations",
+      "url": "https://kum.dk/aktuelt/nyheder/kulturminister-vil-daemme-op-for-delinger-af-digitale-efterligninger-fra-aarsskiftet"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://studiolegalelofoco.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://studiolegalelofoco.com/notizie-en.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Digital replicas of performers. Voice, biometric data and the AI Act",
+      "item": "https://studiolegalelofoco.com/guida-digital-replicas-performers.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a synthetic voice imitating a well-known actor lawful if it does not use their recordings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how it was obtained and how it is presented. If the model was trained on the actor's recordings, their related rights and data protection come into play. Realistic content must in any case be disclosed as generated, and crediting the actor with a performance never given may infringe their personal identity. The answer requires looking at the specific case."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does consent given years ago for a dubbing job cover the use of my voice to train an AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As a rule no, unless the contract expressly provides for it. Training is a purpose distinct from the recording and its original exploitation, and it has to be assessed in the light of the contract, related rights and data protection law."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="header">
+    <div class="logo">
+      <p class="logo-title">
+        <a href="index-en.html" class="home-link"><svg class="logo-mark" viewBox="0 0 44 44" width="32" height="32" aria-hidden="true" focusable="false"><circle cx="22" cy="22" r="20" fill="none" stroke="#80D9FF" stroke-width="2"></circle><text x="22" y="23" text-anchor="middle" dominant-baseline="middle" font-family="Lora, serif" font-weight="600" font-size="18" fill="#BFECFF" letter-spacing="1">LF</text></svg>
+          Studio Legale Lo Foco
+        </a>
+      </p>
+    </div>
+
+    <!-- Language selector -->
+    <div class="language-selector">
+      <a href="guida-repliche-digitali-interpreti.html" hreflang="it">IT</a> | <a href="guida-digital-replicas-performers.html" hreflang="en">EN</a>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <button type="button" class="hamburger" id="hamburgerMenu" aria-label="Open/close menu" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main Menu">
+      <ul>
+        <li><a href="index-en.html#about-us">About Us</a></li>
+        <li><a href="index-en.html#services">Services</a></li>
+        <li><a href="tax-credit-cinema-audiovisivo-en.html">Tax Credit</a></li>
+        <li><a href="notizie-en.html">Insights</a></li>
+        <li><a href="guides-en.html">Guides</a></li>
+        <li><a href="index-en.html#contact">Contact</a></li>
+        <li class="mobile-language">
+          <a href="guida-repliche-digitali-interpreti.html" hreflang="it">IT</a> | <a href="guida-digital-replicas-performers.html" hreflang="en">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<main id="main">
+    <article class="guida">
+      <header class="insights-hero">
+        <h1>Digital replicas of performers. Voice, biometric data and the AI Act</h1>
+        <p class="guida-abstract">Generative tools can now reproduce an actor&#39;s voice so faithfully that it is hard to tell from a real performance. Three bodies of law classify the phenomenon, data protection, the AI Act and copyright, yet none gives the performer a complete remedy. This guide explains where each one stops and which choices are worth making in contracts.</p>
+        <p class="guida-meta"><a href="andrea-lo-foco-en.html">Avv. Andrea Lo Foco</a> · Updated on 25 October 2026</p>
+      </header>
+
+      <nav class="profile-box guida-sommario" aria-label="Indice della guida">
+        <strong>In this guide</strong>
+        <ul>
+          <li><a href="#the-problem">Why the voice is the hard case</a></li>
+          <li><a href="#biometric-data">Voice, personal data and biometric data</a></li>
+          <li><a href="#prohibition">The ban on biometric data and its limit</a></li>
+          <li><a href="#ai-act">What the AI Act requires</a></li>
+          <li><a href="#related-rights">Related rights, personal identity and criminal law</a></li>
+          <li><a href="#contracts">What to settle before signing</a></li>
+          <li><a href="#faq">Frequently asked questions</a></li>
+          <li><a href="#fonti">Sources</a></li>
+        </ul>
+      </nav>
+
+      <section class="insights-section" id="the-problem" aria-labelledby="the-problem-title">
+        <h2 id="the-problem-title">Why the voice is the hard case</h2>
+        <p>For a person&#39;s likeness Italian law has long had a consent-based protection, the right in one&#39;s portrait. The voice has no civil-law rule that protects it expressly, and its protection has to be derived by extension from the rules on name and image. <span class="guida-rif">(<a href="#fonte-cc" title="Italian Civil Code, Articles 6, 7 and 10">Articles 6, 7 and 10 Civil Code; Articles 96 and 97 Law 633/1941</a>)</span></p>
+        <p>The issue affects dubbing, advertising, video games and audiovisual production, where the voice is both a working tool and a personal trait. The risk for the performer is not being recognised, but being credited with a performance never given.</p>
+
+      </section>
+
+      <section class="insights-section" id="biometric-data" aria-labelledby="biometric-data-title">
+        <h2 id="biometric-data-title">Voice, personal data and biometric data</h2>
+        <p>A voice recording is personal data, because it relates to an identified or identifiable person. It becomes biometric data only when it results from specific technical processing that allows or confirms the unique identification of that person. <span class="guida-rif">(<a href="#fonte-gdpr" title="Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51">Article 4(1) and (14) GDPR</a>)</span></p>
+        <p>Raw material is not enough. Recital 51 of the Regulation says so for photographs, which are biometric data only when processed through specific technical means of identification, and the European Data Protection Board has applied the same reasoning to the voice. <span class="guida-rif">(<a href="#fonte-gdpr" title="Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51">Recital 51 GDPR; EDPB Guidelines 02/2021</a>)</span></p>
+        <p>A system that generates a voice replica extracts from the recordings a numerical representation of the speaker&#39;s characteristics, often with networks originally built for speaker verification. That representation makes it possible to tell whether a sample comes from the same person, so in the most common architectures the model is plausibly biometric data. The conclusion is worth checking system by system.</p>
+
+      </section>
+
+      <section class="insights-section" id="prohibition" aria-labelledby="prohibition-title">
+        <h2 id="prohibition-title">The ban on biometric data and its limit</h2>
+        <p>The ban on processing special categories of data covers biometric data processed for the purpose of uniquely identifying a person. The definition looks at what the data can do, the ban at the purpose of the processing, and the two tests do not coincide. <span class="guida-rif">(<a href="#fonte-gdpr" title="Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51">Article 9(1) GDPR</a>)</span></p>
+        <p>Generating a voice is not meant to identify anyone but to reproduce its timbre. In our view, processing for generative purposes therefore falls outside the ban and needs one of the ordinary legal bases. The Italian Data Protection Authority, in its warning of 18 December 2025 to users of services that generate content from third parties&#39; voices or images, also referred to Article 9 for cases where the voice falls within the special categories. Before starting a project it is safer to treat the point as open, and there is a real risk in assuming otherwise. <span class="guida-rif">(<a href="#fonte-gdpr" title="Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51">Article 6(1) GDPR; Garante, decision no. 789/2025</a>)</span></p>
+        <p>The performer is not left without tools. They can object to processing based on legitimate interests, withdraw consent where processing relies on it, obtain erasure and claim damages. The exemptions for processing for artistic expression remain in place. <span class="guida-rif">(<a href="#fonte-gdpr" title="Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51">Articles 7(3), 17, 21 and 82 GDPR; Articles 136 and 137 Legislative Decree 196/2003</a>)</span></p>
+        <p>There is also a paradox. Comparing a suspicious recording with a sample of the authentic voice, to establish that the content does not come from the person it seems to come from, is processing for identification purposes and is caught by the ban. Explicit consent or the defence of a legal claim lifts it, but checks that platforms and distributors might want to run systematically, without the artist&#39;s involvement, risk being barred. <span class="guida-rif">(<a href="#fonte-gdpr" title="Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51">Article 9(2)(a) and (f) GDPR</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="ai-act" aria-labelledby="ai-act-title">
+        <h2 id="ai-act-title">What the AI Act requires</h2>
+        <p>Under the AI Act a realistic replica of an existing person&#39;s voice is a deep fake. The deployer of the system that generates it must disclose that the content has been artificially generated or manipulated. The obligation applies from 2 August 2026, a date left unchanged by the Digital Omnibus on AI. <span class="guida-rif">(<a href="#fonte-ai-act" title="Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744">Articles 3(60), 50(4) and 113 Regulation (EU) 2024/1689; Regulation (EU) 2026/1744</a>)</span></p>
+        <p>For evidently artistic, creative, satirical or fictional works the obligation remains, but disclosure can be made in a way that does not hamper the display or enjoyment of the work. The Commission&#39;s guidelines mention films with deep fakes of de-aged actors or digital replicas of deceased actors among the examples, and state that the lighter form is no justification for failing to respect third parties&#39; rights, including data protection and intellectual property. <span class="guida-rif">(<a href="#fonte-ai-act" title="Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744">Article 50(4) Regulation (EU) 2024/1689; Guidelines C(2026) 5054, points 123 and 124</a>)</span></p>
+        <p>From the performer&#39;s side, however, the obligation protects the public&#39;s trust in the genuineness of what it sees and hears, not the person depicted. A correct label reveals the artifice, not the missing consent. The performer can lodge a complaint with the market surveillance authority, which imposes the penalties, but the AI Act gives them no enforceable right against whoever generated the replica. Other remedies remain available. <span class="guida-rif">(<a href="#fonte-ai-act" title="Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744">Articles 85 and 99(4) Regulation (EU) 2024/1689</a>)</span></p>
+        <p>Where the EU legislature wanted to protect the person depicted, it chose consent rather than transparency. From 2 December 2026 it is prohibited to generate realistic images, video or audio of the intimate parts of an identifiable person, or depicting them in sexually explicit acts, without their consent. The ban does not cover a performer&#39;s voice in other contexts. <span class="guida-rif">(<a href="#fonte-ai-act" title="Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744">Article 5(1)(b bis) Regulation (EU) 2024/1689, inserted by Regulation (EU) 2026/1744</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="related-rights" aria-labelledby="related-rights-title">
+        <h2 id="related-rights-title">Related rights, personal identity and criminal law</h2>
+        <p>Italian copyright law allows performers to object to the communication to the public or reproduction of their recitation, representation or performance where it harms their honour or reputation. The rule presupposes a performance actually given, while a replica fixes no performance, because none took place. Extending it to a simulated performance is arguable, but the basis remains uncertain. <span class="guida-rif">(<a href="#fonte-lda" title="Italian Law no. 633 of 22 April 1941 (Copyright Law), Articles 70-ter, 70-quater, 70-septies, 80, 81, 96 and 97">Articles 80 and 81 Law 633/1941</a>)</span></p>
+        <p>Related rights come back into play on the source material. Training a model on recordings of real performances means reproducing them, and reproduction belongs to the performer unless the text and data mining exception applies. This safeguard looks at the recordings used, not at the replica that comes out. <span class="guida-rif">(<a href="#fonte-lda" title="Italian Law no. 633 of 22 April 1941 (Copyright Law), Articles 70-ter, 70-quater, 70-septies, 80, 81, 96 and 97">Article 80(2)(b) and Articles 70-ter, 70-quater and 70-septies Law 633/1941</a>)</span></p>
+        <p>The firmest ground remains the right to personal identity, understood as the interest in not having one&#39;s intellectual and professional profile misrepresented to others. That is exactly what happens when a performer is credited with a performance that never took place. This protection, however, offers no prior consent mechanism and depends on the individual taking action.</p>
+        <p>On the criminal side, the Italian law on artificial intelligence introduced the offence of unlawful dissemination of content generated or altered with AI systems, which expressly refers to falsified or altered voices. The offence requires unjust harm and is prosecuted on complaint, except where it is prosecuted ex officio. <span class="guida-rif">(<a href="#fonte-l132" title="Italian Law no. 132 of 23 September 2025, Article 26(1)(c), introducing Article 612-quater of the Criminal Code">Article 612-quater Criminal Code, introduced by Article 26 Law 132/2025</a>)</span></p>
+        <p>Italy currently has no specific right of the artist over their own replica. On 8 October 2026 Denmark presented a bill amending its copyright act to prohibit sharing realistic digital imitations of a person&#39;s appearance and voice, with exceptions for parody and satire. <span class="guida-rif">(<a href="#fonte-dk" title="Kulturministeriet (Danish Ministry of Culture), press release of 8 October 2026 on the bill against digital imitations">Danish Ministry of Culture, 8 October 2026</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="contracts" aria-labelledby="contracts-title">
+        <h2 id="contracts-title">What to settle before signing</h2>
+        <p>For producers and performers alike, the first line of defence is the contract. Consent to a recording or a scan does not in itself include consent to use the replica that can be derived from it. It is worth keeping the two separate and defining works, scope, territories and duration for the second.</p>
+        <p>Using the material to train AI models is a separate purpose. If the contract does not provide for it expressly, it is a risk to treat it as granted, both for related rights and for data protection.</p>
+        <p>An image release and a privacy notice follow different rules and do not replace each other. A single sheet that mixes them runs the risk of covering neither.</p>
+        <p>The fate of the replica after the performer&#39;s death also needs a decision. Data protection rights concerning deceased persons can be exercised by those with an interest of their own, by those acting to protect the data subject as their agent, or for family reasons deserving protection. The data subject can bar this by written declaration only for information society services offered directly, so the rest has to be settled in the contract. <span class="guida-rif">(<a href="#fonte-codice-privacy" title="Italian Legislative Decree no. 196 of 30 June 2003, Articles 2-terdecies, 136 and 137">Article 2-terdecies Legislative Decree 196/2003</a>)</span></p>
+        <p>Finally, the duty to disclose generated content falls on the deployer of the system. Between production, technical suppliers and platforms it is worth checking who applies the disclosure and in what form, especially for works intended for cinemas or streaming. <span class="guida-rif">(<a href="#fonte-ai-act" title="Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744">Article 50(4) Regulation (EU) 2024/1689</a>)</span></p>
+
+      </section>
+
+      <section class="insights-section" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Frequently asked questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">Is a synthetic voice imitating a well-known actor lawful if it does not use their recordings?</button>
+            <div class="accordion-content">
+              <p>It depends on how it was obtained and how it is presented. If the model was trained on the actor&#39;s recordings, their related rights and data protection come into play. Realistic content must in any case be disclosed as generated, and crediting the actor with a performance never given may infringe their personal identity. The answer requires looking at the specific case. <span class="guida-rif">(<a href="#fonte-ai-act" title="Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744">Regulation (EU) 2024/1689</a>; <a href="#fonte-lda" title="Italian Law no. 633 of 22 April 1941 (Copyright Law), Articles 70-ter, 70-quater, 70-septies, 80, 81, 96 and 97">Law 633/1941</a>)</span></p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-header" aria-expanded="false">Does consent given years ago for a dubbing job cover the use of my voice to train an AI?</button>
+            <div class="accordion-content">
+              <p>As a rule no, unless the contract expressly provides for it. Training is a purpose distinct from the recording and its original exploitation, and it has to be assessed in the light of the contract, related rights and data protection law. <span class="guida-rif">(<a href="#fonte-lda" title="Italian Law no. 633 of 22 April 1941 (Copyright Law), Articles 70-ter, 70-quater, 70-septies, 80, 81, 96 and 97">Law 633/1941</a>; <a href="#fonte-gdpr" title="Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51">GDPR</a>)</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights-section" id="fonti" aria-labelledby="fonti-title">
+        <h2 id="fonti-title">Sources</h2>
+        <div class="profile-box">
+        <p class="guida-meta">Checked against the texts on 25 October 2026</p>
+        <ul>
+          <li id="fonte-gdpr"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679" target="_blank" rel="noopener noreferrer">Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51</a></li>
+          <li id="fonte-ai-act"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689" target="_blank" rel="noopener noreferrer">Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744</a></li>
+          <li id="fonte-omnibus-ia"><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202601744" target="_blank" rel="noopener noreferrer">Regulation (EU) 2026/1744 of 8 July 2026 (Digital Omnibus on AI), OJ L of 24 July 2026, Article 1, point 40</a></li>
+          <li id="fonte-lg-art50"><a href="https://ai-act-service-desk.ec.europa.eu/sites/default/files/2026-07/guidelines_on_the_implementation_of_the_transparency_obligations_for_certain_ai_systems_under_article_50_of_the_ai_act_bzptwqhk0ikg1dtlddap41psfy_131215.pdf" target="_blank" rel="noopener noreferrer">Commissione europea, Guidelines on the implementation of the transparency obligations for certain AI systems under Article 50 of Regulation (EU) 2024/1689, C(2026) 5054 final, punti 123 e 124</a></li>
+          <li id="fonte-edpb-2-2021"><a href="https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-022021-virtual-voice-assistants_en" target="_blank" rel="noopener noreferrer">European Data Protection Board, Guidelines 02/2021 on virtual voice assistants, version 2.0 of 7 July 2021</a></li>
+          <li id="fonte-garante-789"><a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/10207132" target="_blank" rel="noopener noreferrer">Italian Data Protection Authority (Garante), decision no. 789 of 18 December 2025, doc. web no. 10207132</a></li>
+          <li id="fonte-lda"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-22;633" target="_blank" rel="noopener noreferrer">Italian Law no. 633 of 22 April 1941 (Copyright Law), Articles 70-ter, 70-quater, 70-septies, 80, 81, 96 and 97</a></li>
+          <li id="fonte-cc"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-03-16;262" target="_blank" rel="noopener noreferrer">Italian Civil Code, Articles 6, 7 and 10</a>, accessed on 18 October 2026</li>
+          <li id="fonte-codice-privacy"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196" target="_blank" rel="noopener noreferrer">Italian Legislative Decree no. 196 of 30 June 2003, Articles 2-terdecies, 136 and 137</a></li>
+          <li id="fonte-l132"><a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art26" target="_blank" rel="noopener noreferrer">Italian Law no. 132 of 23 September 2025, Article 26(1)(c), introducing Article 612-quater of the Criminal Code</a></li>
+          <li id="fonte-dk"><a href="https://kum.dk/aktuelt/nyheder/kulturminister-vil-daemme-op-for-delinger-af-digitale-efterligninger-fra-aarsskiftet" target="_blank" rel="noopener noreferrer">Kulturministeriet (Danish Ministry of Culture), press release of 8 October 2026 on the bill against digital imitations</a></li>
+        </ul>
+        </div>
+      </section>
+
+      <p class="guida-disclaimer">This guide is for information only and is not legal advice. The law on artificial intelligence and data protection changes quickly, and the AI Act&#39;s application dates have already been amended once. Before signing a contract or starting a project, check the rules in force or contact the firm.</p>
+
+      <section class="insights-section" id="contatto" aria-labelledby="contatto-title">
+        <h2 id="contatto-title">Let&#39;s discuss your project</h2>
+        <p>If a project involves recordings, scans or generated voices, the useful moment to talk is before the contracts with performers are signed.</p>
+        <p>On the firm&#39;s work in copyright and data protection, see the page of <a href="andrea-lo-foco-en.html">Andrea Lo Foco</a>.</p>
+        <div class="contact-info">
+          <div>
+            <span class="ci-label">✉️ Email</span>
+            <a href="mailto:info@studiolegalelofoco.com">info@studiolegalelofoco.com</a>
+          </div>
+          <div>
+            <span class="ci-label">📞 Phone</span>
+            <a href="tel:+39063201820">+39&nbsp;06&nbsp;3201820</a>
+          </div>
+          <div>
+            <span class="ci-label">📍 Address</span>
+            <span>Via Boezio, 2/A - 00193, Roma</span>
+          </div>
+        </div>
+        <p class="guida-cta"><a href="index-en.html#contact" class="btn-cta">Request a consultation</a></p>
+      </section>
+    </article>
+  </main>
+
+<script src="script.js?v=879e1129"></script>
+<footer>
+    <div class="footer-left"></div>
+    <div class="footer-center">
+      <p>&copy; 2026 Studio Legale Lo Foco - All rights reserved</p>
+      <p class="footer-legal">Avv. Andrea Lo Foco, member of the Rome Bar (Ordine degli Avvocati di Roma, no. A55651) &middot; VAT No. IT18468821006 &middot; PEC <a href="mailto:andrealofoco@ordineavvocatiroma.org">andrealofoco@<wbr>ordineavvocatiroma.org</a></p>
+      <p class="footer-note">
+        <a href="privacy-en.html">Privacy Policy</a> | <a href="terms-en.html">Terms of Service</a> | <a href="cookie-policy-en.html">Cookie Policy</a> | <button type="button" id="cookie-settings" class="link-button">Cookie settings</button>
+      </p>
+    </div>
+    <div class="footer-right"></div>
+  </footer>
+<div id="cookie-banner" class="cookie-banner">
+    <button type="button" id="close-cookie-banner" class="cookie-close" aria-label="Close and continue with technical cookies only" title="Close and continue with technical cookies only">&times;</button>
+    <div class="cookie-content">
+      <p>
+        We use technical cookies, needed for the site to work and stay secure, and, only with your consent, Google Analytics statistics cookies.
+        If you choose «Reject», only the technical cookies remain. For more information, see the
+        <a href="cookie-policy-en.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="cookie-buttons">
+      <button type="button" id="accept-cookies" class="btn-cookie">Accept all</button>
+      <button type="button" id="reject-cookies" class="btn-cookie btn-secondary">Reject</button>
+      <button type="button" id="manage-cookies" class="btn-cookie btn-secondary">Manage cookies</button>
+    </div>
+  </div>
+
+  <div id="cookie-preferences" class="hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-prefs-title">
+    <h2 id="cookie-prefs-title">Cookie Preferences</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="cookieType" value="analytical" />
+        Analytical cookies (Google Analytics)
+      </label>
+      <button id="save-preferences" type="button">Save preferences</button>
+      <button type="submit" style="display:none" aria-hidden="true"></button>
+    </form>
+  </div>
+
+</body>
+</html>

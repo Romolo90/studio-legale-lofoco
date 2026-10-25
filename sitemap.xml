@@ -8,14 +8,14 @@
   <!-- Home / Primary -->
   <url>
     <loc>https://studiolegalelofoco.com/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>1.00</priority>
   </url>
 
   <!-- Italian pages -->
   <url>
     <loc>https://studiolegalelofoco.com/notizie.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
@@ -30,12 +30,12 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/guide.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/guides-en.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -46,6 +46,16 @@
   <url>
     <loc>https://studiolegalelofoco.com/guida-tax-credit-produzioni-estere.html</loc>
     <lastmod>2026-09-29</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/guida-repliche-digitali-interpreti.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/guida-digital-replicas-performers.html</loc>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -81,7 +91,7 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/andrea-lo-foco.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
@@ -98,12 +108,12 @@
   <!-- English pages -->
   <url>
     <loc>https://studiolegalelofoco.com/index-en.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/notizie-en.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -113,7 +123,7 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/andrea-lo-foco-en.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>

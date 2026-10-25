@@ -155,6 +155,10 @@ function indiceGuide() {
 
 function corpo(g, anteprima) {
   const L = tr(g);
+  // Il riquadro finale nasce per le guide sugli incentivi: una guida su un altro tema
+  // può sostituirne i testi con g.contatto, altrimenti rimanda alla pagina sul tax credit.
+  const C = Object.assign({ h2: L.contattoH2, p1: L.contattoP1, p2pre: L.contattoP2pre, servizioUrl: L.servizioUrl, servizioLabel: L.servizioLabel },
+    Object.fromEntries(Object.entries(g.contatto || {}).map(([k, v]) => [k, esc(v)])));
   const fonteById = new Map((g.sources || []).map((s) => [s.id, s]));
   // Quando il paragrafo indica una citazione puntuale, quella copre l'intero richiamo:
   // il primo riferimento la porta come etichetta e gli altri restano solo come collegamento
@@ -230,9 +234,9 @@ ${fonti}${correlate}
       <p class="guida-disclaimer">${esc(g.disclaimer || L.disclaimer)}</p>
 
       <section class="insights-section" id="contatto" aria-labelledby="contatto-title">
-        <h2 id="contatto-title">${L.contattoH2}</h2>
-        <p>${L.contattoP1}</p>
-        <p>${L.contattoP2pre}<a href="${L.servizioUrl}">${L.servizioLabel}</a>.</p>
+        <h2 id="contatto-title">${C.h2}</h2>
+        <p>${C.p1}</p>
+        <p>${C.p2pre}<a href="${C.servizioUrl}">${C.servizioLabel}</a>.</p>
         <div class="contact-info">
           <div>
             <span class="ci-label">✉️ ${L.email}</span>

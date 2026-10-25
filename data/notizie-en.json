@@ -585,6 +585,26 @@
         "The consolidated law approved by the Chamber provides for a reorganised tax credit and the creation of an Agency for film and audiovisual"
       ],
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/"
+    },
+    {
+      "id": "repliche-digitali",
+      "title": "Digital replicas of performers, voice, biometric data and the AI Act",
+      "category": "normativa",
+      "summary": "A digital replica of a performer's voice is personal data and often biometric data, it is a deep fake to be disclosed under the AI Act and it touches related rights, yet none of these gives the artist a full remedy. The firmest protection remains personal identity, alongside Article 612-quater of the Italian Criminal Code introduced by Law 132/2025.",
+      "keyPoints": [
+        "The ban in Article 9 GDPR turns on the purpose of identification, and processing for generative purposes remains an open point",
+        "From 2 August 2026 the deployer of a system generating a deep fake must disclose it (Article 50(4) Regulation (EU) 2024/1689)",
+        "Performers' related rights (Articles 80 and 81 Law 633/1941) presuppose a performance actually given",
+        "Contracts should keep separate the consent to recording, to use of the replica and to training AI models"
+      ],
+      "errorsToAvoid": "Assuming that consent to a recording also covers the replica or the training of a model, or that the AI Act label replaces the performer's consent.",
+      "link": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      "guideUrl": "guida-digital-replicas-performers.html",
+      "tags": [
+        "artificial-intelligence",
+        "copyright",
+        "privacy"
+      ]
     }
   ]
 }

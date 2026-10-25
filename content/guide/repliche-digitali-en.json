@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "id": "repliche-digitali-en",
+  "slug": "digital-replicas-performers",
+  "lang": "en",
+  "status": "published",
+  "title": "Digital replicas of performers. Voice, biometric data and the AI Act",
+  "metaTitle": "Digital replicas of performers, voice, biometric data and the AI Act | Studio Legale Lo Foco",
+  "metaDescription": "How the GDPR, the AI Act, Italian copyright law and the Italian Criminal Code treat a digital replica of a performer's voice, and what to settle before signing.",
+  "abstract": "Generative tools can now reproduce an actor's voice so faithfully that it is hard to tell from a real performance. Three bodies of law classify the phenomenon, data protection, the AI Act and copyright, yet none gives the performer a complete remedy. This guide explains where each one stops and which choices are worth making in contracts.",
+  "category": "diritto-autore",
+  "author": {
+    "name": "Andrea Lo Foco",
+    "role": "Lawyer",
+    "url": "andrea-lo-foco-en.html"
+  },
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "verifiedAt": "2026-10-25",
+  "sections": [
+    {
+      "id": "the-problem",
+      "heading": "Why the voice is the hard case",
+      "paragraphs": [
+        {
+          "text": "For a person's likeness Italian law has long had a consent-based protection, the right in one's portrait. The voice has no civil-law rule that protects it expressly, and its protection has to be derived by extension from the rules on name and image.",
+          "refs": [
+            "cc",
+            "lda"
+          ],
+          "cite": "Articles 6, 7 and 10 Civil Code; Articles 96 and 97 Law 633/1941"
+        },
+        {
+          "text": "The issue affects dubbing, advertising, video games and audiovisual production, where the voice is both a working tool and a personal trait. The risk for the performer is not being recognised, but being credited with a performance never given.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "id": "biometric-data",
+      "heading": "Voice, personal data and biometric data",
+      "paragraphs": [
+        {
+          "text": "A voice recording is personal data, because it relates to an identified or identifiable person. It becomes biometric data only when it results from specific technical processing that allows or confirms the unique identification of that person.",
+          "refs": [
+            "gdpr"
+          ],
+          "cite": "Article 4(1) and (14) GDPR"
+        },
+        {
+          "text": "Raw material is not enough. Recital 51 of the Regulation says so for photographs, which are biometric data only when processed through specific technical means of identification, and the European Data Protection Board has applied the same reasoning to the voice.",
+          "refs": [
+            "gdpr",
+            "edpb-2-2021"
+          ],
+          "cite": "Recital 51 GDPR; EDPB Guidelines 02/2021"
+        },
+        {
+          "text": "A system that generates a voice replica extracts from the recordings a numerical representation of the speaker's characteristics, often with networks originally built for speaker verification. That representation makes it possible to tell whether a sample comes from the same person, so in the most common architectures the model is plausibly biometric data. The conclusion is worth checking system by system.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "id": "prohibition",
+      "heading": "The ban on biometric data and its limit",
+      "paragraphs": [
+        {
+          "text": "The ban on processing special categories of data covers biometric data processed for the purpose of uniquely identifying a person. The definition looks at what the data can do, the ban at the purpose of the processing, and the two tests do not coincide.",
+          "refs": [
+            "gdpr"
+          ],
+          "cite": "Article 9(1) GDPR"
+        },
+        {
+          "text": "Generating a voice is not meant to identify anyone but to reproduce its timbre. In our view, processing for generative purposes therefore falls outside the ban and needs one of the ordinary legal bases. The Italian Data Protection Authority, in its warning of 18 December 2025 to users of services that generate content from third parties' voices or images, also referred to Article 9 for cases where the voice falls within the special categories. Before starting a project it is safer to treat the point as open, and there is a real risk in assuming otherwise.",
+          "refs": [
+            "gdpr",
+            "garante-789"
+          ],
+          "cite": "Article 6(1) GDPR; Garante, decision no. 789/2025"
+        },
+        {
+          "text": "The performer is not left without tools. They can object to processing based on legitimate interests, withdraw consent where processing relies on it, obtain erasure and claim damages. The exemptions for processing for artistic expression remain in place.",
+          "refs": [
+            "gdpr",
+            "codice-privacy"
+          ],
+          "cite": "Articles 7(3), 17, 21 and 82 GDPR; Articles 136 and 137 Legislative Decree 196/2003"
+        },
+        {
+          "text": "There is also a paradox. Comparing a suspicious recording with a sample of the authentic voice, to establish that the content does not come from the person it seems to come from, is processing for identification purposes and is caught by the ban. Explicit consent or the defence of a legal claim lifts it, but checks that platforms and distributors might want to run systematically, without the artist's involvement, risk being barred.",
+          "refs": [
+            "gdpr"
+          ],
+          "cite": "Article 9(2)(a) and (f) GDPR"
+        }
+      ]
+    },
+    {
+      "id": "ai-act",
+      "heading": "What the AI Act requires",
+      "paragraphs": [
+        {
+          "text": "Under the AI Act a realistic replica of an existing person's voice is a deep fake. The deployer of the system that generates it must disclose that the content has been artificially generated or manipulated. The obligation applies from 2 August 2026, a date left unchanged by the Digital Omnibus on AI.",
+          "refs": [
+            "ai-act",
+            "omnibus-ia"
+          ],
+          "cite": "Articles 3(60), 50(4) and 113 Regulation (EU) 2024/1689; Regulation (EU) 2026/1744"
+        },
+        {
+          "text": "For evidently artistic, creative, satirical or fictional works the obligation remains, but disclosure can be made in a way that does not hamper the display or enjoyment of the work. The Commission's guidelines mention films with deep fakes of de-aged actors or digital replicas of deceased actors among the examples, and state that the lighter form is no justification for failing to respect third parties' rights, including data protection and intellectual property.",
+          "refs": [
+            "ai-act",
+            "lg-art50"
+          ],
+          "cite": "Article 50(4) Regulation (EU) 2024/1689; Guidelines C(2026) 5054, points 123 and 124"
+        },
+        {
+          "text": "From the performer's side, however, the obligation protects the public's trust in the genuineness of what it sees and hears, not the person depicted. A correct label reveals the artifice, not the missing consent. The performer can lodge a complaint with the market surveillance authority, which imposes the penalties, but the AI Act gives them no enforceable right against whoever generated the replica. Other remedies remain available.",
+          "refs": [
+            "ai-act"
+          ],
+          "cite": "Articles 85 and 99(4) Regulation (EU) 2024/1689"
+        },
+        {
+          "text": "Where the EU legislature wanted to protect the person depicted, it chose consent rather than transparency. From 2 December 2026 it is prohibited to generate realistic images, video or audio of the intimate parts of an identifiable person, or depicting them in sexually explicit acts, without their consent. The ban does not cover a performer's voice in other contexts.",
+          "refs": [
+            "ai-act",
+            "omnibus-ia"
+          ],
+          "cite": "Article 5(1)(b bis) Regulation (EU) 2024/1689, inserted by Regulation (EU) 2026/1744"
+        }
+      ]
+    },
+    {
+      "id": "related-rights",
+      "heading": "Related rights, personal identity and criminal law",
+      "paragraphs": [
+        {
+          "text": "Italian copyright law allows performers to object to the communication to the public or reproduction of their recitation, representation or performance where it harms their honour or reputation. The rule presupposes a performance actually given, while a replica fixes no performance, because none took place. Extending it to a simulated performance is arguable, but the basis remains uncertain.",
+          "refs": [
+            "lda"
+          ],
+          "cite": "Articles 80 and 81 Law 633/1941"
+        },
+        {
+          "text": "Related rights come back into play on the source material. Training a model on recordings of real performances means reproducing them, and reproduction belongs to the performer unless the text and data mining exception applies. This safeguard looks at the recordings used, not at the replica that comes out.",
+          "refs": [
+            "lda"
+          ],
+          "cite": "Article 80(2)(b) and Articles 70-ter, 70-quater and 70-septies Law 633/1941"
+        },
+        {
+          "text": "The firmest ground remains the right to personal identity, understood as the interest in not having one's intellectual and professional profile misrepresented to others. That is exactly what happens when a performer is credited with a performance that never took place. This protection, however, offers no prior consent mechanism and depends on the individual taking action.",
+          "refs": []
+        },
+        {
+          "text": "On the criminal side, the Italian law on artificial intelligence introduced the offence of unlawful dissemination of content generated or altered with AI systems, which expressly refers to falsified or altered voices. The offence requires unjust harm and is prosecuted on complaint, except where it is prosecuted ex officio.",
+          "refs": [
+            "l132"
+          ],
+          "cite": "Article 612-quater Criminal Code, introduced by Article 26 Law 132/2025"
+        },
+        {
+          "text": "Italy currently has no specific right of the artist over their own replica. On 8 October 2026 Denmark presented a bill amending its copyright act to prohibit sharing realistic digital imitations of a person's appearance and voice, with exceptions for parody and satire.",
+          "refs": [
+            "dk"
+          ],
+          "cite": "Danish Ministry of Culture, 8 October 2026"
+        }
+      ]
+    },
+    {
+      "id": "contracts",
+      "heading": "What to settle before signing",
+      "paragraphs": [
+        {
+          "text": "For producers and performers alike, the first line of defence is the contract. Consent to a recording or a scan does not in itself include consent to use the replica that can be derived from it. It is worth keeping the two separate and defining works, scope, territories and duration for the second.",
+          "refs": []
+        },
+        {
+          "text": "Using the material to train AI models is a separate purpose. If the contract does not provide for it expressly, it is a risk to treat it as granted, both for related rights and for data protection.",
+          "refs": []
+        },
+        {
+          "text": "An image release and a privacy notice follow different rules and do not replace each other. A single sheet that mixes them runs the risk of covering neither.",
+          "refs": []
+        },
+        {
+          "text": "The fate of the replica after the performer's death also needs a decision. Data protection rights concerning deceased persons can be exercised by those with an interest of their own, by those acting to protect the data subject as their agent, or for family reasons deserving protection. The data subject can bar this by written declaration only for information society services offered directly, so the rest has to be settled in the contract.",
+          "refs": [
+            "codice-privacy"
+          ],
+          "cite": "Article 2-terdecies Legislative Decree 196/2003"
+        },
+        {
+          "text": "Finally, the duty to disclose generated content falls on the deployer of the system. Between production, technical suppliers and platforms it is worth checking who applies the disclosure and in what form, especially for works intended for cinemas or streaming.",
+          "refs": [
+            "ai-act"
+          ],
+          "cite": "Article 50(4) Regulation (EU) 2024/1689"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is a synthetic voice imitating a well-known actor lawful if it does not use their recordings?",
+      "a": "It depends on how it was obtained and how it is presented. If the model was trained on the actor's recordings, their related rights and data protection come into play. Realistic content must in any case be disclosed as generated, and crediting the actor with a performance never given may infringe their personal identity. The answer requires looking at the specific case.",
+      "refs": [
+        "ai-act",
+        "lda"
+      ]
+    },
+    {
+      "q": "Does consent given years ago for a dubbing job cover the use of my voice to train an AI?",
+      "a": "As a rule no, unless the contract expressly provides for it. Training is a purpose distinct from the recording and its original exploitation, and it has to be assessed in the light of the contract, related rights and data protection law.",
+      "refs": [
+        "lda",
+        "gdpr"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "gdpr",
+      "type": "ue",
+      "citation": "Regulation (EU) 2016/679 (GDPR), Articles 4, 6, 7, 9, 17, 21 and 82 and Recital 51",
+      "short": "GDPR",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "ai-act",
+      "type": "ue",
+      "citation": "Regulation (EU) 2024/1689 (AI Act), Articles 3(60), 5, 50, 85, 99 and 113, as amended by Regulation (EU) 2026/1744",
+      "short": "Regulation (EU) 2024/1689",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "omnibus-ia",
+      "type": "ue",
+      "citation": "Regulation (EU) 2026/1744 of 8 July 2026 (Digital Omnibus on AI), OJ L of 24 July 2026, Article 1, point 40",
+      "short": "Regulation (EU) 2026/1744",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202601744",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "lg-art50",
+      "type": "prassi",
+      "citation": "Commissione europea, Guidelines on the implementation of the transparency obligations for certain AI systems under Article 50 of Regulation (EU) 2024/1689, C(2026) 5054 final, punti 123 e 124",
+      "short": "Article 50 guidelines",
+      "url": "https://ai-act-service-desk.ec.europa.eu/sites/default/files/2026-07/guidelines_on_the_implementation_of_the_transparency_obligations_for_certain_ai_systems_under_article_50_of_the_ai_act_bzptwqhk0ikg1dtlddap41psfy_131215.pdf",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "edpb-2-2021",
+      "type": "prassi",
+      "citation": "European Data Protection Board, Guidelines 02/2021 on virtual voice assistants, version 2.0 of 7 July 2021",
+      "short": "EDPB Guidelines 02/2021",
+      "url": "https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-022021-virtual-voice-assistants_en",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "garante-789",
+      "type": "prassi",
+      "citation": "Italian Data Protection Authority (Garante), decision no. 789 of 18 December 2025, doc. web no. 10207132",
+      "short": "Garante, decision no. 789/2025",
+      "url": "https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/10207132",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "lda",
+      "type": "legge",
+      "citation": "Italian Law no. 633 of 22 April 1941 (Copyright Law), Articles 70-ter, 70-quater, 70-septies, 80, 81, 96 and 97",
+      "short": "Law 633/1941",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-22;633",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "cc",
+      "type": "legge",
+      "citation": "Italian Civil Code, Articles 6, 7 and 10",
+      "short": "Civil Code",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-03-16;262",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-18",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "codice-privacy",
+      "type": "legge",
+      "citation": "Italian Legislative Decree no. 196 of 30 June 2003, Articles 2-terdecies, 136 and 137",
+      "short": "Legislative Decree 196/2003",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "l132",
+      "type": "legge",
+      "citation": "Italian Law no. 132 of 23 September 2025, Article 26(1)(c), introducing Article 612-quater of the Criminal Code",
+      "short": "Law 132/2025",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art26",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "dk",
+      "type": "prassi",
+      "citation": "Kulturministeriet (Danish Ministry of Culture), press release of 8 October 2026 on the bill against digital imitations",
+      "short": "Danish Ministry of Culture, 8/10/2026",
+      "url": "https://kum.dk/aktuelt/nyheder/kulturminister-vil-daemme-op-for-delinger-af-digitale-efterligninger-fra-aarsskiftet",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    }
+  ],
+  "related": [],
+  "disclaimer": "This guide is for information only and is not legal advice. The law on artificial intelligence and data protection changes quickly, and the AI Act's application dates have already been amended once. Before signing a contract or starting a project, check the rules in force or contact the firm.",
+  "contatto": {
+    "h2": "Let's discuss your project",
+    "p1": "If a project involves recordings, scans or generated voices, the useful moment to talk is before the contracts with performers are signed.",
+    "p2pre": "On the firm's work in copyright and data protection, see the page of ",
+    "servizioUrl": "andrea-lo-foco-en.html",
+    "servizioLabel": "Andrea Lo Foco"
+  },
+  "altLang": {
+    "it": "guida-repliche-digitali-interpreti.html"
+  }
+}

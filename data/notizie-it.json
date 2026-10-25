@@ -590,6 +590,26 @@
       ],
       "link": "https://cinema.cultura.gov.it/comunicazione/avvisi/",
       "guideUrl": "guida-tax-credit-produzione.html"
+    },
+    {
+      "id": "repliche-digitali",
+      "title": "Repliche digitali degli interpreti, voce, dati biometrici e AI Act",
+      "category": "normativa",
+      "summary": "La replica digitale della voce di un interprete è un dato personale e spesso un dato biometrico, è un deep fake da dichiarare per l'AI Act e sfiora i diritti connessi, ma nessuna di queste discipline dà all'artista un rimedio pieno. La tutela più solida resta l'identità personale, affiancata dall'art. 612-quater c.p. introdotto dalla L. 132/2025.",
+      "keyPoints": [
+        "Il divieto dell'art. 9 GDPR guarda alla finalità di identificazione, e il trattamento a fini generativi resta un punto aperto",
+        "Dal 2 agosto 2026 chi usa un sistema che genera un deep fake deve dichiararlo (art. 50, par. 4, Reg. UE 2024/1689)",
+        "I diritti connessi degli artisti (artt. 80 e 81 L. 633/1941) presuppongono una prestazione realmente resa",
+        "Nei contratti vanno distinti il consenso alla registrazione, quello all'uso della replica e quello all'addestramento di modelli di IA"
+      ],
+      "errorsToAvoid": "Dare per scontato che il consenso a una registrazione copra anche la replica o l'addestramento di un modello, o che l'etichetta prevista dall'AI Act sostituisca il consenso dell'interprete.",
+      "link": "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32024R1689",
+      "guideUrl": "guida-repliche-digitali-interpreti.html",
+      "tags": [
+        "intelligenza-artificiale",
+        "diritto-autore",
+        "privacy"
+      ]
     }
   ]
 }

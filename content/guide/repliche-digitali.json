@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "id": "repliche-digitali",
+  "slug": "repliche-digitali-interpreti",
+  "lang": "it",
+  "status": "published",
+  "title": "Repliche digitali degli interpreti. Voce, dati biometrici e AI Act",
+  "metaTitle": "Repliche digitali degli interpreti, voce, dati biometrici e AI Act | Studio Legale Lo Foco",
+  "metaDescription": "Come GDPR, AI Act, diritto d'autore e codice penale trattano la replica digitale della voce di un interprete, e cosa decidere prima di firmare un contratto.",
+  "abstract": "Le tecniche generative riproducono la voce di un attore con una fedeltà che la rende difficile da distinguere da un'esecuzione reale. Tre discipline qualificano il fenomeno, la protezione dei dati, l'AI Act e il diritto d'autore, ma nessuna offre all'interprete un rimedio pieno. Questa guida spiega dove ciascuna si ferma e quali scelte conviene fare nei contratti.",
+  "category": "diritto-autore",
+  "author": {
+    "name": "Andrea Lo Foco",
+    "role": "Avvocato",
+    "url": "andrea-lo-foco.html"
+  },
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "verifiedAt": "2026-10-25",
+  "sections": [
+    {
+      "id": "il-problema",
+      "heading": "Perché la voce è il caso difficile",
+      "paragraphs": [
+        {
+          "text": "Per il volto l'ordinamento conosce da tempo una tutela fondata sul consenso, quella del ritratto. La voce non ha una norma civile che la protegga in modo espresso, e la sua tutela va ricavata per estensione dalle regole sul nome e sull'immagine.",
+          "refs": [
+            "cc",
+            "lda"
+          ],
+          "cite": "artt. 6, 7 e 10 c.c.; artt. 96 e 97 L. 633/1941"
+        },
+        {
+          "text": "Il tema tocca il doppiaggio, la pubblicità, i videogiochi e la produzione audiovisiva, dove la voce è insieme strumento di lavoro e tratto della persona. Il rischio per l'interprete non è essere riconosciuto, ma vedersi attribuire una prestazione che non ha mai reso.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "id": "dato-biometrico",
+      "heading": "Voce, dato personale e dato biometrico",
+      "paragraphs": [
+        {
+          "text": "La registrazione della voce è un dato personale, perché riguarda una persona identificata o identificabile. Diventa dato biometrico solo se ottenuta da un trattamento tecnico specifico che consente o conferma l'identificazione univoca della persona.",
+          "refs": [
+            "gdpr"
+          ],
+          "cite": "art. 4, nn. 1 e 14, GDPR"
+        },
+        {
+          "text": "Il materiale grezzo non basta. Il considerando 51 del regolamento lo dice per le fotografie, che sono dato biometrico solo se trattate con un dispositivo tecnico specifico di identificazione, e il Comitato europeo per la protezione dei dati ha esteso lo stesso ragionamento alla voce.",
+          "refs": [
+            "gdpr",
+            "edpb-2-2021"
+          ],
+          "cite": "considerando 51 GDPR; Linee guida EDPB 2/2021"
+        },
+        {
+          "text": "Il sistema che genera una replica vocale estrae dalle registrazioni una rappresentazione numerica delle caratteristiche del parlante, spesso con reti nate per la verifica del parlante. Quella rappresentazione consente di stabilire se un campione proviene dalla stessa persona, e per questo nelle architetture più diffuse il modello è plausibilmente un dato biometrico. La conclusione va verificata sistema per sistema.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "id": "divieto",
+      "heading": "Il divieto sui dati biometrici e il suo limite",
+      "paragraphs": [
+        {
+          "text": "Il divieto di trattare categorie particolari di dati riguarda i dati biometrici intesi a identificare in modo univoco una persona. La definizione guarda all'idoneità del dato, il divieto alla finalità del trattamento, e i due criteri non coincidono.",
+          "refs": [
+            "gdpr"
+          ],
+          "cite": "art. 9, par. 1, GDPR"
+        },
+        {
+          "text": "Generare una voce non ha lo scopo di identificare qualcuno ma di riprodurne il timbro. A nostro avviso il trattamento a fini generativi resta quindi fuori dal divieto e richiede una delle basi giuridiche ordinarie. Il Garante, nell'avvertimento del 18 dicembre 2025 rivolto a chi usa servizi che generano contenuti dalla voce o dall'immagine di terzi, ha richiamato anche l'art. 9 per l'ipotesi in cui la voce rientri fra le categorie particolari. Prima di impostare un progetto conviene trattare la questione come aperta.",
+          "refs": [
+            "gdpr",
+            "garante-789"
+          ],
+          "cite": "art. 6, par. 1, GDPR; Garante, provv. n. 789/2025"
+        },
+        {
+          "text": "L'interprete non resta senza strumenti. Può opporsi al trattamento fondato sul legittimo interesse, revocare il consenso se il trattamento si fonda su quello, ottenere la cancellazione dei dati e chiedere il risarcimento del danno. Restano salve le deroghe previste per i trattamenti a fini di espressione artistica.",
+          "refs": [
+            "gdpr",
+            "codice-privacy"
+          ],
+          "cite": "artt. 7, par. 3, 17, 21 e 82 GDPR; artt. 136 e 137 d.lgs. 196/2003"
+        },
+        {
+          "text": "C'è poi un paradosso. Confrontare un audio sospetto con un campione della voce autentica, per accertare che un contenuto non provenga da chi sembra averlo reso, è un trattamento a fini identificativi e ricade nel divieto. Si supera con il consenso esplicito dell'interessato o quando serve a difendere un diritto in giudizio, ma pesa sulle verifiche che piattaforme e distributori volessero svolgere in modo sistematico senza il concorso dell'artista.",
+          "refs": [
+            "gdpr"
+          ],
+          "cite": "art. 9, par. 2, lett. a) e f), GDPR"
+        }
+      ]
+    },
+    {
+      "id": "ai-act",
+      "heading": "Che cosa chiede l'AI Act",
+      "paragraphs": [
+        {
+          "text": "Per il regolamento sull'intelligenza artificiale la replica realistica della voce di una persona esistente è un deep fake. Chi utilizza il sistema che la genera ha l'obbligo di rendere noto che il contenuto è stato generato o manipolato artificialmente. L'obbligo si applica dal 2 agosto 2026, data che il regolamento Omnibus digitale sull'IA ha lasciato ferma.",
+          "refs": [
+            "ai-act",
+            "omnibus-ia"
+          ],
+          "cite": "artt. 3, n. 60, 50, par. 4, e 113 Reg. (UE) 2024/1689; Reg. (UE) 2026/1744"
+        },
+        {
+          "text": "Per le opere manifestamente artistiche, creative, satiriche o fittizie l'obbligo resta, ma la rivelazione può avvenire in modo da non ostacolare l'esposizione o il godimento dell'opera. Le linee guida della Commissione citano fra gli esempi i film con deep fake di attori ringiovaniti o repliche digitali di attori scomparsi, e precisano che la forma attenuata non giustifica la violazione dei diritti dei terzi, compresi la protezione dei dati e la proprietà intellettuale.",
+          "refs": [
+            "ai-act",
+            "lg-art50"
+          ],
+          "cite": "art. 50, par. 4, Reg. (UE) 2024/1689; Linee guida C(2026) 5054, punti 123 e 124"
+        },
+        {
+          "text": "Visto dalla parte dell'interprete, però, l'obbligo protegge l'affidamento del pubblico sulla genuinità di ciò che vede e ascolta, non la persona raffigurata. Un'etichetta corretta rivela l'artificio, non il consenso che manca. L'interprete può presentare reclamo all'autorità di vigilanza del mercato, alla quale spettano le sanzioni, ma l'AI Act non gli attribuisce un diritto azionabile verso chi ha generato la replica. Restano gli altri rimedi.",
+          "refs": [
+            "ai-act"
+          ],
+          "cite": "artt. 85 e 99, par. 4, Reg. (UE) 2024/1689"
+        },
+        {
+          "text": "Dove il legislatore europeo ha voluto proteggere chi è ritratto, ha scelto il consenso e non la trasparenza. Dal 2 dicembre 2026 è vietato generare immagini, video o audio realistici delle parti intime di una persona riconoscibile, o che la ritraggono in atti sessualmente espliciti, senza il suo consenso. Il divieto non copre la voce dell'interprete negli altri contesti.",
+          "refs": [
+            "ai-act",
+            "omnibus-ia"
+          ],
+          "cite": "art. 5, par. 1, lett. b bis), Reg. (UE) 2024/1689, inserita dal Reg. (UE) 2026/1744"
+        }
+      ]
+    },
+    {
+      "id": "diritti-connessi",
+      "heading": "Diritti connessi, identità personale e codice penale",
+      "paragraphs": [
+        {
+          "text": "La legge sul diritto d'autore riconosce agli artisti interpreti la facoltà di opporsi alla comunicazione al pubblico o alla riproduzione della loro recitazione, rappresentazione o esecuzione che rechi pregiudizio all'onore o alla reputazione. La norma presuppone però una prestazione realmente resa, mentre la replica non fissa alcuna esecuzione, perché nessuna è avvenuta. Estenderla alla prestazione simulata è sostenibile, ma il fondamento resta incerto.",
+          "refs": [
+            "lda"
+          ],
+          "cite": "artt. 80 e 81 L. 633/1941"
+        },
+        {
+          "text": "I diritti connessi tornano in gioco sul materiale di partenza. Addestrare un modello con registrazioni di prestazioni reali significa riprodurle, e la riproduzione spetta all'artista, salvo che operi l'eccezione per l'estrazione di testo e di dati. È un presidio che guarda alle registrazioni usate, non alla replica che ne esce.",
+          "refs": [
+            "lda"
+          ],
+          "cite": "art. 80, c. 2, lett. b), e artt. 70-ter, 70-quater e 70-septies L. 633/1941"
+        },
+        {
+          "text": "Il fondamento più solido resta il diritto all'identità personale, inteso come interesse a non vedere travisato all'esterno il proprio patrimonio intellettuale e professionale. È ciò che accade quando a un interprete si attribuisce un'esecuzione mai avvenuta. La tutela però non prevede un consenso preventivo ed è affidata all'iniziativa del singolo.",
+          "refs": []
+        },
+        {
+          "text": "Sul piano penale la legge italiana sull'intelligenza artificiale ha introdotto il delitto di diffusione illecita di contenuti generati o alterati con sistemi di IA, che nomina espressamente le voci falsificate o alterate. Il reato richiede un danno ingiusto ed è procedibile a querela, salvi i casi di procedibilità d'ufficio.",
+          "refs": [
+            "l132"
+          ],
+          "cite": "art. 612-quater c.p., introdotto dall'art. 26 L. 132/2025"
+        },
+        {
+          "text": "Un diritto specifico dell'artista sulla propria replica, in Italia, oggi manca. La Danimarca ha presentato l'8 ottobre 2026 un disegno di legge che modifica la legge sul diritto d'autore per vietare la diffusione di imitazioni digitali realistiche dell'aspetto e della voce, con eccezioni per parodia e satira.",
+          "refs": [
+            "dk"
+          ],
+          "cite": "Ministero della Cultura danese, 8 ottobre 2026"
+        }
+      ]
+    },
+    {
+      "id": "contratti",
+      "heading": "Cosa decidere prima di firmare",
+      "paragraphs": [
+        {
+          "text": "Per chi produce e per chi interpreta, la prima difesa è il contratto. Il consenso a una registrazione o a una scansione non comprende, di per sé, il consenso all'uso della replica che se ne può ricavare. Conviene tenerli distinti e definire per il secondo opere, ambito, territori e durata.",
+          "refs": []
+        },
+        {
+          "text": "L'uso dei materiali per addestrare modelli di IA è una finalità autonoma. Se il contratto non lo prevede in modo espresso, è rischioso considerarlo concesso, sia per i diritti connessi sia per la protezione dei dati.",
+          "refs": []
+        },
+        {
+          "text": "La liberatoria per l'immagine e l'informativa sul trattamento dei dati personali rispondono a regole diverse e non si sostituiscono. Un unico foglio che le mescola rischia di non coprire né l'una né l'altra.",
+          "refs": []
+        },
+        {
+          "text": "Va decisa anche la sorte della replica dopo la morte dell'interprete. I diritti sui dati personali delle persone decedute possono essere esercitati da chi ha un interesse proprio, da chi agisce a tutela dell'interessato come suo mandatario o per ragioni familiari meritevoli di protezione. L'interessato può vietarlo con una dichiarazione scritta solo per i servizi della società dell'informazione offerti direttamente, quindi il resto va regolato nel contratto.",
+          "refs": [
+            "codice-privacy"
+          ],
+          "cite": "art. 2-terdecies d.lgs. 196/2003"
+        },
+        {
+          "text": "Infine, l'obbligo di dichiarare il contenuto generato grava su chi utilizza il sistema. Nei rapporti fra produzione, fornitori tecnici e piattaforme conviene stabilire chi appone la dichiarazione e in quale forma, soprattutto per le opere destinate alla sala o allo streaming.",
+          "refs": [
+            "ai-act"
+          ],
+          "cite": "art. 50, par. 4, Reg. (UE) 2024/1689"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Una voce sintetica che imita un attore noto è lecita se non usa le sue registrazioni?",
+      "a": "Dipende da come è stata ottenuta e da come viene presentata. Se il modello è stato addestrato su registrazioni dell'attore entrano in gioco i suoi diritti connessi e la protezione dei dati. Il contenuto realistico va comunque dichiarato come generato, e attribuire all'attore una prestazione mai resa può ledere la sua identità personale. La risposta richiede l'esame del caso concreto.",
+      "refs": [
+        "ai-act",
+        "lda"
+      ]
+    },
+    {
+      "q": "Il consenso dato anni fa per un doppiaggio copre l'uso della mia voce per addestrare un'IA?",
+      "a": "Di regola no, se il contratto non lo prevede in modo espresso. L'addestramento è una finalità diversa dalla registrazione e dal suo sfruttamento originario, e va valutato alla luce del contratto, dei diritti connessi e della disciplina dei dati personali.",
+      "refs": [
+        "lda",
+        "gdpr"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "gdpr",
+      "type": "ue",
+      "citation": "Regolamento (UE) 2016/679 (GDPR), artt. 4, 6, 7, 9, 17, 21 e 82 e considerando 51",
+      "short": "GDPR",
+      "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32016R0679",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "ai-act",
+      "type": "ue",
+      "citation": "Regolamento (UE) 2024/1689 (AI Act), artt. 3, n. 60, 5, 50, 85, 99 e 113, nel testo modificato dal Reg. (UE) 2026/1744",
+      "short": "Reg. (UE) 2024/1689",
+      "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32024R1689",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "omnibus-ia",
+      "type": "ue",
+      "citation": "Regolamento (UE) 2026/1744 dell'8 luglio 2026 (Omnibus digitale sull'IA), GU UE L del 24 luglio 2026, art. 1, punto 40",
+      "short": "Reg. (UE) 2026/1744",
+      "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=OJ:L_202601744",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "lg-art50",
+      "type": "prassi",
+      "citation": "Commissione europea, Guidelines on the implementation of the transparency obligations for certain AI systems under Article 50 of Regulation (EU) 2024/1689, C(2026) 5054 final, punti 123 e 124",
+      "short": "Linee guida art. 50",
+      "url": "https://ai-act-service-desk.ec.europa.eu/sites/default/files/2026-07/guidelines_on_the_implementation_of_the_transparency_obligations_for_certain_ai_systems_under_article_50_of_the_ai_act_bzptwqhk0ikg1dtlddap41psfy_131215.pdf",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "edpb-2-2021",
+      "type": "prassi",
+      "citation": "Comitato europeo per la protezione dei dati, Linee guida 2/2021 sugli assistenti vocali virtuali, punto 31 e nota 31",
+      "short": "Linee guida EDPB 2/2021",
+      "url": "https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-022021-virtual-voice-assistants_en",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "garante-789",
+      "type": "prassi",
+      "citation": "Garante per la protezione dei dati personali, provvedimento n. 789 del 18 dicembre 2025, doc. web n. 10207132",
+      "short": "Garante, provv. n. 789/2025",
+      "url": "https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/10207132",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "lda",
+      "type": "legge",
+      "citation": "Legge 22 aprile 1941, n. 633, artt. 70-ter, 70-quater, 70-septies, 80, 81, 96 e 97",
+      "short": "L. 633/1941",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-22;633",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "cc",
+      "type": "legge",
+      "citation": "Codice civile, artt. 6, 7 e 10",
+      "short": "c.c.",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1942-03-16;262",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-18",
+      "checkedAt": "2026-10-18"
+    },
+    {
+      "id": "codice-privacy",
+      "type": "legge",
+      "citation": "D.lgs. 30 giugno 2003, n. 196, artt. 2-terdecies, 136 e 137",
+      "short": "d.lgs. 196/2003",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "l132",
+      "type": "legge",
+      "citation": "Legge 23 settembre 2025, n. 132, art. 26, comma 1, lett. c), che introduce l'art. 612-quater c.p.",
+      "short": "L. 132/2025",
+      "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2025-09-23;132~art26",
+      "urlType": "primaria",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    },
+    {
+      "id": "dk",
+      "type": "prassi",
+      "citation": "Kulturministeriet (Ministero della Cultura danese), comunicato dell'8 ottobre 2026 sul disegno di legge contro le imitazioni digitali",
+      "short": "Kulturministeriet, 8/10/2026",
+      "url": "https://kum.dk/aktuelt/nyheder/kulturminister-vil-daemme-op-for-delinger-af-digitale-efterligninger-fra-aarsskiftet",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-10-25",
+      "checkedAt": "2026-10-25"
+    }
+  ],
+  "related": [],
+  "disclaimer": "Questa guida ha scopo informativo e non costituisce parere legale. La disciplina dell'intelligenza artificiale e della protezione dei dati cambia rapidamente, e le date di applicazione dell'AI Act sono già state modificate una volta. Prima di firmare un contratto o di avviare un progetto verifica la disciplina in vigore o contattaci.",
+  "contatto": {
+    "h2": "Parliamo del tuo progetto",
+    "p1": "Se un progetto prevede registrazioni, scansioni o voci generate, il momento utile per un confronto è prima della firma dei contratti con gli interpreti.",
+    "p2pre": "Sull'attività dello Studio in diritto d'autore e protezione dei dati personali, vedi la pagina di ",
+    "servizioUrl": "andrea-lo-foco.html",
+    "servizioLabel": "Andrea Lo Foco"
+  },
+  "altLang": {
+    "en": "guida-digital-replicas-performers.html"
+  }
+}
