@@ -53,10 +53,12 @@ npm run dev   # python http.server su :8000 (apri http://localhost:8000)
 **Deploy**: esegui `npm run build`, poi carica la cartella `dist/` sul tuo hosting (Cloudflare Pages, GitHub Pages, ecc.). La `dist/` è self-contained e non va committata (è in .gitignore).
 
 ## Deploy
-Il sito è online su https://studiolegalelofoco.com (Cloudflare + custom domain da GitHub?).
-Per aggiornare: push su `main`, deploy manuale o imposta GitHub Pages / CF Pages / action.
+Il sito è servito da GitHub Pages (root del branch `main`, passando da Jekyll: vedi `_config.yml`) dietro Cloudflare, su https://studiolegalelofoco.com.
 
-Aggiorna sempre `lastmod` in sitemap.xml e data JSON quando aggiungi contenuti.
+Si lavora su un branch, poi:
+1. `npm run prepara` – rigenera le pagine, porta al mese corrente l'introduzione delle Novità se sono cambiate, sposta a oggi il `lastmod` della sitemap solo per le pagine il cui contenuto è cambiato, lancia `npm run check`, la prova di idempotenza e il registro delle frasi a scadenza (`content/scadenze-sito.json`, anche da solo con `npm run check:scadenze`). Non committa.
+2. Rilettura e commit sul branch.
+3. `pubblica-sito` (wrapper in `~/bin` di `scripts/pubblica.js`; `--prova` per fermarsi prima del merge) – ricontrolla che il branch sia pronto, fa merge `--ff-only` su `main` e push, attende CI e Pages interrogando l'API una volta al minuto, poi scarica dal sito ogni file cambiato e lo confronta col repo al netto delle iniezioni di Cloudflare. Se combacia tutto cancella il branch. Esiti in `.git/pubblicazioni.log`.
 
 **Come tenere aggiornati i contenuti (notizie e tool):**
 - Le "Ultime Novità" e le schede "Risorse e Analisi" sono in `data/notizie-it.json` e `notizie-en.json` (elenco newsItems + articles).

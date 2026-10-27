@@ -203,4 +203,6 @@ async function main() {
   fine(`pubblicato e verificato: ${commit.length} commit, ${cambi.length} file identici sul sito${branch !== 'main' ? `, branch ${branch} cancellato` : ''}.`, 0);
 }
 
-main();
+module.exports = { normalizza, servito };
+
+if (require.main === module) main();
