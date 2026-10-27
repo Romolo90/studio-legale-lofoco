@@ -1,0 +1,62 @@
+{
+  "_nota": "Frasi del sito destinate a invecchiare. Le legge scripts/check-scadenze.js (npm run check:scadenze, e ogni npm run prepara). «testo» è copiato alla lettera dal file: se non si trova più, la voce va aggiornata o tolta. «rivedere» è la data in cui ricontrollare; «natura» dice se è un termine vero (con la fonte) o una data nostra, non termine. Senza «rivedere» la voce aspetta un evento («quando»).",
+  "voci": [
+    {
+      "id": "art19-sessione-2026-it",
+      "file": "content/guide/tc-internazionale-it.json",
+      "testo": "La sessione 2026 è andata dalle 12.00 del 3 giugno 2026 alle 23.59 del 31 agosto 2026 ed è chiusa.",
+      "quando": "esce il decreto direttoriale che apre la sessione 2027 del credito art. 19 (attrazione investimenti)",
+      "azione": "aggiornare il paragrafo e la FAQ «La sessione 2026 è ancora aperta?», in entrambe le lingue e con lo stesso dateModified"
+    },
+    {
+      "id": "art19-sessione-2026-en",
+      "file": "content/guide/tc-internazionale.json",
+      "testo": "The 2026 session ran from 12.00 on 3 June 2026 to 23.59 on 31 August 2026 and is now closed.",
+      "quando": "esce il decreto direttoriale che apre la sessione 2027 del credito art. 19 (attrazione investimenti)",
+      "azione": "come la gemella italiana, nello stesso commit"
+    },
+    {
+      "id": "selettivi-graduatorie-I-2026-guida",
+      "file": "content/guide/contributi-selettivi-erogazione.json",
+      "testo": "al 16 ottobre le graduatorie non risultano pubblicate sul sito della DGCA",
+      "quando": "la DGCA pubblica le graduatorie della prima sessione 2026 dei selettivi (sezione «Incentivi assegnati»)",
+      "rivedere": "2026-11-16",
+      "natura": "data nostra, non termine",
+      "azione": "sostituire con gli estremi dei decreti di graduatoria; se non sono usciti, aggiornare almeno la data della verifica"
+    },
+    {
+      "id": "selettivi-graduatorie-I-2026-scheda-it",
+      "file": "data/notizie-it.json",
+      "testo": "al 16 ottobre non risultano pubblicate",
+      "quando": "la DGCA pubblica le graduatorie della prima sessione 2026 dei selettivi",
+      "rivedere": "2026-11-16",
+      "natura": "data nostra, non termine",
+      "azione": "scheda «Contributi selettivi – erogazione» in Risorse e Analisi, insieme alla guida"
+    },
+    {
+      "id": "selettivi-graduatorie-I-2026-scheda-en",
+      "file": "data/notizie-en.json",
+      "testo": "as of 16 October they have not been published",
+      "quando": "la DGCA pubblica le graduatorie della prima sessione 2026 dei selettivi",
+      "rivedere": "2026-11-16",
+      "natura": "data nostra, non termine",
+      "azione": "come la scheda italiana, nello stesso commit"
+    },
+    {
+      "id": "selettivi-commissione-dm-280",
+      "file": "content/guide/contributi-selettivi-erogazione.json",
+      "testo": "allora in attesa di registrazione",
+      "quando": "viene nominata la nuova Commissione degli esperti secondo il D.M. 3 luglio 2026, n. 280",
+      "azione": "indicare il decreto di nomina e togliere «in fase di rinnovo»"
+    },
+    {
+      "id": "selettivi-graduatorie-II-2026",
+      "file": "content/guide/contributi-selettivi.json",
+      "testo": "entro il 12 febbraio 2027 per la seconda",
+      "quando": "scadono i 120 giorni per le graduatorie della seconda sessione 2026",
+      "rivedere": "2027-02-12",
+      "natura": "termine (120 giorni dal 15/10/2026, bando selettivi 2026, come citato nella guida)",
+      "azione": "verificare se le graduatorie sono uscite e aggiornare le due guide sui selettivi"
+    }
+  ]
+}
