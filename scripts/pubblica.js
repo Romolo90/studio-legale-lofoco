@@ -200,7 +200,7 @@ async function main() {
 
   if (branch !== 'main') git('branch', '-d', branch);
   registra(`ONLINE ${sha.slice(0, 7)}: ${cambi.length} file verificati${branch !== 'main' ? `, branch ${branch} cancellato` : ''}`);
-  fine(`pubblicato e verificato: ${commit.length} commit, ${cambi.length} file identici sul sito${branch !== 'main' ? `, branch ${branch} cancellato` : ''}.`, 0);
+  fine(`pubblicato e verificato: ${commit.length} commit, ${cambi.length ? `${cambi.length} file identici sul sito` : 'nessun file del sito cambiato'}${branch !== 'main' ? `, branch ${branch} cancellato` : ''}.`, 0);
 }
 
 module.exports = { normalizza, servito };
