@@ -4,6 +4,7 @@
  *
  * Uso: npm run check:scadenze
  *      node scripts/check-scadenze.js --giorni 14   (anticipo sulle date da rivedere, default 7)
+ *      node scripts/check-scadenze.js --json        (per ~/Monitoraggio-GA/sito/sito_bozze.py)
  *
  * Per ogni voce dice se la frase c'è ancora, se la data da rivedere è vicina o passata,
  * e quale evento si aspetta. Non blocca mai (esce 0), salvo registro illeggibile: una
@@ -82,7 +83,9 @@ if (require.main === module) {
   const i = process.argv.indexOf('--giorni');
   const giorni = i > -1 ? Number(process.argv[i + 1]) : 7;
   try {
-    stampa(controllaScadenze({ giorni }));
+    const esito = controllaScadenze({ giorni });
+    if (process.argv.includes('--json')) console.log(JSON.stringify(esito));
+    else stampa(esito);
   } catch (e) {
     console.error(`❌ Registro delle scadenze illeggibile (${REGISTRO}): ${e.message}`);
     process.exit(1);

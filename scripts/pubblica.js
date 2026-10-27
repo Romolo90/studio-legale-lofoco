@@ -6,6 +6,7 @@
  *   ! pubblica-sito          dal prompt di Claude Code
  *   pubblica-sito            dal Terminale (lì senza «!», che inverte l'esito)
  *   pubblica-sito --prova    dice cosa pubblicherebbe e si ferma prima del merge
+ *   pubblica-sito <branch>   passa prima a quel branch (es. una bozza di sito_bozze.py)
  *
  * Passi: il branch dev'essere committato e partire dall'ultima versione online;
  * `prepara.js --verifica` rifà build, date e controlli e si ferma se manca qualcosa;
@@ -125,8 +126,14 @@ async function statoAzioni(sha) {
 async function main() {
   // 1. il branch è pronto?
   if (!git('fetch', 'origin', '--quiet').ok) fine('git fetch non riuscito: niente rete? Non ho fatto niente.');
-  const branch = git('rev-parse', '--abbrev-ref', 'HEAD').out;
   const sporchi = git('status', '--porcelain', '--untracked-files=no').out.split('\n').filter(Boolean);
+  const richiesto = process.argv.slice(2).find((a) => !a.startsWith('--'));
+  if (richiesto && richiesto !== git('rev-parse', '--abbrev-ref', 'HEAD').out) {
+    if (sporchi.length) fine(`ci sono modifiche non committate sul branch attuale: non passo a ${richiesto}. Non ho fatto niente.`);
+    const co = git('checkout', '--quiet', richiesto);
+    if (!co.ok) fine(`non riesco a passare al branch ${richiesto}:\n${co.out}`);
+  }
+  const branch = git('rev-parse', '--abbrev-ref', 'HEAD').out;
   if (sporchi.length) fine(`ci sono modifiche non committate (${sporchi.length} file): vanno committate o lasciate a Claude. Non ho fatto niente.\n  ${sporchi.slice(0, 10).join('\n  ')}`);
   const nuovi = git('ls-files', '--others', '--exclude-standard').out.split('\n').filter(Boolean);
   if (!git('merge-base', '--is-ancestor', 'origin/main', 'HEAD').ok) fine(`${branch} non parte dall'ultima versione online (origin/main è andato avanti): va riallineato. Non ho fatto niente.`);
