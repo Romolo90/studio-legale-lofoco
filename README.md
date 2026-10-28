@@ -1,6 +1,6 @@
 # Studio Legale Lo Foco - Sito Web
 
-Sito web ufficiale dello **Studio Legale Lo Foco** (Roma): esperti in diritto d'autore, cinema, audiovisivo, diritto amministrativo e progetti culturali.
+Sito web dello **Studio Legale Lo Foco** (Roma), che si occupa di diritto d'autore, cinema, audiovisivo, diritto amministrativo e progetti culturali.
 
 Progetto statico HTML/CSS/JS (senza framework) con supporto bilingue completo (IT/EN), tool interattivo per verifica incentivi/Tax Credit, news hub data-driven e area clienti preview.
 
