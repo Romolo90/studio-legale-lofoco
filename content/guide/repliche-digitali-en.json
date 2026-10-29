@@ -15,7 +15,7 @@
     "url": "andrea-lo-foco-en.html"
   },
   "datePublished": "2026-10-25",
-  "dateModified": "2026-10-25",
+  "dateModified": "2026-10-29",
   "verifiedAt": "2026-10-25",
   "sections": [
     {
@@ -108,6 +108,14 @@
             "omnibus-ia"
           ],
           "cite": "Articles 3(60), 50(4) and 113 Regulation (EU) 2024/1689; Regulation (EU) 2026/1744"
+        },
+        {
+          "text": "The obligation on providers of generative systems to mark synthetic content in a machine-readable format is a different matter. For systems placed on the market before 2 August 2026 the Omnibus allows until 2 December 2026.",
+          "refs": [
+            "ai-act",
+            "omnibus-ia"
+          ],
+          "cite": "Articles 50(2) and 111(4) Regulation (EU) 2024/1689"
         },
         {
           "text": "For evidently artistic, creative, satirical or fictional works the obligation remains, but disclosure can be made in a way that does not hamper the display or enjoyment of the work. The Commission's guidelines mention films with deep fakes of de-aged actors or digital replicas of deceased actors among the examples, and state that the lighter form is no justification for failing to respect third parties' rights, including data protection and intellectual property.",
