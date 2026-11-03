@@ -70,6 +70,20 @@ if (dateGuide.length) {
   }
 }
 
+// pagine delle singole Novità: ogni voce con slug deve avere pagina e voce in sitemap,
+// con lastmod uguale alla data della voce (le scrive build-novita.js)
+for (const [dati, cartella] of [['data/notizie-it.json', 'novita'], ['data/notizie-en.json', 'news']]) {
+  let voci;
+  try { voci = JSON.parse(fs.readFileSync(path.join(ROOT, dati), 'utf8')).newsItems || []; } catch { continue; }
+  for (const v of voci) {
+    if (!v.slug) { errori.push(`${dati}: voce del ${v.date} senza slug (manca il build)`); continue; }
+    const pagina = `${cartella}/${v.slug}.html`;
+    const voce = inSitemap.get(pagina);
+    if (!voce) errori.push(`Novità assente dalla sitemap: ${pagina}`);
+    else if (voce.lastmod !== v.date) errori.push(`${pagina}: lastmod ${voce.lastmod || '(vuoto)'} diverso dalla data della voce ${v.date}`);
+  }
+}
+
 // pagine indicizzabili non ancora in sitemap: avviso, non errore
 const avvisi = [];
 for (const f of fs.readdirSync(ROOT).filter((x) => x.endsWith('.html'))) {

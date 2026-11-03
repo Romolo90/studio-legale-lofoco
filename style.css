@@ -1405,6 +1405,22 @@ textarea:focus-visible {
 .news-item a:hover {
   color: #003366;
 }
+/* Il titolo porta alla pagina della singola voce: resta un titolo, non un link sottolineato */
+.news-item .title a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+.news-item .title a:hover {
+  text-decoration: underline;
+}
+/* Pagina della singola Novità */
+.novita-percorso {
+  padding-top: 1rem;
+}
+.novita-naviga {
+  text-align: center;
+}
 
 /* Resources grid + filters */
 .filters {

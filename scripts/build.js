@@ -124,7 +124,7 @@ function renderNewsStatic(newsItems, isEn) {
   return newsItems.map(item => `
         <article class="news-item">
           <span class="date">${formatDateStatic(item.date, isEn)}</span>
-          <div class="title">${item.title}</div>
+          <div class="title">${item.slug ? `<a href="${isEn ? 'news' : 'novita'}/${item.slug}.html">${item.title}</a>` : item.title}</div>
           <p class="context">${item.context}</p>
           <div class="meta">
             <span class="source">${item.source}</span>
@@ -539,6 +539,11 @@ function main() {
 
   console.log('Building / syncing partials into HTML files...\n');
 
+  // Prima le pagine delle singole Novità: assegnano gli slug che l'elenco in
+  // notizie*.html usa per i collegamenti.
+  const novita = require('./build-novita').genera();
+  console.log(`  ✓ Novità: ${novita.pagine} pagine, ${novita.scritte} scritte, ${novita.tolte.length} tolte, ${novita.slugNuovi} slug nuovi${novita.sitemapCambiata ? ', sitemap aggiornata' : ''}`);
+
   const htmlFiles = fs.readdirSync(ROOT)
     .filter(f => f.endsWith('.html') && !f.startsWith('.'));
 
@@ -573,7 +578,7 @@ function main() {
 
     // Copy essential assets (images, pdf, data, favicon, manifest, etc.)
     const assetsToCopy = [
-      'image', 'pdf', 'data', 'fonts', 'favicon.ico', 'manifest.json',
+      'image', 'pdf', 'data', 'fonts', 'novita', 'news', 'favicon.ico', 'manifest.json',
       'robots.txt', 'sitemap.xml', 'CNAME', '_headers'
     ];
     for (const asset of assetsToCopy) {

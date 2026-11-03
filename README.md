@@ -63,6 +63,7 @@ Si lavora su un branch, poi:
 **Come tenere aggiornati i contenuti (notizie e tool):**
 - Le "Ultime Novità" e le schede "Risorse e Analisi" sono in `data/notizie-it.json` e `notizie-en.json` (elenco newsItems + articles).
 - Per nuovi avvisi: aggiungi in cima a `newsItems` (data ISO, titolo, context, source, link ufficiale).
+- Ogni voce di `newsItems` ha una sua pagina, `novita/<slug>.html` (IT) e `news/<slug>.html` (EN), generata da `scripts/build-novita.js` dentro `build:html`, con il blocco NOVITA della sitemap. Lo slug viene calcolato al primo build e scritto nel JSON: non cambiarlo dopo la pubblicazione, l'indirizzo è già indicizzato.
 - Per nuove risorse: aggiungi a `articles` (usa campi extra opzionali: implications, errorsToAvoid, tags, lastUpdated per UI ricca).
 - Dopo edit JSON/HTML (incluso nuove pagine): `npm run build:html` (pre-render insights + partials), poi `npm run build` per prod. Commit & push.
 - Verifica periodicamente https://cinema.cultura.gov.it/comunicazione/avvisi/ (fonte ufficiale). Aggiornamento consigliato mensile o post-decreto.

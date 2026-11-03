@@ -9,7 +9,7 @@
     "minify:js": "npx terser script.js -o script.min.js --compress --mangle",
     "minify": "npm run minify:css && npm run minify:js",
     "optimize:images": "echo 'Use sips or imagemagick to optimize images'",
-    "validate:html": "npx html-validate '*.html'",
+    "validate:html": "npx html-validate '*.html' 'novita/*.html' 'news/*.html'",
     "lint:css": "npx stylelint '*.css'",
     "format": "npx prettier --write '*.{html,css,js,json,md}'",
     "build:guide": "node scripts/build-guide.js",

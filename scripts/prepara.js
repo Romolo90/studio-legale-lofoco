@@ -33,6 +33,9 @@ const SITE = 'https://studiolegalelofoco.com/';
 const BASE = 'origin/main';
 const VERIFICA = process.argv.includes('--verifica');
 const MARKER_GUIDA = 'GENERATO da scripts/build-guide.js';
+// Le pagine delle singole Novità hanno come lastmod la data della voce, scritta da build-novita.js
+const MARKER_NOVITA = 'GENERATO da scripts/build-novita.js';
+const CARTELLE_NOVITA = ['novita', 'news'];
 const INDICI_GUIDE = ['guide.html', 'guides-en.html'];
 
 const MESI_IT = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
@@ -77,7 +80,9 @@ function firma(html) {
   return [title, desc, testo].join('\n');
 }
 
-const pagineRoot = () => fs.readdirSync(ROOT).filter((f) => f.endsWith('.html'));
+const pagineRoot = () => fs.readdirSync(ROOT).filter((f) => f.endsWith('.html'))
+  .concat(CARTELLE_NOVITA.filter((d) => fs.existsSync(path.join(ROOT, d)))
+    .flatMap((d) => fs.readdirSync(path.join(ROOT, d)).filter((f) => f.endsWith('.html')).map((f) => `${d}/${f}`)));
 const impronte = () => Object.fromEntries([...pagineRoot(), 'sitemap.xml'].map((f) => [f, hash(f)]));
 
 const scritti = new Set();
@@ -128,7 +133,7 @@ const nuovaSitemap = sitemap.replace(
     if (!file.endsWith('.html') || !fs.existsSync(path.join(ROOT, file))) return tutto;
     if (INDICI_GUIDE.includes(file)) return tutto;
     const ora = leggi(file);
-    if (ora.includes(MARKER_GUIDA)) return tutto;
+    if (ora.includes(MARKER_GUIDA) || ora.includes(MARKER_NOVITA)) return tutto;
     if (lastmod >= oggi) return tutto;
     const base = git('show', `${BASE}:${file}`);
     if (base.ok && firma(base.out) === firma(ora)) return tutto;

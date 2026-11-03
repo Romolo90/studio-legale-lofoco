@@ -21,7 +21,10 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = process.argv[2] ? path.resolve(process.argv[2]) : path.join(__dirname, '..');
-const files = fs.readdirSync(ROOT).filter((f) => f.endsWith('.html') && !f.startsWith('.'));
+// Anche le pagine delle singole Novità, generate in sottocartelle da build-novita.js
+const files = ['', 'novita', 'news']
+  .filter((d) => fs.existsSync(path.join(ROOT, d)))
+  .flatMap((d) => fs.readdirSync(path.join(ROOT, d)).filter((f) => f.endsWith('.html') && !f.startsWith('.')).map((f) => (d ? d + '/' + f : f)));
 
 const SEGNI = [
   { re: /\$\{/g, nome: 'segnaposto ${' },
