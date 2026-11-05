@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "id": "dgcol-pratica",
+  "slug": "piattaforma-dgcol",
+  "lang": "it",
+  "status": "published",
+  "title": "Piattaforma DGCOL, i punti in cui una domanda si perde prima del merito",
+  "metaTitle": "Piattaforma DGCOL, le regole che contano | Studio Legale Lo Foco",
+  "metaDescription": "Account, anagrafica, deleghe, firma digitale, spese istruttorie su PagOnline e prova dell'invio. Le regole di DGCOL che rendono inammissibile una domanda.",
+  "abstract": "DGCOL è lo sportello telematico della Direzione generale Cinema e audiovisivo. Una domanda di tax credit o di contributo può cadere prima ancora di essere valutata, per un'anagrafica non allineata alla visura, una firma sbagliata, un pagamento fatto fuori dal canale previsto o un invio che non risulta perfezionato. Questa guida raccoglie i punti della piattaforma in cui le regole hanno conseguenze, con la fonte di ciascuno.",
+  "category": "normativa",
+  "author": { "name": "Andrea Lo Foco", "role": "Avvocato", "url": "andrea-lo-foco.html" },
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "verifiedAt": "2026-11-05",
+  "sections": [
+    {
+      "id": "account",
+      "heading": "Account e anagrafica, prima di qualsiasi domanda",
+      "paragraphs": [
+        {
+          "text": "DGCOL è lo sportello telematico della Direzione generale Cinema e audiovisivo per le domande di contributo e di credito d'imposta, raggiungibile da doc.cultura.gov.it. Si entra con nome utente e password, con SPID o con CIE. Attenzione all'indirizzo usato per registrarsi, perché la pagina di accesso esclude la posta elettronica certificata come credenziale, mentre la PEC serve altrove, nell'anagrafica del soggetto.",
+          "refs": ["dgcol-login", "dgca-dgcol"]
+        },
+        {
+          "text": "La creazione dell'area riservata e la registrazione del soggetto sono il requisito indispensabile per qualunque procedimento della Direzione generale. Ogni soggetto può avere un solo account, e la tipologia scelta al primo accesso non è più modificabile dalla piattaforma. Per cambiarla, per esempio da persona fisica a persona giuridica, occorre aprire un nuovo account e chiederlo per mail agli uffici, allegando il documento del legale rappresentante. La scelta va decisa prima di iniziare, anche perché per il tax credit la domanda deve nascere dall'anagrafica della società e il sistema non permette alle persone fisiche di generare domande.",
+          "refs": ["vademecum-benvenuto", "procedure-2026", "vademecum-tc-2026"]
+        },
+        {
+          "text": "L'anagrafica deve restare sempre aggiornata e coerente con la visura camerale, altrimenti la domanda potrebbe essere ritenuta inammissibile. La PEC in anagrafica è obbligatoria per tutti i soggetti, e senza PEC la domanda di tax credit non si genera. Prima di ogni sessione conviene confrontare l'anagrafica con l'ultima visura, soprattutto dopo un cambio di legale rappresentante, di sede o di capitale.",
+          "refs": ["vademecum-benvenuto", "vademecum-tc-2026"]
+        },
+        {
+          "text": "Il titolare dell'account può abilitare delegati di fiducia, per esempio il consulente o il commercialista, che entrano con le proprie credenziali e possono operare per più soggetti. Quanto il delegato inserisce o dichiara si intende ratificato senza riserva e con responsabilità a carico del titolare dell'account. Il rischio di un dato sbagliato resta quindi sulla società, anche quando la compilazione non l'ha fatta lei.",
+          "refs": ["vademecum-benvenuto"],
+          "cite": "par. 2.3, vademecum di benvenuto DGCOL"
+        }
+      ]
+    },
+    {
+      "id": "prima-della-domanda",
+      "heading": "Che cosa deve esistere prima della domanda di tax credit",
+      "paragraphs": [
+        {
+          "text": "Per la richiesta preventiva di un film il sistema blocca la generazione della domanda in una serie di casi elencati dalla stessa Direzione generale. Fra questi la mancanza della richiesta di nazionalità italiana provvisoria, una domanda già esistente per la stessa opera, il codice Ateco assente in anagrafica, il richiedente che non risulta produttore nell'assetto produttivo dell'opera o che non è una società di capitali, la PEC mancante. Sono controlli automatici, e un'anagrafica incompleta rischia di emergere proprio a sessione aperta.",
+          "refs": ["vademecum-tc-2026"],
+          "cite": "pp. 17-18, vademecum tax credit produzione 2026"
+        },
+        {
+          "text": "L'ordine conta. La richiesta di nazionalità italiana provvisoria si presenta su DGCOL entro il termine perentorio del giorno precedente l'inizio delle riprese. La richiesta preventiva di tax credit va presentata dopo di essa e, a pena di inammissibilità, non prima di sessanta giorni antecedenti l'avvio di quattro settimane consecutive di riprese o del 50 per cento delle giornate di ripresa, secondo l'art. 14 del D.I. 225/2024. Deve inoltre contenere la prova del pagamento delle spese istruttorie.",
+          "refs": ["faq-nazionalita", "di-225-2024", "testo-coordinato-2026"]
+        },
+        {
+          "text": "Le domande si inviano solo nelle sessioni aperte con decreto direttoriale. Per il tax credit alla produzione la sessione 2026 è andata dalle ore 10 del 30 settembre alle 23.59 del 14 ottobre 2026, nei limiti delle risorse disponibili. L'istruttoria segue la data di avvio delle riprese dichiarata nella domanda, e a parità di data conta la marca temporale di DGCOL. Una preventiva pronta in anticipo non si può quindi inviare quando è pronta, e le date della sessione successiva vanno verificate sul decreto che la aprirà.",
+          "refs": ["dd-2821-2026"],
+          "cite": "artt. 2, c. 1, e 3, c. 3, D.D. 2821/2026"
+        },
+        {
+          "text": "Il revisore che certificherà i costi deve registrarsi a sua volta su DGCOL. Nella richiesta definitiva il produttore lo seleziona e il revisore, prima dell'approvazione della domanda, deve confermare la scelta dalla propria area riservata. La registrazione del revisore va verificata prima di arrivare alla definitiva, non a ridosso del termine.",
+          "refs": ["dd-2821-2026"],
+          "cite": "art. 3, c. 1, D.D. 2821/2026"
+        }
+      ]
+    },
+    {
+      "id": "invio",
+      "heading": "Firma, spese istruttorie e prova dell'invio",
+      "paragraphs": [
+        {
+          "text": "La domanda deve essere sottoscritta con firma digitale del legale rappresentante, a pena di inammissibilità. Il sistema genera un PDF che va scaricato, firmato digitalmente e ricaricato, e una volta stampato il documento non è più modificabile. Gli allegati non richiedono firma digitale salvo indicazione espressa. Il delegato può compilare, ma la firma resta del legale rappresentante.",
+          "refs": ["dd-2821-2026", "vademecum-tc-2026", "vademecum-benvenuto"]
+        },
+        {
+          "text": "Il contributo per le spese istruttorie si paga esclusivamente tramite il servizio PagOnline del Ministero della cultura, all'atto dell'invio della prima domanda, pena l'inammissibilità. Va da 200 a 10.000 euro secondo il beneficio richiesto. Per il tax credit alla produzione è di 5.000 euro per le opere fino a 3,5 milioni di costo e di 10.000 oltre quella soglia, con importi minori per corti, opere prime e seconde, opere di giovani autori, documentari e animazione. Non è dovuto per le domande dei produttori associati che non comportano un beneficio diretto a loro favore.",
+          "refs": ["dd-3362-2024"],
+          "cite": "artt. 1, c. 2, 3, c. 2, e 4, c. 1, e Tabella 1, D.D. 3362/2024, testo consolidato"
+        },
+        {
+          "text": "Sul momento in cui la domanda si considera presentata le istruzioni della Direzione generale non usano sempre la stessa formula. Il vademecum generale dice in un punto che fa fede la data dell'invio dal pulsante della scheda finale e in un altro che fa fede unicamente la ricezione della PEC generata dal sistema. Il vademecum del tax credit considera la domanda perfezionata solo con il caricamento del file firmato e la ricezione della PEC di ricevuta. Per questo conviene non arrivare all'ultima ora della sessione e controllare subito l'arrivo della PEC.",
+          "refs": ["vademecum-benvenuto", "vademecum-tc-2026"]
+        },
+        {
+          "text": "La PEC di ricevuta non equivale all'accettazione della domanda, che avviene solo con provvedimento formale. Se entro due giorni la PEC non è arrivata, il vademecum indica di contattare gli uffici competenti del procedimento. Il sistema distingue inoltre gli errori bloccanti, che impediscono l'invio, dalle semplici segnalazioni, che lo consentono, ma inviare una domanda con errori segnalati non equivale ad accettazione.",
+          "refs": ["vademecum-benvenuto"],
+          "cite": "parr. 3.1, 3.2.2 e 3.3, vademecum di benvenuto DGCOL"
+        },
+        {
+          "text": "La sessione di compilazione scade dopo 20 minuti di inattività e i dati non salvati si perdono, e non si può lavorare sullo stesso account da due dispositivi contemporaneamente. Conviene tenerne conto quando più persone lavorano sulla stessa domanda a ridosso della scadenza.",
+          "refs": ["vademecum-benvenuto"],
+          "cite": "par. 3.1, vademecum di benvenuto DGCOL"
+        }
+      ]
+    },
+    {
+      "id": "correzioni",
+      "heading": "Correzioni, doppioni e coproduzioni",
+      "paragraphs": [
+        {
+          "text": "Se un soggetto presenta più domande sulla stessa linea di intervento, salvo sua diversa indicazione è presa in considerazione esclusivamente l'ultima inviata, cioè quella con la data di invio più recente, e le altre sono annullate d'ufficio. Attenzione quindi a chi reinvia per correggere un dettaglio, perché la versione che conta è l'ultima e deve essere completa.",
+          "refs": ["vademecum-benvenuto"],
+          "cite": "par. 3.4, vademecum di benvenuto DGCOL"
+        },
+        {
+          "text": "Prima della scadenza una domanda già inviata si integra solo con una richiesta formale e motivata agli uffici competenti, che per essere considerata va presentata almeno 48 ore prima del termine ultimo della sessione. Scaduti i termini, le integrazioni possono essere richieste unicamente dall'ufficio in fase di istruttoria.",
+          "refs": ["procedure-2026"],
+          "cite": "par. 4.1, vademecum Procedure DGCOL"
+        },
+        {
+          "text": "Nelle opere realizzate da più produttori le richieste debbono essere presentate congiuntamente, e quelle pervenute in forma disgiunta sono inammissibili. Sulla piattaforma il produttore capofila non può chiudere la propria domanda finché tutte quelle dei produttori associati non risultano a loro volta chiuse, e anche i produttori che non sostengono spese devono inviare la loro. Il coordinamento fra le società va organizzato prima che la sessione si apra.",
+          "refs": ["di-225-2024", "testo-coordinato-2026", "vademecum-tc-2026"]
+        },
+        {
+          "text": "L'assistenza si chiede con un ticket dall'area riservata, scegliendo fra supporto informatico e supporto sulla modulistica e indicando il codice della domanda. L'help desk è attivo dal lunedì al venerdì dalle 9 alle 18, con tempi medi di risposta di 3 giorni lavorativi, e la stessa Direzione generale consiglia di attivarlo con congruo anticipo rispetto ai termini. Una domanda di chiarimento inviata a due giorni dalla chiusura di una sessione rischia di ricevere risposta a sessione chiusa.",
+          "refs": ["dgca-assistenza"]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Il consulente può presentare la domanda al posto della società?",
+      "a": "Può compilarla come delegato, con le proprie credenziali, ma la domanda resta della società e va firmata digitalmente dal legale rappresentante, a pena di inammissibilità. Quanto inserisce il delegato si intende ratificato dal titolare dell'account, che ne risponde.",
+      "refs": ["vademecum-benvenuto", "dd-2821-2026"]
+    },
+    {
+      "q": "La PEC di ricevuta non è arrivata. La domanda è valida?",
+      "a": "Dall'esterno non lo si può dire. Le istruzioni della Direzione generale legano il perfezionamento della domanda anche alla ricezione della PEC generata dal sistema e indicano di contattare gli uffici del procedimento se entro due giorni non è arrivata. Conviene farlo subito, con il codice della domanda, e conservare le schermate dell'invio.",
+      "refs": ["vademecum-benvenuto", "vademecum-tc-2026"]
+    },
+    {
+      "q": "Si può correggere una domanda già inviata?",
+      "a": "Entro la sessione sì, con una richiesta formale e motivata di integrazione presentata almeno 48 ore prima del termine. Dopo la scadenza le integrazioni le chiede solo l'ufficio. Se invece si invia una seconda domanda sulla stessa linea, salvo diversa indicazione vale solo l'ultima e le altre sono annullate.",
+      "refs": ["procedure-2026", "vademecum-benvenuto"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "di-225-2024",
+      "type": "dm",
+      "citation": "D.I. MiC-MEF 10 luglio 2024, rep. n. 225, art. 14",
+      "short": "D.I. 225/2024, art. 14",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2024/09/rep_-225___DM_MIC_MEF_nuovo_tax_credit_produzione_ex_art_15_L_220_2016___Decreto_controfirmato_Ministro.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "testo-coordinato-2026",
+      "type": "prassi",
+      "citation": "DGCA, testo coordinato del D.I. 225/2024 con le modifiche del D.I. 141/2025 e del D.I. 281/2026 (non ha valore legale)",
+      "short": "testo coordinato DGCA 2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/09/20260618_Consolidato_TC-art.-15_Modifica-2026_rev.pdf",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "dd-2821-2026",
+      "type": "dd",
+      "citation": "D.D. 24 settembre 2026, rep. n. 2821, apertura della sessione 2026 del tax credit produzione, artt. 2, 3 e 4",
+      "short": "D.D. 2821/2026",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/09/D.D.-apertura-sessione-finestra-2026-_produzione_REP.-2821.pdf",
+      "urlType": "primaria",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "dd-3362-2024",
+      "type": "dd",
+      "citation": "D.D. 3362/2024 sulle spese istruttorie, testo consolidato DGCA aggiornato al D.D. 17 settembre 2026, rep. n. 2739",
+      "short": "D.D. 3362/2024",
+      "url": "https://cinema.cultura.gov.it/wp-content/uploads/2026/09/20260915_SPESE-ISTRUTTORIE-_TESTO-CONSOLIDATO.pdf",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "vademecum-benvenuto",
+      "type": "prassi",
+      "citation": "DGCA, Vademecum di benvenuto DGCOL, aggiornamento al 14 maggio 2024",
+      "short": "vademecum di benvenuto DGCOL",
+      "url": "https://cinema.cultura.gov.it/download/1626/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "procedure-2026",
+      "type": "prassi",
+      "citation": "DGCA, Vademecum Procedure DGCOL, luglio 2026, parr. 2 e 4.1",
+      "short": "vademecum Procedure DGCOL",
+      "url": "https://cinema.cultura.gov.it/download/1155/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "vademecum-tc-2026",
+      "type": "prassi",
+      "citation": "DGCA, Vademecum tax credit produzione nazionale 2026, aggiornamento al 30 settembre 2026",
+      "short": "vademecum tax credit produzione 2026",
+      "url": "https://cinema.cultura.gov.it/download/40354/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "faq-nazionalita",
+      "type": "prassi",
+      "citation": "DGCA, FAQ Servizio I, Nazionalità italiana",
+      "short": "FAQ DGCA nazionalità",
+      "url": "https://cinema.cultura.gov.it/dgca-incontra/faq-domande-frequenti/servizio-i/nazionalita-italiana/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "dgca-assistenza",
+      "type": "prassi",
+      "citation": "DGCA, Rapporti con gli utenti, assistenza e help desk",
+      "short": "DGCA, assistenza",
+      "url": "https://cinema.cultura.gov.it/per-gli-utenti/come-fare/rapporti-con-gli-utenti/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "dgca-dgcol",
+      "type": "prassi",
+      "citation": "DGCA, Materiali utili DGCOL",
+      "short": "DGCA, materiali DGCOL",
+      "url": "https://cinema.cultura.gov.it/per-gli-utenti/come-fare/dgcol/",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    },
+    {
+      "id": "dgcol-login",
+      "type": "prassi",
+      "citation": "DGCOL, pagina di accesso allo sportello telematico",
+      "short": "DGCOL, accesso",
+      "url": "https://doc.cultura.gov.it/index.php?c=login",
+      "urlType": "istituzionale",
+      "accessedAt": "2026-11-05",
+      "checkedAt": "2026-11-05"
+    }
+  ],
+  "related": ["tax-credit-produzione", "contributi-selettivi"],
+  "disclaimer": "Questa guida ha scopo informativo e non costituisce parere legale. Le istruzioni della piattaforma e le regole di sessione cambiano con i decreti direttoriali e con gli aggiornamenti dei vademecum della Direzione generale. Prima di presentare una domanda verificare il decreto della sessione in vigore e le istruzioni più recenti."
+}
