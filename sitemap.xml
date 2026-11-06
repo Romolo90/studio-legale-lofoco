@@ -15,7 +15,7 @@
   <!-- Italian pages -->
   <url>
     <loc>https://studiolegalelofoco.com/notizie.html</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
@@ -123,7 +123,7 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/notizie-en.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -148,6 +148,16 @@
   </url>
 
   <!-- NOVITA: generato da scripts/build-novita.js -->
+  <url>
+    <loc>https://studiolegalelofoco.com/novita/2026-11-06-tax-credit-potenziamento-sale-cinematografiche-2025-prorogato-dd-3345.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/novita/2026-11-06-tax-credit-videogiochi-nominata-commissione-valutazione-dd-3351.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.50</priority>
+  </url>
   <url>
     <loc>https://studiolegalelofoco.com/novita/2026-11-03-contributi-automatici-autorizzati-reinvestimenti-decreto-3-dd-3303.html</loc>
     <lastmod>2026-11-03</lastmod>
@@ -486,6 +496,16 @@
   <url>
     <loc>https://studiolegalelofoco.com/novita/2026-06-04-piano-potenziamento-sale-cinematografiche-2024-linea-4-giugno-2026.html</loc>
     <lastmod>2026-06-04</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/news/2026-11-06-cinema-theatre-enhancement-tax-credit-2025-directorial-decree-3345.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/news/2026-11-06-video-game-tax-credit-committee-assessment-directorial-decree-3351.html</loc>
+    <lastmod>2026-11-06</lastmod>
     <priority>0.50</priority>
   </url>
   <url>
