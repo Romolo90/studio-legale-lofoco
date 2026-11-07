@@ -15,7 +15,7 @@
   <!-- Italian pages -->
   <url>
     <loc>https://studiolegalelofoco.com/notizie.html</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
@@ -123,7 +123,7 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/notizie-en.html</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -148,6 +148,16 @@
   </url>
 
   <!-- NOVITA: generato da scripts/build-novita.js -->
+  <url>
+    <loc>https://studiolegalelofoco.com/novita/2026-11-06-potenziamento-sale-cinematografiche-2025-chiarimenti-criteri-priorita.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/novita/2026-11-06-piano-potenziamento-sale-2025-linea-intervento-approvata-dd-3375.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.50</priority>
+  </url>
   <url>
     <loc>https://studiolegalelofoco.com/novita/2026-11-06-tax-credit-potenziamento-sale-cinematografiche-2025-prorogato-dd-3345.html</loc>
     <lastmod>2026-11-06</lastmod>
@@ -496,6 +506,16 @@
   <url>
     <loc>https://studiolegalelofoco.com/novita/2026-06-04-piano-potenziamento-sale-cinematografiche-2024-linea-4-giugno-2026.html</loc>
     <lastmod>2026-06-04</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/news/2026-11-06-cinema-enhancement-plan-2025-clarifications-priority-criteria-funding.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/news/2026-11-06-cinema-enhancement-plan-2025-line-intervention-directorial-decree-3375.html</loc>
+    <lastmod>2026-11-06</lastmod>
     <priority>0.50</priority>
   </url>
   <url>
