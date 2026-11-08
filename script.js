@@ -43,21 +43,39 @@
       const mainNav = document.getElementById('mainNav');
       if (!hamburgerMenu || !mainNav) return;
 
-      const syncExpanded = () => {
-        hamburgerMenu.setAttribute('aria-expanded', String(mainNav.classList.contains('active')));
+      // Velo dietro il menu: dentro l'header, così sta nello stesso contesto di z-index del pannello
+      const backdrop = document.createElement('div');
+      backdrop.className = 'nav-backdrop';
+      mainNav.parentNode.insertBefore(backdrop, mainNav);
+
+      const setOpen = (open) => {
+        mainNav.classList.toggle('active', open);
+        backdrop.classList.toggle('active', open);
+        document.documentElement.classList.toggle('nav-open', open);
+        hamburgerMenu.setAttribute('aria-expanded', String(open));
       };
-      syncExpanded();
+      setOpen(false);
 
       hamburgerMenu.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-        syncExpanded();
+        setOpen(!mainNav.classList.contains('active'));
+      });
+
+      backdrop.addEventListener('click', () => setOpen(false));
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+          setOpen(false);
+          hamburgerMenu.focus();
+        }
+      });
+
+      // Se lo schermo si allarga oltre il mobile col menu aperto, non lasciare la pagina bloccata
+      window.matchMedia('(min-width: 769px)').addEventListener('change', (e) => {
+        if (e.matches) setOpen(false);
       });
 
       mainNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mainNav.classList.remove('active');
-          syncExpanded();
-        });
+        link.addEventListener('click', () => setOpen(false));
       });
     },
 

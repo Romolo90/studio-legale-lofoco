@@ -329,19 +329,48 @@ p {
 }
 
 /* Menu hamburger (mobile) */
+/* Il <button> va azzerato: senza reset Safari su iPhone gli dà sfondo grigio e bordo,
+   e le lineette azzurre spariscono. 44×44 px è l'area minima di tocco */
 .hamburger {
   display: none; /* Hidden on desktop */
-  flex-direction: column;
+  position: relative;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  gap: 5px;
   z-index: 9999;
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
   background-color: #BFECFF;
-  margin: 4px 0;
+  transition: top 0.25s ease, transform 0.25s ease, opacity 0.2s ease;
+}
+
+.hamburger span:nth-child(1) { top: 14px; }
+.hamburger span:nth-child(2) { top: 21px; }
+.hamburger span:nth-child(3) { top: 28px; }
+
+/* Menu aperto: le tre lineette diventano una ✕ */
+.hamburger[aria-expanded="true"] span:nth-child(1) { top: 21px; transform: rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { top: 21px; transform: rotate(-45deg); }
+
+/* Velo sulla pagina dietro il menu aperto (creato da script.js) */
+.nav-backdrop {
+  display: none;
 }
 
 /* ========================================
@@ -1101,45 +1130,78 @@ footer {
     flex-wrap: wrap;
     padding: 1rem;
   }
+  /* Il nome torna subito sotto, nel titolo dell'hero: qui basta più piccolo */
   .logo .logo-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.1rem, 5.2vw, 1.5rem);
+    margin: 0;
     white-space: normal;
   }
   .hamburger {
-    display: flex;
+    display: block;
   }
   .main-nav {
     position: fixed;
     top: 0;
     right: 0;
-    width: 70vw;
+    width: min(80vw, 320px);
     height: 100vh;
+    height: 100dvh;
     background-color: #003366;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.35);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0s linear 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 2rem 1rem;
+    padding: 5rem 1.5rem 2rem;
     overflow-y: auto;
+    overscroll-behavior: contain;
     z-index: 9998;
   }
   .main-nav.active {
     transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.3s ease, visibility 0s;
   }
   .main-nav ul {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0;
     width: 100%;
+  }
+  .main-nav ul li:not(.mobile-language) {
+    border-bottom: 1px solid rgba(191, 236, 255, 0.15);
+  }
+  .main-nav ul li:not(.mobile-language) a {
+    display: block;
+    padding: 0.9rem 0.25rem;
+    font-size: 1.2rem;
+  }
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 20, 40, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    z-index: 9997;
+  }
+  .nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s;
+  }
+  html.nav-open,
+  html.nav-open body {
+    overflow: hidden;
   }
   .mobile-language {
     display: block;
     text-align: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(191, 236, 255, 0.3);
-    margin-top: 1rem;
+    padding-top: 1.5rem;
+    margin-top: 0.5rem;
   }
   .mobile-language a {
     color: var(--color-secondary);
@@ -1778,4 +1840,20 @@ textarea:focus-visible {
     justify-content: center;
     gap: 0.5rem 1.75rem;
   }
+}
+
+/* Chi ha chiesto meno animazioni al sistema: menu e icona cambiano senza transizioni */
+@media (prefers-reduced-motion: reduce) {
+  .main-nav,
+  .main-nav.active,
+  .nav-backdrop,
+  .nav-backdrop.active,
+  .hamburger span {
+    transition: none;
+  }
+}
+
+/* Il contorno di focus sul pulsante del menu serve a chi usa la tastiera, non a chi tocca */
+.hamburger:focus:not(:focus-visible) {
+  outline: none;
 }
