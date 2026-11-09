@@ -47,6 +47,13 @@ Validatore: `npm run check:guide`. Non passa, non si pubblica.
     }
   ],
   "related": ["contributi-selettivi"],
+  // opzionale: le Novità del tema in fondo alla guida (max 5, le più recenti). Le regex
+  // (senza maiuscole/minuscole) si applicano alla voce italiana di data/notizie-it.json,
+  // "titolo" al titolo, "testo" a titolo + context; una guida inglese mostra le gemelle
+  // inglesi (stesso link ufficiale). Si aggiornano da sole a ogni build.
+  "novitaCorrelate": { "titolo": "^Tax credit (produzione|–)", "testo": "…", "max": 5 },
+  // opzionale: riquadro in testa con un collegamento esterno (oggi solo la guida DGCOL)
+  "accesso": { "label": "…", "prima": "…", "link": "…", "url": "…", "dopo": "…", "link2": "…", "url2": "…", "dopo2": "." },
   "disclaimer": "…"                     // opzionale, default in pagina
 }
 ```

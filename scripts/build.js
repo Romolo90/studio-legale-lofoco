@@ -373,6 +373,8 @@ function processFile(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
   const originalContent = content;
   const filename = path.basename(filePath);
+  // Le pagine di rimando dai vecchi indirizzi (meta refresh) restano minime: niente chrome.
+  if (/<meta[^>]+http-equiv=["']refresh["']/i.test(content)) return false;
   const isEn = isEnglishFile(filename, content);
   const isHome = isHomeFile(filename);
 

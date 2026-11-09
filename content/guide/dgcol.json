@@ -5,13 +5,14 @@
   "lang": "it",
   "status": "published",
   "title": "Piattaforma DGCOL, i punti in cui una domanda si perde prima del merito",
-  "metaTitle": "Piattaforma DGCOL, le regole che contano | Studio Legale Lo Foco",
-  "metaDescription": "Account, anagrafica, deleghe, firma digitale, spese istruttorie su PagOnline e prova dell'invio. Le regole di DGCOL che rendono inammissibile una domanda.",
+  "metaTitle": "Piattaforma DGCOL, accesso e regole delle domande | Studio Legale Lo Foco",
+  "metaDescription": "Dove si accede a DGCOL e le regole su account, anagrafica, deleghe, firma digitale, spese istruttorie e invio che rendono inammissibile una domanda.",
   "abstract": "DGCOL è lo sportello telematico della Direzione generale Cinema e audiovisivo. Una domanda di tax credit o di contributo può cadere prima ancora di essere valutata, per un'anagrafica non allineata alla visura, una firma sbagliata, un pagamento fatto fuori dal canale previsto o un invio che non risulta perfezionato. Questa guida raccoglie i punti della piattaforma in cui le regole hanno conseguenze, con la fonte di ciascuno.",
+  "accesso": {"label": "Accesso a DGCOL", "prima": "Si entra nella piattaforma dalla ", "link": "pagina di accesso ufficiale", "url": "https://doc.cultura.gov.it/login.php", "dopo": " della Direzione generale Cinema e audiovisivo. Vademecum e istruzioni della DG sono nella pagina ", "link2": "Materiali utili DGCOL", "url2": "https://cinema.cultura.gov.it/per-gli-utenti/come-fare/dgcol/", "dopo2": "."},
   "category": "normativa",
   "author": { "name": "Andrea Lo Foco", "role": "Avvocato", "url": "andrea-lo-foco.html" },
   "datePublished": "2026-11-05",
-  "dateModified": "2026-11-05",
+  "dateModified": "2026-11-09",
   "verifiedAt": "2026-11-05",
   "sections": [
     {
@@ -245,6 +246,7 @@
       "checkedAt": "2026-11-05"
     }
   ],
+  "novitaCorrelate": {"titolo": "^Spese istruttorie|[Ss]essione .*(aperta|chiusa)|^Tax credit.*Apertura|Compilazione|Domande prorogate"},
   "related": ["tax-credit-produzione", "contributi-selettivi"],
   "disclaimer": "Questa guida ha scopo informativo e non costituisce parere legale. Le istruzioni della piattaforma e le regole di sessione cambiano con i decreti direttoriali e con gli aggiornamenti dei vademecum della Direzione generale. Prima di presentare una domanda verificare il decreto della sessione in vigore e le istruzioni più recenti."
 }

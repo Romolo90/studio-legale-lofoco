@@ -254,6 +254,7 @@
       "checkedAt": "2026-10-16"
     }
   ],
+  "novitaCorrelate": {"titolo": "^Contributi selettivi.*(acconto|definitiv)|^Logo DIAC"},
   "related": [
     "contributi-selettivi",
     "tax-credit-produzione"

@@ -260,6 +260,7 @@
       "checkedAt": "2026-10-16"
     }
   ],
+  "novitaCorrelate": {"titolo": "FAQ Bando contributi selettivi|^Contributi selettivi.*graduatori|^Commissioni degli esperti"},
   "related": [
     "tax-credit-produzione",
     "contributi-selettivi-erogazione"

@@ -8,7 +8,9 @@
  *        per accertarsi che il branch committato sia già pronto.
  *
  * Fa, nell'ordine:
- * 1. rigenera le pagine: build:guide se è cambiata una guida, poi build:html;
+ * 1. rigenera le pagine: build:html (assegna gli slug alle Novità nuove), build:guide
+ *    (le guide elencano in fondo le Novità del loro tema, quindi cambiano anche quando
+ *    cambia solo data/notizie-*.json), poi di nuovo build:html, che normalizza le guide;
  * 2. se sono cambiate le Novità, porta al mese corrente la frase «aggiornate a …» /
  *    «updated as of …» dell'introduzione, che è statica e il build non tocca;
  * 3. sposta a oggi il lastmod della sitemap SOLO per le pagine il cui contenuto è
@@ -97,11 +99,11 @@ if (branch === 'main' && !VERIFICA) note.push('sei su main: di regola si lavora 
 
 // 1. build
 const prima = impronte();
-let cambiati = fileCambiati();
-if ([...cambiati].some((f) => f.startsWith('content/guide/') && f.endsWith('.json'))) {
-  const g = esegui('node', ['scripts/build-guide.js']);
-  if (!g.ok) problemi.push('build:guide non riuscito:\n' + g.out.trim().split('\n').slice(-15).join('\n'));
-}
+let cambiati;
+const b0 = esegui('node', ['scripts/build.js']);
+if (!b0.ok) problemi.push('build:html non riuscito:\n' + b0.out.trim().split('\n').slice(-15).join('\n'));
+const g = esegui('node', ['scripts/build-guide.js']);
+if (!g.ok) problemi.push('build:guide non riuscito:\n' + g.out.trim().split('\n').slice(-15).join('\n'));
 const b = esegui('node', ['scripts/build.js']);
 if (!b.ok) problemi.push('build:html non riuscito:\n' + b.out.trim().split('\n').slice(-15).join('\n'));
 const dopoBuild = impronte();
@@ -154,6 +156,7 @@ for (const f of [...fs.readdirSync(path.join(ROOT, 'data')).map((x) => 'data/' +
 const check = esegui('npm', ['run', '--silent', 'check']);
 if (!check.ok) problemi.push('npm run check non superato:\n' + check.out.trim().split('\n').slice(-25).join('\n'));
 const primaIdem = impronte();
+esegui('node', ['scripts/build-guide.js']);
 esegui('node', ['scripts/build.js']);
 const dopoIdem = impronte();
 const nonIdem = Object.keys(dopoIdem).filter((f) => dopoIdem[f] !== primaIdem[f]);

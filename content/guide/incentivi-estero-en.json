@@ -235,6 +235,7 @@
       "checkedAt": "2026-11-05"
     }
   ],
+  "novitaCorrelate": {"titolo": "^Coproduzion|^Bando Italia-Francia|D\\.I\\. 281", "testo": "produzione esecutiva di opere straniere|tax credit internazionale"},
   "related": ["foreign-productions-tax-credit"],
   "disclaimer": "This guide is for information only and is not legal advice. Rates, ceilings and deadlines are set by decree and by regional calls that change every year. Before relying on them in a budget or a contract, check the rules and calls in force, or contact the firm."
 }

@@ -59,6 +59,7 @@ const T = {
     skip: 'Salta al contenuto', header: 'header-sub-it.html', footer: 'footer.html', cookie: 'cookie-it.html',
     briciola: 'Approfondimenti', briciolaUrl: 'notizie.html',
     inGuida: 'In questa guida', faq: 'Domande frequenti', fonti: 'Fonti', vediAnche: 'Vedi anche',
+    novita: 'Ultime Novità sul tema', tutteNovita: 'Tutte le Novità', novitaDati: 'data/notizie-it.json', novitaCartella: 'novita',
     consultata: 'consultata il', stampa: ' (fonte di stampa)', verificateIl: 'Verificate sul testo il',
     aggiornata: 'Aggiornata al',
     disclaimer: 'Questa guida ha scopo informativo e non costituisce parere legale. Aliquote, soglie e termini cambiano con i decreti attuativi e con gli avvisi della Direzione generale Cinema e audiovisivo: prima di presentare una domanda verifica la disciplina in vigore o contattaci.',
@@ -73,6 +74,7 @@ const T = {
     skip: 'Skip to content', header: 'header-sub-en.html', footer: 'footer-en.html', cookie: 'cookie-en.html',
     briciola: 'Insights', briciolaUrl: 'notizie-en.html',
     inGuida: 'In this guide', faq: 'Frequently asked questions', fonti: 'Sources', vediAnche: 'See also',
+    novita: 'Latest updates on this topic', tutteNovita: 'All updates', novitaDati: 'data/notizie-en.json', novitaCartella: 'news',
     consultata: 'accessed on', stampa: ' (press source)', verificateIl: 'Checked against the texts on',
     aggiornata: 'Updated on',
     disclaimer: 'This guide is for information only and is not legal advice. Rates, thresholds and deadlines change with implementing decrees and with the notices of the Directorate General for Cinema and Audiovisual: before filing an application, check the rules in force or contact us.',
@@ -153,6 +155,33 @@ function indiceGuide() {
   return indice;
 }
 
+// Le Novità pertinenti alla guida, in fondo alla pagina. Le singole pagine novita/ e news/
+// esistono dal 03/11/2026 ma Google le aveva quasi tutte «rilevate e non indicizzate»
+// (Search Console, 06/11): nessun contenuto ci puntava se non l'elenco in notizie.html.
+// Il criterio sta nel JSON della guida (novitaCorrelate) e si applica alla voce italiana,
+// titolo e, se serve, testo: la voce inglese è la gemella con lo stesso link ufficiale,
+// così le due lingue mostrano le stesse Novità. Si rigenera a ogni build, quindi una
+// Novità nuova compare da sola nelle guide del suo tema.
+const leggiNovita = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8')).newsItems || [];
+function novitaCorrelate(g) {
+  const c = g.novitaCorrelate;
+  if (!c) return [];
+  const L = tr(g);
+  const re = (k) => (c[k] ? new RegExp(c[k], 'i') : null);
+  const titolo = re('titolo');
+  const testo = re('testo');
+  const voci = leggiNovita(T.it.novitaDati)
+    .filter((v) => (titolo && titolo.test(v.title)) || (testo && testo.test(`${v.title} ${v.context}`)));
+  const gemelle = new Map(leggiNovita(L.novitaDati).map((v) => [v.link, v]));
+  return voci
+    .map((v) => (g.lang === 'en' ? gemelle.get(v.link) : v))
+    // Una voce appena scritta da sito_bozze.py non ha ancora lo slug: lo riceve da
+    // build-novita.js, e prepara.js rilancia questo script dopo build.js.
+    .filter((v) => v && v.slug)
+    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+    .slice(0, c.max || 5);
+}
+
 function corpo(g, anteprima) {
   const L = tr(g);
   // Il riquadro finale nasce per le guide sugli incentivi: una guida su un altro tema
@@ -212,9 +241,23 @@ function corpo(g, anteprima) {
     ? `\n      <p class="guida-correlate">${L.vediAnche}: ${voci.join(' · ')}</p>`
     : '';
 
+  const novita = novitaCorrelate(g);
+  const riquadroNovita = novita.length
+    ? `\n\n      <section class="insights-section" id="novita" aria-labelledby="novita-title">\n        <h2 id="novita-title">${L.novita}</h2>\n        <div class="profile-box guida-novita">\n        <ul>\n` +
+      novita.map((v) => `          <li><a href="${L.novitaCartella}/${esc(v.slug)}.html">${esc(v.title)}</a> <span class="guida-meta">(${esc(dataIt(v.date, g.lang))})</span></li>`).join('\n') +
+      `\n        </ul>\n        <p class="guida-correlate"><a href="${L.briciolaUrl}">${L.tutteNovita}</a></p>\n        </div>\n      </section>`
+    : '';
+
+  // Un rimando in testa, per chi arriva cercando la piattaforma e non le sue regole
+  // (la guida DGCOL: 263 impressioni su «dgcol» e 0 clic nei primi giorni).
+  const A = g.accesso;
+  const accesso = A
+    ? `\n        <p class="guida-disclaimer guida-accesso"><strong>${esc(A.label)}</strong>. ${esc(A.prima)}<a href="${esc(A.url)}" target="_blank" rel="noopener noreferrer">${esc(A.link)}</a>${esc(A.dopo || '')}${A.url2 ? `<a href="${esc(A.url2)}" target="_blank" rel="noopener noreferrer">${esc(A.link2)}</a>${esc(A.dopo2 || '')}` : ''}</p>`
+    : '';
+
   return `    <article class="guida">
       <header class="insights-hero">
-        <h1>${esc(g.title)}</h1>
+        <h1>${esc(g.title)}</h1>${accesso}
         <p class="guida-abstract">${esc(g.abstract)}</p>
         <p class="guida-meta"><a href="${esc(g.author.url)}">Avv. ${esc(g.author.name)}</a> · ${L.aggiornata} ${esc(dataIt(g.dateModified, g.lang))}</p>
       </header>
@@ -229,7 +272,7 @@ ${(g.faq || []).length ? `          <li><a href="#faq">${L.faq}</a></li>\n` : ''
 
 ${sezioni}
 ${faq}
-${fonti}${correlate}
+${fonti}${correlate}${riquadroNovita}
 
       <p class="guida-disclaimer">${esc(g.disclaimer || L.disclaimer)}</p>
 

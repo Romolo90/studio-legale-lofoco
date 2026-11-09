@@ -1109,6 +1109,18 @@ footer {
   margin-top: 2rem;
 }
 
+/* I due rimandi che contano per chi arriva da Google: l'accesso a DGCOL in testa alla
+   guida e le Novità del tema in fondo. Altrove i link non sono sottolineati, qui sì. */
+.guida-accesso {
+  margin-top: 0;
+}
+
+.guida-accesso a,
+.guida-novita a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .guida-cta {
   text-align: center;
   margin-top: 1.5rem;
