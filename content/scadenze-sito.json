@@ -18,27 +18,27 @@
     {
       "id": "selettivi-graduatorie-I-2026-guida",
       "file": "content/guide/contributi-selettivi-erogazione.json",
-      "testo": "al 16 ottobre le graduatorie non risultano pubblicate sul sito della DGCA",
+      "testo": "al 23 novembre le graduatorie non risultano pubblicate sul sito della DGCA",
       "quando": "la DGCA pubblica le graduatorie della prima sessione 2026 dei selettivi (sezione «Incentivi assegnati»)",
-      "rivedere": "2026-11-16",
+      "rivedere": "2026-12-14",
       "natura": "data nostra, non termine",
       "azione": "sostituire con gli estremi dei decreti di graduatoria; se non sono usciti, aggiornare almeno la data della verifica"
     },
     {
       "id": "selettivi-graduatorie-I-2026-scheda-it",
       "file": "data/notizie-it.json",
-      "testo": "al 16 ottobre non risultano pubblicate",
+      "testo": "al 23 novembre non risultano pubblicate",
       "quando": "la DGCA pubblica le graduatorie della prima sessione 2026 dei selettivi",
-      "rivedere": "2026-11-16",
+      "rivedere": "2026-12-14",
       "natura": "data nostra, non termine",
       "azione": "scheda «Contributi selettivi – erogazione» in Risorse e Analisi, insieme alla guida"
     },
     {
       "id": "selettivi-graduatorie-I-2026-scheda-en",
       "file": "data/notizie-en.json",
-      "testo": "as of 16 October they have not been published",
+      "testo": "as of 23 November they have not been published",
       "quando": "la DGCA pubblica le graduatorie della prima sessione 2026 dei selettivi",
-      "rivedere": "2026-11-16",
+      "rivedere": "2026-12-14",
       "natura": "data nostra, non termine",
       "azione": "come la scheda italiana, nello stesso commit"
     },

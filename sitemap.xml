@@ -15,7 +15,7 @@
   <!-- Italian pages -->
   <url>
     <loc>https://studiolegalelofoco.com/notizie.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
@@ -30,12 +30,12 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/guide.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/guides-en.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/guida-contributi-selettivi-erogazione.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.80</priority>
   </url>
 
@@ -123,7 +123,7 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/notizie-en.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -148,6 +148,21 @@
   </url>
 
   <!-- NOVITA: generato da scripts/build-novita.js -->
+  <url>
+    <loc>https://studiolegalelofoco.com/novita/2026-11-23-contributi-automatici-annualita-2022-2025-finestre-dd-3591.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/novita/2026-11-23-contributi-selettivi-produzione-2025-richieste-definitive.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/novita/2026-11-19-contributi-selettivi-identita-culturale-2024-saldi.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <priority>0.50</priority>
+  </url>
   <url>
     <loc>https://studiolegalelofoco.com/novita/2026-11-06-potenziamento-sale-cinematografiche-2025-chiarimenti-criteri-priorita.html</loc>
     <lastmod>2026-11-06</lastmod>
@@ -506,6 +521,21 @@
   <url>
     <loc>https://studiolegalelofoco.com/novita/2026-06-04-piano-potenziamento-sale-cinematografiche-2024-linea-4-giugno-2026.html</loc>
     <lastmod>2026-06-04</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/news/2026-11-23-automatic-contributions-2022-2025-filing-windows-dd-3591.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/news/2026-11-23-selective-contributions-production-2025-final-applications.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/news/2026-11-19-selective-contributions-cultural-identity-2024-balance-payments.html</loc>
+    <lastmod>2026-11-19</lastmod>
     <priority>0.50</priority>
   </url>
   <url>

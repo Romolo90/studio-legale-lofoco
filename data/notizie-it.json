@@ -1,6 +1,30 @@
 {
   "newsItems": [
     {
+      "date": "2026-11-23",
+      "title": "Contributi automatici – Richieste per le annualità 2022-2025, la prima finestra chiude il 22 dicembre (D.D. rep. 3591)",
+      "context": "Con il D.D. 20 novembre 2026 rep. 3591 la DG Cinema e audiovisivo fissa termini, modalità e documentazione delle richieste di contributo automatico (artt. 23, 24 e 25 della L. 220/2016) relative alle annualità 2022, 2023, 2024 e 2025, cioè ai risultati conseguiti dal 2021 al 2024. Le finestre sono quattro, ciascuna dalle ore 12.00 del primo giorno alle 23.59.59 dell'ultimo. Per l'annualità 2022 dal 23 novembre al 22 dicembre 2026, per il 2023 dall'8 gennaio all'8 febbraio 2027, per il 2024 dal 22 febbraio al 22 marzo 2027 e per il 2025 dal 1° aprile al 30 aprile 2027 (art. 2, commi 1-4). I termini sono perentori e fanno fede data e ora della PEC generata dalla piattaforma DGCOL al termine della compilazione (art. 2, commi 5 e 6). La richiesta va presentata su DGCOL, firmata digitalmente dal legale rappresentante e completa di tutta la documentazione prevista, a pena di inammissibilità (art. 3, comma 1). Per queste annualità continua ad applicarsi il D.M. 15 luglio 2021 rep. 251, ma con l'onere, previsto dal D.M. 18 giugno 2026 rep. 265, di allegare già alla richiesta la documentazione che prova i risultati economici, culturali e artistici, anch'esso a pena di inammissibilità. Il decreto elenca i documenti per opere cinematografiche, televisive e web, animazione, distribuzione internazionale e home entertainment, tra cui la certificazione SIAE degli incassi in sala e le certificazioni di costi e ricavi rilasciate da un revisore legale (artt. 4-8). L'eventuale soccorso istruttorio non può superare 10 giorni (art. 3, comma 4).",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/contributi-automatici-decreto-direttoriale-20-novembre-2026-rep-3591/",
+      "slug": "2026-11-23-contributi-automatici-annualita-2022-2025-finestre-dd-3591"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "Contributi selettivi produzione 2025 – Aperte le richieste definitive",
+      "context": "La DG Cinema e audiovisivo comunica che si possono presentare le richieste definitive per le opere assegnatarie di un contributo selettivo alla produzione nell'annualità 2025. L'avviso richiama il bando per la scrittura, lo sviluppo e la produzione di opere cinematografiche e audiovisive e il bando per la produzione di opere televisive e web su personaggi e avvenimenti dell'identità culturale nazionale italiana, entrambi ai sensi dell'art. 26 della L. 220/2016. La richiesta definitiva è quella a cui è legato il saldo del contributo. L'avviso non indica un termine finale, che va ricavato dal bando di riferimento.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/selettivi-produzione-2025-presentazioni-richieste-definitive/",
+      "slug": "2026-11-23-contributi-selettivi-produzione-2025-richieste-definitive"
+    },
+    {
+      "date": "2026-11-19",
+      "title": "Contributi selettivi identità culturale 2024 – Dal 20 novembre la richiesta dei saldi",
+      "context": "La DG Cinema e audiovisivo comunica che dal 20 novembre 2026 è aperta la finestra per la richiesta dei saldi dei contributi selettivi per la produzione di opere televisive e web, e di animazione cinematografica, televisiva e web, su personaggi e avvenimenti dell'identità culturale nazionale italiana, previsti dal bando 2024 ai sensi dell'art. 26 della L. 220/2016. L'avviso non indica un termine di chiusura. Lo stesso avviso anticipa le quattro finestre per le richieste di contributo automatico delle annualità 2022-2025, poi fissate dal D.D. 20 novembre 2026 rep. 3591.",
+      "source": "DG Cinema e Audiovisivo",
+      "link": "https://cinema.cultura.gov.it/avvisi/avviso-apertura-finestra-richiesta-saldi-contributi-selettivi-e-contributi-automatici/",
+      "slug": "2026-11-19-contributi-selettivi-identita-culturale-2024-saldi"
+    },
+    {
       "date": "2026-11-06",
       "title": "Potenziamento sale cinematografiche 2025 – Chiarimenti sui criteri di priorità e sullo scorrimento della graduatoria",
       "context": "Con un avviso del 6 novembre 2026 la DG Cinema e audiovisivo, in prossimità della pubblicazione della deliberazione sugli esiti istruttori del Piano ordinario per il Potenziamento delle Sale Cinematografiche – Annualità 2025, comunica che le risorse stanziate per l'annualità 2025 risultano inferiori all'ammontare complessivo dei contributi richiesti. Ai sensi dell'art. 5, comma 6, del Bando adottato con D.D. n. 3019 del 7 agosto 2025 i contributi sono assegnati secondo l'ordine di priorità, fino a concorrenza delle risorse assegnate per ciascuna delle finalità dell'art. 2, e l'idoneità della domanda non determina automaticamente il riconoscimento del contributo. Secondo le FAQ collegate l'ordine delle priorità è gerarchico, dalla categoria A alla categoria D, e una domanda ammissibile ma non finanziata per esaurimento delle risorse resta in graduatoria e può essere finanziata per scorrimento se si rendono disponibili ulteriori risorse. Salvo espressa rinuncia, il soggetto con domanda ammissibile è tenuto a rispettare gli obblighi del bando, compresi i termini di avvio e completamento dell'intervento e la rendicontazione finale, e chi rinuncia non può beneficiare di successivi scorrimenti.",
@@ -654,7 +678,7 @@
       "id": "contributi-selettivi-erogazione",
       "title": "Contributi selettivi, valutazione ed erogazione",
       "category": "contributi-selettivi",
-      "summary": "Come la Commissione valuta i progetti, in quanto tempo escono le graduatorie, quando si incassano acconto e saldo e in quali casi il contributo decade o viene revocato. Per la prima sessione 2026 il termine di 120 giorni per le graduatorie è scaduto il 15 ottobre 2026 e al 16 ottobre non risultano pubblicate.",
+      "summary": "Come la Commissione valuta i progetti, in quanto tempo escono le graduatorie, quando si incassano acconto e saldo e in quali casi il contributo decade o viene revocato. Per la prima sessione 2026 il termine di 120 giorni per le graduatorie è scaduto il 15 ottobre 2026 e al 23 novembre non risultano pubblicate.",
       "keyPoints": [
         "Nella scrittura e nello sviluppo l'acconto del 50% si chiede entro 90 giorni ed è erogato entro 30 giorni dalla richiesta. Nella produzione è erogato entro 90 giorni, dopo la nazionalità provvisoria (artt. 10, 18 e 26 del bando 2026)",
         "Sessanta giorni per le verifiche e sessanta per la valutazione della Commissione",
