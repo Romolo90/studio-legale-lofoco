@@ -15,7 +15,7 @@
   <!-- Italian pages -->
   <url>
     <loc>https://studiolegalelofoco.com/notizie.html</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
@@ -123,7 +123,7 @@
   </url>
   <url>
     <loc>https://studiolegalelofoco.com/notizie-en.html</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -148,6 +148,11 @@
   </url>
 
   <!-- NOVITA: generato da scripts/build-novita.js -->
+  <url>
+    <loc>https://studiolegalelofoco.com/novita/2026-11-23-tax-credit-distribuzione-2025-seconda-sessione-compilazione-dd-3602.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.50</priority>
+  </url>
   <url>
     <loc>https://studiolegalelofoco.com/novita/2026-11-23-contributi-automatici-annualita-2022-2025-finestre-dd-3591.html</loc>
     <lastmod>2026-11-23</lastmod>
@@ -521,6 +526,11 @@
   <url>
     <loc>https://studiolegalelofoco.com/novita/2026-06-04-piano-potenziamento-sale-cinematografiche-2024-linea-4-giugno-2026.html</loc>
     <lastmod>2026-06-04</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://studiolegalelofoco.com/news/2026-11-23-distribution-tax-credit-2025-second-session-directorial-decree-3602.html</loc>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.50</priority>
   </url>
   <url>
