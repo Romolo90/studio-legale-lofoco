@@ -1161,18 +1161,18 @@
     function renderNews() {
       const container = document.getElementById('news-list');
       if (!container) return;
-      container.innerHTML = newsItems.map(item => `
+      container.innerHTML = newsItems.map(item => { const scheda = item.slug ? 'news/' + item.slug + '.html' : ''; return `
         <article class="news-item">
           <span class="date">${formatDate(item.date)}</span>
-          <div class="title">${item.slug ? `<a href="news/${item.slug}.html">${item.title}</a>` : item.title}</div>
+          <div class="title">${item.slug ? `<a href="${scheda}">${item.title}</a>` : item.title}</div>
           <p class="sintesi">${item.sintesi || (item.context.match(/^[\s\S]*?[a-zà-ù)»”%]\.(?=\s+[A-ZÀ-Ú«])/) || [item.context])[0]}</p>
           <div class="meta">
             <span class="source">${item.source}</span>
-            ${item.slug ? `<a class="news-more" href="news/${item.slug}.html">Read more →</a>` : ''}
+            ${item.slug ? `<a class="news-more" href="${scheda}">Read more →</a>` : ''}
             <a class="news-official" href="${item.link}" target="_blank" rel="noopener noreferrer">Official source ↗</a>
           </div>
         </article>
-      `).join('') + `
+      `; }).join('') + `
         <button type="button" class="news-toggle" aria-expanded="false" data-piu="Show all updates" data-meno="Show fewer" hidden></button>`;
       collassaNovita();
     }
