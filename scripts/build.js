@@ -118,19 +118,39 @@ function formatDateStatic(iso, isEn) {
   return `${d.getDate()} ${monthsIt[d.getMonth()]} ${d.getFullYear()}`;
 }
 
+// Nell'elenco va la sintesi, non il testo intero: il testo intero sta nella pagina della
+// singola voce (build-novita.js), e ripeterlo qui rendeva l'elenco illeggibile e doppio.
+// Senza sintesi si usa la prima frase del context. Una frase finisce con un punto seguito
+// da spazio e maiuscola, ma non dopo una sigla in maiuscolo (D.D., D.M., L.) né dopo un numero.
+function primaFrase(testo) {
+  const t = String(testo || '').trim();
+  const re = /([a-zà-ù)»”%])\.\s+(?=[A-ZÀ-Ú«])/g;
+  const m = re.exec(t);
+  return m ? t.slice(0, m.index + m[1].length + 1) : t;
+}
+
+function sintesiNovita(item) {
+  return item.sintesi || primaFrase(item.context);
+}
+
 function renderNewsStatic(newsItems, isEn) {
   if (!newsItems || !newsItems.length) return '';
-  const readLabel = isEn ? 'Read the official notice →' : "Leggi l'avviso ufficiale →";
-  return newsItems.map(item => `
+  const moreLabel = isEn ? 'Read more →' : 'Leggi la scheda →';
+  const sourceLabel = isEn ? 'Official source ↗' : 'Fonte ufficiale ↗';
+  return newsItems.map(item => {
+    const scheda = item.slug ? `${isEn ? 'news' : 'novita'}/${item.slug}.html` : '';
+    return `
         <article class="news-item">
           <span class="date">${formatDateStatic(item.date, isEn)}</span>
-          <div class="title">${item.slug ? `<a href="${isEn ? 'news' : 'novita'}/${item.slug}.html">${item.title}</a>` : item.title}</div>
-          <p class="context">${item.context}</p>
+          <div class="title">${scheda ? `<a href="${scheda}">${item.title}</a>` : item.title}</div>
+          <p class="sintesi">${sintesiNovita(item)}</p>
           <div class="meta">
             <span class="source">${item.source}</span>
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer">${readLabel}</a>
+            ${scheda ? `<a class="news-more" href="${scheda}">${moreLabel}</a>` : ''}
+            <a class="news-official" href="${item.link}" target="_blank" rel="noopener noreferrer">${sourceLabel}</a>
           </div>
-        </article>`).join('\n') +
+        </article>`;
+  }).join('\n') +
     `\n        <button type="button" class="news-toggle" aria-expanded="false" data-piu="${isEn ? 'Show all updates' : 'Mostra tutte le novità'}" data-meno="${isEn ? 'Show fewer' : 'Mostra meno'}" hidden></button>`;
 }
 

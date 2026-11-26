@@ -1450,11 +1450,17 @@ textarea:focus-visible {
   margin-bottom: 0.35rem;
   line-height: 1.3;
 }
-.news-item .context {
+/* Nell'elenco va la sintesi (il testo intero sta nella pagina della voce).
+   Righe di circa 70 caratteri: oltre, l'occhio perde la riga. */
+.news-item .title,
+.news-item .sintesi {
+  max-width: 70ch;
+}
+.news-item .sintesi {
   font-size: 0.98rem;
   color: #333;
   margin-bottom: 0.5rem;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 .news-item .meta {
   font-size: 0.85rem;
@@ -1478,6 +1484,12 @@ textarea:focus-visible {
 }
 .news-item a:hover {
   color: #003366;
+}
+/* Il collegamento all'avviso ufficiale resta, ma in secondo piano rispetto alla scheda */
+.news-item a.news-official {
+  font-weight: 400;
+  color: #555;
+  font-size: 0.8rem;
 }
 /* Il titolo porta alla pagina della singola voce: resta un titolo, non un link sottolineato */
 .news-item .title a {
@@ -1739,10 +1751,10 @@ textarea:focus-visible {
 }
 
 
-/* Elenco novità: 33 voci sono troppe da scorrere, ma toglierle dal documento le
+/* Elenco novità: le voci sono troppe da scorrere (se ne vedono 5), ma toglierle dal documento le
    toglierebbe anche ai motori di ricerca. Restano tutte, nascoste da una classe
    che aggiunge il JavaScript: senza JavaScript si vedono per intero. */
-.news-list.collapsed .news-item:nth-of-type(n+9) { display: none; }
+.news-list.collapsed .news-item:nth-of-type(n+6) { display: none; }
 .news-toggle {
   align-self: center;
   margin-top: 0.25rem;
