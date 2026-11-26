@@ -1424,6 +1424,10 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  /* Colonna stretta come il riquadro dei contatti: con le sintesi a 70ch una
+     scheda larga quanto la pagina restava mezza vuota */
+  max-width: 780px;
+  margin: 0 auto;
 }
 .news-item {
   background: #fff;
